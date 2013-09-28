@@ -1,5 +1,10 @@
+/cache
+/img
+/include
+/lang
+/plugins
+/style
+/COPYING
 /*.php
 /.*
-/COPYING
-/*/
 !/.gitignore
