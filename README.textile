@@ -1,3 +1,5 @@
 h1. Textpattern support forum
 
+!https://travis-ci.org/textpattern/textpattern-forum.png?branch=master!:https://travis-ci.org/textpattern/textpattern-forum
+
 *Currently under development.*
