@@ -1,0 +1,3 @@
+h1. Textpattern support forum
+
+*Currently under development.*
