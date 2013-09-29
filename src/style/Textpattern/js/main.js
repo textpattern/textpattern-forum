@@ -94,7 +94,7 @@
     // Analytics.
 
     var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-191562-10']);
+    _gaq.push(['_setAccount', 'UA-191562-28']);
     _gaq.push(['_setDomainName', 'none']);
     _gaq.push(['_gat._anonymizeIp']);
     _gaq.push(['_trackPageview']);
