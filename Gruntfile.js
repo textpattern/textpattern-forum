@@ -26,8 +26,8 @@ module.exports = function (grunt)
 			},
 
             js: {
-                files: 'src/style/*/js/*.js',
-                tasks: ['jshint', 'uglify']
+                files: 'src/style/*/js/**',
+                tasks: ['jshint', 'uglify', 'copy:js']
             }
         },
 
@@ -41,6 +41,12 @@ module.exports = function (grunt)
         },
 
         copy: {
+			js: {
+				files: [
+					{expand: true, cwd: 'src/style/Textpattern/js/libs/', src: ['**'], dest: 'public/style/Textpattern/js/'}
+				]
+			},
+
 			theme: {
 				files: [
 					{expand: true, cwd: 'src/style/Textpattern/', src: ['**', '!sass/**', '!js/**'], dest: 'public/style/Textpattern/'}
@@ -121,7 +127,7 @@ module.exports = function (grunt)
     grunt.registerTask('test', ['jshint']);
     grunt.registerTask('sass', ['compass', 'cssmin']);
     grunt.registerTask('default', ['watch']);
-    grunt.registerTask('build', ['jshint', 'copy:theme', 'sass', 'uglify']);
+    grunt.registerTask('build', ['jshint', 'copy', 'sass', 'uglify']);
     grunt.registerTask('travis', ['jshint']);
     grunt.registerTask('setup', ['shell:setup']);
 };
