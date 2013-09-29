@@ -106,8 +106,11 @@ module.exports = function (grunt)
 
                 files: [
                     {
-                        'public/style/Textpattern/js/main.js': ['src/style/Textpattern/js/main.js']
-                    }
+                        'public/style/Textpattern/js/main.js': ['src/style/Textpattern/js/main.js'],
+                        'public/style/Textpattern/js/placeholder.js': ['bower_components/jquery-placeholder/jquery.placeholder.js'],
+                        'public/style/Textpattern/js/require.js': ['bower_components/requirejs/require.js'],
+                        'public/style/Textpattern/js/responsivenav.js': ['bower_components/responsive-nav/responsive-nav.js']
+					}
                 ]
             }
         },
