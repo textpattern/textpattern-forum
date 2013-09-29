@@ -8,5 +8,6 @@
 </head>
 <body id="page-maintenance">
     <pun_maint_main>
+    <script data-main="style/Textpattern/js/main.js" src="style/Textpattern/js/require.js"></script>
 </body>
 </html>

@@ -14,5 +14,6 @@
     <pun_announcement>
     <pun_main>
     <pun_footer>
+    <script data-main="style/Textpattern/js/main.js" src="style/Textpattern/js/require.js"></script>
 </body>
 </html>
