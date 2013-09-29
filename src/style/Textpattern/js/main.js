@@ -103,7 +103,7 @@
 
         if (statusLinks.length)
         {
-            statusLinks.html('').wrap('<blockquote class="twitter-tweet"></blockquote>');
+            statusLinks.html('').parent().wrap('<blockquote class="twitter-tweet"></blockquote>');
         }
 
         if ($('.twitter-share-button').length || statusLinks.length)
