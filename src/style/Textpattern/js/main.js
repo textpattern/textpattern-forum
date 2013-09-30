@@ -139,7 +139,7 @@
         {
             var $this = $(this);
 
-            if (statusRegex.test($this.attr('href')) && $this.parent().text() === $this.text())
+            if (gistRegex.test($this.attr('href')) && $this.parent().text() === $this.text())
             {
                 $this.parent().after($('<script></script>').attr('src', $this.attr('href'))).remove();
             }
