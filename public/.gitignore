@@ -6,5 +6,7 @@
 /style
 /COPYING
 /*.php
+/*.js
+/*.md
 /.*
 !/.gitignore
