@@ -129,6 +129,23 @@
         }
     });
 
+    // Embed Gists.
+
+    require(['jquery'], function ($)
+    {
+        var gistRegex = /^https?:\/\/gist\.github\.com\/[a-z0-9]+\/[0-9]+/i;
+
+        $('.postmsg > p > a').each(function ()
+        {
+            var $this = $(this);
+
+            if (statusRegex.test($this.attr('href')) && $this.parent().text() === $this.text())
+            {
+                $this.parent().after($('<script></script>').attr('src', $this.attr('href'))).remove();
+            }
+        });
+    });
+
     // Analytics.
 
     var _gaq = _gaq || [];
