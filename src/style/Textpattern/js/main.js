@@ -112,7 +112,7 @@
 
     require(['jquery'], function ($)
     {
-        var statusRegex = /^https?:\/\/twitter\.com\/(#!\/)?[a-z0-9]+\/status(es)?\/[0-9]+/i, statusLinks = $('.postmsg p > a').filter(function ()
+        var statusRegex = /^https?:\/\/twitter\.com\/(#!\/)?[a-z0-9]+\/status(es)?\/[0-9]+/i, statusLinks = $('.postmsg > p > a').filter(function ()
         {
             var $this = $(this);
             return statusRegex.test($this.attr('href')) && $this.parent().text() === $this.text();
