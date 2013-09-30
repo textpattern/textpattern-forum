@@ -34,6 +34,23 @@
         }
     });
 
+    // Syntax highlighting.
+
+    require(['jquery'], function ($)
+    {
+        var code = $('pre code');
+
+        if (code.length)
+        {
+            code.parent().addClass('prettyprint');
+
+            require(['prettify'], function ()
+            {
+                prettyPrint();
+            });
+        }
+    });
+
     // Hack-fix for the iOS orientationchange zoom bug (NOTE: fixed in iOS 6).
 
     require(['jquery', 'modernizr'], function ($, Modernizr)
