@@ -1,3 +1,64 @@
+//
+// note: this file is for use with Sass and Compass - http://sass-lang.com, http://compass-style.org
+// don't use it as your live site stylesheet!
+//
+
+
+// import global variables
+@import "sass/core/settings";
+
+// import Compass, Compass Plugins and any additional mixins
+@import "sass/core/helpers";
+
+
+
+/* ==========================================================================
+   Styling and layout for all media
+   ========================================================================== */
+
+//@import "sass/core/base";
+//@import "sass/core/layout";
+
+
+
+/* ==========================================================================
+   Styling and layout for screen media (mobile first)
+   ========================================================================== */
+
+@media screen {
+
+//@import "sass/modules/layout";
+//@import "sass/sass/modules/navigation";
+//@import "sass/modules/links";
+//@import "sass/modules/typography";
+//@import "sass/modules/alerts";
+//@import "sass/modules/embedded-content";
+//@import "sass/modules/tables";
+//@import "sass/modules/lists";
+//@import "sass/modules/forms";
+//@import "sass/modules/buttons";
+//@import "sass/modules/cookie-disclaimer";
+//@import "sass/modules/old-browser";
+//@import "sass/modules/code_prettify";
+//@import "sass/modules/social";
+//@import "sass/modules/misc";
+
+@import "sass/modules/fluxbb";
+
+}
+
+
+
+/* ==========================================================================
+   Styling and layout for print media
+   ========================================================================== */
+
+//@import "sass/core/print";
+
+
+
+
+/* TEMPORARY, SO SOMETHING ACTUAL BUILDS */
 html {
-    font: 1.3em Arial;
+    font: 14px Arial;
 }
