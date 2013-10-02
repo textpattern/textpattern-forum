@@ -1,3 +1,6 @@
+# Singularity GS - https://github.com/Team-Sass/Singularity
+require "singularitygs"
+
 http_path = "./"
 project_path = "src"
 sass_path = "src/style"
