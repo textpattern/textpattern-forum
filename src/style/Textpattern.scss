@@ -30,7 +30,7 @@
 //@import "sass/modules/layout";
 //@import "sass/sass/modules/navigation";
 //@import "sass/modules/links";
-//@import "sass/modules/typography";
+@import "sass/modules/typography";
 //@import "sass/modules/alerts";
 //@import "sass/modules/embedded-content";
 //@import "sass/modules/tables";
@@ -54,11 +54,3 @@
    ========================================================================== */
 
 //@import "sass/core/print";
-
-
-
-
-/* TEMPORARY, SO SOMETHING ACTUAL BUILDS */
-html {
-    font: 14px Arial;
-}
