@@ -5,10 +5,10 @@
 
 
 // import global variables
-@import "sass/core/settings";
+@import "Textpattern/sass/core/settings";
 
 // import Compass, Compass Plugins and any additional mixins
-@import "sass/core/helpers";
+@import "Textpattern/sass/core/helpers";
 
 
 
@@ -16,8 +16,8 @@
    Styling and layout for all media
    ========================================================================== */
 
-@import "sass/core/base";
-//@import "sass/core/layout";
+@import "Textpattern/sass/core/base";
+//@import "Textpattern/sass/core/layout";
 
 
 
@@ -27,23 +27,23 @@
 
 @media screen {
 
-//@import "sass/modules/layout";
-//@import "sass/sass/modules/navigation";
-@import "sass/modules/links";
-@import "sass/modules/typography";
-//@import "sass/modules/alerts";
-//@import "sass/modules/embedded-content";
-//@import "sass/modules/tables";
-//@import "sass/modules/lists";
-//@import "sass/modules/forms";
-//@import "sass/modules/buttons";
-//@import "sass/modules/cookie-disclaimer";
-//@import "sass/modules/old-browser";
-@import "sass/modules/code_prettify";
-//@import "sass/modules/social";
-//@import "sass/modules/misc";
+//@import "Textpattern/sass/modules/layout";
+//@import "Textpattern/sass/sass/modules/navigation";
+@import "Textpattern/sass/modules/links";
+@import "Textpattern/sass/modules/typography";
+//@import "Textpattern/sass/modules/alerts";
+//@import "Textpattern/sass/modules/embedded-content";
+//@import "Textpattern/sass/modules/tables";
+//@import "Textpattern/sass/modules/lists";
+//@import "Textpattern/sass/modules/forms";
+//@import "Textpattern/sass/modules/buttons";
+//@import "Textpattern/sass/modules/cookie-disclaimer";
+//@import "Textpattern/sass/modules/old-browser";
+@import "Textpattern/sass/modules/code_prettify";
+//@import "Textpattern/sass/modules/social";
+//@import "Textpattern/sass/modules/misc";
 
-@import "sass/modules/fluxbb";
+@import "Textpattern/sass/modules/fluxbb";
 
 }
 
@@ -53,4 +53,4 @@
    Styling and layout for print media
    ========================================================================== */
 
-//@import "sass/core/print";
+//@import "Textpattern/sass/core/print";
