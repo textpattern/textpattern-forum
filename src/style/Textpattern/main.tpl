@@ -10,6 +10,7 @@
 <body id="page-<pun_page>">
     <pun_title>
     <pun_desc>
+    <pun_navlinks>
     <form class="search-form" action="http://www.google.com/cse">
         <label for="search-query">Search</label>
         <a href="search.php">Advanced</a>
