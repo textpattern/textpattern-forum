@@ -3,6 +3,7 @@
 // don't use it as your live site stylesheet!
 //
 
-#navsearch, #bblinks {
-    display: none;
+#navsearch,
+#bblinks {
+    display: none !important;
 }
