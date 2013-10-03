@@ -34,6 +34,20 @@
         }
     });
 
+    // Search widget.
+
+    require(['jquery'], function ($)
+    {
+        var topic = $('#page-viewtopic .crumbs li:last-child a').eq(0).text();
+
+        if (!topic.length)
+        {
+            return;
+        }
+
+        $('.search-form input[name=q]').val(topic+': ');
+    });
+
     // Syntax highlighting.
 
     require(['jquery'], function ($)
