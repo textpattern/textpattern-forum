@@ -48,6 +48,13 @@
         $('.search-form input[name=q]').val(topic+': ');
     });
 
+    // Textile help.
+
+    require(['jquery'], function ($)
+    {
+        $('.bblinks').after('<p class="textile-help-links">Formatting: <a target="_blank" href="http://textpattern.com/textile-reference-manual">Textile</a></p>').remove();
+    });
+
     // Syntax highlighting.
 
     require(['jquery'], function ($)
