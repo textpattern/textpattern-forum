@@ -10,7 +10,14 @@
 <body id="page-<pun_page>">
     <pun_title>
     <pun_desc>
-    <pun_navlinks>
+    <form class="search-form" action="http://www.google.com/cse">
+        <label for="search-query">Search</label>
+        <a href="search.php">Advanced</a>
+        <input type="text" name="q" size="40" id="search-query">
+        <input type="submit" name="sa" value="Go">
+        <input type="hidden" name="cx" value="013284010981475036739:4p3oc9ihitk">
+        <input type="hidden" name="ie" value="UTF-8">
+    </form>
     <pun_status>
     <pun_announcement>
     <pun_main>
