@@ -129,6 +129,29 @@
         });
     });
 
+    // Topic share buttons.
+
+    require(['jquery'], function ()
+    {
+        var permlink, text, title = $('#page-viewtopic #placeholder').eq(0);
+
+        if (!title.length)
+        {
+            return;
+        }
+
+        permlink = encodeURIComponent(title.attr('href'));
+        text = encodeURIComponent(title.text());
+
+        $('<div class="share-buttons" />')
+            .append($('<a class="facebook-share-button">Share on Facebook</a>').attr('href', 'https://www.facebook.com/sharer/sharer.php?u='+permlink))
+            .append($('<a class="twitter-share-button">Tweet</a>').attr('href', 'https://twitter.com/share?url='+permlink+'&text='+text))
+            .append($('<span class="g-plus" data-action="share" />'));
+
+        require(['//platform.twitter.com/widgets.js']);
+        require(['https://apis.google.com/js/plusone.js']);
+    });
+
     // Twitter widgets.
 
     require(['jquery'], function ($)
