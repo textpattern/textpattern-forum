@@ -129,33 +129,28 @@
         });
     });
 
-    // Topic share buttons.
+    // Share and social embed widgets.
 
     require(['jquery'], function ()
     {
-        var permlink, text, title = $('#page-viewtopic #placeholder').eq(0);
+        var permlink, buttons, text, title = $('#page-viewtopic .crumbs li:last-child a').eq(0);
 
-        if (!title.length)
+        if (title.length)
         {
-            return;
+            permlink = encodeURIComponent(title.attr('href'));
+            text = encodeURIComponent(title.text());
+
+            var buttons = $('<p class="share-buttons" />')
+                .append($('<a class="facebook-share-button">Share on Facebook</a>').attr('href', 'https://www.facebook.com/sharer/sharer.php?u='+permlink))
+                .append($('<a class="twitter-share-button">Tweet</a>').attr('data-text', text).attr('data-url', permlink).attr('href', 'https://twitter.com/share?url='+permlink+'&text='+text))
+                .append($('<span class="g-plus" data-action="share" />').attr('data-href', permlink));
+
+            $('#page-viewtopic .crumbs').eq(0).after(buttons);
+            require(['https://apis.google.com/js/plusone.js']);
         }
 
-        permlink = encodeURIComponent(title.attr('href'));
-        text = encodeURIComponent(title.text());
+        // Embed tweets; turns plain links to tweet widgets.
 
-        $('<div class="share-buttons" />')
-            .append($('<a class="facebook-share-button">Share on Facebook</a>').attr('href', 'https://www.facebook.com/sharer/sharer.php?u='+permlink))
-            .append($('<a class="twitter-share-button">Tweet</a>').attr('href', 'https://twitter.com/share?url='+permlink+'&text='+text))
-            .append($('<span class="g-plus" data-action="share" />'));
-
-        require(['//platform.twitter.com/widgets.js']);
-        require(['https://apis.google.com/js/plusone.js']);
-    });
-
-    // Twitter widgets.
-
-    require(['jquery'], function ($)
-    {
         var statusRegex = /^https?:\/\/twitter\.com\/(#!\/)?[a-z0-9]+\/status(es)?\/[0-9]+$/i, statusLinks = $('.postmsg > p > a').filter(function ()
         {
             var $this = $(this);
@@ -167,7 +162,7 @@
             statusLinks.html('').parent().wrap('<blockquote class="twitter-tweet"></blockquote>');
         }
 
-        if ($('.twitter-share-button').length || statusLinks.length)
+        if (title.length || statusLinks.length)
         {
             require(['//platform.twitter.com/widgets.js']);
         }
