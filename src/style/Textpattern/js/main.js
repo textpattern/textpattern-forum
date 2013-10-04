@@ -61,7 +61,25 @@
 
         button = $('<a href="#quickpostform">Quote</a>').on('click', function ()
         {
-            var $this = $(this), post = $this.parents('.blockpost').eq(0), name = post.find('.postleft dl dt').eq(0).text(), message = $.trim(post.find('.postmsg').eq(0).text().split('\n\n').slice(0, 1).join('')), link = post.find('h2 a').eq(0).attr('href'), value = $.trim(field.val());
+            var $this = $(this), post = $this.parents('.blockpost').eq(0), name = post.find('.postleft dl dt').eq(0).text(), message = post.find('.postmsg').eq(0).clone().find('.postedit').remove().end(), link = post.find('h2 a').eq(0).attr('href'), value = $.trim(field.val());
+
+            // Remove quotes.
+
+            message.find('blockquote').prev('p').filter(function ()
+            {
+                return $(this).find('strong').length && $(this).text().indexOf(' wrote:') !== -1;
+            }).remove();
+
+            message.find('blockquote').remove();
+
+            // Compress code blocks to a single line.
+
+            message.find('pre').each(function ()
+            {
+                $(this).after('<p>@' + $.trim($('<div />').text($(this).html()).html().replace('\r', '').split('\n').slice(0, 1).join('')) + '...@</p>').remove();
+            });
+
+            message = $.trim(message.text()).replace('\r', '').split('\n\n').slice(0, 1).join('');
 
             if (value)
             {
