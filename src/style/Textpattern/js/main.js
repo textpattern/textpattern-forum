@@ -48,6 +48,32 @@
         $('.search-form input[name=q]').val(topic+': ');
     });
 
+    // Quoting.
+
+    require(['jquery'], function ($)
+    {
+        var field = $('#quickpostform textarea[name=req_message]'), button;
+
+        if (!field.length)
+        {
+            return;
+        }
+
+        button = $('<a href="#quickpostform">Quote</a>').on('click', function ()
+        {
+            var $this = $(this), post = $this.parents('.blockpost').eq(0), name = post.find('.postleft dl dt').eq(0).text(), message = $.trim(post.find('.postmsg').eq(0).text().split('\n\n').slice(0, 1).join('')), link = post.find('h2 a').eq(0).attr('href'), value = $.trim(field.val());
+
+            if (value)
+            {
+                value = value + '\n\n';
+            }
+
+            field.val(value + '*' + name + ' wrote:*\n\nbq. ' + message + ' "[...]":./' + link + '\n\n').focus();
+        });
+
+        $('.postfootright ul').append($('<li class="textile-quote-post" />').html(button));
+    });
+
     // Textile help.
 
     require(['jquery'], function ($)
