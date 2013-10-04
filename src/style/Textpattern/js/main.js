@@ -74,6 +74,134 @@
         $('.postfootright ul').append($('<li class="textile-quote-post" />').html(button));
     });
 
+    // Ranks.
+
+    require(['jquery'], function ($)
+    {
+        var ranks =
+        [
+            {
+                posts : 0,
+                title : 'alpha'
+            },
+            {
+                posts : 10,
+                title : 'beta'
+            },
+            {
+                posts : 35,
+                title : 'gamma'
+            },
+            {
+                posts : 50,
+                title : 'delta'
+            },
+            {
+                posts : 75,
+                title : 'epsilon'
+            },
+            {
+                posts : 100,
+                title : 'zêta'
+            },
+            {
+                posts : 150,
+                title : 'êta'
+            },
+            {
+                posts : 250,
+                title : 'thêta'
+            },
+            {
+                posts : 300,
+                title : 'iota'
+            },
+            {
+                posts : 350,
+                title : 'kappa'
+            },
+            {
+                posts : 400,
+                title : 'lambda'
+            },
+            {
+                posts : 500,
+                title : 'mu'
+            },
+            {
+                posts : 600,
+                title : 'nu'
+            },
+            {
+                posts : 700,
+                title : 'xi'
+            },
+            {
+                posts : 800,
+                title : 'omicron'
+            },
+            {
+                posts : 900,
+                title : 'pi'
+            },
+            {
+                posts : 1000,
+                title : 'rho'
+            },
+            {
+                posts : 1100,
+                title : 'sigma'
+            },
+            {
+                posts : 1200,
+                title : 'tau'
+            },
+            {
+                posts : 1300,
+                title : 'upsilon'
+            },
+            {
+                posts : 1400,
+                title : 'phi'
+            },
+            {
+                posts : 1500,
+                title : 'chi'
+            },
+            {
+                posts : 1600,
+                title : 'phi'
+            },
+            {
+                posts : 1700,
+                title : 'omega'
+            }
+        ];
+
+        $('#page-viewtopic .blockpost .postleft > dl').each(function ()
+        {
+            var i, rank, $this = $(this), posts = parseInt($this.find('dd span').filter(function ()
+            {
+                return $(this).text().indexOf('Posts: ') === 0;
+            }).eq(0).text().replace('Posts: ', '').replace(',', ''), 10);
+
+            for (i = 0; i < ranks.length; i++)
+            {
+                if (ranks[i].posts > posts)
+                {
+                    break;
+                }
+
+                rank = ranks[i];
+            }
+
+            if (rank)
+            {
+                $this.find('.usertitle').after('<dd class="userrank"><span title="Ranked level '+ (i - 1) +'">'+rank.title+'</span></dd>');
+            }
+        });
+    });
+
     // Textile help.
 
     require(['jquery'], function ($)
