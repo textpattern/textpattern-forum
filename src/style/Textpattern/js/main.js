@@ -175,6 +175,46 @@
             {
                 posts : 1700,
                 title : 'omega'
+            },
+            {
+                posts : 2000,
+                title : 'zero'
+            },
+            {
+                posts : 2100,
+                title : 'ichi'
+            },
+            {
+                posts : 2200,
+                title : 'ni'
+            },
+            {
+                posts : 2300,
+                title : 'san'
+            },
+            {
+                posts : 2400,
+                title : 'yon'
+            },
+            {
+                posts : 2500,
+                title : 'go'
+            },
+            {
+                posts : 2600,
+                title : 'roku'
+            },
+            {
+                posts : 2700,
+                title : 'nana'
+            },
+            {
+                posts : 2800,
+                title : 'hachi'
+            },
+            {
+                posts : 2900,
+                title : 'kyū'
             }
         ];
 
