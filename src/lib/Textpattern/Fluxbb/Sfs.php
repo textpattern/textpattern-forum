@@ -84,7 +84,7 @@ class Sfs
         if (isset($_POST['form_sent']) && isset($_GET['action']) && $_GET['action'] === 'in' && isset($_POST['req_username']))
         {
             $sth = $this->pdo()->prepare("SELECT email FROM users WHERE username = :username and group_id = 0");
-            $sth->execute(array(':username' => $_POST['req_username']));g
+            $sth->execute(array(':username' => $_POST['req_username']));
 
             if ($r = $sth->fetch())
             {
