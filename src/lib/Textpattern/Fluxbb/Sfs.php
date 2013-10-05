@@ -13,58 +13,210 @@ namespace Textpattern\Fluxbb;
 class Sfs
 {
     /**
+     * Ban IP.
+     */
+
+    const BAN_IP = 'ip';
+
+    /**
+     * Ban email.
+     */
+
+    const BAN_EMAIL = 'email';
+
+    /**
+     * PDO connection.
+     *
+     * @var \PDO
+     */
+
+    protected $pdo;
+
+    /**
+     * IP address.
+     *
+     * @var string
+     */
+
+    protected $ip;
+
+    /**
+     * The email.
+     *
+     * @var string
+     */
+
+    protected $email;
+
+    /**
+     * Threshold.
+     *
+     * @var int
+     */
+
+    protected $activityRange = 5256000;
+
+    /**
      * Constructor.
      */
 
     public function __construct()
     {
-        global $db_host, $db_name, $db_username, $db_password, $db_prefix;
+        $this->ip = $_SERVER['REMOTE_ADDR'];
 
-        $ip = $_SERVER['REMOTE_ADDR'];
-        $since = time() - 3600*24*60;
-        $user = $email = '';
-        $action = false;
+        foreach (get_class_methods($this) as $method)
+        {
+            if (strpos($method, 'filterPage') === 0)
+            {
+                if ($this->$method() === true)
+                {
+                    return;
+                }
+            }
+        }
 
         if (strpos($_SERVER['REQUEST_URI'], 'register.php') !== false && isset($_POST['req_user']) && isset($_POST['req_email1']))
         {
-            $user = (string) $_POST['req_user'];
-            $email = (string) $_POST['req_email1'];
-            $action = 'register';
+            $this->email = (string) $_POST['req_email1'];
+            $this->processUser();
         }
 
+        
+    }
+
+    /**
+     * Checks registration requests.
+     */
+
+    public function filterPageRegister()
+    {
+        if (strpos($_SERVER['REQUEST_URI'], 'register.php') !== false && isset($_POST['req_user']) && isset($_POST['req_email1']))
+        {
+            $this->email = (string) $_POST['req_email1'];
+            $this->processUser();
+            return true;
+        }
+    }
+
+    /**
+     * Checks login requests.
+     */
+
+    public function filterPageLogin()
+    {
         if (isset($_POST['form_sent']) && isset($_GET['action']) && $_GET['action'] === 'in' && isset($_POST['req_username']))
         {
-            $action = 'login';
-            $user = $_POST['req_username'];
-        }
+            $sth = $this->pdo()->prepare("SELECT email FROM users WHERE username = :username and group_id = 0");
+            $sth->execute(array(':username' => $_POST['req_username']));
 
-        if (!$action)
-        {
-            return;
-        }
-
-        $pdo = new PDO('mysql:dbname='.$db_name.';host='.$db_host, $db_username, $db_password);
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-        // Fetch user details.
-
-        if ($action === 'login')
-        {
-            $sth = $pdo->prepare("SELECT group_id, email FROM {$db_prefix}users WHERE username = :username");
-            $sth->execute(array(':username' => $user));
-            $r = $sth->fetch();
-
-            if (!$r || $r['group_id'] != 0)
+            if ($r = $sth->fetch())
             {
-                return;
+                $this->email = $r['email'];
+                $this->processUser();
             }
 
-            $email = $r['email'];
+            return true;
+        }
+    }
+
+    /**
+     * Process user request.
+     */
+
+    public function processUser()
+    {
+        if ($this->isBanned() === false && $data = $this->getRecord())
+        {
+            if (isset($data->ip))
+            {
+                $this->addBan('ip', 'IP address found in StopForumSpam database.', strtotime('+2 month'));
+            }
+
+            if (isset($data->email))
+            {
+                $this->addBan('email', 'IP address found in StopForumSpam database.');
+            }
+        }
+    }
+
+    /**
+     * Gets a record from StopForumSpam database for the given user.
+     *
+     * @return \stdClass|bool
+     */
+
+    public function getRecord()
+    {
+        $data = file_get_contents('http://www.stopforumspam.com/api?f=json&unix&ip='.urlencode($this->ip).'&email='.urlencode($this->email), false, stream_context_create(array('http' => array('timeout' => 15))));
+        $seen = time() - $this->activityRange;
+
+        if ($data)
+        {
+            $data = json_decode($data);
+            $out = (object) null;
+
+            if ($data && !empty($data->success))
+            {
+                foreach (array('ip', 'email') as $name)
+                {
+                    if (isset($data->$name) && $this->$name && $data->$name->appears && $data->$name->lastseen >= $seen)
+                    {
+                        $out->$name = $data->$name;
+                    }
+                }
+
+                if ($out)
+                {
+                    return $out;
+                }
+            }
         }
 
-        // Check if the user is already banned.
+        return false;
+    }
 
-        $sth = $pdo->prepare("SELECT ip FROM {$db_prefix}bans WHERE ((ip != '' and ip = :ip) or (email != '' and email = :email)) and IFNULL(expire, :expires) >= :expires limit 1");
+    /**
+     * Return PDO instance.
+     *
+     * @return \PDO
+     */
+
+    public function pdo()
+    {
+        if (!$this->pdo)
+        {
+            global $db_host, $db_name, $db_username, $db_password, $db_prefix;
+            $this->pdo = new PDO('mysql:dbname='.$db_name.';host='.$db_host, $db_username, $db_password);
+            $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        }
+
+        return $this->pdo;
+    }
+
+    /**
+     * Add a ban.
+     */
+
+    public function addBan($type = 'ip', $message = '', $expires = null)
+    {
+        $pdo->prepare("INSERT INTO bans SET $type = :value, message = :message, expire = :expires")->execute(array(
+            ':value'    => $this->$type,
+            ':message'  => $message,
+            ':expires'  => $expires,
+        ));
+
+        @unlink('./cache/cache_bans.php');
+    }
+
+    /**
+     * Whether the user is banned.
+     *
+     * @return bool
+     */
+
+    public function isBanned()
+    {
+        $sth = $this->pdo()->prepare("SELECT ip FROM bans WHERE ((ip != '' and ip = :ip) or (email != '' and email = :email)) and IFNULL(expire, :expires) >= :expires limit 1");
 
         $sth->execute(array(
             ':ip'      => $ip,
@@ -72,48 +224,6 @@ class Sfs
             ':expires' => time(),
         ));
 
-        if ($sth->rowCount())
-        {
-            return;
-        }
-
-        // Get records from StopForumSpam database.
-
-        $data = file_get_contents('http://www.stopforumspam.com/api?f=json&unix&ip='.urlencode($ip).'&email='.urlencode($email).'&username='.urlencode($user), false, stream_context_create(array('http' => array('timeout' => 15))));
-
-        if (!$data)
-        {
-            return;
-        }
-
-        $data = json_decode($data);
-
-        if (!$data || empty($data->success))
-        {
-            return;
-        }
-
-        // Add new bans to the database.
-
-        if ($ip && isset($data->ip) && $data->ip->appears && $data->ip->lastseen >= $since)
-        {
-            $pdo->prepare("INSERT INTO {$db_prefix}bans SET ip = :ip, message = :message, expire = :expires")->execute(array(
-                ':ip'       => $ip,
-                ':message'  => 'IP address found in StopForumSpam database.',
-                ':expires'  => strtotime('+2 month'),
-            ));
-
-            @unlink('./cache/cache_bans.php');
-        }
-
-        if ($email && isset($data->email) && $data->email->appears && $data->email->lastseen > $since)
-        {
-            $pdo->prepare("INSERT INTO {$db_prefix}bans SET email = :email, message = :message")->execute(array(
-                ':email'    => $email,
-                ':message'  => 'Email address found in StopForumSpam database.',
-            ));
-
-            @unlink('./cache/cache_bans.php');
-        }
+        return (bool) $sth->rowCount();
     }
 }
