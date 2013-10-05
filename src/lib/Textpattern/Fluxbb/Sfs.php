@@ -13,18 +13,6 @@ namespace Textpattern\Fluxbb;
 class Sfs
 {
     /**
-     * Ban IP.
-     */
-
-    const BAN_IP = 'ip';
-
-    /**
-     * Ban email.
-     */
-
-    const BAN_EMAIL = 'email';
-
-    /**
      * PDO connection.
      *
      * @var \PDO
@@ -66,22 +54,11 @@ class Sfs
 
         foreach (get_class_methods($this) as $method)
         {
-            if (strpos($method, 'filterPage') === 0)
+            if (strpos($method, 'filterPage') === 0 && $this->$method() === true)
             {
-                if ($this->$method() === true)
-                {
-                    return;
-                }
+                return;
             }
         }
-
-        if (strpos($_SERVER['REQUEST_URI'], 'register.php') !== false && isset($_POST['req_user']) && isset($_POST['req_email1']))
-        {
-            $this->email = (string) $_POST['req_email1'];
-            $this->processUser();
-        }
-
-        
     }
 
     /**
@@ -107,7 +84,7 @@ class Sfs
         if (isset($_POST['form_sent']) && isset($_GET['action']) && $_GET['action'] === 'in' && isset($_POST['req_username']))
         {
             $sth = $this->pdo()->prepare("SELECT email FROM users WHERE username = :username and group_id = 0");
-            $sth->execute(array(':username' => $_POST['req_username']));
+            $sth->execute(array(':username' => $_POST['req_username']));g
 
             if ($r = $sth->fetch())
             {
