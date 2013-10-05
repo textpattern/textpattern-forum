@@ -97,6 +97,38 @@ class Sfs
     }
 
     /**
+     * Check on first post.
+     */
+
+    public function filterPagePost()
+    {
+        if (strpos($_SERVER['REQUEST_URI'], '/post.php') !== false && isset($_POST['form_sent']))
+        {
+            $sth = $this->pdo()->prepare("SELECT email FROM users WHERE ip = :ip and group_id = 0");
+            $sth->execute(array(':ip' => $this->ip));
+
+            if ($r = $sth->fetch())
+            {
+                $this->email = $r['email'];
+
+                if ($this->isBanned() === false && $data = $this->getRecord())
+                {
+                    if (isset($this->email))
+                    {
+                        $this->addBan('email', 'Email address found in StopForumSpam database.');
+                    }
+                    else if (isset($data->ip))
+                    {
+                        $this->addBan('ip', 'IP address found in StopForumSpam database.', strtotime('+14 day'));
+                    }
+                }
+            }
+
+            return true;
+        }
+    }
+
+    /**
      * Process user request.
      */
 
@@ -111,7 +143,7 @@ class Sfs
 
             if (isset($data->email))
             {
-                $this->addBan('email', 'IP address found in StopForumSpam database.');
+                $this->addBan('email', 'Email address found in StopForumSpam database.');
             }
         }
     }
