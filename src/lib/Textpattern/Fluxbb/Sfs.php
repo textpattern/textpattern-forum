@@ -95,10 +95,13 @@ class Sfs
 
     public function filterPagePost()
     {
-        if (strpos($_SERVER['REQUEST_URI'], '/post.php') !== false && isset($_POST['form_sent']))
+        global $cookie_name;
+
+        if (strpos($_SERVER['REQUEST_URI'], 'post.php') !== false && isset($_POST['form_sent']))
         {
-            $sth = Db::pdo()->prepare("SELECT email FROM users WHERE ip = :ip and num_posts = 0");
-            $sth->execute(array(':ip' => $this->ip));
+            $id = (int) join('', array_slice(explode('|', $_COOKIE[$cookie_name]), 0, 1));
+            $sth = Db::pdo()->prepare('SELECT email FROM users WHERE id = :user and num_posts = 0');
+            $sth->execute(array(':user' => $id));
 
             if ($r = $sth->fetch())
             {
@@ -106,7 +109,7 @@ class Sfs
 
                 if ($this->isBanned() === false && $data = $this->getRecord())
                 {
-                    if (isset($this->email))
+                    if (isset($data->email))
                     {
                         $this->addBan('email', 'Email address found in StopForumSpam database.');
                     }
