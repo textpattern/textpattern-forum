@@ -76,7 +76,7 @@ class Sfs
     {
         if (isset($_POST['form_sent']) && isset($_GET['action']) && $_GET['action'] === 'in' && isset($_POST['req_username']))
         {
-            $sth = $this->pdo()->prepare("SELECT email FROM users WHERE username = :username and group_id = 0");
+            $sth = Db::pdo()->prepare("SELECT email FROM users WHERE username = :username and group_id = 0");
             $sth->execute(array(':username' => $_POST['req_username']));
 
             if ($r = $sth->fetch())
@@ -97,7 +97,7 @@ class Sfs
     {
         if (strpos($_SERVER['REQUEST_URI'], '/post.php') !== false && isset($_POST['form_sent']))
         {
-            $sth = $this->pdo()->prepare("SELECT email FROM users WHERE ip = :ip and group_id = 0");
+            $sth = Db::pdo()->prepare("SELECT email FROM users WHERE ip = :ip and group_id = 0");
             $sth->execute(array(':ip' => $this->ip));
 
             if ($r = $sth->fetch())
@@ -178,23 +178,12 @@ class Sfs
     }
 
     /**
-     * Return PDO instance.
-     *
-     * @return \PDO
-     */
-
-    public function pdo()
-    {
-        return Db::pdo();
-    }
-
-    /**
      * Add a ban.
      */
 
     public function addBan($type = 'ip', $message = '', $expires = null)
     {
-        $this->pdo()->prepare("INSERT INTO bans SET $type = :value, message = :message, expire = :expires")->execute(array(
+        Db::pdo()->prepare("INSERT INTO bans SET $type = :value, message = :message, expire = :expires")->execute(array(
             ':value'    => $this->$type,
             ':message'  => $message,
             ':expires'  => $expires,
@@ -211,7 +200,7 @@ class Sfs
 
     public function isBanned()
     {
-        $sth = $this->pdo()->prepare("SELECT ip FROM bans WHERE ((ip != '' and ip = :ip) or (email != '' and email = :email)) and IFNULL(expire, :expires) >= :expires limit 1");
+        $sth = Db::pdo()->prepare("SELECT ip FROM bans WHERE ((ip != '' and ip = :ip) or (email != '' and email = :email)) and IFNULL(expire, :expires) >= :expires limit 1");
 
         $sth->execute(array(
             ':ip'      => $ip,
