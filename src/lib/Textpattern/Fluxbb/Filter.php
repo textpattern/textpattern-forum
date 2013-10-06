@@ -14,23 +14,7 @@ class Filter
 
     public function __construct()
     {
-        $this->castParameters();
         $this->preventUnverified();
-    }
-
-    /**
-     * Cast parameters.
-     */
-
-    protected function castParameters()
-    {
-        foreach (array($_GET, $_POST) as &$method)
-        {
-            foreach ($method as $name => $value)
-            {
-                $method[$name] = (string) $value;
-            }
-        }
     }
 
     /**
