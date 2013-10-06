@@ -19,7 +19,7 @@ class Tasks
      * @var string
      */
 
-    protected $parameter = 'textpattern_fluxbb_clean_inactive';
+    protected $parameter = 'textpattern_fluxbb_tasks';
 
     /**
      * Constructor.
