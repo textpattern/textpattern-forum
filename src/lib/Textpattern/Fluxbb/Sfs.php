@@ -97,7 +97,7 @@ class Sfs
     {
         if (strpos($_SERVER['REQUEST_URI'], '/post.php') !== false && isset($_POST['form_sent']))
         {
-            $sth = Db::pdo()->prepare("SELECT email FROM users WHERE ip = :ip and group_id = 0");
+            $sth = Db::pdo()->prepare("SELECT email FROM users WHERE ip = :ip and num_posts = 0");
             $sth->execute(array(':ip' => $this->ip));
 
             if ($r = $sth->fetch())
