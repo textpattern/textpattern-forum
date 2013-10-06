@@ -1,6 +1,7 @@
 <?php
 
 namespace Textpattern\Fluxbb;
+use Textpattern\Fluxbb\Db;
 
 /**
  * Checks StopForumSpam database against user-data.
@@ -12,14 +13,6 @@ namespace Textpattern\Fluxbb;
 
 class Sfs
 {
-    /**
-     * PDO connection.
-     *
-     * @var \PDO
-     */
-
-    protected $pdo;
-
     /**
      * IP address.
      *
@@ -192,14 +185,7 @@ class Sfs
 
     public function pdo()
     {
-        if (!$this->pdo)
-        {
-            global $db_host, $db_name, $db_username, $db_password, $db_prefix;
-            $this->pdo = new PDO('mysql:dbname='.$db_name.';host='.$db_host, $db_username, $db_password);
-            $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        }
-
-        return $this->pdo;
+        return Db::pdo();
     }
 
     /**
@@ -208,7 +194,7 @@ class Sfs
 
     public function addBan($type = 'ip', $message = '', $expires = null)
     {
-        $pdo->prepare("INSERT INTO bans SET $type = :value, message = :message, expire = :expires")->execute(array(
+        $this->pdo()->prepare("INSERT INTO bans SET $type = :value, message = :message, expire = :expires")->execute(array(
             ':value'    => $this->$type,
             ':message'  => $message,
             ':expires'  => $expires,
