@@ -52,6 +52,6 @@ class Tasks
     public function taskCleanUserDatabase()
     {
         $time = strtotime('-1 month');
-        $deleted = Db::pdo()->exec("DELETE FROM users WHERE group_id = 0 and registered < {$time}");
+        Db::pdo()->exec("DELETE FROM users WHERE group_id = 0 and registered < {$time}");
     }
 }
