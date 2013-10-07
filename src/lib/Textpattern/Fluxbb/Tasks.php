@@ -1,7 +1,6 @@
 <?php
 
 namespace Textpattern\Fluxbb;
-use Textpattern\Fluxbb\Db;
 
 /**
  * Runs maintenance tasks when requested.

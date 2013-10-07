@@ -1,7 +1,6 @@
 <?php
 
 namespace Textpattern\Fluxbb;
-use Textpattern\Fluxbb\Db;
 
 /**
  * Filter incoming requests.
@@ -35,7 +34,7 @@ class Filter
                 unset($_COOKIE[$cookie_name]);
                 return;
             }
-
+            
             $sth = Db::pdo()->prepare('SELECT id FROM users WHERE id = :user and group_id = 0');
             $sth->execute(array(':user' => $id));
 

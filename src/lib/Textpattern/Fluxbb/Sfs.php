@@ -1,7 +1,6 @@
 <?php
 
 namespace Textpattern\Fluxbb;
-use Textpattern\Fluxbb\Db;
 
 /**
  * Checks StopForumSpam database against user-data.
