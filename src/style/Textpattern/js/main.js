@@ -375,11 +375,13 @@
 
         // Embed widgets; turns plain links to tweet and gist widgets.
 
-        var tweetRegex = /^https?:\/\/twitter\.com\/(#!\/)?[a-z0-9]+\/status(es)?\/[0-9]+$/i, gistRegex = /^https?:\/\/gist\.github\.com\/[a-z0-9]+\/[0-9]+$/i;
+        var tweetRegex = /^https?:\/\/twitter\.com\/(#!\/)?[a-z0-9]+\/status(es)?\/[0-9]+$/i;
+        var gistRegex = /^https?:\/\/gist\.github\.com\/[a-z0-9]+\/[0-9]+$/i;
+        var youtubeRegex = /^https?:\/\/(?:www\.)?(?:youtube\.com\/watch(?:\/|\?v=)|youtu\.be\/)([a-z0-9\-\_]+)$/i;
 
         $('.postmsg > p > a').each(function ()
         {
-            var $this = $(this), href = $this.attr('href');
+            var $this = $(this), href = $this.attr('href'), matches;
 
             if ($this.parent().text() !== $this.text())
             {
@@ -395,6 +397,14 @@
             if (tweetRegex.test(href))
             {
                 $this.html('').parent().wrap('<blockquote class="twitter-tweet"></blockquote>');
+                return;
+            }
+
+            matches = href.match(youtubeRegex);
+
+            if (matches)
+            {
+                $this.parent().after($('<iframe width="420" height="315" frameborder="0" allowfullscreen></iframe>').attr('src', '//www.youtube-nocookie.com/embed/' + matches[1])).remove();
                 return;
             }
         });
