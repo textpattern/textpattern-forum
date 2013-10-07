@@ -361,40 +361,36 @@
             require(['https://apis.google.com/js/plusone.js']);
         }
 
-        // Embed tweets; turns plain links to tweet widgets.
+        // Embed widgets; turns plain links to tweet and gist widgets.
 
-        var statusRegex = /^https?:\/\/twitter\.com\/(#!\/)?[a-z0-9]+\/status(es)?\/[0-9]+$/i, statusLinks = $('.postmsg > p > a').filter(function ()
-        {
-            var $this = $(this);
-            return statusRegex.test($this.attr('href')) && $this.parent().text() === $this.text();
-        });
-
-        if (statusLinks.length)
-        {
-            statusLinks.html('').parent().wrap('<blockquote class="twitter-tweet"></blockquote>');
-        }
-
-        if (title.length || statusLinks.length)
-        {
-            require(['//platform.twitter.com/widgets.js']);
-        }
-    });
-
-    // Embed Gists.
-
-    require(['jquery'], function ($)
-    {
-        var gistRegex = /^https?:\/\/gist\.github\.com\/[a-z0-9]+\/[0-9]+$/i;
+        var tweetRegex = /^https?:\/\/twitter\.com\/(#!\/)?[a-z0-9]+\/status(es)?\/[0-9]+$/i, gistRegex = /^https?:\/\/gist\.github\.com\/[a-z0-9]+\/[0-9]+$/i;
 
         $('.postmsg > p > a').each(function ()
         {
-            var $this = $(this);
+            var $this = $(this), href = $this.attr('href');
 
-            if (gistRegex.test($this.attr('href')) && $this.parent().text() === $this.text())
+            if ($this.parent().text() !== $this.text())
             {
-                $this.parent().after($('<script></script>').attr('src', $this.attr('href'))).remove();
+                return;
+            }
+
+            if (gistRegex.test(href))
+            {
+                $this.parent().after($('<script></script>').attr('src', href)).remove();
+                return;
+            }
+
+            if (tweetRegex.test(href))
+            {
+                $this.html('').parent().wrap('<blockquote class="twitter-tweet"></blockquote>');
+                return;
             }
         });
+
+        if (title.length || $('.twitter-tweet').length)
+        {
+            require(['//platform.twitter.com/widgets.js']);
+        }
     });
 
     // Analytics.
