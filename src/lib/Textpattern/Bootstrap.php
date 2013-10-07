@@ -19,6 +19,7 @@ class Bootstrap
 
     public function __construct()
     {
+        include dirname(dirname(dirname(dirname(__FILE__)))) . '/vendor/autoload.php';
         $loader = new ClassLoader();
         $loader->add('Textpattern\\Fluxbb', dirname(__DIR__));
         $loader->register();
