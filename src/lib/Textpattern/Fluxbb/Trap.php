@@ -42,7 +42,7 @@ class Trap
      * @param string $url The URL user is redirected when spam trap is filled
      */
 
-    public function __construct($url)
+    public function __construct($url = 'index.php')
     {
         $this->url = (string) $url;
 
