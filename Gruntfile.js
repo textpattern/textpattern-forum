@@ -149,5 +149,5 @@ module.exports = function (grunt)
     grunt.registerTask('default', ['watch']);
     grunt.registerTask('build', ['jshint', 'copy:js', 'copy:theme', 'copy:branding', 'sass', 'uglify']);
     grunt.registerTask('travis', ['jshint']);
-    grunt.registerTask('setup', ['shell:setup']);
+    grunt.registerTask('setup', ['shell:setup', 'build']);
 };
