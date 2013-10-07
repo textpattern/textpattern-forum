@@ -1,16 +1,31 @@
 <?php
 
+$fluxbb_download = 'http://fluxbb.org/download/releases/1.5.4/fluxbb-1.5.4.tar.gz';
+$fluxbb_dir = basename($fluxbb_download, '.tar.gz');
+
 `mkdir -pv tmp`;
 
 chdir('tmp');
 echo "Downloading FluxBB...\n";
 
+`rm -rf $fluxbb_dir`;
 `rm -rf fluxbb`;
-`git clone --branch feature-textpattern-forum --depth 0 https://github.com/textpattern/fluxbb.git fluxbb`;
-
-echo "Cleaning up the downloaded package...\n";
+`curl -O $fluxbb_download`;
+`tar -zxvf $fluxbb_dir.tar.gz`;
+`rm -rf $fluxbb_dir.tar.gz`;
+`mv $fluxbb_dir fluxbb`;
 
 chdir('fluxbb');
+
+echo "Applying patches...\n";
+
+foreach (glob('../../src/setup/patches/*.patch') as $file)
+{
+    echo "Applying ".basename($file)."...\n";
+    `patch -p1 < $file`;
+}
+
+echo "Cleaning up the downloaded package...\n";
 
 foreach (array('.git', '.gitattributes', '.gitignore', 'style', 'COPYING', 'readme.md') as $file)
 {
