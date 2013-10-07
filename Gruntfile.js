@@ -20,10 +20,10 @@ module.exports = function (grunt)
                 tasks: ['sass']
             },
 
-			theme: {
-				files: ['!src/style/*/sass/**', '!src/style/*/js/**', 'src/style/*/**'],
-				tasks: ['copy:theme']
-			},
+            theme: {
+                files: ['!src/style/*/sass/**', '!src/style/*/js/**', 'src/style/*/**'],
+                tasks: ['copy:theme']
+            },
 
             js: {
                 files: 'src/style/*/js/**',
@@ -42,25 +42,25 @@ module.exports = function (grunt)
 
         copy: {
             branding: {
-				files: [
-					{expand: true, cwd: 'bower_components/textpattern-branding/assets/img/', src: ['**'], dest: 'public/style/Textpattern/img/branding/'},
+                files: [
+                    {expand: true, cwd: 'bower_components/textpattern-branding/assets/img/', src: ['**'], dest: 'public/style/Textpattern/img/branding/'},
                     {expand: true, cwd: 'bower_components/textpattern-branding/assets/img/apple-touch-icon/textpattern/', src: ['**'], dest: 'public/'},
                     {expand: true, cwd: 'bower_components/textpattern-branding/assets/img/favicon/textpattern/', src: ['**'], dest: 'public/'},
                     {expand: true, cwd: 'bower_components/textpattern-branding/assets/img/windows-site-tile/textpattern/', src: ['**'], dest: 'public/'}
-				]
+                ]
             },
 
-			js: {
-				files: [
-					{expand: true, cwd: 'src/style/Textpattern/js/libs/', src: ['**'], dest: 'public/style/Textpattern/js/'}
-				]
-			},
+            js: {
+                files: [
+                    {expand: true, cwd: 'src/style/Textpattern/js/libs/', src: ['**'], dest: 'public/style/Textpattern/js/'}
+                ]
+            },
 
-			theme: {
-				files: [
-					{expand: true, cwd: 'src/style/Textpattern/', src: ['**', '!sass/**', '!js/**'], dest: 'public/style/Textpattern/'}
-				]
-			}
+            theme: {
+                files: [
+                    {expand: true, cwd: 'src/style/Textpattern/', src: ['**', '!sass/**', '!js/**'], dest: 'public/style/Textpattern/'}
+                ]
+            }
         },
 
         jshint: {
@@ -121,7 +121,7 @@ module.exports = function (grunt)
                         'public/style/Textpattern/js/prettify.js': ['bower_components/google-code-prettify/src/prettify.js'],
                         'public/style/Textpattern/js/require.js': ['bower_components/requirejs/require.js'],
                         'public/style/Textpattern/js/responsivenav.js': ['bower_components/responsive-nav/responsive-nav.js']
-					},
+                    },
                     {
                         expand: true,
                         cwd: 'bower_components/google-code-prettify/src/',
