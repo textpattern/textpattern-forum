@@ -16,3 +16,94 @@ html {
     /* as above, for Windows Phone */
     -ms-text-size-adjust: 100%;
 }
+
+body {
+    margin: 0;
+    color: $color-text-inverse;
+    background-color: $color-text;
+}
+
+.wrapper {
+    position: relative;
+    padding: 1px 0;
+    color: $color-text;
+    background: $color-background;
+}
+
+header,
+.container,
+footer {
+    margin: 0 auto;
+    width: 90%;
+    max-width: $container-max-width;
+}
+
+header {
+    position: relative;
+}
+
+h1.masthead {
+    font-size: 1em;
+    margin: 1em 0;
+
+    a {
+        @include hide-text;
+        @include svg-graphic(/branding/textpattern/textpattern-mobile, png, 208px, 34px);
+
+        display: block;
+        width: 208px;
+        height: 34px;
+
+        &:hover {
+            @include hover-brightness;
+        }
+
+        @include breakpoint($breakpoint-2) {
+            @include svg-graphic(/branding/textpattern/textpattern, png, 320px, 52px);
+
+            width: 320px;
+            height: 52px;
+        }
+    }
+}
+
+footer {
+    clear: both;
+    position: relative;
+}
+
+.legal {
+    @include adjust-font-size-to(12px, .9);
+
+    margin-right: 48px;
+}
+
+.html5 {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    a {
+        @include hide-text;
+        @include svg-graphic(html5, png, 32px, 32px);
+
+        display: block;
+        width: 32px;
+        height: 32px;
+
+        &:hover {
+            @include hover-brightness;
+        }
+    }
+}
+
+/* address differences between Firefox and other browsers */
+hr {
+    @include box-sizing(content-box);
+
+    border: 0; // remove the default `hr` border
+    border-bottom: 1px solid $color-border;
+    height: 0;
+}
+
+
