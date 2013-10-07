@@ -8,11 +8,11 @@
    ========================================================================== */
 
 html {
-	-webkit-tap-highlight-color: rgba($color-link-hover, .5);
-	/* always force scrollbar padding so we don't get 'jumping' */
-	overflow-y: scroll;
-	/* prevent iOS text size adjust after orientation change, without disabling user zoom */
-	-webkit-text-size-adjust: 100%;
-	/* as above, for Windows Phone */
-	-ms-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba($color-link-hover, .5);
+    /* always force scrollbar padding so we don't get 'jumping' */
+    overflow-y: scroll;
+    /* prevent iOS text size adjust after orientation change, without disabling user zoom */
+    -webkit-text-size-adjust: 100%;
+    /* as above, for Windows Phone */
+    -ms-text-size-adjust: 100%;
 }
