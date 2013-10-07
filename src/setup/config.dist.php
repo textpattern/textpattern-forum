@@ -33,6 +33,21 @@ $db_password = '';
 $db_host = 'localhost';
 
 /**
+ * An URL where spam-trap triggering users are redirected to.
+ */
+
+define('TEXTPATTERN_TRAP_URL', 'http://forum.textpattern.test/');
+
+/**
+ * A key need to run tasks.
+ *
+ * Tasks can be run by access URL:
+ * http://forum.textpattern.test/?textpattern_fluxbb_tasks={KEY}
+ */
+
+define('TEXTPATTERN_TASKS_KEY', '');
+
+/**
  * Do not change anything after this line.
  *
  * These setting must not be altered.
