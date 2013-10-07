@@ -1,9 +1,9 @@
 <?php
 
 /**
- * This needs to be long, secure secret key.
+ * This needs to be a long, secure, secret key.
  *
- * Use number of different symbols, hundreds of characters.
+ * Use a number of different symbols, and hundreds of characters.
  */
 
 $cookie_seed = '';
@@ -33,13 +33,13 @@ $db_password = '';
 $db_host = 'localhost';
 
 /**
- * An URL where spam-trap triggering users are redirected to.
+ * A URL where spam-trap triggering users are redirected to.
  */
 
 define('TEXTPATTERN_TRAP_URL', 'http://forum.textpattern.test/');
 
 /**
- * A key need to run tasks.
+ * A key needed to run tasks.
  *
  * Tasks can be run by access URL:
  * http://forum.textpattern.test/?textpattern_fluxbb_tasks={KEY}
