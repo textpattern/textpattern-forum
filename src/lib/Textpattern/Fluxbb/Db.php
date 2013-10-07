@@ -19,7 +19,7 @@ class Db
     /**
      * Gets a connection.
      *
-     * @return PDO|bool
+     * @return \PDO|bool
      * @throws \PDOException
      */
 
@@ -28,8 +28,8 @@ class Db
         if (!self::$pdo)
         {
             global $db_host, $db_name, $db_username, $db_password, $db_prefix;
-            self::$pdo = new PDO('mysql:dbname='.$db_name.';host='.$db_host, $db_username, $db_password);
-            self::$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            self::$pdo = new \PDO('mysql:dbname='.$db_name.';host='.$db_host, $db_username, $db_password);
+            self::$pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
         }
 
         return self::$pdo;
