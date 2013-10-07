@@ -85,7 +85,7 @@ footer {
 
     a {
         @include hide-text;
-        @include svg-graphic(html5, png, 32px, 32px);
+        @include svg-graphic(/branding/misc/html5, png, 32px, 32px);
 
         display: block;
         width: 32px;

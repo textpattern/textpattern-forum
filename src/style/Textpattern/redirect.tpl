@@ -47,6 +47,29 @@
 
     </div><!-- /.wrapper -->
 
+
+<!-- Secondary Content -->
+    <div role="complementary" class="container">
+
+        <p>PLACHOLDER TEXT</p>
+
+    </div><!-- /role="complementary" -->
+
+    
+<!-- Footer -->
+    <footer role="contentinfo">
+        <p class="legal">
+            <a href="#">Copyright</a> 2004–2013 The Textpattern Development Team.
+            <a href="#">Contact us</a>.
+            <a href="#">Privacy</a>.
+            <a href="http://textpattern.com/humans.txt">Colophon</a>.
+            Textpattern is both free and open source. <a href="#">GPLv2 license</a>.
+        </p>
+        <p class="html5"><a rel="external" href="http://www.w3.org/html/logo/" title="HTML5 powered">HTML5 powered</a></p>
+    </footer>
+
+
+<!-- JavaScript -->
     <script data-main="style/Textpattern/js/main.js" src="style/Textpattern/js/require.js"></script>
 </body>
 </html>
