@@ -1,6 +1,7 @@
 <?php
 
 namespace Textpattern\Fluxbb;
+use Textpattern\Fluxbb\Db;
 
 /**
  * Filter incoming requests.
