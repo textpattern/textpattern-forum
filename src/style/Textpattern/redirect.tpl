@@ -4,8 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="application-name" content="Textpattern Forum">
+    <link rel="stylesheet" href="style/Textpattern/css/main.@@timestamp.css">
     <pun_head>
-    <script src="style/Textpattern/js/modernizr.js"></script>
+    <script src="style/Textpattern/js/modernizr.@@timestamp.js"></script>
 </head>
 <body id="page-redirect">
     <div class="wrapper">
@@ -79,6 +80,6 @@
 
 
 <!-- JavaScript -->
-    <script data-main="style/Textpattern/js/main.js" src="style/Textpattern/js/require.js"></script>
+    <script data-main="style/Textpattern/js/main.@@timestamp.js" src="style/Textpattern/js/require.@@timestamp.js"></script>
 </body>
 </html>

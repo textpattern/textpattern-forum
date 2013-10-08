@@ -10,9 +10,14 @@ module.exports = function (grunt)
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-shell');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-replace');
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
+
+        opt : {
+            timestamp: '<%= new Date().getTime() %>'
+        },
 
         watch: {
             sass: {
@@ -58,7 +63,24 @@ module.exports = function (grunt)
 
             theme: {
                 files: [
-                    {expand: true, cwd: 'src/style/Textpattern/', src: ['**', '!sass/**', '!js/**'], dest: 'public/style/Textpattern/'}
+                    {expand: true, cwd: 'src/style/', src: ['Textpattern.css'], dest: 'public/style/'},
+                    {expand: true, cwd: 'src/style/Textpattern/', src: ['**', '!*.tpl', '!sass/**', '!js/**'], dest: 'public/style/Textpattern/'}
+                ]
+            }
+        },
+
+        replace: {
+            theme: {
+                options: {
+                    patterns: [
+                        {
+                            match: 'timestamp',
+                            replacement: '<%= opt.timestamp %>'
+                        }
+                    ]
+                },
+                files: [
+                    {expand: true, cwd: 'src/style/Textpattern/', src: ['*.tpl'], dest: 'public/style/Textpattern/'}
                 ]
             }
         },
@@ -101,7 +123,7 @@ module.exports = function (grunt)
         cssmin: {
             main: {
                 files: {
-                    'public/style/Textpattern.css': ['tmp/style/Textpattern.css'],
+                    'public/style/Textpattern/css/main.css': ['tmp/style/Textpattern.css'],
                     'public/style/Textpattern/css/ie8.css': ['tmp/style/Textpattern/sass/ie8.css']
                 }
             }
@@ -147,7 +169,7 @@ module.exports = function (grunt)
     grunt.registerTask('test', ['jshint']);
     grunt.registerTask('sass', ['compass', 'cssmin']);
     grunt.registerTask('default', ['watch']);
-    grunt.registerTask('build', ['jshint', 'copy:js', 'copy:theme', 'copy:branding', 'sass', 'uglify']);
+    grunt.registerTask('build', ['jshint', 'copy:js', 'copy:theme', 'replace:theme', 'copy:branding', 'sass', 'uglify']);
     grunt.registerTask('travis', ['jshint']);
     grunt.registerTask('setup', ['shell:setup', 'build']);
 };
