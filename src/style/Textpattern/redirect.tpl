@@ -38,6 +38,7 @@
 <!-- Primary Content -->
         <div class="container">
             <main role="main" aria-label="Main content">
+                <h1 class="accessibility">Textpattern Forum</h1>
 
                 <pun_redir_main>
                 <pun_footer>
