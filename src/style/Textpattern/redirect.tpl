@@ -22,6 +22,7 @@
             <form role="search" action="http://www.google.com/cse">
                 <a href="search.php">Advanced</a>
                 <input type="search" name="q" size="32" id="search-query" placeholder="Search forum…">
+                <input type="submit" name="sa" value="Go">
                 <input type="hidden" name="cx" value="013284010981475036739:4p3oc9ihitk">
                 <input type="hidden" name="ie" value="UTF-8">
             </form>
