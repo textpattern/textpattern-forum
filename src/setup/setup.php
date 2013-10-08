@@ -58,7 +58,7 @@ echo "Moving in the new installation...\n";
 
 foreach (glob('public/*') as $file)
 {
-    if (basename($file) === 'COPYING' || in_array(pathinfo($file, PATHINFO_EXTENSION), array('php', 'md')) || is_dir($file))
+    if (basename($file) === 'COPYING' || in_array(pathinfo($file, PATHINFO_EXTENSION), array('php', 'md', 'js')) || is_dir($file))
     {
         echo "Remove {$file}...\n";
         `rm -Rf '{$file}'`;
