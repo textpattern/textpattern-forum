@@ -1,0 +1,297 @@
+From 41aa2dbb55775befc29cbe356fb96057fe9defd3 Mon Sep 17 00:00:00 2001
+From: Jukka Svahn <web@rahinaa.biz>
+Date: Tue, 1 Oct 2013 14:03:09 +0300
+Subject: [PATCH 1/2] Textile support.
+
+---
+ include/parser.php |   71 ++++++++++++++++++----------------------------------
+ 1 file changed, 24 insertions(+), 47 deletions(-)
+
+diff --git a/include/parser.php b/include/parser.php
+index 5d564d2..fde6e8b 100644
+--- a/include/parser.php
++++ b/include/parser.php
+@@ -880,46 +880,25 @@ function do_smilies($text)
+ //
+ function parse_message($text, $hide_smilies)
+ {
+-	global $pun_config, $lang_common, $pun_user;
++	global $pun_config, $cur_post;
++	static $textile = null;
+ 
+ 	if ($pun_config['o_censoring'] == '1')
++	{
+ 		$text = censor_words($text);
++	}
+ 
+-	// Convert applicable characters to HTML entities
+-	$text = pun_htmlspecialchars($text);
+-
+-	// If the message contains a code tag we have to split it up (text within [code][/code] shouldn't be touched)
+-	if (strpos($text, '[code]') !== false && strpos($text, '[/code]') !== false)
+-		list($inside, $text) = extract_blocks($text, '[code]', '[/code]');
+-
+-	if ($pun_config['p_message_bbcode'] == '1' && strpos($text, '[') !== false && strpos($text, ']') !== false)
+-		$text = do_bbcode($text);
+-
+-	if ($pun_config['o_smilies'] == '1' && $pun_user['show_smilies'] == '1' && $hide_smilies == '0')
+-		$text = do_smilies($text);
+-
+-	// Deal with newlines, tabs and multiple spaces
+-	$pattern = array("\n", "\t", '  ', '  ');
+-	$replace = array('<br />', '&#160; &#160; ', '&#160; ', ' &#160;');
+-	$text = str_replace($pattern, $replace, $text);
++	if ($textile === null)
++    {
++		$textile = new Netcarver\Textile\Parser();
++    }
+ 
+-	// If we split up the message before we have to concatenate it together again (code tags)
+-	if (isset($inside))
++	if (defined('PUN_NEW_MEMBER') && $cur_post['group_id'] == PUN_NEW_MEMBER)
+ 	{
+-		$parts = explode("\1", $text);
+-		$text = '';
+-		foreach ($parts as $i => $part)
+-		{
+-			$text .= $part;
+-			if (isset($inside[$i]))
+-			{
+-				$num_lines = (substr_count($inside[$i], "\n"));
+-				$text .= '</p><div class="codebox"><pre'.(($num_lines > 28) ? ' class="vscroll"' : '').'><code>'.pun_trim($inside[$i], "\n\r").'</code></pre></div><p>';
+-			}
+-		}
++		return $textile->textileRestricted($text, false, true);
+ 	}
+ 
+-	return clean_paragraphs($text);
++	return $textile->textileRestricted($text, false, false);
+ }
+ 
+ 
+@@ -954,25 +933,23 @@ function clean_paragraphs($text)
+ //
+ function parse_signature($text)
+ {
+-	global $pun_config, $lang_common, $pun_user;
++	global $pun_config, $cur_post;
++	static $textile = null;
+ 
+ 	if ($pun_config['o_censoring'] == '1')
++	{
+ 		$text = censor_words($text);
++	}
+ 
+-	// Convert applicable characters to HTML entities
+-	$text = pun_htmlspecialchars($text);
+-
+-	if ($pun_config['p_sig_bbcode'] == '1' && strpos($text, '[') !== false && strpos($text, ']') !== false)
+-		$text = do_bbcode($text, true);
+-
+-	if ($pun_config['o_smilies_sig'] == '1' && $pun_user['show_smilies'] == '1')
+-		$text = do_smilies($text);
+-
++	if ($textile === null)
++	{
++		$textile = new Netcarver\Textile\Parser();
++	}
+ 
+-	// Deal with newlines, tabs and multiple spaces
+-	$pattern = array("\n", "\t", '  ', '  ');
+-	$replace = array('<br />', '&#160; &#160; ', '&#160; ', ' &#160;');
+-	$text = str_replace($pattern, $replace, $text);
++	if (defined('PUN_NEW_MEMBER') && $cur_post['group_id'] == PUN_NEW_MEMBER)
++	{
++		return $textile->textileRestricted($text, false, true);
++	}
+ 
+-	return clean_paragraphs($text);
++	return $textile->textileRestricted($text, false, false);
+ }
+-- 
+1.7.10.1
+
+
+From 0767cc132dda6b8317a9784bf01a8b3959b58ad3 Mon Sep 17 00:00:00 2001
+From: Jukka Svahn <web@rahinaa.biz>
+Date: Tue, 8 Oct 2013 16:09:11 +0300
+Subject: [PATCH 2/2] Disable BBCode pre-parsing and format emails.
+
+Users will receive raw Textile, which is relative
+readable format. Other option would be to somehow
+salvage the email, or convert FluxBB to use HTML.
+---
+ include/email.php  |  144 +---------------------------------------------------
+ include/parser.php |    1 +
+ 2 files changed, 2 insertions(+), 143 deletions(-)
+
+diff --git a/include/email.php b/include/email.php
+index 88c62a8..3143657 100644
+--- a/include/email.php
++++ b/include/email.php
+@@ -60,149 +60,7 @@ function encode_mail_text($str)
+ //
+ function bbcode2email($text, $wrap_length = 72)
+ {
+-	static $base_url;
+-
+-	if (!isset($base_url))
+-		$base_url = get_base_url();
+-
+-	$text = pun_trim($text, "\t\n ");
+-
+-	$shortcut_urls = array(
+-		'topic' => '/viewtopic.php?id=$1',
+-		'post' => '/viewtopic.php?pid=$1#p$1',
+-		'forum' => '/viewforum.php?id=$1',
+-		'user' => '/profile.php?id=$1',
+-	);
+-
+-	// Split code blocks and text so BBcode in codeblocks won't be touched
+-	list($code, $text) = extract_blocks($text, '[code]', '[/code]');
+-
+-	// Strip all bbcodes, except the quote, url, img, email, code and list items bbcodes
+-	$text = preg_replace(array(
+-		'%\[/?(?!(?:quote|url|topic|post|user|forum|img|email|code|list|\*))[a-z]+(?:=[^\]]+)?\]%i',
+-		'%\n\[/?list(?:=[^\]]+)?\]%i' // A separate regex for the list tags to get rid of some whitespace
+-	), '', $text);
+-
+-	// Match the deepest nested bbcode
+-	// An adapted example from Mastering Regular Expressions
+-	$match_quote_regex = '%
+-		\[(quote|\*|url|img|email|topic|post|user|forum)(?:=([^\]]+))?\]
+-		(
+-			(?>[^\[]*)
+-			(?>
+-				(?!\[/?\1(?:=[^\]]+)?\])
+-				\[
+-				[^\[]*
+-			)*
+-		)
+-		\[/\1\]
+-	%ix';
+-
+-	$url_index = 1;
+-	$url_stack = array();
+-	while (preg_match($match_quote_regex, $text, $matches))
+-	{
+-		// Quotes
+-		if ($matches[1] == 'quote')
+-		{
+-			// Put '>' or '> ' at the start of a line
+-			$replacement = preg_replace(
+-				array('%^(?=\>)%m', '%^(?!\>)%m'),
+-				array('>', '> '),
+-				$matches[2]." said:\n".$matches[3]);
+-		}
+-
+-		// List items
+-		elseif ($matches[1] == '*')
+-		{
+-			$replacement = ' * '.$matches[3];
+-		}
+-
+-		// URLs and emails
+-		elseif (in_array($matches[1], array('url', 'email')))
+-		{
+-			if (!empty($matches[2]))
+-			{
+-				$replacement = '['.$matches[3].']['.$url_index.']';
+-				$url_stack[$url_index] = $matches[2];
+-				$url_index++;
+-			}
+-			else
+-				$replacement = '['.$matches[3].']';
+-		}
+-
+-		// Images
+-		elseif ($matches[1] == 'img')
+-		{
+-			if (!empty($matches[2]))
+-				$replacement = '['.$matches[2].']['.$url_index.']';
+-			else
+-				$replacement = '['.basename($matches[3]).']['.$url_index.']';
+-
+-			$url_stack[$url_index] = $matches[3];
+-			$url_index++;
+-		}
+-
+-		// Topic, post, forum and user URLs
+-		elseif (in_array($matches[1], array('topic', 'post', 'forum', 'user')))
+-		{
+-			$url = isset($shortcut_urls[$matches[1]]) ? $base_url.$shortcut_urls[$matches[1]] : '';
+-
+-			if (!empty($matches[2]))
+-			{
+-				$replacement = '['.$matches[3].']['.$url_index.']';
+-				$url_stack[$url_index] = str_replace('$1', $matches[2], $url);
+-				$url_index++;
+-			}
+-			else
+-				$replacement = '['.str_replace('$1', $matches[3], $url).']';
+-		}
+-
+-		// Update the main text if there is a replacement
+-		if (!is_null($replacement))
+-		{
+-			$text = str_replace($matches[0], $replacement, $text);
+-			$replacement = null;
+-		}
+-	}
+-
+-	// Put code blocks and text together
+-	if (isset($code))
+-	{
+-		$parts = explode("\1", $text);
+-		$text = '';
+-		foreach ($parts as $i => $part)
+-		{
+-			$text .= $part;
+-			if (isset($code[$i]))
+-				$text .= trim($code[$i], "\n\r");
+-		}
+-	}
+-
+-	// Put URLs at the bottom
+-	if ($url_stack)
+-	{
+-		$text .= "\n\n";
+-		foreach ($url_stack as $i => $url)
+-			$text .= "\n".' ['.$i.']: '.$url;
+-	}
+-
+-	// Wrap lines if $wrap_length is higher than -1
+-	if ($wrap_length > -1)
+-	{
+-		// Split all lines and wrap them individually
+-		$parts = explode("\n", $text);
+-		foreach ($parts as $k => $part)
+-		{
+-			preg_match('%^(>+ )?(.*)%', $part, $matches);
+-			$parts[$k] = wordwrap($matches[1].$matches[2], $wrap_length -
+-				strlen($matches[1]), "\n".$matches[1]);
+-		}
+-
+-		return implode("\n", $parts);
+-	}
+-	else
+-		return $text;
++	return wordwrap($text, min(72, (int) $wrap_length));
+ }
+ 
+ 
+diff --git a/include/parser.php b/include/parser.php
+index fde6e8b..a7e7f89 100644
+--- a/include/parser.php
++++ b/include/parser.php
+@@ -64,6 +64,7 @@ $smilies = array(
+ //
+ function preparse_bbcode($text, &$errors, $is_signature = false)
+ {
++	return $text;
+ 	global $pun_config, $lang_common, $lang_post, $re_list;
+ 
+ 	// Remove empty tags
+-- 
+1.7.10.1
+
