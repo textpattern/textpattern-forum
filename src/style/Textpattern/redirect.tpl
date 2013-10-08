@@ -18,6 +18,13 @@
 <!-- Header -->
         <header role="banner" itemscope itemtype="http://schema.org/Organization">
             <h1 itemprop="name" class="masthead"><a rel="home" itemprop="url" href="/" title="Go to the Textpattern homepage">Textpattern CMS</a></h1>
+
+            <form role="search" action="http://www.google.com/cse">
+                <a href="search.php">Advanced</a>
+                <input type="search" name="q" size="32" id="search-query" placeholder="Search forum…">
+                <input type="hidden" name="cx" value="013284010981475036739:4p3oc9ihitk">
+                <input type="hidden" name="ie" value="UTF-8">
+            </form>
         </header>
 
 <!-- Navigation -->

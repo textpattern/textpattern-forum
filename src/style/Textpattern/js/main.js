@@ -45,7 +45,7 @@
             return;
         }
 
-        $('.search-form input[name=q]').val(topic+': ');
+        $('[role=search] input[name=q]').val(topic+': ');
     });
 
     // Quoting.
