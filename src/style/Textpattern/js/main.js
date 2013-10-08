@@ -405,7 +405,7 @@
 
             if (matches)
             {
-                $this.parent().after($('<iframe width="420" height="315" frameborder="0" allowfullscreen></iframe>').attr('src', '//www.youtube-nocookie.com/embed/' + matches[1])).remove();
+                $this.parent().after($('<iframe class="embed-video embed-youtube" width="420" height="315" frameborder="0" allowfullscreen></iframe>').attr('src', '//www.youtube-nocookie.com/embed/' + matches[1])).remove();
                 return;
             }
 
@@ -413,7 +413,7 @@
 
             if (matches)
             {
-                $this.parent().after($('<iframe width="420" height="179" frameborder="0" allowfullscreen></iframe>').attr('src', '//player.vimeo.com/video/' + matches[1])).remove();
+                $this.parent().after($('<iframe class="embed-video embed-vimeo" width="420" height="179" frameborder="0" allowfullscreen></iframe>').attr('src', '//player.vimeo.com/video/' + matches[1])).remove();
                 return;
             }
         });
