@@ -9,6 +9,5 @@
 
 <IfModule mod_rewrite.c>
     RewriteEngine On
-    RewriteRule ^(js|css)/([a-z0-9]+)\.([0-9]+)\.(js|css)$ $1/$2.$4 [L]
-    RewriteRule ^([a-z0-9]+)\.([0-9]+)\.(css)$ $1.$3 [L]
+    RewriteRule ^([A-Za-z0-9]+)/(js|css)/([a-z0-9]+)\.([0-9]+)\.(js|css)$ $1/$2/$3.$5 [L]
 </IfModule>

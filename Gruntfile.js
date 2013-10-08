@@ -63,7 +63,7 @@ module.exports = function (grunt)
 
             theme: {
                 files: [
-                    {expand: true, cwd: 'src/style/', src: ['Textpattern.css'], dest: 'public/style/'},
+                    {expand: true, cwd: 'src/style/', src: ['Textpattern.css', '.htaccess'], dest: 'public/style/'},
                     {expand: true, cwd: 'src/style/Textpattern/', src: ['**', '!*.tpl', '!sass/**', '!js/**'], dest: 'public/style/Textpattern/'}
                 ]
             }
