@@ -67,6 +67,22 @@ h1.masthead {
     }
 }
 
+[role="search"] {
+    position: absolute;
+    top: 0;
+    right: 48px;
+    z-index: 3;
+
+    @include breakpoint($breakpoint-2) {
+        top: 0.75em;
+        right: 0;
+    }
+
+    input[type="search"] {
+        @include border-radius;
+    }
+}
+
 footer {
     clear: both;
     position: relative;

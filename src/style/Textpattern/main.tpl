@@ -18,6 +18,14 @@
 <!-- Header -->
         <header role="banner" itemscope itemtype="http://schema.org/Organization">
             <h1 itemprop="name" class="masthead"><a rel="home" itemprop="url" href="/" title="Go to the Textpattern homepage">Textpattern CMS</a></h1>
+
+            <form role="search" action="http://www.google.com/cse">
+                <a href="search.php">Advanced</a>
+                <input type="search" name="q" size="32" id="search-query">
+                <input type="submit" name="sa" value="Search">
+                <input type="hidden" name="cx" value="013284010981475036739:4p3oc9ihitk">
+                <input type="hidden" name="ie" value="UTF-8">
+            </form>
         </header>
 
 <!-- Navigation -->
@@ -42,14 +50,6 @@
 
                 <pun_desc>
                 <pun_navlinks>
-                <form class="search-form" action="http://www.google.com/cse">
-                    <label for="search-query">Search</label>
-                    <a href="search.php">Advanced</a>
-                    <input type="search" name="q" size="40" id="search-query">
-                    <input type="submit" name="sa" value="Go">
-                    <input type="hidden" name="cx" value="013284010981475036739:4p3oc9ihitk">
-                    <input type="hidden" name="ie" value="UTF-8">
-                </form>
                 <pun_status>
                 <pun_announcement>
                 <pun_main>
