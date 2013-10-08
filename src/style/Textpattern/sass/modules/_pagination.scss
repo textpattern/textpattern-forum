@@ -1,0 +1,33 @@
+//
+// note: this file is for use with Sass and Compass - http://sass-lang.com, http://compass-style.org
+// don't use it as your live site stylesheet!
+//
+
+
+/* Pagination links
+   ========================================================================== */
+
+.pagelink {
+    strong {
+        @include border-radius(0.2142857em); // 3px / 14px
+
+        border: 1px solid $color-border;
+        padding: 0.2em 0.4em;
+    }
+
+    a {
+        @include border-radius(0.2142857em); // 3px / 14px
+
+        border: 1px solid $color-background;
+        padding: 0.2em 0.4em;
+
+        &:hover {
+            background-color: #e3edfc;
+        }
+
+        &:active {
+            color: darken($color-text, 10%);
+            background-color: #c7dbfa;
+        }
+    }
+}
