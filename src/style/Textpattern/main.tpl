@@ -39,7 +39,6 @@
         <div class="container">
             <main role="main" aria-label="Main content">
 
-                <pun_title>
                 <pun_desc>
                 <pun_navlinks>
                 <form class="search-form" action="http://www.google.com/cse">
