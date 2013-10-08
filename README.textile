@@ -76,7 +76,9 @@ Periodically we update the "patch files":https://github.com/textpattern/textpatt
 
 bc. $ grunt setup
 
-If FluxBB installation version has changed, access your forums and follow the updating steps.
+If FluxBB installation version has changed, access your forums and follow the updating steps. After done, run postsetup task:
+
+bc. $ grunt postsetup
 
 h2. Building
 
