@@ -19,7 +19,7 @@
         <header role="banner" itemscope itemtype="http://schema.org/Organization">
             <h1 itemprop="name" class="masthead"><a rel="home" itemprop="url" href="/" title="Go to the Textpattern homepage">Textpattern CMS</a></h1>
 
-            <form class="search-form" role="search" action="http://www.google.com/cse">
+            <form id="search-form" role="search" action="http://www.google.com/cse">
                 <a href="search.php">Advanced</a>
                 <input type="search" name="q" size="32" id="search-query">
                 <input type="submit" name="sa" value="Search">
