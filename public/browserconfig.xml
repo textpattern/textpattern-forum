@@ -9,8 +9,8 @@
             <TileColor>#ffffff</TileColor>
         </tile>
         <notification>
-            <polling-uri src="http://forum.textpattern.com/extern.php?type=RSS&action=active"/>
-            <polling-uri2 src="http://forum.textpattern.com/extern.php?type=RSS&action=new"/>
+            <polling-uri src="http://forum.textpattern.com/extern.php?type=RSS&amp;action=active"/>
+            <polling-uri2 src="http://forum.textpattern.com/extern.php?type=RSS&amp;action=new"/>
             <frequency>30</frequency>
             <cycle>1</cycle>
         </notification>
