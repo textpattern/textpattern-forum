@@ -239,6 +239,58 @@
             {
                 posts : 2900,
                 title : 'kyū'
+            },
+            {
+                posts : 3000,
+                title : 'Mau'
+            },
+            {
+                posts : 3100,
+                title : 'Byakko'
+            },
+            {
+                posts : 3200,
+                title : 'Kasha'
+            },
+            {
+                posts : 3300,
+                title : 'Bakeneko'
+            },
+            {
+                posts : 3400,
+                title : 'Nue'
+            },
+            {
+                posts : 3500,
+                title : 'Shachihoko'
+            },
+            {
+                posts : 4444,
+                title : 'Kusanagi'
+            },
+            {
+                posts : 5555,
+                title : 'Sugari no Ontachi'
+            },
+            {
+                posts : 6666,
+                title : 'Masamune'
+            },
+            {
+                posts : 7000,
+                title : 'Chrysophylax'
+            },
+            {
+                posts : 7500,
+                title : 'Glaurung'
+            },
+            {
+                posts : 8000,
+                title : 'Icefyre'
+            },
+            {
+                posts : 9000,
+                title : 'Amaterasu'
             }
         ];
 
