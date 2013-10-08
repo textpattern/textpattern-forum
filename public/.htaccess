@@ -14,3 +14,16 @@ ErrorDocument 500 "500"
     RewriteCond %{REQUEST_FILENAME} /plugins/
     RewriteRule ^(.*) - [F]
 </IfModule>
+
+<FilesMatch "\.(gif|jpe?g|png)$">
+
+    <ifModule mod_headers.c>
+        Header append Cache-Control "public"
+    </ifModule>
+
+    <ifModule mod_expires.c>
+        ExpiresActive On
+        ExpiresDefault "access plus 1 year"
+    </ifModule>
+
+</FilesMatch>
