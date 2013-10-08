@@ -1,0 +1,53 @@
+/* the humans responsible & colophon */
+/* humanstxt.org */
+
+/* TEAM */
+    The Textpattern Development Team
+    Site: http://textpattern.com
+    Twitter: http://twitter.com/textpattern
+    GitHub: https://github.com/textpattern
+    Location: Everywhere
+
+/* SITE */
+    Standards: HTML5, CSS3
+    Server: Apache, MySQL, PHP
+    Components: FluxBB, jQuery, Require.js, Modernizr,
+        Google Code Prettify, jQuery.cookie, Web Font Loader,
+        Responsive Nav, jQuery.placeholder
+    Software: Node.js, Grunt.js, Bower, Composer, Compass, git,
+        Panic Coda, CodeKit, Adobe Photoshop, Adobe Illustrator,
+        ImageOptim, ImageAlpha, grunt-contrib-watch, grunt-contrib-compass,
+        grunt-contrib-copy, grunt-contrib-concat, grunt-contrib-uglify,
+        grunt-contrib-jshint, grunt-shell, grunt-contrib-cssmin,
+        grunt-replace, grunt-contrib-htmlmin
+    Source: https://github.com/textpattern/textpattern-forum
+
+
+                .ttTTttx
+               xPXTTTTTtt-                     xppx
+             pPPTTTTTTTTXxx                  px    xp
+           .tPTTTTTTTTTTTTt-               .t-      .t-
+          xPXTTTTTTTTTTTTTp               px          xx
+        -tPTTTTTTTTTTTTTt                -x          -t
+      .tPTTTTTTTTTTTTTT.                -x         .t-
+     xtXTTTTTTTTTTTTTTTt-              xx         xx
+    PxTTTTTTTTTTTTTTTt..-t.          -t.     .pttx.
+    xxXTTTTTTTTTTTTTPpp.- px        xp     xXTt-
+     -tPTTTTTTTTxTTTXppp... xx    px     pTTx
+       xtPTTTTf   tTTTxp-... .t-.t.    .XTt.
+        .xxXX-     -XTTPxp.- ..Pp     tTX-
+                     tTTTtp--xt     pTTx
+                      -XTTXtt-    .PTP.
+                        xTTp     xTTTx
+                        pt     pTTTP-.t.
+                      .t-    .PTTTP-   xx
+                     xx     xTTTTTXp-.  .t.
+                   -t.    -XTx xTTTTt--.  px
+                 .t-    .PTP.   .tTTTTx--.. xp
+                xx     xTTp       .PTTTP--.  -t.
+              -t.    -XTt           pTTTTt.-.  px
+            .t-   ..PTX.              xTTTTp--.. xp
+           px    .xTTp                 .PTTTP----..t-
+         px.   .-XTt                     pTTTTx.p.. -t.
+        -p.    tTX-                        tTTTXp-p.. px
+         -xxppTT.                            -xTTP--.-p
