@@ -27,10 +27,19 @@ foreach (glob('../../src/setup/patches/*.patch') as $file)
 
 echo "Cleaning up the downloaded package...\n";
 
-foreach (array('.git', '.gitattributes', '.gitignore', 'style', 'COPYING', 'readme.md') as $file)
+foreach (array('.git', '.gitattributes', '.gitignore', 'COPYING', 'readme.md') as $file)
 {
     echo "Remove {$file}...\n";
     `rm -Rf '{$file}'`;
+}
+
+foreach (glob('style/*') as $file)
+{
+    if (basename($file) !== 'imports')
+    {
+        echo "Remove {$file}...\n";
+        `rm -Rf '{$file}'`;
+    }
 }
 
 chdir('../../');
