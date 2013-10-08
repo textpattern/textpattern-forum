@@ -281,7 +281,7 @@
 
                 if (matches)
                 {
-                    $this.html($this.html().replace(join('', matches.slice(1))).attr('class', 'prettyprint language-' + matches[3]);
+                    $this.html($this.html().replace(matches.slice(1).join())).attr('class', 'prettyprint language-' + matches[3]);
                 }
                 else
                 {
