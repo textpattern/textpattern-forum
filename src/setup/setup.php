@@ -6,13 +6,18 @@ $fluxbb_dir = basename($fluxbb_download, '.tar.gz');
 `mkdir -pv tmp`;
 
 chdir('tmp');
-echo "Downloading FluxBB...\n";
 
 `rm -rf $fluxbb_dir`;
 `rm -rf fluxbb`;
-`curl -O $fluxbb_download`;
+
+if (!file_exists("$fluxbb_dir.tar.gz"))
+{
+    echo "Downloading FluxBB...\n";
+    `curl -O $fluxbb_download`;
+}
+
+echo "Extracting download...\n";
 `tar -zxvf $fluxbb_dir.tar.gz`;
-`rm -rf $fluxbb_dir.tar.gz`;
 `mv $fluxbb_dir fluxbb`;
 
 chdir('fluxbb');
@@ -73,4 +78,4 @@ echo "Moving in the new installation...\n";
 `chmod 755 public/cache`;
 
 echo "Removing trash...\n";
-`rm -Rf tmp`;
+`rm -Rf tmp/fluxbb`;
