@@ -181,6 +181,15 @@ module.exports = function (grunt)
                 options: {
                     stdout: true
                 }
+            },
+            postsetup: {
+                command: [
+                    'rm -Rf public/install.php',
+                    'rm -Rf public/db_update.php'
+                ].join('&&'),
+                options: {
+                    stdout: true
+                }
             }
         }
     });
@@ -192,4 +201,5 @@ module.exports = function (grunt)
     grunt.registerTask('theme', ['copy:theme', 'replace:theme', 'htmlmin:theme']);
     grunt.registerTask('travis', ['jshint']);
     grunt.registerTask('setup', ['shell:setup', 'build']);
+    grunt.registerTask('postsetup', ['shell:postsetup']);
 };
