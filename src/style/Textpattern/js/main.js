@@ -45,7 +45,7 @@
             return;
         }
 
-        $('#search-query').val(topic+': ');
+        $('.search-form input[name=q]').val(topic+': ');
     });
 
     // Quoting.
@@ -86,7 +86,13 @@
                 value = value + '\n\n';
             }
 
-            field.val(value + '*' + name + ' wrote:*\n\nbq. ' + message + ' "[...]":./' + link + '\n\n').focus();
+            value = value + '*' + name + ' wrote:*\n\nbq. ' + message + ' "[...]":./' + link + '\n\n';
+            field.val(value).focus();
+
+            if ($.type(field[0].setSelectionRange) !== 'undefined')
+            {
+                field[0].setSelectionRange(value.length, value.length);
+            }
         });
 
         $('.postfootright ul').append($('<li class="textile-quote-post" />').html(button));
@@ -271,7 +277,7 @@
 
     require(['jquery'], function ($)
     {
-        var code = $('pre code'), languageRegex = /^(\/\/|#|;)?(\s+)?(apollo|bash|c|coffee|cs|clj|css|dart|go|hs|html|java|js|json|lisp|lua|ml|n|perl|php|proto|python|ruby|rust|scala|sh|sql|tex|text|vb|vhdl|wiki|xml|xsl|xq|yaml)([\r\n|\r|\n]+)/;
+        var code = $('pre code'), languageRegex = /^(apollo|bash|c|coffee|cs|clj|css|dart|go|hs|html|java|js|json|lisp|lua|ml|n|perl|php|proto|python|ruby|rust|scala|sh|sql|tex|text|vb|vhdl|wiki|xml|xsl|xq|yaml)([\r\n|\r|\n]+)/;
 
         if (code.length)
         {
@@ -281,7 +287,7 @@
 
                 if (matches)
                 {
-                    $this.html($this.html().replace(matches.slice(1).join())).attr('class', 'prettyprint language-' + matches[3]);
+                    $this.html($this.html().replace(matches[1] + matches[2], '')).attr('class', 'prettyprint language-' + matches[1]);
                 }
                 else
                 {
@@ -378,7 +384,6 @@
         var tweetRegex = /^https?:\/\/twitter\.com\/(#!\/)?[a-z0-9]+\/status(es)?\/[0-9]+$/i;
         var gistRegex = /^https?:\/\/gist\.github\.com\/[a-z0-9]+\/[0-9]+$/i;
         var youtubeRegex = /^https?:\/\/(?:www\.)?(?:youtube\.com\/watch(?:\/|\?v=)|youtu\.be\/)([a-z0-9\-\_]+)$/i;
-        var vimeoRegex = /^https?:\/\/(?:www\.)?vimeo\.com\/[0-9]+$/i;
 
         $('.postmsg > p > a').each(function ()
         {
@@ -405,16 +410,7 @@
 
             if (matches)
             {
-                $this.parent().after($('<iframe class="embed-video embed-youtube" width="420" height="315" frameborder="0" allowfullscreen></iframe>').attr('src', '//www.youtube-nocookie.com/embed/' + matches[1])).remove();
-                return;
-            }
-
-            matches = href.match(vimeoRegex);
-
-            if (matches)
-            {
-                $this.parent().after($('<iframe class="embed-video embed-vimeo" width="420" height="179" frameborder="0" allowfullscreen></iframe>').attr('src', '//player.vimeo.com/video/' + matches[1])).remove();
-                return;
+                $this.parent().after($('<iframe width="420" height="315" frameborder="0" allowfullscreen></iframe>').attr('src', '//www.youtube-nocookie.com/embed/' + matches[1])).remove();
             }
         });
 
