@@ -15,8 +15,8 @@
         Google Code Prettify, jQuery.cookie, Web Font Loader,
         Responsive Nav, jQuery.placeholder
     Software: Node.js, Grunt.js, Bower, Composer, Compass, git,
-        Panic Coda, CodeKit, Adobe Photoshop, Adobe Illustrator,
-        ImageOptim, ImageAlpha, grunt-contrib-watch, grunt-contrib-compass,
+        Panic Coda, Adobe Photoshop, Adobe Illustrator, ImageOptim,
+        ImageAlpha, grunt-contrib-watch, grunt-contrib-compass,
         grunt-contrib-copy, grunt-contrib-concat, grunt-contrib-uglify,
         grunt-contrib-jshint, grunt-shell, grunt-contrib-cssmin,
         grunt-replace, grunt-contrib-htmlmin
