@@ -125,13 +125,7 @@ module.exports = function (grunt)
         htmlmin: {
             theme: {
                 options: {
-                    removeComments: true,
-                    collapseWhitespace: true,
-                    collapseBooleanAttributes: true,
-                    removeAttributeQuotes: true,
-                    removeRedundantAttributes: true,
-                    removeEmptyAttributes: true,
-                    removeOptionalTags: true
+                    removeComments: true
                 },
                 files: [
                     {expand: true, cwd: 'tmp/style/Textpattern/', src: ['*.tpl'], dest: 'public/style/Textpattern/'}
