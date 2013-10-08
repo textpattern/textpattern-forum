@@ -27,7 +27,7 @@ foreach (glob('../../src/setup/patches/*.patch') as $file)
 
 echo "Cleaning up the downloaded package...\n";
 
-foreach (array('.git', '.gitattributes', '.gitignore', 'COPYING', 'readme.md') as $file)
+foreach (array('.git', '.gitattributes', '.gitignore', 'COPYING', 'readme.md', 'img') as $file)
 {
     echo "Remove {$file}...\n";
     `rm -Rf '{$file}'`;
@@ -58,7 +58,9 @@ echo "Moving in the new installation...\n";
 
 foreach (glob('public/*') as $file)
 {
-    if (basename($file) === 'COPYING' || in_array(pathinfo($file, PATHINFO_EXTENSION), array('php', 'md', 'js')) || is_dir($file))
+    $name = basename($file);
+
+    if ($name !== 'img' && ($name === 'COPYING' || in_array(pathinfo($file, PATHINFO_EXTENSION), array('php', 'md', 'js')) || is_dir($file)))
     {
         echo "Remove {$file}...\n";
         `rm -Rf '{$file}'`;
