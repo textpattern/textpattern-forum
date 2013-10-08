@@ -10,5 +10,6 @@
 /*.md
 /.*
 !/.gitignore
+!/.htaccess
 /*.png
 /*.ico
