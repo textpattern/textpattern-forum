@@ -213,6 +213,11 @@ class Sfs
 
     public function addBan($type = 'ip', $message = '', $expires = null)
     {
+        if (empty($this->$type))
+        {
+            return;
+        }
+
         $sth = Db::pdo()->prepare("INSERT INTO bans SET $type = :value, message = :message, expire = :expires");
 
         foreach ((array) $this->$type as $value)
