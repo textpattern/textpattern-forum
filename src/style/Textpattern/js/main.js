@@ -329,8 +329,12 @@
 
     require(['jquery'], function ($)
     {
-        if ($('.prettify').length)
+        var code = $('.prettify');
+
+        if (code.length)
         {
+            code.find('.language-txp').addClass('language-html').removeClass('language-txp');
+
             require(['prettify'], function ()
             {
                 prettyPrint();
