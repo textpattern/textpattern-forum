@@ -75,13 +75,28 @@ class Sfs
     {
         if (isset($_POST['form_sent']) && isset($_GET['action']) && $_GET['action'] === 'in' && isset($_POST['req_username']))
         {
-            $sth = Db::pdo()->prepare("SELECT email FROM users WHERE username = :username and group_id = 0");
-            $sth->execute(array(':username' => $_POST['req_username']));
+            $sth = Db::pdo()->prepare("SELECT id, username, email, registration_ip FROM users WHERE username = :username and group_id = 0 limit 1");
+            $sth->execute(array(':username' => (string) $_POST['req_username']));
 
             if ($r = $sth->fetch())
             {
                 $this->email = $r['email'];
-                $this->processUser();
+                $this->ip = $r['registration_ip'];
+
+                if ($this->isBanned() === false && $data = $this->getRecord())
+                {
+                    if (isset($data->ip))
+                    {
+                        $this->addBan('ip', 'SFSBOT: IP address found in StopForumSpam database.', strtotime('+2 months'));
+                    }
+
+                    if (isset($data->email))
+                    {
+                        $this->addBan('email', 'SFSBOT: Email address found in StopForumSpam database.');
+                    }
+
+                    Db::pdo()->exec("DELETE FROM users WHERE id = ".intval($r['id']));
+                }
             }
 
             return true;
