@@ -110,11 +110,11 @@ class Sfs
                 {
                     if (isset($data->email))
                     {
-                        $this->addBan('email', 'Email address found in StopForumSpam database.');
+                        $this->addBan('email', 'SFSBOT: Email address found in StopForumSpam database.');
                     }
                     else if (isset($data->ip))
                     {
-                        $this->addBan('ip', 'IP address found in StopForumSpam database.', strtotime('+14 day'));
+                        $this->addBan('ip', 'SFSBOT: IP address found in StopForumSpam database.', strtotime('+14 day'));
                     }
                 }
             }
@@ -133,12 +133,12 @@ class Sfs
         {
             if (isset($data->ip))
             {
-                $this->addBan('ip', 'IP address found in StopForumSpam database.', strtotime('+2 month'));
+                $this->addBan('ip', 'SFSBOT: IP address found in StopForumSpam database.', strtotime('+2 month'));
             }
 
             if (isset($data->email))
             {
-                $this->addBan('email', 'Email address found in StopForumSpam database.');
+                $this->addBan('email', 'SFSBOT: Email address found in StopForumSpam database.');
             }
         }
     }
@@ -224,7 +224,7 @@ class Sfs
         {
             $sth->execute(array(
                 ':value'    => $value,
-                ':message'  => $message,
+                ':message'  => $message . "\nhttp://www.stopforumspam.com/search?q=" . urlencode($value),
                 ':expires'  => $expires,
             ));
         }
