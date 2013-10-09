@@ -154,7 +154,7 @@ index 88c62a8..e4dc5d1 100644
  
  
 diff --git a/include/parser.php b/include/parser.php
-index 5d564d2..a7e7f89 100644
+index 5d564d2..6be2af6 100644
 --- a/include/parser.php
 +++ b/include/parser.php
 @@ -64,6 +64,7 @@ $smilies = array(
@@ -197,7 +197,7 @@ index 5d564d2..a7e7f89 100644
 -	$text = str_replace($pattern, $replace, $text);
 +	if ($textile === null)
 +    {
-+		$textile = new Netcarver\Textile\Parser();
++		$textile = new Textpattern\Fluxbb\Textile\Parser();
 +    }
  
 -	// If we split up the message before we have to concatenate it together again (code tags)
@@ -247,7 +247,7 @@ index 5d564d2..a7e7f89 100644
 -
 +	if ($textile === null)
 +	{
-+		$textile = new Netcarver\Textile\Parser();
++		$textile = new Textpattern\Fluxbb\Textile\Parser();
 +	}
  
 -	// Deal with newlines, tabs and multiple spaces
@@ -262,3 +262,16 @@ index 5d564d2..a7e7f89 100644
 -	return clean_paragraphs($text);
 +	return $textile->textileRestricted($text, false, false);
  }
+diff --git a/lang/English/profile.php b/lang/English/profile.php
+index c9e63c2..4b54b4f 100644
+--- a/lang/English/profile.php
++++ b/lang/English/profile.php
+@@ -95,7 +95,7 @@ $lang_profile = array(
+ 'Avatar info'					=>	'An avatar is a small image that will be displayed with all your posts. You can upload an avatar by clicking the link below.',
+ 'Change avatar'					=>	'Change avatar',
+ 'Signature legend'				=>	'Compose your signature',
+-'Signature info'				=>	'A signature is a small piece of text that is attached to your posts. In it, you can enter just about anything you like. Perhaps you would like to enter your favourite quote or your star sign. It\'s up to you! In your signature you can use BBCode if it is allowed in this particular forum. You can see the features that are allowed/enabled listed below whenever you edit your signature.',
++'Signature info'				=>	'A signature is a small piece of text that is attached to your posts. In it, you can enter just about anything you like. Perhaps you would like to enter your favourite quote or your star sign. It\'s up to you!',
+ 'Sig preview'					=>	'Current signature preview:',
+ 'No sig'						=>	'No signature currently stored in profile.',
+ 'Signature quote/code/list/h'	=>	'The quote, code, list, and heading BBCodes are not allowed in signatures.',
