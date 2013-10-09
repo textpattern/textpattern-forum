@@ -136,7 +136,7 @@ module.exports = function (grunt)
         cssmin: {
             main: {
                 files: {
-                    'public/style/Textpattern/css/main.css': ['tmp/style/Textpattern.css'],
+                    'public/style/Textpattern/css/main.css': ['tmp/style/Textpattern/sass/main.css'],
                     'public/style/Textpattern/css/ie8.css': ['tmp/style/Textpattern/sass/ie8.css']
                 }
             }
