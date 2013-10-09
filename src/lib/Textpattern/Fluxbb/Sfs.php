@@ -213,11 +213,16 @@ class Sfs
 
     public function addBan($type = 'ip', $message = '', $expires = null)
     {
-        Db::pdo()->prepare("INSERT INTO bans SET $type = :value, message = :message, expire = :expires")->execute(array(
-            ':value'    => $this->$type,
-            ':message'  => $message,
-            ':expires'  => $expires,
-        ));
+        $sth = Db::pdo()->prepare("INSERT INTO bans SET $type = :value, message = :message, expire = :expires");
+
+        foreach ((array) $this->$type as $value)
+        {
+            $sth->execute(array(
+                ':value'    => $value,
+                ':message'  => $message,
+                ':expires'  => $expires,
+            ));
+        }
 
         @unlink('./cache/cache_bans.php');
     }
