@@ -151,7 +151,17 @@ class Sfs
 
     public function getRecord()
     {
-        $data = file_get_contents('http://www.stopforumspam.com/api?f=json&unix&ip='.urlencode($this->ip).'&email='.urlencode($this->email), false, stream_context_create(array('http' => array('timeout' => 15))));
+        $query = http_build_query(array(
+            'ip'    => $this->ip,
+            'email' => $this->email,
+        ));
+
+        if (!$query)
+        {
+            return false;
+        }
+
+        $data = file_get_contents('http://www.stopforumspam.com/api?f=json&unix&'.$query, false, stream_context_create(array('http' => array('timeout' => 15))));
         $seen = time() - $this->activityRange;
 
         if ($data)
@@ -163,9 +173,27 @@ class Sfs
             {
                 foreach (array('ip', 'email') as $name)
                 {
-                    if (isset($data->$name) && $this->$name && $data->$name->appears && $data->$name->lastseen >= $seen)
+                    if (isset($data->$name) && $this->$name)
                     {
-                        $out->$name = $data->$name;
+                        if (!is_array($data->$name))
+                        {
+                            $data->$name = array($data->$name);
+                        }
+
+                        $items = array();
+
+                        foreach ($data->$name as $item)
+                        {
+                            if ($item->appears && $item->lastseen >= $seen)
+                            {
+                                $items[] = $item;
+                            }
+                        }
+
+                        if ($items)
+                        {
+                            $out->$name = $items;
+                        }
                     }
                 }
 
