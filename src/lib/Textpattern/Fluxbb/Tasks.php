@@ -30,16 +30,18 @@ class Tasks
     {
         if (isset($_GET[$this->parameter]) && $_GET[$this->parameter] === $key)
         {
+            $out = array();
+
             foreach (get_class_methods($this) as $method)
             {
                 if (strpos($method, 'task') === 0)
                 {
-                    $this->$method();
+                    $out[$method] = $this->$method();
                 }
             }
 
             header('Content-Type: application/json; charset=utf-8');
-            echo json_encode(array('success' => true));
+            echo json_encode($out);
             die();
         }
     }
@@ -48,9 +50,9 @@ class Tasks
      * Removes users older than a month and have never logged in.
      */
 
-    public function taskCleanUserDatabase()
+    public function taskRemoveUnverifiedAccounts()
     {
         $time = strtotime('-1 month');
-        Db::pdo()->exec("DELETE FROM users WHERE group_id = 0 and registered < {$time}");
+        return (int) Db::pdo()->exec("DELETE FROM users WHERE group_id = 0 and registered < {$time}");
     }
 }
