@@ -11,7 +11,6 @@ module.exports = function (grunt)
     grunt.loadNpmTasks('grunt-shell');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-replace');
-    grunt.loadNpmTasks('grunt-contrib-htmlmin');
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
@@ -82,7 +81,7 @@ module.exports = function (grunt)
                     ]
                 },
                 files: [
-                    {expand: true, cwd: 'src/style/Textpattern/', src: ['*.tpl'], dest: 'tmp/style/Textpattern/'}
+                    {expand: true, cwd: 'src/style/Textpattern/', src: ['*.tpl'], dest: 'public/style/Textpattern/'}
                 ]
             }
         },
@@ -119,17 +118,6 @@ module.exports = function (grunt)
                     prettyPrint: true,
                     WebFont: true
                 }
-            }
-        },
-
-        htmlmin: {
-            theme: {
-                options: {
-                    removeComments: true
-                },
-                files: [
-                    {expand: true, cwd: 'tmp/style/Textpattern/', src: ['*.tpl'], dest: 'public/style/Textpattern/'}
-                ]
             }
         },
 
@@ -192,7 +180,7 @@ module.exports = function (grunt)
     grunt.registerTask('sass', ['compass', 'cssmin']);
     grunt.registerTask('default', ['watch']);
     grunt.registerTask('build', ['jshint', 'copy:js', 'theme', 'copy:branding', 'sass', 'uglify']);
-    grunt.registerTask('theme', ['copy:theme', 'replace:theme', 'htmlmin:theme']);
+    grunt.registerTask('theme', ['copy:theme', 'replace:theme']);
     grunt.registerTask('travis', ['jshint']);
     grunt.registerTask('setup', ['shell:setup', 'build']);
     grunt.registerTask('postsetup', ['shell:postsetup']);

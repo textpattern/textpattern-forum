@@ -19,7 +19,7 @@
         ImageAlpha, grunt-contrib-watch, grunt-contrib-compass,
         grunt-contrib-copy, grunt-contrib-concat, grunt-contrib-uglify,
         grunt-contrib-jshint, grunt-shell, grunt-contrib-cssmin,
-        grunt-replace, grunt-contrib-htmlmin
+        grunt-replace
     Source: https://github.com/textpattern/textpattern-forum
 
 
