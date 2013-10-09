@@ -329,7 +329,7 @@
 
     require(['jquery'], function ($)
     {
-        var code = $('pre code'), languageRegex = /^(apollo|bash|c|coffee|cs|clj|css|dart|go|hs|html|java|js|json|lisp|lua|ml|n|perl|php|proto|python|ruby|rust|scala|sh|sql|tex|text|vb|vhdl|wiki|xml|xsl|xq|yaml)([\r\n|\r|\n]+)/;
+        var code = $('pre code'), languageRegex = /^(\/\/|#|;)?(\s+)?(apollo|bash|c|coffee|cs|clj|css|dart|go|hs|html|java|js|json|lisp|lua|ml|n|perl|php|proto|python|ruby|rust|scala|sh|sql|tex|text|vb|vhdl|wiki|xml|xsl|xq|yaml)([\r\n|\r|\n]+)/;
 
         if (code.length)
         {
