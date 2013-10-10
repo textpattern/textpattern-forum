@@ -1,0 +1,60 @@
+//
+// note: this file is for use with Sass and Compass - http://sass-lang.com, http://compass-style.org
+// don't use it as your live site stylesheet!
+//
+
+
+/* Tables
+   ========================================================================== */
+
+/* consistent tables */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+
+caption {
+    font-style: italic;
+    text-align: left;
+    margin-bottom: 0.5em;
+}
+
+th,
+td {
+    /* make table cells align top and left by default */
+    vertical-align: top;
+    text-align: left;
+    border-bottom: 1px solid $color-border;
+    padding: 0.5384615em 1em 0.5384615em 0; // 7px / 13px + 13px + 7px / 13px + 0
+
+    &:empty {
+        border: 0;
+    }
+}
+
+thead tr:last-child {
+    th,
+    td {
+        border-bottom: 2px solid $color-border;
+    }
+}
+
+tfoot {
+    th,
+    td {
+        padding: 0.6363636em 1.1818182em 0.6363636em 0; // 7px / 11px + 13px / 11px + 7px / 11px + 0
+    }
+
+    tr:last-child {
+        th,
+        td {
+            border-bottom: 0;
+        }
+    }
+}
+
+/* cell alignments */
+[rowspan] {
+    vertical-align: middle;
+}
