@@ -454,6 +454,8 @@
                             $this.parent().after($(data.div).removeAttr('id')).remove();
                         }
                     });
+
+                return;
             }
 
             if (tweetRegex.test(href))
