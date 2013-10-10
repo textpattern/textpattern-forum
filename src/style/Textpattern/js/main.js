@@ -407,7 +407,7 @@
 
         if (title.length)
         {
-            permlink = encodeURIComponent(title.attr('href'));
+            permlink = 'http://' + window.location.hostname + '/' + encodeURIComponent(title.attr('href'));
             text = encodeURIComponent(title.text());
 
             buttons = $('<p class="share-buttons" />')
