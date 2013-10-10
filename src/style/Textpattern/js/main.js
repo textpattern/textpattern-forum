@@ -411,9 +411,9 @@
             text = title.text();
 
             buttons = $('<p class="share-buttons" />')
-                .append($('<span class="fb-like" data-width="90" data-height="20" data-colorscheme="light" data-layout="button_count" data-action="like" data-show-faces="true" data-send="false" />').attr('data-href', permlink))
-                .append($('<a class="twitter-share-button" />').attr('data-text', text).attr('data-url', permlink))
-                .append($('<span class="g-plus" data-action="share" />').attr('data-href', permlink));
+                .append($('<span class="fb-like" data-width="90" data-height="20" data-colorscheme="light" data-layout="button_count" data-action="like" data-show-faces="false" data-send="false" />').attr('data-href', permlink))
+                .append($('<span class="g-plus" data-action="share" data-height="20" data-annotation="bubble" />').attr('data-href', permlink))
+                .append($('<a class="twitter-share-button" />').attr('data-text', text).attr('data-url', permlink));
 
             $('#page-viewtopic .crumbs').eq(0).after(buttons);
             $('body').append('<div id="fb-root"></div>');
