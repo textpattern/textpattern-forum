@@ -245,6 +245,18 @@
                 title : 'Mau'
             },
             {
+                posts : 3005,
+                title : 'Octopus'
+            },
+            {
+                posts : 3006,
+                title : '0ctocat'
+            },
+            {
+                posts : 3077,
+                title : 'Mautwo'
+            },
+            {
                 posts : 3100,
                 title : 'Byakko'
             },
