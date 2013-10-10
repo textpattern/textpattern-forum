@@ -24,30 +24,35 @@ h6 {
 }
 
 h1 {
+    @include adjust-font-size-to(36px, 2);
+
+    margin: rhythm(1, 40px) 0;
+}
+
+h2 {
     @include adjust-font-size-to(30px, 1.75);
 
     margin: rhythm(1, 32px) 0;
 }
 
-h2 {
+h3 {
     @include adjust-font-size-to(24px, 1.4);
 
     margin: rhythm(1, 24px) 0;
 }
 
-h3 {
+h4 {
     @include adjust-font-size-to(18px, 1.2);
 
     margin: rhythm(1, 20px) 0;
 }
 
-h4 {
+h5 {
     @include adjust-font-size-to(16px, 1.1);
 
     margin: rhythm(1, 20px) 0;
 }
 
-h5,
 h6 {
     @include adjust-font-size-to(14px, 1);
 
