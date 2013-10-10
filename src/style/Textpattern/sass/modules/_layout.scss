@@ -89,7 +89,7 @@ footer {
 }
 
 .legal {
-    @include adjust-font-size-to(12px, .9);
+    @include adjust-font-size-to(11px, 0.85);
 
     margin-right: 48px;
 }
