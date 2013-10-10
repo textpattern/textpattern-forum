@@ -310,7 +310,7 @@
             },
             {
                 posts : 36625,
-                title : 'Sandal I\'d Own',
+                title : 'Sandal I\'d Own'
             }
         ];
 
