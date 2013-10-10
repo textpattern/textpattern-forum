@@ -2,6 +2,7 @@
 
 namespace Textpattern;
 use Composer\Autoload\ClassLoader;
+use Textpattern\Fluxbb\Document;
 use Textpattern\Fluxbb\Filter;
 use Textpattern\Fluxbb\Sfs;
 use Textpattern\Fluxbb\Trap;
@@ -29,6 +30,7 @@ class Bootstrap
 new Bootstrap();
 new Filter();
 new Sfs();
+new Document();
 
 if (defined('\TEXTPATTERN_TRAP_URL'))
 {
