@@ -407,16 +407,19 @@
 
         if (title.length)
         {
-            permlink = encodeURIComponent('http://' + window.location.hostname + '/' + title.attr('href'));
-            text = encodeURIComponent(title.text());
+            permlink = 'http://' + window.location.hostname + '/' + title.attr('href');
+            text = title.text();
 
             buttons = $('<p class="share-buttons" />')
-                .append($('<a class="facebook-share-button">Share on Facebook</a>').attr('href', 'https://www.facebook.com/sharer/sharer.php?u='+permlink))
-                .append($('<a class="twitter-share-button">Tweet</a>').attr('data-text', text).attr('data-url', permlink).attr('href', 'https://twitter.com/share?url='+permlink+'&text='+text))
+                .append($('<span class="fb-like" data-width="90" data-height="20" data-colorscheme="light" data-layout="button_count" data-action="like" data-show-faces="true" data-send="false" />').attr('data-href', permlink))
+                .append($('<a class="twitter-share-button" />').attr('data-text', text).attr('data-url', permlink))
                 .append($('<span class="g-plus" data-action="share" />').attr('data-href', permlink));
 
             $('#page-viewtopic .crumbs').eq(0).after(buttons);
+            $('body').append('<div id="fb-root"></div>');
+
             require(['https://apis.google.com/js/plusone.js']);
+            require(['//connect.facebook.net/en_US/all.js#xfbml=1&appId=581964255172661']);
         }
 
         // Embed widgets; turns plain links to tweet and gist widgets.
