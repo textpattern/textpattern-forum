@@ -329,7 +329,7 @@
 
     require(['jquery'], function ($)
     {
-        var code = $('.prettify');
+        var code = $('.prettyprint');
 
         if (code.length)
         {
