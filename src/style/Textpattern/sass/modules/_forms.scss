@@ -84,7 +84,7 @@ textarea {
 
     -webkit-appearance: none; // remove iOS Safari default styling
     border: 1px solid $color-border;
-    padding: 0.5384615em 0.25em;
+    padding: 0.5384615em; // 7px / 13px
     height: 2.3846154em; // 31px / 13px
     background: #ffffff;
     text-align: left;
@@ -123,7 +123,7 @@ select[size="1"] {
     select[multiple],
     select[multiple][size] {
         background-image: none;
-        padding-right: 0.25em;
+        padding-right: 0.5384615em; // 7px / 13px
     }
 
     select,
