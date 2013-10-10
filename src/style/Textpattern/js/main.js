@@ -277,16 +277,72 @@
                 title : 'Shachihoko'
             },
             {
+                posts : 4000,
+                title : 'Isuteritosu'
+            },
+            {
+                posts : 4200,
+                title : 'Ogopogo'
+            },
+            {
+                posts : 4300,
+                title : 'Wyvern'
+            },
+            {
+                posts : 4400,
+                title : 'Serpion'
+            },
+            {
                 posts : 4444,
                 title : 'Kusanagi'
+            },
+            {
+                posts : 4600,
+                title : 'Leviathan'
+            },
+            {
+                posts : 4700,
+                title : 'Zalamander'
+            },
+            {
+                posts : 4800,
+                title : 'Gizamaluk'
+            },
+            {
+                posts : 4900,
+                title : 'Vyraal'
+            },
+            {
+                posts : 5000,
+                title : 'Abelisk'
             },
             {
                 posts : 5555,
                 title : 'Sugari no Ontachi'
             },
             {
+                posts : 5600,
+                title : 'Tiamat'
+            },
+            {
+                posts : 5800,
+                title : 'Shinryu'
+            },
+            {
+                posts : 6000,
+                title : 'Bahamut'
+            },
+            {
+                posts : 6500,
+                title : 'Kirin'
+            },
+            {
                 posts : 6666,
                 title : 'Masamune'
+            },
+            {
+                posts : 6800,
+                title : 'Ryū'
             },
             {
                 posts : 7000,
@@ -301,11 +357,39 @@
                 title : 'Icefyre'
             },
             {
+                posts : 8500,
+                title : 'Mizuchi'
+            },
+            {
                 posts : 9000,
+                title : 'Kuzuryū'
+            },
+            {
+                posts : 9500,
+                title : 'Azure'
+            },
+            {
+                posts : 10000,
+                title : 'Mizuchi'
+            },
+            {
+                posts : 10500,
+                title : 'Watatsumi'
+            },
+            {
+                posts : 11000,
+                title : 'Ryūjin'
+            },
+            {
+                posts : 11500,
+                title : 'Zennyo Ryūō'
+            },
+            {
+                posts : 12000,
                 title : 'Amaterasu'
             },
             {
-                posts : 19246,
+                posts : 30246,
                 title : 'Code Is Pottery'
             },
             {
