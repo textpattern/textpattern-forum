@@ -194,7 +194,7 @@
             },
             {
                 posts : 1600,
-                title : 'phi'
+                title : 'psi'
             },
             {
                 posts : 1700,
