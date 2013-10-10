@@ -403,7 +403,7 @@
 
     require(['jquery'], function ($)
     {
-        var permlink, buttons, text, title = $('#page-viewtopic .crumbs li:last-child a').eq(0);
+        var permlink, buttons, text, title = $('#page-viewtopic .crumbs li:last-child a').eq(0), gistStyle = false;
 
         if (title.length)
         {
@@ -440,8 +440,20 @@
 
             if (gistRegex.test(href))
             {
-                $this.parent().after($('<script></script>').attr('src', href)).remove();
-                return;
+                $.ajax(href + '.json', {dataType: 'jsonp'})
+                    .done(function (data)
+                    {
+                        if (data && data.div)
+                        {
+                            if (gistStyle === false && data.stylesheet)
+                            {
+                                $('head').append($('<link rel="stylesheet" />').attr('href', 'https://gist.github.com' + data.stylesheet));
+                                gistStyle = true;
+                            }
+
+                            $this.parent().after($(data.div).removeAttr('id')).remove();
+                        }
+                    });
             }
 
             if (tweetRegex.test(href))
