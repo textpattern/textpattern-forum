@@ -6,7 +6,7 @@
         paths:
         {
             'jquery': '//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min',
-            'webfont' : '//ajax.googleapis.com/ajax/libs/webfont/1.4.10/webfont'
+            'webfont': '//ajax.googleapis.com/ajax/libs/webfont/1.4.10/webfont'
         },
         shim:
         {
