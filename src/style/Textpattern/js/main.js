@@ -61,25 +61,61 @@
 
         button = $('<a href="#quickpostform">Quote</a>').on('click', function ()
         {
-            var $this = $(this), post = $this.parents('.blockpost').eq(0), name = post.find('.postleft dl dt').eq(0).text(), message = post.find('.postmsg').eq(0).clone().find('.postedit').remove().end(), link = post.find('h2 a').eq(0).attr('href'), value = $.trim(field.val());
+            var $this = $(this),
+                post = $this.parents('.blockpost').eq(0),
+                name = post.find('.postleft dl dt').eq(0).text(),
+                message = post.find('.postmsg').eq(0).clone().find('.postedit, table').remove().end(),
+                link = post.find('h2 a').eq(0).attr('href'),
+                value = $.trim(field.val());
 
             // Remove quotes.
 
-            message.find('blockquote').prev('p').filter(function ()
+            message.find('blockquote').each(function ()
             {
-                return $(this).find('strong').length && $(this).text().indexOf(' wrote:') !== -1;
-            }).remove();
+                var bq = $(this), prev = bq.prev('p');
 
-            message.find('blockquote').remove();
+                if (prev.length && prev.find('strong').text().indexOf(' wrote:') !== -1)
+                {
+                    prev.remove();
+                }
+
+                bq.remove();
+            });
 
             // Compress code blocks to a single line.
 
             message.find('pre').each(function ()
             {
-                $(this).after('<p>@' + $.trim($('<div />').text($(this).html()).html().replace('\r', '').split('\n').slice(0, 1).join('')) + '...@</p>').remove();
+                $(this).after('<p>@' + $.trim($('<div />').text($(this).html()).html().split('\n').slice(0, 1).join('')) + '...@</p>').remove();
             });
 
-            message = $.trim(message.text()).replace('\r', '').split('\n\n').slice(0, 1).join('');
+            // Links.
+
+            message.find('a').each(function ()
+            {
+                $(this).prepend('"').append('":' + $('<div />').text($(this).attr('href')).html());
+            });
+
+            // Images.
+
+            message.find('img').each(function ()
+            {
+                $(this).after('!' + $('<div />').text($(this).attr('src')).html() + '!').remove();
+            });
+
+            // Spans.
+
+            message.find('strong').prepend('*').append('*');
+            message.find('b').prepend('**').append('**');
+            message.find('cite').prepend('??').append('??');
+            message.find('em').prepend('_').append('_');
+            message.find('i').prepend('__').append('__');
+            message.find('del').prepend('-').append('-');
+            message.find('ins').prepend('+').append('+');
+            message.find('sub').prepend('~').append('~');
+            message.find('sup').prepend('^').append('^');
+
+            message = $.trim(message.text()).split('\n').slice(0, 1).join('');
 
             if (value)
             {
