@@ -115,7 +115,31 @@
             message.find('sub').prepend('~').append('~');
             message.find('sup').prepend('^').append('^');
 
-            message = $.trim(message.text()).split('\n').slice(0, 1).join('');
+            // Lists.
+
+            $.each({'ol' : '#', 'ul' : '*'}, function (type, marker)
+            {
+                message.children(type).each(function ()
+                {
+                    var items = [], list = $(this);
+
+                    list.find('li').each(function ()
+                    {
+                        var bullet = '';
+
+                        for (var i = 0; i < $(this).parents(list).length / 2; i++)
+                        {
+                            bullet += marker;
+                        }
+
+                        items.push(bullet + ' ' + $.trim($(this).clone().children(type).remove().end().html()));
+                    });
+
+                    list.after('<p>' + items.join('\n') + '</p>').remove();
+                });
+            });
+
+            message = $.trim(message.find('p').eq(0).text());
 
             if (value)
             {
