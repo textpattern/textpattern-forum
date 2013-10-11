@@ -659,4 +659,14 @@
     _gaq.push(['_trackPageview']);
     require(['//www.google-analytics.com/ga.js']);
 
+    // Ads.
+
+    require(['jquery'], function ($)
+    {
+        if ($('.bsarocks').length)
+        {
+            require(['//s3.buysellads.com/ac/bsa.js']);
+        }
+    });
+
 })();
