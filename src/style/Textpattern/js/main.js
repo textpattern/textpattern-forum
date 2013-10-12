@@ -588,10 +588,10 @@
 
         // Embed widgets; turns plain links to tweet and gist widgets.
 
-        var tweetRegex = /^https?:\/\/twitter\.com\/(#!\/)?[a-z0-9]+\/status(es)?\/[0-9]+$/i;
-        var gistRegex = /^https?:\/\/gist\.github\.com\/[a-z0-9]+\/[0-9]+$/i;
-        var youtubeRegex = /^https?:\/\/(?:www\.)?(?:youtube\.com\/watch(?:\/|\?v=)|youtu\.be\/)([a-z0-9\-\_]+)$/i;
-        var vimeoRegex = /^https?:\/\/(?:www\.)?vimeo\.com\/[0-9]+$/i;
+        var tweetRegex = /^https?:\/\/twitter\.com\/(#!\/)?[a-z0-9]+\/status(es)?\/[0-9]+$/i,
+            gistRegex = /^https?:\/\/gist\.github\.com\/[a-z0-9]+\/[0-9]+$/i,
+            youtubeRegex = /^https?:\/\/(?:www\.)?(?:youtube\.com\/watch(?:\/|\?v=)|youtu\.be\/)([a-z0-9\-\_]+)$/i,
+            vimeoRegex = /^https?:\/\/(?:www\.)?vimeo\.com\/[0-9]+$/i;
 
         $('.postmsg > p > a').each(function ()
         {
@@ -632,14 +632,25 @@
 
             if (matches)
             {
-                $this.parent().after($('<iframe class="embed-video embed-youtube" width="420" height="315" frameborder="0" allowfullscreen></iframe>').attr('src', '//www.youtube-nocookie.com/embed/' + matches[1])).remove();
+                $this.parent().after(
+                    $('<div class="embed-video embed-youtube" />').html(
+                        $('<iframe frameborder="0" allowfullscreen></iframe>').attr('src', '//www.youtube-nocookie.com/embed/' + matches[1])
+                    )
+                ).remove();
+
+                return;
             }
 
             matches = href.match(vimeoRegex);
 
             if (matches)
             {
-                $this.parent().after($('<iframe class="embed-video embed-vimeo" width="420" height="179" frameborder="0" allowfullscreen></iframe>').attr('src', '//player.vimeo.com/video/' + matches[1])).remove();
+                $this.parent().after(
+                    $('<div class="class="embed-video embed-vimeo" />').html(
+                        $('<iframe frameborder="0" allowfullscreen></iframe>').attr('src', '//player.vimeo.com/video/' + matches[1])
+                    )
+                ).remove();
+
                 return;
             }
         });
