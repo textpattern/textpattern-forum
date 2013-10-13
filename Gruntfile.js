@@ -81,7 +81,8 @@ module.exports = function (grunt)
                     ]
                 },
                 files: [
-                    {expand: true, cwd: 'src/style/Textpattern/', src: ['*.tpl'], dest: 'public/style/Textpattern/'}
+                    {expand: true, cwd: 'src/style/Textpattern/', src: ['*.tpl'], dest: 'public/style/Textpattern/'},
+                    {expand: true, cwd: 'src/', src: ['*.html'], dest: 'public/'}
                 ]
             }
         },
