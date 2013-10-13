@@ -1,11 +1,117 @@
-/* Hidden elements
+/* Hidden forum elements
    ========================================================================== */
 
 #navsearch,
 #bblinks,
 #brdfooter h2,
 #brdstats h2,
+.modlist,
 .postquote,
 .textpattern-fluxbb-t {
     display: none !important;
+}
+
+
+/* Forum layout
+   ========================================================================== */
+
+/* topics and posts columns */
+.tc2,
+.tc3 {
+    width: 11%;
+
+    // hide columns at small screen widths
+    @include breakpoint(max-width $breakpoint-2) {
+        display: none;
+    }
+}
+
+/* last post column */
+.tcr {
+    padding-right: 0;
+    width: 22%;
+
+    // widen column at small screen widths
+    @include breakpoint(max-width $breakpoint-2) {
+        width: 35%;
+    }
+}
+
+/* `tr` hightlight for new posts */
+.inew {
+    
+}
+
+/* forum icons */
+.icon {
+    @include hires-graphic(forum-icons, png, 480px, 240px);
+
+    float: left;
+    margin-right: 1em;
+    width: 60px;
+    height: 60px;
+
+    // hide icon at small screen widths
+    @include breakpoint(max-width $breakpoint-2) {
+        display: none;
+    }
+
+    &.icon-new {
+        
+    }
+
+    .nosize {
+        display: none;
+    }
+}
+
+#idx1 table tbody {
+    tr:nth-child(1) .icon {
+        background-position: 0 0;
+    }
+    
+    tr:nth-child(2) .icon {
+        background-position: -300px 0;
+    }
+    
+    tr:nth-child(3) .icon {
+        background-position: -120px 0;
+    }
+    
+    tr:nth-child(4) .icon {
+        background-position: -60px -120px;
+    }
+    
+    tr:nth-child(5) .icon {
+        background-position: -240px 0;
+    }
+}
+
+#idx2 table tbody {
+    tr:nth-child(1) .icon {
+        background-position: -180px 0;
+    }
+
+    tr:nth-child(2) .icon {
+        background-position: -120px 0;
+    }
+}
+
+.tclcon {
+    position: relative;
+    height: 1%;
+    min-height: 1px;
+    overflow: hidden;
+
+    .tclcon div {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    h3 {
+        margin-top: 0;
+        a {
+            color: $color-text;
+        }
+    }
 }

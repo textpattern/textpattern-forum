@@ -30,7 +30,7 @@ h2 {
 }
 
 h3 {
-    @include adjust-font-size-to(24px, 1.4);
+    @include adjust-font-size-to(20px, 1.25);
 
     margin: rhythm(1, 24px) 0;
 }
@@ -41,12 +41,7 @@ h4 {
     margin: rhythm(1, 20px) 0;
 }
 
-h5 {
-    @include adjust-font-size-to(16px, 1.1);
-
-    margin: rhythm(1, 20px) 0;
-}
-
+h5,
 h6 {
     @include adjust-font-size-to(14px, 1);
 
