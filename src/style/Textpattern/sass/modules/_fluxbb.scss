@@ -15,6 +15,25 @@
 /* Forum layout
    ========================================================================== */
 
+#brdmenu {
+    ul {
+        @include pie-clearfix;
+
+        list-style: none;
+        display: block;
+        padding: 0;
+    }
+
+    li {
+        float: left;
+    }
+}
+
+thead td,
+thead th {
+    text-transform: uppercase;
+}
+
 /* topics and posts columns */
 .tc2,
 .tc3 {
