@@ -17,7 +17,8 @@ legend {
 button,
 input,
 select,
-textarea {
+textarea,
+.postlink a {
     /* correct font size not being inherited in all browsers */
     font-size: 100%;
     @include adjust-font-size-to(13px, 0.8);
