@@ -86,23 +86,39 @@
             content: none;
         }
     }
-}
 
-.conl {
-    float: left;
-
-    @include breakpoint(max-width $breakpoint-2) {
-        float: none;
+    .conl {
+        float: left;
+    
+        @include breakpoint(max-width $breakpoint-2) {
+            float: none;
+        }
+    }
+    
+    .conr {
+        float: right;
+    
+        @include breakpoint(max-width $breakpoint-2) {
+            float: none;
+        }
     }
 }
 
-.conr {
-    float: right;
 
-    @include breakpoint(max-width $breakpoint-2) {
-        float: none;
+/* Breadcrumb links
+   ========================================================================== */
+
+.crumbs {
+    @include adjust-font-size-to(11px, 0.8);
+
+    list-style: none;
+    padding: 0;
+
+    li {
+        display: inline-block;
     }
 }
+
 
 /* Forum layout
    ========================================================================== */
