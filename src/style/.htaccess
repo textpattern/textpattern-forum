@@ -18,10 +18,10 @@
 
 AddEncoding x-gzip .gz
 
-<FilesMatch .*\.css.gz>
+<FilesMatch \.css\.gz$>
     ForceType text/css
 </FilesMatch>
 
-<FilesMatch .*\.js.gz>
+<FilesMatch \.js\.gz$>
     ForceType application/x-javascript
 </FilesMatch>
