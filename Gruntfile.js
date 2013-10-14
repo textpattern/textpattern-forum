@@ -11,6 +11,7 @@ module.exports = function (grunt)
     grunt.loadNpmTasks('grunt-shell');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-replace');
+    grunt.loadNpmTasks('grunt-contrib-compress');
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
@@ -156,6 +157,19 @@ module.exports = function (grunt)
             }
         },
 
+        compress: {
+            theme: {
+                options: {
+                    mode: 'gzip'
+                },
+                files: [
+                    {expand: true, src: ['public/style/**/*.js'], ext: '.js.gz'},
+                    {expand: true, src: ['public/style/**/*.css'], ext: '.css.gz'},
+                    {expand: true, src: ['public/style/**/*.svg'], ext: '.svg.gz'}
+                ]
+            }
+        },
+
         shell: {
             setup: {
                 command: [
@@ -180,7 +194,7 @@ module.exports = function (grunt)
     grunt.registerTask('test', ['jshint']);
     grunt.registerTask('sass', ['compass', 'cssmin']);
     grunt.registerTask('default', ['watch']);
-    grunt.registerTask('build', ['jshint', 'copy:js', 'theme', 'copy:branding', 'sass', 'uglify']);
+    grunt.registerTask('build', ['jshint', 'copy:js', 'theme', 'copy:branding', 'sass', 'uglify', 'compress:theme']);
     grunt.registerTask('theme', ['copy:theme', 'replace:theme']);
     grunt.registerTask('travis', ['jshint']);
     grunt.registerTask('setup', ['shell:setup', 'build']);

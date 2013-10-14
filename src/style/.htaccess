@@ -9,5 +9,19 @@
 
 <IfModule mod_rewrite.c>
     RewriteEngine On
+
+    RewriteCond %{HTTP:Accept-Encoding} gzip
+    RewriteRule ^([A-Za-z0-9]+)/(js|css)/([a-z0-9]+)\.([0-9]+)\.(js|css)$ $1/$2/$3.$5.gz [L]
+
     RewriteRule ^([A-Za-z0-9]+)/(js|css)/([a-z0-9]+)\.([0-9]+)\.(js|css)$ $1/$2/$3.$5 [L]
 </IfModule>
+
+AddEncoding x-gzip .gz
+
+<FilesMatch .*\.css.gz>
+    ForceType text/css
+</FilesMatch>
+
+<FilesMatch .*\.js.gz>
+    ForceType application/x-javascript
+</FilesMatch>
