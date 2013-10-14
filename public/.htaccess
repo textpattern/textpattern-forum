@@ -6,6 +6,13 @@ ErrorDocument 403 /403.html
 ErrorDocument 404 /404.html
 ErrorDocument 500 /500.html
 
+<ifModule mod_headers.c>
+    Header append Cache-Control "public"
+    Header append X-XSS-Protection "1; mode=block"
+    Header append X-Frame-Options "SAMEORIGIN"
+    Header append X-Content-Type-Options "nosniff"
+</ifModule>
+
 <IfModule mod_rewrite.c>
     RewriteEngine On
     RewriteCond %{REQUEST_FILENAME} /cache/ [OR]
