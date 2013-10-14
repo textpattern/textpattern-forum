@@ -1,3 +1,8 @@
+.clearer {
+    @include pie-clearfix;
+}
+
+
 /* Hidden forum elements
    ========================================================================== */
 
@@ -92,6 +97,7 @@
     
         @include breakpoint(max-width $breakpoint-2) {
             float: none;
+            margin-bottom: 0;
         }
     }
     
@@ -100,6 +106,7 @@
     
         @include breakpoint(max-width $breakpoint-2) {
             float: none;
+            margin-top: 0;
         }
     }
 }
