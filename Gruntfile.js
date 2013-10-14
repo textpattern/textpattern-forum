@@ -23,7 +23,7 @@ module.exports = function (grunt)
         watch: {
             sass: {
                 files: ['src/style/*.scss', 'src/style/*/sass/**'],
-                tasks: ['sass']
+                tasks: ['sass', 'compress:theme']
             },
 
             theme: {
@@ -33,7 +33,7 @@ module.exports = function (grunt)
 
             js: {
                 files: 'src/style/*/js/**',
-                tasks: ['jshint', 'uglify', 'copy:js']
+                tasks: ['jshint', 'uglify', 'copy:js', 'compress:theme']
             }
         },
 
