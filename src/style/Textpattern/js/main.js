@@ -575,15 +575,13 @@
             text = title.text();
 
             buttons = $('<p class="share-buttons" />')
-                .append($('<span class="fb-like" data-width="90" data-height="20" data-colorscheme="light" data-layout="button_count" data-action="like" data-show-faces="false" data-send="false" />').attr('data-href', permlink))
+                .append($('<iframe class="fb-like" scrolling="no" frameborder="0" allowTransparency="true"></iframe>').attr('src', '//www.facebook.com/plugins/like.php?href='+encodeURIComponent(permlink)+'&width=90&height=21&colorscheme=light&layout=button_count&action=like&show_faces=false&send=false&appId=581964255172661'))
                 .append($('<span class="g-plus" data-action="share" data-height="20" data-annotation="bubble" />').attr('data-href', permlink))
                 .append($('<a class="twitter-share-button" />').attr('data-text', text).attr('data-url', permlink));
 
             $('#page-viewtopic .crumbs').eq(0).after(buttons);
-            $('body').append('<div id="fb-root"></div>');
 
             require(['https://apis.google.com/js/plusone.js']);
-            require(['//connect.facebook.net/en_US/all.js#xfbml=1&appId=581964255172661']);
         }
 
         // Embed widgets; turns plain links to tweet and gist widgets.
