@@ -47,9 +47,57 @@
 <!-- Primary Content -->
         <div class="container">
             <main role="main" aria-label="Main content">
-                <h1 class="accessibility">Textpattern Forum</h1>
+                <h1>Forum help</h1>
 
-                <pun_main>
+                <h2>Why can’t I create a forum account or receive forum emails?</h2>
+                <p>The most common cause of problems creating forum accounts are email spam filters and blacklists. You must supply a working email address in order to create an account: when you sign-up, the forum software will send you the password you may use to login, to verify that your email address is correct and working properly. Some email servers refuse to accept these emails, or incorrectly intercept them as spam. This is particularly common with free web mail services.</p>
+                <p>The following email providers seem to have problems accepting email from the forum, for one reason or another:</p>
+                <ul>
+                    <li>bk.ru</li>
+                    <li>comcast.net</li>
+                    <li>hotmail.com</li>
+                    <li>inbox.ru</li>
+                    <li>list.ru</li>
+                    <li>mail.ru</li>
+                </ul>
+                <p>It is therefore recommended that you use an address from another provider.</p>
+                <h2>How should I ask for help on the forum?</h2>
+                <p>The Textpattern CMY Support Forum is for discussion and support of all things Textpattern. Please bear in mind that it is a community forum—when you ask for assistance, you are asking volunteers and fellow users, not paid technical support staff. The usual common-sense conventions of etiquette and politeness apply.</p>
+                <p>A few rules of thumb specific to the Textpattern forum:</p>
+                <ol>
+                    <li>Please make an effort to check the <a href="http://textpattern.com/support" rel="external">Textpattern CMS User Documentation</a> before posting, and check for duplicate threads on the forum.</li>
+                    <li>Try to choose the most appropriate forum for your question. ‘Troubleshooting’ is for when you’ve tried something and it doesn’t work as expected. ‘How do I…?’ is self explanatory. Questions about plugins should go to the ‘Plugins’ forum, not ‘How do I…?’ or ‘Troubleshooting’.</li>
+                    <li>If you’re asking for help with a problem or error, please describe the problem clearly and unambiguously. If there is an error message, please include an exact copy of the message in your post. If something doesn’t work as expected, describe what you’re expecting to see, and the actual behaviour. A link to the page in question is usually helpful, and sometimes a screenshot might be appropriate. Descriptions like “doesn’t work” or “it’s broken” are too vague, and unlikely to receive an answer.</li>
+                    <li>Most suspected bugs aren’t really bugs, but problems caused by external factors. Unless you’ve confirmed the problem with a fresh install, or can identify the problem in the PHP source, start with a Troubleshooting post rather than a bug report.</li>
+                    <li>Troubleshooting questions will usually be answered quicker if you include a copy of your diagnostics in your post (textpattern > admin > diagnostics). Don’t post the ‘High’ detail version unless someone asks.</li>
+                    <li>Questions about templates and appearance will usually benefit from including a minimal copy of the code in question. Edit out as much irrelevant code as you can—a short snippet of code is much easier for people to quickly diagnose than an entire page.</li>
+                    <li>Surround HTML or template code with <code>&lt;code&gt; &lt;/code&gt;</code> tags when posting.</li>
+                    <li>Surround Textile code with <code>&lt;notextile&gt; &lt;/notextile&gt;</code> tags when posting.</li>
+                    <li>More detailed examples of how to post HTML, template and Textile code are provided below.</li>
+                    <li>If you haven’t received an answer in a day or so, there’s probably a good reason: an ambiguous or rambling question, or not enough information. Don’t ‘bump’ your thread with a single-word post, it’s more likely to annoy people than attract an answer. Post some more information instead.</li>
+                    <li>Don’t post a troubleshooting question as a reply to an existing thread unless your problem is exactly the same as the one described at the beginning of the thread.</li>
+                    <li>If you’re requesting a feature, <a href="http://forum.textpattern.com/viewtopic.php?id=10325">this article</a> lists some of the things you can do to increase its chances.</li>
+                </ol>
+                <h2>How do I post tags and code on the forum?</h2>
+                <p>For inline code:</p>
+                <pre><code>@&lt;txp:permlink&gt;&lt;txp:title /&gt;&lt;/txp:permlink&gt;@</code></pre>
+                <p>For short snippets:</p>
+                <pre><code>bc. &lt;h3&gt;&lt;txp:permlink&gt;&lt;txp:title /&gt;&lt;/txp:permlink&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;txp:posted /&gt;&lt;/p&gt;</code></pre>
+                <p>For longer snippets:</p>
+                <pre><code>bc.. &lt;txp:permlink&gt;&lt;txp:title /&gt;&lt;/txp:permlink&gt;
+&lt;p&gt;&lt;txp:posted /&gt;&lt;/p&gt;
+	
+&lt;txp:body /&gt;</code></pre>
+                <p>To post short Textile examples:</p>
+                <pre><code>==*Bold*==</code></pre>
+                <p>or</p>
+                <pre><code>notextile. *Bold*</code></pre>
+                <p>Or, for longer Textile examples:</p>
+                <pre><code>notextile.. h1. My Title
+
+*Bold*</code></pre>
+                <p>If you’re still having trouble, or posting something long or complex, consider posting your code on pastebin.com and linking to that content from the forum.</p>
 
             </main>
         </div><!-- /.container -->
