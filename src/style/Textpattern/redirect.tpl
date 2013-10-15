@@ -89,7 +89,7 @@
 <!-- Footer -->
     <footer role="contentinfo">
         <p class="legal">
-            <a href="#">Copyright</a> 2004–@year The Textpattern Development Team.
+            <a href="#">Copyright</a> 2004–@@year The Textpattern Development Team.
             <a href="#">Contact us</a>.
             <a href="#">Privacy</a>.
             <a href="humans.txt">Colophon</a>.
