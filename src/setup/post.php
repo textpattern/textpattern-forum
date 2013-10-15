@@ -47,7 +47,7 @@ $options = array(
     'o_regs_verify'           => 1,
     'o_rules'                 => 1,
     'o_maintenance'           => 0,
-    'o_additional_navlinks'   => '6 = <a href="help.php">Help</a>',
+    'o_additional_navlinks'   => '4 = <a href="help.php">Help</a>',
     'p_message_bbcode'        => 0,
     'p_message_img_tag'       => 0,
     'p_message_all_caps'      => 0,
