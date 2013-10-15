@@ -78,6 +78,10 @@ module.exports = function (grunt)
                         {
                             match: 'timestamp',
                             replacement: '<%= opt.timestamp %>'
+                        },
+                        {
+                            match: 'year',
+                            replacement: '<%= new Date().getFullYear() %>'
                         }
                     ]
                 },
