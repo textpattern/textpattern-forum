@@ -47,63 +47,77 @@
 <!-- Primary Content -->
         <div class="container">
             <main role="main" aria-label="Main content">
-                <h1>Forum help</h1>
+                <h1 class="accessibility">Textpattern Forum</h1>
 
-                <h2>Formatting</h2>
-                <p>The forum <a href="http://textpattern.com/textile-reference-manual">Textile markup language</a> for posts and signatures. The forum’s Textile has few additional features, including media embedding support and syntax highlighting. If you’re not already familiar with Markdown, take a quick look at <a href="http://textpattern.com/textile-reference-manual">Textile reference</a>. The few most useful Textile tags you can use to format your posts include:</p>
-                <ul>
-                    <li><code>!http://example.com/image.jpg!</code> → <img src="http://example.com/image.jpg"></li>
-                    <li><code>"link text":http://textpattern.com</code> → <a href="http://textpattern.com">link text</a></li>
-                    <li><code>@inline code@</code> → <code>inline code</code></li>
-                    <li><code>*strong*</code> → <strong>strong</strong></li>
-                    <li><code>_emphasis_</code> → <em>emphasis</em></li>
-                    <li><code>-strikethrough-</code> → <del>strikethrough</del></li>
-                </ul>
-                <h3>Displaying code blocks</h3>
-                <p>You can use the Textile <code>bc.</code> tag to add code snippets to your forum posts.</p>
-                <pre class="language-txp prettyprint"><code>bc. &lt;txp:permlink&gt;
+                <pun_desc>
+                <pun_navlinks>
+                <pun_status>
+                <pun_announcement>
+
+                <section class="layout--span-1-8">
+                    <h1>Forum help</h1>
+    
+                    <h2>Formatting</h2>
+                    <p>The forum uses <a href="http://textpattern.com/textile-reference-manual">Textile markup language</a> for posts and signatures. The forum’s Textile has few additional features, including media embedding support and syntax highlighting. If you’re not already familiar with Markdown, take a quick look at <a href="http://textpattern.com/textile-reference-manual">Textile reference</a>. The few most useful Textile tags you can use to format your posts include:</p>
+                    <ul>
+                        <li><code>!http://example.com/image.jpg!</code> → <img src="http://example.com/image.jpg"></li>
+                        <li><code>"link text":http://textpattern.com</code> → <a href="http://textpattern.com">link text</a></li>
+                        <li><code>@inline code@</code> → <code>inline code</code></li>
+                        <li><code>*strong*</code> → <strong>strong</strong></li>
+                        <li><code>_emphasis_</code> → <em>emphasis</em></li>
+                        <li><code>-strikethrough-</code> → <del>strikethrough</del></li>
+                    </ul>
+                    <h3>Displaying code blocks</h3>
+                    <p>You can use the Textile <code>bc.</code> tag to add code snippets to your forum posts.</p>
+                    <pre class="language-txp prettyprint"><code>bc. &lt;txp:permlink&gt;
     &lt;txp:title /&gt;
 &lt;/txp:permlink&gt;</code></pre>
-                <p>The forum also supports syntax highlighting. Add an optional language identifier to your code block, and it will get highlighted.</p>
-                <pre class="language-html prettyprint"><code>bc. html
+                    <p>The forum also supports syntax highlighting. Add an optional language identifier to your code block, and it will get highlighted.</p>
+                    <pre class="language-html prettyprint"><code>bc. html
 &lt;h1 id="main-heading"&gt;Hello world!&lt;/h1&gt;</code></pre>
-                <p>Supported language identifiers include: apollo, bash, c, coffee, cs, clj, css, dart, go, hs, html, java, js, json, lisp, lua, ml, n, perl, php, proto, python, ruby, rust, scala, sh, sql, tex, txp, vb, vhdl, wiki, xml, xsl, xq and yaml.</p>
-                <h3>Embedding media</h3>
-                <p>You can embed media to your posts from third party services to linking to the resource using normal Textile link syntax.</p>
-                <pre><code>
+                    <p>Supported language identifiers include: apollo, bash, c, coffee, cs, clj, css, dart, go, hs, html, java, js, json, lisp, lua, ml, n, perl, php, proto, python, ruby, rust, scala, sh, sql, tex, txp, vb, vhdl, wiki, xml, xsl, xq and yaml.</p>
+                    <h3>Embedding media</h3>
+                    <p>You can embed media to your posts from third party services to linking to the resource using normal Textile link syntax.</p>
+                    <pre><code>
 "$":http://www.youtube.com/watch?v=BKQ6nINAeq8
 "$":http://vimeo.com/42531948
 "$":https://twitter.com/textpattern/status/386111138699935744
 "$":https://gist.github.com/gocom/5431041</code></pre>
-                <p>A link to a supported service becomes an embedded object if it is in its own paragraph. Links within text will stay as normal text links to avoid disturbing reading and text flow. We currently support embedding content from <a href="http://youtube.com/">YouTube</a>, <a href="http://vimeo.com/">Vimeo</a> <a href="https://twitter.com">Twitter</a> and <a href="https://gist.github.com/">GitHub Gist</a>.</p>
+                    <p>A link to a supported service becomes an embedded object if it is in its own paragraph. Links within text will stay as normal text links to avoid disturbing reading and text flow. We currently support embedding content from <a href="http://youtube.com/">YouTube</a>, <a href="http://vimeo.com/">Vimeo</a> <a href="https://twitter.com">Twitter</a> and <a href="https://gist.github.com/">GitHub Gist</a>.</p>
 
-                <h2>Why can’t I create a forum account or receive forum emails?</h2>
-                <p>The most common cause of problems when creating forum accounts are email spam filters and blacklists. You must supply a working email address in order to create an account; when you sign-up, the forum software will send you the password you may use to login, to verify that your email address is correct and working properly. Some email servers refuse to accept these emails or incorrectly intercept them as spam. This is particularly common with free web mail services.</p>
-                <p>The following email providers seem to have problems accepting email from this forum, for one reason or another:</p>
-                <ul>
-                    <li>bk.ru</li>
-                    <li>comcast.net</li>
-                    <li>hotmail.com</li>
-                    <li>inbox.ru</li>
-                    <li>list.ru</li>
-                    <li>mail.ru</li>
-                </ul>
-                <p>It is therefore recommended that you use an address from another provider.</p>
+                    <h2>Why can’t I create a forum account or receive forum emails?</h2>
+                    <p>The most common cause of problems when creating forum accounts are email spam filters and blacklists. You must supply a working email address in order to create an account; when you sign-up, the forum software will send you the password you may use to login, to verify that your email address is correct and working properly. Some email servers refuse to accept these emails or incorrectly intercept them as spam. This is particularly common with free web mail services.</p>
+                    <p>The following email providers seem to have problems accepting email from this forum, for one reason or another:</p>
+                    <ul>
+                        <li>bk.ru</li>
+                        <li>comcast.net</li>
+                        <li>hotmail.com</li>
+                        <li>inbox.ru</li>
+                        <li>list.ru</li>
+                        <li>mail.ru</li>
+                    </ul>
+                    <p>It is therefore recommended that you use an address from another provider.</p>
 
-                <h2>How should I ask for help on the forum?</h2>
-                <p>The Textpattern CMS Support Forum is for discussion and support of all things Textpattern. Please bear in mind that it is a community forum—when you ask for assistance, you are asking volunteers and fellow users, not paid technical support staff. The usual common-sense conventions of etiquette and politeness apply.</p>
-                <p>A few rules of thumb specific to the Textpattern forum:</p>
-                <ol>
-                    <li>Please make an effort to check the <a href="http://textpattern.com/support" rel="external">Textpattern CMS User Documentation</a> before posting, and check for duplicate threads on the forum.</li>
-                    <li>Try to choose the most appropriate forum for your question. ‘Troubleshooting’ is for when you’ve tried something and it doesn’t work as expected. ‘How do I…?’ is self explanatory. Questions about plugins should go to the ‘Plugins’ forum, not ‘How do I…?’ or ‘Troubleshooting’.</li>
-                    <li>If you’re asking for help with a problem or error, please describe the problem clearly and unambiguously. If there is an error message, please include an exact copy of the message in your post. If something doesn’t work as expected, describe what you’re expecting to see, and the actual behaviour. A link to the page in question is usually helpful, and sometimes a screenshot might be appropriate. Descriptions like “doesn’t work” or “it’s broken” are too vague, and unlikely to receive an answer.</li>
-                    <li>Most suspected bugs aren’t really bugs, but problems caused by external factors. Unless you’ve confirmed the problem with a fresh install, or can identify the problem in the PHP source, start with a ‘Troubleshooting’ post rather than a bug report.</li>
-                    <li>Troubleshooting questions will usually be answered quicker if you include a copy of your diagnostics in your post (textpattern > admin > diagnostics). Don’t post the ‘High’ detail version unless someone asks.</li>
-                    <li>Questions about templates and appearance will usually benefit from including a minimal copy of the code in question. Edit out as much irrelevant code as you can—a short snippet of code is much easier for people to quickly diagnose than an entire page.</li>
-                    <li>If you haven’t received an answer in a day or so, there’s probably a good reason: an ambiguous or rambling question, or not enough information. Don’t ‘bump’ your thread with a single-word post, it’s more likely to annoy people than attract an answer—post some more information instead.</li>
-                    <li>Don’t post a troubleshooting question as a reply to an existing thread unless your problem is exactly the same as the one described at the beginning of the thread.</li>
-                    <li>If you’re requesting a feature, <a href="http://forum.textpattern.com/viewtopic.php?id=10325">this article</a> lists some of the things you can do to increase its chances.</li>
-                </ol>
+                    <h2>How should I ask for help on the forum?</h2>
+                    <p>The Textpattern CMS Support Forum is for discussion and support of all things Textpattern. Please bear in mind that it is a community forum—when you ask for assistance, you are asking volunteers and fellow users, not paid technical support staff. The usual common-sense conventions of etiquette and politeness apply.</p>
+                    <p>A few rules of thumb specific to the Textpattern forum:</p>
+                    <ol>
+                        <li>Please make an effort to check the <a href="http://textpattern.com/support" rel="external">Textpattern CMS User Documentation</a> before posting, and check for duplicate threads on the forum.</li>
+                        <li>Try to choose the most appropriate forum for your question. ‘Troubleshooting’ is for when you’ve tried something and it doesn’t work as expected. ‘How do I…?’ is self explanatory. Questions about plugins should go to the ‘Plugins’ forum, not ‘How do I…?’ or ‘Troubleshooting’.</li>
+                        <li>If you’re asking for help with a problem or error, please describe the problem clearly and unambiguously. If there is an error message, please include an exact copy of the message in your post. If something doesn’t work as expected, describe what you’re expecting to see, and the actual behaviour. A link to the page in question is usually helpful, and sometimes a screenshot might be appropriate. Descriptions like “doesn’t work” or “it’s broken” are too vague, and unlikely to receive an answer.</li>
+                        <li>Most suspected bugs aren’t really bugs, but problems caused by external factors. Unless you’ve confirmed the problem with a fresh install, or can identify the problem in the PHP source, start with a ‘Troubleshooting’ post rather than a bug report.</li>
+                        <li>Troubleshooting questions will usually be answered quicker if you include a copy of your diagnostics in your post (Textpattern → Admin → Diagnostics). Don’t post the ‘High’ detail version unless someone asks.</li>
+                        <li>Questions about templates and appearance will usually benefit from including a minimal copy of the code in question. Edit out as much irrelevant code as you can—a short snippet of code is much easier for people to quickly diagnose than an entire page.</li>
+                        <li>If you haven’t received an answer in a day or so, there’s probably a good reason: an ambiguous or rambling question, or not enough information. Don’t ‘bump’ your thread with a single-word post, it’s more likely to annoy people than attract an answer—post some more information instead.</li>
+                        <li>Don’t post a troubleshooting question as a reply to an existing thread unless your problem is exactly the same as the one described at the beginning of the thread.</li>
+                        <li>If you’re requesting a feature, <a href="http://forum.textpattern.com/viewtopic.php?id=10325">this article</a> lists some of the things you can do to increase its chances.</li>
+                    </ol>
+                </section>
+
+                <div class="clearer"></div>
+
+                <pun_footer>
+
             </main>
         </div><!-- /.container -->
 
