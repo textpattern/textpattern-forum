@@ -2,7 +2,7 @@
 
 echo "Checking installation...\n";
 
-$config = dirname(dirname(dirname(__FILE__))) . '/public/config.php';
+$config = './public/config.php';
 
 if (!file_exists($config))
 {
@@ -92,9 +92,7 @@ foreach ($options as $name => $value)
 
 echo "Clearing FluxBB cache...\n";
 
-chdir(dirname($config) . '/cache');
-
-foreach (glob('*.php') as $file)
+foreach (glob('./public/cache/*.php') as $file)
 {
     unlink($file);
 }
