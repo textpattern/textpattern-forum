@@ -49,7 +49,7 @@ $options = array(
     'o_announcement_message'  => '',
     'o_rules'                 => 1,
     'o_maintenance'           => 0,
-    'o_additional_navlinks'   => '6 = <a href="http://textpattern.com/faq/?c=Forum" title="Frequently Asked Questions">Help</a>',
+    'o_additional_navlinks'   => '',
     'p_message_bbcode'        => 0,
     'p_message_img_tag'       => 0,
     'p_message_all_caps'      => 0,
