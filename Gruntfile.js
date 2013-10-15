@@ -181,8 +181,7 @@ module.exports = function (grunt)
             },
             postsetup: {
                 command: [
-                    'rm -Rf public/install.php',
-                    'rm -Rf public/db_update.php'
+                    'php src/setup/post.php'
                 ].join('&&'),
                 options: {
                     stdout: true
