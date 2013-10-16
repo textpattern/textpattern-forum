@@ -66,6 +66,7 @@
                         <li><code>*strong*</code> → <strong>strong</strong></li>
                         <li><code>_emphasis_</code> → <em>emphasis</em></li>
                         <li><code>-strikethrough-</code> → <del>strikethrough</del></li>
+                        <li><code>+underline+</code> → <ins>underline</ins></li>
                     </ul>
                     <h3>Displaying code blocks</h3>
                     <p>You can use the Textile <code>bc.</code> tag to add code snippets to your forum posts.</p>
@@ -78,12 +79,11 @@
                     <p>Supported language identifiers include: apollo, bash, c, coffee, cs, clj, css, dart, go, hs, html, java, js, json, lisp, lua, ml, n, perl, php, proto, python, ruby, rust, scala, sh, sql, tex, txp, vb, vhdl, wiki, xml, xsl, xq and yaml.</p>
                     <h3>Embedding media</h3>
                     <p>You can embed media to your posts from third party services to linking to the resource using normal Textile link syntax.</p>
-                    <pre><code>
-"$":http://www.youtube.com/watch?v=BKQ6nINAeq8
+                    <pre><code>"$":http://www.youtube.com/watch?v=BKQ6nINAeq8
 "$":http://vimeo.com/42531948
 "$":https://twitter.com/textpattern/status/386111138699935744
 "$":https://gist.github.com/gocom/5431041</code></pre>
-                    <p>A link to a supported service becomes an embedded object if it is in its own paragraph. Links within text will stay as normal text links to avoid disturbing reading and text flow. We currently support embedding content from <a href="http://youtube.com/">YouTube</a>, <a href="http://vimeo.com/">Vimeo</a> <a href="https://twitter.com">Twitter</a> and <a href="https://gist.github.com/">GitHub Gist</a>.</p>
+                    <p>A link to a supported service becomes an embedded object if it is in its own paragraph. Links within text will stay as normal text links to avoid disturbing reading and text flow. We currently support embedding content from <a href="http://youtube.com/">YouTube</a>, <a href="http://vimeo.com/">Vimeo</a>, <a href="https://twitter.com">Twitter</a> and <a href="https://gist.github.com/">GitHub Gist</a>.</p>
 
                     <h2>Why can’t I create a forum account or receive forum emails?</h2>
                     <p>The most common cause of problems when creating forum accounts are email spam filters and blacklists. You must supply a working email address in order to create an account; when you sign-up, the forum software will send you the password you may use to login, to verify that your email address is correct and working properly. Some email servers refuse to accept these emails or incorrectly intercept them as spam. This is particularly common with free web mail services.</p>
