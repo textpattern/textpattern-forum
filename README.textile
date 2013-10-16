@@ -104,7 +104,7 @@ HTTP status codes can be used to detect the type of response. The server respond
 
 h3. Authentication
 
-Authentication happens using basic HTTP method, using forum user account.
+Authentication happens using basic HTTP method and regular forum user account.
 
 bc. $ curl -u "username" http://forum.textpattern.com/api
 
