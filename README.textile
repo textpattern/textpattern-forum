@@ -87,3 +87,118 @@ This repository hosts sources and needs to be built before it can be used. After
 bc. $ grunt [task]
 
 Where the @[task]@ is either @test@, @build@, @setup@ or @watch@. Watch will launch a task that watches for file changes. The project is automatically built if a source file is modified. The build task builds the project.
+
+h2. REST API
+
+We offer a public API that can be used to retrieve data from the forums and topics. The public end point can be found from @http://forum.textpattern.com/api@. Data can be retrieved as JSON, and options can be passed optional HTTP query parameters. This API is read-only, and all requests must be done using HTTP GET method. You can also ping resource existence with HEAD, but any other methods are rejected.
+
+h3. Response codes
+
+HTTP status codes can be used to detect the type of response. The server responds with:
+
+* 200: Successful response.
+* 401: You will need to log in to access this resource. The resource may be removed, or private.
+* 404: The resource has been removed, or has never existed.
+* 500: Internal server error.
+* 503: Server is under maintenance.
+
+h3. Authentication
+
+Authentication happens using basic HTTP method, using forum user account.
+
+bc. $ curl -u "username" http://forum.textpattern.com/api
+
+If you request a private or removed resource without being logged in, you will be treated with 401 response:
+
+bc. $ curl -I http://forum.textpattern.com/api/posts/401
+
+Responds with:
+
+bc. HTTP/1.0 401 Unauthorized
+Date: Tue, 15 Oct 2013 09:16:42 GMT
+Server: Apache
+WWW-Authenticate: Basic realm="Textpattern CMS Support Forum External Syndication"
+Connection: close
+Content-Type: application/json; charset=UTF-8
+
+h3. Topics
+
+bc. GET http://forum.textpattern.com/api/topics/:forum
+
+Returns topics from the specified forum.
+
+h4. Optional parameters
+
+* *limit*: number items to show. A value between 1 and 50. Defaults to 15.
+* *sort*: either @last_post@ or @posted@.
+
+h4. Example request
+
+bc. $ curl http://forum.textpattern.com/api/topics/2
+
+Response headers:
+
+bc. HTTP/1.1 200 OK
+Date: Sun, 13 Oct 2013 11:24:49 GMT
+Server: Apache
+Content-Type: application/json; charset=UTF-8
+
+Response body:
+
+bc. {
+    "url": "http:\/\/forum.textpattern.com\/index.php",
+    "topic": [
+        {
+            "title": "Better way to upload media",
+            "link": "http:\/\/forum.textpattern.com\/viewtopic.php?id=40096&action=new",
+            "content": "<p>+ lots<\/p>",
+            "author": {
+                "name": "tye",
+                "uri": "http:\/\/forum.textpattern.test\/profile.php?id=5751"
+            },
+            "posted": "Thu, 26 Sep 2013 21:51:18 +0000",
+            "id": "40096"
+        }
+    ]
+}
+
+h3. Posts
+
+bc. GET http://forum.textpattern.com/api/posts/:topic
+
+Returns replies from a specific public topic.
+
+h4. Optional parameters
+
+* *limit*: number items to show. A value between 1 and 50. Defaults to 15.
+* *sort*: either @last_post@ or @posted@.
+
+h4. Example request
+
+bc. $ curl http://forum.textpattern.com/api/posts/40092
+
+Response headers:
+
+bc. HTTP/1.1 200 OK
+Date: Sun, 13 Oct 2013 12:24:49 GMT
+Server: Apache
+Content-Type: application/json; charset=UTF-8
+
+Response body:
+
+bc. {
+    "url": ["http:\/\/forum.textpattern.test\/viewtopic.php?id=40092"],
+    "post": [
+        {
+            "title": "Re: Tag tree best practise: to nest or not to nest",
+            "link": "http:\/\/forum.textpattern.test\/viewtopic.php?pid=275473#p275473",
+            "content": "<p>Stef, this is really useful &#8211; I&#8217;m on the right track. Thank you very much.<\/p>",
+                "author": {
+                    "name": "gaekwad",
+                "uri": "http:\/\/forum.textpattern.test\/profile.php?id=7456"
+            },
+            "posted": "Tue, 24 Sep 2013 16:18:48 +0000",
+            "id": "275473"
+        }
+    ]
+}

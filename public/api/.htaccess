@@ -1,0 +1,5 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^topics/([0-9]+) index.php?action=feed&fid=$1 [QSA]
+    RewriteRule ^posts/([0-9]+) index.php?action=feed&tid=$1 [QSA]
+</IfModule>
