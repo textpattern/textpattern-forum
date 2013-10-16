@@ -146,7 +146,7 @@ Content-Type: application/json; charset=UTF-8
 Response body:
 
 bc. {
-    "url": "http:\/\/forum.textpattern.com\/index.php",
+    "url": ["http:\/\/forum.textpattern.com\/index.php"],
     "topic": [
         {
             "title": "Better way to upload media",
