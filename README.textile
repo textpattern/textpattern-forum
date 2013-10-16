@@ -193,8 +193,8 @@ bc. {
             "title": "Re: Tag tree best practise: to nest or not to nest",
             "link": "http:\/\/forum.textpattern.test\/viewtopic.php?pid=275473#p275473",
             "content": "<p>Stef, this is really useful &#8211; I&#8217;m on the right track. Thank you very much.<\/p>",
-                "author": {
-                    "name": "gaekwad",
+            "author": {
+                "name": "gaekwad",
                 "uri": "http:\/\/forum.textpattern.test\/profile.php?id=7456"
             },
             "posted": "Tue, 24 Sep 2013 16:18:48 +0000",
