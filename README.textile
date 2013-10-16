@@ -106,7 +106,7 @@ h3. Authentication
 
 Authentication happens using basic HTTP method and regular forum user account.
 
-bc. $ curl -u "username" http://forum.textpattern.com/api
+bc. $ curl -u "username" http://forum.textpattern.com/api/
 
 If you request a private or removed resource without being logged in, you will be treated with 401 response:
 
