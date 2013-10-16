@@ -60,7 +60,7 @@
                     <h2>Formatting</h2>
                     <p>The forum uses <a href="http://textpattern.com/textile-reference-manual">Textile markup language</a> for posts and signatures. The forum’s Textile has few additional features, including media embedding support and syntax highlighting. If you’re not already familiar with Markdown, take a quick look at <a href="http://textpattern.com/textile-reference-manual">Textile reference</a>. The few most useful Textile tags you can use to format your posts include:</p>
                     <ul>
-                        <li><code>!http://example.com/image.jpg!</code> → <img src="http://example.com/image.jpg"></li>
+                        <li><code>!http://textpattern.com/assets/img/textpattern.png!</code> → <img src="http://textpattern.com/assets/img/textpattern.png" alt="Textpattern icon"></li>
                         <li><code>"link text":http://textpattern.com</code> → <a href="http://textpattern.com">link text</a></li>
                         <li><code>@inline code@</code> → <code>inline code</code></li>
                         <li><code>*strong*</code> → <strong>strong</strong></li>
