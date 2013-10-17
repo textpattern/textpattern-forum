@@ -39,7 +39,7 @@ class Textpattern_Fluxbb_Api
         {
             foreach ($array as &$value)
             {
-                if (!is_array($value))
+                if (!is_array($value) || !isset($value[0]))
                 {
                     $value = array($value);
                 }
