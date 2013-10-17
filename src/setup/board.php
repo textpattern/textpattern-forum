@@ -93,8 +93,6 @@ $deletePerms = Textpattern\Fluxbb\Db::pdo()->prepare('DELETE FROM forum_perms WH
 
 $deleteForum = Textpattern\Fluxbb\Db::pdo()->prepare('DELETE FROM forums WHERE id = :id');
 
-$i = 0;
-
 foreach ($move as $from => $to)
 {
     // Get the current forum data.
