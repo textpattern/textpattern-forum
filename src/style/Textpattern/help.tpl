@@ -57,7 +57,7 @@
                 <section class="layout--span-1-8">
                     <h1>Forum help</h1>
     
-                    <h2>Formatting</h2>
+                    <h2 id="forum-help-textile-formatting">Formatting</h2>
                     <p>The forum uses <a href="http://textpattern.com/textile-reference-manual">Textile markup language</a> for posts and signatures. The forum’s Textile has few additional features, including media embedding support and syntax highlighting. If you’re not already familiar with Markdown, take a quick look at <a href="http://textpattern.com/textile-reference-manual">Textile reference</a>. The few most useful Textile tags you can use to format your posts include:</p>
                     <ul>
                         <li><code>!http://textpattern.com/assets/img/textpattern.png!</code> → <img src="http://textpattern.com/assets/img/textpattern.png" alt=""></li>
@@ -85,7 +85,7 @@
 "$":https://gist.github.com/gocom/5431041</code></pre>
                     <p>A link to a supported service becomes an embedded object if it is in its own paragraph. Links within text will stay as normal text links to avoid disturbing reading and text flow. We currently support embedding content from <a href="http://youtube.com/">YouTube</a>, <a href="http://vimeo.com/">Vimeo</a>, <a href="https://twitter.com">Twitter</a> and <a href="https://gist.github.com/">GitHub Gist</a>.</p>
 
-                    <h2>Why can’t I create a forum account or receive forum emails?</h2>
+                    <h2 id="forum-help-undeliverable-mail">Why can’t I create a forum account or receive forum emails?</h2>
                     <p>The most common cause of problems when creating forum accounts are email spam filters and blacklists. You must supply a working email address in order to create an account; when you sign-up, the forum software will send you the password you may use to login, to verify that your email address is correct and working properly. Some email servers refuse to accept these emails or incorrectly intercept them as spam. This is particularly common with free web mail services.</p>
                     <p>The following email providers seem to have problems accepting email from this forum, for one reason or another:</p>
                     <ul>
@@ -98,7 +98,7 @@
                     </ul>
                     <p>It is therefore recommended that you use an address from another provider.</p>
 
-                    <h2>How should I ask for help on the forum?</h2>
+                    <h2 id="forum-help-conduct">How should I ask for help on the forum?</h2>
                     <p>The Textpattern CMS Support Forum is for discussion and support of all things Textpattern. Please bear in mind that it is a community forum—when you ask for assistance, you are asking volunteers and fellow users, not paid technical support staff. The usual common-sense conventions of etiquette and politeness apply.</p>
                     <p>A few rules of thumb specific to the Textpattern forum:</p>
                     <ol>
