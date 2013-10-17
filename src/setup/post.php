@@ -72,6 +72,11 @@ $options = array(
     'o_quote_depth'           => 3,
     'o_feed_type'             => 2,
     'o_feed_ttl'              => 0,
+    'o_rules_message'         => '<p>You <strong>must</strong> provide a real email address, or you will not be able to successfully register and participate in the forum. Your email address is <em>only</em> used to help us prevent spam from flooding the forum, and to allow you to make use of forum features, such as topic subscription. It is <strong>never</strong> shared or sold to anyone, nor will you be subscribed to any kind of mailing lists. You may allow or disallow other forum members from seeing your email address. Guests cannot view any of your profile information.</p>
+
+<p>All registrations are monitored by a real person and we take various pro-active measures against spam. If <a href="http://en.wikipedia.org/wiki/Spam_(electronic)#Newsgroup_spam_and_Forum_spam" title="Wikipedia: Spam(electronic): Newsgroup spam and Forum spam">spam</a> or <a href="http://en.wikipedia.org/wiki/Troll (Internet)" title="Wikipedia: Troll (Internet)">trolling</a> is your intention, we suggest you spare your energy.</p>
+
+<p>Most email addresses banned are those which have been used to abuse the forum. Some email domains, however, are banned only because those email providers refuse to accept the registration email which the forum software sends (which is required, as mentioned above), and bounce the email back to us. We have made all the efforts possible on our part to correct this, but have met little or only temporary success. It is recommended that you <a href="http://textpattern.com/faq/207/why-cant-i-create-a-forum-account" title="Faq: Why can’t I create a forum account?">check to see if your email address domain is one of those affected</a>. If so, you will need to provide an alternate address. We apologize for the inconvenience.</p>'
 );
 
 echo "Updating FluxBB options...\n";
