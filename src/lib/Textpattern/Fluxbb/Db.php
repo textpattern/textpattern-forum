@@ -56,7 +56,7 @@ class Db
         if (!self::$pdo)
         {
             global $db_host, $db_name, $db_username, $db_password, $db_prefix;
-            self::$pdo = new \PDO('mysql:dbname='.$db_name.';host='.$db_host, $db_username, $db_password);
+            self::$pdo = new \PDO('mysql:dbname='.$db_name.';host='.$db_host, $db_username, $db_password, array(\PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'"));
             self::$pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
         }
 
