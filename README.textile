@@ -171,7 +171,6 @@ Returns replies from a specific public topic.
 h4. Optional parameters
 
 * *limit*: number items to show. A value between 1 and 50. Defaults to 15.
-* *sort*: either @last_post@ or @posted@.
 
 h4. Example request
 
