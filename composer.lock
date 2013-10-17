@@ -3,20 +3,20 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "b27fb8062e05b5ebbb9ec7a8271adda1",
+    "hash": "65d256ef831b967a33c65f01fd061366",
     "packages": [
         {
             "name": "netcarver/textile",
-            "version": "v3.5.1",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/netcarver/textile.git",
-                "reference": "a8280ff782e449ce32ea3f416a99148b61e3343e"
+                "reference": "725143be6e147dfc1e21e1c912f377084bb8c57a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/netcarver/textile/zipball/a8280ff782e449ce32ea3f416a99148b61e3343e",
-                "reference": "a8280ff782e449ce32ea3f416a99148b61e3343e",
+                "url": "https://api.github.com/repos/netcarver/textile/zipball/725143be6e147dfc1e21e1c912f377084bb8c57a",
+                "reference": "725143be6e147dfc1e21e1c912f377084bb8c57a",
                 "shasum": ""
             },
             "require": {
@@ -39,7 +39,7 @@
             ],
             "description": "A lightweight markup language that takes (almost) plaintext and converts it into well formed HTML.",
             "homepage": "https://github.com/netcarver/textile",
-            "time": "2013-01-01 17:29:35"
+            "time": "2013-01-27 23:52:35"
         }
     ],
     "packages-dev": [
@@ -49,9 +49,9 @@
 
     ],
     "minimum-stability": "stable",
-    "stability-flags": [
-
-    ],
+    "stability-flags": {
+        "netcarver/textile": 20
+    },
     "platform": [
 
     ],
