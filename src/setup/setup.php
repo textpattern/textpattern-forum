@@ -97,7 +97,7 @@ foreach (glob('public/*') as $file)
 {
     $name = basename($file);
 
-    if ($name !== 'img' && ($name === 'COPYING' || in_array(pathinfo($file, PATHINFO_EXTENSION), array('php', 'md', 'js')) || is_dir($file)))
+    if (!in_array($name, array('img', 'api')) && ($name === 'COPYING' || in_array(pathinfo($file, PATHINFO_EXTENSION), array('php', 'md', 'js')) || is_dir($file)))
     {
         echo "Remove {$file}...\n";
         `rm -Rf '{$file}'`;
