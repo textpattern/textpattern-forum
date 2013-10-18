@@ -190,24 +190,30 @@ $update = array(
         '<p>External links: <a rel="external" href="http://textpattern.net">User Documentation</a></p>',
     ),
 
-    'Plugin Discussions' => array(
-        '',
+    'Troubleshooting' => array(
+        '<p>Had a server meltdown, Textpattern won’t run? Post your diagnostics reports here.</p>',
     ),
 
     'Plugin Author Support' => array(
         '<p>External link: <a rel="external" href="http://textpattern.org">Textpattern Resources</a></p>',
     ),
 
-    'Theme Discussions' => array(
-        '',
-    ),
-
     'Theme Author Support' => array(
         '<p>External link: <a rel="external" href="http://textgarden.org/">Textgarden</a></p>',
     ),
 
-    'Troubleshooting' => array(
-        '<p>Had a server meltdown, Textpattern won’t run? Post your diagnostics reports here.</p>',
+    'Plugin Discussions' => array(
+        '',
+    ),
+
+    'Theme Discussions' => array(
+        '',
+    ),
+
+    // Community.
+
+    'General Discussions' => array(
+        '<p>Web development, miscellaneous topics, anything not really Textpattern-related.</p>',
     ),
 
     'Latest Happenings' => array(
@@ -222,31 +228,31 @@ $update = array(
         '<p>Maintaining and expanding the documentation wiki.</p>',
     ),
 
-    'General Discussions' => array(
-        '<p>Web development, miscellaneous topics, anything not really Textpattern-related.</p>',
-    ),
-
     'Textpattern’s Websites and Social Channels' => array(
         '<p>External links: <a rel="external" href="http://textpattern.com/">Textpattern.com</a>, <a rel="external" href="http://txpmag.com/">TXP</a></p>'.
         '<p>Social channels: <a rel="external" href="https://twitter.com/textpattern">@textpattern</a>, <a rel="external" href="https://twitter.com/txpmag">@txpmag</a>, <a rel="external" href="https://twitter.com/txpforum">@txpforum</a> on Twitter | <a rel="external" href="https://www.facebook.com/groups/textpattern/">Textpattern CMS</a> on Facebook | <a rel="external" href="https://plus.google.com/communities/111366418300163664690">Textpattern community</a>, <a rel="external" href="https://plus.google.com/107663405417732990755">Textpattern CMS</a>, <a rel="external" href="https://plus.google.com/102240548936231123918">TXP</a> on Google+</p>',
     ),
 
-    'Moderation' => array(
-        '<p>(Admins and moderators only) Questions and concerns regarding moderation of the Textpattern forum</p>',
-    ),
-
     'Archive' => array(
         '<p>Old stuff.</p>',
     ),
+
+    'Moderation' => array(
+        '<p>(Admins and moderators only) Questions and concerns regarding moderation of the Textpattern forum</p>',
+    ),
 );
 
-$sth = Textpattern\Fluxbb\Db::pdo()->prepare('UPDATE forums SET forum_desc = :forum_desc WHERE forum_name = :forum_name');
+$sth = Textpattern\Fluxbb\Db::pdo()->prepare('UPDATE forums SET forum_desc = :forum_desc, sort_by = :sort_by, disp_position = :disp_position WHERE forum_name = :forum_name');
+
+$i = 1;
 
 foreach ($update as $name => $data)
 {
     $sth->execute(array(
-        ':forum_name' => $name,
-        ':forum_desc' => $data[0],
+        ':forum_name'    => $name,
+        ':forum_desc'    => $data[0],
+        ':sort_by'       => 0,
+        ':disp_position' => $i++,
     ));
 }
 
