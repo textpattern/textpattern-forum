@@ -187,7 +187,7 @@ $update = array(
 
     'How Do I…? & Other Questions' => array(
         '<p>Requesting help with templates and asking questions.</p>'.
-        '<p>External links: <a rel="external" href="http://textpattern.net">User Documentation</a></p>',
+        '<p>External links: <a rel="external" href="http://textpattern.net">User Documentation</a>, <a rel="external" href="http://txptips.com/">TXP Tips</a></p>',
     ),
 
     'Troubleshooting' => array(
