@@ -59,6 +59,8 @@
             return;
         }
 
+        $('.postlink a').eq(0).attr('href', '#quickpostform');
+
         button = $('<a href="#quickpostform">Quote</a>').on('click', function ()
         {
             var $this = $(this),
