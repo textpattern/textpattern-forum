@@ -101,7 +101,7 @@ foreach ($options as $name => $value)
 {
     if ($sth->execute(array(':name'  => $name, ':value' => $value)))
     {
-        echo "Updated {$name} to {$value}\n";
+        echo "  {$name}\n";
     }
     else
     {
