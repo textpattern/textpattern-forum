@@ -33,10 +33,10 @@ $db_password = '';
 $db_host = 'localhost';
 
 /**
- * A URL where spam-trap triggering users are redirected to.
+ * The forum base URL.
  */
 
-define('TEXTPATTERN_TRAP_URL', 'http://forum.textpattern.test/');
+define('TEXTPATTERN_FORUM_BASE_URL', 'http://forum.textpattern.test');
 
 /**
  * A key needed to run tasks.

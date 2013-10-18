@@ -60,9 +60,9 @@ new Filter();
 new Sfs();
 new Document();
 
-if (defined('\TEXTPATTERN_TRAP_URL'))
+if (defined('\TEXTPATTERN_FORUM_BASE_URL'))
 {
-    new Trap(\TEXTPATTERN_TRAP_URL);
+    new Trap(\TEXTPATTERN_FORUM_BASE_URL.'/index.php');
 }
 
 if (defined('\TEXTPATTERN_TASKS_KEY'))
