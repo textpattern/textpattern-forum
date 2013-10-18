@@ -64,7 +64,7 @@ $move = array(
     'Textile' => array('General Discussions', '[textile] '),
     //'Textpattern’s Websites and Social Channels' => '',
     //'Troubleshooting' => '',
-    //'User Documentation' => '',
+    'User Documentation' => array('Archive', '[wiki] '),
 );
 
 // Add in International Users category.
@@ -222,10 +222,6 @@ $update = array(
 
     'Seeking TXP pros' => array(
         '<p>Hiring and looking for work.</p>',
-    ),
-
-    'User Documentation' => array(
-        '<p>Maintaining and expanding the documentation wiki.</p>',
     ),
 
     'Textpattern’s Websites and Social Channels' => array(
