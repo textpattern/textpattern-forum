@@ -166,6 +166,11 @@ foreach ($move as $from => $to)
     $deleteForum->execute(array(':id' => $r['id']));
 }
 
+// Remove categories.
+
+$deleteCat = Textpattern\Fluxbb\Db::pdo()->prepare('DELETE FROM categories WHERE cat_name = :name');
+$deleteCat->execute(array(':name' => 'International Users'));
+
 // Updating forums.
 
 echo "Updating forum meta data...\n";
