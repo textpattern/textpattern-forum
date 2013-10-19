@@ -5,19 +5,18 @@
 fieldset {
     margin: 1em 0;
     border: 1px solid $color-border;
-    padding: 1em 1em 1px;
+    padding: 0 1em;
 }
 
 /* remove padding so people aren't caught out if they zero out fieldsets */
 legend {
     @include adjust-font-size-to(14px, 1);
 
-    margin-left: -1em;
+    margin: 0 -1em;
     border: 1px solid $color-border;
     padding: 0.2142857em 1em;
     font-family: $font-serif;
     font-weight: bold;
-//    text-transform: uppercase;
     background-color: $color-background-box;
 }
 

@@ -10,11 +10,47 @@
 #bblinks,
 #brdfooter h2,
 #brdstats h2,
+#adminconsole p.submittop,
 .modlist,
 .postquote,
 .textpattern-fluxbb-t,
 .postlinksb .postlink {
     display: none !important;
+}
+
+
+/* Forum grid layout
+   ========================================================================== */
+
+.block2col .blockmenu {
+    border: 1px solid $color-border;
+    margin: 1em 0;
+    padding: 0 1em;
+    background-color: $color-background-box;
+
+    @include breakpoint($breakpoint-2) {
+        @include box-sizing(border-box);
+
+        width: 22.8571429%;
+        float: left;
+        margin-right: 1em -100% 1em 0%;
+        clear: both;
+    }
+
+    h2 {
+        @include adjust-font-size-to(18px, 1.2);
+    }
+}
+
+.block2col .block,
+.block2col .blockform {
+    @include breakpoint($breakpoint-2) {
+        width: 74.2857143%;
+        float: right;
+        margin-left: 0;
+        margin-right: 0;
+        clear: none;
+    }
 }
 
 
@@ -112,6 +148,10 @@
     }
 }
 
+.buttons a {
+    margin-left: 1em;
+}
+
 
 /* Breadcrumb links
    ========================================================================== */
@@ -148,11 +188,7 @@ thead th {
             display: none;
         }
     }
-}
 
-/* last post column */
-#page-index,
-#page-viewforum {
     .tcr {
         width: 22%;
     
@@ -169,7 +205,7 @@ thead th {
 }
 
 /* forum icons */
-.icon {
+#page-index .icon {
     @include hires-graphic(forum-icons, png, 480px, 240px);
 
     float: left;
@@ -242,15 +278,6 @@ thead th {
     }
 }
 
-.warntext {
-    @include border-radius(0.2307692em); // 3px / 13px
-
-    border: 1px solid $color-warning-border;
-    padding: 0.5384615em 1em; // 7px / 13px
-    color: $color-warning-text;
-    background: $color-warning-background;
-}
-
 .infldset {
     margin-bottom: 1em;
 
@@ -267,4 +294,33 @@ thead th {
             border-bottom: 1px solid $color-border;
         }
     }
+}
+
+
+/* Admin settings layout
+   ========================================================================== */
+
+#adminconsole fieldset {
+    th {
+        width: 33%;
+    }
+
+    td span,
+    th span {
+        display: block;
+        margin-top: 0.5em;
+    }
+}
+
+
+/* Warning messages
+   ========================================================================== */
+
+.warntext {
+    @include border-radius(0.2307692em); // 3px / 13px
+
+    border: 1px solid $color-warning-border;
+    padding: 0.5384615em 1em; // 7px / 13px
+    color: $color-warning-text;
+    background: $color-warning-background;
 }
