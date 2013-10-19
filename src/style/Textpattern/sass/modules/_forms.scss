@@ -8,7 +8,6 @@ fieldset {
     padding: 0 1em;
 }
 
-/* remove padding so people aren't caught out if they zero out fieldsets */
 legend {
     @include adjust-font-size-to(14px, 1);
 
