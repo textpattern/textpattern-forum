@@ -6,7 +6,7 @@ $config = './public/config.php';
 
 if (!file_exists($config))
 {
-    die('FluxBB not installed: config.php does not exists.');
+    die('FluxBB not installed: config.php does not exist.');
 }
 
 include $config;
