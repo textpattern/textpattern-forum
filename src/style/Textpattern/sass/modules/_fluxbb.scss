@@ -137,23 +137,29 @@ thead th {
 }
 
 /* topics and posts columns */
-.tc2,
-.tc3 {
-    width: 11%;
-
-    // hide columns at small screen widths
-    @include breakpoint(max-width $breakpoint-2) {
-        display: none;
+#page-index,
+#page-viewforum {
+    .tc2,
+    .tc3 {
+        width: 11%;
+    
+        // hide columns at small screen widths
+        @include breakpoint(max-width $breakpoint-2) {
+            display: none;
+        }
     }
 }
 
 /* last post column */
-.tcr {
-    width: 22%;
-
-    // widen column at small screen widths
-    @include breakpoint(max-width $breakpoint-2) {
-        width: 35%;
+#page-index,
+#page-viewforum {
+    .tcr {
+        width: 22%;
+    
+        // widen column at small screen widths
+        @include breakpoint(max-width $breakpoint-2) {
+            width: 35%;
+        }
     }
 }
 
@@ -232,6 +238,33 @@ thead th {
         margin-top: 0;
         a {
             color: $color-text;
+        }
+    }
+}
+
+.warntext {
+    @include border-radius(0.2307692em); // 3px / 13px
+
+    border: 1px solid $color-warning-border;
+    padding: 0.5384615em 1em; // 7px / 13px
+    color: $color-warning-text;
+    background: $color-warning-background;
+}
+
+.infldset {
+    margin-bottom: 1em;
+
+    table tbody tr:first-child {
+        td,
+        th {
+            border-top: 1px solid $color-border;
+        }
+    }
+
+    table thead {
+        td,
+        th {
+            border-bottom: 1px solid $color-border;
         }
     }
 }
