@@ -11,23 +11,6 @@ if (!file_exists($config))
 
 include $config;
 
-// Rename forums.
-
-echo "Renaming forums...\n";
-
-$rename = array(
-    'Packaged Designs' => 'Theme Author Support',
-    'Plugins'          => 'Plugin Discussions',
-    'Presentation'     => 'Theme Discussions',
-);
-
-$sth = Textpattern\Fluxbb\Db::pdo()->prepare('UPDATE forums SET forum_name = :new WHERE forum_name = :old');
-
-foreach ($rename as $old => $new)
-{
-    $sth->execute(array(':old' => $old, ':new' => $new));
-}
-
 echo "Moving topics...\n";
 
 // Move topics.
@@ -55,9 +38,9 @@ $move = array(
     'Past Inquiries' => array('Seeking Txp Pros', ''),
     'Plugin Archives' => array('Archive', ''),
     //'Plugin Author Support' => '',
-    'Plugin Development' => array('Plugin Discussions', ''),
-    'Plugin Requests' => array('Plugin Discussions', '[request] '),
-    //'Plugins' => 'Plugin Discussions',
+    'Plugin Development' => array('Plugins', ''),
+    'Plugin Requests' => array('Plugins', '[request] '),
+    //'Plugins' => 'Plugins',
     //'Presentation' => '',
     'Previous Troubles' => array('Troubleshooting', '[resolved] '),
     //'Seeking Txp Pros' => '',
@@ -176,85 +159,126 @@ $deleteCat->execute(array(':name' => 'International Users'));
 echo "Updating forum meta data...\n";
 
 $update = array(
-    'Official Announcements' => array(
-        '<p>External link: <a rel="external" href="http://textpattern.com/weblog/">Weblog</a></p>',
+
+    // Textpattern.
+
+    array(
+        'name'   => 'Official Announcements',
+        'desc'   => '<p>External link: <a rel="external" href="http://textpattern.com/weblog/">Weblog</a></p>',
+        'forums' => array('Official Announcements'),
     ),
 
-    'Development' => array(
-        '<p>Help test current and future versions of Textpattern. Experienced users only, please.</p>'.
+    array(
+        'name'   => 'Development',
+        'desc'   => '<p>Help test current and future versions of Textpattern. Experienced users only, please.</p>'.
         '<p>External links: <a rel="external" href="https://github.com/textpattern">GitHub</a>, <a rel="external" href="https://code.google.com/p/textpattern/issues/list">Issue tracker</a></p>',
+        'forums' => array('Development'),
     ),
 
-    'Internationalisation' => array(
-        '<p>Translating and adapting Textpattern for non-English users.</p>'.
+    array(
+        'name'   => 'Internationalisation',
+        'desc'   => '<p>Translating and adapting Textpattern for non-English users.</p>'.
         '<p>External link: <a rel="external" href="https://github.com/textpattern/textpacks">Translations repository</a></p>',
+        'forums' => array('Internationalisation'),
     ),
 
-    'How Do I…? & Other Questions' => array(
-        '<p>Requesting help with templates and asking questions.</p>'.
+    // Assistance.
+
+    array(
+        'name'   => 'How Do I…? & Other Questions',
+        'desc'   => '<p>Requesting help with templates and asking questions.</p>'.
         '<p>External links: <a rel="external" href="http://textpattern.net">User Documentation</a>, <a rel="external" href="http://txptips.com/">TXP Tips</a></p>',
+        'forums' => array('How Do I…? & Other Questions'),
     ),
 
-    'Troubleshooting' => array(
-        '<p>Had a server meltdown, Textpattern won’t run? Post your diagnostics reports here.</p>',
+    array(
+        'name'   => 'Troubleshooting',
+        'desc'   => '<p>Had a server meltdown, Textpattern won’t run? Post your diagnostics reports here.</p>',
+        'forums' => array('Troubleshooting')
     ),
 
-    'Plugin Author Support' => array(
-        '<p>External link: <a rel="external" href="http://textpattern.org">Textpattern Resources</a></p>',
+    array(
+        'name'   => 'Plugin Author Support',
+        'desc'   => '<p>External link: <a rel="external" href="http://textpattern.org">Textpattern Resources</a></p>',
+        'forums' => array('Plugin Author Support'),
     ),
 
-    'Theme Author Support' => array(
-        '<p>External link: <a rel="external" href="http://textgarden.org/">Textgarden</a></p>',
+    array(
+        'name'   => 'Theme author Support',
+        'desc'   => '<p>External link: <a rel="external" href="http://textgarden.org/">Textgarden</a></p>',
+        'forums' => array('Packaged Designs', 'Theme author Support'),
     ),
 
-    'Plugin Discussions' => array(
-        '',
+    array(
+        'name'   => 'Plugin discussions',
+        'desc'   => '',
+        'forums' => array('Plugins', 'Plugin discussions'),
     ),
 
-    'Theme Discussions' => array(
-        '',
+    array(
+        'name'   => 'Theme discussions',
+        'desc'   => '',
+        'forums' => array('Presentation', 'Theme discussions')
     ),
 
     // Community.
 
-    'General Discussions' => array(
-        '<p>Web development, miscellaneous topics, anything not really Textpattern-related.</p>',
+    array(
+        'name'   => 'General Discussions',
+        'desc'   => '<p>Web development, miscellaneous topics, anything not really Textpattern-related.</p>',
+        'forums' => array('General Discussions'),
     ),
 
-    'Latest Happenings' => array(
-        '<p>Recent and upcoming TXP community events and news.</p>',
+    array(
+        'name'   => 'Latest Happenings',
+        'desc'   => '<p>Recent and upcoming TXP community events and news.</p>',
+        'forums' => array('Latest Happenings'),
     ),
 
-    'Seeking TXP pros' => array(
-        '<p>Hiring and looking for work.</p>',
+    array(
+        'name'   => 'Seeking TXP pros',
+        'desc'   => '<p>Hiring and looking for work.</p>',
+        'forums' => array('Seeking Txp pros', 'Seeking TXP pros')
     ),
 
-    'Textpattern’s Websites and Social Channels' => array(
-        '<p>External links: <a rel="external" href="http://textpattern.com/">Textpattern.com</a>, <a rel="external" href="http://txpmag.com/">TXP</a></p>'.
+    array(
+        'name'   => 'Textpattern’s Websites and Social Channels',
+        'desc'   => '<p>External links: <a rel="external" href="http://textpattern.com/">Textpattern.com</a>, <a rel="external" href="http://txpmag.com/">TXP</a></p>'.
         '<p>Social channels: <a rel="external" href="https://twitter.com/textpattern">@textpattern</a>, <a rel="external" href="https://twitter.com/txpmag">@txpmag</a>, <a rel="external" href="https://twitter.com/txpforum">@txpforum</a> on Twitter | <a rel="external" href="https://www.facebook.com/groups/textpattern/">Textpattern CMS</a> on Facebook | <a rel="external" href="https://plus.google.com/communities/111366418300163664690">Textpattern community</a>, <a rel="external" href="https://plus.google.com/107663405417732990755">Textpattern CMS</a>, <a rel="external" href="https://plus.google.com/102240548936231123918">TXP</a> on Google+</p>',
+        'forums' => array('Textpattern’s Websites and Social Channels'),
     ),
 
-    'Archive' => array(
-        '<p>Old stuff.</p>',
+    array(
+        'name'   => 'Archive',
+        'desc'   => '<p>Old stuff.</p>',
+        'forums' => array('Archive'),
     ),
 
-    'Moderation' => array(
-        '<p>(Admins and moderators only) Questions and concerns regarding moderation of the Textpattern forum</p>',
+    array(
+        'name'   => 'Moderation',
+        'desc'   => '<p>(Admins and moderators only) Questions and concerns regarding moderation of the Textpattern forum</p>',
+        'forums' => array('Moderation'),
     ),
 );
 
-$sth = Textpattern\Fluxbb\Db::pdo()->prepare('UPDATE forums SET forum_desc = :forum_desc, sort_by = :sort_by, disp_position = :disp_position WHERE forum_name = :forum_name');
+$sth = Textpattern\Fluxbb\Db::pdo()->prepare('UPDATE forums SET forum_name = :new_name, forum_desc = :forum_desc, sort_by = :sort_by, disp_position = :disp_position WHERE forum_name = :forum_name');
 
 $i = 1;
 
-foreach ($update as $name => $data)
+foreach ($update as $data)
 {
-    $sth->execute(array(
-        ':forum_name'    => $name,
-        ':forum_desc'    => $data[0],
-        ':sort_by'       => 0,
-        ':disp_position' => $i++,
-    ));
+    foreach ($data['forums'] as $name)
+    {
+        $sth->execute(array(
+            ':forum_name'    => $name,
+            ':new_name'      => $data['name'],
+            ':forum_desc'    => $data['desc'],
+            ':sort_by'       => 0,
+            ':disp_position' => $i,
+        ));
+    }
+
+    $i++;
 }
 
 echo "Clearing FluxBB cache...\n";
