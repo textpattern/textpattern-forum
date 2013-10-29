@@ -165,13 +165,13 @@ $update = array(
     array(
         'name'   => 'Official announcements',
         'desc'   => 'Latest official Textpattern project news from the core development team.<br><strong>External links:</strong> <a rel="external" href="http://textpattern.com/weblog/">Textpattern blog</a>.',
-        'forums' => array('Official Announcements'),
+        'forums' => array('Official Announcements', 'Official announcements'),
     ),
 
     array(
         'name'   => 'Core development',
         'desc'   => 'Helping test current/future versions of Textpattern CMS. Experienced users only.<br><strong>External links:</strong> <a rel="external" href="https://github.com/textpattern">Textpattern on GitHub</a>, <a rel="external" href="https://code.google.com/p/textpattern/issues/list">Textpattern CMS Issue Tracker</a>.',
-        'forums' => array('Development'),
+        'forums' => array('Development', 'Core development'),
     ),
 
     array(
@@ -183,7 +183,7 @@ $update = array(
     array(
         'name'   => 'Feature ideas',
         'desc'   => 'Suggesting and discussing features you’d like to see added to the core in future Textpattern CMS releases.',
-        'forums' => array('Feature Ideas'),
+        'forums' => array('Feature Ideas', 'Feature ideas'),
     ),
 
     // Assistance.
@@ -191,19 +191,19 @@ $update = array(
     array(
         'name'   => 'How do I…? and other questions',
         'desc'   => 'Requesting help with templates and asking questions.<br><strong>External links:</strong> <a rel="external" href="http://textpattern.net">Textpattern CMS User Documentation</a>, <a rel="external" href="http://txptips.com/">TXP Tips</a>.',
-        'forums' => array('How Do I…? & Other Questions'),
+        'forums' => array('How Do I…? & Other Questions', 'How do I…? and other questions'),
     ),
 
     array(
         'name'   => 'Troubleshooting',
         'desc'   => 'Had a server meltdown? Textpattern CMS won’t run? Post your diagnostics reports and request help to track down problems.',
-        'forums' => array('Troubleshooting')
+        'forums' => array('Troubleshooting'),
     ),
 
     array(
         'name'   => 'Plugin author support',
         'desc'   => 'Support for existing third-party Textpattern plugins.<br><strong>External links:</strong> <a rel="external" href="http://textpattern.org">Textpattern CMS Plugins</a>.',
-        'forums' => array('Plugin Author Support'),
+        'forums' => array('Plugin Author Support', 'Plugin author support'),
     ),
 
     array(
@@ -215,13 +215,13 @@ $update = array(
     array(
         'name'   => 'Theme author support',
         'desc'   => 'Support for existing, packaged Textpattern website themes and admin themes.<br><strong>External links:</strong> <a rel="external" href="http://textgarden.org/">Textpattern CMS Themes</a>.',
-        'forums' => array('Packaged Designs', 'Theme author Support'),
+        'forums' => array('Packaged Designs', 'Theme author Support', 'Theme author support'),
     ),
 
     array(
         'name'   => 'Theme discussions',
         'desc'   => 'Building and distributing your own packaged Textpattern CMS-powered website themes and admin (control panel) themes.',
-        'forums' => array('Presentation', 'Theme discussions')
+        'forums' => array('Presentation', 'Theme discussions'),
     ),
 
     // Community.
@@ -229,31 +229,31 @@ $update = array(
     array(
         'name'   => 'General discussions',
         'desc'   => 'Discussing web development in general and other miscellaneous topics—anything not specifically Textpattern-related.',
-        'forums' => array('General Discussions'),
+        'forums' => array('General Discussions', 'General discussions'),
     ),
 
     array(
         'name'   => 'Latest happenings',
         'desc'   => 'Recent and upcoming Textpattern community events and news, including discussions of official Textpattern announcements.',
-        'forums' => array('Latest Happenings'),
+        'forums' => array('Latest Happenings', 'Latest happenings'),
     ),
 
     array(
         'name'   => 'Seeking Textpattern CMS pros',
         'desc'   => 'Hiring and looking for professional work. Getting in touch with experienced Textpattern CMS users for current, ongoing and future projects.',
-        'forums' => array('Seeking Txp pros', 'Seeking TXP pros')
+        'forums' => array('Seeking Txp pros', 'Seeking TXP pros', 'Seeking Textpattern CMS pros'),
     ),
 
     array(
         'name'   => 'Showcase your Textpattern site',
         'desc'   => 'Showing the community your Textpattern CMS-powered websites and inviting helpful, constructive feedback.',
-        'forums' => array('Let’s See Yours, Then')
+        'forums' => array('Let’s See Yours, Then', 'Showcase your Textpattern site'),
     ),
 
     array(
         'name'   => 'Textpattern’s sites/social channels',
         'desc'   => 'Discussing the official Textpattern brand websites and social media channels.<br><strong>External links:</strong> <a rel="external" href="http://textpattern.com/">Textpattern.com</a>, <a rel="external" href="http://txpmag.com/">TXP magazine</a>.',
-        'forums' => array('Textpattern’s Websites and Social Channels'),
+        'forums' => array('Textpattern’s Websites and Social Channels', 'Textpattern’s sites/social channels'),
     ),
 
     array(
