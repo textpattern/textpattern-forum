@@ -152,6 +152,25 @@
     margin-left: 1em;
 }
 
+.tclcon {
+    position: relative;
+    height: 1%;
+    min-height: 1px;
+    overflow: hidden;
+
+    .tclcon div {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    h3 {
+        margin-top: 0;
+        a {
+            color: $color-text;
+        }
+    }
+}
+
 
 /* Breadcrumb links
    ========================================================================== */

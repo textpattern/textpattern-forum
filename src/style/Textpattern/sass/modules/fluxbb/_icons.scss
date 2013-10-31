@@ -22,92 +22,141 @@
 #idx1 table tbody {
     tr:nth-child(1) .icon {
         background-position: 0 0;
+
+        &.icon-new {
+            background-position: 0 -180px;
+        }
     }
     
     tr:nth-child(2) .icon {
         background-position: -60px 0;
+
+        &.icon-new {
+            background-position: -60px -180px;
+        }
     }
     
     tr:nth-child(3) .icon {
         background-position: -120px 0;
+
+        &.icon-new {
+            background-position: -120px -180px;
+        }
     }
     
     tr:nth-child(4) .icon {
         background-position: -180px 0;
+
+        &.icon-new {
+            background-position: -180px -180px;
+        }
     }
 }
 
 #idx2 table tbody {
     tr:nth-child(1) .icon {
         background-position: -240px 0;
+
+        &.icon-new {
+            background-position: -240px -180px;
+        }
     }
 
     tr:nth-child(2) .icon {
         background-position: -300px 0;
+
+        &.icon-new {
+            background-position: -300px -180px;
+        }
     }
 
     tr:nth-child(3) .icon {
         background-position: -360px 0;
+
+        &.icon-new {
+            background-position: -360px -180px;
+        }
     }
 
     tr:nth-child(4) .icon {
         background-position: -420px 0;
+
+        &.icon-new {
+            background-position: -420px -180px;
+        }
     }
 
     tr:nth-child(5) .icon {
         background-position: 0 -60px;
+
+        &.icon-new {
+            background-position: 0 -240px;
+        }
     }
 
     tr:nth-child(6) .icon {
         background-position: -60px -60px;
+
+        &.icon-new {
+            background-position: -60px -240px;
+        }
     }
 }
 
 #idx3 table tbody {
     tr:nth-child(1) .icon {
         background-position: -120px -60px;
+
+        &.icon-new {
+            background-position: -120px -240px;
+        }
     }
 
     tr:nth-child(2) .icon {
         background-position: -180px -60px;
+
+        &.icon-new {
+            background-position: -180px -240px;
+        }
     }
 
     tr:nth-child(3) .icon {
         background-position: -240px -60px;
+
+        &.icon-new {
+            background-position: -240px -240px;
+        }
     }
 
     tr:nth-child(4) .icon {
         background-position: -300px -60px;
+
+        &.icon-new {
+            background-position: -300px -240px;
+        }
     }
 
     tr:nth-child(5) .icon {
         background-position: -360px -60px;
+
+        &.icon-new {
+            background-position: -360px -240px;
+        }
     }
 
     tr:nth-child(6) .icon {
         background-position: -420px -60px;
+
+        &.icon-new {
+            background-position: -420px -240px;
+        }
     }
 
     tr:nth-child(7) .icon {
         background-position: 0 -120px;
-    }
-}
 
-.tclcon {
-    position: relative;
-    height: 1%;
-    min-height: 1px;
-    overflow: hidden;
-
-    .tclcon div {
-        width: 100%;
-        overflow: hidden;
-    }
-
-    h3 {
-        margin-top: 0;
-        a {
-            color: $color-text;
+        &.icon-new {
+            background-position: 0 -300px;
         }
     }
 }
