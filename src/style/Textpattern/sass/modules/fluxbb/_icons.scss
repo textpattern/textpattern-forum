@@ -1,0 +1,113 @@
+/* Forum icons
+   ========================================================================== */
+
+#page-index .icon {
+    @include hires-graphic(forum-icons, png, 480px, 360px);
+
+    float: left;
+    margin-right: 1em;
+    width: 60px;
+    height: 60px;
+
+    // hide icon at small screen widths
+    @include breakpoint(max-width $breakpoint-2) {
+        display: none;
+    }
+
+    .nosize {
+        display: none;
+    }
+}
+
+#idx1 table tbody {
+    tr:nth-child(1) .icon {
+        background-position: 0 0;
+    }
+    
+    tr:nth-child(2) .icon {
+        background-position: -60px 0;
+    }
+    
+    tr:nth-child(3) .icon {
+        background-position: -120px 0;
+    }
+    
+    tr:nth-child(4) .icon {
+        background-position: -180px 0;
+    }
+}
+
+#idx2 table tbody {
+    tr:nth-child(1) .icon {
+        background-position: -240px 0;
+    }
+
+    tr:nth-child(2) .icon {
+        background-position: -300px 0;
+    }
+
+    tr:nth-child(3) .icon {
+        background-position: -360px 0;
+    }
+
+    tr:nth-child(4) .icon {
+        background-position: -420px 0;
+    }
+
+    tr:nth-child(5) .icon {
+        background-position: 0 -60px;
+    }
+
+    tr:nth-child(6) .icon {
+        background-position: -60px -60px;
+    }
+}
+
+#idx3 table tbody {
+    tr:nth-child(1) .icon {
+        background-position: -120px -60px;
+    }
+
+    tr:nth-child(2) .icon {
+        background-position: -180px -60px;
+    }
+
+    tr:nth-child(3) .icon {
+        background-position: -240px -60px;
+    }
+
+    tr:nth-child(4) .icon {
+        background-position: -300px -60px;
+    }
+
+    tr:nth-child(5) .icon {
+        background-position: -360px -60px;
+    }
+
+    tr:nth-child(6) .icon {
+        background-position: -420px -60px;
+    }
+
+    tr:nth-child(7) .icon {
+        background-position: 0 -120px;
+    }
+}
+
+.tclcon {
+    position: relative;
+    height: 1%;
+    min-height: 1px;
+    overflow: hidden;
+
+    .tclcon div {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    h3 {
+        margin-top: 0;
+        a {
+            color: $color-text;
+        }
+    }
+}
