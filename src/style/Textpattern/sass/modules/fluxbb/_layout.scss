@@ -238,8 +238,12 @@ thead th {
         font-weight: bold;
     }
 
-    .pagestext a {
-        font-weight: normal;
+    .pagestext {
+        display: inline-block;
+
+        a {
+            font-weight: normal;
+        }
     }
 }
 
