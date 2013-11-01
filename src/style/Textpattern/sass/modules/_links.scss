@@ -17,10 +17,6 @@ a {
     &:focus {
         outline: thin dotted $color-link-hover;
     }
-
-    &:visited {
-        color: $color-link-visited;
-    }
 }
 
 [role="complementary"] a,
