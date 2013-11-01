@@ -231,11 +231,6 @@ thead th {
     }
 }
 
-/* `tr` hightlight for new posts */
-.inew {
-    background-color: #fff6d3;
-}
-
 .infldset {
     margin-bottom: 1em;
 
@@ -260,17 +255,4 @@ thead th {
 
 .modbuttons input {
     margin: 0 0 0 0.34em;
-}
-
-
-/* Warning messages
-   ========================================================================== */
-
-.warntext {
-    @include border-radius(0.2307692em); // 3px / 13px
-
-    border: 1px solid $color-warning-border;
-    padding: 0.5384615em 1em; // 7px / 13px
-    color: $color-warning-text;
-    background: $color-warning-background;
 }

@@ -1,0 +1,57 @@
+/* Indicators
+   ========================================================================== */
+
+/* `tr` hightlight for new posts */
+.inew {
+    background-color: #fff6d3;
+}
+
+/* text highlights */
+.warntext,
+.stickytext,
+.closedtext,
+.movedtext {
+    @include border-radius(0.2307692em); // 3px / 13px
+
+    border: 1px solid;
+    padding: 1px 0.2307692em; // 3px / 13px
+}
+
+.warntext {
+    border-color: $color-warning-border;
+    color: $color-warning-text;
+    background: $color-warning-background;
+}
+
+.stickytext {
+    display: inline-block;
+    border-color: $color-success-border;
+    color: $color-success-text;
+    background: $color-success-background;
+}
+
+.closedtext {
+    display: inline-block;
+    border-color: $color-error-border;
+    color: $color-error-text;
+    background: $color-error-background;
+}
+
+.movedtext {
+    display: inline-block;
+    border-color: $color-info-border;
+    color: $color-info-text;
+    background: $color-info-background;
+}
+
+/* indicate posts participated in */
+.ipost {
+    @include hide-text;
+    @include border-radius(50%); // 3px / 13px
+
+    display: inline-block;
+    margin-right: 0.34em;
+    width: 0.75em;
+    height: 0.75em;
+    background-color: #fbcf5c;
+}
