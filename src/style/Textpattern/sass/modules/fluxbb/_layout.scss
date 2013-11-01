@@ -224,6 +224,21 @@ thead th {
     }
 }
 
+.pagepost {
+    @include pie-clearfix;
+
+    .pagelink {
+        float: left;
+        margin: 0;
+        padding: 0.5em 0;
+    }
+
+    .postlink {
+        float: right;
+        margin: 0;
+    }
+}
+
 
 /* Topic list and post list page layout
    ========================================================================== */
