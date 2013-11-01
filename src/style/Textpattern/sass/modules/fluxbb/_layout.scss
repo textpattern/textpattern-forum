@@ -3,7 +3,7 @@
 }
 
 
-/* Hidden forum elements
+/* Forum hidden elements
    ========================================================================== */
 
 #navsearch,
@@ -243,31 +243,6 @@ thead th {
 
 .byuser {
     display: block;
-}
-
-
-/* Admin settings layout
-   ========================================================================== */
-
-#adminconsole fieldset {
-    th {
-        width: 33%;
-    }
-
-    td span,
-    th span {
-        display: block;
-        margin-top: 0.5em;
-    }
-}
-
-#adminconsole fieldset label {
-    display: block;
-
-    &.conl {
-        display: inline-block;
-        margin-right: 0.5em;
-    }
 }
 
 
