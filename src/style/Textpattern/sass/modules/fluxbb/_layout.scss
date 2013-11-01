@@ -147,6 +147,14 @@
     }
 }
 
+/* Global layout
+   ========================================================================== */
+
+thead td,
+thead th {
+    text-transform: uppercase;
+}
+
 .buttons a {
     margin-left: 1em;
 }
@@ -200,15 +208,9 @@
 }
 
 
-/* Forum layout
+/* Topic list and post list page layout
    ========================================================================== */
 
-thead td,
-thead th {
-    text-transform: uppercase;
-}
-
-/* topics and posts columns */
 #page-index,
 #page-viewforum {
     .tc2,
@@ -231,6 +233,17 @@ thead th {
     }
 }
 
+#page-viewforum .tclcon {
+    a {
+        font-weight: bold;
+    }
+
+    .pagestext a {
+        font-weight: normal;
+    }
+}
+
+
 .infldset {
     margin-bottom: 1em;
 
@@ -247,10 +260,6 @@ thead th {
             border-bottom: 1px solid $color-border;
         }
     }
-}
-
-.byuser {
-    display: block;
 }
 
 .modbuttons input {
