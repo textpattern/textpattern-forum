@@ -31,7 +31,7 @@
         @include box-sizing(border-box);
 
         width: 22.8571429%;
-        float: left;
+        float: right;
         margin-right: 1em -100% 1em 0%;
         clear: both;
     }
@@ -45,7 +45,7 @@
 .block2col .blockform {
     @include breakpoint($breakpoint-2) {
         width: 74.2857143%;
-        float: right;
+        float: left;
         margin-left: 0;
         margin-right: 0;
         clear: none;
