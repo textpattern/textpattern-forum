@@ -1,6 +1,11 @@
 /* Forum admin layout
    ========================================================================== */
 
+/* Hide the duplicate submit button at top */
+#adminconsole p.submittop {
+    display: none;
+}
+
 #adminconsole fieldset {
     th[scope="row"] {
         width: 30%;
@@ -19,20 +24,15 @@
     td.location span {
         display: inline-block;
     }
-}
 
-#adminconsole fieldset label {
-    display: block;
-
-    &.conl {
-        display: inline-block;
-        margin-right: 0.5em;
+    label {
+        display: block;
+    
+        &.conl {
+            display: inline-block;
+            margin-right: 0.5em;
+        }
     }
-}
-
-/* Hide the duplicate submit button at top */
-#adminconsole p.submittop {
-    display: none;
 }
 
 #forumperms thead th,
