@@ -159,25 +159,6 @@ thead th {
     margin-left: 1em;
 }
 
-.tclcon {
-    position: relative;
-    height: 1%;
-    min-height: 1px;
-    overflow: hidden;
-
-    .tclcon div {
-        width: 100%;
-        overflow: hidden;
-    }
-
-    h3 {
-        margin-top: 0;
-        a {
-            color: $color-text;
-        }
-    }
-}
-
 .blockform input[type="email"],
 .blockform input[type="number"],
 .blockform input[type="password"],
@@ -233,12 +214,38 @@ thead th {
     }
 }
 
+.tclcon {
+    position: relative;
+    height: 1%;
+    min-height: 1px;
+    overflow: hidden;
+
+    .tclcon div {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    h3 {
+        margin-top: 0;
+        a {
+            color: $color-text;
+        }
+
+        .newtext {
+            font-size: 0.65em;
+            font-family: $font-sans-serif;
+            font-weight: normal;
+        }
+    }
+}
+
 #page-viewforum .tclcon {
     a {
         font-weight: bold;
     }
 
-    .pagestext {
+    .pagestext,
+    .newtext {
         display: inline-block;
 
         a {
@@ -246,7 +253,6 @@ thead th {
         }
     }
 }
-
 
 .infldset {
     margin-bottom: 1em;
