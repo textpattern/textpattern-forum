@@ -7,38 +7,39 @@
 }
 
 /* text highlights */
-.warntext,
+.warntext {
+    @include border-radius(0.2307692em); // 3px / 13px
+
+    border: 1px solid $color-warning-border;
+    padding: 0.5384615em 1em; // 7px / 13px
+    color: $color-warning-text;
+    background: $color-warning-background;
+}
+
 .stickytext,
 .closedtext,
 .movedtext {
     @include border-radius(0.2307692em); // 3px / 13px
 
+    margin-right: 0.34em;
     border: 1px solid;
-    padding: 1px 0.2307692em; // 3px / 13px
-}
-
-.warntext {
-    border-color: $color-warning-border;
-    color: $color-warning-text;
-    background: $color-warning-background;
+    padding: 0 0.2307692em; // 3px / 13px
 }
 
 .stickytext {
-    display: inline-block;
+
     border-color: $color-success-border;
     color: $color-success-text;
     background: $color-success-background;
 }
 
 .closedtext {
-    display: inline-block;
     border-color: $color-error-border;
     color: $color-error-text;
     background: $color-error-background;
 }
 
 .movedtext {
-    display: inline-block;
     border-color: $color-info-border;
     color: $color-info-text;
     background: $color-info-background;
