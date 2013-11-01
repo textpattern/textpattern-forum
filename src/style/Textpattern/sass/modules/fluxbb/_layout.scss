@@ -39,6 +39,11 @@
     h2 {
         @include adjust-font-size-to(18px, 1.2);
     }
+
+    ul {
+        list-style: none;
+        padding: 0;
+    }
 }
 
 .block2col .block,
