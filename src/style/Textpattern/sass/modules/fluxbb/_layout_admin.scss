@@ -2,14 +2,22 @@
    ========================================================================== */
 
 #adminconsole fieldset {
-    th {
-        width: 33%;
+    th[scope="row"] {
+        width: 30%;
+
+        input[type="submit"] {
+            margin: 1em 0;
+        }
     }
 
     td span,
     th span {
         display: block;
         margin-top: 0.5em;
+    }
+
+    td.location span {
+        display: inline-block;
     }
 }
 
@@ -19,5 +27,99 @@
     &.conl {
         display: inline-block;
         margin-right: 0.5em;
+    }
+}
+
+#adminmenu {
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+}
+
+/* Hide the duplicate submit button at top */
+#adminconsole p.submittop {
+    display: none;
+}
+
+#forumperms thead th,
+#forumperms tbody td,
+#users2 th.tcmod {
+    text-align: center;
+}
+
+/* Column widths */
+#categoryedit .tcl {
+    width: 50%;
+}
+
+#edforum .tcl,
+#edforum .tc2,
+#censoring .tcl,
+#censoring .tc2 {
+    width: 30%;
+}
+
+/* User bans table */
+#bans1 {
+    .tcl {
+        width: 30%;
+    }
+
+    .tc3 {
+        width: 9em;
+    }
+
+    .tc4,
+    .tc5,
+    .tc6 {
+        display: none;
+    }
+
+    .tcr {
+        width: 7em;
+    }
+
+    @include breakpoint(max-width $breakpoint-2) {
+        .tcl {
+            width: auto;
+        }
+    
+        .tc2,
+        .tc3 {
+            display: none;
+        }
+    }
+}
+
+/* User search table */
+#users2 {
+    .tcl {
+        width: 20%;
+    }
+
+    .tc5 {
+        display: none;
+    }
+
+    .tcmod {
+        text-align: center;
+    }
+
+    @include breakpoint(max-width $breakpoint-3) {
+        .tc3 {
+           display: none;
+        }
+    }
+
+    @include breakpoint(max-width $breakpoint-2) {
+        .tcl {
+            width: auto;
+        }
+    
+        .tc2,
+        .tc4 {
+            display: none;
+        }
     }
 }

@@ -10,7 +10,6 @@
 #bblinks,
 #brdfooter h2,
 #brdstats h2,
-#adminconsole p.submittop,
 .modlist,
 .postquote,
 .textpattern-fluxbb-t,
@@ -171,6 +170,20 @@
     }
 }
 
+.blockform input[type="email"],
+.blockform input[type="number"],
+.blockform input[type="password"],
+.blockform input[type="text"],
+.blockform input[type="url"],
+.blockform select {
+    max-width: 90%;
+
+    @include breakpoint(max-width $breakpoint-2) {
+         width: 100%;
+         max-width: 100%;
+    }
+}
+
 
 /* Breadcrumb links
    ========================================================================== */
@@ -243,6 +256,10 @@ thead th {
 
 .byuser {
     display: block;
+}
+
+.modbuttons input {
+    margin: 0 0 0 0.34em;
 }
 
 
