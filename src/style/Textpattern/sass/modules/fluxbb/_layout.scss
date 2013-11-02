@@ -325,7 +325,14 @@ thead th {
    ========================================================================== */
 
 .postleft {
+    float: left;
+    width: 31.4285714%;
     background-color: $color-background-box;
+
+    @include breakpoint(max-width $breakpoint-2) {
+        float: none;
+        width: auto;
+    }
 
     dd {
         margin: 0;
@@ -350,6 +357,15 @@ thead th {
 }
 
 .postfootleft {
+    float: left;
+    width: 31.4285714%;
+    background-color: $color-background-box;
+
+    @include breakpoint(max-width $breakpoint-2) {
+        float: none;
+        width: auto;
+    }
+
     span,
     strong {
         @include border-radius(0.2307692em); // 3px / 13px
