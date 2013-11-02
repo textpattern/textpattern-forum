@@ -54,7 +54,7 @@
                 <pun_status>
                 <pun_announcement>
 
-                <section class="layout--span-1-8">
+                <div class="layout--span-1-8">
                     <h2>Forum help</h2>
     
                     <h3 id="forum-help-textile-formatting">Formatting</h3>
@@ -112,7 +112,7 @@
                         <li>Don’t post a troubleshooting question as a reply to an existing thread unless your problem is exactly the same as the one described at the beginning of the thread.</li>
                         <li>If you’re requesting a feature, <a href="http://forum.textpattern.com/viewtopic.php?id=10325">this article</a> lists some of the things you can do to increase its chances.</li>
                     </ol>
-                </section>
+                </div>
 
                 <div class="clearer"></div>
 
