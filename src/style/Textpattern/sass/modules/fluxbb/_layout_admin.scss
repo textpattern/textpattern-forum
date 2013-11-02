@@ -1,7 +1,7 @@
 /* Forum admin layout
    ========================================================================== */
 
-/* Hide the duplicate submit button at top */
+/* hide the duplicate submit button at top */
 #adminconsole p.submittop {
     display: none;
 }
@@ -40,7 +40,7 @@
     text-align: center;
 }
 
-/* Column widths */
+/* column widths */
 #categoryedit .tcl {
     width: 50%;
 }
@@ -52,7 +52,7 @@
     width: 30%;
 }
 
-/* User bans table */
+/* user bans table */
 #bans1 {
     .tcl {
         width: 30%;
@@ -84,7 +84,7 @@
     }
 }
 
-/* User search table */
+/* user search table (admin) */
 #users2 {
     .tcl {
         width: 20%;
@@ -92,10 +92,6 @@
 
     .tc5 {
         display: none;
-    }
-
-    .tcmod {
-        text-align: center;
     }
 
     @include breakpoint(max-width $breakpoint-3) {
