@@ -57,6 +57,37 @@
     }
 }
 
+
+/* Forum global layout
+   ========================================================================== */
+
+thead td,
+thead th {
+    text-transform: uppercase;
+}
+
+.buttons a {
+    margin-left: 1em;
+}
+
+.blockform input[type="email"],
+.blockform input[type="number"],
+.blockform input[type="password"],
+.blockform input[type="text"],
+.blockform input[type="url"],
+.blockform select {
+    max-width: 90%;
+
+    @include breakpoint(max-width $breakpoint-2) {
+         width: 100%;
+         max-width: 100%;
+    }
+}
+
+
+/* Forum header area
+   ========================================================================== */
+
 #brdwelcome {
     @include pie-clearfix;
 
@@ -102,32 +133,6 @@
     }
 }
 
-/* Forum global layout
-   ========================================================================== */
-
-thead td,
-thead th {
-    text-transform: uppercase;
-}
-
-.buttons a {
-    margin-left: 1em;
-}
-
-.blockform input[type="email"],
-.blockform input[type="number"],
-.blockform input[type="password"],
-.blockform input[type="text"],
-.blockform input[type="url"],
-.blockform select {
-    max-width: 90%;
-
-    @include breakpoint(max-width $breakpoint-2) {
-         width: 100%;
-         max-width: 100%;
-    }
-}
-
 
 /* Forum announcement box
    ========================================================================== */
@@ -164,7 +169,7 @@ thead th {
 }
 
 
-/* Forum breadcrumb links
+/* Forum breadcrumbs, postlink, pagination
    ========================================================================== */
 
 .crumbs {
@@ -276,19 +281,21 @@ thead th {
 }
 
 .infldset {
-    margin-bottom: 1em;
-
-    table tbody tr:first-child {
-        td,
-        th {
-            border-top: 1px solid $color-border;
-        }
-    }
+    margin: 1em 0;
+        
 
     table thead {
         td,
         th {
             border-bottom: 1px solid $color-border;
+            padding-top: 0;
+        }
+    }
+
+    table tbody tr:first-child {
+        td,
+        th {
+            border-top: 1px solid $color-border;
         }
     }
 }
