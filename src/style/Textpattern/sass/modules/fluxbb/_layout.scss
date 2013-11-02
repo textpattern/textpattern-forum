@@ -326,6 +326,7 @@ thead th {
 
 .postleft {
     float: left;
+    margin-right: -31.4285714%;
     width: 31.4285714%;
     background-color: $color-background-box;
 
@@ -340,7 +341,7 @@ thead th {
 }
 
 .postright {
-    
+    padding-left: 33%;
 }
 
 .postavatar img {
@@ -358,6 +359,7 @@ thead th {
 
 .postfootleft {
     float: left;
+    margin-right: -31.4285714%;
     width: 31.4285714%;
     background-color: $color-background-box;
 
@@ -390,6 +392,8 @@ thead th {
 
 .postfootright {
     @include pie-clearfix;
+
+    padding-left: 33%;
 
     ul {
         list-style: none;
