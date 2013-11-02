@@ -317,8 +317,25 @@ thead th {
 
 #feedlinks {
     float: left;
+
+    @include breakpoint(max-width $breakpoint-2) {
+        float: none;
+    }
+
+    span:before {
+        color: lighten($color-text, 33%);
+        content: "\272D \0020";
+    }
+
+    span:first-child:before {
+        content: "";
+    }
 }
 
 #poweredby {
     float: right;
+
+    @include breakpoint(max-width $breakpoint-2) {
+        float: none;
+    }
 }
