@@ -207,7 +207,8 @@ thead th {
    ========================================================================== */
 
 #page-index,
-#page-viewforum {
+#page-viewforum,
+#page-moderate {
     .tc2,
     .tc3 {
         width: 11%;
@@ -253,7 +254,8 @@ thead th {
     }
 }
 
-#page-viewforum .tclcon {
+#page-viewforum .tclcon,
+#page-moderate .tclcon {
     a {
         font-weight: bold;
     }
@@ -266,6 +268,11 @@ thead th {
             font-weight: normal;
         }
     }
+}
+
+.tcmod {
+    width: 4.5em;
+    text-align: center;
 }
 
 .infldset {
@@ -288,4 +295,12 @@ thead th {
 
 .modbuttons input {
     margin: 0 0 0 0.34em;
+}
+
+#feedlinks {
+    float: left;
+}
+
+#poweredby {
+    float: right;
 }
