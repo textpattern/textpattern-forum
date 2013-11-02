@@ -8,6 +8,7 @@
 
 #navsearch,
 #bblinks,
+#quickpost h2,
 #brdfooter h2,
 #brdstats,
 .modlist,
@@ -346,7 +347,6 @@ thead th {
 
 .postleft {
     float: left;
-    margin-right: -100%;
     width: 30%;
 
     @include breakpoint(max-width $breakpoint-2) {
@@ -485,6 +485,10 @@ thead th {
     span:first-child:before {
         content: none;
     }
+}
+
+#quickpost {
+    max-width: 700px;
 }
 
 
