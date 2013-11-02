@@ -343,6 +343,35 @@ thead th {
     border: solid 1px $color-border;
     padding: 4px;
     background: #fff;
+
+    @include breakpoint(max-width $breakpoint-2) {
+        display: none;
+    }
+}
+
+.postfootleft {
+    
+}
+
+.postfootright {
+    @include pie-clearfix;
+
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    li {
+        display: inline;
+
+        span:before {
+            content: "| \0020";
+        }
+    }
+
+    li:first-child span:before {
+        content: none;
+    }
 }
 
 
