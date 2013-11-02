@@ -272,6 +272,7 @@ thead th {
 
     h3 {
         margin-top: 0;
+
         a {
             color: $color-text;
         }
@@ -324,15 +325,53 @@ thead th {
 /* Forum posts page layout
    ========================================================================== */
 
+.blockpost {
+    @include pie-clearfix;
+
+    margin-bottom: -1px;
+    border: 1px solid $color-border;
+    background-color: $color-background-box;
+
+    > h2 {
+        margin: 0;
+        padding: 1em;
+        font-family: $font-sans-serif;
+        font-size: 1em;
+
+        .conr {
+            float: right;
+        }
+    }
+}
+
 .postleft {
     float: left;
-    margin-right: -31.4285714%;
-    width: 31.4285714%;
-    background-color: $color-background-box;
+    margin-right: -100%;
+    width: 30%;
 
     @include breakpoint(max-width $breakpoint-2) {
         float: none;
         width: auto;
+    }
+
+    dl {
+        margin: 0;
+        padding: 0 1em;
+
+        @include breakpoint(max-width $breakpoint-2) {
+            margin-bottom: 1em;
+        }
+    }
+
+    dt {
+        @include adjust-font-size-to(18px, 1.2);
+
+        font-family: $font-serif;
+        font-style: normal;
+
+        a {
+            color: $color-text;
+        }
     }
 
     dd {
@@ -340,14 +379,11 @@ thead th {
     }
 }
 
-.postright {
-    padding-left: 33%;
-}
-
 .postavatar img {
     @include border-radius;
     @include box-shadow(0 0 7px rgba(#000000, .2));
 
+    margin: 0.5em 0 0.25em;
     border: solid 1px $color-border;
     padding: 4px;
     background: #fff;
@@ -357,15 +393,29 @@ thead th {
     }
 }
 
-.postfootleft {
-    float: left;
-    margin-right: -31.4285714%;
-    width: 31.4285714%;
-    background-color: $color-background-box;
+.postright {
+    float: right;
+    padding: 0 2.8%;
+    width: 63%;
+    background-color: $color-background;
 
     @include breakpoint(max-width $breakpoint-2) {
         float: none;
+        padding: 1px 1em;
         width: auto;
+    }
+}
+
+.postfoot {
+    clear: both;
+}
+
+.postfootleft {
+    float: left;
+    width: 31.4285714%;
+
+    p {
+        padding: 0 1em;
     }
 
     span,
@@ -391,13 +441,17 @@ thead th {
 }
 
 .postfootright {
-    @include pie-clearfix;
-
-    padding-left: 33%;
+    float: right;
+    width: 65.7142857%;
 
     ul {
         list-style: none;
         padding: 0;
+
+        @include breakpoint(max-width $breakpoint-2) {
+            padding-right: 1em;
+            text-align: right;
+        }
     }
 
     li {
@@ -409,6 +463,26 @@ thead th {
     }
 
     li:first-child span:before {
+        content: none;
+    }
+}
+
+.usertitle,
+.userrank {
+    display: inline;
+}
+
+.userrank:before {
+    color: lighten($color-text, 33%);
+    content: "\0020 \272D \0020";
+}
+
+.usercontacts {
+    span:before {
+        content: "| \0020";
+    }
+
+    span:first-child:before {
         content: none;
     }
 }
