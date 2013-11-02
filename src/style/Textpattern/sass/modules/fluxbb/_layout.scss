@@ -18,7 +18,45 @@
 }
 
 
-/* Forum grid layout
+/* Forum global layout
+   ========================================================================== */
+
+thead td,
+thead th {
+    text-transform: uppercase;
+}
+
+.buttons a,
+.modbuttons input {
+    margin-left: 0.34em;
+}
+
+.tcmod {
+    width: 4.5em;
+    text-align: center;
+}
+
+.infldset {
+    margin: 1em 0;
+
+    table thead {
+        td,
+        th {
+            border-bottom: 1px solid $color-border;
+            padding-top: 0;
+        }
+    }
+
+    table tbody tr:first-child {
+        td,
+        th {
+            border-top: 1px solid $color-border;
+        }
+    }
+}
+
+
+/* Forum layouts with side menus
    ========================================================================== */
 
 .block2col .blockmenu {
@@ -55,19 +93,6 @@
         margin-right: 0;
         clear: none;
     }
-}
-
-
-/* Forum global layout
-   ========================================================================== */
-
-thead td,
-thead th {
-    text-transform: uppercase;
-}
-
-.buttons a {
-    margin-left: 1em;
 }
 
 .blockform input[type="email"],
@@ -169,7 +194,7 @@ thead th {
 }
 
 
-/* Forum breadcrumbs, postlink, pagination
+/* Forum breadcrumbs, postlink and pagination layout
    ========================================================================== */
 
 .crumbs {
@@ -275,31 +300,6 @@ thead th {
     }
 }
 
-.tcmod {
-    width: 4.5em;
-    text-align: center;
-}
-
-.infldset {
-    margin: 1em 0;
-        
-
-    table thead {
-        td,
-        th {
-            border-bottom: 1px solid $color-border;
-            padding-top: 0;
-        }
-    }
-
-    table tbody tr:first-child {
-        td,
-        th {
-            border-top: 1px solid $color-border;
-        }
-    }
-}
-
 /* user search table */
 #users1 {
     .tcl,
@@ -318,6 +318,31 @@ thead th {
             display: none;
         }
     }
+}
+
+
+/* Forum posts page layout
+   ========================================================================== */
+
+.postleft {
+    background-color: $color-background-box;
+
+    dd {
+        margin: 0;
+    }
+}
+
+.postright {
+    
+}
+
+.postavatar img {
+    @include border-radius;
+    @include box-shadow(0 0 7px rgba(#000000, .2));
+
+    border: solid 1px $color-border;
+    padding: 4px;
+    background: #fff;
 }
 
 
@@ -340,10 +365,6 @@ thead th {
     dd {
         margin: 0;
     }
-}
-
-.modbuttons input {
-    margin: 0 0 0 0.34em;
 }
 
 #feedlinks {
