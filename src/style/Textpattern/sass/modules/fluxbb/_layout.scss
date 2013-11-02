@@ -102,7 +102,7 @@
     }
 }
 
-/* Global layout
+/* Forum global layout
    ========================================================================== */
 
 thead td,
@@ -129,7 +129,7 @@ thead th {
 }
 
 
-/* Announcement box
+/* Forum announcement box
    ========================================================================== */
 
 #announce {
@@ -164,7 +164,7 @@ thead th {
 }
 
 
-/* Breadcrumb links
+/* Forum breadcrumb links
    ========================================================================== */
 
 .crumbs {
@@ -203,7 +203,7 @@ thead th {
 }
 
 
-/* Topic list and post list page layout
+/* Forum topic list and post list page layout
    ========================================================================== */
 
 #page-index,
@@ -289,6 +289,26 @@ thead th {
         td,
         th {
             border-bottom: 1px solid $color-border;
+        }
+    }
+}
+
+/* user search table */
+#users1 {
+    .tcl,
+    .tc2,
+    .tc3,
+    .tcr {
+        width: 25%;
+    }
+
+    @include breakpoint(max-width $breakpoint-2) {
+        .tcl {
+            width: 50%;
+        }
+    
+        .tc2 {
+            display: none;
         }
     }
 }
