@@ -293,6 +293,24 @@ thead th {
     }
 }
 
+
+/* Forum footer area
+   ========================================================================== */
+
+#modcontrols {
+    dl {
+        margin-top: 0;
+    }
+
+    dt {
+        font-style: normal;
+    }
+
+    dd {
+        margin: 0;
+    }
+}
+
 .modbuttons input {
     margin: 0 0 0 0.34em;
 }
