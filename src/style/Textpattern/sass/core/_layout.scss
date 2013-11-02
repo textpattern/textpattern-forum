@@ -19,7 +19,8 @@ $gutters: add-gutter(0.5);
 .layout--span-5-12,
 .layout--span-4-9,
 .layout--span-1-9,
-.layout--span-4-12 {
+.layout--span-4-12,
+#rules {
     @include grid-span(12, 1, $options: 'both');
 }
 
@@ -65,7 +66,8 @@ $gutters: add-gutter(0.5);
         @include grid-span(4, 9);
     }
 
-    .layout--span-1-8 {
+    .layout--span-1-8,
+    #rules {
         @include grid-span(8, 1, $options: 'both');
     }
 

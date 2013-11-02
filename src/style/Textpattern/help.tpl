@@ -114,8 +114,6 @@
                     </ol>
                 </div>
 
-                <div class="clearer"></div>
-
                 <pun_footer>
 
             </main>
