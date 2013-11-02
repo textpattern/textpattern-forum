@@ -11,6 +11,10 @@
 
     li {
         display: inline-block;
+
+        @include breakpoint(max-width $breakpoint-2) {
+            display: block;
+        }
     }
 
     a {
@@ -24,6 +28,11 @@
         padding: 0.5384615em 1em;
         color: $color-text;
         background-color: $color-background-box;
+
+        @include breakpoint(max-width $breakpoint-2) {
+            @include box-shadow(none);
+            @include border-radius(0);
+        }
 
         &:hover,
         &:visited {
@@ -46,4 +55,14 @@
             background-color: #e3edfc;
         }
     }
+}
+
+@include breakpoint(max-width $breakpoint-2) {
+
+    /* hide some non-essential navigation links on small devices to reduce clutter */
+    #brdmenu #navuserlist,
+    #brdmenu #navrules {
+        display: none;
+    }
+
 }
