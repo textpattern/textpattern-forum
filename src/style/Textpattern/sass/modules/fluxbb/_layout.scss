@@ -42,60 +42,6 @@ thead th {
 }
 
 
-/* Forum layouts with side menus
-   ========================================================================== */
-
-.block2col .blockmenu {
-    border: 1px solid $color-border;
-    margin: 1.75em 0 1em 0;
-    padding: 0 1em;
-    background-color: $color-background-box;
-
-    @include breakpoint($breakpoint-2) {
-        @include box-sizing(border-box);
-
-        width: 22.8571429%;
-        float: right;
-        margin-right: 1em -100% 1em 0%;
-        clear: both;
-    }
-
-    h2 {
-        @include adjust-font-size-to(18px, 1.2);
-    }
-
-    ul {
-        list-style: none;
-        padding: 0;
-    }
-}
-
-.block2col .block,
-.block2col .blockform {
-    @include breakpoint($breakpoint-2) {
-        width: 74.2857143%;
-        float: left;
-        margin-left: 0;
-        margin-right: 0;
-        clear: none;
-    }
-}
-
-.blockform input[type="email"],
-.blockform input[type="number"],
-.blockform input[type="password"],
-.blockform input[type="text"],
-.blockform input[type="url"],
-.blockform select {
-    max-width: 90%;
-
-    @include breakpoint(max-width $breakpoint-2) {
-         width: 100%;
-         max-width: 100%;
-    }
-}
-
-
 /* Forum header area
    ========================================================================== */
 
@@ -219,6 +165,60 @@ thead th {
 }
 
 
+/* Forum layouts with side menus
+   ========================================================================== */
+
+.block2col .blockmenu {
+    border: 1px solid $color-border;
+    margin: 1.75em 0 1em 0;
+    padding: 0 1em;
+    background-color: $color-background-box;
+
+    @include breakpoint($breakpoint-2) {
+        @include box-sizing(border-box);
+
+        width: 22.8571429%;
+        float: right;
+        margin-right: 1em -100% 1em 0%;
+        clear: both;
+    }
+
+    h2 {
+        @include adjust-font-size-to(18px, 1.2);
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+}
+
+.block2col .block,
+.block2col .blockform {
+    @include breakpoint($breakpoint-2) {
+        width: 74.2857143%;
+        float: left;
+        margin-left: 0;
+        margin-right: 0;
+        clear: none;
+    }
+}
+
+.blockform input[type="email"],
+.blockform input[type="number"],
+.blockform input[type="password"],
+.blockform input[type="text"],
+.blockform input[type="url"],
+.blockform select {
+    max-width: 90%;
+
+    @include breakpoint(max-width $breakpoint-2) {
+         width: 100%;
+         max-width: 100%;
+    }
+}
+
+
 /* Forum topic list and post list page layout
    ========================================================================== */
 
@@ -283,26 +283,6 @@ thead th {
 
         a {
             font-weight: normal;
-        }
-    }
-}
-
-/* user search table */
-#users1 {
-    .tcl,
-    .tc2,
-    .tc3,
-    .tcr {
-        width: 25%;
-    }
-
-    @include breakpoint(max-width $breakpoint-2) {
-        .tcl {
-            width: 50%;
-        }
-    
-        .tc2 {
-            display: none;
         }
     }
 }
@@ -474,6 +454,30 @@ thead th {
 
 #quickpost {
     max-width: 700px;
+}
+
+
+/* Forum misc layout
+   ========================================================================== */
+
+/* user search table */
+#users1 {
+    .tcl,
+    .tc2,
+    .tc3,
+    .tcr {
+        width: 25%;
+    }
+
+    @include breakpoint(max-width $breakpoint-2) {
+        .tcl {
+            width: 50%;
+        }
+    
+        .tc2 {
+            display: none;
+        }
+    }
 }
 
 
