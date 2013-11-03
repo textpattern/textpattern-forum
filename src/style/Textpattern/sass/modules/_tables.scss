@@ -28,10 +28,17 @@ td {
     }
 }
 
-thead tr:last-child {
+thead tr:first-child {
     th,
     td {
-        border-bottom: 2px solid $color-border;
+        padding-top: 0;
+    }
+}
+
+tbody tr:first-child {
+    td,
+    th {
+        border-top: 1px solid $color-border;
     }
 }
 
