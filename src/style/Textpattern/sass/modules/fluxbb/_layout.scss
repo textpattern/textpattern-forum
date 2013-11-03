@@ -314,7 +314,7 @@ thead th {
 .blockpost {
     @include pie-clearfix;
 
-    margin-bottom: -1px;
+    margin: 1em 0;
     border: 1px solid $color-border;
     background-color: $color-background-box;
 
