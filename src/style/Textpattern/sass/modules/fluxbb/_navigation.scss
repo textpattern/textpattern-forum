@@ -19,8 +19,8 @@
 
     a {
         @include box-shadow(inset 0 -0.1538462em 0.2307692em rgba(153, 153, 153, 0.33));
-        @include border-top-right-radius(1em 66%);
-        @include border-top-left-radius(1em 66%);
+        @include border-top-right-radius(1em);
+        @include border-top-left-radius(1em);
 
         display: block;
         border: 1px solid $color-border;
