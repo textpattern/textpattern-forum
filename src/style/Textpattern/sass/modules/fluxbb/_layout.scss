@@ -236,11 +236,11 @@ thead th {
     }
 
     .tcr {
-        width: 22%;
+        width: 24%;
     
         // widen column at small screen widths
         @include breakpoint(max-width $breakpoint-2) {
-            width: 35%;
+            width: 36%;
         }
     }
 }

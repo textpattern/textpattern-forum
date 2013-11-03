@@ -170,7 +170,7 @@ $update = array(
 
     array(
         'name'   => 'Core development',
-        'desc'   => 'Helping test current/future versions of Textpattern CMS. Experienced users only.<br><strong>External links:</strong> <a rel="external" href="https://github.com/textpattern">Textpattern on GitHub</a>, <a rel="external" href="https://code.google.com/p/textpattern/issues/list">Textpattern CMS Issue Tracker</a>.',
+        'desc'   => 'Helping test current/future Textpattern CMS versions. Experienced users only.<br><strong>External links:</strong> <a rel="external" href="https://github.com/textpattern">Textpattern on GitHub</a>, <a rel="external" href="https://code.google.com/p/textpattern/issues/list">Textpattern CMS Issue Tracker</a>.',
         'forums' => array('Development', 'Core development'),
     ),
 
