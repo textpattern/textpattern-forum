@@ -661,13 +661,6 @@
         }
     });
 
-    // Author names on new line.
-
-    require(['jquery'], function ($)
-    {
-        $('<br>').insertBefore('.byuser');
-    });
-
     // Analytics.
 
     var _gaq = _gaq || [];
