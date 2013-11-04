@@ -81,16 +81,16 @@ thead th {
 
     .conl {
         float: left;
-
+    
         @include breakpoint(max-width $breakpoint-2) {
             float: none;
             margin-bottom: 0;
         }
     }
-
+    
     .conr {
         float: right;
-
+    
         @include breakpoint(max-width $breakpoint-2) {
             float: none;
             margin-top: 0;
@@ -361,7 +361,16 @@ thead th {
     }
 }
 
-<<<<<<< HEAD
+.usertitle,
+.userrank {
+    display: inline;
+}
+
+.userrank:before {
+    color: lighten($color-text, 33%);
+    content: "\0020 \272D \0020";
+}
+
 .postavatar {
     @include breakpoint(max-width $breakpoint-2) {
         position: absolute;
@@ -379,24 +388,6 @@ thead th {
             width: 60px;
             height: 60px;
         }
-=======
-.usertitle,
-.userrank {
-    display: inline;
-}
-
-.userrank:before {
-    color: lighten($color-text, 33%);
-    content: "\0020 \272D \0020";
-}
-
-.postavatar img {
-    margin: 0.5em 0 0.25em;
-
-    // hide avatars at small screen widths
-    @include breakpoint(max-width $breakpoint-2) {
-        display: none;
->>>>>>> 3967e5e0d3ae1cd131d4a5428b233ed4b8611b78
     }
 }
 
@@ -518,7 +509,7 @@ thead th {
 
 @include breakpoint(max-width $breakpoint-2) {
 
-    // hide signatures at small screen widths
+    /* hide signatures on small devices to save space */
     .postsignature {
         display: none;
     }
