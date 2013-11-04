@@ -476,25 +476,9 @@ thead th {
         padding: 0 1em;
     }
 
-    span,
-    strong {
-        @include border-radius(0.2307692em); // 3px / 13px
-
-        border: 1px solid;
-        padding: 1px 0.2307692em; // 3px / 13px
-    }
-
-    span {
-        border-color: $color-error-border;
-        color: $color-error-text;
-        background: $color-error-background;
-    }
-
     strong {
         font-weight: normal;
-        border-color: $color-success-border;
         color: $color-success-text;
-        background: $color-success-background;
     }
 }
 
