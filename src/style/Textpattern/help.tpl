@@ -75,7 +75,7 @@
 &lt;/txp:permlink&gt;</code></pre>
                     <p>The forum also supports syntax highlighting. Add an optional language identifier to your code block, and it will get highlighted.</p>
                     <pre class="language-html prettyprint"><code>bc. html
-&lt;h1 id="main-heading"&gt;Hello world!&lt;/h1&gt;</code></pre>
+&lt;h1 id="main-heading"&gt;Hello World!&lt;/h1&gt;</code></pre>
                     <p>Supported language identifiers include: apollo, bash, c, coffee, cs, clj, css, dart, go, hs, html, java, js, json, lisp, lua, ml, n, perl, php, proto, python, ruby, rust, scala, sh, sql, tex, txp, vb, vhdl, wiki, xml, xsl, xq and yaml.</p>
                     <h5>Embedding media</h5>
                     <p>You can embed media to your posts from third party services to linking to the resource using normal Textile link syntax.</p>
