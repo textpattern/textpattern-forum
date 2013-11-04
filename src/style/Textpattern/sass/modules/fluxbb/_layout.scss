@@ -489,6 +489,15 @@ thead th {
     }
 }
 
+@include breakpoint(max-width $breakpoint-2) {
+
+    /* hide signatures on small devices to save space */
+    .postsignature {
+        display: none;
+    }
+
+}
+
 
 /* Forum footer area
    ========================================================================== */
