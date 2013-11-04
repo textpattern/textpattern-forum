@@ -265,12 +265,13 @@ thead th {
 }
 
 
-/* Forum topic list and post list page layout
+/* Forum topic list, post list and search list page layout
    ========================================================================== */
 
 #page-index,
 #page-viewforum,
-#page-moderate {
+#page-moderate,
+#page-search {
     .tc2,
     .tc3 {
         width: 11%;
@@ -294,6 +295,10 @@ thead th {
         padding-top: 1em;
         padding-bottom: 1em;
     }
+}
+
+#page-search .tc2 {
+    width: 22%;
 }
 
 .tclcon {
@@ -323,7 +328,8 @@ thead th {
 }
 
 #page-viewforum .tclcon,
-#page-moderate .tclcon {
+#page-moderate .tclcon,
+#page-search .tclcon {
     a {
         font-weight: bold;
     }
