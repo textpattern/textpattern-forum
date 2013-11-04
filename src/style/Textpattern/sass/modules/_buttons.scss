@@ -10,7 +10,8 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"],
-.postlink a {
+.postlink a,
+.subscribelink a {
     @include text-shadow($text-shadow-light);
     @include border-radius;
     @include box-shadow($inset-highlighting);

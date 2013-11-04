@@ -54,6 +54,8 @@
     {
         var field = $('#quickpostform textarea[name=req_message]'), button;
 
+        $('.subscribelink').appendTo('.postlinksb .pagepost');
+
         if (!field.length)
         {
             return;

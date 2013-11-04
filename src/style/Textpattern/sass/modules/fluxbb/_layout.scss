@@ -23,7 +23,8 @@
 .modlist,
 .postquote,
 .textpattern-fluxbb-t,
-.postlinksb .postlink {
+.postlinksb .postlink,
+.subscribelink span {
     display: none !important;
 }
 
@@ -181,6 +182,12 @@ thead th {
     }
 }
 
+.postlinksb {
+    .crumbs {
+        margin: 0;
+    }
+}
+
 .pagepost {
     @include pie-clearfix;
 
@@ -190,6 +197,7 @@ thead th {
         padding: 0.5em 0;
     }
 
+    .subscribelink,
     .postlink {
         float: right;
         margin: 0;
@@ -197,6 +205,7 @@ thead th {
 
     @include breakpoint(max-width $breakpoint-2) {
 
+        .subscribelink,
         .pagelink,
         .postlink {
             float: none;
