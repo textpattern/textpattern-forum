@@ -23,7 +23,8 @@ button,
 input,
 select,
 textarea,
-.postlink a {
+.postlink a,
+.subscribelink a {
     /* correct font size not being inherited in all browsers */
     font-size: 100%;
     @include adjust-font-size-to(13px, 0.8);
