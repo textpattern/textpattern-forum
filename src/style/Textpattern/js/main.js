@@ -578,10 +578,10 @@
 
             buttons = $('<p class="share-buttons" />')
                 .append($('<iframe class="fb-like" scrolling="no" frameborder="0" allowTransparency="true"></iframe>').attr('src', '//www.facebook.com/plugins/like.php?href='+encodeURIComponent(permlink)+'&width=90&height=21&colorscheme=light&layout=button_count&action=like&show_faces=false&send=false&appId=581964255172661'))
-                .append($('<span class="g-plus" data-action="share" data-height="20" data-annotation="bubble" />').attr('data-href', permlink))
-                .append($('<a class="twitter-share-button" />').attr('data-text', text).attr('data-url', permlink));
+                .append($('<a class="twitter-share-button" />').attr('data-text', text).attr('data-url', permlink))
+                .append($('<span class="g-plus" data-action="share" data-height="20" data-annotation="bubble" />').attr('data-href', permlink));
 
-            $('#page-viewtopic .crumbs').eq(0).after(buttons);
+            $('#page-viewtopic .crumbs').eq(0).before(buttons);
 
             require(['https://apis.google.com/js/plusone.js']);
         }

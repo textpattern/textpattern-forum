@@ -50,11 +50,25 @@
     }
 }
 
-.fb-like {
-    width: 90px;
-    height: 21px;
-}
+.share-buttons {
+    float: right;
+    margin: 0 0 -1em 0;
+    padding-top: 2px;
 
-.twitter-share-button {
-    margin-left: 1em;
+    .fb-like {
+        width: 90px;
+        height: 21px;
+    }
+
+    .twitter-share-button {
+        margin-left: 0.5em;
+    }
+
+    @include breakpoint(max-width $breakpoint-2) {
+        float: none;
+        margin: 1em 0 0 0;
+        padding: 2px 0 1em 0;
+        line-height: 1;
+        border-bottom: 1px solid $color-border;
+    }
 }
