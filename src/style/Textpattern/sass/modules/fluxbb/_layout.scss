@@ -154,13 +154,27 @@ thead th {
    ========================================================================== */
 
 .crumbs {
-    @include adjust-font-size-to(11px, 0.8);
 
     list-style: none;
     padding: 0;
 
     li {
         display: inline-block;
+
+        &:last-child {
+            @include adjust-font-size-to(30px, 1.75);
+
+            display: block;
+            font-family: $font-serif;
+
+            span {
+                display: none;
+            }
+            
+            a {
+                color: $color-text;
+            }
+        }
     }
 }
 
@@ -324,6 +338,10 @@ thead th {
     }
 }
 
+#page-viewforum h2 {
+    display: none;
+}
+
 
 /* Forum posts page layout
    ========================================================================== */
@@ -429,6 +447,10 @@ thead th {
     padding: 0 2.8%;
     width: 63%;
     background-color: $color-background;
+
+    > h3 {
+        display: none;
+    }
 
     @include breakpoint(max-width $breakpoint-2) {
         float: none;
