@@ -56,12 +56,8 @@
     padding-top: 2px;
 
     .fb-like {
-        width: 90px;
-        height: 21px;
-    }
-
-    .twitter-share-button {
-        margin-left: 0.5em;
+        width: 107px;
+        height: 20px;
     }
 
     @include breakpoint(max-width $breakpoint-2) {
