@@ -81,16 +81,16 @@ thead th {
 
     .conl {
         float: left;
-    
+
         @include breakpoint(max-width $breakpoint-2) {
             float: none;
             margin-bottom: 0;
         }
     }
-    
+
     .conr {
         float: right;
-    
+
         @include breakpoint(max-width $breakpoint-2) {
             float: none;
             margin-top: 0;
@@ -371,8 +371,8 @@ thead th {
 .postavatar img {
     margin: 0.5em 0 0.25em;
 
+    // hide avatars at small screen widths
     @include breakpoint(max-width $breakpoint-2) {
-        /* hide avatars on small devices to save space */
         display: none;
     }
 }
@@ -495,7 +495,7 @@ thead th {
 
 @include breakpoint(max-width $breakpoint-2) {
 
-    /* hide signatures on small devices to save space */
+    // hide signatures at small screen widths
     .postsignature {
         display: none;
     }
