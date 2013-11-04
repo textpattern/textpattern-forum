@@ -433,8 +433,6 @@ thead th {
     }
 
     img {
-        @include border-radius;
-
         margin: 0.5em 0 0.25em;
 
         @include breakpoint(max-width $breakpoint-2) {
