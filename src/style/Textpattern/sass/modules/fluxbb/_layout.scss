@@ -330,6 +330,9 @@ thead th {
     @include breakpoint(max-width $breakpoint-2) {
         float: none;
         width: auto;
+        padding-right: 86px;
+        position: relative;
+        min-height: 60px;
     }
 
     dl {
@@ -357,13 +360,23 @@ thead th {
     }
 }
 
-.postavatar img {
-    @include border-radius;
-
-    margin: 0.5em 0 0.25em;
-
+.postavatar {
     @include breakpoint(max-width $breakpoint-2) {
-        display: none;
+        position: absolute;
+        top: 0;
+        right: 1em;
+    }
+
+    img {
+        @include border-radius;
+
+        margin: 0.5em 0 0.25em;
+
+        @include breakpoint(max-width $breakpoint-2) {
+            margin: 0;
+            width: 60px;
+            height: 60px;
+        }
     }
 }
 
