@@ -161,10 +161,15 @@ thead th {
 
     li {
         display: inline-block;
+
     }
 }
 
 .linkst .crumbs {
+    li {
+        margin-bottom: 0.5em;
+    }
+
     li:first-child,
     span {
         display: none;
@@ -174,6 +179,7 @@ thead th {
         @include adjust-font-size-to(30px, 1.75);
 
         display: block;
+        margin: 0;
         font-family: $font-serif;
 
         a {
