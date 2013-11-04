@@ -47,8 +47,24 @@ thead th {
 
 .infldset {
     margin: 1em 0;
+
+    label {
+        display: block;
+        margin: 1em 0;
+
+        &.conl {
+            display: inline-block;
+            margin: 0 0.5em 0 0;
+        }
+    }
 }
 
+.rbox {
+    input[type="checkbox"],
+    input[type="radio"] {
+        margin-right: 0.34em;
+    }
+}
 
 /* Forum header area
    ========================================================================== */
@@ -170,6 +186,14 @@ thead th {
             margin: 0.5em 0;
         }
     }
+}
+
+/* Forum login page
+   ========================================================================== */
+
+#page-login .infldset label.conl {
+    display: block;
+    margin: 1em 0;
 }
 
 
