@@ -2,6 +2,14 @@
     @include pie-clearfix;
 }
 
+.clearl {
+    clear: left;
+}
+
+.clearr {
+    clear: right;
+}
+
 
 /* Forum hidden elements
    ========================================================================== */
@@ -374,6 +382,11 @@ thead th {
         padding: 1px 1em;
         width: auto;
     }
+}
+
+.postedit {
+    @include adjust-font-size-to(11px, 0.8);
+    color: $color-text-footnote;
 }
 
 .postfoot {
