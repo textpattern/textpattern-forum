@@ -164,20 +164,25 @@ thead th {
 }
 
 .linkst .crumbs {
+    li:first-child,
+    span {
+        display: none;
+    }
+
     li:last-child {
         @include adjust-font-size-to(30px, 1.75);
 
         display: block;
         font-family: $font-serif;
 
-        span {
-            display: none;
-        }
-
         a {
             color: $color-text;
         }
     }
+}
+
+.postlinksb .crumbs {
+    @include adjust-font-size-to(11px, 0.8);
 }
 
 .pagepost {
