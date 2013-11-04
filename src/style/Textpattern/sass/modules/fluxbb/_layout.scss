@@ -154,26 +154,27 @@ thead th {
    ========================================================================== */
 
 .crumbs {
-
     list-style: none;
     padding: 0;
 
     li {
         display: inline-block;
+    }
+}
 
-        &:last-child {
-            @include adjust-font-size-to(30px, 1.75);
+.linkst .crumbs {
+    li:last-child {
+        @include adjust-font-size-to(30px, 1.75);
 
-            display: block;
-            font-family: $font-serif;
+        display: block;
+        font-family: $font-serif;
 
-            span {
-                display: none;
-            }
-            
-            a {
-                color: $color-text;
-            }
+        span {
+            display: none;
+        }
+
+        a {
+            color: $color-text;
         }
     }
 }
