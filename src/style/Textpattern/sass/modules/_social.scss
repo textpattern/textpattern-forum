@@ -55,13 +55,14 @@
     margin: 0 0 -1em 0;
     line-height: 1;
 
-    .fb-like {
-        width: 107px;
-        height: 20px;
-    }
-
     @include breakpoint(max-width $breakpoint-2) {
         float: none;
         margin: 1em 0;
     }
+}
+
+/* control size of Facebook button iframe (as best as we can) */
+.fb-like {
+    width: 107px;
+    height: 20px;
 }
