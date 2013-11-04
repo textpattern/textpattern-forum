@@ -81,16 +81,16 @@ thead th {
 
     .conl {
         float: left;
-    
+
         @include breakpoint(max-width $breakpoint-2) {
             float: none;
             margin-bottom: 0;
         }
     }
-    
+
     .conr {
         float: right;
-    
+
         @include breakpoint(max-width $breakpoint-2) {
             float: none;
             margin-top: 0;
@@ -270,7 +270,7 @@ thead th {
     }
 
     h3 {
-        margin: 0;
+        margin: 0 0 0.25em;
 
         a {
             color: $color-text;
@@ -323,6 +323,7 @@ thead th {
     }
 }
 
+/* post author info section */
 .postleft {
     float: left;
     width: 30%;
@@ -360,6 +361,7 @@ thead th {
     }
 }
 
+<<<<<<< HEAD
 .postavatar {
     @include breakpoint(max-width $breakpoint-2) {
         position: absolute;
@@ -377,9 +379,38 @@ thead th {
             width: 60px;
             height: 60px;
         }
+=======
+.usertitle,
+.userrank {
+    display: inline;
+}
+
+.userrank:before {
+    color: lighten($color-text, 33%);
+    content: "\0020 \272D \0020";
+}
+
+.postavatar img {
+    margin: 0.5em 0 0.25em;
+
+    // hide avatars at small screen widths
+    @include breakpoint(max-width $breakpoint-2) {
+        display: none;
+>>>>>>> 3967e5e0d3ae1cd131d4a5428b233ed4b8611b78
     }
 }
 
+.usercontacts {
+    span:before {
+        content: "| \0020";
+    }
+
+    span:first-child:before {
+        content: none;
+    }
+}
+
+/* post author message section */
 .postright {
     float: right;
     padding: 0 2.8%;
@@ -397,6 +428,7 @@ thead th {
     clear: both;
 }
 
+/* post author online/offline section */
 .postfootleft {
     float: left;
     width: 31.4285714%;
@@ -427,6 +459,7 @@ thead th {
     }
 }
 
+/* post author quote/report/etc. section */
 .postfootright {
     float: right;
     width: 65.7142857%;
@@ -454,26 +487,7 @@ thead th {
     }
 }
 
-.usertitle,
-.userrank {
-    display: inline;
-}
-
-.userrank:before {
-    color: lighten($color-text, 33%);
-    content: "\0020 \272D \0020";
-}
-
-.usercontacts {
-    span:before {
-        content: "| \0020";
-    }
-
-    span:first-child:before {
-        content: none;
-    }
-}
-
+/* post reply section */
 #quickpost {
     max-width: 700px;
 }
@@ -504,7 +518,7 @@ thead th {
 
 @include breakpoint(max-width $breakpoint-2) {
 
-    /* hide signatures on small devices to save space */
+    // hide signatures at small screen widths
     .postsignature {
         display: none;
     }
@@ -519,6 +533,7 @@ thead th {
     clear: both;
 }
 
+/* moderator controls */
 #modcontrols {
     dl {
         margin-top: 0;
@@ -533,6 +548,7 @@ thead th {
     }
 }
 
+/* RSS/Atom feeds */
 #feedlinks {
     float: left;
 
@@ -550,6 +566,7 @@ thead th {
     }
 }
 
+/* FluxBB link */
 #poweredby {
     float: right;
 
