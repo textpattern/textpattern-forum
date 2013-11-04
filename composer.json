@@ -1,5 +1,5 @@
 {
     "require": {
-        "netcarver/textile": "*@dev"
+        "netcarver/textile": "3.5.3"
     }
 }
