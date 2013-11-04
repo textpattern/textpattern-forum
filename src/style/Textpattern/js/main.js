@@ -157,7 +157,7 @@
             }
         });
 
-        $('.postfootright ul').append($('<li class="textile-quote-post" />').html(button));
+        $('.postfootright ul').append($('<li class="textile-quote-post" />').html($('<span />').html(button)));
     });
 
     // Ranks.
