@@ -1,9 +1,15 @@
 /* Forum icons
    ========================================================================== */
 
+/* don't show icons on topic lists */
+.icon {
+    display: none;
+}
+
 #page-index .icon {
     @include hires-graphic(forum-icons, png, 480px, 360px);
 
+    display: block;
     float: left;
     margin-right: 1em;
     width: 60px;
@@ -159,9 +165,4 @@
             background-position: 0 -300px;
         }
     }
-}
-
-/* don't show icons on topic lists */
-#page-viewforum .icon {
-    display: none;
 }
