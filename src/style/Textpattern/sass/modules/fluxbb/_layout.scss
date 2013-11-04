@@ -359,12 +359,8 @@ thead th {
 
 .postavatar img {
     @include border-radius;
-    @include box-shadow(0 0 7px rgba(#000000, .2));
 
     margin: 0.5em 0 0.25em;
-    border: solid 1px $color-border;
-    padding: 4px;
-    background: #fff;
 
     @include breakpoint(max-width $breakpoint-2) {
         display: none;
