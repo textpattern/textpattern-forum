@@ -264,8 +264,7 @@ thead th {
 .blockform input[type="number"],
 .blockform input[type="password"],
 .blockform input[type="text"],
-.blockform input[type="url"],
-.blockform select {
+.blockform input[type="url"] {
     max-width: 90%;
 
     @include breakpoint(max-width $breakpoint-2) {
