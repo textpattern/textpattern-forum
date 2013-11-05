@@ -10,6 +10,7 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"],
+a.button,
 .postlink a,
 .subscribelink a {
     @include text-shadow($text-shadow-light);
@@ -48,13 +49,35 @@ input[type="submit"],
     }
 }
 
+/* donations link button */
+a.button.button-donate {
+    @include text-shadow($text-shadow-dark);
+    @include gradient-linear(#555555, #444444);
+
+    border-color: #222222;
+    color: $color-text-inverse;
+    font-weight: bold;
+
+    &:hover {
+        @include gradient-linear(lighten(#555555, 4%), lighten(#444444, 4%));
+
+        border-color: #111111;
+    }
+
+    &:active {
+        @include gradient-linear(darken(#444444, 4%), darken(#555555, 4%));
+
+        border-color: #111111;
+    }
+}
+
 /* better button focus glows, if box-shadow is supported */
 .boxshadow {
     button,
-    a.button,
     input[type="button"],
     input[type="reset"],
-    input[type="submit"] {
+    input[type="submit"],
+    a.button {
         &:focus {
             @include box-shadow($inset-highlighting, 0 0 7px $color-link-hover);
 
