@@ -3,8 +3,48 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "26bd2a2150d80963efb19f9e959dd36c",
+    "hash": "1877a75199f1d32aa7f1c07d5df8f5bb",
     "packages": [
+        {
+            "name": "jaz303/phake",
+            "version": "v0.5.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jaz303/phake.git",
+                "reference": "66f2ef4e3cf8f7fd24d3d9d65936a425e55ae637"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jaz303/phake/zipball/66f2ef4e3cf8f7fd24d3d9d65936a425e55ae637",
+                "reference": "66f2ef4e3cf8f7fd24d3d9d65936a425e55ae637",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "bin": [
+                "bin/phake"
+            ],
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jason Frame",
+                    "email": "jason@onehackoranother.com"
+                }
+            ],
+            "description": "A wee clone of Ruby's rake for PHP 5.3. Uses closures for ultimate coolness.",
+            "homepage": "http://github.com/jaz303/phake",
+            "keywords": [
+                "Tasks",
+                "automation",
+                "cli"
+            ],
+            "time": "2013-07-15 19:08:00"
+        },
         {
             "name": "netcarver/textile",
             "version": "v3.5.3",
@@ -44,6 +84,127 @@
             "description": "A lightweight markup language that takes (almost) plaintext and converts it into well formed HTML.",
             "homepage": "https://github.com/textile/php-textile",
             "time": "2013-10-30 20:04:10"
+        },
+        {
+            "name": "phpseclib/phpseclib",
+            "version": "0.3.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpseclib/phpseclib.git",
+                "reference": "fe3765fe1773c9d62985d05d5b5da24c921c4bd0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/fe3765fe1773c9d62985d05d5b5da24c921c4bd0",
+                "reference": "fe3765fe1773c9d62985d05d5b5da24c921c4bd0",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.0.0"
+            },
+            "suggest": {
+                "ext-gmp": "Install the GMP (GNU Multiple Precision) extension in order to speed up arbitrary precision integer arithmetic operations.",
+                "ext-mcrypt": "Install the Mcrypt extension in order to speed up a wide variety of cryptographic operations.",
+                "pear-pear/PHP_Compat": "Install PHP_Compat to get phpseclib working on PHP >= 4.3.3."
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.3-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Crypt": "phpseclib/",
+                    "File": "phpseclib/",
+                    "Math": "phpseclib/",
+                    "Net": "phpseclib/"
+                },
+                "files": [
+                    "phpseclib/Crypt/Random.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "include-path": [
+                "phpseclib/"
+            ],
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jim Wigginton",
+                    "email": "terrafrost@php.net",
+                    "role": "Developer"
+                }
+            ],
+            "description": "PHP Secure Communications Library - Pure-PHP implementations of RSA, AES, SSH2, SFTP, X.509 etc.",
+            "homepage": "http://phpseclib.sourceforge.net",
+            "keywords": [
+                "BigInteger",
+                "aes",
+                "asn.1",
+                "asn1",
+                "crypto",
+                "cryptography",
+                "encryption",
+                "rsa",
+                "security",
+                "sftp",
+                "signature",
+                "signing",
+                "ssh",
+                "x.509",
+                "x509"
+            ],
+            "time": "2013-06-08 17:40:39"
+        },
+        {
+            "name": "pomander/pomander",
+            "version": "0.3.9",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tamagokun/pomander.git",
+                "reference": "eef136e8ca751b092a30b55a9d4a9a9bf612ed1a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tamagokun/pomander/zipball/eef136e8ca751b092a30b55a9d4a9a9bf612ed1a",
+                "reference": "eef136e8ca751b092a30b55a9d4a9a9bf612ed1a",
+                "shasum": ""
+            },
+            "require": {
+                "jaz303/phake": "*",
+                "phpseclib/phpseclib": "*"
+            },
+            "bin": [
+                "bin/pom"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Pomander": "lib"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mike Kruk",
+                    "email": "tamagokun@gmail.com",
+                    "homepage": "http://ripeworks.com"
+                }
+            ],
+            "description": "Deployment for PHP",
+            "homepage": "http://github.com/tamagokun/pomander",
+            "keywords": [
+                "deploy",
+                "git",
+                "svn"
+            ],
+            "time": "2013-10-22 12:40:06"
         }
     ],
     "packages-dev": [

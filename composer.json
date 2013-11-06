@@ -1,5 +1,6 @@
 {
     "require": {
-        "netcarver/textile": "3.5.3"
+        "netcarver/textile": "3.5.3",
+        "pomander/pomander": "0.3.9"
     }
 }
