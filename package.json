@@ -1,23 +1,11 @@
 {
     "name": "textpattern-forum",
     "version": "0.0.0",
-    "author": {
-        "name": "Team Textpattern",
-        "url": "http://textpattern.com"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/textpattern/textpattern-forum.git"
-    },
-    "bugs": {
-        "url": "https://github.com/textpattern/textpattern-forum/issues"
-    },
     "devDependencies": {
         "grunt": "~0.4.1",
         "grunt-cli": "~0.1",
         "grunt-contrib-compass": "0.6.0",
         "grunt-contrib-compress": "0.5.2",
-        "grunt-contrib-concat": "0.3.0",
         "grunt-contrib-copy": "0.4.1",
         "grunt-contrib-cssmin": "0.6.2",
         "grunt-contrib-jshint": "0.7.1",
