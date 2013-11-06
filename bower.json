@@ -3,6 +3,7 @@
     "directory": "bower_components",
     "dependencies": {
         "google-code-prettify": "1.0.0",
+        "jquery.cookie": "1.4.0",
         "jquery-placeholder": "2.0.7",
         "responsive-nav": "1.0.23",
         "requirejs": "2.1.9",
