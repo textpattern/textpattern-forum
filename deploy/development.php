@@ -11,13 +11,29 @@ group('dependencies', function()
     {
     });
 
-    desc('Validates the system.');
+    desc('Checks that base dependencies are installed.');
 
     task('validate', function ($app)
     {
         $paths = array();
 
-        foreach (array('ruby', 'gem', 'npm', 'bundle', 'grunt', 'bower', 'composer') as $bin)
+        $require = array(
+            'bower',
+            'bundle',
+            'composer',
+            'curl',
+            'gem',
+            'git',
+            'grunt',
+            'gzip',
+            'php',
+            'ruby',
+            'node',
+            'npm',
+            'tar',
+        );
+
+        foreach ($require as $bin)
         {
             if (($status = run('which '.$bin, true)) && !($path = end($status)))
             {
