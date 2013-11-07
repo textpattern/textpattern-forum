@@ -69,6 +69,34 @@
     @include grid-span(9, 4);
 }
 
+/* show standard `<nav>` menu on larger screens */
+.nav-collapse {
+    .js & {
+        position: relative;
+
+        &.closed {
+            max-height: none;
+        }
+    }
+
+    ul {
+        width: 90%;
+    }
+
+    li {
+        float: left;
+        border: 0 !important;
+    }
+
+    a {
+        @include adjust-font-size-to(20px, 1);
+        @include border-radius($default-border-radius / 2);
+
+        margin: 0 0.4em 0.4em -0.4em;
+        padding: 0.4em;
+        font-weight: normal;
+    }
+}
 
 
 /* ==========================================================================
