@@ -224,18 +224,16 @@ thead th {
    ========================================================================== */
 
 .block2col .blockmenu {
+    @include box-sizing(border-box);
+
     border: 1px solid $color-border;
     margin: 1.75em 0 1em 0;
     padding: 0 1em;
     background-color: $color-background-box;
 
     @include breakpoint($breakpoint-2) {
-        @include box-sizing(border-box);
-
         width: 22.8571429%;
         float: right;
-        margin-right: 1em -100% 1em 0%;
-        clear: both;
     }
 
     h2 {
@@ -253,9 +251,6 @@ thead th {
     @include breakpoint($breakpoint-2) {
         width: 74.2857143%;
         float: left;
-        margin-left: 0;
-        margin-right: 0;
-        clear: none;
     }
 }
 
@@ -263,12 +258,12 @@ thead th {
 .blockform input[type="number"],
 .blockform input[type="password"],
 .blockform input[type="text"],
-.blockform input[type="url"] {
-    max-width: 90%;
+.blockform input[type="url"],
+.blockform select {
+    max-width: 100%;
 
     @include breakpoint(max-width $breakpoint-2) {
          width: 100%;
-         max-width: 100%;
     }
 }
 
