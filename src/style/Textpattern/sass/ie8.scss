@@ -72,10 +72,9 @@
 
 
 /* ==========================================================================
-   Fix for reponsive embedded content in IE8
+   Fix for reponsive images in IE8
    ========================================================================== */
 
-img,
-video {
+img {
     width: auto;
 }
