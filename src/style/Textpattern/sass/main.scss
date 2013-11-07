@@ -25,7 +25,7 @@
 @import "modules/navigation";
 @import "modules/links";
 @import "modules/typography";
-//@import "modules/embedded-content";
+@import "modules/embedded-content";
 @import "modules/tables";
 @import "modules/lists";
 @import "modules/forms";
@@ -35,7 +35,6 @@
 @import "modules/social";
 @import "modules/misc";
 @import "modules/http_errors";
-@import "modules/embed";
 
 @import "modules/fluxbb/layout";
 @import "modules/fluxbb/layout_admin";

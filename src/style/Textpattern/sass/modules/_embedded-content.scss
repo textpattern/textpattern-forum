@@ -1,6 +1,17 @@
-/* Responsive embedded widgets
+/* Embedded content
    ========================================================================== */
 
+/* responsive images, remove the gap between images and the bottom of their containers,
+   remove border when inside `<a>` element in IE8-9. */
+img {
+    border: 0;
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+
+/* responsive embedded widgets */
 .embed-video {
     position: relative;
 
