@@ -30,7 +30,10 @@
     @include grid-span(4, 9);
 }
 
-.layout--span-1-8 {
+.layout--span-1-8,
+#rules,
+#regform,
+#page-login .blockform {
     @include grid-span(8, 1, $options: 'both');
 }
 
