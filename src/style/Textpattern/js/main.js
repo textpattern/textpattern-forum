@@ -35,20 +35,6 @@
         }
     });
 
-    // Search widget.
-
-    require(['jquery'], function ($)
-    {
-        var topic = $('#page-viewtopic .crumbs li:last-child a').eq(0).text();
-
-        if (!topic.length)
-        {
-            return;
-        }
-
-        $('#search-query').val(topic+': ');
-    });
-
     // Quoting.
 
     require(['jquery'], function ($)
