@@ -98,7 +98,7 @@ h1.masthead {
             cursor: pointer;
 
             &:hover {
-                background-color: #e3edfc;
+                background-color: $color-selected;
             }
 
             &:focus {

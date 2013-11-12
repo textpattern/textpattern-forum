@@ -16,12 +16,12 @@
         padding: 0.2em 0.4em;
 
         &:hover {
-            background-color: #e3edfc;
+            background-color: $color-selected;
         }
 
         &:active {
             color: darken($color-text, 10%);
-            background-color: #c7dbfa;
+            background-color: $color-selecting;
         }
     }
 }

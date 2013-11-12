@@ -124,7 +124,7 @@ thead th {
 
     border-bottom: 1px solid $color-border;
     padding: 1px 0.5384615em;
-    background-color: #fff9e1;
+    background-color: $color-highlight-box;
 
     .hd h2 {
         @include adjust-font-size-to(14px, 1);
