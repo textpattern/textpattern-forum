@@ -199,7 +199,7 @@ module.exports = function (grunt)
     grunt.registerTask('default', ['watch']);
     grunt.registerTask('build', ['jshint', 'copy:js', 'theme', 'copy:branding', 'sass', 'uglify', 'compress:theme']);
     grunt.registerTask('theme', ['copy:theme', 'replace:theme']);
-    grunt.registerTask('travis', ['jshint']);
+    grunt.registerTask('travis', ['jshint', 'compass']);
     grunt.registerTask('setup', ['shell:setup', 'build']);
     grunt.registerTask('postsetup', ['shell:postsetup']);
 };
