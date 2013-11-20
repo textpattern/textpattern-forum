@@ -261,6 +261,11 @@ class Sfs
             return;
         }
 
+        if ($type === 'ip' && $this->$type === '0.0.0.0')
+        {
+            return;
+        }
+
         $sth = Db::pdo()->prepare("INSERT INTO bans SET $type = :value, message = :message, expire = :expires");
 
         foreach ((array) $this->$type as $value)
