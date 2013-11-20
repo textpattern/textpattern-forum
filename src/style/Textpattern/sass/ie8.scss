@@ -116,6 +116,11 @@ h1.masthead {
     display: block;
 }
 
+// hide forums icons in IE8 due to lack of `nth-child` support
+#page-index .icon {
+    display: none;
+}
+
 
 /* ==========================================================================
    Fix for reponsive images in IE8
