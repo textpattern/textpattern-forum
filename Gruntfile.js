@@ -149,7 +149,8 @@ module.exports = function (grunt)
                         'public/style/Textpattern/js/prettify.js': ['bower_components/google-code-prettify/src/prettify.js'],
                         'public/style/Textpattern/js/require.js': ['bower_components/requirejs/require.js'],
                         'public/style/Textpattern/js/cookie.js': ['bower_components/jquery.cookie/jquery.cookie.js'],
-                        'public/style/Textpattern/js/responsivenav.js': ['bower_components/responsive-nav/responsive-nav.js']
+                        'public/style/Textpattern/js/responsivenav.js': ['bower_components/responsive-nav/responsive-nav.js'],
+                        'public/style/Textpattern/js/selectivizr.js': ['bower_components/selectivizr/selectivizr.js']
                     },
                     {
                         expand: true,
