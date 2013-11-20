@@ -166,23 +166,22 @@ thead th {
 
 .linkst .crumbs {
     li {
-        margin-bottom: 0.5em;
-    }
-
-    li:first-child,
-    span {
-        display: none;
-    }
-
-    li:last-child {
-        @include adjust-font-size-to(30px, 1.75);
-
         display: block;
-        margin: 0;
-        font-family: $font-serif;
+        margin-bottom: 0.5em;
 
-        a {
-            color: $color-text;
+        strong {
+            @include adjust-font-size-to(30px, 1.75);
+
+            font-family: $font-serif;
+
+            a {
+                color: $color-text;
+            }
+        }
+
+        &:first-child,
+        span {
+            display: none;
         }
     }
 }
