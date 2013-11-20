@@ -129,7 +129,7 @@ class Sfs
                 {
                     if (isset($data->ip))
                     {
-                        $this->addBan('ip', 'SFSBOT: IP address found in StopForumSpam database.', strtotime('+2 months'));
+                        $this->addBan('ip', 'SFSBOT: IP address found in StopForumSpam database.', strtotime('+3 day'));
                     }
 
                     if (isset($data->email))
@@ -171,7 +171,7 @@ class Sfs
                     }
                     else if (isset($data->ip))
                     {
-                        $this->addBan('ip', 'SFSBOT: IP address found in StopForumSpam database.', strtotime('+14 day'));
+                        $this->addBan('ip', 'SFSBOT: IP address found in StopForumSpam database.', strtotime('+3 day'));
                     }
                 }
             }
@@ -190,7 +190,7 @@ class Sfs
         {
             if (isset($data->ip))
             {
-                $this->addBan('ip', 'SFSBOT: IP address found in StopForumSpam database.', strtotime('+2 month'));
+                $this->addBan('ip', 'SFSBOT: IP address found in StopForumSpam database.', strtotime('+3 day'));
             }
 
             if (isset($data->email))
