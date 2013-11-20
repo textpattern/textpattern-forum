@@ -70,7 +70,7 @@ class Sfs
 
     public function __construct()
     {
-        $this->ip = $_SERVER['REMOTE_ADDR'];
+        $this->setIp($_SERVER['REMOTE_ADDR']);
 
         foreach (get_class_methods($this) as $method)
         {
@@ -96,6 +96,20 @@ class Sfs
     }
 
     /**
+     * Sets the IP.
+     *
+     * @param string $address The address
+     */
+
+    public function setIp($address)
+    {
+        if ($address && $address !== '0.0.0.0')
+        {
+            $this->ip = (string) $address;
+        }
+    }
+
+    /**
      * Checks login requests.
      */
 
@@ -109,7 +123,7 @@ class Sfs
             if ($r = $sth->fetch())
             {
                 $this->email = $r['email'];
-                $this->ip = $r['registration_ip'];
+                $this->setIp($r['registration_ip']);
 
                 if ($this->isBanned() === false && $data = $this->getRecord())
                 {
@@ -257,11 +271,6 @@ class Sfs
     public function addBan($type = 'ip', $message = '', $expires = null)
     {
         if (empty($this->$type))
-        {
-            return;
-        }
-
-        if ($type === 'ip' && $this->$type === '0.0.0.0')
         {
             return;
         }
