@@ -99,7 +99,7 @@ $sth = Textpattern\Fluxbb\Db::pdo()->prepare('UPDATE config SET conf_value = :va
 
 foreach ($options as $name => $value)
 {
-    if ($sth->execute(array(':name'  => $name, ':value' => $value)))
+    if ($sth->execute(array(':name' => $name, ':value' => $value)))
     {
         echo "  {$name}\n";
     }
@@ -108,6 +108,11 @@ foreach ($options as $name => $value)
         echo "Failed to update {$name}\n";
     }
 }
+
+echo "Updating user options...\n";
+
+$sth = Textpattern\Fluxbb\Db::pdo()->prepare('UPDATE users SET style = :style');
+$sth->execute(array(':style' => $options['o_default_style']));
 
 echo "Clearing FluxBB cache...\n";
 
