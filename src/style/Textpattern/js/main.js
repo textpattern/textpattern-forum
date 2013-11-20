@@ -10,7 +10,6 @@
         },
         shim:
         {
-            'placeholder': ['jquery'],
             'cookie': ['jquery']
         }
     });
@@ -18,21 +17,6 @@
     define('modernizr', function ()
     {
         return window.Modernizr;
-    });
-
-    // Placeholder polyfill.
-
-    require(['jquery'], function ($)
-    {
-        var placeholder = $('textarea[placeholder], input[placeholder]');
-
-        if (placeholder.length)
-        {
-            require(['placeholder'], function ()
-            {
-                placeholder.placeholder();
-            });
-        }
     });
 
     // Quoting.
