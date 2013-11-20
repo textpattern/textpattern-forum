@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="style/Textpattern/css/main.@@timestamp.css">
     <pun_head>
     <script src="style/Textpattern/js/modernizr.@@timestamp.js"></script>
+    <!--[if lt IE 9]>
+        <link rel="stylesheet" href="style/Textpattern/css/ie8.@@timestamp.css">
+    <![endif]-->
 </head>
 <body id="page-<pun_page>">
     <div class="wrapper">
