@@ -83,4 +83,17 @@ class Tasks
         $time = strtotime('-1 month');
         return (int) Db::pdo()->exec("DELETE FROM users WHERE group_id = 0 and registered < {$time}");
     }
+
+    /**
+     * Remove unnecessary IP addresses.
+     *
+     * We do not need IP addresses once the user has been verified and
+     * has posted content.
+     */
+
+    public function taskCleanVerifiedIps()
+    {
+        $time = strtotime('-14 days');
+        return (int) Db::pdo()->exec("UPDATE users SET registration_ip = '0.0.0.0' WHERE group_id NOT IN(0, 5) and registered < {$time} and num_posts > 1 and registration_ip != '0.0.0.0'");
+    }
 }
