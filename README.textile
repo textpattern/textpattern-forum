@@ -80,6 +80,8 @@ If FluxBB installation version has changed, access your forums and follow the up
 
 bc. $ grunt postsetup
 
+You may need to "adjust the write permissions":http://fluxbb.org/docs/v1.5/installing#write-permissions on the @public/cache/@ directory after updating.
+
 h2. Building
 
 This repository hosts sources and needs to be built before it can be used. After you have installed all dependencies, you will be able to run tasks using Grunt, including building:
