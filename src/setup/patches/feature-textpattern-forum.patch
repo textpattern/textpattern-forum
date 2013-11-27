@@ -165,7 +165,7 @@ index 5d564d2..6be2af6 100644
  	global $pun_config, $lang_common, $lang_post, $re_list;
  
  	// Remove empty tags
-@@ -880,46 +881,25 @@ function do_smilies($text)
+@@ -889,46 +890,25 @@ function do_smilies($text)
  //
  function parse_message($text, $hide_smilies)
  {
@@ -223,7 +223,7 @@ index 5d564d2..6be2af6 100644
  }
  
  
-@@ -954,25 +934,23 @@ function clean_paragraphs($text)
+@@ -963,25 +943,23 @@ function clean_paragraphs($text)
  //
  function parse_signature($text)
  {
