@@ -13,13 +13,14 @@
     Server: Apache, MySQL, PHP
     Components: FluxBB, jQuery, Require.js, Modernizr,
         Google Code Prettify, jQuery.cookie, Web Font Loader,
-        Responsive Nav, jQuery.placeholder
+        Responsive Nav
     Software: Node.js, Grunt.js, Bower, Composer, Compass, git,
         Panic Coda, Adobe Photoshop, Adobe Illustrator, ImageOptim,
-        ImageAlpha, grunt-contrib-watch, grunt-contrib-compass,
-        grunt-contrib-copy, grunt-contrib-concat, grunt-contrib-uglify,
-        grunt-contrib-jshint, grunt-shell, grunt-contrib-cssmin,
-        grunt-replace
+        ImageAlpha, grunt-contrib-compass, grunt-contrib-compress,
+        grunt-contrib-copy, grunt-contrib-cssmin, grunt-contrib-jshint,
+        grunt-contrib-uglify, grunt-contrib-watch, grunt-replace,
+        grunt-shell
+
     Source: https://github.com/textpattern/textpattern-forum
 
 
