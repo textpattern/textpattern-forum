@@ -105,7 +105,7 @@ foreach (glob('public/*') as $file)
 }
 
 echo "Moving in the new installation...\n";
-`cp -rf tmp/fluxbb/ public/`;
+`cp -rf tmp/fluxbb/* public/`;
 `chmod 755 public/img/avatars`;
 `chmod 755 public/cache`;
 
