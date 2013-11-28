@@ -20,7 +20,6 @@
         grunt-contrib-copy, grunt-contrib-cssmin, grunt-contrib-jshint,
         grunt-contrib-uglify, grunt-contrib-watch, grunt-replace,
         grunt-shell
-
     Source: https://github.com/textpattern/textpattern-forum
 
 
