@@ -447,6 +447,8 @@ thead th {
 
 /* post author message section */
 .postright {
+    @include force-wrap;
+
     float: right;
     padding: 0 2.8%;
     width: 63%;
