@@ -447,7 +447,7 @@ thead th {
 
 /* post author message section */
 .postright {
-    @include force-wrap;
+    @include word-break(break-all);
 
     float: right;
     padding: 0 2.8%;
