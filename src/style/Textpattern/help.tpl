@@ -19,8 +19,6 @@
     <link rel="icon" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" sizes="16x16" href="favicon-16x16.png">
     <link rel="stylesheet" href="style/Textpattern/css/main.@@timestamp.css">
-    <link rel="alternate" type="application/atom+xml" title="Active forum threads" href="extern.php?action=active&amp;type=atom">
-    <link rel="alternate" type="application/atom+xml" title="New forum threads" href="extern.php?action=new&amp;type=atom">
     <pun_head>
     <script src="style/Textpattern/js/modernizr.@@timestamp.js"></script>
     <!--[if lt IE 9]>
