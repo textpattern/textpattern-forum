@@ -10,6 +10,7 @@
         </tile>
         <notification>
             <polling-uri src="http://forum.textpattern.com/extern.php?action=feed&amp;type=rss"/>
+            <polling-uri2 src="http://forum.textpattern.com/extern.php?action=feed&amp;order=posted;type=rss"/>
             <frequency>30</frequency>
             <cycle>1</cycle>
         </notification>
