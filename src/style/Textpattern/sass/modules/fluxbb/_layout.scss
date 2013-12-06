@@ -447,12 +447,11 @@ thead th {
 
 /* post author message section */
 .postright {
-    @include word-break(break-all);
-
     float: right;
     padding: 0 2.8%;
     width: 63%;
     background-color: $color-background;
+    word-wrap: break-word;
 
     > h3 {
         display: none;
