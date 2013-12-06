@@ -20,7 +20,7 @@
     <link rel="icon" sizes="16x16" href="favicon-16x16.png">
     <link rel="stylesheet" href="style/Textpattern/css/main.@@timestamp.css">
     <pun_head>
-    <link rel="alternate" type="application/rss+xml" href="extern.php?action=feed&amp;order=posted;type=rss" title="RSS new topics feed">
+    <link rel="alternate" type="application/rss+xml" href="extern.php?action=feed&amp;order=posted&amp;type=rss" title="RSS new topics feed">
     <script src="style/Textpattern/js/modernizr.@@timestamp.js"></script>
     <!--[if lt IE 9]>
         <link rel="stylesheet" href="style/Textpattern/css/ie8.@@timestamp.css">
