@@ -229,6 +229,7 @@ class Sfs
         {
             $data = json_decode($data);
             $out = (object) null;
+            $return = false;
 
             if ($data && !empty($data->success))
             {
@@ -254,11 +255,12 @@ class Sfs
                         if ($items)
                         {
                             $out->$name = $items;
+                            $return = true;
                         }
                     }
                 }
 
-                if ($out)
+                if ($return)
                 {
                     return $out;
                 }
