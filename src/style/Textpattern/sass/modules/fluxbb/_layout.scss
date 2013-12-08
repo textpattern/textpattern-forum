@@ -427,8 +427,6 @@ thead th {
 
     img {
         margin: 0.5em 0;
-        width: 60px;
-        height: 60px;
 
         @include breakpoint(max-width $breakpoint-2) {
             margin: 0;
