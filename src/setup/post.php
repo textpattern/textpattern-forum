@@ -13,6 +13,20 @@ echo "Removing installers...\n";
 `rm -Rf public/install.php`;
 `rm -Rf public/db_update.php`;
 
+echo "Removing admin option pages that must be managed from the git repository...\n";
+
+foreach (array(
+    'public/admin_censoring.php',
+    'public/admin_groups.php',
+    'public/admin_categories.php',
+    'public/admin_forums.php',
+    'public/admin_permissions.php',
+) as $file)
+{
+    echo "  {$file}\n";
+    file_put_contents($file, "This file is managed from the git source repository.\n");
+}
+
 include $config;
 
 $options = array(
