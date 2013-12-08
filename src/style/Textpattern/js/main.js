@@ -37,19 +37,23 @@
         button = $('<a href="#quickpostform">Quote</a>').on('click', function ()
         {
             var $this = $(this),
+                tagStart,
+                tagEnd,
+                paragraph,
                 post = $this.parents('.blockpost').eq(0),
                 name = post.find('.postleft dl dt').eq(0).text(),
                 message = post.find('.postmsg').eq(0).clone().find('.postedit, table').remove().end(),
                 link = post.find('h2 a').eq(0).attr('href'),
+                postId = post.attr('id').substr(1),
                 value = $.trim(field.val());
 
             // Remove quotes.
 
             message.find('blockquote').each(function ()
             {
-                var bq = $(this), prev = bq.prev('p');
+                var bq = $(this), prev = bq.prev('h4, p');
 
-                if (prev.length && prev.find('strong').text().indexOf(' wrote:') !== -1)
+                if (prev.length && $.trim(prev.text()).substr(-1) === ':')
                 {
                     prev.remove();
                 }
@@ -90,7 +94,11 @@
             message.find('sub').prepend('~').append('~');
             message.find('sup').prepend('^').append('^');
 
-            // Lists.
+            // Headings.
+
+            message.find('h1, h2, h3, h4, h5, h6').prepend('*').append('*');
+
+            // Lists. Textile will wrap the lists in paragraphs as of 3.5.x.
 
             $.each({'ol' : '#', 'ul' : '*'}, function (type, marker)
             {
@@ -114,14 +122,37 @@
                 });
             });
 
-            message = $.trim(message.find('p').eq(0).text());
+            paragraph = message.find('h1, h2, h3, h4, h5, h6, p');
+
+            if (paragraph.length > 1)
+            {
+                tagStart = '\n\nbq.. ';
+                tagEnd = '\n\np. ';
+            }
+            else
+            {
+                tagStart = '\n\nbq. ';
+                tagEnd = '\n\n';
+            }
+
+            message = $.trim(paragraph.append('\n\n').text());
 
             if (value)
             {
                 value = value + '\n\n';
             }
 
-            value = value + '*' + name + ' wrote:*\n\nbq. ' + message + ' "[...]":./' + link + '\n\n';
+            name = $.trim(name).replace(/==/, '');
+
+            if (message)
+            {
+                value = value + 'h4. ==' + name + '== wrote "#' + postId + '":./' + link + ':' + tagStart + message + tagEnd;
+            }
+            else
+            {
+                value = value + 'h4. In reply to ==' + name + '== "#' + postId + '":./' + link + ':\n\n';
+            }
+
             field.val(value).focus();
 
             if ($.type(field[0].setSelectionRange) !== 'undefined')
