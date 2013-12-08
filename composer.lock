@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "1877a75199f1d32aa7f1c07d5df8f5bb",
+    "hash": "5b8ee92400c8a5fe2d82576d319914f6",
     "packages": [
         {
             "name": "jaz303/phake",
@@ -47,16 +47,16 @@
         },
         {
             "name": "netcarver/textile",
-            "version": "v3.5.3",
+            "version": "v3.5.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/textile/php-textile.git",
-                "reference": "159dc08480c0e3c1375d7015a7236c8033922dde"
+                "reference": "5d170a5fd1ad50793ca92b0cb188aecfdec8571b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/textile/php-textile/zipball/159dc08480c0e3c1375d7015a7236c8033922dde",
-                "reference": "159dc08480c0e3c1375d7015a7236c8033922dde",
+                "url": "https://api.github.com/repos/textile/php-textile/zipball/5d170a5fd1ad50793ca92b0cb188aecfdec8571b",
+                "reference": "5d170a5fd1ad50793ca92b0cb188aecfdec8571b",
                 "shasum": ""
             },
             "require": {
@@ -83,7 +83,7 @@
             ],
             "description": "A lightweight markup language that takes (almost) plaintext and converts it into well formed HTML.",
             "homepage": "https://github.com/textile/php-textile",
-            "time": "2013-10-30 20:04:10"
+            "time": "2013-11-05 19:26:42"
         },
         {
             "name": "phpseclib/phpseclib",
