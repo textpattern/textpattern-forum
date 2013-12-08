@@ -93,6 +93,7 @@
             message.find('ins').prepend('+').append('+');
             message.find('sub').prepend('~').append('~');
             message.find('sup').prepend('^').append('^');
+            message.find('code').prepend('@').append('@');
 
             // Headings.
 
