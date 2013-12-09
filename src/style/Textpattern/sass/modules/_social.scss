@@ -65,3 +65,17 @@
     width: 107px;
     height: 20px;
 }
+
+/**
+ * Gists.
+ */
+
+.gist {
+    table {
+        margin: 0 !important;
+    }
+
+    td {
+        border: 0 !important;
+    }
+}
