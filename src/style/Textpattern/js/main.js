@@ -51,7 +51,7 @@
 
             message.find('blockquote').each(function ()
             {
-                var bq = $(this), prev = bq.prev('h4, p');
+                var bq = $(this), prev = bq.prev('h6, p');
 
                 if (prev.length && $.trim(prev.text()).substr(-1) === ':')
                 {
@@ -147,11 +147,11 @@
 
             if (message)
             {
-                value = value + 'h4. ==' + name + '== wrote "#' + postId + '":./' + link + ':' + tagStart + message + tagEnd;
+                value = value + 'h6. ==' + name + '== wrote "#' + postId + '":./' + link + ':' + tagStart + message + tagEnd;
             }
             else
             {
-                value = value + 'h4. In reply to ==' + name + '== "#' + postId + '":./' + link + ':\n\n';
+                value = value + 'h6. In reply to ==' + name + '== "#' + postId + '":./' + link + ':\n\n';
             }
 
             field.val(value).focus();
