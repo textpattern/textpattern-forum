@@ -596,7 +596,7 @@
         var tweetRegex = /^https?:\/\/twitter\.com\/(#!\/)?[a-z0-9]+\/status(es)?\/[0-9]+$/i,
             gistRegex = /^https?:\/\/gist\.github\.com\/[a-z0-9]+\/[0-9]+$/i,
             youtubeRegex = /^https?:\/\/(?:www\.)?(?:youtube\.com\/watch(?:\/|\?v=)|youtu\.be\/)([a-z0-9\-\_]+)$/i,
-            vimeoRegex = /^https?:\/\/(?:www\.)?vimeo\.com\/[0-9]+$/i;
+            vimeoRegex = /^https?:\/\/(?:www\.)?vimeo\.com\/([0-9]+)$/i;
 
         $('.postmsg > p > a').each(function ()
         {
