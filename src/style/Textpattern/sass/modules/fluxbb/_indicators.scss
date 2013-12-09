@@ -7,13 +7,12 @@
 }
 
 /* text highlights */
-.warntext {
+.warntext,
+#page-delete .forminfo p {
     @include border-radius(0.2307692em); // 3px / 13px
 
-    border: 1px solid $color-warning-border;
+    border: 1px solid;
     padding: 0.5384615em 1em; // 7px / 13px
-    color: $color-warning-text;
-    background: $color-warning-background;
 }
 
 .stickytext,
@@ -26,13 +25,20 @@
     padding: 1px 0.2307692em; // 3px / 13px
 }
 
+.warntext {
+    border-color: $color-warning-border;
+    color: $color-warning-text;
+    background: $color-warning-background;
+}
+
 .stickytext {
     border-color: $color-success-border;
     color: $color-success-text;
     background: $color-success-background;
 }
 
-.closedtext {
+.closedtext,
+#page-delete .forminfo p {
     border-color: $color-error-border;
     color: $color-error-text;
     background: $color-error-background;
