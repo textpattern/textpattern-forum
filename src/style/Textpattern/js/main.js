@@ -639,7 +639,7 @@
             {
                 $this.parent().after(
                     $('<div class="embed-video embed-youtube" />').html(
-                        $('<iframe frameborder="0" allowfullscreen></iframe>').attr('src', '//www.youtube-nocookie.com/embed/' + matches[1])
+                        $('<iframe frameborder="0" allowfullscreen></iframe>').attr('src', 'https://www.youtube-nocookie.com/embed/' + matches[1])
                     )
                 ).remove();
 
