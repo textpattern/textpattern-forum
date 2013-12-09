@@ -651,7 +651,7 @@
             if (matches)
             {
                 $this.parent().after(
-                    $('<div class="class="embed-video embed-vimeo" />').html(
+                    $('<div class="embed-video embed-vimeo" />').html(
                         $('<iframe frameborder="0" allowfullscreen></iframe>').attr('src', '//player.vimeo.com/video/' + matches[1])
                     )
                 ).remove();
