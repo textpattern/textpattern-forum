@@ -5,8 +5,8 @@
     requirejs.config({
         paths:
         {
-            'jquery': '//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min',
-            'webfont': '//ajax.googleapis.com/ajax/libs/webfont/1.4.10/webfont'
+            'jquery': 'https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min',
+            'webfont': 'https://ajax.googleapis.com/ajax/libs/webfont/1.4.10/webfont'
         },
         shim:
         {
@@ -582,7 +582,7 @@
             text = title.text();
 
             buttons = $('<p class="share-buttons" />')
-                .append($('<iframe class="fb-like" scrolling="no" frameborder="0" allowTransparency="true"></iframe>').attr('src', '//www.facebook.com/plugins/like.php?href='+encodeURIComponent(permlink)+'&width=90&height=21&colorscheme=light&layout=button_count&action=like&show_faces=false&send=false&appId=581964255172661'))
+                .append($('<iframe class="fb-like" scrolling="no" frameborder="0" allowTransparency="true"></iframe>').attr('src', 'https://www.facebook.com/plugins/like.php?href='+encodeURIComponent(permlink)+'&width=90&height=21&colorscheme=light&layout=button_count&action=like&show_faces=false&send=false&appId=581964255172661'))
                 .append($('<a class="twitter-share-button" />').attr('data-text', text).attr('data-url', permlink))
                 .append($('<span class="g-plus" data-action="share" data-height="20" data-annotation="bubble" />').attr('data-href', permlink));
 
@@ -652,7 +652,7 @@
             {
                 $this.parent().after(
                     $('<div class="embed-video embed-vimeo" />').html(
-                        $('<iframe frameborder="0" allowfullscreen></iframe>').attr('src', '//player.vimeo.com/video/' + matches[1])
+                        $('<iframe frameborder="0" allowfullscreen></iframe>').attr('src', 'https://player.vimeo.com/video/' + matches[1])
                     )
                 ).remove();
 
@@ -662,7 +662,7 @@
 
         if (title.length || $('.twitter-tweet').length)
         {
-            require(['//platform.twitter.com/widgets.js']);
+            require(['https://platform.twitter.com/widgets.js']);
         }
     });
 
@@ -673,7 +673,7 @@
     window._gaq.push(['_setDomainName', 'none']);
     window._gaq.push(['_gat._anonymizeIp']);
     window._gaq.push(['_trackPageview']);
-    require(['//www.google-analytics.com/ga.js']);
+    require(['https://www.google-analytics.com/ga.js']);
 
     // Ads.
 
@@ -681,7 +681,7 @@
     {
         if ($('.bsarocks').length)
         {
-            require(['//s3.buysellads.com/ac/bsa.js']);
+            require(['https://s3.buysellads.com/ac/bsa.js']);
         }
     });
 
