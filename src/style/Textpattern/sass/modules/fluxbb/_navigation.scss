@@ -11,6 +11,7 @@
 
     li {
         display: inline-block;
+        margin-bottom: -1px;
 
         @include breakpoint(max-width $breakpoint-2) {
             display: block;
@@ -24,7 +25,6 @@
 
         display: block;
         border: 1px solid $color-border;
-        border-bottom: 0;
         padding: 0.5384615em 1em;
         color: $color-text;
         background-color: $color-background-box;
@@ -55,6 +55,14 @@
             background-color: $color-selected;
         }
     }
+}
+
+#brdmenu .isactive a,
+#page-help #navextra1 a {
+    @include box-shadow(none);
+
+    border-bottom-color: $color-background;
+    background-color: $color-background;
 }
 
 @include breakpoint(max-width $breakpoint-2) {
