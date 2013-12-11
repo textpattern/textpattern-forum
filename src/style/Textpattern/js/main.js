@@ -19,6 +19,13 @@
         return window.Modernizr;
     });
 
+    define('track', function ()
+    {
+        return {
+            allow : navigator.doNotTrack !== 'yes' && navigator.doNotTrack !== '1' && navigator.doNotTrack !== 1
+        };
+    });
+
     // Quoting.
 
     require(['jquery'], function ($)
@@ -540,7 +547,7 @@
 
     require(['jquery', 'cookie'], function ($)
     {
-        if (!$.cookie('acceptedCookies'))
+        if (!$.cookie('acceptedCookies') && !$.cookie('textpattern-forum'))
         {
             var disclaimer = $('<aside id="cookie-disclaimer"><div class="container"><p><strong>This website uses cookies to enhance your experience.</strong> By continuing to use this website you agree to cookies being placed on your computer. If you wish to use this website but do not wish for cookies to be placed on your computer you can change the settings in your internet browser. <a href="#" data-action="close">Close</a>.</p></div></aside>');
             $('body').prepend(disclaimer);
@@ -572,7 +579,7 @@
 
     // Share and social embed widgets.
 
-    require(['jquery'], function ($)
+    require(['jquery', 'track'], function ($, track)
     {
         var permlink, buttons, text, title = $('#page-viewtopic .crumbs li:last-child a').eq(0), gistStyle = false;
 
@@ -583,12 +590,15 @@
 
             buttons = $('<p class="share-buttons" />')
                 .append($('<iframe class="fb-like" scrolling="no" frameborder="0" allowTransparency="true"></iframe>').attr('src', 'https://www.facebook.com/plugins/like.php?href='+encodeURIComponent(permlink)+'&width=90&height=21&colorscheme=light&layout=button_count&action=like&show_faces=false&send=false&appId=581964255172661'))
-                .append($('<a class="twitter-share-button" />').attr('data-text', text).attr('data-url', permlink))
-                .append($('<span class="g-plus" data-action="share" data-height="20" data-annotation="bubble" />').attr('data-href', permlink));
+                .append($('<a class="twitter-share-button" data-dnt="true" />').attr('data-text', text).attr('data-url', permlink))
+                .append($('<a class="g-plus" data-action="share" data-height="20" data-annotation="bubble">Share on Google+</a>').attr('data-href', permlink).attr('href', 'https://plus.google.com/share?url='+permlink));
+
+            if (track.allow)
+            {
+                require(['https://apis.google.com/js/plusone.js']);
+            }
 
             $('#page-viewtopic .crumbs').eq(0).before(buttons);
-
-            require(['https://apis.google.com/js/plusone.js']);
         }
 
         // Embed widgets; turns plain links to tweet and gist widgets.
@@ -646,17 +656,20 @@
                 return;
             }
 
-            matches = href.match(vimeoRegex);
-
-            if (matches)
+            if (track.allow)
             {
-                $this.parent().after(
-                    $('<div class="embed-video embed-vimeo" />').html(
-                        $('<iframe frameborder="0" allowfullscreen></iframe>').attr('src', 'https://player.vimeo.com/video/' + matches[1])
-                    )
-                ).remove();
+                matches = href.match(vimeoRegex);
 
-                return;
+                if (matches)
+                {
+                    $this.parent().after(
+                        $('<div class="embed-video embed-vimeo" />').html(
+                            $('<iframe frameborder="0" allowfullscreen></iframe>').attr('src', 'https://player.vimeo.com/video/' + matches[1])
+                        )
+                    ).remove();
+
+                    return;
+                }
             }
         });
 
@@ -666,23 +679,29 @@
         }
     });
 
-    // Analytics.
-
-    window._gaq = window._gaq || [];
-    window._gaq.push(['_setAccount', 'UA-191562-28']);
-    window._gaq.push(['_setDomainName', 'none']);
-    window._gaq.push(['_gat._anonymizeIp']);
-    window._gaq.push(['_trackPageview']);
-    require(['https://www.google-analytics.com/ga.js']);
-
-    // Ads.
-
-    require(['jquery'], function ($)
+    require(['track'], function(track)
     {
-        if ($('.bsarocks').length)
+        if (track.allow)
         {
-            require(['https://s3.buysellads.com/ac/bsa.js']);
+            // Analytics.
+
+            window._gaq = window._gaq || [];
+            window._gaq.push(['_setAccount', 'UA-191562-28']);
+            window._gaq.push(['_setDomainName', 'none']);
+            window._gaq.push(['_gat._anonymizeIp']);
+            window._gaq.push(['_trackPageview']);
+            require(['https://www.google-analytics.com/ga.js']);
         }
+
+        // Ads.
+
+        require(['jquery'], function ($)
+        {
+            if ($('.bsarocks').length)
+            {
+                require(['https://s3.buysellads.com/ac/bsa.js']);
+            }
+        });
     });
 
 })();
