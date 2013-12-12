@@ -5,45 +5,14 @@
 $grids: add-grid(12);
 $gutters: add-gutter(0.5);
 
-.layout--span-1-12,
 .layout--span-1-6,
 .layout--span-7-12,
-.layout--span-1-4,
-.layout--span-5-8,
 .layout--span-9-12,
-.layout--span-1-3,
-.layout--span-4-6,
-.layout--span-7-9,
-.layout--span-10-12,
 .layout--span-1-8,
-.layout--span-5-12,
-.layout--span-4-9,
-.layout--span-1-9,
-.layout--span-4-12,
 #rules,
 #regform,
 #page-login .blockform {
     @include grid-span(12, 1, $options: 'both');
-}
-
-@include breakpoint($breakpoint-1) {
-
-    .layout--span-1-3.at-break1 {
-        @include grid-span(6, 1, $options: 'both');
-    }
-
-    .layout--span-4-6.at-break1 {
-        @include grid-span(6, 7);
-    }
-
-    .layout--span-7-9.at-break1 {
-        @include grid-span(6, 1, $options: 'both');
-    }
-
-    .layout--span-10-12.at-break1 {
-        @include grid-span(6, 7);
-    }
-
 }
 
 @include breakpoint($breakpoint-2) {
@@ -54,14 +23,6 @@ $gutters: add-gutter(0.5);
 
     .layout--span-7-12.at-break2 {
         @include grid-span(6, 7);
-    }
-
-    .layout--span-1-4 {
-        @include grid-span(4, 1, $options: 'both');
-    }
-
-    .layout--span-5-8 {
-        @include grid-span(4, 5);
     }
 
     .layout--span-9-12 {
@@ -75,10 +36,6 @@ $gutters: add-gutter(0.5);
         @include grid-span(8, 1, $options: 'both');
     }
 
-    .layout--span-5-12 {
-        @include grid-span(8, 5);
-    }
-
 }
 
 @include breakpoint($breakpoint-3) {
@@ -89,38 +46,6 @@ $gutters: add-gutter(0.5);
 
     .layout--span-7-12 {
         @include grid-span(6, 7);
-    }
-
-    .layout--span-1-3,
-    .layout--span-1-3.at-break1 {
-        @include grid-span(3, 1, $options: 'both');
-    }
-
-    .layout--span-4-6,
-    .layout--span-4-6.at-break1 {
-        @include grid-span(3, 4);
-    }
-
-    .layout--span-7-9,
-    .layout--span-7-9.at-break1 {
-        @include grid-span(3, 7);
-    }
-
-    .layout--span-10-12,
-    .layout--span-10-12.at-break1 {
-        @include grid-span(3, 10);
-    }
-
-    .layout--span-4-9 {
-        @include grid-span(6, 4);
-    }
-
-    .layout--span-1-9 {
-        @include grid-span(9, 1, $options: 'both');
-    }
-
-    .layout--span-4-12 {
-        @include grid-span(9, 4);
     }
 
 }
