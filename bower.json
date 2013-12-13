@@ -4,7 +4,7 @@
     "dependencies": {
         "google-code-prettify": "1.0.0",
         "jquery.cookie": "1.4.0",
-        "responsive-nav": "1.0.24",
+        "responsive-nav": "1.0.25",
         "requirejs": "2.1.9",
         "textpattern-branding": "*"
     }
