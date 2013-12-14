@@ -3,14 +3,14 @@
 
 .pagelink {
     strong {
-        @include border-radius(0.2142857em); // 3px / 14px
+        @include border-radius(0.2307692em); // 3px / 13px
 
         border: 1px solid $color-border;
         padding: 0.2em 0.4em;
     }
 
     a {
-        @include border-radius(0.2142857em); // 3px / 14px
+        @include border-radius(0.2307692em); // 3px / 13px
 
         border: 1px solid $color-background;
         padding: 0.2em 0.4em;
