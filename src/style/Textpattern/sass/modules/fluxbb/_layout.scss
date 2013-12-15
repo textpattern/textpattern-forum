@@ -86,13 +86,13 @@ thead th {
     @include breakpoint($breakpoint-2) {
         li {
             display: inline;
-    
+
             span:before {
                 color: lighten($color-text, 33%);
                 content: "\272D \0020";
             }
         }
-    
+
         li:first-child span:before {
             content: none;
         }
@@ -100,16 +100,16 @@ thead th {
 
     .conl {
         float: left;
-    
+
         @include breakpoint(max-width $breakpoint-2) {
             float: none;
             margin-bottom: 0;
         }
     }
-    
+
     .conr {
         float: right;
-    
+
         @include breakpoint(max-width $breakpoint-2) {
             float: none;
             margin-top: 0;
@@ -284,7 +284,7 @@ thead th {
     .tc2,
     .tc3 {
         width: 11%;
-    
+
         // hide columns at small screen widths
         @include breakpoint(max-width $breakpoint-2) {
             display: none;
@@ -293,7 +293,7 @@ thead th {
 
     .tcr {
         width: 24%;
-    
+
         // widen column at small screen widths
         @include breakpoint(max-width $breakpoint-2) {
             width: 36%;
@@ -539,7 +539,7 @@ thead th {
         .tcl {
             width: 50%;
         }
-    
+
         .tc2 {
             display: none;
         }

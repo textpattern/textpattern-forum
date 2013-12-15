@@ -96,7 +96,7 @@ foreach ($move as $from => $to)
     {
         break;
     }
-    
+
     if (!($id = $forum->fetchColumn()))
     {
         continue;

@@ -67,7 +67,7 @@
 
                 <div class="layout--span-1-8">
                     <h2>Forum help</h2>
-    
+
                     <h3 id="forum-help-textile-formatting">Formatting</h3>
                     <p>The forum uses <a href="http://textpattern.com/textile-reference-manual">Textile markup language</a> for posts and signatures. The forum’s Textile has few additional features, including media embedding support and syntax highlighting. If you’re not already familiar with Markdown, take a quick look at <a href="http://textpattern.com/textile-reference-manual">Textile reference</a>. The few most useful Textile tags you can use to format your posts include:</p>
                     <ul>
@@ -177,7 +177,7 @@
 
     </div><!-- /role="complementary" -->
 
-    
+
 <!-- Footer -->
     <footer role="contentinfo">
         <p class="legal">

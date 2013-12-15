@@ -141,7 +141,7 @@ class Trap
         $name = 'textpattern_fluxbb_t_' . htmlspecialchars($name);
         $id = $name . '-' . ($instance++);
 
-        return 
+        return
             '<p class="textpattern-fluxbb-t '.$id.'">'.
                 '<label for="'.$id.'">'.htmlspecialchars($label).'</label>'.
                 '<input type="'.htmlspecialchars($type).'" name="'.$name.'" value="" id="'.$id.'" />'.
