@@ -581,22 +581,30 @@
 
     require(['jquery', 'track'], function ($, track)
     {
-        var permlink, buttons, text, title = $('#page-viewtopic .crumbs li:last-child a').eq(0), gistStyle = false;
+        var permlink, gplus, buttons, text, title = $('#page-viewtopic .crumbs li:last-child a').eq(0), gistStyle = false;
 
         if (title.length)
         {
             permlink = 'http://' + window.location.hostname + '/' + title.attr('href');
             text = title.text();
+            gplus = $('<a class="g-plus" data-action="share" data-height="20" data-annotation="bubble" />').attr('data-href', permlink).attr('href', 'https://plus.google.com/share?url='+permlink);
 
             buttons = $('<p class="share-buttons" />')
-                .append($('<iframe class="fb-like" scrolling="no" frameborder="0" allowTransparency="true"></iframe>').attr('src', 'https://www.facebook.com/plugins/like.php?href='+encodeURIComponent(permlink)+'&width=90&height=21&colorscheme=light&layout=button_count&action=like&show_faces=false&send=false&appId=581964255172661'))
+                .append($('<a class="fb-like" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false" />').attr('data-href', permlink))
                 .append($('<a class="twitter-share-button" data-dnt="true" />').attr('data-text', text).attr('data-url', permlink))
-                .append($('<a class="g-plus" data-action="share" data-height="20" data-annotation="bubble">Share on Google+</a>').attr('data-href', permlink).attr('href', 'https://plus.google.com/share?url='+permlink));
+                .append(gplus);
 
             if (track.allow)
             {
                 require(['https://apis.google.com/js/plusone.js']);
             }
+            else
+            {
+                gplus.text('Share on Google+');
+            }
+
+            $('body').append('<div id="fb-root"></div>');
+            require(['//connect.facebook.net/en_US/all.js#xfbml=1&appId=581964255172661']);
 
             $('#page-viewtopic .crumbs').eq(0).before(buttons);
         }
