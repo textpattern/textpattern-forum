@@ -30,8 +30,8 @@
 }
 
 h1.masthead a {
-    @include svg-graphic(branding/textpattern/textpattern, png, 320px, 52px);
-
+    background-image: url(/style/Textpattern/img/branding/textpattern/textpattern.png);
+    background-size: 320px 52px;
     width: 320px;
     height: 52px;
 }
