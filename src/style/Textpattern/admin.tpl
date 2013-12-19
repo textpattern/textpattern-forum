@@ -48,7 +48,7 @@
                     <li><a href="http://textpattern.net/">Documentation</a></li>
                     <li><a href="http://textgarden.org/">Themes</a></li>
                     <li><a href="http://textpattern.org/">Plugins</a></li>
-                    <li><a href="http://forum.textpattern.com/">Forum</a></li>
+                    <li class="active"><a href="http://forum.textpattern.com/">Forum</a></li>
                     <li><a href="http://textpattern.com/weblog">Blog</a></li>
                     <li><a href="http://textpattern.com/about">About</a></li>
                 </ul>
