@@ -689,6 +689,9 @@
             window._gaq.push(['_setAccount', 'UA-191562-28']);
             window._gaq.push(['_setDomainName', 'none']);
             window._gaq.push(['_gat._anonymizeIp']);
+            window._gaq.push(['_setVisitorCookieTimeout', 0]);
+            window._gaq.push(['_setSessionCookieTimeout', 0]);
+            window._gaq.push(['_setCampaignCookieTimeout', 0]);
             window._gaq.push(['_trackPageview']);
             require(['//www.google-analytics.com/ga.js']);
         }
