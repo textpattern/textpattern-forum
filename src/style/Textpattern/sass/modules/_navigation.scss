@@ -6,17 +6,19 @@
 }
 
 .nav-collapse {
-    font-family: $font-serif;
+    .wf-active & {
+        font-family: $font-serif;
+    }
 
     .js & {
-        clip: rect(0 0 0 0);
-        max-height: 0;
-        position: absolute;
-        display: block;
-        overflow: hidden;
+        position: relative;
 
-        @include breakpoint($breakpoint-2) {
-            position: relative;
+        @include breakpoint($breakpoint-2-max) {
+            clip: rect(0 0 0 0);
+            max-height: 0;
+            position: absolute;
+            display: block;
+            overflow: hidden;
 
             &.closed {
                 max-height: none;
