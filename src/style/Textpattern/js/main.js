@@ -5,8 +5,7 @@
     requirejs.config({
         paths:
         {
-            'jquery': 'https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min',
-            'webfont': 'https://ajax.googleapis.com/ajax/libs/webfont/1.4.10/webfont'
+            'jquery': 'https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min'
         },
         shim:
         {
@@ -563,18 +562,6 @@
                 });
             });
         }
-    });
-
-    // Fonts.
-
-    require(['webfont'], function ()
-    {
-        WebFont.load({
-            google:
-            {
-                families: ['PT+Serif:400,700,400italic,700italic:latin']
-            }
-        });
     });
 
     // Share and social embed widgets.

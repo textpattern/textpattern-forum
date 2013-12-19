@@ -18,6 +18,7 @@
     <link rel="icon" sizes="96x96" href="favicon-96x96.png">
     <link rel="icon" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" sizes="16x16" href="favicon-16x16.png">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700italic">
     <link rel="stylesheet" href="style/Textpattern/css/main.@@timestamp.css">
     <pun_head>
     <script src="style/Textpattern/js/modernizr.@@timestamp.js"></script>
