@@ -29,6 +29,7 @@
  */
 
 namespace Textpattern;
+
 use Composer\Autoload\ClassLoader;
 use Textpattern\Fluxbb\Document;
 use Textpattern\Fluxbb\Filter;
@@ -36,36 +37,19 @@ use Textpattern\Fluxbb\Sfs;
 use Textpattern\Fluxbb\Trap;
 use Textpattern\Fluxbb\Tasks;
 
-/**
- * Bootstrap.
- */
+include dirname(dirname(dirname(dirname(__FILE__)))) . '/vendor/autoload.php';
+$loader = new ClassLoader();
+$loader->add('Textpattern\\Fluxbb', dirname(__DIR__));
+$loader->register();
 
-class Bootstrap
-{
-    /**
-     * Constructor.
-     */
-
-    public function __construct()
-    {
-        include dirname(dirname(dirname(dirname(__FILE__)))) . '/vendor/autoload.php';
-        $loader = new ClassLoader();
-        $loader->add('Textpattern\\Fluxbb', dirname(__DIR__));
-        $loader->register();
-    }
-}
-
-new Bootstrap();
 new Filter();
 new Sfs();
 new Document();
 
-if (defined('\TEXTPATTERN_FORUM_BASE_URL'))
-{
+if (defined('\TEXTPATTERN_FORUM_BASE_URL')) {
     new Trap(\TEXTPATTERN_FORUM_BASE_URL.'/index.php');
 }
 
-if (defined('\TEXTPATTERN_TASKS_KEY'))
-{
+if (defined('\TEXTPATTERN_TASKS_KEY')) {
     new Tasks(\TEXTPATTERN_TASKS_KEY);
 }
