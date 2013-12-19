@@ -10,12 +10,15 @@
     position: relative;
 
     .js & {
-        @include breakpoint($breakpoint-2-max) {
-            clip: rect(0 0 0 0);
-            max-height: 0;
-            position: absolute;
-            display: block;
-            overflow: hidden;
+        clip: rect(0 0 0 0);
+        max-height: 0;
+        position: absolute;
+        display: block;
+        overflow: hidden;
+
+        @include breakpoint($breakpoint-2) {
+            position: relative;
+            max-height: none;
         }
     }
 
