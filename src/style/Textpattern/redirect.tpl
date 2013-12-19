@@ -102,11 +102,11 @@
 
         <section role="region" class="layout--span-9-12 host-details">
             <h4 class="accessibility">Host details</h4>
-            <p><img class="svg" src="style/Textpattern/img/branding/textpattern-network/textpattern-network-white.png" alt="Textpattern Network"></p>
+            <p><img class="svg" src="style/Textpattern/img/branding/textpattern-network/textpattern-network-white.svg" alt="Textpattern Network"></p>
             <p>
                 <small>
                     Kindly hosted by<br>
-                    <a rel="external" class="joyent" href="http://joyent.com/" title="Go to the Joyent website"><img class="svg" src="style/Textpattern/img/branding/misc/joyent-inverse.png" alt="Joyent"></a>
+                    <a rel="external" class="joyent" href="http://joyent.com/" title="Go to the Joyent website"><img class="svg" src="style/Textpattern/img/branding/misc/joyent-inverse.svg" alt="Joyent"></a>
                 </small>
             </p>
         </section>
