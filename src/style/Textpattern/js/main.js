@@ -519,7 +519,7 @@
         }
     });
 
-    // Test for SVG support via Modernizr, if no replace SVG with PNGs
+    // Test for SVG support via Modernizr, if no then replace SVGs with PNGs.
 
     require(['jquery', 'modernizr'], function ($, Modernizr)
     {
