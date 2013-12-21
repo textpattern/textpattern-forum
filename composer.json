@@ -2,5 +2,8 @@
     "require": {
         "netcarver/textile": "3.5.4",
         "pomander/pomander": "0.3.9"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "1.5.*"
     }
 }
