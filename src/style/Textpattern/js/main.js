@@ -570,13 +570,14 @@
 
     require(['jquery', 'track'], function ($, track)
     {
-        var permlink, buttons, text, title = $('#page-viewtopic .crumbs li:last-child a').eq(0), gistStyle = false;
+        var permlink, widgets = 2, timer = 0, buttons, text, title = $('#page-viewtopic .crumbs li:last-child a').eq(0), gistStyle = false;
 
         if (title.length) {
             permlink = 'http://' + window.location.hostname + '/' + title.attr('href');
             text = title.text();
 
             buttons = $('<p class="share-buttons" />')
+                .hide()
                 .append($('<a class="twitter-share-button" data-dnt="true" />').attr('data-text', text).attr('data-url', permlink))
                 .append($('<a class="fb-like" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false" />').attr('data-href', permlink));
 
@@ -587,13 +588,31 @@
                     lang: 'en-GB'
                 };
 
+                widgets++;
+
                 require(['https://apis.google.com/js/plusone.js']);
             }
 
             $('body').append('<div id="fb-root"></div>');
             require(['//connect.facebook.net/en_US/all.js#xfbml=1&appId=581964255172661']);
-
             $('#page-viewtopic .crumbs').eq(0).before(buttons);
+
+            var loadWidgets = function ()
+            {
+                timer += 2000;
+
+                if (!widgets || timer >= 10000) {
+                    buttons.show();
+                    clearInterval(loadWidgets);
+                    return;
+                }
+
+                if (buttons.find('iframe').length >= widgets) {
+                    widgets = false;
+                }
+            };
+
+            setInterval(loadWidgets, 2000);
         }
 
         // Embed widgets; turns plain links to tweet and gist widgets.
