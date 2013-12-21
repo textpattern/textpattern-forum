@@ -12,7 +12,8 @@
     Standards: HTML5, CSS3
     Server: Apache, MySQL, PHP
     Components: FluxBB, jQuery, Require.js, Modernizr,
-        Google Code Prettify, jQuery.cookie, Responsive Nav
+        Google Code Prettify, jQuery.cookie, Responsive Nav,
+        Autosize
     Software: Node.js, Grunt.js, Bower, Composer, Compass, git,
         Panic Coda, Adobe Photoshop, Adobe Illustrator, ImageOptim,
         ImageAlpha, grunt-contrib-compass, grunt-contrib-compress,
