@@ -570,22 +570,24 @@
 
     require(['jquery', 'track'], function ($, track)
     {
-        var permlink, gplus, buttons, text, title = $('#page-viewtopic .crumbs li:last-child a').eq(0), gistStyle = false;
+        var permlink, buttons, text, title = $('#page-viewtopic .crumbs li:last-child a').eq(0), gistStyle = false;
 
         if (title.length) {
             permlink = 'http://' + window.location.hostname + '/' + title.attr('href');
             text = title.text();
-            gplus = $('<a class="g-plus" data-action="share" data-height="20" data-annotation="bubble" />').attr('data-href', permlink).attr('href', 'https://plus.google.com/share?url='+permlink);
 
             buttons = $('<p class="share-buttons" />')
-                .append($('<a class="fb-like" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false" />').attr('data-href', permlink))
                 .append($('<a class="twitter-share-button" data-dnt="true" />').attr('data-text', text).attr('data-url', permlink))
-                .append(gplus);
+                .append($('<a class="fb-like" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false" />').attr('data-href', permlink));
 
             if (track.allow) {
+                buttons.append($('<span class="g-plusone" data-align="right" data-action="share" data-size="medium" />').attr('data-href', permlink));
+
+                window.___gcfg = {
+                    lang: 'en-GB'
+                };
+
                 require(['https://apis.google.com/js/plusone.js']);
-            } else {
-                gplus.text('Share on Google+');
             }
 
             $('body').append('<div id="fb-root"></div>');
