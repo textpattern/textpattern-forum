@@ -103,7 +103,7 @@ class Sfs
 
     public function setIp($address)
     {
-        if ($address && $address !== '0.0.0.0' && filter_var($address, FILTER_FLAG_IPV4)) {
+        if ($address && filter_var($address, FILTER_FLAG_IPV4)) {
             $this->ip = (string) $address;
         }
 
