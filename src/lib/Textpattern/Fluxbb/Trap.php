@@ -33,9 +33,10 @@ namespace Textpattern\Fluxbb;
 /**
  * Hidden spam trap field.
  *
- * @example
+ * <code>
  * use Textpattern\Fluxbb\Trap;
  * new Trap('http://example.com/');
+ * </code>
  */
 
 class Trap
@@ -125,13 +126,15 @@ class Trap
     /**
      * Renders a spam trap field.
      *
+     * <code>
+     * $this->formInput('text', 'displayname', '', 'Display name');
+     * </code>
+     *
      * @param  string $type  The field type
      * @param  string $name  The field name
      * @param  string $value The field value
      * @param  string $label The field label
      * @return string HTML
-     * @example
-     * $this->formInput('text', 'displayname', '', 'Display name');
      */
 
     protected function formInput($type, $name, $value, $label)
