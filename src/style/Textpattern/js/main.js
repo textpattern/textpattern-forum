@@ -140,7 +140,7 @@
             message = $.trim(paragraph.append('\n\n').text());
 
             if (value) {
-                value = value + '\n\n';
+                value = $.trim(value).replace(/\r?\n\r?\np\.$/, '') + '\n\n';
             }
 
             name = $.trim(name).replace(/==/, '');
