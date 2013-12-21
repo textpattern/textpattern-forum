@@ -24,17 +24,20 @@
         };
     });
 
+    define('growfields', ['jquery', 'autosize'], function ($)
+    {
+        $('form textarea').autosize();
+    });
+
     // Quoting.
 
-    require(['jquery', 'autosize'], function ($)
+    require(['jquery', 'growfields'], function ($)
     {
         var field = $('#quickpostform textarea[name=req_message]'), button;
 
         if (!field.length) {
             return;
         }
-
-        field.autosize();
 
         $('.postlink a').eq(0).attr('href', '#quickpostform');
 
