@@ -173,7 +173,6 @@ module.exports = function (grunt)
             'devFile': 'bower_components/modernizr/modernizr.js',
             'outputFile': 'public/style/Textpattern/js/modernizr.js',
             'tests': [
-                'boxshadow',
                 'svg',
                 'touch'
             ],

@@ -50,6 +50,7 @@ a.button,
     &:focus {
         @include box-shadow($inset-highlighting, 0 0 4px 2px $color-link-focus);
 
+        border-color: $color-link-focus;
         outline: 0;
     }
 }
@@ -75,17 +76,8 @@ a.button.button-donate {
         border-color: #111111;
         color: darken(#ffffff, 10%);
     }
-}
 
-/* focus fallback for browsers that don't support `box-shadow` */
-.no-boxshadow {
-    button,
-    input[type="button"],
-    input[type="reset"],
-    input[type="submit"],
-    a.button {
-        &:focus {
-            outline: thin dotted $color-link-focus;
-        }
+    &:focus {
+        border-color: $color-link-focus;
     }
 }
