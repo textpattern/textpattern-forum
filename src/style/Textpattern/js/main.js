@@ -599,7 +599,7 @@
 
             var loadWidgets = function ()
             {
-                timer += 2000;
+                timer += 1000;
 
                 if (!widgets || timer >= 10000) {
                     buttons.show();
@@ -612,7 +612,7 @@
                 }
             };
 
-            setInterval(loadWidgets, 2000);
+            setInterval(loadWidgets, 1000);
         }
 
         // Embed widgets; turns plain links to tweet and gist widgets.
