@@ -72,10 +72,8 @@ class Sfs
     {
         $this->setIp($_SERVER['REMOTE_ADDR']);
 
-        foreach (get_class_methods($this) as $method)
-        {
-            if (strpos($method, 'filterPage') === 0 && $this->$method() === true)
-            {
+        foreach (get_class_methods($this) as $method) {
+            if (strpos($method, 'filterPage') === 0 && $this->$method() === true) {
                 return;
             }
         }
@@ -87,8 +85,9 @@ class Sfs
 
     public function filterPageRegister()
     {
-        if (strpos($_SERVER['REQUEST_URI'], 'register.php') !== false && isset($_POST['req_user']) && isset($_POST['req_email1']))
-        {
+        if (strpos($_SERVER['REQUEST_URI'], 'register.php') !== false &&
+            isset($_POST['req_user']) && isset($_POST['req_email1'])
+        ) {
             $this->email = (string) $_POST['req_email1'];
             $this->processUser();
             return true;
@@ -103,8 +102,7 @@ class Sfs
 
     public function setIp($address)
     {
-        if ($address && $address !== '0.0.0.0')
-        {
+        if ($address && $address !== '0.0.0.0') {
             $this->ip = (string) $address;
         }
     }
@@ -115,25 +113,26 @@ class Sfs
 
     public function filterPageLogin()
     {
-        if (isset($_POST['form_sent']) && isset($_GET['action']) && $_GET['action'] === 'in' && isset($_POST['req_username']))
-        {
-            $sth = Db::pdo()->prepare("SELECT id, username, email, registration_ip FROM users WHERE username = :username and group_id = 0 limit 1");
+        if (isset($_POST['form_sent']) && isset($_GET['action']) &&
+            $_GET['action'] === 'in' && isset($_POST['req_username'])
+        ) {
+            $sth = Db::pdo()->prepare(
+                "SELECT id, username, email, registration_ip FROM users WHERE username = :username and ".
+                "group_id = 0 limit 1"
+            );
+
             $sth->execute(array(':username' => (string) $_POST['req_username']));
 
-            if ($r = $sth->fetch())
-            {
+            if ($r = $sth->fetch()) {
                 $this->email = $r['email'];
                 $this->setIp($r['registration_ip']);
 
-                if ($this->isBanned() === false && $data = $this->getRecord())
-                {
-                    if (isset($data->ip))
-                    {
+                if ($this->isBanned() === false && $data = $this->getRecord()) {
+                    if (isset($data->ip)) {
                         $this->addBan('ip', 'SFSBOT: IP address found in StopForumSpam database.', strtotime('+3 day'));
                     }
 
-                    if (isset($data->email))
-                    {
+                    if (isset($data->email)) {
                         $this->addBan('email', 'SFSBOT: Email address found in StopForumSpam database.');
                     }
 
@@ -153,30 +152,22 @@ class Sfs
     {
         global $cookie_name;
 
-        if (strpos($_SERVER['REQUEST_URI'], 'post.php') !== false && isset($_POST['form_sent']))
-        {
+        if (strpos($_SERVER['REQUEST_URI'], 'post.php') !== false && isset($_POST['form_sent'])) {
             $id = (int) join('', array_slice(explode('|', $_COOKIE[$cookie_name]), 0, 1));
             $sth = Db::pdo()->prepare('SELECT email FROM users WHERE id = :user and num_posts = 0');
             $sth->execute(array(':user' => $id));
 
-            if ($r = $sth->fetch())
-            {
+            if ($r = $sth->fetch()) {
                 $this->email = $r['email'];
 
-                if ($this->isBanned() === false && $data = $this->getRecord())
-                {
-                    if (isset($data->email))
-                    {
+                if ($this->isBanned() === false && $data = $this->getRecord()) {
+                    if (isset($data->email)) {
                         $this->addBan('email', 'SFSBOT: Email address found in StopForumSpam database.');
-                    }
-                    else if (isset($data->ip))
-                    {
+                    } elseif (isset($data->ip)) {
                         $this->addBan('ip', 'SFSBOT: IP address found in StopForumSpam database.', strtotime('+3 day'));
                     }
                 }
-            }
-            else
-            {
+            } else {
                 $_SERVER['REMOTE_ADDR'] = '0.0.0.0';
             }
 
@@ -190,15 +181,12 @@ class Sfs
 
     public function processUser()
     {
-        if ($this->isBanned() === false && $data = $this->getRecord())
-        {
-            if (isset($data->ip))
-            {
+        if ($this->isBanned() === false && $data = $this->getRecord()) {
+            if (isset($data->ip)) {
                 $this->addBan('ip', 'SFSBOT: IP address found in StopForumSpam database.', strtotime('+3 day'));
             }
 
-            if (isset($data->email))
-            {
+            if (isset($data->email)) {
                 $this->addBan('email', 'SFSBOT: Email address found in StopForumSpam database.');
             }
         }
@@ -217,51 +205,46 @@ class Sfs
             'email' => $this->email,
         ));
 
-        if (!$query)
-        {
+        if (!$query) {
             return false;
         }
 
-        $data = file_get_contents('http://www.stopforumspam.com/api?f=json&unix&'.$query, false, stream_context_create(array('http' => array('timeout' => 15))));
+        $data = file_get_contents(
+            'http://www.stopforumspam.com/api?f=json&unix&'.$query,
+            false,
+            stream_context_create(array('http' => array('timeout' => 15)))
+        );
+
         $seen = time() - $this->activityRange;
 
-        if ($data)
-        {
+        if ($data) {
             $data = json_decode($data);
             $out = (object) null;
             $return = false;
 
-            if ($data && !empty($data->success))
-            {
-                foreach (array('ip', 'email') as $name)
-                {
-                    if (isset($data->$name) && $this->$name)
-                    {
-                        if (!is_array($data->$name))
-                        {
+            if ($data && !empty($data->success)) {
+                foreach (array('ip', 'email') as $name) {
+                    if (isset($data->$name) && $this->$name) {
+                        if (!is_array($data->$name)) {
                             $data->$name = array($data->$name);
                         }
 
                         $items = array();
 
-                        foreach ($data->$name as $item)
-                        {
-                            if ($item->appears && $item->lastseen >= $seen)
-                            {
+                        foreach ($data->$name as $item) {
+                            if ($item->appears && $item->lastseen >= $seen) {
                                 $items[] = $item;
                             }
                         }
 
-                        if ($items)
-                        {
+                        if ($items) {
                             $out->$name = $items;
                             $return = true;
                         }
                     }
                 }
 
-                if ($return)
-                {
+                if ($return) {
                     return $out;
                 }
             }
@@ -276,15 +259,13 @@ class Sfs
 
     public function addBan($type = 'ip', $message = '', $expires = null)
     {
-        if (empty($this->$type))
-        {
+        if (empty($this->$type)) {
             return;
         }
 
         $sth = Db::pdo()->prepare("INSERT INTO bans SET $type = :value, message = :message, expire = :expires");
 
-        foreach ((array) $this->$type as $value)
-        {
+        foreach ((array) $this->$type as $value) {
             $sth->execute(array(
                 ':value'    => $value,
                 ':message'  => $message . "\nhttp://www.stopforumspam.com/search?q=" . urlencode($value),
@@ -303,7 +284,10 @@ class Sfs
 
     public function isBanned()
     {
-        $sth = Db::pdo()->prepare("SELECT ip FROM bans WHERE ((ip != '' and ip = :ip) or (email != '' and email = :email)) and IFNULL(expire, :expires) >= :expires limit 1");
+        $sth = Db::pdo()->prepare(
+            "SELECT ip FROM bans WHERE ((ip != '' and ip = :ip) or (email != '' and email = :email)) and ".
+            "IFNULL(expire, :expires) >= :expires limit 1"
+        );
 
         $sth->execute(array(
             ':ip'      => $ip,

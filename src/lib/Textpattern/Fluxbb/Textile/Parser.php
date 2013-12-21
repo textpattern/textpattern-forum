@@ -29,6 +29,7 @@
  */
 
 namespace Textpattern\Fluxbb\Textile;
+
 use Netcarver\Textile\Parser as Textile;
 
 /**
@@ -71,6 +72,14 @@ class Parser extends Textile
 
     private function extraCodeLanguageHinting($text)
     {
-        return preg_replace('/<pre><code>(?:\/\/|#|;)?(?:\s+)?(apollo|bash|c|coffee|cs|clj|css|dart|go|hs|html|java|js|json|lisp|lua|ml|n|perl|php|proto|python|ruby|rust|scala|sh|sql|tex|text|txp|vb|vhdl|wiki|xml|xsl|xq|yaml)(?:\n+)?/', '<pre class="prettyprint language-$1"><code>', $text);
+        return preg_replace(
+            '/<pre><code>(?:\/\/|#|;)?(?:\s+)?('.
+            'apollo|bash|c|coffee|cs|clj|css|dart|go|hs|html|java|'.
+            'js|json|lisp|lua|ml|n|perl|php|proto|python|ruby|rust|'.
+            'scala|sh|sql|tex|text|txp|vb|vhdl|wiki|xml|xsl|xq|yaml'.
+            ')(?:\n+)?/',
+            '<pre class="prettyprint language-$1"><code>',
+            $text
+        );
     }
 }

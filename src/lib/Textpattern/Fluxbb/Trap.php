@@ -75,14 +75,11 @@ class Trap
     {
         $this->url = (string) $url;
 
-        foreach (get_class_methods($this) as $method)
-        {
-            if (strpos($method, 'trapForm') === 0)
-            {
+        foreach (get_class_methods($this) as $method) {
+            if (strpos($method, 'trapForm') === 0) {
                 $this->$method();
 
-                if ($this->trap)
-                {
+                if ($this->trap) {
                     ob_start(array($this, 'addTrap'));
                     break;
                 }
@@ -113,10 +110,8 @@ class Trap
 
     protected function filterRequest()
     {
-        foreach ($_POST as $name => $value)
-        {
-            if (strpos($name, 'textpattern_fluxbb_t_') === 0 && $value)
-            {
+        foreach ($_POST as $name => $value) {
+            if (strpos($name, 'textpattern_fluxbb_t_') === 0 && $value) {
                 header('Location: '.$this->url);
                 die;
             }
@@ -159,8 +154,7 @@ class Trap
 
     protected function trapFormRegister()
     {
-        if (strpos($_SERVER['REQUEST_URI'], 'register.php') !== false)
-        {
+        if (strpos($_SERVER['REQUEST_URI'], 'register.php') !== false) {
             $this->search = '<input type="hidden" name="form_sent" value="1" />';
             $this->trap = $this->formInput('text', 'displayname', '', 'Display name');
         }
@@ -174,8 +168,7 @@ class Trap
 
     protected function trapFormLogin()
     {
-        if (strpos($_SERVER['REQUEST_URI'], 'login.php') !== false)
-        {
+        if (strpos($_SERVER['REQUEST_URI'], 'login.php') !== false) {
             $this->search = '<label><input type="checkbox" name="save_pass"';
             $this->trap = $this->formInput('checkbox', 'anonymous', 1, 'Log in anonymously?');
         }

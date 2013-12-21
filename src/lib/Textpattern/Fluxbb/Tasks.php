@@ -56,14 +56,11 @@ class Tasks
 
     public function __construct($key)
     {
-        if (isset($_GET[$this->parameter]) && $_GET[$this->parameter] === $key)
-        {
+        if (isset($_GET[$this->parameter]) && $_GET[$this->parameter] === $key) {
             $out = array();
 
-            foreach (get_class_methods($this) as $method)
-            {
-                if (strpos($method, 'task') === 0)
-                {
+            foreach (get_class_methods($this) as $method) {
+                if (strpos($method, 'task') === 0) {
                     $out[$method] = $this->$method();
                 }
             }
@@ -94,6 +91,12 @@ class Tasks
     public function taskCleanVerifiedIps()
     {
         $time = strtotime('-14 days');
-        return (int) Db::pdo()->exec("UPDATE users SET registration_ip = '0.0.0.0' WHERE group_id NOT IN(0, 5) and registered < {$time} and num_posts > 1 and registration_ip != '0.0.0.0'") + (int) Db::pdo()->exec("UPDATE posts SET poster_ip = '0.0.0.0' WHERE poster_ip != '0.0.0.0' and posted < {$time}");
+        return (int) Db::pdo()->exec(
+            "UPDATE users SET registration_ip = '0.0.0.0' WHERE ".
+            "group_id NOT IN(0, 5) and registered < {$time} ".
+            "and num_posts > 1 and registration_ip != '0.0.0.0'"
+        ) + (int) Db::pdo()->exec(
+            "UPDATE posts SET poster_ip = '0.0.0.0' WHERE poster_ip != '0.0.0.0' and posted < {$time}"
+        );
     }
 }
