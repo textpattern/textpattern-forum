@@ -46,6 +46,12 @@ a.button,
         border-color: darken($color-gradient-border, 13%);
         color: darken($color-text, 10%);
     }
+
+    &:focus {
+        @include box-shadow($inset-highlighting, 0 0 4px 2px $color-link-focus);
+
+        outline: 0;
+    }
 }
 
 /* donations link button */
@@ -71,17 +77,15 @@ a.button.button-donate {
     }
 }
 
-/* better button focus glows, if `box-shadow` is supported */
-.boxshadow {
+/* focus fallback for browsers that don't support `box-shadow` */
+.no-boxshadow {
     button,
     input[type="button"],
     input[type="reset"],
     input[type="submit"],
     a.button {
         &:focus {
-            @include box-shadow($inset-highlighting, 0 0 4px 2px $color-link-focus);
-
-            outline: 0;
+            outline: thin dotted $color-link-focus;
         }
     }
 }
