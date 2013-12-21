@@ -3,12 +3,10 @@
     'use strict';
 
     requirejs.config({
-        paths:
-        {
+        paths: {
             'jquery': 'https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min'
         },
-        shim:
-        {
+        shim: {
             'cookie': ['jquery']
         }
     });
@@ -33,8 +31,7 @@
 
         $('.subscribelink').appendTo('.postlinksb .pagepost');
 
-        if (!field.length)
-        {
+        if (!field.length) {
             return;
         }
 
@@ -59,8 +56,7 @@
             {
                 var bq = $(this), prev = bq.prev('h6, p');
 
-                if (prev.length && $.trim(prev.text()).substr(-1) === ':')
-                {
+                if (prev.length && $.trim(prev.text()).substr(-1) === ':') {
                     prev.remove();
                 }
 
@@ -117,8 +113,7 @@
                     {
                         var bullet = '';
 
-                        for (var i = 0; i < $(this).parents(list).length / 2; i++)
-                        {
+                        for (var i = 0; i < $(this).parents(list).length / 2; i++) {
                             bullet += marker;
                         }
 
@@ -131,39 +126,31 @@
 
             paragraph = message.find('h1, h2, h3, h4, h5, h6, p');
 
-            if (paragraph.length > 1)
-            {
+            if (paragraph.length > 1) {
                 tagStart = '\n\nbq.. ';
                 tagEnd = '\n\np. ';
-            }
-            else
-            {
+            } else {
                 tagStart = '\n\nbq. ';
                 tagEnd = '\n\n';
             }
 
             message = $.trim(paragraph.append('\n\n').text());
 
-            if (value)
-            {
+            if (value) {
                 value = value + '\n\n';
             }
 
             name = $.trim(name).replace(/==/, '');
 
-            if (message)
-            {
+            if (message) {
                 value = value + 'h6. ==' + name + '== wrote "#' + postId + '":./' + link + ':' + tagStart + message + tagEnd;
-            }
-            else
-            {
+            } else {
                 value = value + 'h6. In reply to ==' + name + '== "#' + postId + '":./' + link + ':\n\n';
             }
 
             field.val(value).focus();
 
-            if ($.type(field[0].setSelectionRange) !== 'undefined')
-            {
+            if ($.type(field[0].setSelectionRange) !== 'undefined') {
                 field[0].setSelectionRange(value.length, value.length);
             }
         });
@@ -478,18 +465,15 @@
                 return $(this).text().indexOf('Posts: ') === 0;
             }).eq(0).text().replace('Posts: ', '').replace(',', ''), 10);
 
-            for (i = 0; i < ranks.length; i++)
-            {
-                if (ranks[i].posts > posts)
-                {
+            for (i = 0; i < ranks.length; i++) {
+                if (ranks[i].posts > posts) {
                     break;
                 }
 
                 rank = ranks[i];
             }
 
-            if (rank)
-            {
+            if (rank) {
                 $this.find('.usertitle').after('<dd class="userrank"><span title="Ranked level '+ (i - 1) +'">'+rank.title+'</span></dd>');
             }
         });
@@ -508,8 +492,7 @@
     {
         var code = $('.prettyprint');
 
-        if (code.length)
-        {
+        if (code.length) {
             code.filter('.language-txp').addClass('language-html').removeClass('language-txp');
 
             require(['prettify'], function ()
@@ -523,8 +506,7 @@
 
     require(['jquery', 'modernizr'], function ($, Modernizr)
     {
-        if (!Modernizr.svg)
-        {
+        if (!Modernizr.svg) {
             $('img.svg').attr('src', function ()
             {
                 return $(this).attr('src').replace('.svg', '.png');
@@ -546,8 +528,7 @@
 
     require(['jquery', 'cookie'], function ($)
     {
-        if (!$.cookie('acceptedCookies') && !$.cookie('textpattern-forum'))
-        {
+        if (!$.cookie('acceptedCookies') && !$.cookie('textpattern-forum')) {
             var disclaimer = $('<aside id="cookie-disclaimer"><div class="container"><p><strong>This website uses cookies to enhance your experience.</strong> By continuing to use this website you agree to cookies being placed on your computer. If you wish to use this website but do not wish for cookies to be placed on your computer you can change the settings in your internet browser. <a href="#" data-action="close">Close</a>.</p></div></aside>');
             $('body').prepend(disclaimer);
             $.cookie('acceptedCookies', 1, {expires: 1461});
@@ -570,8 +551,7 @@
     {
         var permlink, gplus, buttons, text, title = $('#page-viewtopic .crumbs li:last-child a').eq(0), gistStyle = false;
 
-        if (title.length)
-        {
+        if (title.length) {
             permlink = 'http://' + window.location.hostname + '/' + title.attr('href');
             text = title.text();
             gplus = $('<a class="g-plus" data-action="share" data-height="20" data-annotation="bubble" />').attr('data-href', permlink).attr('href', 'https://plus.google.com/share?url='+permlink);
@@ -581,12 +561,9 @@
                 .append($('<a class="twitter-share-button" data-dnt="true" />').attr('data-text', text).attr('data-url', permlink))
                 .append(gplus);
 
-            if (track.allow)
-            {
+            if (track.allow) {
                 require(['https://apis.google.com/js/plusone.js']);
-            }
-            else
-            {
+            } else {
                 gplus.text('Share on Google+');
             }
 
@@ -607,20 +584,16 @@
         {
             var $this = $(this), href = $this.attr('href'), matches;
 
-            if ($this.parent().text() !== $this.text())
-            {
+            if ($this.parent().text() !== $this.text()) {
                 return;
             }
 
-            if (gistRegex.test(href))
-            {
+            if (gistRegex.test(href)) {
                 $.ajax(href + '.json', {dataType: 'jsonp'})
                     .done(function (data)
                     {
-                        if (data && data.div)
-                        {
-                            if (gistStyle === false && data.stylesheet)
-                            {
+                        if (data && data.div) {
+                            if (gistStyle === false && data.stylesheet) {
                                 $('head').append($('<link rel="stylesheet" />').attr('href', 'https://gist.github.com' + data.stylesheet));
                                 gistStyle = true;
                             }
@@ -632,16 +605,14 @@
                 return;
             }
 
-            if (tweetRegex.test(href))
-            {
+            if (tweetRegex.test(href)) {
                 $this.parent().wrap('<blockquote class="twitter-tweet"></blockquote>');
                 return;
             }
 
             matches = href.match(youtubeRegex);
 
-            if (matches)
-            {
+            if (matches) {
                 $this.parent().after(
                     $('<div class="embed-video embed-youtube" />').html(
                         $('<iframe frameborder="0" allowfullscreen></iframe>').attr('src', 'https://www.youtube-nocookie.com/embed/' + matches[1])
@@ -651,12 +622,10 @@
                 return;
             }
 
-            if (track.allow)
-            {
+            if (track.allow) {
                 matches = href.match(vimeoRegex);
 
-                if (matches)
-                {
+                if (matches) {
                     $this.parent().after(
                         $('<div class="embed-video embed-vimeo" />').html(
                             $('<iframe frameborder="0" allowfullscreen></iframe>').attr('src', 'https://player.vimeo.com/video/' + matches[1])
@@ -668,16 +637,14 @@
             }
         });
 
-        if (title.length || $('.twitter-tweet').length)
-        {
+        if (title.length || $('.twitter-tweet').length) {
             require(['https://platform.twitter.com/widgets.js']);
         }
     });
 
     require(['track'], function(track)
     {
-        if (track.allow)
-        {
+        if (track.allow) {
             // Analytics.
 
             window._gaq = window._gaq || [];
@@ -695,8 +662,7 @@
 
         require(['jquery'], function ($)
         {
-            if ($('.bsarocks').length)
-            {
+            if ($('.bsarocks').length) {
                 require(['https://s3.buysellads.com/ac/bsa.js']);
             }
         });
