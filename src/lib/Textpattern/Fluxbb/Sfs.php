@@ -97,14 +97,17 @@ class Sfs
     /**
      * Sets the IP.
      *
-     * @param string $address The address
+     * @param  string $address The address
+     * @return Sfs
      */
 
     public function setIp($address)
     {
-        if ($address && $address !== '0.0.0.0') {
+        if ($address && $address !== '0.0.0.0' && filter_var($address, FILTER_FLAG_IPV4)) {
             $this->ip = (string) $address;
         }
+
+        return $this;
     }
 
     /**
