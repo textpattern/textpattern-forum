@@ -70,7 +70,7 @@ class Sfs
 
     public function __construct()
     {
-        $this->setIp('180.111.11.101');
+        $this->setIp($_SERVER['REMOTE_ADDR']);
 
         foreach (get_class_methods($this) as $method) {
             if (strpos($method, 'filterPage') === 0 && $this->$method() === true) {
