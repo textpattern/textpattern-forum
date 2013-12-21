@@ -515,7 +515,16 @@ thead th {
 
 /* post reply section */
 #quickpost {
-    max-width: 700px;
+    @include breakpoint($breakpoint-2) {
+        fieldset,
+        .buttons {
+            padding-left: 31.4285713%;
+        }
+
+        legend {
+            margin: 0;
+        }
+    }
 }
 
 #postreview .postleft {
