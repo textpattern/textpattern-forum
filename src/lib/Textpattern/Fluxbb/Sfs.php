@@ -128,12 +128,21 @@ class Sfs
                 $this->setIp($r['registration_ip']);
 
                 if ($this->isBanned() === false && $data = $this->getRecord()) {
+                    $date = date('c');
+
                     if (isset($data->ip)) {
-                        $this->addBan('ip', 'SFSBOT: IP address found in StopForumSpam database.', strtotime('+3 day'));
+                        $this->addBan(
+                            'ip',
+                            'SFSBOT: login '.$date.' - IP address found in StopForumSpam database.',
+                            strtotime('+3 day')
+                        );
                     }
 
                     if (isset($data->email)) {
-                        $this->addBan('email', 'SFSBOT: Email address found in StopForumSpam database.');
+                        $this->addBan(
+                            'email',
+                            'SFSBOT: login '.$date.' - email address found in StopForumSpam database.'
+                        );
                     }
 
                     Db::pdo()->exec("DELETE FROM users WHERE id = ".intval($r['id']));
@@ -161,10 +170,19 @@ class Sfs
                 $this->email = $r['email'];
 
                 if ($this->isBanned() === false && $data = $this->getRecord()) {
+                    $date = date('c');
+
                     if (isset($data->email)) {
-                        $this->addBan('email', 'SFSBOT: Email address found in StopForumSpam database.');
+                        $this->addBan(
+                            'email',
+                            'SFSBOT: post '.$date.' - email address found in StopForumSpam database.'
+                        );
                     } elseif (isset($data->ip)) {
-                        $this->addBan('ip', 'SFSBOT: IP address found in StopForumSpam database.', strtotime('+3 day'));
+                        $this->addBan(
+                            'ip',
+                            'SFSBOT: post '.$date.' - IP address found in StopForumSpam database.',
+                            strtotime('+3 day')
+                        );
                     }
                 }
             } else {
@@ -182,12 +200,21 @@ class Sfs
     public function processUser()
     {
         if ($this->isBanned() === false && $data = $this->getRecord()) {
+            $date = date('c');
+
             if (isset($data->ip)) {
-                $this->addBan('ip', 'SFSBOT: IP address found in StopForumSpam database.', strtotime('+3 day'));
+                $this->addBan(
+                    'ip',
+                    'SFSBOT: registeration '.$date.' - IP address found in StopForumSpam database.',
+                    strtotime('+3 day')
+                );
             }
 
             if (isset($data->email)) {
-                $this->addBan('email', 'SFSBOT: Email address found in StopForumSpam database.');
+                $this->addBan(
+                    'email',
+                    'SFSBOT: registeration '.$date.' - email address found in StopForumSpam database.'
+                );
             }
         }
     }
