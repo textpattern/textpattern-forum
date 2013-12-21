@@ -2,7 +2,7 @@
 /* humanstxt.org */
 
 /* TEAM */
-    The Textpattern Development Team
+    Developer: Team Textpattern
     Site: http://textpattern.com
     Twitter: http://twitter.com/textpattern
     GitHub: https://github.com/textpattern
@@ -11,15 +11,32 @@
 /* SITE */
     Standards: HTML5, CSS3
     Server: Apache, MySQL, PHP
-    Components: FluxBB, jQuery, Require.js, Modernizr,
-        Google Code Prettify, jQuery.cookie, Responsive Nav,
-        Autosize
-    Software: Node.js, Grunt.js, Bower, Composer, Compass, git,
-        Panic Coda, Adobe Photoshop, Adobe Illustrator, ImageOptim,
-        ImageAlpha, grunt-contrib-compass, grunt-contrib-compress,
-        grunt-contrib-copy, grunt-contrib-cssmin, grunt-contrib-jshint,
-        grunt-contrib-uglify, grunt-contrib-watch, grunt-replace,
-        grunt-shell
+    Components:
+        FluxBB: https://fluxbb.org
+        jQuery: http://jquery.com
+        Require.js: http://requirejs.org
+        Modernizr: http://modernizr.com
+        Google Code Prettify: https://code.google.com/p/google-code-prettify/
+        jQuery.cookie: https://github.com/carhartl/jquery-cookie
+        Responsive Nav: http://responsive-nav.com
+        Autosize: https://github.com/jackmoore/autosize
+    Software:
+        Node.js: http://nodejs.org
+        Grunt.js: http://gruntjs.com
+        Bower: http://bower.io
+        Composer: http://getcomposer.org
+        Compass: http://compass-style.org
+        git: http://git-scm.com
+        grunt-contrib-compass: https://github.com/gruntjs/grunt-contrib-compass
+        grunt-contrib-compress: https://github.com/gruntjs/grunt-contrib-compress
+        grunt-contrib-copy: https://github.com/gruntjs/grunt-contrib-copy
+        grunt-contrib-cssmin: https://github.com/gruntjs/grunt-contrib-cssmin
+        grunt-contrib-jshint: https://github.com/gruntjs/grunt-contrib-jshint
+        grunt-contrib-uglify: https://github.com/gruntjs/grunt-contrib-uglify
+        grunt-contrib-watch: https://github.com/gruntjs/grunt-contrib-watch
+        grunt-modernizr: https://github.com/Modernizr/grunt-modernizr
+        grunt-replace: https://github.com/outaTiME/grunt-replace
+        grunt-shell: https://github.com/sindresorhus/grunt-shell
     Source: https://github.com/textpattern/textpattern-forum
 
 
