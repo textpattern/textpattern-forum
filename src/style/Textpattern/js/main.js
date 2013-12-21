@@ -7,6 +7,7 @@
             'jquery': 'https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min'
         },
         shim: {
+            'autosize': ['jquery'],
             'cookie': ['jquery']
         }
     });
@@ -25,7 +26,7 @@
 
     // Quoting.
 
-    require(['jquery'], function ($)
+    require(['jquery', 'autosize'], function ($)
     {
         var field = $('#quickpostform textarea[name=req_message]'), button;
 
@@ -34,6 +35,8 @@
         if (!field.length) {
             return;
         }
+
+        field.autosize();
 
         $('.postlink a').eq(0).attr('href', '#quickpostform');
 
@@ -148,7 +151,7 @@
                 value = value + 'h6. In reply to ==' + name + '== "#' + postId + '":./' + link + ':\n\n';
             }
 
-            field.val(value).focus();
+            field.val(value).trigger('autosize.resize').focus();
 
             if ($.type(field[0].setSelectionRange) !== 'undefined') {
                 field[0].setSelectionRange(value.length, value.length);
