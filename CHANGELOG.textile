@@ -13,8 +13,10 @@ h2. Version 0.1.1 - upcoming
 * Changed: Unset Google Analytics tracking cookies when the session ends. We don't do persistent tracking.
 * Changed: Re-enable category and forum arrangement management through production server's web GUI.
 * Changed: Reverse SVG logic; logos default to SVG, loads PNG replacement if needed.
+* Changed: Reverse CSS box-shadow Modernizr test; default to expect box-shadows, fallback for older browsers.
 * Changed: More prominent blockquote styling.
 * Changed: "PSR-0":https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md and "PSR-2":https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2.md coding standard compliance for PHP code.
+* Changed: Use grunt-modernizr to build Modernizr.
 
 h2. Version 0.1.0 - 2013/12/17
 
