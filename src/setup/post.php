@@ -4,8 +4,7 @@ echo "Checking installation...\n";
 
 $config = './public/config.php';
 
-if (!file_exists($config))
-{
+if (!file_exists($config)) {
     die('FluxBB not installed: config.php does not exists.');
 }
 
@@ -18,8 +17,7 @@ echo "Removing admin option pages that must be managed from the git repository..
 foreach (array(
     'public/admin_censoring.php',
     'public/admin_permissions.php',
-) as $file)
-{
+) as $file) {
     echo "  {$file}\n";
     file_put_contents($file, "This file is managed from the git source repository.\n");
 }
@@ -67,9 +65,29 @@ $options = array(
     'o_regs_verify'           => 1,
     'o_report_method'         => 2,
     'o_rules'                 => 1,
-    'o_rules_message'         => '<p>You <strong>must</strong> provide a real email address, or you will not be able to successfully register and participate in the forum. Your email address is only used to help us prevent spam from flooding the forum, and to allow you to make use of forum features (such as topic subscription). It is <strong>never</strong> shared or sold to third parties, nor will you be subscribed to any kind of mailing lists. You may allow or disallow other forum members from seeing your email address; guests cannot view any of your profile information.</p>
-<p>All registrations are monitored by real people, and we take various proactive measures against spam. If <a href="http://en.wikipedia.org/wiki/Spam_(electronic)#Newsgroup_and_forum" rel="external">spam</a> or <a href="http://en.wikipedia.org/wiki/Troll_(Internet)" rel="external">trolling</a> is your intention, we suggest you spare your energy!</p>
-<p>Most of the email addresses we ban are those that have been used to abuse the forum. Some email domains, however, are banned only because those mail providers refuse to accept the registration email the forum software sends (which is required, as mentioned above), and bounce the email back to us. While we make all possible efforts on our part to reduce the risk of undeliverable mail, it is recommended that you <a href="help.php#forum-help-undeliverable-mail">check to see if your email address domain is one of those known to be affected</a> (if so, you will need to provide an alternate email address).</p>',
+    'o_rules_message'         =>
+        '<p>You <strong>must</strong> provide a real email address, or you will not be
+        able to successfully register and participate in the forum. Your email address
+        is only used to help us prevent spam from flooding the forum, and to allow you
+        to make use of forum features (such as topic subscription). It is
+        <strong>never</strong> shared or sold to third parties, nor will you be subscribed
+        to any kind of mailing lists. You may allow or disallow other forum members from
+        seeing your email address; guests cannot view any of your profile information.</p>
+
+        <p>All registrations are monitored by real people, and we take various proactive
+        measures against spam. If
+        <a href="http://en.wikipedia.org/wiki/Spam_(electronic)#Newsgroup_and_forum" rel="external">spam</a>
+        or <a href="http://en.wikipedia.org/wiki/Troll_(Internet)" rel="external">trolling</a> is your
+        intention, we suggest you spare your energy!</p>
+
+        <p>Most of the email addresses we ban are those that have been used to abuse the
+        forum. Some email domains, however, are banned only because those mail providers
+        refuse to accept the registration email the forum software sends (which is required,
+        as mentioned above),and bounce the email back to us. While we make all possible efforts
+        on our part to reduce the risk of undeliverable mail, it is recommended that you
+        <a href="help.php#forum-help-undeliverable-mail">check to see if your email address
+        domain is one of those known to be affected</a> (if so, you will need to provide
+        an alternate email address).</p>',
     'o_search_all_forums'     => 1,
     'o_show_dot'              => 1,
     'o_show_post_count'       => 1,
@@ -106,16 +124,14 @@ $options = array(
 
 echo "Updating FluxBB options...\n";
 
-$sth = Textpattern\Fluxbb\Db::pdo()->prepare('UPDATE config SET conf_value = :value WHERE conf_name = :name');
+$sth = Textpattern\Fluxbb\Db::pdo()->prepare(
+    'UPDATE config SET conf_value = :value WHERE conf_name = :name'
+);
 
-foreach ($options as $name => $value)
-{
-    if ($sth->execute(array(':name' => $name, ':value' => $value)))
-    {
+foreach ($options as $name => $value) {
+    if ($sth->execute(array(':name' => $name, ':value' => $value))) {
         echo "  {$name}\n";
-    }
-    else
-    {
+    } else {
         echo "Failed to update {$name}\n";
     }
 }
@@ -127,7 +143,6 @@ $sth->execute(array(':style' => $options['o_default_style']));
 
 echo "Clearing FluxBB cache...\n";
 
-foreach (glob('./public/cache/*.php') as $file)
-{
+foreach (glob('./public/cache/*.php') as $file) {
     unlink($file);
 }
