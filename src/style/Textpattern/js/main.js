@@ -514,6 +514,23 @@
         }
     });
 
+    // Focus to the username/password on the login page.
+
+    require(['jquery'], function ($)
+    {
+        if (!$('#page-login').length) {
+            return;
+        }
+
+        var user = $('#login [name=req_username]'), pass = $('#login [name=req_password]');
+
+        if (user.val() === '' || pass.val() !== '') {
+            user.focus();
+        } else {
+            pass.focus();
+        }
+    });
+
     // Responsive navigation.
 
     require(['responsivenav'], function ()
