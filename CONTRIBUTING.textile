@@ -1,6 +1,6 @@
 h1. Contributing
 
-Please take a quick look at this document before to make contribution process easier for all parties involved.
+Please take a quick look at this document before contributing code changes, to make the contribution process easier for all parties involved.
 
 h2. License
 
@@ -14,8 +14,9 @@ h2. Opening an issue
 
 When opening an issue:
 
-* State where the issue occurs. Whether on the "production website":http://forum.textpattern.com/ or against the current codebase and in which branch.
-* If the issue occurs on the production website, if possible please try to reproduce it against the current codebase by setting up a local copy of the site. If you are unable to do so, you can still open up an issue, but please make it clear that you've ran into it on just the current live version.
+* Read the "changelog":https://github.com/textpattern/textpattern-forum/blob/master/CHANGELOG.textile beforehand to see if the issue has already been resolved in an upcoming version.
+* State where the issue occurs. Whether on the "production website":http://forum.textpattern.com/ or against the current codebase (and in which branch).
+* If the issue occurs on the production website, then if possible please try to reproduce it against the current codebase by setting up a local copy of the site. If you are unable to do so, you can still open an issue, but please make it clear that you've run into it on just the current live version.
 
 h2. Configure git
 
