@@ -97,12 +97,33 @@ if (file_exists('public/config.php')) {
     `rm -Rf 'tmp/fluxbb/install.php'`;
 }
 
-echo "Moving in the new installation...\n";
+echo "Removing the old installation...\n";
+
+$removeExtensions = array(
+    'php',
+    'md',
+    'js',
+);
+
+$removeNames = array(
+    'COPYING',
+);
+
+$keep = array(
+    'img',
+    'api',
+);
 
 foreach (glob('public/*') as $file) {
     $name = basename($file);
+    $ext = pathinfo($name, PATHINFO_EXTENSION);
 
-    if (!in_array($name, array('img', 'api')) && ($name === 'COPYING' || in_array(pathinfo($file, PATHINFO_EXTENSION), array('php', 'md', 'js')) || is_dir($file))) {
+    if (in_array($name, $keep)) {
+        echo "Keep {$file}...\n";
+        continue;
+    }
+
+    if (is_dir($file) || in_array($name, $removeNames) || in_array($ext, $removeExtensions)) {
         echo "Remove {$file}...\n";
         `rm -Rf '{$file}'`;
     }
@@ -110,6 +131,13 @@ foreach (glob('public/*') as $file) {
 
 echo "Moving in the new installation...\n";
 `cp -rf tmp/fluxbb/* public/`;
+
+if (!file_exists('public/img/avatars')) {
+    echo "Creating img/avatars...\n";
+    `mkdir -pv public/img/avatars`;
+}
+
+echo "Setting file permissions...\n";
 `chmod 755 public/img/avatars`;
 `chmod 755 public/cache`;
 
