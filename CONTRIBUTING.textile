@@ -4,7 +4,7 @@ Please take a quick look at this document before to make contribution process ea
 
 h2. License
 
-"MIT":https://raw.github.com/textile/php-textile/blob/master/LICENSE. By contributing code, you agree to license your additions under the MIT license.
+"MIT":https://raw.github.com/textpattern/textpattern-forum/master/LICENSE. By contributing code, you agree to license your additions under the MIT license.
 
 h2. Versioning
 
