@@ -33,9 +33,9 @@ namespace Textpattern\Fluxbb;
 /**
  * Checks StopForumSpam database against user-data.
  *
- * @example
- * use Textpattern\Fluxbb\Sfs;
- * new Sfs;
+ * <code>
+ * new \Textpattern\Fluxbb\Sfs;
+ * </code>
  */
 
 class Sfs
