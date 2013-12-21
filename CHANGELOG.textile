@@ -8,14 +8,17 @@ h2. Version 0.1.1 - upcoming
 * Fixed: Masthead logo glitch on IE8. Doesn't display Textpattern logo twice.
 * Fixed: Main network navigation loading and content shifting.
 * Fixed: Improve font loading on subsequent page visits. Move from Web Font loader to a link tag.
+* Fixed: Remove JavaScript based moving of the subscribe button; causes content shifting.
+* Fixed: Don't flash distracting placeholder text links while social sharing widgets are loading.
 * Added: Indicator to main navigation to show current section.
+* Added: Reply field height grows with the content.
 * Changed: Load Google Analytics protocol relatively.
 * Changed: Unset Google Analytics tracking cookies when the session ends. We don't do persistent tracking.
 * Changed: Re-enable category and forum arrangement management through production server's web GUI.
 * Changed: Reverse SVG logic; logos default to SVG, loads PNG replacement if needed.
 * Changed: Reverse CSS box-shadow Modernizr test; default to expect box-shadows, fallback for older browsers.
 * Changed: More prominent blockquote styling.
-* Changed: "PSR-0":https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md and "PSR-2":https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2.md coding standard compliance for PHP code.
+* Changed: "PSR-0":https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md and "PSR-2":https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2.md coding standard compliance.
 * Changed: Use grunt-modernizr to build Modernizr.
 
 h2. Version 0.1.0 - 2013/12/17
