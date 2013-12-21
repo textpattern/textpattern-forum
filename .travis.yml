@@ -1,5 +1,21 @@
-language: node_js
-node_js:
-    - 0.10
+language: php
+php:
+  - 5.5
+
 before_install:
-    - bundle install
+  - bundle --version
+  - composer --version
+  - git --version
+  - node --version
+  - npm --version
+
+before_script:
+  - npm install -g bower
+  - bundle install
+  - bower install
+  - composer install
+  - npm install
+
+script:
+  - ./vendor/bin/phpcs --standard=PSR1,PSR2 src
+  - npm test
