@@ -27,6 +27,7 @@ h2. Version 0.1.1 - upcoming
 * Changed: More prominent blockquote styling.
 * Changed: "PSR-0":https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md and "PSR-2":https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2.md coding standard compliance.
 * Changed: Use grunt-modernizr to build Modernizr.
+* Changed: Use CSS sprite for common icons - reduces HTTP requests and page filesize.
 * Changed: Various CSS optimisations.
 * Changed: Switch Share button to Google +1.
 * Changed: Post quoting tool strips unneeded long-block escaping paragraph tags from between quotes.
