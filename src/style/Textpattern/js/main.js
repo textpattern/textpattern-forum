@@ -2,6 +2,8 @@
 {
     'use strict';
 
+    document.documentElement.className = 'js';
+
     requirejs.config({
         paths: {
             'jquery': 'https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min'
@@ -12,9 +14,14 @@
         }
     });
 
-    define('modernizr', function ()
+    define('feature', function ()
     {
-        return window.Modernizr;
+        return {
+            svg: function ()
+            {
+                return document.createElementNS || document.createElementNS('http://www.w3.org/2000/svg', 'svg').createSVGRect;
+            }
+        };
     });
 
     define('track', function ()
@@ -506,11 +513,11 @@
         }
     });
 
-    // Test for SVG support via Modernizr, if no then replace SVGs with PNGs.
+    // If no SVG support, replace SVGs with PNGs.
 
-    require(['jquery', 'modernizr'], function ($, Modernizr)
+    require(['jquery', 'feature'], function ($, supports)
     {
-        if (!Modernizr.svg) {
+        if (!supports.svg) {
             $('img.svg').attr('src', function ()
             {
                 return $(this).attr('src').replace('.svg', '.png');
