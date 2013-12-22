@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="<pun_language>" dir="<pun_content_direction>" class="no-js">
+<html lang="<pun_language>" dir="<pun_content_direction>">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
