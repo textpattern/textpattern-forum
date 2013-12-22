@@ -68,9 +68,9 @@ h1.masthead a {
 }
 
 /* Input sizes */
-input:focus,
-select:focus,
-textarea:focus {
+input,
+select,
+textarea {
     font-size: 1em;
     line-height: 1;
 }

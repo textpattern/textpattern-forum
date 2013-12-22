@@ -39,10 +39,10 @@ a.button,
 }
 
 @include breakpoint(max-width $breakpoint-2) {
-    /* make focused forum element text on mobile 16px, to avoid auto-zooming */
-    input:focus,
-    select:focus,
-    textarea:focus {
+    /* make form element text on mobile 16px, to avoid auto-zooming */
+    input,
+    select,
+    textarea {
         font-size: 16px;
         line-height: 1.5;
     }
