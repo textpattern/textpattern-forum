@@ -13,6 +13,7 @@ h2. Version 0.1.1 - upcoming
 * Fixed: Off-positioned forum navigation tabs. Appeared 1px below the strip border on Chrome.
 * Fixed: Don't send non-IPv4 addresses to Stop Forum Spam.
 * Fixed: Sfs::isBanned() check; do not create duplicate ban records.
+* Fixed: Only load HTML5 Shiv on IE8.
 * Added: Indicator to main navigation to show current section.
 * Added: Textarea height grows with the content.
 * Added: Setup script creates avatar directory if missing.
@@ -26,11 +27,11 @@ h2. Version 0.1.1 - upcoming
 * Changed: Remove boxshadow Modernizr test - amend @:focus@ CSS rules for buttons and form elements accordingly.
 * Changed: More prominent blockquote styling.
 * Changed: "PSR-0":https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md and "PSR-2":https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2.md coding standard compliance.
-* Changed: Use grunt-modernizr to build Modernizr.
 * Changed: Use CSS sprite for common icons - reduces HTTP requests and page filesize.
 * Changed: Various CSS optimisations.
 * Changed: Switch Share button to Google +1.
 * Changed: Post quoting tool strips unneeded long-block escaping paragraph tags from between quotes.
+* Removed: Modernizr; avoided feature testing by reconstructing CSS.
 
 h2. Version 0.1.0 - 2013/12/17
 
