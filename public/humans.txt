@@ -15,7 +15,6 @@
         FluxBB: https://fluxbb.org
         jQuery: http://jquery.com
         Require.js: http://requirejs.org
-        Modernizr: http://modernizr.com
         Google Code Prettify: https://code.google.com/p/google-code-prettify/
         jQuery.cookie: https://github.com/carhartl/jquery-cookie
         Responsive Nav: http://responsive-nav.com
@@ -34,7 +33,6 @@
         grunt-contrib-jshint: https://github.com/gruntjs/grunt-contrib-jshint
         grunt-contrib-uglify: https://github.com/gruntjs/grunt-contrib-uglify
         grunt-contrib-watch: https://github.com/gruntjs/grunt-contrib-watch
-        grunt-modernizr: https://github.com/Modernizr/grunt-modernizr
         grunt-replace: https://github.com/outaTiME/grunt-replace
         grunt-shell: https://github.com/sindresorhus/grunt-shell
     Source: https://github.com/textpattern/textpattern-forum

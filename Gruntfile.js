@@ -9,7 +9,6 @@ module.exports = function (grunt)
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-modernizr');
     grunt.loadNpmTasks('grunt-replace');
     grunt.loadNpmTasks('grunt-shell');
 
@@ -170,33 +169,6 @@ module.exports = function (grunt)
             }
         },
 
-        modernizr: {
-            'devFile': 'bower_components/modernizr/modernizr.js',
-            'outputFile': 'public/style/Textpattern/js/modernizr.js',
-            'tests': [
-                'svg',
-                'touch'
-            ],
-            'extra': {
-                'shiv': false,
-                'printshiv': false,
-                'load': false,
-                'mq': false,
-                'cssclasses': true
-            },
-            'extensibility': {
-                'addtest': false,
-                'prefixed': false,
-                'teststyles': true,
-                'testprops': true,
-                'testallprops': true,
-                'hasevents': false,
-                'prefixes': true,
-                'domprefixes': true
-            },
-            'parseFiles': false
-        },
-
         shell: {
             setup: {
                 command: [
@@ -220,7 +192,7 @@ module.exports = function (grunt)
     grunt.registerTask('test', ['jshint']);
     grunt.registerTask('sass', ['compass', 'cssmin']);
     grunt.registerTask('default', ['watch']);
-    grunt.registerTask('build', ['jshint', 'theme', 'copy:branding', 'sass', 'uglify', 'modernizr','compress:theme']);
+    grunt.registerTask('build', ['jshint', 'theme', 'copy:branding', 'sass', 'uglify', 'compress:theme']);
     grunt.registerTask('theme', ['copy:theme', 'replace:theme']);
     grunt.registerTask('travis', ['jshint', 'compass']);
     grunt.registerTask('setup', ['shell:setup', 'build']);
