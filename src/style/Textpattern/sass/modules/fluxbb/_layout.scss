@@ -513,14 +513,31 @@ thead th {
 
 /* post reply section */
 #quickpost {
+    margin: 0.5em 0 1em;
+    border: 1px solid $color-border;
+    background-color: lighten($color-highlight-box, 2%);
+
+    fieldset {
+        border: 0;
+    }
+
+    legend {
+        @include adjust-font-size-to(18px, 1.2);
+
+        margin: rhythm(1, 20px) 0;
+        border: 0;
+        padding: 0;
+        background-color: lighten($color-highlight-box, 2%);
+    }
+
+    .buttons {
+        padding: 0 1em;
+    }
+
     @include breakpoint($breakpoint-2) {
         fieldset,
         .buttons {
             padding-left: 31.4285713%;
-        }
-
-        legend {
-            margin: 0;
         }
     }
 }
