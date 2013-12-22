@@ -51,7 +51,7 @@ class Parser extends Textile
      * {@inheritdoc}
      */
 
-    public function textileRestricted($text, $lite = 1, $noimage = 1, $rel = 'nofollow')
+    public function textileRestricted($text, $lite = true, $noimage = true, $rel = 'nofollow')
     {
         $text = parent::textileRestricted($text, $lite, $noimage, $rel);
         $text = $this->extraCodeLanguageHinting($text);
