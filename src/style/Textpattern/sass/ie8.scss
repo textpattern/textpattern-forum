@@ -67,6 +67,14 @@ h1.masthead a {
     background-image: url("../img/branding/misc/icon-sprite.png");
 }
 
+/* Input sizes */
+input:focus,
+select:focus,
+textarea:focus {
+    font-size: 1em;
+    line-height: 1;
+}
+
 .block2col .blockmenu {
     width: 22.8571429%;
     float: right;
