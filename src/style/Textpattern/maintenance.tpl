@@ -23,6 +23,7 @@
     <pun_head>
     <script src="style/Textpattern/js/modernizr.@@timestamp.js"></script>
     <!--[if lt IE 9]>
+        <script src="style/Textpattern/js/html5shiv.@@timestamp.js"></script>
         <link rel="stylesheet" href="style/Textpattern/css/ie8.@@timestamp.css">
     <![endif]-->
 </head>
