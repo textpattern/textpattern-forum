@@ -24,7 +24,7 @@ h2. Version 0.1.1 - upcoming
 * Changed: Unset Google Analytics tracking cookies when the session ends. We don't do persistent tracking.
 * Changed: Re-enable category and forum arrangement management through production server's web GUI.
 * Changed: Reverse SVG logic; logos default to SVG, loads PNG replacement if needed.
-* Changed: Remove boxshadow Modernizr test - amend @:focus@ CSS rules for buttons and form elements accordingly.
+* Changed: Improve @:focus@ styling for buttons and form elements.
 * Changed: More prominent blockquote styling.
 * Changed: "PSR-0":https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md and "PSR-2":https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2.md coding standard compliance.
 * Changed: Use CSS sprite for common icons - reduces HTTP requests and page filesize.
