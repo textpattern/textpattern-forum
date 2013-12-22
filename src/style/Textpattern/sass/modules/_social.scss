@@ -45,7 +45,7 @@
     overflow: hidden;
 
     @include breakpoint(max-width $breakpoint-2) {
-        float: left; 
+        float: left;
         margin: -35px 0 0 0;
     }
 }
