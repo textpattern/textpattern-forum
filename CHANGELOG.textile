@@ -10,8 +10,15 @@ h2. Version 0.1.1 - upcoming
 * Fixed: Improve font loading on subsequent page visits. Move from Web Font Loader to a link tag.
 * Fixed: Remove JavaScript based moving of the subscribe button; causes content shifting.
 * Fixed: Don't flash distracting placeholder text links while social sharing widgets are loading.
+* Fixed: Off-positioned forum navigation tabs. Appeared 1px below the strip border on Chrome.
+* Fixed: Don't send non-IPv4 addresses to Stop Forum Spam.
+* Fixed: Sfs::isBanned() check; do not create duplicate ban records.
 * Added: Indicator to main navigation to show current section.
-* Added: Reply field height grows with the content.
+* Added: Textarea height grows with the content.
+* Added: Setup script creates avatar directory if missing.
+* Added: Move focus to the username field on the login page.
+* Added: Sfs bot writes down dates with bans and the logged event.
+* Added: Try to render sharing buttons block more smoothly; hide them until all the scripts have finished.
 * Changed: Load Google Analytics protocol relatively.
 * Changed: Unset Google Analytics tracking cookies when the session ends. We don't do persistent tracking.
 * Changed: Re-enable category and forum arrangement management through production server's web GUI.
@@ -21,6 +28,8 @@ h2. Version 0.1.1 - upcoming
 * Changed: "PSR-0":https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md and "PSR-2":https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2.md coding standard compliance.
 * Changed: Use grunt-modernizr to build Modernizr.
 * Changed: Various CSS optimisations.
+* Changed: Switch Share button to Google +1.
+* Changed: Post quoting tool strips unneeded long-block escaping paragraph tags from between quotes.
 
 h2. Version 0.1.0 - 2013/12/17
 
