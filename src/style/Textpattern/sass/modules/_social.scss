@@ -15,17 +15,18 @@
         display: block;
         width: 32px;
         height: 32px;
+        background-size: 32px 32px;
 
         &.facebook {
-            @include svg-graphic(branding/social-media/facebook, png, 32px, 32px);
+            background-image: url("../img/branding/social-media/facebook.svg");
         }
 
         &.googleplus {
-            @include svg-graphic(branding/social-media/googleplus, png, 32px, 32px);
+            background-image: url("../img/branding/social-media/googleplus.svg");
         }
 
         &.twitter {
-            @include svg-graphic(branding/social-media/twitter, png, 32px, 32px);
+            background-image: url("../img/branding/social-media/twitter.svg");
         }
 
         //&:hover {
