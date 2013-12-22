@@ -39,11 +39,58 @@ use Netcarver\Textile\Parser as Textile;
 class Parser extends Textile
 {
     /**
+     * Language identifiers.
+     *
+     * @var array|string
+     */
+
+    private $extraCodeLanguageIdentifiers = array(
+        'apollo',
+        'bash',
+        'c',
+        'coffee',
+        'cs',
+        'clj',
+        'css',
+        'dart',
+        'go',
+        'hs',
+        'html',
+        'java',
+        'js',
+        'json',
+        'lisp',
+        'lua',
+        'ml',
+        'n',
+        'perl',
+        'php',
+        'proto',
+        'python',
+        'ruby',
+        'rust',
+        'scala',
+        'sh',
+        'sql',
+        'tex',
+        'text',
+        'txp',
+        'vb',
+        'vhdl',
+        'wiki',
+        'xml',
+        'xsl',
+        'xq',
+        'yaml',
+    );
+
+    /**
      * {@inheritdoc}
      */
 
     public function __construct($doctype = 'html5')
     {
+        $this->extraCodeLanguageIdentifiers = join('|', $this->extraCodeLanguageIdentifiers);
         parent::__construct($doctype);
     }
 
@@ -73,11 +120,7 @@ class Parser extends Textile
     private function extraCodeLanguageHinting($text)
     {
         return preg_replace(
-            '/<pre><code>(?:\/\/|#|;)?(?:\s+)?('.
-            'apollo|bash|c|coffee|cs|clj|css|dart|go|hs|html|java|'.
-            'js|json|lisp|lua|ml|n|perl|php|proto|python|ruby|rust|'.
-            'scala|sh|sql|tex|text|txp|vb|vhdl|wiki|xml|xsl|xq|yaml'.
-            ')(?:\n+)?/',
+            '/<pre><code>(?:\/\/|#|;)?(?:\s+)?('.$this->extraCodeLanguageIdentifiers.')(?:\n+)?/',
             '<pre class="prettyprint language-$1"><code>',
             $text
         );
