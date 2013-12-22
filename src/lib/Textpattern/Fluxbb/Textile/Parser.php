@@ -46,7 +46,6 @@ class Parser extends Textile
 
     private $extraCodeLanguageIdentifiers = array(
         'apollo',
-        'bash',
         'c',
         'coffee',
         'cs',
@@ -59,6 +58,7 @@ class Parser extends Textile
         'java',
         'js',
         'json',
+        'latex',
         'lisp',
         'lua',
         'ml',
@@ -66,8 +66,9 @@ class Parser extends Textile
         'perl',
         'php',
         'proto',
-        'python',
-        'ruby',
+        'py',
+        'rb',
+        'regex',
         'rust',
         'scala',
         'sh',
@@ -81,6 +82,7 @@ class Parser extends Textile
         'xml',
         'xsl',
         'xq',
+        'xquery',
         'yaml',
     );
 
