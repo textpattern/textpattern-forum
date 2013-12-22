@@ -24,7 +24,8 @@
 .postquote,
 .textpattern-fluxbb-t,
 .postlinksb .postlink,
-.js #qjump input {
+.js #qjump input,
+#brdfooternav br {
     display: none !important;
 }
 
@@ -558,6 +559,31 @@ thead th {
 
 #brdfooter {
     clear: both;
+    margin-bottom: 1em;
+
+    @include breakpoint(max-width $breakpoint-2) {
+        margin-bottom: 0;
+    }
+}
+
+/* Jump to, feed links and FluxBB link container */
+#brdfooternav {
+    .conl {
+        float: left;
+    }
+
+    .conr {
+        float: right;
+        padding-top: .5384615em;
+    }
+
+    @include breakpoint(max-width $breakpoint-2) {
+        .conl,
+        .conr {
+            float: none;
+            padding-top: 0;
+        }
+    }
 }
 
 /* moderator controls */
@@ -577,10 +603,10 @@ thead th {
 
 /* RSS/Atom feeds */
 #feedlinks {
-    float: left;
+    display: inline;
 
     @include breakpoint(max-width $breakpoint-2) {
-        float: none;
+        display: block;
     }
 
     span:before {
@@ -595,9 +621,11 @@ thead th {
 
 /* FluxBB link */
 #poweredby {
-    float: right;
+    display: inline;
+    margin-left: 1em;
 
     @include breakpoint(max-width $breakpoint-2) {
-        float: none;
+        display: block;
+        margin-left: 0;
     }
 }
