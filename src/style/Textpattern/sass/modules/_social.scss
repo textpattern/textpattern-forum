@@ -37,7 +37,7 @@
     }
 }
 
-.share-buttons {
+.js .share-buttons {
     float: right;
     margin: 0 0 -1em 0;
     line-height: 1;
@@ -45,14 +45,14 @@
     overflow: hidden;
 
     @include breakpoint(max-width $breakpoint-2) {
-        float: left;
+        float: left; 
         margin: -35px 0 0 0;
     }
 }
 
 /* Give sharing buttons 22px of space; size is hardcoded */
 @include breakpoint(max-width $breakpoint-2) {
-    #page-viewtopic .linkst .crumbs {
+    .js #page-viewtopic .linkst .crumbs {
         margin-top: 50px;
     }
 }
