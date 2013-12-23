@@ -655,7 +655,7 @@
             }
 
             if (tweetRegex.test(href)) {
-                $this.parent().wrap('<blockquote class="twitter-tweet"></blockquote>');
+                $this.parent().wrap('<blockquote class="twitter-tweet" data-dnt="true"></blockquote>');
                 return;
             }
 
