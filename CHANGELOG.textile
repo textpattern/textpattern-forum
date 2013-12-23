@@ -14,6 +14,7 @@ h2. Version 0.1.1 - upcoming
 * Fixed: Don't send non-IPv4 addresses to Stop Forum Spam.
 * Fixed: Sfs::isBanned() check; do not create duplicate ban records.
 * Fixed: Only load HTML5 Shiv on IE8.
+* Fixed: Rare cases where there is no space rendered between forum navigation tabs.
 * Added: Indicator to main navigation to show current section.
 * Added: Textarea height grows with the content.
 * Added: Setup script creates avatar directory if missing.
