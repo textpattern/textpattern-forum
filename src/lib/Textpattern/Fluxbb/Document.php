@@ -42,9 +42,7 @@ class Document
 
     public function __construct()
     {
-        if (strpos($_SERVER['REQUEST_URI'], 'viewtopic.php') !== false) {
-            ob_start(array($this, 'buffer'));
-        }
+        ob_start(array($this, 'buffer'));
     }
 
     /**
@@ -53,6 +51,33 @@ class Document
 
     public function buffer($buffer)
     {
+        $buffer = str_replace(
+            array(
+                '<!--[if lte IE 6]><script type="text/javascript" src="style/imports/minmax.js"></script><![endif]-->',
+                '<link rel="stylesheet" type="text/css" href="style/Textpattern.css" />',
+            ),
+            '',
+            $buffer
+        );
+
+        $buffer = preg_replace('#<li class="postquote">.*?</li>#', '', $buffer);
+
+        $buffer = preg_replace('/ (onchange|onsubmit|onclick)=".*?"/', '', $buffer);
+
+        $buffer = preg_replace('/<script type="text\/javascript">.*?<\/script>/s', '', $buffer);
+
+        $buffer = preg_replace(
+            '/<ul class="bblinks">.*?<\/ul>/s',
+            '<p class="textile-help-links">Formatting: '.
+            '<a target="_blank" href="http://textpattern.com/textile-reference-manual">Textile</a>'.
+            '</p>',
+            $buffer
+        );
+
+        if (strpos($_SERVER['REQUEST_URI'], 'viewtopic.php') === false) {
+            return $buffer;
+        }
+
         $meta = array();
 
         // Add open graph metas to the topic pages.

@@ -490,13 +490,6 @@
         });
     });
 
-    // Textile help.
-
-    require(['jquery'], function ($)
-    {
-        $('.bblinks').after('<p class="textile-help-links">Formatting: <a target="_blank" href="http://textpattern.com/textile-reference-manual">Textile</a></p>').remove();
-    });
-
     // Syntax highlighting.
 
     require(['jquery'], function ($)
@@ -540,6 +533,16 @@
         } else {
             pass.focus();
         }
+    });
+
+    // Quick jump.
+
+    require(['jquery'], function ($)
+    {
+        $('#qjump select').change(function ()
+        {
+            window.location = 'viewforum.php?id=' + $(this).val();
+        });
     });
 
     // Responsive navigation.
