@@ -18,6 +18,13 @@ summary {
     display: none;
 }
 
+/* remove tap delay in IE10+ */
+a,
+input,
+button {
+    -ms-touch-action: none;
+}
+
 
 /* Clearfix
    ========================================================================== */
