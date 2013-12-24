@@ -21,6 +21,7 @@ h2. Version 0.1.1 - upcoming
 * Added: Move focus to the username field on the login page.
 * Added: Sfs bot writes down dates with bans and the logged event.
 * Added: Try to render sharing buttons block more smoothly; hide them until all the scripts have finished.
+* Added: Prevent admins from accidentally banning wide range of users by IP address.
 * Changed: Improve layout of quickpostform.
 * Changed: Load Google Analytics protocol relatively.
 * Changed: Unset Google Analytics tracking cookies when the session ends. We don't do persistent tracking.
