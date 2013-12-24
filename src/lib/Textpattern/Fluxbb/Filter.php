@@ -83,8 +83,9 @@ class Filter
         if (isset($_POST['ban_ip'])) {
             $ip = trim((string) $_POST['ban_ip']);
 
-            if (strpos($ip, '0.0.0.0') !== false || substr_count($ip, '.') !== 3 || strpos($ip, ' ') !== false) {
+            if (filter_var($ip, FILTER_FLAG_IPV4) === false) {
                 $GET['ban_ip'] = $_POST['ban_ip'] = '';
+                die;
             }
         }
     }
