@@ -72,12 +72,12 @@ class Tasks
     }
 
     /**
-     * Removes users older than a month and have never logged in.
+     * Removes users older than three days and have never logged in.
      */
 
     public function taskRemoveUnverifiedAccounts()
     {
-        $time = strtotime('-1 month');
+        $time = strtotime('-3 day');
         return (int) Db::pdo()->exec("DELETE FROM users WHERE group_id = 0 and registered < {$time}");
     }
 
