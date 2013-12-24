@@ -43,6 +43,7 @@ class Filter
     public function __construct()
     {
         $this->preventUnverified();
+        $this->preventMassBan();
     }
 
     /**
@@ -67,6 +68,23 @@ class Filter
             if ($sth->rowCount()) {
                 unset($_COOKIE[$cookie_name]);
                 return;
+            }
+        }
+    }
+
+    /**
+     * Prevent admins from banning us all by IP.
+     *
+     * @since 0.1.1
+     */
+
+    protected function preventMassBan()
+    {
+        if (isset($_POST['ban_ip'])) {
+            $ip = trim((string) $_POST['ban_ip']);
+
+            if (strpos($ip, '0.0.0.0') !== false || substr_count($ip, '.') !== 3 || strpos($ip, ' ') !== false) {
+                $GET['ban_ip'] = $_POST['ban_ip'] = '';
             }
         }
     }
