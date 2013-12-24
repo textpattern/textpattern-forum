@@ -122,7 +122,7 @@ class Parser extends Textile
     private function extraCodeLanguageHinting($text)
     {
         return preg_replace(
-            '/<pre><code>(?:\/\/|#|;)?(?:\s+)?('.$this->extraCodeLanguageIdentifiers.')(?:\n+)?/',
+            '/<pre><code>(?:\/\/|#|;)?(?:\s+)?('.$this->extraCodeLanguageIdentifiers.')[\n\r]+/',
             '<pre class="prettyprint language-$1"><code>',
             $text
         );
