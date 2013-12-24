@@ -85,7 +85,6 @@ class Filter
 
             if (filter_var($ip, FILTER_FLAG_IPV4) === false) {
                 $GET['ban_ip'] = $_POST['ban_ip'] = '';
-                die;
             }
         }
     }
