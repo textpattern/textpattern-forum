@@ -604,7 +604,7 @@
             }
 
             $('body').append('<div id="fb-root"></div>');
-            require(['//connect.facebook.net/en_US/all.js#xfbml=1&appId=581964255172661']);
+            require(['//connect.facebook.net/en_GB/all.js#xfbml=1&appId=581964255172661']);
             $('#page-viewtopic .crumbs').eq(0).before(buttons);
 
             var loadWidgets = function ()
