@@ -293,14 +293,14 @@ class Sfs
             return;
         }
 
+        $message .= ' - http://www.stopforumspam.com/search?q=';
         $sth = Db::pdo()->prepare("INSERT INTO bans SET $type = :value, message = :message, expire = :expires");
 
         foreach ((array) $this->$type as $value) {
-            $sth->execute(array(
-                ':value'    => $value,
-                ':message'  => $message . "\nhttp://www.stopforumspam.com/search?q=" . urlencode($value),
-                ':expires'  => $expires,
-            ));
+            $sth->bindValue(':value', $value);
+            $sth->bindValue(':message', $message . urlencode($value));
+            $sth->bindValue(':expires', $expires, \PDO::PARAM_INT);
+            $sth->execute();
         }
 
         @unlink('./cache/cache_bans.php');
@@ -319,11 +319,10 @@ class Sfs
             "IFNULL(expire, :expires) >= :expires limit 1"
         );
 
-        $sth->execute(array(
-            ':ip'      => $this->ip,
-            ':email'   => $this->email,
-            ':expires' => time(),
-        ));
+        $sth->bindValue(':ip', $this->ip);
+        $sth->bindValue(':email', $this->email);
+        $sth->bindValue(':expires', time(), \PDO::PARAM_INT);
+        $sth->execute();
 
         return (bool) $sth->rowCount();
     }
