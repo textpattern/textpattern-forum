@@ -1,3 +1,5 @@
+SetEnv no-gzip 1
+
 <ifModule mod_headers.c>
     Header append Cache-Control "public"
 
