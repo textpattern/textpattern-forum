@@ -13,6 +13,7 @@
     Server: Apache, MySQL, PHP
     Components:
         FluxBB: https://fluxbb.org
+        PHP-Textile: https://github.com/textile/php-textile
         jQuery: http://jquery.com
         Require.js: http://requirejs.org
         Google Code Prettify: https://code.google.com/p/google-code-prettify/
