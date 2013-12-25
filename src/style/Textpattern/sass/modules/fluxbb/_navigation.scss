@@ -12,11 +12,6 @@
 
         @include breakpoint(max-width $breakpoint-2) {
             border-bottom: 0;
-            margin-top: 0;
-
-            li:first-child {
-                margin-top: 1em;
-            }
         }
     }
 
