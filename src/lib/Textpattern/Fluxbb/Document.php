@@ -50,7 +50,7 @@ class Document
      */
 
     public function buffer($buffer)
-    {
+    {   
         $buffer = str_replace(
             array(
                 '<!--[if lte IE 6]><script type="text/javascript" src="style/imports/minmax.js"></script><![endif]-->',
@@ -59,6 +59,40 @@ class Document
             '',
             $buffer
         );
+
+        if (preg_match('#<li id="navprofile"><a href="profile\.php\?id=([0-9]+)">(.*?)</a></li>#', $buffer, $m))
+        {
+            $profile = (int) $m[1];
+            $logout = '';
+            $help = '';
+
+            if (preg_match('#<li id="navlogout">(.*?)</li>#', $buffer, $matches))
+            {
+                $logout = $matches[1];
+            }
+
+            if (preg_match('#<li id="navextra1">(.*?)</li>#', $buffer, $matches))
+            {
+                $help = $matches[1];
+            }
+
+            $buffer = str_replace(
+                array(
+                    '<li id="navprofile"><a href="profile.php?id='.$m[1].'">'.$m[2].'</a></li>',
+                    '<li id="navlogout">'.$logout.'</li>',
+                    '<li id="navextra1">'.$help.'</li>'
+                ),
+                '',
+                $buffer
+            );
+
+            $buffer = preg_replace(
+                '#(<div id="brdwelcome" class="inbox">.*?<li>(?=<span>).*?)<strong>(.*?)</strong>(</span></li>)#s',
+                '$1<strong><a href="profile.php?id='.$profile.'">$2</a></strong> | '.
+                $logout.' | '.$help.' $3',
+                $buffer
+            );
+        }
 
         $buffer = preg_replace('#<li class="postquote">.*?</li>#', '', $buffer);
 
