@@ -103,7 +103,13 @@ thead th {
 
         @include breakpoint(max-width $breakpoint-2) {
             float: none;
-            margin-bottom: 0;
+            margin-bottom: -1em;
+        }
+    }
+
+    @include breakpoint(max-width $breakpoint-2) {
+        p.conl {
+            display: none;
         }
     }
 
@@ -112,7 +118,6 @@ thead th {
 
         @include breakpoint(max-width $breakpoint-2) {
             float: none;
-            margin-top: 0;
         }
     }
 }
