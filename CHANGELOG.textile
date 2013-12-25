@@ -35,6 +35,7 @@ h2. Version 0.1.1 - upcoming
 * Changed: Various CSS optimisations.
 * Changed: Switch Share button to Google +1.
 * Changed: Post quoting tool strips unneeded long-block escaping paragraph tags from between quotes.
+* Changed: Does't show "You're not logged in" message on mobiles.
 * Removed: Modernizr; avoided feature testing by reconstructing CSS.
 
 h2. Version 0.1.0 - 2013/12/17
