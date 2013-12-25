@@ -60,33 +60,46 @@ class Document
             $buffer
         );
 
-        if (preg_match('#<li id="navprofile"><a href="profile\.php\?id=([0-9]+)">(.*?)</a></li>#', $buffer, $m)) {
-            $profile = (int) $m[1];
+        $help = '';
+
+        if (preg_match('#<li id="navextra1">(.*?)</li>#', $buffer, $matches)) {
+            $help = $matches[1];
+            $buffer = str_replace($matches[0], '', $buffer);
+        }
+
+        if (preg_match('#<li id="navprofile"><a href="profile\.php\?id=([0-9]+)">(.*?)</a></li>#', $buffer, $matches)) {
+            $buffer = str_replace($matches[0], '', $buffer);
+            $profile = (int) $matches[1];
             $logout = '';
-            $help = '';
 
             if (preg_match('#<li id="navlogout">(.*?)</li>#', $buffer, $matches)) {
                 $logout = $matches[1];
+                $buffer = str_replace($matches[0], '', $buffer);
             }
-
-            if (preg_match('#<li id="navextra1">(.*?)</li>#', $buffer, $matches)) {
-                $help = $matches[1];
-            }
-
-            $buffer = str_replace(
-                array(
-                    '<li id="navprofile"><a href="profile.php?id='.$m[1].'">'.$m[2].'</a></li>',
-                    '<li id="navlogout">'.$logout.'</li>',
-                    '<li id="navextra1">'.$help.'</li>'
-                ),
-                '',
-                $buffer
-            );
 
             $buffer = preg_replace(
-                '#(<div id="brdwelcome" class="inbox">.*?<li>(?=<span>).*?)<strong>(.*?)</strong>(</span></li>)#s',
+                '#(<div id="brdwelcome" class="inbox">.*?<li><span>.*?)<strong>(.*?)</strong>(</span></li>)#s',
                 '$1<strong><a href="profile.php?id='.$profile.'">$2</a></strong> | '.
-                $logout.' | '.$help.' $3',
+                $logout.' | '.$help.'$3',
+                $buffer
+            );
+        } else {
+
+            $login = $register = '';
+
+            if (preg_match('#<li id="navlogin"(?: class="isactive")?>(.*?)</li>#', $buffer, $matches)) {
+                $login = $matches[1];
+                $buffer = str_replace($matches[0], '', $buffer);
+            }
+
+            if (preg_match('#<li id="navregister"(?: class="isactive")?>(.*?)</li>#', $buffer, $matches)) {
+                $register = $matches[1];
+                $buffer = str_replace($matches[0], '', $buffer);
+            }
+
+            $buffer = preg_replace(
+                '#(<div id="brdwelcome" class="inbox">.*?<p class="conl">)(.*?)(</p>)#s',
+                '$1$2 '.$register.' | '.$login.' | '.$help.'$3',
                 $buffer
             );
         }
