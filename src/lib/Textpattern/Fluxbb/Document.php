@@ -50,7 +50,7 @@ class Document
      */
 
     public function buffer($buffer)
-    {   
+    {
         $buffer = str_replace(
             array(
                 '<!--[if lte IE 6]><script type="text/javascript" src="style/imports/minmax.js"></script><![endif]-->',
@@ -60,19 +60,16 @@ class Document
             $buffer
         );
 
-        if (preg_match('#<li id="navprofile"><a href="profile\.php\?id=([0-9]+)">(.*?)</a></li>#', $buffer, $m))
-        {
+        if (preg_match('#<li id="navprofile"><a href="profile\.php\?id=([0-9]+)">(.*?)</a></li>#', $buffer, $m)) {
             $profile = (int) $m[1];
             $logout = '';
             $help = '';
 
-            if (preg_match('#<li id="navlogout">(.*?)</li>#', $buffer, $matches))
-            {
+            if (preg_match('#<li id="navlogout">(.*?)</li>#', $buffer, $matches)) {
                 $logout = $matches[1];
             }
 
-            if (preg_match('#<li id="navextra1">(.*?)</li>#', $buffer, $matches))
-            {
+            if (preg_match('#<li id="navextra1">(.*?)</li>#', $buffer, $matches)) {
                 $help = $matches[1];
             }
 
