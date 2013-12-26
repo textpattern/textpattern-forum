@@ -170,9 +170,7 @@ EOF;
                             'SFSBOT: login '.$date.' - IP address found in StopForumSpam database.',
                             strtotime('+3 day')
                         );
-                    }
-
-                    if (isset($data->email)) {
+                    } elseif (isset($data->email)) {
                         $this->addBan(
                             'email',
                             'SFSBOT: login '.$date.' - email address found in StopForumSpam database.'
@@ -242,9 +240,7 @@ EOF;
                     'SFSBOT: registeration '.$date.' - IP address found in StopForumSpam database.',
                     strtotime('+3 day')
                 );
-            }
-
-            if (isset($data->email)) {
+            } elseif (isset($data->email)) {
                 $this->addBan(
                     'email',
                     'SFSBOT: registeration '.$date.' - email address found in StopForumSpam database.'
