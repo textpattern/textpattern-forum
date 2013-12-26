@@ -1,7 +1,7 @@
 <ifModule mod_headers.c>
     Header append Cache-Control "public"
 
-    <FilesMatch "\.(js|css|gz)$">
+    <FilesMatch "\.(css|gz|js|svg)$">
         Header append Vary "Accept-Encoding"
     </FilesMatch>
 </ifModule>
@@ -15,9 +15,9 @@
     RewriteEngine On
 
     RewriteCond %{HTTP:Accept-Encoding} gzip
-    RewriteRule ^([A-Za-z0-9]+)/(js|css)/([a-z0-9]+)\.([0-9]+)\.(js|css)$ $1/$2/$3.$5.gz [L]
+    RewriteRule ^(.*?)(?:\.[0-9]+)?\.(css|js|svg)$ $1.$2.gz [L]
 
-    RewriteRule ^([A-Za-z0-9]+)/(js|css)/([a-z0-9]+)\.([0-9]+)\.(js|css)$ $1/$2/$3.$5 [L]
+    RewriteRule ^(.*?)\.[0-9]+\.(css|js|svg)$ $1.$2 [L]
 </IfModule>
 
 AddEncoding x-gzip .gz
@@ -28,4 +28,8 @@ AddEncoding x-gzip .gz
 
 <FilesMatch \.js\.gz$>
     ForceType application/x-javascript
+</FilesMatch>
+
+<FilesMatch \.svg\.gz$>
+    ForceType image/svg+xml
 </FilesMatch>
