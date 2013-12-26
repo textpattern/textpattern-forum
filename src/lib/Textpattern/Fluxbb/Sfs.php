@@ -200,8 +200,9 @@ EOF;
 
             if ($r = $sth->fetch()) {
                 $this->email = $r['email'];
+                $banned = $this->isBanned();
 
-                if ($this->isBanned() === false && $data = $this->getRecord()) {
+                if ($banned === false && $data = $this->getRecord()) {
                     $date = date('c');
 
                     if (isset($data->email)) {
@@ -216,6 +217,12 @@ EOF;
                             strtotime('+3 day')
                         );
                     }
+
+                    $banned = true;
+                }
+
+                if ($banned) {
+                    Db::pdo()->exec("DELETE FROM users WHERE id = {$id}");
                 }
             } else {
                 $_SERVER['REMOTE_ADDR'] = '0.0.0.0';
