@@ -30,6 +30,8 @@
 
 namespace Textpattern\Fluxbb;
 
+use Neutron\ReCaptcha\ReCaptcha;
+
 /**
  * Hidden spam trap field.
  *
@@ -154,9 +156,76 @@ class Trap
 
     protected function trapFormRegister()
     {
-        if (strpos($_SERVER['REQUEST_URI'], 'register.php') !== false) {
-            $this->search = '<input type="hidden" name="form_sent" value="1" />';
+        if (strpos($_SERVER['REQUEST_URI'], 'register.php') !== false &&
+            (!empty($_GET['agree']) || !empty($_GET['action']))
+        ) {
+            $this->search = '<p class="buttons">';
             $this->trap = $this->formInput('text', 'displayname', '', 'Display name');
+
+            if (defined('\TEXTPATTERN_FORUM_RECAPTCHA_PUBLIC_KEY')) {
+                $recaptcha = ReCaptcha::create(
+                    \TEXTPATTERN_FORUM_RECAPTCHA_PUBLIC_KEY,
+                    \TEXTPATTERN_FORUM_RECAPTCHA_PRIVATE_KEY
+                );
+
+                $this->trap .= <<<EOF
+                    <script>
+                        var RecaptchaOptions = {
+                            theme: 'custom',
+                            custom_theme_widget: 'recaptcha_widget'
+                        };
+                    </script>
+
+                    <fieldset class="recaptcha-widget" id="recaptcha_widget" style="display:none">
+                        <legend>Answer the security question</legend>
+
+                        <p id="recaptcha_image"></p>
+                        <p class="recaptcha_only_if_incorrect_sol">Incorrect, please try again.</p>
+
+                        <p>
+                            <label for="recaptcha_response_field" class="recaptcha_only_if_image">
+                                Enter the words above:
+                            </label>
+
+                            <label for="recaptcha_response_field" class="recaptcha_only_if_audio">
+                                Enter the numbers you hear:
+                            </label>
+
+                            <br />
+
+                            <input size="50" required type="text" 
+                                id="recaptcha_response_field"
+                                name="recaptcha_response_field">
+                        </p>
+
+                        <p>
+                            <a href="#" class="recaptcha-reload">Refresh captcha</a>
+                            <span class="recaptcha_only_if_image">
+                                | <a href="#" class="recaptcha-switch-audio">Get an audio captcha</a>
+                            </span>
+                            <span class="recaptcha_only_if_audio">
+                                | <a href="#" class="recaptcha-switch-image">Get an image captcha</a>
+                            </span>
+                            | <a href="#" class="recaptcha-show-help">Help</a><br />
+                            Powered by <a href="http://www.google.com/recaptcha">reCAPTCHA</a>
+                        </p>
+
+                        <script src="//www.google.com/recaptcha/api/challenge?k={$recaptcha->getPublicKey()}"></script>
+
+                        <noscript>
+                            <div>
+                                <iframe
+                                    src="//www.google.com/recaptcha/api/noscript?k={$recaptcha->getPublicKey()}"
+                                    height="300"
+                                    width="500"
+                                    frameborder="0"></iframe>
+                            </div>
+                            <p><textarea name="recaptcha_challenge_field" rows="3" cols="40"></textarea></p>
+                            <input type="hidden" name="recaptcha_response_field" value="manual_challenge">
+                        </noscript>
+                </fieldset>
+EOF;
+            }
         }
     }
 

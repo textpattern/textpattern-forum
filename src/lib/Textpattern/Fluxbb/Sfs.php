@@ -30,6 +30,8 @@
 
 namespace Textpattern\Fluxbb;
 
+use Neutron\ReCaptcha\ReCaptcha;
+
 /**
  * Checks StopForumSpam database against user-data.
  *
@@ -88,6 +90,35 @@ class Sfs
         if (strpos($_SERVER['REQUEST_URI'], 'register.php') !== false &&
             isset($_POST['req_user']) && isset($_POST['req_email1'])
         ) {
+            if (defined('\TEXTPATTERN_FORUM_RECAPTCHA_PUBLIC_KEY')) {
+                $recaptcha = ReCaptcha::create(
+                    \TEXTPATTERN_FORUM_RECAPTCHA_PUBLIC_KEY,
+                    \TEXTPATTERN_FORUM_RECAPTCHA_PRIVATE_KEY
+                );
+
+                $response = $recaptcha->checkAnswer(
+                    $_SERVER['REMOTE_ADDR'],
+                    $_POST['recaptcha_challenge_field'],
+                    $_POST['recaptcha_response_field']
+                );
+
+                if (!$response->isValid()) {
+                    echo <<<EOF
+                        <!DOCTYPE html>
+                        <html>
+                        <head></head>
+                        <body>
+                            <p>
+                                Invalid captcha given. 
+                                <a href="javascript:window.history.go(-1)">Go back to the previous page.</a>
+                            </p>
+                        </body>
+                        </html>
+EOF;
+                    die;
+                }
+            }
+
             $this->email = (string) $_POST['req_email1'];
             $this->processUser();
             return true;

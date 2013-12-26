@@ -576,6 +576,48 @@
         }
     });
 
+    // reCaptcha.
+
+    require(['jquery'], function ($)
+    {
+        /* jshint camelcase: false */
+
+        var widget = $('.recaptcha-widget');
+
+        if (!widget.length) {
+            return;
+        }
+
+        $('a.recaptcha-reload').on('click', function (e)
+        {
+            e.preventDefault();
+            window.Recaptcha.reload();
+        });
+
+        $('a.recaptcha-switch-audio').on('click', function (e)
+        {
+            e.preventDefault();
+            window.Recaptcha.switch_type('audio');
+        });
+
+        $('a.recaptcha-switch-image').on('click', function (e)
+        {
+            e.preventDefault();
+            window.Recaptcha.switch_type('image');
+        });
+
+        $('a.recaptcha-show-help').on('click', function (e)
+        {
+            e.preventDefault();
+            window.Recaptcha.showhelp();
+        });
+
+        $(function ()
+        {
+            window.Recaptcha.reload('t');
+        });
+    });
+
     // Share and social embed widgets.
 
     require(['jquery', 'track'], function ($, track)
