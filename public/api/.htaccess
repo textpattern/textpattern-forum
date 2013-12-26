@@ -1,3 +1,12 @@
+<ifModule mod_headers.c>
+    Header unset X-XSS-Protection
+    Header unset X-Frame-Options
+    Header unset X-Content-Type-Options
+    Header unset Expires
+    Header unset Cache-Control
+    Header unset Pragma
+</ifModule>
+
 <IfModule mod_rewrite.c>
     RewriteEngine On
     RewriteRule ^topics/([0-9]+) index.php?action=feed&fid=$1 [QSA]
