@@ -43,13 +43,12 @@ $loader->add('Textpattern\\Fluxbb', dirname(__DIR__));
 $loader->register();
 
 new Filter();
+new Sfs();
 new Document();
 
 if (defined('\TEXTPATTERN_FORUM_BASE_URL')) {
     new Trap(\TEXTPATTERN_FORUM_BASE_URL.'/index.php');
 }
-
-new Sfs();
 
 if (defined('\TEXTPATTERN_TASKS_KEY')) {
     new Tasks(\TEXTPATTERN_TASKS_KEY);
