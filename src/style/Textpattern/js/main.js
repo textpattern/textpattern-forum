@@ -535,10 +535,13 @@
         }
     });
 
-    // Quick jump.
+    // Forms.
 
     require(['jquery'], function ($)
     {
+        $('input[type!=hidden][name^=req_], textarea[name^=req_]').prop('required', true);
+        $('input[type=text][name*=email]').attr('type', 'email');
+
         $('#qjump select').change(function ()
         {
             window.location = 'viewforum.php?id=' + $(this).val();
