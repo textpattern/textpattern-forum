@@ -120,7 +120,14 @@ EOF;
             }
 
             $this->email = (string) $_POST['req_email1'];
-            $this->processUser();
+
+            if ($this->isBanned() === false && $data = $this->getRecord()) {
+                sleep(5);
+                setcookie('textpattern_fluxbb_message', 2);
+                header('Location: '.\TEXTPATTERN_FORUM_BASE_URL.'/register.php?agree=Agree');
+                die;
+            }
+
             return true;
         }
     }
@@ -160,29 +167,17 @@ EOF;
             if ($r = $sth->fetch()) {
                 $this->email = $r['email'];
                 $this->setIp($r['registration_ip']);
-                $banned = $this->isBanned();
+                $data = false;
 
-                if ($banned === false && $data = $this->getRecord()) {
-                    $date = date('c');
-
-                    if (isset($data->ip)) {
-                        $this->addBan(
-                            'ip',
-                            'SFSBOT: login '.$date.' - IP address found in StopForumSpam database.',
-                            strtotime('+3 day')
-                        );
-                    } elseif (isset($data->email)) {
-                        $this->addBan(
-                            'email',
-                            'SFSBOT: login '.$date.' - email address found in StopForumSpam database.'
-                        );
-                    }
-
-                    $banned = true;
+                if ($this->isBanned() || $data = $this->getRecord()) {
+                    sleep(5);
+                    Db::pdo()->exec("DELETE FROM users WHERE id = ".intval($r['id']));
                 }
 
-                if ($banned) {
-                    Db::pdo()->exec("DELETE FROM users WHERE id = ".intval($r['id']));
+                if ($data) {
+                    setcookie('textpattern_fluxbb_message', 1);
+                    header('Location: '.\TEXTPATTERN_FORUM_BASE_URL.'/index.php');
+                    die;
                 }
             }
 
@@ -205,57 +200,21 @@ EOF;
 
             if ($r = $sth->fetch()) {
                 $this->email = $r['email'];
-                $banned = $this->isBanned();
+                $data = false;
 
-                if ($banned === false && $data = $this->getRecord()) {
-                    $date = date('c');
-
-                    if (isset($data->email)) {
-                        $this->addBan(
-                            'email',
-                            'SFSBOT: post '.$date.' - email address found in StopForumSpam database.'
-                        );
-                    } elseif (isset($data->ip)) {
-                        $this->addBan(
-                            'ip',
-                            'SFSBOT: post '.$date.' - IP address found in StopForumSpam database.',
-                            strtotime('+3 day')
-                        );
-                    }
-
-                    $banned = true;
+                if ($this->isBanned() || $data = $this->getRecord()) {
+                    sleep(5);
+                    Db::pdo()->exec("DELETE FROM users WHERE id = {$id}");
                 }
 
-                if ($banned) {
-                    Db::pdo()->exec("DELETE FROM users WHERE id = {$id}");
+                if ($data) {
+                    setcookie('textpattern_fluxbb_message', 1);
+                    header('Location: '.\TEXTPATTERN_FORUM_BASE_URL.'/index.php');
+                    die;
                 }
             }
 
             return true;
-        }
-    }
-
-    /**
-     * Process user request.
-     */
-
-    public function processUser()
-    {
-        if ($this->isBanned() === false && $data = $this->getRecord()) {
-            $date = date('c');
-
-            if (isset($data->ip)) {
-                $this->addBan(
-                    'ip',
-                    'SFSBOT: registeration '.$date.' - IP address found in StopForumSpam database.',
-                    strtotime('+3 day')
-                );
-            } elseif (isset($data->email)) {
-                $this->addBan(
-                    'email',
-                    'SFSBOT: registeration '.$date.' - email address found in StopForumSpam database.'
-                );
-            }
         }
     }
 
