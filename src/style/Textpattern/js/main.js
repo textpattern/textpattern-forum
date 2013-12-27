@@ -78,7 +78,7 @@
 
             message.find('pre').each(function ()
             {
-                $(this).after('<p>@' + $.trim($('<div />').text($(this).html()).html().split('\n').slice(0, 1).join('')) + '...@</p>').remove();
+                $(this).after('<p>@' + $.trim($('<div />').text($(this).text()).html().split('\n').slice(0, 1).join('')) + '...@</p>').remove();
             });
 
             // Links.
