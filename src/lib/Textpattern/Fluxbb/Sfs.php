@@ -160,8 +160,9 @@ EOF;
             if ($r = $sth->fetch()) {
                 $this->email = $r['email'];
                 $this->setIp($r['registration_ip']);
+                $banned = $this->isBanned();
 
-                if ($this->isBanned() === false && $data = $this->getRecord()) {
+                if ($banned === false && $data = $this->getRecord()) {
                     $date = date('c');
 
                     if (isset($data->ip)) {
@@ -177,6 +178,10 @@ EOF;
                         );
                     }
 
+                    $banned = true;
+                }
+
+                if ($banned) {
                     Db::pdo()->exec("DELETE FROM users WHERE id = ".intval($r['id']));
                 }
             }
