@@ -8,15 +8,21 @@
 .var {
     color: teal;
 }
+
 .atv,
 .str {
     color: #dd1144;
 }
+
 .clo,
-.opn,
-.pun {
+.opn {
     color: #93a1a1;
 }
+
+.pun {
+    color: #000;
+}
+
 .com {
     color: #93a1a1;
 }
@@ -24,15 +30,20 @@
 .fun {
     color: #dc322f;
 }
+
 .kwd {
     color: #1e347b;
+    font-weight: bold;
 }
+
 .lit {
     color: #195f91;
 }
+
 .pln {
     color: #48484c;
 }
+
 .tag {
     color: #1e347b;
 }
