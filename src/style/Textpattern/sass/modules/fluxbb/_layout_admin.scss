@@ -102,3 +102,8 @@
         }
     }
 }
+
+/* hide select all link: we filter out inline javascript, so it does not work */
+.modbuttons a {
+    display: none;
+}
