@@ -37,11 +37,63 @@ namespace Textpattern\Fluxbb;
 class Document
 {
     /**
+     * Message.
+     *
+     * @var string
+     */
+
+    protected $message = '';
+
+    /**
      * Constructor.
      */
 
     public function __construct()
     {
+        if (isset($_COOKIE['textpattern_fluxbb_message'])) {
+            switch ((int) $_COOKIE['textpattern_fluxbb_message']) {
+                case 1:
+                    $this->message = <<<EOF
+                        <p class="alert-block error">
+                            In scans we have found that your IP or email has been involved
+                            in spam activity. This process is automatic and isn't specifically targeting you.
+                            To protect our users, we have removed your unused, newly created account.
+                            If you are certain you are innocent, make sure there isn't malware in
+                            your network or that you aren't using a public proxy server that is being abused 
+                            in such activity.
+                        </p>
+EOF;
+                    break;
+                case 2:
+                    $this->message = <<<EOF
+                        <p class="alert-block warning">
+                            Either your IP or the specified email address has been involved in spam activity.
+                            Please try a different email address and make sure there isn't malware in
+                            your network or that you aren't using a public proxy server.
+                        </p>
+EOF;
+                    break;
+                case 3:
+                    $this->message = '<p class="alert-block warning">Incorrect CAPTCHA. Please try again.</p>';
+
+                    foreach (array(
+                        'req_user',
+                        'req_email1',
+                        'req_email2',
+                        'timezone',
+                        'email_setting',
+                    ) as $name) {
+                        if (isset($_GET[$name]) && !isset($_POST[$name])) {
+                            $_POST[$name] = (string) $_GET[$name];
+                        }
+                    }
+
+                    break;
+            }
+
+            setcookie('textpattern_fluxbb_message', '', time() - 3600);
+        }
+
         ob_start(array($this, 'buffer'));
     }
 
@@ -60,38 +112,8 @@ class Document
             $buffer
         );
 
-        if (isset($_COOKIE['textpattern_fluxbb_message'])) {
-            $message = '';
-
-            switch ((int) $_COOKIE['textpattern_fluxbb_message']) {
-                case 1:
-                    $message = <<<EOF
-                        <p class="alert-block error">
-                            In scans we have found that your IP or email has been involved
-                            in spam activity. This process is automatic and isn't specifically targeting you.
-                            To protect our users, we have removed your unused, newly created account.
-                            If you are certain you are innocent, make sure there isn't malware in
-                            your network or that you aren't using a public proxy server that is being abused 
-                            in such activity.
-                        </p>
-EOF;
-                    break;
-                case 2:
-                    $message = <<<EOF
-                        <p class="alert-block warning">
-                            Either your IP or the specified email address has been involved in spam activity.
-                            Please try a different email address and make sure there isn't malware in
-                            your network or that you aren't using a public proxy server.
-                        </p>
-EOF;
-                    break;
-            }
-
-            setcookie('textpattern_fluxbb_message', '', time() - 3600);
-
-            if ($message) {
-                $buffer = str_replace('<div class="container">', '<div class="container">'.$message, $buffer);
-            }
+        if ($this->message) {
+            $buffer = str_replace('<div class="container">', '<div class="container">'.$this->message, $buffer);
         }
 
         $help = '';

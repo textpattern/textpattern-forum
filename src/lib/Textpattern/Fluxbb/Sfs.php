@@ -102,19 +102,18 @@ class Sfs
                     $_POST['recaptcha_response_field']
                 );
 
+                $query = http_build_query(array(
+                    'agree'         => 'Agree',
+                    'req_user'      => $_POST['req_user'],
+                    'req_email1'    => $_POST['req_email1'],
+                    'req_email2'    => $_POST['req_email2'],
+                    'timezone'      => $_POST['timezone'],
+                    'email_setting' => $_POST['email_setting'],
+                ));
+
                 if (!$response->isValid()) {
-                    echo <<<EOF
-                        <!DOCTYPE html>
-                        <html>
-                        <head></head>
-                        <body>
-                            <p>
-                                Invalid captcha given. 
-                                <a href="javascript:window.history.go(-1)">Go back to the previous page.</a>
-                            </p>
-                        </body>
-                        </html>
-EOF;
+                    setcookie('textpattern_fluxbb_message', 3);
+                    header('Location: '.\TEXTPATTERN_FORUM_BASE_URL.'/register.php?'.$query);
                     die;
                 }
             }

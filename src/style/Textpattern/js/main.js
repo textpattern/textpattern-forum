@@ -613,11 +613,6 @@
             e.preventDefault();
             window.Recaptcha.showhelp();
         });
-
-        $(function ()
-        {
-            window.Recaptcha.reload('t');
-        });
     });
 
     // Share and social embed widgets.
