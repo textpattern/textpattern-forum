@@ -16,6 +16,7 @@ h2. Version 0.1.1 - upcoming
 * Fixed: Only load HTML5 Shiv on IE8.
 * Fixed: Rare cases where there is no space rendered between forum navigation tabs.
 * Fixed: Issues where wrong syntax highlighting language would be used.
+* Fixed: Fix code block quoting and its escaping.
 * Added: Indicator to main navigation to show current section.
 * Added: Textarea height grows with the content.
 * Added: Setup script creates avatar directory if missing.
