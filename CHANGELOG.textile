@@ -40,6 +40,7 @@ h2. Version 0.1.1 - upcoming
 * Changed: Quotes preserve embedded media links.
 * Changed: Does't show "You're not logged in" message on mobiles.
 * Changed: Stop Forum Spam validator tool doesn't ban, but only blocks and limits requests activity.
+* Changed: Moved profile, register, logout and login links next to where "logged in as" message is presented.
 * Removed: Modernizr; avoided feature testing by reconstructing CSS.
 
 h2. Version 0.1.0 - 2013/12/17
