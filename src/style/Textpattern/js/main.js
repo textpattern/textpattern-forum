@@ -694,7 +694,7 @@
                                 gistStyle = true;
                             }
 
-                            $this.parent().after($(data.div).removeAttr('id')).remove();
+                            $this.parent().after($(data.div).removeAttr('id')).hide();
                         }
                     });
 
@@ -702,7 +702,10 @@
             }
 
             if (tweetRegex.test(href)) {
-                $this.parent().wrap('<blockquote class="twitter-tweet" data-dnt="true"></blockquote>');
+                $this.parent().after(
+                    $('<blockquote class="twitter-tweet" data-dnt="true" />').html($this.parent().html())
+                ).hide();
+
                 return;
             }
 
@@ -713,7 +716,7 @@
                     $('<div class="embed-video embed-youtube" />').html(
                         $('<iframe frameborder="0" allowfullscreen></iframe>').attr('src', 'https://www.youtube-nocookie.com/embed/' + matches[1])
                     )
-                ).remove();
+                ).hide();
 
                 return;
             }
@@ -726,7 +729,7 @@
                         $('<div class="embed-video embed-vimeo" />').html(
                             $('<iframe frameborder="0" allowfullscreen></iframe>').attr('src', 'https://player.vimeo.com/video/' + matches[1])
                         )
-                    ).remove();
+                    ).hide();
 
                     return;
                 }
