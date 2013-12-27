@@ -176,46 +176,48 @@ class Trap
                         };
                     </script>
 
-                    <fieldset class="recaptcha-widget" id="recaptcha_widget" style="display:none">
+                    <fieldset>
                         <legend>Answer the security question</legend>
 
-                        <p id="recaptcha_image"></p>
-                        <p class="recaptcha_only_if_incorrect_sol">Incorrect, please try again.</p>
+                        <div class="recaptcha-widget" id="recaptcha_widget" style="display:none">
 
-                        <p>
-                            <label for="recaptcha_response_field" class="recaptcha_only_if_image">
-                                Enter the words above:
-                            </label>
+                            <p id="recaptcha_image"></p>
+                            <p class="recaptcha_only_if_incorrect_sol">Incorrect, please try again.</p>
 
-                            <label for="recaptcha_response_field" class="recaptcha_only_if_audio">
-                                Enter the numbers you hear:
-                            </label>
+                            <p>
+                                <label for="recaptcha_response_field" class="recaptcha_only_if_image">
+                                    Enter the words above
+                                </label>
 
-                            <br />
+                                <label for="recaptcha_response_field" class="recaptcha_only_if_audio">
+                                    Enter the numbers you hear
+                                </label>
 
-                            <input size="50" required type="text" 
-                                id="recaptcha_response_field"
-                                name="recaptcha_response_field">
-                        </p>
+                                <br />
 
-                        <p>
-                            <a href="#" class="recaptcha-reload">Refresh captcha</a>
-                            <span class="recaptcha_only_if_image">
-                                | <a href="#" class="recaptcha-switch-audio">Get an audio captcha</a>
-                            </span>
-                            <span class="recaptcha_only_if_audio">
-                                | <a href="#" class="recaptcha-switch-image">Get an image captcha</a>
-                            </span>
-                            | <a href="#" class="recaptcha-show-help">Help</a><br />
-                            Powered by <a href="http://www.google.com/recaptcha">reCAPTCHA</a>
-                        </p>
+                                <input size="50" required type="text" 
+                                    id="recaptcha_response_field"
+                                    name="recaptcha_response_field">
+                            </p>
+
+                            <p>
+                                <a href="#" class="recaptcha-reload">Try other</a>
+                                <span class="recaptcha_only_if_image">
+                                    | <a href="#" class="recaptcha-switch-audio">Try audio</a>
+                                </span>
+                                <span class="recaptcha_only_if_audio">
+                                    | <a href="#" class="recaptcha-switch-image">Get an image CAPTCHA</a>
+                                </span>
+                                | <a href="#" class="recaptcha-show-help">Help</a><br />
+                                Powered by <a href="http://www.google.com/recaptcha">reCAPTCHA</a>
+                            </p>
+                        </div>
 
                         <script src="//www.google.com/recaptcha/api/challenge?k={$recaptcha->getPublicKey()}"></script>
 
                         <noscript>
                             <div>
-                                <iframe
-                                    src="//www.google.com/recaptcha/api/noscript?k={$recaptcha->getPublicKey()}"
+                                <iframe src="//www.google.com/recaptcha/api/noscript?k={$recaptcha->getPublicKey()}"
                                     height="300"
                                     width="500"
                                     frameborder="0"></iframe>
@@ -223,7 +225,7 @@ class Trap
                             <p><textarea name="recaptcha_challenge_field" rows="3" cols="40"></textarea></p>
                             <input type="hidden" name="recaptcha_response_field" value="manual_challenge">
                         </noscript>
-                </fieldset>
+                    </fieldset>
 EOF;
             }
         }
