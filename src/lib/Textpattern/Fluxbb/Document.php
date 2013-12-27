@@ -66,7 +66,7 @@ EOF;
                     break;
                 case 2:
                     $this->message = <<<EOF
-                        <p class="alert-block warning">
+                        <p class="alert-block error">
                             Either your IP or the specified email address has been involved in spam activity.
                             Please try a different email address and make sure there isn't malware in
                             your network or that you aren't using a public proxy server.
@@ -74,7 +74,7 @@ EOF;
 EOF;
                     break;
                 case 3:
-                    $this->message = '<p class="alert-block warning">Incorrect CAPTCHA. Please try again.</p>';
+                    $this->message = '<p class="alert-block error">Incorrect CAPTCHA. Please try again.</p>';
 
                     foreach (array(
                         'req_user',
