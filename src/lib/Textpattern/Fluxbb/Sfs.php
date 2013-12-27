@@ -224,8 +224,6 @@ EOF;
                 if ($banned) {
                     Db::pdo()->exec("DELETE FROM users WHERE id = {$id}");
                 }
-            } else {
-                $_SERVER['REMOTE_ADDR'] = '0.0.0.0';
             }
 
             return true;
