@@ -17,6 +17,7 @@ h2. Version 0.1.1 - upcoming
 * Fixed: Rare cases where there is no space rendered between forum navigation tabs.
 * Fixed: Issues where wrong syntax highlighting language would be used.
 * Fixed: Fix code block quoting and its escaping.
+* Fixed: Font rendering issues on Chrome Mac by explicitly setting the font to Arial; sans-serif default querying fails.
 * Added: Indicator to main navigation to show current section.
 * Added: Textarea height grows with the content.
 * Added: Setup script creates avatar directory if missing.
