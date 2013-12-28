@@ -696,6 +696,7 @@
         });
 
         if (loadTwitter) {
+            $('head').append('<meta name="twitter:widgets:csp" content="on" />');
             require(['https://platform.twitter.com/widgets.js']);
         }
     });
