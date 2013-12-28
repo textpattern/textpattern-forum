@@ -31,9 +31,16 @@
         };
     });
 
-    define('growfields', ['jquery', 'autosize'], function ($)
+    define('growfields', ['jquery'], function ($)
     {
-        $('form textarea').autosize();
+        var fields = $('form textarea');
+
+        if (fields.length) {
+            require(['autosize'], function ()
+            {
+                fields.autosize();
+            });
+        }
     });
 
     // Quoting.
