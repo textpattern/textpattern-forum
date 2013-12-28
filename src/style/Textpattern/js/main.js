@@ -615,58 +615,13 @@
         });
     });
 
-    // Share and social embed widgets.
+    // Embed widgets.
 
     require(['jquery', 'track'], function ($, track)
     {
-        var permlink, widgets = 2, timer = 0, buttons, text, title = $('#page-viewtopic .crumbs li:last-child a').eq(0), gistStyle = false;
-
-        if (title.length) {
-            permlink = 'http://' + window.location.hostname + '/' + title.attr('href');
-            text = title.text();
-
-            buttons = $('<p class="share-buttons" />')
-                .hide()
-                .append($('<a class="twitter-share-button" data-dnt="true" />').attr('data-text', text).attr('data-url', permlink))
-                .append($('<a class="fb-like" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false" />').attr('data-href', permlink));
-
-            if (track.allow) {
-                buttons.append($('<span class="g-plusone" data-align="right" data-action="share" data-size="medium" />').attr('data-href', permlink));
-
-                window.___gcfg = {
-                    lang: 'en-GB'
-                };
-
-                widgets++;
-
-                require(['https://apis.google.com/js/plusone.js']);
-            }
-
-            $('body').append('<div id="fb-root"></div>');
-            require(['//connect.facebook.net/en_GB/all.js#xfbml=1&appId=581964255172661']);
-            $('#page-viewtopic .crumbs').eq(0).before(buttons);
-
-            var loadWidgets = function ()
-            {
-                timer += 1000;
-
-                if (!widgets || timer >= 10000) {
-                    buttons.show();
-                    clearInterval(loadWidgets);
-                    return;
-                }
-
-                if (buttons.find('iframe').length >= widgets) {
-                    widgets = false;
-                }
-            };
-
-            setInterval(loadWidgets, 1000);
-        }
-
-        // Embed widgets; turns plain links to tweet and gist widgets.
-
-        var tweetRegex = /^https?:\/\/twitter\.com\/(#!\/)?[a-z0-9]+\/status(es)?\/[0-9]+$/i,
+        var gistStyle = false,
+            loadTwitter = false,
+            tweetRegex = /^https?:\/\/twitter\.com\/(#!\/)?[a-z0-9]+\/status(es)?\/[0-9]+$/i,
             gistRegex = /^https?:\/\/gist\.github\.com\/[a-z0-9]+\/[0-9]+$/i,
             youtubeRegex = /^https?:\/\/(?:www\.)?(?:youtube\.com\/watch(?:\/|\?v=)|youtu\.be\/)([a-z0-9\-\_]+)$/i,
             vimeoRegex = /^https?:\/\/(?:www\.)?vimeo\.com\/([0-9]+)$/i;
@@ -697,6 +652,8 @@
             }
 
             if (tweetRegex.test(href)) {
+                loadTwitter = true;
+
                 $this.parent().after(
                     $('<blockquote class="twitter-tweet" data-dnt="true" />').html($this.parent().html())
                 ).hide();
@@ -731,7 +688,7 @@
             }
         });
 
-        if (title.length || $('.twitter-tweet').length) {
+        if (loadTwitter) {
             require(['https://platform.twitter.com/widgets.js']);
         }
     });
