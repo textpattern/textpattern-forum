@@ -4,9 +4,15 @@
 
     document.documentElement.className = 'js';
 
+    var jqueryVersion = '1.10.2';
+
+    if (typeof JSON !== 'undefined' && 'querySelector' in document && 'addEventListener' in window) {
+        jqueryVersion = '2.0.3';
+    }
+
     requirejs.config({
         paths: {
-            'jquery': 'https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min'
+            'jquery': 'https://ajax.googleapis.com/ajax/libs/jquery/'+jqueryVersion+'/jquery.min'
         },
         shim: {
             'autosize': ['jquery'],
