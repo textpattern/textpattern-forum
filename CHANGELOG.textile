@@ -9,7 +9,6 @@ h2. Version 0.1.1 - upcoming
 * Fixed: Main network navigation loading and content shifting.
 * Fixed: Improve font loading on subsequent page visits. Move from Web Font Loader to a link tag.
 * Fixed: Remove JavaScript based moving of the subscribe button; causes content shifting.
-* Fixed: Don't flash distracting placeholder text links while social sharing widgets are loading.
 * Fixed: Off-positioned forum navigation tabs. Appeared 1px below the strip border on Chrome.
 * Fixed: Don't send non-IPv4 addresses to Stop Forum Spam.
 * Fixed: Sfs::isBanned() check; do not create duplicate ban records.
@@ -23,7 +22,6 @@ h2. Version 0.1.1 - upcoming
 * Added: Setup script creates avatar directory if missing.
 * Added: Move focus to the username field on the login page.
 * Added: Sfs bot writes down dates with bans and the logged event.
-* Added: Try to render sharing buttons block more smoothly; hide them until all the scripts have finished.
 * Added: Prevent admins from accidentally banning wide range of users by IP address.
 * Added: Remove the account if flagged on the first post.
 * Added: Registration form displays a CAPTCHA.
@@ -43,7 +41,11 @@ h2. Version 0.1.1 - upcoming
 * Changed: Does't show "You're not logged in" message on mobiles.
 * Changed: Stop Forum Spam validator tool doesn't ban, but only blocks and limits requests activity.
 * Changed: Moved profile, register, logout and login links next to where "logged in as" message is presented.
+* Changed: Send strict Content-Security-Policy headers.
+* Changed: Conditionally load jQuery 2.x if supported by the client.
 * Removed: Modernizr; avoided feature testing by reconstructing CSS.
+* Removed: Social sharing buttons.
+* Removed: Vimeo support.
 
 h2. Version 0.1.0 - 2013/12/17
 
