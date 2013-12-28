@@ -5,6 +5,7 @@
     Header unset Expires
     Header unset Cache-Control
     Header unset Pragma
+    Header unset Content-Security-Policy
 </ifModule>
 
 <IfModule mod_rewrite.c>
