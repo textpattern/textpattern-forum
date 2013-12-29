@@ -1,4 +1,8 @@
 <ifModule mod_headers.c>
+    Header unset X-XSS-Protection
+    Header unset X-Frame-Options
+    Header unset X-Content-Type-Options
+    Header unset Content-Security-Policy
     Header append Cache-Control "public"
 
     <FilesMatch "\.(css|gz|js|svg)$">
