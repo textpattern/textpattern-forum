@@ -164,6 +164,8 @@ EOF;
 
         $buffer = preg_replace('/ (onchange|onsubmit|onclick)=".*?"/', '', $buffer);
 
+        $buffer = preg_replace('/<a href="javascript:.*?">.*?<\/a>/', '', $buffer);
+
         $buffer = preg_replace('/<script type="text\/javascript">.*?<\/script>/s', '', $buffer);
 
         $buffer = preg_replace(
