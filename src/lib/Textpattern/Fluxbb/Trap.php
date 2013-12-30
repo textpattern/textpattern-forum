@@ -168,11 +168,13 @@ class Trap
                     \TEXTPATTERN_FORUM_RECAPTCHA_PRIVATE_KEY
                 );
 
+                $key = $recaptcha->getPublicKey();
+
                 $this->trap .= <<<EOF
                     <fieldset>
                         <legend>Answer the security question</legend>
 
-                        <div data-recaptcha-key="{$recaptcha->getPublicKey()}" class="recaptcha-widget" style="display:none">
+                        <div data-recaptcha-key="{$key}" class="recaptcha-widget" style="display:none">
 
                             <p id="recaptcha_image"></p>
                             <p class="recaptcha_only_if_incorrect_sol">Incorrect, please try again.</p>
@@ -208,7 +210,7 @@ class Trap
 
                         <noscript>
                             <div>
-                                <iframe src="//www.google.com/recaptcha/api/noscript?k={$recaptcha->getPublicKey()}"
+                                <iframe src="//www.google.com/recaptcha/api/noscript?k={$key}"
                                     height="300"
                                     width="500"
                                     frameborder="0"></iframe>
