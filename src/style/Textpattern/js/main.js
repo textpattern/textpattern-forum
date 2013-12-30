@@ -12,7 +12,8 @@
 
     requirejs.config({
         paths: {
-            'jquery': 'https://ajax.googleapis.com/ajax/libs/jquery/'+jqueryVersion+'/jquery.min'
+            'jquery': 'https://ajax.googleapis.com/ajax/libs/jquery/'+jqueryVersion+'/jquery.min',
+            'recaptcha': 'https://www.google.com/recaptcha/api/js/recaptcha_ajax'
         },
         shim: {
             'autosize': ['jquery'],
@@ -603,28 +604,40 @@
             return;
         }
 
-        $('a.recaptcha-reload').on('click', function (e)
+        require(['recaptcha'], function ()
         {
-            e.preventDefault();
-            window.Recaptcha.reload();
-        });
+            window.Recaptcha.create(
+                widget.attr('data-recaptcha-key'),
+                widget.get(0),
+                {
+                    theme: 'custom',
+                    custom_theme_widget: 'recaptcha_widget'
+                }
+            );
 
-        $('a.recaptcha-switch-audio').on('click', function (e)
-        {
-            e.preventDefault();
-            window.Recaptcha.switch_type('audio');
-        });
+            $('a.recaptcha-reload').on('click', function (e)
+            {
+                e.preventDefault();
+                window.Recaptcha.reload();
+            });
 
-        $('a.recaptcha-switch-image').on('click', function (e)
-        {
-            e.preventDefault();
-            window.Recaptcha.switch_type('image');
-        });
+            $('a.recaptcha-switch-audio').on('click', function (e)
+            {
+                e.preventDefault();
+                window.Recaptcha.switch_type('audio');
+            });
 
-        $('a.recaptcha-show-help').on('click', function (e)
-        {
-            e.preventDefault();
-            window.Recaptcha.showhelp();
+            $('a.recaptcha-switch-image').on('click', function (e)
+            {
+                e.preventDefault();
+                window.Recaptcha.switch_type('image');
+            });
+
+            $('a.recaptcha-show-help').on('click', function (e)
+            {
+                e.preventDefault();
+                window.Recaptcha.showhelp();
+            });
         });
     });
 

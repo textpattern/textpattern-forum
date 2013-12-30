@@ -157,7 +157,7 @@ class Trap
     protected function trapFormRegister()
     {
         if (strpos($_SERVER['REQUEST_URI'], 'register.php') !== false &&
-            (!empty($_GET['agree']) || !empty($_GET['action']))
+            (isset($_GET['agree']) || isset($_POST['form_sent']))
         ) {
             $this->search = '<p class="buttons">';
             $this->trap = $this->formInput('text', 'displayname', '', 'Display name');
@@ -169,17 +169,10 @@ class Trap
                 );
 
                 $this->trap .= <<<EOF
-                    <script>
-                        var RecaptchaOptions = {
-                            theme: 'custom',
-                            custom_theme_widget: 'recaptcha_widget'
-                        };
-                    </script>
-
                     <fieldset>
                         <legend>Answer the security question</legend>
 
-                        <div class="recaptcha-widget" id="recaptcha_widget" style="display:none">
+                        <div data-recaptcha-key="{$recaptcha->getPublicKey()}" class="recaptcha-widget" id="recaptcha_widget" style="display:none">
 
                             <p id="recaptcha_image"></p>
                             <p class="recaptcha_only_if_incorrect_sol">Incorrect, please try again.</p>
@@ -212,8 +205,6 @@ class Trap
                                 Powered by <a href="http://www.google.com/recaptcha">reCAPTCHA</a>
                             </p>
                         </div>
-
-                        <script src="//www.google.com/recaptcha/api/challenge?k={$recaptcha->getPublicKey()}"></script>
 
                         <noscript>
                             <div>
