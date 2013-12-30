@@ -123,7 +123,7 @@ EOF;
             $buffer = str_replace($matches[0], '', $buffer);
         }
 
-        if (preg_match('#<li id="navprofile"><a href="profile\.php\?id=([0-9]+)">(.*?)</a></li>#', $buffer, $matches)) {
+        if (preg_match('#<li id="navprofile"(?: class="isactive")?><a href="profile\.php\?id=([0-9]+)">(.*?)</a></li>#', $buffer, $matches)) {
             $buffer = str_replace($matches[0], '', $buffer);
             $profile = (int) $matches[1];
             $logout = '';
@@ -134,7 +134,7 @@ EOF;
             }
 
             $buffer = preg_replace(
-                '#(<div id="brdwelcome" class="inbox">.*?<li><span>.*?)<strong>(.*?)</strong>(</span></li>)#s',
+                '#(<div id="brdwelcome" class="inbox">.*?<li><span>.*?)<strong>(.*?)</strong>(</span></li>)#Us',
                 '$1<strong><a href="profile.php?id='.$profile.'">$2</a></strong> | '.
                 $logout.' | '.$help.'$3',
                 $buffer
