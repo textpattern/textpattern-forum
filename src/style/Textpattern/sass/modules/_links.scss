@@ -31,8 +31,4 @@ footer a {
     &:focus {
         outline: thin dotted $color-selected;
     }
-
-    &:visited {
-        color: $color-selecting;
-    }
 }
