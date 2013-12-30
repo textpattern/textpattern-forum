@@ -172,7 +172,7 @@ class Trap
                     <fieldset>
                         <legend>Answer the security question</legend>
 
-                        <div data-recaptcha-key="{$recaptcha->getPublicKey()}" class="recaptcha-widget" id="recaptcha_widget" style="display:none">
+                        <div data-recaptcha-key="{$recaptcha->getPublicKey()}" class="recaptcha-widget" style="display:none">
 
                             <p id="recaptcha_image"></p>
                             <p class="recaptcha_only_if_incorrect_sol">Incorrect, please try again.</p>
