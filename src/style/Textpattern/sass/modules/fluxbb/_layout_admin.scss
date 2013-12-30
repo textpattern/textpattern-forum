@@ -103,21 +103,20 @@
     }
 }
 
-/* hide select all link: we filter out inline javascript, so it does not work */
+/* hide 'select all' link (we filter out inline JavaScript, so it does not work) */
 .modbuttons a {
     display: none;
 }
 
 /* ad spots */
 .sponsor {
-
     .spot {
-        overflow: hidden;
         margin-left: -0.5em;
-    }
+        overflow: hidden;
 
-    .spot a {
-        margin: 0 0 0.5em 0.5em !important;
+        a {
+            margin: 0 0 0.5em 0.5em !important;
+        }
     }
 
     .spot-125 {
@@ -125,8 +124,8 @@
     }
 
     > p {
-        color: $color-text-footnote;
-        font-weight: bold;
         margin: 0;
+        font-weight: bold;
+        color: $color-text-footnote;
     }
 }
