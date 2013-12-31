@@ -26,7 +26,7 @@ module.exports = function (grunt)
             },
 
             theme: {
-                files: ['!src/style/*/sass/**', '!src/style/*/js/**', 'src/style/*/**'],
+                files: ['!src/style/*/sass/**', '!src/style/*/js/**', 'src/style/*/**', 'src/*.html'],
                 tasks: ['theme']
             },
 
