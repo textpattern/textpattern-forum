@@ -138,7 +138,7 @@ EOF;
             }
 
             $buffer = preg_replace(
-                '#(<div id="brdwelcome" class="inbox">.*?<li><span>.*?)<strong>(.*?)</strong>(</span></li>)#Us',
+                '#(<div id="brdwelcome" class="inbox">.*?<li><span>.*?)<strong>(.*)</strong>(</span></li>)#us',
                 '$1<strong><a href="profile.php?id='.$profile.'">$2</a></strong> | '.
                 $logout.' | '.$help.'$3',
                 $buffer
