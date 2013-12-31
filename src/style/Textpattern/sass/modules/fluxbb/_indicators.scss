@@ -11,6 +11,7 @@
 #page-delete .forminfo p {
     @include border-radius(0.2307692em); // 3px / 13px
 
+    display: block;
     border: 1px solid;
     padding: 0.5384615em 1em; // 7px / 13px
 }
