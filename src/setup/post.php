@@ -74,6 +74,9 @@ $options = array(
         to any kind of mailing lists. You may allow or disallow other forum members from
         seeing your email address; guests cannot view any of your profile information.</p>
 
+        <p>Once registered you must then log in to the forum within 24 hours to verify your
+        account, otherwise the account will be deemed inactive and subsequently deleted.</p>
+
         <p>All registrations are monitored by real people, and we take various proactive
         measures against spam. If
         <a href="http://en.wikipedia.org/wiki/Spam_(electronic)#Newsgroup_and_forum" rel="external">spam</a>
