@@ -32,7 +32,7 @@
  * This does the initial project setup.
  */
 
-$fluxbb_download = 'https://github.com/fluxbb/fluxbb/archive/2a9886ae3a46c683afd6920fb03ac7657df9e57a.tar.gz';
+$fluxbb_download = 'http://fluxbb.org/download/releases/1.5.6/fluxbb-1.5.6.tar.gz';
 $fluxbb_dir = basename($fluxbb_download, '.tar.gz');
 
 `mkdir -pv tmp`;
