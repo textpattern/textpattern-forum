@@ -4,7 +4,7 @@ Here's a summary of changes in each update.
 
 h2. Version 0.2.0 - upcoming
 
-* Fixed: Account renaming. Its broken in FluxBB v1.5.5, so jumping to a development version that applies the fix.
+* Fixed: FluxBB v1.5.6. Fixes Account renaming, HTML5 validation and security vulnerabilities.
 * Fixed: Masthead logo glitch on IE8. Doesn't display Textpattern logo twice.
 * Fixed: Main network navigation loading and content shifting.
 * Fixed: Improve font loading on subsequent page visits. Move from Web Font Loader to a link tag.
