@@ -25,7 +25,7 @@ h2. Version 0.2.0 - upcoming
 * Added: Prevent admins from accidentally banning wide range of users by IP address.
 * Added: Remove the account if flagged on the first post.
 * Added: Registration form displays a CAPTCHA.
-* Changed: Improve layout of quickpostform.
+* Changed: Improve layout of quickpost form.
 * Changed: Load Google Analytics protocol relatively.
 * Changed: Unset Google Analytics tracking cookies when the session ends. We don't do persistent tracking.
 * Changed: Re-enable category and forum arrangement management through production server's web GUI.
