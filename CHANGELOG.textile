@@ -2,7 +2,7 @@ h1. Changelog
 
 Here's a summary of changes in each update.
 
-h2. Version 0.2.0 - upcoming
+h2. Version 0.2.0 - 2014/01/11
 
 * Fixed: FluxBB v1.5.6. Fixes account renaming, HTML5 validation and security vulnerabilities.
 * Fixed: Masthead logo glitch on IE8. Doesn't display Textpattern logo twice.
