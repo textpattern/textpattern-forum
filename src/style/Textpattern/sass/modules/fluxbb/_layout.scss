@@ -257,8 +257,6 @@ thead th {
 .blockform input[type="text"],
 .blockform input[type="url"],
 .blockform select {
-    max-width: 100%;
-
     @include breakpoint(max-width $breakpoint-2) {
          width: 100%;
     }
