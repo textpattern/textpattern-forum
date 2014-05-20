@@ -2,6 +2,7 @@ module.exports = function (grunt)
 {
     'use strict';
 
+    // Load Grunt plugins.
     grunt.loadNpmTasks('grunt-contrib-compass');
     grunt.loadNpmTasks('grunt-contrib-compress');
     grunt.loadNpmTasks('grunt-contrib-copy');
@@ -15,27 +16,12 @@ module.exports = function (grunt)
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
 
+        // Set up timestamp.
         opt : {
             timestamp: '<%= new Date().getTime() %>'
         },
 
-        watch: {
-            sass: {
-                files: ['src/style/*.scss', 'src/style/*/sass/**'],
-                tasks: ['sass', 'compress:theme']
-            },
-
-            theme: {
-                files: ['!src/style/*/sass/**', '!src/style/*/js/**', 'src/style/*/**', 'src/*.html'],
-                tasks: ['theme']
-            },
-
-            js: {
-                files: 'src/style/*/js/**',
-                tasks: ['jshint', 'uglify', 'compress:theme']
-            }
-        },
-
+        // Use 'config.rb' file to configure Compass.
         compass: {
             dev: {
                 options: {
@@ -45,6 +31,21 @@ module.exports = function (grunt)
             }
         },
 
+        // Gzip compress the theme files.
+        compress: {
+            theme: {
+                options: {
+                    mode: 'gzip'
+                },
+                files: [
+                    {expand: true, src: ['public/style/**/*.js'], ext: '.js.gz'},
+                    {expand: true, src: ['public/style/**/*.css'], ext: '.css.gz'},
+                    {expand: true, src: ['public/style/**/*.svg'], ext: '.svg.gz'}
+                ]
+            }
+        },
+
+        // Copy files from `src/` and `bower_components/` to `public/`.
         copy: {
             branding: {
                 files: [
@@ -64,27 +65,17 @@ module.exports = function (grunt)
             }
         },
 
-        replace: {
-            theme: {
-                options: {
-                    patterns: [
-                        {
-                            match: 'timestamp',
-                            replacement: '<%= opt.timestamp %>'
-                        },
-                        {
-                            match: 'year',
-                            replacement: '<%= new Date().getFullYear() %>'
-                        }
-                    ]
-                },
-                files: [
-                    {expand: true, cwd: 'src/style/Textpattern/', src: ['*.tpl'], dest: 'public/style/Textpattern/'},
-                    {expand: true, cwd: 'src/', src: ['*.html'], dest: 'public/'}
-                ]
+        // Concatenate, minify and copy CSS files to `public/`.
+        cssmin: {
+            main: {
+                files: {
+                    'public/style/Textpattern/css/main.css': ['tmp/style/Textpattern/sass/main.css'],
+                    'public/style/Textpattern/css/ie8.css': ['tmp/style/Textpattern/sass/ie8.css']
+                }
             }
         },
 
+        // Check code quality of Gruntfile.js and site-specific JavaScript using JSHint.
         jshint: {
             files: ['Gruntfile.js', 'src/style/*/js/*.js'],
             options: {
@@ -119,17 +110,52 @@ module.exports = function (grunt)
             }
         },
 
-        cssmin: {
-            main: {
-                files: {
-                    'public/style/Textpattern/css/main.css': ['tmp/style/Textpattern/sass/main.css'],
-                    'public/style/Textpattern/css/ie8.css': ['tmp/style/Textpattern/sass/ie8.css']
+        // Generate latest timestamp within theme template files.
+        replace: {
+            theme: {
+                options: {
+                    patterns: [
+                        {
+                            match: 'timestamp',
+                            replacement: '<%= opt.timestamp %>'
+                        },
+                        {
+                            match: 'year',
+                            replacement: '<%= new Date().getFullYear() %>'
+                        }
+                    ]
+                },
+                files: [
+                    {expand: true, cwd: 'src/style/Textpattern/', src: ['*.tpl'], dest: 'public/style/Textpattern/'},
+                    {expand: true, cwd: 'src/', src: ['*.html'], dest: 'public/'}
+                ]
+            }
+        },
+
+        // Run forum setup and postsetup scripts.
+        shell: {
+            setup: {
+                command: [
+                    'php src/setup/setup.php'
+                ].join('&&'),
+                options: {
+                    stdout: true
+                }
+            },
+            postsetup: {
+                command: [
+                    'php src/setup/post.php'
+                ].join('&&'),
+                options: {
+                    stdout: true
                 }
             }
         },
 
+        // Uglify and copy JavaScript files from `bower-components`, and also `main.js`, to `public/assets/js/`.
         uglify: {
             dist: {
+                // Preserve all comments that start with a bang (!) or include a closure compiler style.
                 options: {
                     preserveComments: 'some'
                 },
@@ -154,45 +180,32 @@ module.exports = function (grunt)
             }
         },
 
-        compress: {
-            theme: {
-                options: {
-                    mode: 'gzip'
-                },
-                files: [
-                    {expand: true, src: ['public/style/**/*.js'], ext: '.js.gz'},
-                    {expand: true, src: ['public/style/**/*.css'], ext: '.css.gz'},
-                    {expand: true, src: ['public/style/**/*.svg'], ext: '.svg.gz'}
-                ]
-            }
-        },
-
-        shell: {
-            setup: {
-                command: [
-                    'php src/setup/setup.php'
-                ].join('&&'),
-                options: {
-                    stdout: true
-                }
+        // Directories watched and tasks performed by invoking `grunt watch`.
+        watch: {
+            sass: {
+                files: ['src/style/*.scss', 'src/style/*/sass/**'],
+                tasks: ['sass', 'compress:theme']
             },
-            postsetup: {
-                command: [
-                    'php src/setup/post.php'
-                ].join('&&'),
-                options: {
-                    stdout: true
-                }
+
+            theme: {
+                files: ['!src/style/*/sass/**', '!src/style/*/js/**', 'src/style/*/**', 'src/*.html'],
+                tasks: ['theme']
+            },
+
+            js: {
+                files: 'src/style/*/js/**',
+                tasks: ['jshint', 'uglify', 'compress:theme']
             }
         }
     });
 
-    grunt.registerTask('test', ['jshint']);
-    grunt.registerTask('sass', ['compass', 'cssmin']);
-    grunt.registerTask('default', ['watch']);
+    // Register tasks.
     grunt.registerTask('build', ['jshint', 'theme', 'copy:branding', 'sass', 'uglify', 'compress:theme']);
+    grunt.registerTask('default', ['watch']);
+    grunt.registerTask('postsetup', ['shell:postsetup']);
+    grunt.registerTask('sass', ['compass', 'cssmin']);
+    grunt.registerTask('setup', ['shell:setup', 'build']);
+    grunt.registerTask('test', ['jshint']);
     grunt.registerTask('theme', ['copy:theme', 'replace:theme']);
     grunt.registerTask('travis', ['jshint', 'compass']);
-    grunt.registerTask('setup', ['shell:setup', 'build']);
-    grunt.registerTask('postsetup', ['shell:postsetup']);
 };
