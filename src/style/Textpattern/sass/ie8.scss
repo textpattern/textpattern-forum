@@ -29,13 +29,6 @@
     @include grid-span(8, 1, $options: 'both');
 }
 
-h1.masthead a {
-    width: 320px;
-    height: 52px;
-    background-image: url("../img/branding/textpattern/textpattern.png");
-    background-size: 320px 52px;
-}
-
 /* show standard `<nav>` menu on larger screens */
 .nav-collapse {
     .js & {
@@ -64,12 +57,6 @@ h1.masthead a {
     display: none;
 }
 
-/* PNG fallback for lack of SVG support */
-#search-form input#search-query,
-.social-channels a {
-    background-image: url("../img/branding/misc/icon-sprite.png");
-}
-
 .block2col .blockmenu {
     width: 22.8571429%;
     float: right;
@@ -92,8 +79,31 @@ h1.masthead a {
 }
 
 
+
 /* ==========================================================================
-   Fix for reponsive images in IE8
+   Fallbacks for unsupported browser features
+   ========================================================================== */
+
+/**
+ * Fallback for lack of `box-shadow` support.
+ */
+
+#search-form input#search-query,
+.social-channels a {
+    background-image: url("../img/branding/misc/icon-sprite.png");
+}
+
+h1.masthead a {
+    width: 320px;
+    height: 52px;
+    background-image: url("../img/branding/textpattern/textpattern.png");
+    background-size: 320px 52px;
+}
+
+
+
+/* ==========================================================================
+   Fix for reponsive images in IE 8
    ========================================================================== */
 
 img {
