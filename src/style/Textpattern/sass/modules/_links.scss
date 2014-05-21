@@ -1,16 +1,35 @@
 /* Links
    ========================================================================== */
 
-a {
-    text-decoration: none;
-    color: $color-link;
-    background: transparent; // remove the gray background color from active links in IE 10
+/**
+ * 1. Remove default underline style from non-hover state links.
+ * 2. Interrupt the decoration line to let the shape of the text show through
+ *    in supported browsers.
+ * 3. Specify link colour.
+ * 4. Remove the gray background color from active links in IE 10.
+ */
 
-    // improve readability when focused and also mouse hovered in all browsers
+a {
+    text-decoration: none; /* 1 */
+    text-decoration-skip: ink edges; /* 2 */
+    color: $color-link; /* 3 */
+    background: transparent; /* 4 */
+}
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ * Specify link state colours (Note: not using `:visited` state in forum).
+ *
+ * 1. Expanded CSS level 3 `text-decoration` property in supported browsers,
+ *    older browsers will fallback to legacy `text-decoration` property.
+ */
+
+a {
     &:hover,
     &:active {
         outline: 0;
         text-decoration: underline;
+        text-decoration: $color-link solid underline; /* 1 */
         color: $color-link-hover;
     }
 
@@ -18,6 +37,10 @@ a {
         outline: thin dotted $color-link-focus;
     }
 }
+
+/**
+ * Additional styling for child links within `role=complementary` and `footer`.
+ */
 
 [role="complementary"] a,
 footer a {

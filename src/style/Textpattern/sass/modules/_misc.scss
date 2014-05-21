@@ -1,7 +1,14 @@
 /* Miscellenaeous
    ========================================================================== */
 
-/* hide text but still allow screen reader access */
+/**
+ * Hide text but still allow screen reader access.
+ *
+ * Example HTML:
+ *
+ * <h1 class="accessibility">
+ */
+
 .accessibility {
     position: absolute;
     left: -1000em;

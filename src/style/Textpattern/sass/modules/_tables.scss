@@ -1,7 +1,10 @@
 /* Tables
    ========================================================================== */
 
-/* consistent tables */
+/**
+ * Consistent tables.
+ */
+
 table {
     margin: 1em 0;
     border-collapse: collapse;
@@ -9,15 +12,22 @@ table {
     width: 100%;
 }
 
+/**
+ * Styling of table captions.
+ */
+
 caption {
     font-style: italic;
     text-align: left;
     margin-bottom: 0.5em;
 }
 
+/**
+ * Make table cells align top and left by default.
+ */
+
 th,
 td {
-    /* make table cells align top and left by default */
     vertical-align: top;
     text-align: left;
     border-bottom: 1px solid $color-border;
@@ -27,6 +37,10 @@ td {
         border: 0;
     }
 }
+
+/**
+ * Table `thead` non-global borders and padding.
+ */
 
 thead {
     tr:first-child {
@@ -44,6 +58,10 @@ thead {
     }
 }
 
+/**
+ * Table `tfoot` non-global borders and padding.
+ */
+
 tfoot {
     th,
     td {
@@ -59,6 +77,10 @@ tfoot {
     }
 }
 
+/**
+ * Table `tbody` non-global borders.
+ */
+
 tbody tr:first-child {
     td,
     th {
@@ -66,7 +88,10 @@ tbody tr:first-child {
     }
 }
 
-/* cell alignments */
+/**
+ * Multi-row span vertical cell alignments.
+ */
+
 [rowspan] {
     vertical-align: middle;
 }
