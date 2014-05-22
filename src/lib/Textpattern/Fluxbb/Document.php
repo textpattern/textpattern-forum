@@ -59,7 +59,7 @@ class Document
                             in spam activity. This process is automatic and isn't specifically targeting you.
                             To protect our users, we have removed your unused, newly created account.
                             If you are certain you are innocent, make sure there isn't malware in
-                            your network or that you aren't using a public proxy server that is being abused 
+                            your network or that you aren't using a public proxy server that is being abused
                             in such activity.
                         </p>
 EOF;

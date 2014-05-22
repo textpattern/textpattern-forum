@@ -190,7 +190,7 @@ class Trap
 
                                 <br />
 
-                                <input size="50" required type="text" 
+                                <input size="50" required type="text"
                                     id="recaptcha_response_field"
                                     name="recaptcha_response_field">
                             </p>
