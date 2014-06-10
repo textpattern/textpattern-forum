@@ -44,6 +44,8 @@
 /**
  * Alert boxes.
  *
+ * 1. Prevent really, really long words from breaking layout.
+ *
  * Example HTML:
  *
  * <p class="alert-block success">
@@ -53,6 +55,7 @@
 .alert-block {
     border: 1px solid;
     padding: 0.5384615em 1em; // 7px / 13px
+    word-wrap: break-word; /* 1 */
 
     &.success {
         border-color: $color-success-border;
