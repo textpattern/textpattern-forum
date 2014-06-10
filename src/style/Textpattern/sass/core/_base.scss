@@ -56,5 +56,9 @@ footer,
 [role="navigation"] ol,
 .clearfix,
 .container {
-    @include pie-clearfix;
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
 }
