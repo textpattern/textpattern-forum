@@ -29,7 +29,21 @@
     @include grid-span(8, 1, $options: 'both');
 }
 
-/* show standard `<nav>` menu on larger screens */
+/**
+ * Don't allow site to collapse smaller than large breakpoint.
+ */
+
+header,
+footer,
+.container,
+.nav-collapse ul {
+    min-width: $breakpoint-3;
+}
+
+/**
+ * Desktop version of navigation menu.
+ */
+
 .nav-collapse {
     .js & {
         max-height: none;
