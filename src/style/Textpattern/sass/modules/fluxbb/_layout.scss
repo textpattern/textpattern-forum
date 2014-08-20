@@ -221,7 +221,7 @@ thead th {
    ========================================================================== */
 
 .block2col .blockmenu {
-    @include box-sizing(border-box);
+    @include box-sizing;
 
     border: 1px solid $color-border;
     margin: 1.75em 0 1em 0;
