@@ -102,16 +102,16 @@ footer,
  * PNG fallback for lack of SVG support.
  */
 
-#search-form input#search-query,
-.social-channels a {
-    background-image: url("../img/branding/misc/icon-sprite.png");
-}
-
 h1.masthead a {
     width: 320px;
     height: 52px;
     background-image: url("../img/branding/textpattern/textpattern.png");
     background-size: 320px 52px;
+}
+
+#search-form input#search-query,
+.social-channels a {
+    background-image: url("../img/branding/misc/icon-sprite.png");
 }
 
 
