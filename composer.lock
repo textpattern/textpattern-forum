@@ -139,7 +139,7 @@
         },
         {
             "name": "netcarver/textile",
-            "version": "v3.5.4",
+            "version": "v3.5.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/textile/php-textile.git",
