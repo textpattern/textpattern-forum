@@ -2,20 +2,31 @@ h1. Changelog
 
 Here's a summary of changes in each update.
 
- 	
 h2. Version 0.3.0 - upcoming
+
+* Fixed: FluxBB v1.5.7. Fixes security vulnerabilities.
+* Fixed: Double-border glitch in IE 11.
+* Fixed: Prevent really long words from breaking alert box layouts.
+* Fixed: Prevent IE 8 layout from collapsing too far.
+* Fixed: Textile v3.5.5.
+* Added: Theme source code has been extensive commented throughout.
+* Added: New apple touch icon size for iOS 8.
+* Changed: Speed up CSS transitions.
+* Changed: Remove legacy touch icons.
+* Changed: Updated various components and Grunt tasks.
+* Changed: Various minor CSS improvements and optimisations.
 
 h2. Version 0.2.0 - 2014/01/11
 
 * Fixed: FluxBB v1.5.6. Fixes account renaming, HTML5 validation and security vulnerabilities.
-* Fixed: Masthead logo glitch on IE8. Doesn't display Textpattern logo twice.
+* Fixed: Masthead logo glitch on IE 8. Doesn't display Textpattern logo twice.
 * Fixed: Main network navigation loading and content shifting.
 * Fixed: Improve font loading on subsequent page visits. Move from Web Font Loader to a link tag.
 * Fixed: Remove JavaScript based moving of the subscribe button; causes content shifting.
 * Fixed: Off-positioned forum navigation tabs. Appeared 1px below the strip border on Chrome.
 * Fixed: Don't send non-IPv4 addresses to Stop Forum Spam.
 * Fixed: Sfs::isBanned() check; do not create duplicate ban records.
-* Fixed: Only load HTML5 Shiv on IE8.
+* Fixed: Only load HTML5 Shiv on IE 8.
 * Fixed: Rare cases where there is no space rendered between forum navigation tabs.
 * Fixed: Issues where wrong syntax highlighting language would be used.
 * Fixed: Fix code block quoting and its escaping.
