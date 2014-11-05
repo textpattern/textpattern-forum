@@ -7,13 +7,17 @@
 }
 
 #page-index .icon {
-    @include hires-graphic(forum-icons, png, 480px, 360px);
+    @include hires-graphic(forum-icons, png, 480px, 180px);
 
     display: block;
     float: left;
     margin-right: 1em;
     width: 60px;
     height: 60px;
+
+    &.icon-new {
+        background-color: $color-strong-highlight-box;
+    }
 
     // hide icon at small screen widths
     @include breakpoint(max-width $breakpoint-2) {
@@ -28,141 +32,73 @@
 #idx1 table tbody {
     tr:nth-child(1) .icon {
         background-position: 0 0;
-
-        &.icon-new {
-            background-position: 0 -180px;
-        }
     }
 
     tr:nth-child(2) .icon {
         background-position: -60px 0;
-
-        &.icon-new {
-            background-position: -60px -180px;
-        }
     }
 
     tr:nth-child(3) .icon {
         background-position: -120px 0;
-
-        &.icon-new {
-            background-position: -120px -180px;
-        }
     }
 
     tr:nth-child(4) .icon {
         background-position: -180px 0;
-
-        &.icon-new {
-            background-position: -180px -180px;
-        }
     }
 }
 
 #idx2 table tbody {
     tr:nth-child(1) .icon {
         background-position: -240px 0;
-
-        &.icon-new {
-            background-position: -240px -180px;
-        }
     }
 
     tr:nth-child(2) .icon {
         background-position: -300px 0;
-
-        &.icon-new {
-            background-position: -300px -180px;
-        }
     }
 
     tr:nth-child(3) .icon {
         background-position: -360px 0;
-
-        &.icon-new {
-            background-position: -360px -180px;
-        }
     }
 
     tr:nth-child(4) .icon {
         background-position: -420px 0;
-
-        &.icon-new {
-            background-position: -420px -180px;
-        }
     }
 
     tr:nth-child(5) .icon {
         background-position: 0 -60px;
-
-        &.icon-new {
-            background-position: 0 -240px;
-        }
     }
 
     tr:nth-child(6) .icon {
         background-position: -60px -60px;
-
-        &.icon-new {
-            background-position: -60px -240px;
-        }
     }
 }
 
 #idx3 table tbody {
     tr:nth-child(1) .icon {
         background-position: -120px -60px;
-
-        &.icon-new {
-            background-position: -120px -240px;
-        }
     }
 
     tr:nth-child(2) .icon {
         background-position: -180px -60px;
-
-        &.icon-new {
-            background-position: -180px -240px;
-        }
     }
 
     tr:nth-child(3) .icon {
         background-position: -240px -60px;
-
-        &.icon-new {
-            background-position: -240px -240px;
-        }
     }
 
     tr:nth-child(4) .icon {
         background-position: -300px -60px;
-
-        &.icon-new {
-            background-position: -300px -240px;
-        }
     }
 
     tr:nth-child(5) .icon {
         background-position: -360px -60px;
-
-        &.icon-new {
-            background-position: -360px -240px;
-        }
     }
 
     tr:nth-child(6) .icon {
         background-position: -420px -60px;
-
-        &.icon-new {
-            background-position: -420px -240px;
-        }
     }
 
     tr:nth-child(7) .icon {
         background-position: 0 -120px;
-
-        &.icon-new {
-            background-position: 0 -300px;
-        }
     }
 }
