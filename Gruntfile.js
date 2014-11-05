@@ -3,6 +3,7 @@ module.exports = function (grunt)
     'use strict';
 
     // Load Grunt plugins.
+    grunt.loadNpmTasks('grunt-combine-media-queries');
     grunt.loadNpmTasks('grunt-contrib-compass');
     grunt.loadNpmTasks('grunt-contrib-compress');
     grunt.loadNpmTasks('grunt-contrib-copy');
