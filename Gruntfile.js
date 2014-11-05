@@ -32,6 +32,17 @@ module.exports = function (grunt)
             }
         },
 
+        // Combine any matching media queries.
+        cmq: {
+            css: {
+                files: {
+                    'tmp/style/Textpattern/sass': [
+                        'tmp/style/Textpattern/sass/*.css'
+                    ]
+                }
+            }
+        },
+
         // Gzip compress the theme files.
         compress: {
             theme: {
@@ -204,7 +215,7 @@ module.exports = function (grunt)
     grunt.registerTask('build', ['jshint', 'theme', 'copy:branding', 'sass', 'uglify', 'compress:theme']);
     grunt.registerTask('default', ['watch']);
     grunt.registerTask('postsetup', ['shell:postsetup']);
-    grunt.registerTask('sass', ['compass', 'cssmin']);
+    grunt.registerTask('sass', ['compass', 'cmq', 'cssmin']);
     grunt.registerTask('setup', ['shell:setup', 'build']);
     grunt.registerTask('test', ['jshint']);
     grunt.registerTask('theme', ['copy:theme', 'replace:theme']);
