@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "fa29ac954218ea6414c5cb2f629f3543",
+    "hash": "90a528d5382d5b3b251690f92e41e53c",
     "packages": [
         {
             "name": "guzzle/guzzle",
@@ -327,21 +327,24 @@
         },
         {
             "name": "pomander/pomander",
-            "version": "0.3.9",
+            "version": "0.4.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tamagokun/pomander.git",
-                "reference": "eef136e8ca751b092a30b55a9d4a9a9bf612ed1a"
+                "reference": "f483b682399c624eb2fe14de33b8443b3d330433"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tamagokun/pomander/zipball/eef136e8ca751b092a30b55a9d4a9a9bf612ed1a",
-                "reference": "eef136e8ca751b092a30b55a9d4a9a9bf612ed1a",
+                "url": "https://api.github.com/repos/tamagokun/pomander/zipball/f483b682399c624eb2fe14de33b8443b3d330433",
+                "reference": "f483b682399c624eb2fe14de33b8443b3d330433",
                 "shasum": ""
             },
             "require": {
-                "jaz303/phake": "*",
-                "phpseclib/phpseclib": "*"
+                "jaz303/phake": "~0.6",
+                "phpseclib/phpseclib": "@stable"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "@stable"
             },
             "bin": [
                 "bin/pom"
@@ -370,7 +373,7 @@
                 "git",
                 "svn"
             ],
-            "time": "2013-10-22 12:40:06"
+            "time": "2014-08-06 13:59:51"
         },
         {
             "name": "symfony/event-dispatcher",
