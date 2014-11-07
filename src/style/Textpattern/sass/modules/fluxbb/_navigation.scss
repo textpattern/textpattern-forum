@@ -18,11 +18,9 @@
 
     a {
         @include box-shadow(inset 0 -0.1538462em 0.2307692em rgba(153, 153, 153, 0.33));
-        @include border-top-right-radius(1em);
-        @include border-top-left-radius(1em);
 
         float: left;
-        margin: 0 0.308em -1px 0;
+        margin: 0 0.23076923076923em -1px 0; // 3px / 13px
         border: 1px solid $color-border;
         padding: 0.5384616em 1em;
         color: $color-text;
@@ -30,7 +28,6 @@
 
         @include breakpoint(max-width $breakpoint-2) {
             @include box-shadow(none);
-            @include border-radius(0);
 
             display: block;
             float: none;
