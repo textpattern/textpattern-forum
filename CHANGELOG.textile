@@ -2,7 +2,7 @@ h1. Changelog
 
 Here's a summary of changes in each update.
 
-h2. Version 0.3.0 - upcoming
+h2. Version 0.3.0 - 2014/11/07
 
 * Fixed: FluxBB v1.5.7. Fixes security vulnerabilities.
 * Fixed: Double-border glitch in IE 11.
