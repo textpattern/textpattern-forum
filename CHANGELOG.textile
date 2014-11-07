@@ -14,6 +14,7 @@ h2. Version 0.3.0 - upcoming
 * Changed: Speed up CSS transitions.
 * Changed: Remove legacy touch icons.
 * Changed: Updated various components and Grunt tasks.
+* Changed: Slightly more room by removing left-padding of tables (helps reduce likelihood of layout spillage on smallest devices).
 * Changed: Various minor CSS improvements and optimisations.
 
 h2. Version 0.2.0 - 2014/01/11
