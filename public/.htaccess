@@ -11,7 +11,7 @@ ErrorDocument 500 /500.html
     Header append X-XSS-Protection "1; mode=block"
     Header append X-Frame-Options "DENY"
     Header append X-Content-Type-Options "nosniff"
-    Header append Content-Security-Policy "default-src 'self'; font-src themes.googleusercontent.com https://themes.googleusercontent.com; img-src 'self' * https://*; style-src 'self' 'unsafe-inline' ajax.googleapis.com fonts.googleapis.com gist.github.com platform.twitter.com https://ajax.googleapis.com https://fonts.googleapis.com https://gist.github.com https://platform.twitter.com; script-src 'self' ajax.googleapis.com www.google.com gist.github.com https://www.google.com https://ajax.googleapis.com https://gist.github.com *.google-analytics.com s3.buysellads.com https://s3.buysellads.com https://*.google-analytics.com https://*.twitter.com; frame-src *.youtube-nocookie.com https://*.youtube-nocookie.com *.twitter.com https://*.twitter.com twitter.com https://twitter.com"
+    Header append Content-Security-Policy "default-src 'self'; font-src fonts.gstatic.com https://fonts.gstatic.com; img-src 'self' * https://*; style-src 'self' 'unsafe-inline' ajax.googleapis.com fonts.googleapis.com gist.github.com platform.twitter.com https://ajax.googleapis.com https://fonts.googleapis.com https://gist.github.com https://platform.twitter.com; script-src 'self' ajax.googleapis.com www.google.com gist.github.com https://www.google.com https://ajax.googleapis.com https://gist.github.com *.google-analytics.com s3.buysellads.com https://s3.buysellads.com https://*.google-analytics.com https://*.twitter.com; frame-src *.youtube-nocookie.com https://*.youtube-nocookie.com *.twitter.com https://*.twitter.com twitter.com https://twitter.com"
 </ifModule>
 
 <IfModule mod_rewrite.c>
