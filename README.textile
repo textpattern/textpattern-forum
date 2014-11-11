@@ -1,6 +1,6 @@
 h1. Textpattern support forum
 
-!https://travis-ci.org/textpattern/textpattern-forum.png?branch=master!:https://travis-ci.org/textpattern/textpattern-forum
+!https://travis-ci.org/textpattern/textpattern-forum.png?branch=master!:https://travis-ci.org/textpattern/textpattern-forum !https://cdn.gruntjs.com/builtwith.png(Built with Grunt)!:http://gruntjs.com/
 
 This repository contains the source code for the "Textpattern support forum":http://forum.textpattern.com/.
 
