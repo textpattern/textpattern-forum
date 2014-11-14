@@ -9,20 +9,18 @@
 /* text highlights */
 .warntext,
 #page-delete .forminfo p {
-    @include border-radius(0.2307692em); // 3px / 13px
-
     display: block;
     border: 1px solid;
+    border-radius: 0.2307692em; // 3px / 13px
     padding: 0.5384615em 1em; // 7px / 13px
 }
 
 .stickytext,
 .closedtext,
 .movedtext {
-    @include border-radius(0.2307692em); // 3px / 13px
-
     margin-right: 0.34em;
     border: 1px solid;
+    border-radius: 0.2307692em; // 3px / 13px
     padding: 1px 0.2307692em; // 3px / 13px
 }
 
@@ -54,10 +52,10 @@
 /* indicate posts participated in */
 .ipost {
     @include hide-text;
-    @include border-radius(50%); // 3px / 13px
 
     display: inline-block;
     margin-right: 0.34em;
+    border-radius: 50%; // 3px / 13px
     width: 0.75em;
     height: 0.75em;
     background-color: #fbcf5c;
