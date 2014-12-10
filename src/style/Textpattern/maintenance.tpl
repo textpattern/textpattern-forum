@@ -2,6 +2,12 @@
 <html lang="<pun_language>" dir="<pun_content_direction>">
 <head>
     <meta charset="utf-8">
+    <link rel="dns-prefetch" href="http://fonts.googleapis.com">
+    <link rel="prefetch" href="style/Textpattern/img/branding/misc/icon-sprite.svg">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700italic">
+    <link rel="stylesheet" href="style/Textpattern/css/main.@@timestamp.css">
+    <link rel="dns-prefetch" href="https://ajax.googleapis.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="application-name" content="Textpattern Forum">
     <meta name="msapplication-TileColor" content="#ffffff">
@@ -15,8 +21,6 @@
     <link rel="icon" sizes="96x96" href="favicon-96x96.png">
     <link rel="icon" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" sizes="16x16" href="favicon-16x16.png">
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700italic">
-    <link rel="stylesheet" href="style/Textpattern/css/main.@@timestamp.css">
     <pun_head>
     <!--[if lt IE 9]>
         <script src="style/Textpattern/js/html5shiv.@@timestamp.js"></script>
