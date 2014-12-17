@@ -6,7 +6,7 @@
     "html5shiv": "3.7.2",
     "jquery-autosize": "1.18.17",
     "jquery.cookie": "1.4.1",
-    "responsive-nav": "1.0.32",
+    "responsive-nav": "1.0.33",
     "requirejs": "2.1.15",
     "textpattern-branding": "*"
   }
