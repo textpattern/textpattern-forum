@@ -25,10 +25,10 @@ body {
 }
 
 /**
- * Visually separate header from body.
+ * Visually separate site header from body.
  */
 
-header {
+.site-header {
     border-bottom: solid 1pt black;
 }
 
@@ -36,10 +36,8 @@ header {
  * Hide unnecessary content from print.
  */
 
-footer,
 nav,
 form,
-[role="complementary"],
 #search-form,
 #brddesc,
 #brdmenu,
@@ -48,6 +46,8 @@ form,
 #brdstats,
 #brdfooter,
 #quickpost,
+.complementary-content,
+.site-footer,
 .linkst,
 .postlinksb,
 .embed-video {

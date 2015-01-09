@@ -77,7 +77,7 @@
 
 
 <!-- Secondary Content -->
-    <div class="container" role="complementary" itemscope itemtype="http://schema.org/WPSideBar">
+    <div class="container complementary-content" role="complementary" itemscope itemtype="http://schema.org/WPSideBar">
 
         <div class="layout--span-1-8">
             <section class="layout--span-1-6 at-break2" role="region">
@@ -116,7 +116,7 @@
             </p>
         </section>
 
-    </div><!-- /role="complementary" -->
+    </div><!-- /.complementary-content -->
 
 
 <!-- Footer -->
