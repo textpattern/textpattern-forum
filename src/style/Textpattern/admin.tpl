@@ -29,12 +29,12 @@
         <link rel="stylesheet" href="style/Textpattern/css/ie8.@@timestamp.css">
     <![endif]-->
 </head>
-<body id="page-admin">
+<body id="page-admin" itemscope itemtype="http://schema.org/WebPage">
     <div class="wrapper">
 
 <!-- Header -->
-        <header role="banner" itemscope itemtype="http://schema.org/Organization">
-            <h1 class="masthead" itemprop="name"><a rel="home" itemprop="url" href="http://textpattern.com/" title="Go to the Textpattern homepage">Textpattern CMS</a></h1>
+        <header class="site-header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
+            <h1 class="masthead" itemscope itemtype="http://schema.org/Organization"><a rel="home" itemprop="url" href="http://textpattern.com/" title="Go to the Textpattern homepage"><span itemprop="name">Textpattern CMS</span></a></h1>
 
             <form id="search-form" role="search" action="http://www.google.com/cse">
                 <input type="search" name="q" size="32" id="search-query" placeholder="Search forum…">
@@ -45,23 +45,23 @@
 
 <!-- Navigation -->
         <div class="nav-container">
-            <nav class="nav-collapse" role="navigation" aria-label="Site navigation">
+            <nav class="site-navigation" role="navigation" aria-label="Site navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
                 <ul>
-                    <li><a href="http://textpattern.com/start">Get started</a></li>
-                    <li><a href="http://textpattern.net/">Documentation</a></li>
-                    <li><a href="http://textpattern.com/themes">Themes</a></li>
-                    <li><a href="http://textpattern.org/">Plugins</a></li>
-                    <li class="active"><a href="./">Forum</a></li>
-                    <li><a href="http://textpattern.com/weblog">Blog</a></li>
-                    <li><a href="http://textpattern.com/about">About</a></li>
+                    <li><a itemprop="url" href="http://textpattern.com/start">Get started</a></li>
+                    <li><a itemprop="url" href="http://textpattern.net/">Documentation</a></li>
+                    <li><a itemprop="url" href="http://textpattern.com/themes">Themes</a></li>
+                    <li><a itemprop="url" href="http://textpattern.org/">Plugins</a></li>
+                    <li class="active"><a itemprop="url" href="./">Forum</a></li>
+                    <li><a itemprop="url" href="http://textpattern.com/weblog">Blog</a></li>
+                    <li><a itemprop="url" href="http://textpattern.com/about">About</a></li>
                 </ul>
             </nav>
         </div>
 
 <!-- Primary Content -->
         <div class="container">
-            <main role="main" aria-label="Main content">
-                <h1 class="accessibility">Textpattern Forum</h1>
+            <main role="main" aria-label="Main content" itemprop="mainContentOfPage">
+                <h1 class="accessibility" itemprop="name">Textpattern Forum</h1>
 
                 <pun_desc>
                 <pun_navlinks>
@@ -77,8 +77,7 @@
 
 
 <!-- Secondary Content -->
-    <div class="container" role="complementary">
-
+    <div class="container" role="complementary" itemscope itemtype="http://schema.org/WPSideBar">
 
         <div class="layout--span-1-8">
             <section class="layout--span-1-6 at-break2" role="region">
@@ -106,7 +105,6 @@
             </section>
         </div>
 
-
         <section class="layout--span-9-12 host-details" role="region">
             <h4 class="accessibility">Host details</h4>
             <p><img class="svg" src="style/Textpattern/img/branding/textpattern-network/textpattern-network-white.svg" alt="Textpattern Network"></p>
@@ -122,7 +120,7 @@
 
 
 <!-- Footer -->
-    <footer role="contentinfo">
+    <footer class="site-footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
         <p class="legal">
             Copyright 2004–@@year The Textpattern Development Team.
             <a href="http://textpattern.com/contact">Contact us</a>.
