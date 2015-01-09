@@ -2,6 +2,14 @@ h1. Changelog
 
 Here's a summary of changes in each update.
 
+h2. Version 0.3.2 - Upcoming
+
+* Added: Extended microdata markup of HTML structure.
+* Added: Meta @theme-color@ tag.
+* Changed: Performance improvements.
+* Changed: Updated jQuery versions.
+* Changed: Updated various build components.
+
 h2. Version 0.3.1 - 2014/11/10
 
 * Fixed: Content-Security-Policy headers were failing to load Google Web Fonts, because Google have recently changed the font serving URL.
