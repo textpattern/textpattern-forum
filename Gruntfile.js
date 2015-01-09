@@ -179,8 +179,7 @@ module.exports = function (grunt)
                         'public/style/Textpattern/js/require.js': ['bower_components/requirejs/require.js'],
                         'public/style/Textpattern/js/cookie.js': ['bower_components/jquery.cookie/jquery.cookie.js'],
                         'public/style/Textpattern/js/responsivenav.js': ['bower_components/responsive-nav/responsive-nav.js'],
-                        'public/style/Textpattern/js/autosize.js': ['bower_components/jquery-autosize/jquery.autosize.js'],
-                        'public/style/Textpattern/js/html5shiv.js': ['bower_components/html5shiv/dist/html5shiv.js']
+                        'public/style/Textpattern/js/autosize.js': ['bower_components/jquery-autosize/jquery.autosize.js']
                     },
                     {
                         expand: true,
