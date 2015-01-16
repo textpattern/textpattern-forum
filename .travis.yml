@@ -3,22 +3,21 @@
 language: php
 php:
   - "5.5"
-
 before_install:
   - bundle --version
   - composer --version
   - git --version
   - node --version
   - npm --version
-
 before_script:
   - npm install -g bower
   - bundle install
   - bower install
   - composer install
   - npm install
-
 script:
   - ./vendor/bin/phpcs --standard=PSR1,PSR2 src
   - grunt test --verbose
   - grunt setup --verbose
+notifications:
+  slack: textpattern:QUmLD6S3qbRyTcIT5BjZMXuk
