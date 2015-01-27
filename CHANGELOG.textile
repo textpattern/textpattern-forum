@@ -4,6 +4,7 @@ Here's a summary of changes in each update.
 
 h2. Version 0.3.2 - Upcoming
 
+* Fixed: FluxBB v1.5.8. Fixes bugs, adds an @addons@ directory for rudimentary plugin support, plus other minor improvements.
 * Added: Extended microdata markup of HTML structure.
 * Added: Meta @theme-color@ tag.
 * Changed: Performance improvements.
