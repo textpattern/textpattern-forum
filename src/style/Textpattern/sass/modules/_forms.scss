@@ -271,3 +271,15 @@ textarea[disabled] {
     text-shadow: none !important;
     cursor: default !important; /* 3 */
 }
+
+/**
+ * Highlighting for form validation errors.
+ */
+
+:invalid,
+:-moz-submit-invalid,
+:-moz-ui-invalid {
+    @include box-shadow(0 0 4px 2px $color-error-text);
+
+    border-color: $color-error-text;
+}
