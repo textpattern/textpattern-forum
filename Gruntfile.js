@@ -80,6 +80,9 @@ module.exports = function (grunt)
         // Concatenate, minify and copy CSS files to `public/`.
         cssmin: {
             main: {
+                options: {
+                    rebase: false
+                },
                 files: {
                     'public/style/Textpattern/css/main.css': ['tmp/style/Textpattern/sass/main.css'],
                     'public/style/Textpattern/css/ie8.css': ['tmp/style/Textpattern/sass/ie8.css']
