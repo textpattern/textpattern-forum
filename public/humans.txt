@@ -1,69 +1,73 @@
-/* the humans responsible & colophon */
-/* humanstxt.org */
+# http://humanstxt.org
+# The humans responsible and
+# technology colophon
 
-/* TEAM */
-    Developer: Team Textpattern
-    Site: http://textpattern.com
-    Twitter: http://twitter.com/textpattern
-    GitHub: https://github.com/textpattern
-    Location: Everywhere
+# TEAM
 
-/* SITE */
-    Standards: HTML5, CSS3
-    Server: Apache, MySQL, PHP
-    Components:
-        FluxBB: https://fluxbb.org
-        PHP-Textile: https://github.com/textile/php-textile
-        jQuery: http://jquery.com
-        Require.js: http://requirejs.org
-        Google Code Prettify: https://code.google.com/p/google-code-prettify/
-        jQuery.cookie: https://github.com/carhartl/jquery-cookie
-        Responsive Nav: http://responsive-nav.com
-        Autosize: https://github.com/jackmoore/autosize
-    Software:
-        Node.js: http://nodejs.org
-        Grunt.js: http://gruntjs.com
-        Bower: http://bower.io
-        Composer: http://getcomposer.org
-        Compass: http://compass-style.org
-        git: http://git-scm.com
-        grunt-contrib-compass: https://github.com/gruntjs/grunt-contrib-compass
-        grunt-contrib-compress: https://github.com/gruntjs/grunt-contrib-compress
-        grunt-contrib-copy: https://github.com/gruntjs/grunt-contrib-copy
-        grunt-contrib-cssmin: https://github.com/gruntjs/grunt-contrib-cssmin
-        grunt-contrib-jshint: https://github.com/gruntjs/grunt-contrib-jshint
-        grunt-contrib-uglify: https://github.com/gruntjs/grunt-contrib-uglify
-        grunt-contrib-watch: https://github.com/gruntjs/grunt-contrib-watch
-        grunt-replace: https://github.com/outaTiME/grunt-replace
-        grunt-shell: https://github.com/sindresorhus/grunt-shell
-    Source: https://github.com/textpattern/textpattern-forum
+  Developer: Team Textpattern
+  Site: http://textpattern.com
+  Twitter: http://twitter.com/textpattern
+  GitHub: https://github.com/textpattern
+  Location: Everywhere
+
+# TECHNOLOGY COLOPHON
+
+  Standards: HTML5, CSS3
+  Server: Apache, MySQL, PHP
+  Components:
+    FluxBB: https://fluxbb.org
+    PHP-Textile: https://github.com/textile/php-textile
+    jQuery: http://jquery.com
+    Require.js: http://requirejs.org
+    Autosize: https://github.com/jackmoore/autosize
+    Google Code Prettify: https://github.com/tcollard/google-code-prettify
+    jQuery.cookie: https://github.com/carhartl/jquery-cookie
+    Responsive Nav: https://github.com/viljamis/responsive-nav.js
+  Software:
+    Node.js: http://nodejs.org
+    Grunt.js: http://gruntjs.com
+    Bower: http://bower.io
+    Composer: http://getcomposer.org
+    Compass: http://compass-style.org
+    git: http://git-scm.com
+    grunt-combine-media-queries: https://github.com/johncashmore/grunt-combine-media-queries
+    grunt-contrib-compass: https://github.com/gruntjs/grunt-contrib-compass
+    grunt-contrib-compress: https://github.com/gruntjs/grunt-contrib-compress
+    grunt-contrib-copy: https://github.com/gruntjs/grunt-contrib-copy
+    grunt-contrib-cssmin: https://github.com/gruntjs/grunt-contrib-cssmin
+    grunt-contrib-jshint: https://github.com/gruntjs/grunt-contrib-jshint
+    grunt-contrib-uglify: https://github.com/gruntjs/grunt-contrib-uglify
+    grunt-contrib-watch: https://github.com/gruntjs/grunt-contrib-watch
+    grunt-replace: https://github.com/outaTiME/grunt-replace
+    grunt-shell: https://github.com/sindresorhus/grunt-shell
+  Source: https://github.com/textpattern/textpattern-forum
 
 
-                .ttTTttx
-               xPXTTTTTtt-                     xppx
-             pPPTTTTTTTTXxx                  px    xp
-           .tPTTTTTTTTTTTTt-               .t-      .t-
-          xPXTTTTTTTTTTTTTp               px          xx
-        -tPTTTTTTTTTTTTTt                -x          -t
-      .tPTTTTTTTTTTTTTT.                -x         .t-
-     xtXTTTTTTTTTTTTTTTt-              xx         xx
-    PxTTTTTTTTTTTTTTTt..-t.          -t.     .pttx.
-    xxXTTTTTTTTTTTTTPpp.- px        xp     xXTt-
-     -tPTTTTTTTTxTTTXppp... xx    px     pTTx
-       xtPTTTTf   tTTTxp-... .t-.t.    .XTt.
-        .xxXX-     -XTTPxp.- ..Pp     tTX-
-                     tTTTtp--xt     pTTx
-                      -XTTXtt-    .PTP.
-                        xTTp     xTTTx
-                        pt     pTTTP-.t.
-                      .t-    .PTTTP-   xx
-                     xx     xTTTTTXp-.  .t.
-                   -t.    -XTx xTTTTt--.  px
-                 .t-    .PTP.   .tTTTTx--.. xp
-                xx     xTTp       .PTTTP--.  -t.
-              -t.    -XTt           pTTTTt.-.  px
-            .t-   ..PTX.              xTTTTp--.. xp
-           px    .xTTp                 .PTTTP----..t-
-         px.   .-XTt                     pTTTTx.p.. -t.
-        -p.    tTX-                        tTTTXp-p.. px
-         -xxppTT.                            -xTTP--.-p
+            .ttTTttx
+           xPXTTTTTtt-                     xppx
+         pPPTTTTTTTTXxx                  px    xp
+       .tPTTTTTTTTTTTTt-               .t-      .t-
+      xPXTTTTTTTTTTTTTp               px          xx
+    -tPTTTTTTTTTTTTTt                -x          -t
+  .tPTTTTTTTTTTTTTT.                -x         .t-
+ xtXTTTTTTTTTTTTTTTt-              xx         xx
+PxTTTTTTTTTTTTTTTt..-t.          -t.     .pttx.
+xxXTTTTTTTTTTTTTPpp.- px        xp     xXTt-
+ -tPTTTTTTTTxTTTXppp... xx    px     pTTx
+   xtPTTTTf   tTTTxp-... .t-.t.    .XTt.
+    .xxXX-     -XTTPxp.- ..Pp     tTX-
+                 tTTTtp--xt     pTTx
+                  -XTTXtt-    .PTP.
+                    xTTp     xTTTx
+                    pt     pTTTP-.t.
+                  .t-    .PTTTP-   xx
+                 xx     xTTTTTXp-.  .t.
+               -t.    -XTx xTTTTt--.  px
+             .t-    .PTP.   .tTTTTx--.. xp
+            xx     xTTp       .PTTTP--.  -t.
+          -t.    -XTt           pTTTTt.-.  px
+        .t-   ..PTX.              xTTTTp--.. xp
+       px    .xTTp                 .PTTTP----..t-
+     px.   .-XTt                     pTTTTx.p.. -t.
+    -p.    tTX-                        tTTTXp-p.. px
+     -xxppTT.                            -xTTP--.-p

@@ -4,6 +4,8 @@
 
     document.documentElement.className = 'js';
 
+    // Detect whether jQuery v2 features required, otherwise use jQuery v1 for higher compatibility.
+
     var jqueryVersion = '1.11.2';
 
     if (typeof JSON !== 'undefined' && 'querySelector' in document && 'addEventListener' in window) {
@@ -21,6 +23,8 @@
         }
     });
 
+    // Detect whether browser supports SVG format.
+
     define('feature', function ()
     {
         return {
@@ -31,12 +35,21 @@
         };
     });
 
+    // Detect whether user enabled 'Do No Track' in their browser, and honour it.
+
     define('track', function ()
     {
         return {
             allow : navigator.doNotTrack !== 'yes' && navigator.doNotTrack !== '1' && navigator.doNotTrack !== 1
         };
     });
+
+    /**
+     * Auto-growing textareas, via 'Autosize'.
+     *
+     * Allows dynamic resizing of textarea height, so that it grows as based on
+     * visitor input. More info - https://github.com/jackmoore/autosize.
+     */
 
     define('growfields', ['jquery'], function ($)
     {
@@ -504,7 +517,12 @@
         });
     });
 
-    // Syntax highlighting.
+    /**
+     * Syntax highlighting, via 'Google Code Prettify'.
+     *
+     * Automatically applies syntax highlighting to `pre code` HTML elements.
+     * More info - https://github.com/tcollard/google-code-prettify.
+     */
 
     require(['jquery'], function ($)
     {
@@ -561,7 +579,11 @@
         });
     });
 
-    // Responsive navigation.
+    /**
+     * Responsive navigation menu, via 'Responsive Nav'.
+     *
+     * More info - https://github.com/viljamis/responsive-nav.js.
+     */
 
     require(['responsivenav'], function ()
     {
@@ -572,7 +594,11 @@
         });
     });
 
-    // EU-cookie disclaimer.
+    /**
+     * EU-cookie disclaimer, via 'jquery.cookie'.
+     *
+     * More info - https://github.com/carhartl/jquery-cookie.
+     */
 
     require(['jquery', 'cookie'], function ($)
     {
@@ -709,7 +735,7 @@
     require(['track'], function(track)
     {
         if (track.allow) {
-            // Analytics.
+            // Google Analytics.
 
             window._gaq = window._gaq || [];
             window._gaq.push(['_setAccount', 'UA-191562-28']);
