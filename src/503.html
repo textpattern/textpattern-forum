@@ -42,7 +42,7 @@
 <!-- Header -->
         <header class="site-header" itemscope itemtype="http://schema.org/Organization">
             <h1 class="masthead" itemprop="name"><a rel="home" itemprop="url" href="http://textpattern.com/" title="Go to the Textpattern homepage">Textpattern CMS</a></h1>
-            <meta itemprop="logo" content="http://textpattern.com/assets/img/textpattern.svg">
+            <meta itemprop="logo" content="http://textpattern.com/assets/img/branding/textpattern/textpattern.svg">
 
             <div itemscope itemtype="http://schema.org/WebSite">
                 <meta itemprop="url" content="http://forum.textpattern.com/">
