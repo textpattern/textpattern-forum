@@ -46,9 +46,9 @@
 
             <div itemscope itemtype="http://schema.org/WebSite">
                 <meta itemprop="url" content="http://forum.textpattern.com/">
-                <form id="search-form" action="http://www.google.com/cse" itemprop="potentialAction" itemscope itemtype="http://schema.org/SearchAction">
-                    <meta itemprop="target" content="http://www.google.com/cse?q={q}&cx={cx}&ie={ie}">
-                    <input type="search" name="q" size="32" id="search-query" placeholder="Search forum…">
+                <form class="search-form" action="http://www.google.com/cse" itemprop="potentialAction" itemscope itemtype="http://schema.org/SearchAction">
+                    <meta itemprop="target" content="http://www.google.com/cse?q={q}&amp;cx={cx}&amp;ie={ie}">
+                    <input type="search" name="q" size="32" placeholder="Search forum…" itemprop="query-input">
                     <input type="hidden" name="cx" value="013284010981475036739:4p3oc9ihitk">
                     <input type="hidden" name="ie" value="UTF-8">
                 </form>
