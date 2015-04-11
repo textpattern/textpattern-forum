@@ -48,8 +48,7 @@
                 <input type="search" name="q" size="32" placeholder="Search forum…">
                 <input type="hidden" name="cx" value="013284010981475036739:4p3oc9ihitk">
                 <input type="hidden" name="ie" value="UTF-8">
-            </form>rm>
-            </div>
+            </form>
         </header>
 
 <!-- Navigation -->
