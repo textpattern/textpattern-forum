@@ -44,12 +44,9 @@
         };
     });
 
-    /**
-     * Auto-growing textareas, via 'Autosize'.
-     *
-     * Allows dynamic resizing of textarea height, so that it grows as based on
-     * visitor input. More info - https://github.com/jackmoore/autosize.
-     */
+    // Auto-growing textareas, via 'Autosize'.
+    // Allows dynamic resizing of textarea height, so that it grows as based on
+    // visitor input. More info - https://github.com/jackmoore/autosize.
 
     define('growfields', ['jquery'], function ($)
     {
@@ -517,12 +514,9 @@
         });
     });
 
-    /**
-     * Syntax highlighting, via 'Google Code Prettify'.
-     *
-     * Automatically applies syntax highlighting to `pre code` HTML elements.
-     * More info - https://github.com/tcollard/google-code-prettify.
-     */
+    // Syntax highlighting, via 'Google Code Prettify'.
+    // Automatically applies syntax highlighting to `pre code` HTML elements.
+    // More info - https://github.com/tcollard/google-code-prettify.
 
     require(['jquery'], function ($)
     {
@@ -579,11 +573,8 @@
         });
     });
 
-    /**
-     * Responsive navigation menu, via 'Responsive Nav'.
-     *
-     * More info - https://github.com/viljamis/responsive-nav.js.
-     */
+    // Responsive navigation menu, via 'Responsive Nav'.
+    // More info - https://github.com/viljamis/responsive-nav.js.
 
     require(['responsivenav'], function ()
     {
@@ -594,11 +585,8 @@
         });
     });
 
-    /**
-     * EU-cookie disclaimer, via 'jquery.cookie'.
-     *
-     * More info - https://github.com/carhartl/jquery-cookie.
-     */
+    // EU-cookie disclaimer, via 'jquery.cookie'.
+    // More info - https://github.com/carhartl/jquery-cookie.
 
     require(['jquery', 'cookie'], function ($)
     {
@@ -623,7 +611,7 @@
 
     require(['jquery'], function ($)
     {
-        /* jshint camelcase: false */
+        // jshint camelcase: false
 
         var widget = $('.recaptcha-widget');
 
