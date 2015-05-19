@@ -12,6 +12,7 @@ module.exports = function (grunt)
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-replace');
+    grunt.loadNpmTasks('grunt-scss-lint');
     grunt.loadNpmTasks('grunt-shell');
 
     grunt.initConfig({
@@ -147,6 +148,18 @@ module.exports = function (grunt)
             }
         },
 
+        // Validate Sass files via scss-lint.
+        scsslint: {
+            all: ['src/style/Textpattern/sass/**/*.scss'],
+            options: {
+                bundleExec: true,
+                colorizeOutput: false,
+                config: '.scss-lint.yml',
+                force: true,
+                reporterOutput: 'scss-lint-report.xml'
+            }
+        },
+
         // Run forum setup and postsetup scripts.
         shell: {
             setup: {
@@ -217,7 +230,7 @@ module.exports = function (grunt)
     grunt.registerTask('build', ['jshint', 'theme', 'copy:branding', 'sass', 'uglify', 'compress:theme']);
     grunt.registerTask('default', ['watch']);
     grunt.registerTask('postsetup', ['shell:postsetup']);
-    grunt.registerTask('sass', ['compass', 'cmq', 'cssmin']);
+    grunt.registerTask('sass', ['scsslint', 'compass', 'cmq', 'cssmin']);
     grunt.registerTask('setup', ['shell:setup', 'build']);
     grunt.registerTask('test', ['jshint']);
     grunt.registerTask('theme', ['copy:theme', 'replace:theme']);
