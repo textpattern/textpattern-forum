@@ -23,29 +23,29 @@
 
 @media screen {
 
-@import "core/layout";
-@import "modules/layout";
-@import "modules/navigation";
-@import "modules/links";
-@import "modules/typography";
-@import "modules/embedded-content";
-@import "modules/tables";
-@import "modules/lists";
-@import "modules/forms";
-@import "modules/buttons";
-@import "modules/alerts";
-@import "modules/cookie-disclaimer";
-@import "modules/code-prettify";
-@import "modules/social";
-@import "modules/misc";
-@import "modules/http-errors";
+    @import "core/layout";
+    @import "modules/layout";
+    @import "modules/navigation";
+    @import "modules/links";
+    @import "modules/typography";
+    @import "modules/embedded-content";
+    @import "modules/tables";
+    @import "modules/lists";
+    @import "modules/forms";
+    @import "modules/buttons";
+    @import "modules/alerts";
+    @import "modules/cookie-disclaimer";
+    @import "modules/code-prettify";
+    @import "modules/social";
+    @import "modules/misc";
+    @import "modules/http-errors";
 
-@import "modules/fluxbb/layout";
-@import "modules/fluxbb/layout_admin";
-@import "modules/fluxbb/navigation";
-@import "modules/fluxbb/indicators";
-@import "modules/fluxbb/pagination";
-@import "modules/fluxbb/icons";
+    @import "modules/fluxbb/layout";
+    @import "modules/fluxbb/layout_admin";
+    @import "modules/fluxbb/navigation";
+    @import "modules/fluxbb/indicators";
+    @import "modules/fluxbb/pagination";
+    @import "modules/fluxbb/icons";
 
 }
 
@@ -57,6 +57,6 @@
 
 @media print {
 
-@import "core/print";
+    @import "core/print";
 
 }
