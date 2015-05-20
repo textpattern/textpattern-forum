@@ -78,7 +78,7 @@ a.button.button-donate {
     @include gradient-linear(#555555, #444444);
 
     border-color: #222222;
-    color: #ffffff;
+    color: $color-text-inverse;
     font-weight: bold;
 
     &:hover {
@@ -91,7 +91,7 @@ a.button.button-donate {
         @include gradient-linear(darken(#444444, 4%), darken(#555555, 4%));
 
         border-color: #111111;
-        color: darken(#ffffff, 10%);
+        color: darken($color-text-inverse, 10%);
     }
 
     &:focus {

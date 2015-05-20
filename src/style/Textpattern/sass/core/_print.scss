@@ -5,7 +5,7 @@
 * {
     @include box-shadow(none !important);
 
-    color: $color-text-print !important; /* 1 */
+    color: $color-text-print !important;
     text-shadow: none !important;
     background: transparent !important;
 }
@@ -15,11 +15,11 @@
  */
 
 body {
+    margin: 0.5cm;
+    padding: 2em 5em;
     font-family: $font-print;
     font-size: 8pt;
     line-height: 1.5;
-    margin: 0.5cm;
-    padding: 2em 5em;
 }
 
 /**
@@ -296,6 +296,7 @@ caption {
 
 thead {
     display: table-header-group;
+
     th {
         border-top: solid 1pt $color-text-print;
     }
