@@ -19,5 +19,3 @@ script:
   - ./vendor/bin/phpcs --standard=PSR1,PSR2 src
   - grunt test --verbose
   - grunt setup --verbose
-notifications:
-  slack: textpattern:QUmLD6S3qbRyTcIT5BjZMXuk
