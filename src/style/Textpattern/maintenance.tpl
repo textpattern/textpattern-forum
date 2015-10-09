@@ -23,10 +23,6 @@
     <link rel="icon" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" sizes="16x16" href="favicon-16x16.png">
     <pun_head>
-    <!--[if lt IE 9]>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
-        <link rel="stylesheet" href="style/Textpattern/css/ie8.@@timestamp.css">
-    <![endif]-->
 </head>
 <body id="page-maintenance" itemscope itemtype="http://schema.org/WebPage">
     <meta itemprop="accessibilityControl" content="fullKeyboardControl">

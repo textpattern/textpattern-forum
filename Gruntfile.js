@@ -85,8 +85,7 @@ module.exports = function (grunt)
                     rebase: false
                 },
                 files: {
-                    'public/style/Textpattern/css/main.css': ['tmp/style/Textpattern/sass/main.css'],
-                    'public/style/Textpattern/css/ie8.css': ['tmp/style/Textpattern/sass/ie8.css']
+                    'public/style/Textpattern/css/main.css': ['tmp/style/Textpattern/sass/main.css']
                 }
             }
         },
