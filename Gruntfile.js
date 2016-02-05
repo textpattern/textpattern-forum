@@ -2,21 +2,28 @@ module.exports = function (grunt)
 {
     'use strict';
 
-    // Load Grunt plugins.
-    grunt.loadNpmTasks('grunt-combine-media-queries');
-    grunt.loadNpmTasks('grunt-contrib-compass');
-    grunt.loadNpmTasks('grunt-contrib-compress');
-    grunt.loadNpmTasks('grunt-contrib-copy');
-    grunt.loadNpmTasks('grunt-contrib-cssmin');
-    grunt.loadNpmTasks('grunt-contrib-jshint');
-    grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-replace');
-    grunt.loadNpmTasks('grunt-scss-lint');
-    grunt.loadNpmTasks('grunt-shell');
+    // Load all Grunt tasks.
+    require('load-grunt-tasks')(grunt);
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
+
+        // Set up paths.
+        paths: {
+            src: {
+                sass: 'src/style/Textpattern/sass/',
+                js: 'src/style/Textpattern/js/'
+            },
+            tmp: {
+                css: 'tmp/assets/css/',
+                js: 'tmp/assets/js/'
+            },
+            dest: {
+                css: 'public/assets/css/',
+                js: 'public/assets/js/',
+                templates: 'public/templates/'
+            }
+        },
 
         // Set up timestamp.
         opt : {
@@ -147,16 +154,12 @@ module.exports = function (grunt)
             }
         },
 
-        // Validate Sass files via scss-lint.
-        scsslint: {
-            all: ['src/style/Textpattern/sass/**/*.scss'],
+        // Validate Sass files via sass-lint.
+        sasslint: {
             options: {
-                bundleExec: true,
-                colorizeOutput: false,
-                config: '.scss-lint.yml',
-                force: true,
-                reporterOutput: 'scss-lint-report.xml'
-            }
+                configFile: '.sass-lint.yml'
+            },
+            target: ['<%= paths.src.sass %>**/*.scss']
         },
 
         // Run forum setup and postsetup scripts.
@@ -189,12 +192,12 @@ module.exports = function (grunt)
 
                 files: [
                     {
-                        'public/style/Textpattern/js/main.js': ['src/style/Textpattern/js/main.js'],
-                        'public/style/Textpattern/js/prettify.js': ['bower_components/google-code-prettify/src/prettify.js'],
-                        'public/style/Textpattern/js/require.js': ['bower_components/requirejs/require.js'],
-                        'public/style/Textpattern/js/cookie.js': ['bower_components/jquery.cookie/jquery.cookie.js'],
-                        'public/style/Textpattern/js/responsivenav.js': ['bower_components/responsive-nav/responsive-nav.js'],
-                        'public/style/Textpattern/js/autosize.js': ['bower_components/jquery-autosize/jquery.autosize.js']
+                        '<%= paths.dest.js %>main.js': ['<%= paths.src.js %>main.js'],
+                        '<%= paths.dest.js %>autosize.js': ['node_modules/autosize/dist/autosize.js'],
+                        '<%= paths.dest.js %>cookie.js': ['node_modules/jquery.cookie/jquery.cookie.js'],
+                        '<%= paths.dest.js %>prettify.js': ['bower_components/google-code-prettify/src/prettify.js'],
+                        '<%= paths.dest.js %>require.js': ['node_modules/requirejs/require.js'],
+                        '<%= paths.dest.js %>responsivenav.js': ['node_modules/responsive-nav/responsive-nav.js']
                     },
                     {
                         expand: true,
@@ -209,29 +212,26 @@ module.exports = function (grunt)
         // Directories watched and tasks performed by invoking `grunt watch`.
         watch: {
             sass: {
-                files: ['src/style/*.scss', 'src/style/*/sass/**'],
-                tasks: ['sass', 'compress:theme']
+                files: '<%= paths.src.sass %>**/*.scss',
+                tasks: 'css'
             },
-
+            js: {
+                files: '<%= paths.src.js %>**',
+                tasks: ['jshint', 'uglify', 'compress:theme']
+            },
             theme: {
                 files: ['!src/style/*/sass/**', '!src/style/*/js/**', 'src/style/*/**', 'src/*.html'],
                 tasks: ['theme']
-            },
-
-            js: {
-                files: 'src/style/*/js/**',
-                tasks: ['jshint', 'uglify', 'compress:theme']
             }
         }
     });
 
     // Register tasks.
-    grunt.registerTask('build', ['jshint', 'theme', 'copy:branding', 'sass', 'uglify', 'compress:theme']);
+    grunt.registerTask('build', ['jshint', 'theme', 'copy:branding', 'css', 'uglify', 'compress:theme']);
     grunt.registerTask('default', ['watch']);
     grunt.registerTask('postsetup', ['shell:postsetup']);
-    grunt.registerTask('sass', ['scsslint', 'compass', 'cmq', 'cssmin']);
+    grunt.registerTask('css', ['sasslint', 'sass', 'cmq', 'postcss', 'cssmin']);
     grunt.registerTask('setup', ['shell:setup', 'build']);
-    grunt.registerTask('test', ['jshint']);
     grunt.registerTask('theme', ['copy:theme', 'replace:theme']);
     grunt.registerTask('travis', ['jshint', 'compass']);
 };
