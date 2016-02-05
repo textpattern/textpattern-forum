@@ -19,21 +19,13 @@ section {
 }
 
 /**
- * Address `[hidden]` styling not present in IE 9/10.
- */
-
-[hidden] {
-    display: none;
-}
-
-/**
- * Remove tap delay in IE 10+ (and proposed for other browsers).
+ * Remove tap delay in modern browsers.
  */
 
 a,
 input,
 button {
-    @include touch-action;
+    touch-action: none;
 }
 
 
@@ -53,8 +45,8 @@ nav ol,
 .clearfix,
 .container {
     &:after {
-        content: "";
         display: table;
         clear: both;
+        content: "";
     }
 }

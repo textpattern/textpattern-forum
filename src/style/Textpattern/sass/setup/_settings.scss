@@ -1,0 +1,37 @@
+// font families
+
+$font-serif:          "PT Serif", Georgia, serif !default;
+$font-sans-serif:     Helvetica, Arial, sans-serif !default;
+$font-form:           Helvetica, Arial, sans-serif !default;
+$font-code:           Menlo, Consolas, Monaco, monospace !default;
+$font-print:          "Helvetica Neue", sans-serif !default;
+
+// typography grid
+
+$base-font-size:      13px !default;
+$base-line-height:    20px !default;
+
+// layout grid
+
+$grid-gutter:                 2em;          // 26px / 13px
+$container-max-width:         78.7692308em; // 1024px / 13px
+
+// breakpoints
+
+$breakpoint-3:                64em;         // 832px / 13px
+$breakpoint-2:                46.6153846em; // 606px / 13px
+$breakpoint-1:                30em;         // 390px / 13px
+
+// borders
+
+$border-radius:       0.5em !default;
+
+// shadows
+
+$default-box-shadow-color:    rgba(#000000, 0.2);
+$default-box-shadow-h-offset: 0;
+$default-box-shadow-v-offset: 1px;
+$default-box-shadow-blur:     2px;
+$inset-highlighting:  inset 0 1px 0 rgba(#ffffff, 0.25) !default;
+$text-shadow-light:   1px 1px 0 rgba(#ffffff, 0.5) !default;
+$text-shadow-dark:    -1px -1px 0 rgba(#000000, 0.1) !default;
