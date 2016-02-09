@@ -2,6 +2,40 @@ h1. Changelog
 
 Here's a summary of changes in each update.
 
+h2. Version 0.4.0 - Upcoming
+
+* Fixed: FluxBB v1.5.9. Bug fixes and security improvements.
+* Changed: New URL for 'themes'.
+* Changed: Overhauled the build process.
+* Changed: Removed Ruby from build.
+* Changed: Removed Compass from build.
+* Changed: Removed Toolkit from build.
+
+h2. Version 0.3.6 - 2015/10/12
+
+* Fixed: Search form should have an ARIA role.
+* Fixed: accessibilityHazard spec has changed.
+* Changed: Dropped support for Internet Explorer 8.
+* Changed: TXP Tips is now Textpattern Tips.
+* Changed: minor CSS code optimisations.
+
+h2. Version 0.3.5 - 2015/04/11
+
+* Fixed: Search microdata errors.
+* Changed: New URL for where the logo will be in new .com site.
+
+h2. Version 0.3.4 - 2015/04/11
+
+* Changed: Improvements to ARIA and microdata.
+* Changed: Update high resolution media query syntax.
+* Changed: Updated dependencies.
+* Added: editorconfig file.
+* Added: More comments in build files.
+
+h2. Version 0.3.3 - 2015/04/07
+
+* Changed: Updated dependencies.
+
 h2. Version 0.3.2 - 2015/01/29
 
 * Fixed: FluxBB v1.5.8. Fixes bugs, adds an @addons@ directory for rudimentary plugin support, plus other minor improvements.
