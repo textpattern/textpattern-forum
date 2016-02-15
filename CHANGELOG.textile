@@ -10,6 +10,7 @@ h2. Version 0.4.0 - Upcoming
 * Changed: Removed Ruby from build.
 * Changed: Removed Compass from build.
 * Changed: Removed Toolkit from build.
+* Removed: meta data for apple-touch-icons/Windows tiles no longer required.
 
 h2. Version 0.3.6 - 2015/10/12
 
