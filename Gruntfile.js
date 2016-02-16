@@ -69,10 +69,10 @@ module.exports = function (grunt)
         copy: {
             branding: {
                 files: [
-                    {expand: true, cwd: 'bower_components/textpattern-branding/assets/img/', src: ['**'], dest: 'public/style/Textpattern/img/branding/'},
-                    {expand: true, cwd: 'bower_components/textpattern-branding/assets/img/apple-touch-icon/textpattern/', src: ['**'], dest: 'public/'},
-                    {expand: true, cwd: 'bower_components/textpattern-branding/assets/img/favicon/textpattern/', src: ['**'], dest: 'public/'},
-                    {expand: true, cwd: 'bower_components/textpattern-branding/assets/img/windows-site-tile/textpattern/', src: ['**'], dest: 'public/'}
+                    {expand: true, cwd: 'node_modules/textpattern-branding/assets/img/', src: ['**'], dest: 'public/style/Textpattern/img/branding/'},
+                    {expand: true, cwd: 'node_modules/textpattern-branding/assets/img/apple-touch-icon/textpattern/', src: ['**'], dest: 'public/'},
+                    {expand: true, cwd: 'node_modules/textpattern-branding/assets/img/favicon/textpattern/', src: ['**'], dest: 'public/'},
+                    {expand: true, cwd: 'node_modules/textpattern-branding/assets/img/windows-site-tile/textpattern/', src: ['**'], dest: 'public/'}
                 ]
             },
 
