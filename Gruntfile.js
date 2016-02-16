@@ -97,6 +97,20 @@ module.exports = function (grunt)
             }
         },
 
+        // Report on any available updates for dependencies.
+        devUpdate: {
+            main: {
+                options: {
+                    updateType: 'report',
+                    reportUpdated: false, // Don't report up-to-date packages.
+                    packages: {
+                        dependencies: true,
+                        devDependencies: true
+                    }
+                }
+            }
+        },
+
         // Check code quality of Gruntfile.js and site-specific JavaScript using JSHint.
         jshint: {
             files: ['Gruntfile.js', 'src/style/*/js/*.js'],

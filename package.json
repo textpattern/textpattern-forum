@@ -2,22 +2,22 @@
   "name": "textpattern-forum",
   "version": "0.0.0",
   "devDependencies": {
-    "autoprefixer": "6.3.1",
+    "autoprefixer": "6.3.3",
     "breakpoint-sass": "2.6.1",
+    "css-mqpacker": "4.0.0",
+    "cssnano": "3.5.2",
     "eyeglass": "0.8.2",
     "grunt": "~0.4",
     "grunt-cli": "~0.1",
     "grunt-concurrent": "2.1.0",
-    "grunt-combine-media-queries": "1.0.19",
-    "grunt-contrib-clean": "0.7.0",
-    "grunt-contrib-compress": "0.14.0",
+    "grunt-contrib-clean": "1.0.0",
+    "grunt-contrib-compress": "1.0.0",
     "grunt-contrib-copy": "0.8.2",
-    "grunt-contrib-cssmin": "0.14.0",
     "grunt-contrib-jshint": "0.12.0",
     "grunt-contrib-uglify": "0.11.1",
     "grunt-contrib-watch": "0.6.1",
     "grunt-dev-update": "1.4.0",
-    "grunt-postcss": "0.7.1",
+    "grunt-postcss": "0.7.2",
     "grunt-replace": "0.11.0",
     "grunt-sass": "1.1.0",
     "grunt-sass-lint": "0.1.0",
@@ -32,8 +32,7 @@
     "jquery.cookie": "1.4.1",
     "prismjs": "1.4.1",
     "requirejs": "2.1.22",
-    "responsive-nav": "1.0.39",
-    "slick-carousel": "1.5.9"
+    "responsive-nav": "1.0.39"
   },
   "scripts": {
     "test": "grunt travis --verbose"
