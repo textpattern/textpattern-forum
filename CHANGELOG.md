@@ -1,10 +1,11 @@
-h1. Changelog
+# Changelog
 
 Here's a summary of changes in each update.
 
-h2. Version 0.4.0 - Upcoming
+## Version 1.0.0 - Upcoming
 
 * Fixed: FluxBB v1.5.9. Bug fixes and security improvements.
+* Changed: New URL for 'documentation'.
 * Changed: New URL for 'themes'.
 * Changed: Overhauled the build process.
 * Changed: Removed Ruby from build.
@@ -12,7 +13,7 @@ h2. Version 0.4.0 - Upcoming
 * Changed: Removed Toolkit from build.
 * Removed: meta data for apple-touch-icons/Windows tiles no longer required.
 
-h2. Version 0.3.6 - 2015/10/12
+## Version 0.3.6 - 2015/10/12
 
 * Fixed: Search form should have an ARIA role.
 * Fixed: accessibilityHazard spec has changed.
@@ -20,12 +21,12 @@ h2. Version 0.3.6 - 2015/10/12
 * Changed: TXP Tips is now Textpattern Tips.
 * Changed: minor CSS code optimisations.
 
-h2. Version 0.3.5 - 2015/04/11
+## Version 0.3.5 - 2015/04/11
 
 * Fixed: Search microdata errors.
 * Changed: New URL for where the logo will be in new .com site.
 
-h2. Version 0.3.4 - 2015/04/11
+## Version 0.3.4 - 2015/04/11
 
 * Changed: Improvements to ARIA and microdata.
 * Changed: Update high resolution media query syntax.
@@ -33,25 +34,25 @@ h2. Version 0.3.4 - 2015/04/11
 * Added: editorconfig file.
 * Added: More comments in build files.
 
-h2. Version 0.3.3 - 2015/04/07
+## Version 0.3.3 - 2015/04/07
 
 * Changed: Updated dependencies.
 
-h2. Version 0.3.2 - 2015/01/29
+## Version 0.3.2 - 2015/01/29
 
-* Fixed: FluxBB v1.5.8. Fixes bugs, adds an @addons@ directory for rudimentary plugin support, plus other minor improvements.
+* Fixed: FluxBB v1.5.8. Fixes bugs, adds an `addons` directory for rudimentary plugin support, plus other minor improvements.
 * Added: Extended microdata markup of HTML structure.
-* Added: Meta @theme-color@ tag.
+* Added: Meta `theme-color` tag.
 * Changed: Performance improvements.
 * Changed: Serve HTML5Shiv from CDNJS.
 * Changed: Updated jQuery versions.
 * Changed: Updated various build components.
 
-h2. Version 0.3.1 - 2014/11/10
+## Version 0.3.1 - 2014/11/10
 
 * Fixed: Content-Security-Policy headers were failing to load Google Web Fonts, because Google have recently changed the font serving URL.
 
-h2. Version 0.3.0 - 2014/11/07
+## Version 0.3.0 - 2014/11/07
 
 * Fixed: FluxBB v1.5.7. Fixes security vulnerabilities.
 * Fixed: Double-border glitch in IE 11.
@@ -66,7 +67,7 @@ h2. Version 0.3.0 - 2014/11/07
 * Changed: Slightly more room by removing left-padding of tables (helps reduce likelihood of layout spillage on smallest devices).
 * Changed: Various minor CSS improvements and optimisations.
 
-h2. Version 0.2.0 - 2014/01/11
+## Version 0.2.0 - 2014/01/11
 
 * Fixed: FluxBB v1.5.6. Fixes account renaming, HTML5 validation and security vulnerabilities.
 * Fixed: Masthead logo glitch on IE 8. Doesn't display Textpattern logo twice.
@@ -94,9 +95,9 @@ h2. Version 0.2.0 - 2014/01/11
 * Changed: Unset Google Analytics tracking cookies when the session ends. We don't do persistent tracking.
 * Changed: Re-enable category and forum arrangement management through production server's web GUI.
 * Changed: Reverse SVG logic; logos default to SVG, loads PNG replacement if needed.
-* Changed: Improve @:focus@ styling for buttons and form elements.
+* Changed: Improve `:focus` styling for buttons and form elements.
 * Changed: More prominent blockquote styling.
-* Changed: "PSR-0":https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md and "PSR-2":https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2.md coding standard compliance.
+* Changed: [PSR-0](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md) and [PSR-2](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2.md) coding standard compliance.
 * Changed: Use CSS sprite for common icons - reduces HTTP requests and page filesize.
 * Changed: Various CSS optimisations.
 * Changed: Switch Share button to Google +1.
@@ -111,6 +112,6 @@ h2. Version 0.2.0 - 2014/01/11
 * Removed: Social sharing buttons.
 * Removed: Vimeo support.
 
-h2. Version 0.1.0 - 2013/12/17
+## Version 0.1.0 - 2013/12/17
 
 * Initial release.
