@@ -188,15 +188,3 @@ body {
 .legal {
     @include adjust-font-size-to(11px, 0.85);
 }
-
-/**
- * Address differences between Firefox and other browsers.
- */
-
-hr {
-    @include box-sizing(content-box);
-
-    border: 0; // remove the default `hr` border
-    border-bottom: 1px solid $color-border;
-    height: 0;
-}
