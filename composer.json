@@ -1,4 +1,10 @@
 {
+  "name": "textpattern/textpattern-forum",
+  "description": "Official forum of the Textpattern project",
+  "support": {
+    "issues": "https://github.com/textpattern/textpattern-forum/issues",
+    "source": "https://github.com/textpattern/textpattern-forum"
+  },
   "require": {
     "netcarver/textile": "3.5.5",
     "neutron/recaptcha": "0.1.3"
