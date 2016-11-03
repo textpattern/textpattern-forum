@@ -104,11 +104,10 @@ This repository hosts sources and needs to be built before it can be used. After
 $ grunt @task@
 ```
 
-Where the `@task@` is either `build`, `setup`, `test` or `watch`.
+Where the `@task@` is either `build`, `setup` or `watch`.
 
 * The `build` task builds the project.
 * The `setup` task installs the latest stable release of FluxBB (see details above).
-* The `test` task runs JSHint over your JavaScript files, checking the code quality.
 * The `watch` task will launch a task that watches for file changes; the project is then automatically built if a source file is modified.
 
 ## REST API

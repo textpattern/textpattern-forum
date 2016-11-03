@@ -19,9 +19,9 @@ module.exports = function (grunt)
                 js: 'tmp/assets/js/'
             },
             dest: {
-                css: 'public/assets/css/',
-                js: 'public/assets/js/',
-                templates: 'public/templates/'
+                css: 'public/style/Textpattern/css/',
+                js: 'public/style/Textpattern/js/',
+                templates: 'public/style/Textpattern/'
             }
         },
 
@@ -30,25 +30,21 @@ module.exports = function (grunt)
             timestamp: '<%= new Date().getTime() %>'
         },
 
-        // Use 'config.rb' file to configure Compass.
-        compass: {
-            dev: {
-                options: {
-                    config: 'config.rb',
-                    force: true
-                }
-            }
-        },
+        // Clean distribution and temporary directories to start afresh.
+        clean: [
+            'tmp/',
+            '<%= paths.dest.templates %>*/'
+        ],
 
-        // Combine any matching media queries.
-        cmq: {
-            css: {
-                files: {
-                    'tmp/style/Textpattern/sass': [
-                        'tmp/style/Textpattern/sass/*.css'
-                    ]
-                }
-            }
+        // Run some tasks in parallel to speed up the build process.
+        concurrent: {
+            dist: [
+                'css',
+                'copy:branding',
+                'devUpdate',
+                'jshint',
+                'replace'
+            ]
         },
 
         // Gzip compress the theme files.
@@ -69,31 +65,54 @@ module.exports = function (grunt)
         copy: {
             branding: {
                 files: [
-                    {expand: true, cwd: 'node_modules/textpattern-branding/assets/img/', src: ['**'], dest: 'public/style/Textpattern/img/branding/'},
-                    {expand: true, cwd: 'node_modules/textpattern-branding/assets/img/apple-touch-icon/textpattern/', src: ['**'], dest: 'public/'},
-                    {expand: true, cwd: 'node_modules/textpattern-branding/assets/img/favicon/textpattern/', src: ['**'], dest: 'public/'},
-                    {expand: true, cwd: 'node_modules/textpattern-branding/assets/img/windows-site-tile/textpattern/', src: ['**'], dest: 'public/'}
+                    {
+                        expand: true,
+                        cwd: 'node_modules/textpattern-branding/assets/img/',
+                        src: ['**'],
+                        dest: 'public/style/Textpattern/img/branding/'
+                    },
+                    {
+                        expand: true,
+                        cwd: 'node_modules/textpattern-branding/assets/img/apple-touch-icon/textpattern/',
+                        src: ['**'],
+                        dest: 'public/'
+                    },
+                    {
+                        expand: true,
+                        cwd: 'node_modules/textpattern-branding/assets/img/favicon/textpattern/',
+                        src: ['**'],
+                        dest: 'public/'
+                    },
+                    {
+                        expand: true,
+                        cwd: 'node_modules/textpattern-branding/assets/img/windows-site-tile/textpattern/',
+                        src: ['**'],
+                        dest: 'public/'
+                    }
                 ]
             },
 
             theme: {
                 files: [
-                    {expand: true, cwd: 'src/style/imports/', src: ['**'], dest: 'public/style/imports/'},
-                    {expand: true, cwd: 'src/style/', src: ['Textpattern.css', '.htaccess'], dest: 'public/style/'},
-                    {expand: true, cwd: 'src/style/Textpattern/', src: ['**', '!*.tpl', '!sass/**', '!js/**'], dest: 'public/style/Textpattern/'}
+                    {
+                        expand: true,
+                        cwd: 'src/style/imports/',
+                        src: ['**'],
+                        dest: 'public/style/imports/'
+                    },
+                    {
+                        expand: true,
+                        cwd: 'src/style/',
+                        src: ['Textpattern.css', '.htaccess'],
+                        dest: 'public/style/'
+                    },
+                    {
+                        expand: true,
+                        cwd: 'src/style/Textpattern/',
+                        src: ['**', '!*.tpl', '!sass/**', '!js/**'],
+                        dest: 'public/style/Textpattern/'
+                    }
                 ]
-            }
-        },
-
-        // Concatenate, minify and copy CSS files to `public/`.
-        cssmin: {
-            main: {
-                options: {
-                    rebase: false
-                },
-                files: {
-                    'public/style/Textpattern/css/main.css': ['tmp/style/Textpattern/sass/main.css']
-                }
             }
         },
 
@@ -113,7 +132,6 @@ module.exports = function (grunt)
 
         // Check code quality of Gruntfile.js and site-specific JavaScript using JSHint.
         jshint: {
-            files: ['Gruntfile.js', 'src/style/*/js/*.js'],
             options: {
                 bitwise: true,
                 camelcase: true,
@@ -140,9 +158,32 @@ module.exports = function (grunt)
                     module: true,
                     require: true,
                     requirejs: true,
+                    autosize: true,
                     responsiveNav: true,
                     prettyPrint: true
                 }
+            },
+            files: [
+                'Gruntfile.js',
+                'src/style/*/js/*.js'
+            ]
+        },
+
+        // Add vendor prefixed styles and other post-processing transformations.
+        postcss: {
+            options: {
+                processors: [
+                    require('autoprefixer')({
+                        browsers: [
+                            'last 3 versions',
+                            'not ie <= 11'
+                        ]
+                    }),
+                    require('cssnano')()
+                ]
+            },
+            dist: {
+                src: '<%= paths.dest.css %>*.css'
             }
         },
 
@@ -162,8 +203,32 @@ module.exports = function (grunt)
                     ]
                 },
                 files: [
-                    {expand: true, cwd: 'src/style/Textpattern/', src: ['*.tpl'], dest: 'public/style/Textpattern/'},
-                    {expand: true, cwd: 'src/', src: ['*.html'], dest: 'public/'}
+                    {
+                        expand: true,
+                        cwd: 'src/style/Textpattern/',
+                        src: ['*.tpl'],
+                        dest: 'public/style/Textpattern/'
+                    },
+                    {
+                        expand: true,
+                        cwd: 'src/',
+                        src: ['*.html'],
+                        dest: 'public/'
+                    }
+                ]
+            }
+        },
+
+        // Sass configuration.
+        sass: {
+            options: {
+                outputStyle: 'expanded', // outputStyle = expanded, nested, compact or compressed.
+                sourceMap: false
+            },
+            dist: {
+                files: [
+                    {'<%= paths.dest.css %>style.css': '<%= paths.src.sass %>style.scss'},
+                    {'<%= paths.dest.css %>design-patterns.css': '<%= paths.src.sass %>design-patterns.scss'}
                 ]
             }
         },
@@ -241,10 +306,10 @@ module.exports = function (grunt)
     });
 
     // Register tasks.
-    grunt.registerTask('build', ['jshint', 'theme', 'copy:branding', 'css', 'uglify', 'compress:theme']);
+    grunt.registerTask('build', ['clean', 'theme', 'concurrent', 'uglify', 'compress:theme']);
     grunt.registerTask('default', ['watch']);
     grunt.registerTask('postsetup', ['shell:postsetup']);
-    grunt.registerTask('css', ['sasslint', 'sass', 'cmq', 'postcss', 'cssmin']);
+    grunt.registerTask('css', ['sasslint', 'sass', 'postcss']);
     grunt.registerTask('setup', ['shell:setup', 'build']);
     grunt.registerTask('theme', ['copy:theme', 'replace:theme']);
     grunt.registerTask('travis', ['jshint', 'compass']);
