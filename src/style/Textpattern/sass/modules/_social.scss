@@ -14,8 +14,8 @@
  */
 
 .social-channels {
-    list-style: none;
     padding: 0;
+    list-style: none;
 
     li {
         display: inline-block;
@@ -29,7 +29,11 @@
         width: 32px;
         height: 32px;
         background-image: url("../img/branding/misc/icon-sprite.svg");
-        background-size: 160px 32px;
+        background-size: 192px 32px;
+
+        &:hover {
+            filter: brightness(1.1);
+        }
 
         &.facebook {
             background-position: -32px 0;
@@ -43,8 +47,8 @@
             background-position: -96px 0;
         }
 
-        &:hover {
-            @include filter(brightness(1.1));
+        &.github {
+            background-position: -128px 0;
         }
     }
 }

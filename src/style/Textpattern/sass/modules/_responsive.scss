@@ -1,0 +1,56 @@
+/**
+ * Grid column cell changes at 2nd breakpoint.
+ *
+ * Cells for 2 column layout are generated if `.at-break2` class is specified,
+ * otherwise they stay as 1 column layout cells.
+ *
+ * Cells for 3 column layout cells are also generated.
+ */
+
+@include breakpoint($breakpoint-2) {
+
+    .layout--span-1-6.at-break2 { // 2 column grid, cell 1
+        @include grid-span(6, 1);
+
+        clear: both;
+    }
+
+    .layout--span-7-12.at-break2 { // 2 column grid, cell 2
+        @include grid-span(6, 7);
+    }
+
+    .layout--span-9-12 { // 3 column grid, cell 3
+        @include grid-span(4, 9);
+    }
+
+    .layout--span-1-8,
+    #rules,
+    #regform,
+    #page-login .blockform { // 3 column grid, cell 1 and 2
+        @include grid-span(8, 1);
+
+        clear: both;
+    }
+
+}
+
+/**
+ * Grid column cell changes at 3rd (final) breakpoint.
+ *
+ * Cells for 2 column layout are generated if they were not stated as
+ * `.at-break2` class previously. Nested 2 column layout cells as generated.
+ */
+
+@include breakpoint($breakpoint-3) {
+
+    .layout--span-1-6 { // 2 column grid, cell 1
+        @include grid-span(6, 1);
+
+        clear: both;
+    }
+
+    .layout--span-7-12 { // 2 column grid, cell 2
+        @include grid-span(6, 7);
+    }
+
+}

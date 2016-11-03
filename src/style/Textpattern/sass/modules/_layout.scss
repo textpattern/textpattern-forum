@@ -3,16 +3,13 @@
 
 /**
  * 1. Always force scrollbar padding so we don't get 'jumping'.
- * 2. Prevent iOS text size adjust after orientation change, without disabling
- *    user zoom.
- * 3. As 2 above, for Windows Phone.
+ * 2. Prevent text size adjust after mobile device orientation change, without
+ *    disabling user zoom.
  */
 
 html {
-    -webkit-tap-highlight-color: rgba($color-link-hover, 0.5);
     overflow-y: scroll; /* 1 */
-    -webkit-text-size-adjust: 100%; /* 2 */
-    -ms-text-size-adjust: 100%; /* 3 */
+    text-size-adjust: 100%; /* 2 */
 }
 
 /**
@@ -23,8 +20,8 @@ html {
 body {
     position: relative; /* 1 */
     margin: 0; /* 2 */
-    color: $color-text-inverse;
     background-color: $color-text;
+    color: $color-text-inverse;
 }
 
 /**
@@ -44,8 +41,8 @@ body {
 .wrapper {
     position: relative;
     padding: 1px 0;
-    color: $color-text;
     background: $color-background;
+    color: $color-text;
 }
 
 /**
@@ -60,12 +57,12 @@ body {
  * </div>
  */
 
-.container,
 .site-header,
-.site-footer {
-    margin: 0 auto;
+.site-footer,
+.container {
     width: 90%;
     max-width: $container-max-width;
+    margin: 0 auto;
 }
 
 /**
@@ -77,8 +74,8 @@ body {
 }
 
 .masthead {
-    font-size: 1em;
     margin: 1em 0;
+    font-size: 1em;
 
     a {
         @include hide-text;
@@ -90,84 +87,46 @@ body {
         background-size: 208px 34px;
 
         &:hover {
-            @include filter(brightness(1.1));
-        }
-
-        @include breakpoint($breakpoint-2) {
-            width: 320px;
-            height: 52px;
-            background-image: url("../img/branding/textpattern/textpattern.svg");
-            background-size: 320px 52px;
+            filter: brightness(1.1);
         }
     }
 }
 
 .search-form {
     position: absolute;
-    top: 0.75em;
-    right: 0;
+    top: 0;
+    right: 48px;
     z-index: 3;
-
-    @include breakpoint(max-width $breakpoint-2) {
-        top: 0;
-        right: 48px;
-    }
-
-    @include breakpoint(max-width $breakpoint-1) {
-        right: 36px;
-    }
 
     // search input field
     input[type="search"] {
-        @include transition(width 0.2s linear, box-shadow 0.1s linear);
-
-        width: 240px;
+        width: 34px;
         height: 34px;
-        border-radius: $default-border-radius;
         padding-left: 32px;
+        transition: width 0.2s ease-in-out;
+        border-color: $color-background;
         background: url("../img/branding/misc/icon-sprite.svg") no-repeat left center;
-        background-size: 160px 32px;
-        background-position: -128px 0;
+        background-position: -160px 0;
+        background-size: 192px 32px;
 
-        @include breakpoint(max-width $breakpoint-2) {
-            @include input-placeholder {
-                color: transparent;
-            }
-
-            padding-right: 0;
-            width: 34px;
-            cursor: pointer;
-
-            &:hover {
-                background-color: $color-selected;
-            }
-
-            &:focus {
-                @include input-placeholder {
-                    color: $color-text-footnote;
-                }
-
-                padding-right: 0.5384615em;
-                width: 240px;
-                cursor: auto;
-                background-color: $color-background;
-            }
+        &:focus {
+            border-color: $color-link-focus;
         }
     }
 }
 
+/**
+ * Additional styling for site footer.
+ */
+
 .community-details,
 .host-details {
     display: none;
-
-    @include breakpoint($breakpoint-2) {
-        display: block;
-    }
 }
 
 .community-links {
-    list-style: none;
     padding: 0;
+    list-style: none;
 }
 
 .host-details {
@@ -181,10 +140,10 @@ body {
 }
 
 .site-footer {
-    clear: both;
     position: relative;
+    clear: both;
 }
 
 .legal {
-    @include adjust-font-size-to(11px, 0.85);
+    font-size: $small-font-size;
 }

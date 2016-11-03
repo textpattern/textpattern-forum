@@ -17,9 +17,9 @@ table {
  */
 
 caption {
+    margin-bottom: 0.5em;
     font-style: italic;
     text-align: left;
-    margin-bottom: 0.5em;
 }
 
 /**
@@ -28,10 +28,10 @@ caption {
 
 th,
 td {
-    vertical-align: top;
-    text-align: left;
+    padding: 0.5em 1em 0.5em 0;
     border-bottom: 1px solid $color-border;
-    padding: 0.5384615em 1em 0.5384615em 0; // 7px / 13px
+    text-align: left;
+    vertical-align: top;
 
     &:empty {
         border: 0;

@@ -1,91 +1,46 @@
 /* ==========================================================================
-   Singularity Grid System
+   Layout grid
    ========================================================================== */
 
-@include add-grid(12);
-@include add-gutter(0.5);
+/**
+ * Flex container.
+ */
+
+.layout-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -1em;
+
+    > * {
+        min-width: 0;
+        padding: 0 1em;
+        box-sizing: border-box;
+    }
+}
 
 /**
  * Generate sizes all for grid column cells.
  *
  * Because this is mobile first, cells are all initially a 1 column span
- * (full width, 12 cell span). We will then adjust them at various breakpoints
- * listed below.
+ * (full width, 12 cell span). We will then adjust them at various breakpoints.
  *
  * Example HTML:
  *
- * <div class="layout--span-1-12"></div>
+ * <div class="layout-1col"></div>
  *
- * <div class="layout--span-1-6 at-break2">
- * <div class="layout--span-7-12 at-break2">
+ * <div class="layout-2col">
+ * <div class="layout-2col">
+ *
+ * <div class="layout-3col-2span"></div>
+ * <div class="layout-3col"></div>
  */
 
-.layout--span-1-6,
-.layout--span-7-12,
-.layout--span-9-12,
-.layout--span-1-8,
+.layout-1col,
+.layout-2col,
+.layout-3col,
+.layout-3col-2span,
 #rules,
 #regform,
 #page-login .blockform {
-    @include grid-span(12, 1);
-    @include box-sizing;
-
-    clear: both;
-}
-
-/**
- * Grid column cell changes at 2nd breakpoint.
- *
- * Cells for 2 column layout are generated if `.at-break2` class is specified,
- * otherwise they stay as 1 column layout cells.
- *
- * Cells for 3 column layout cells are also generated.
- */
-
-@include breakpoint($breakpoint-2) {
-
-    .layout--span-1-6.at-break2 { // 2 column grid, cell 1
-        @include grid-span(6, 1);
-
-        clear: both;
-    }
-
-    .layout--span-7-12.at-break2 { // 2 column grid, cell 2
-        @include grid-span(6, 7);
-    }
-
-    .layout--span-9-12 { // 3 column grid, cell 3
-        @include grid-span(4, 9);
-    }
-
-    .layout--span-1-8,
-    #rules,
-    #regform,
-    #page-login .blockform { // 3 column grid, cell 1 and 2
-        @include grid-span(8, 1);
-
-        clear: both;
-    }
-
-}
-
-/**
- * Grid column cell changes at 3rd (final) breakpoint.
- *
- * Cells for 2 column layout are generated if they were not stated as
- * `.at-break2` class previously. Nested 2 column layout cells as generated.
- */
-
-@include breakpoint($breakpoint-3) {
-
-    .layout--span-1-6 { // 2 column grid, cell 1
-        @include grid-span(6, 1);
-
-        clear: both;
-    }
-
-    .layout--span-7-12 { // 2 column grid, cell 2
-        @include grid-span(6, 7);
-    }
-
+    width: 100%;
 }

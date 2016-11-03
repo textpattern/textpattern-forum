@@ -2,40 +2,37 @@
    ========================================================================== */
 
 /**
- * 1. Remove default underline style from non-hover state links.
- * 2. Interrupt the decoration line to let the shape of the text show through
+ * 1. Specify link colour.
+ * 2. Remove default underline style from non-hover state links.
+ * 3. Interrupt the decoration line to let the shape of the text show through
  *    in supported browsers.
- * 3. Specify link colour.
- * 4. Remove the grey background colour from active links in IE 10.
- * 5. Expanded CSS level 3 `text-decoration` property in supported browsers,
+ * 4. Expanded CSS level 3 `text-decoration` property in supported browsers,
  *    older browsers will fallback to legacy `text-decoration` property.
  */
 
 a {
-    text-decoration: none; /* 1 */
-    text-decoration-skip: ink edges; /* 2 */
-    color: $color-link; /* 3 */
-    background: transparent; /* 4 */
+    color: $color-link; /* 1 */
+    text-decoration: none; /* 2 */
+    text-decoration-skip: ink edges; /* 3 */
 
     &:hover,
     &:active {
         outline: 0;
-        text-decoration: underline;
-        text-decoration: $color-link solid underline; /* 1 */
         color: $color-link-hover;
+        text-decoration: underline;
+        text-decoration: $color-link solid underline; /* 4 */
     }
 
     &:focus {
-        outline: thin dotted $color-link-focus;
+        outline: thin solid $color-link-focus;
     }
 }
 
 /**
- * Additional styling for child links within complementary content and site
- * footer.
+ * Additional styling for links within complementary content and site footer.
  */
 
-.complementary-content a,
+.complementary-content a:not(.button),
 .site-footer a {
     color: $color-selecting;
 
@@ -45,6 +42,6 @@ a {
     }
 
     &:focus {
-        outline: thin dotted $color-selected;
+        outline: thin solid $color-selecting;
     }
 }

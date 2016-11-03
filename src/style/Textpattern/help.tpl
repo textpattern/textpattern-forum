@@ -63,7 +63,7 @@
                 <pun_status>
                 <pun_announcement>
 
-                <div class="layout--span-1-8">
+                <div class="layout-3col-2span">
                     <h2>Forum help</h2>
 
                     <h3 id="forum-help-textile-formatting">Formatting</h3>

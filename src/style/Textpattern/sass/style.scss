@@ -28,16 +28,17 @@
     @import "modules/navigation";
     @import "modules/links";
     @import "modules/typography";
+    @import "modules/alerts";
     @import "modules/embedded-content";
     @import "modules/tables";
     @import "modules/lists";
     @import "modules/forms";
     @import "modules/buttons";
-    @import "modules/alerts";
     @import "modules/code-highlighting";
     @import "modules/social";
     @import "modules/misc";
     @import "modules/http-errors";
+
     @import "modules/fluxbb/layout";
     @import "modules/fluxbb/layout_admin";
     @import "modules/fluxbb/navigation";
@@ -46,6 +47,8 @@
     @import "modules/fluxbb/icons";
 
 }
+
+@import "modules/responsive";
 
 
 

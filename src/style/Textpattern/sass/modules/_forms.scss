@@ -27,9 +27,9 @@ legend {
     padding: 0.25em 1em; // 4px / 16px
     border: 1px solid $color-border;
     background-color: $color-background-box;
+    color: inherit; /* 2 */
     font-family: $font-serif;
     font-weight: bold;
-    color: inherit; /* 2 */
     white-space: normal; /* 1 */
     box-sizing: border-box; /* 1 */
 }

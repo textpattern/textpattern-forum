@@ -9,26 +9,18 @@
     font-family: $font-serif;
 
     .js & {
-        clip: rect(0 0 0 0);
         display: block;
         max-height: 0;
         overflow: hidden;
-
-        @include breakpoint($breakpoint-2) {
-            max-height: none;
-        }
+        clip: rect(0 0 0 0);
     }
 
     ul {
         display: block;
+        max-width: $container-max-width;
         margin: 0 auto;
         padding: 0;
-        max-width: $container-max-width;
         list-style: none;
-
-        @include breakpoint($breakpoint-2) {
-            width: 90%;
-        }
     }
 
     li {
@@ -37,16 +29,9 @@
         &:first-child {
             border-top: 2px solid $color-text;
         }
-
-        @include breakpoint($breakpoint-2) {
-            float: left;
-            border: 0 !important;
-        }
     }
 
     a {
-        @include adjust-font-size-to(14px, 1);
-
         display: block;
         padding: 0.4285714em 5%; // 6px / 14px
         color: $color-text;
@@ -63,23 +48,14 @@
         }
 
         &:active {
-            color: darken($color-text, 10%);
             background-color: $color-selecting;
+            color: darken($color-text, 10%);
             text-decoration: none;
         }
 
         &:focus {
             outline: 0;
             background-color: $color-selected;
-        }
-
-        @include breakpoint($breakpoint-2) {
-            @include adjust-font-size-to(20px, 1);
-
-            margin: 0 0.4em 0.4em -0.4em;
-            border-radius: $default-border-radius / 2;
-            padding: 0.4em;
-            font-weight: normal;
         }
     }
 
@@ -116,28 +92,33 @@
 .nav-toggle {
     @include hide-text;
 
-    -webkit-touch-callout: none; /* 1 */
     position: absolute;
     top: 1em;
     right: 5%;
-    z-index: 2;
-    margin-top: 1px;
-    border: 1px solid $color-border;
-    border-radius: $default-border-radius;
     width: 32px;
     height: 32px;
+    margin-top: 1px;
+    border: 1px solid $color-background;
     background-image: url("../img/branding/misc/icon-sprite.svg");
-    background-size: 160px 32px;
-
-    @include breakpoint($breakpoint-2) {
-        display: none;
-    }
+    background-size: 192px 32px;
+    z-index: 2;
+    user-select: none;
+    -webkit-touch-callout: none; /* 1 */
 
     &:hover {
         background-color: $color-selected;
     }
 
+    &.active {
+        background-color: $color-strong-highlight-box;
+    }
+
     &:active {
         background-color: $color-selecting;
+    }
+
+    &:focus {
+        border-color: $color-link-focus;
+        outline: 0;
     }
 }
