@@ -34,5 +34,5 @@
   "scripts": {
     "test": "grunt travis --verbose"
   },
-  "license": "GPL-2.0"
+  "license": "MIT"
 }
