@@ -2,16 +2,16 @@
    ========================================================================== */
 
 /**
- * 1. Remove the gap between images and the bottom of their containers.
- * 2. Remove border when inside `a` element in IE 9/10.
- * 3. Make embedded images responsive.
+ * Images.
+ *
+ * 1. Make embedded images responsive.
+ * 2. Remove the gap between images and the bottom of their containers.
  */
 
 img {
-    vertical-align: middle; /* 1 */
-    border: 0; /* 2 */
-    max-width: 100%; /* 3 */
-    height: auto; /* 3 */
+    max-width: 100%; /* 1 */
+    height: auto; /* 1 */
+    vertical-align: middle; /* 2 */
 }
 
 /**

@@ -2,8 +2,7 @@
    ========================================================================== */
 
 /**
- * Correct `block` display not defined for any HTML5 element in IE 9.
- * Correct `block` display not defined for `main` in IE 11.
+ * Add the correct display in various browsers.
  */
 
 article,
@@ -42,9 +41,8 @@ header,
 footer,
 nav ul,
 nav ol,
-.clearfix,
-.container {
-    &:after {
+.clearfix {
+    &::after {
         display: table;
         clear: both;
         content: "";
