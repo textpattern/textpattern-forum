@@ -9,23 +9,29 @@
 fieldset {
     min-width: 0; /* 1 */
     margin: 1em 0; /* 2 */
-    padding: 0 1em; /* 2 */
+    padding: 1px 1em; /* 2 */
     border: 1px solid $color-border; /* 2 */
 }
 
 /**
  * Stylize fieldset legends.
+ *
+ * 1. Correct wrapping not present in IE 11 and Edge 12/13.
+ * 2. Correct `color` not being inherited from fieldset in IE 11.
  */
 
 legend {
+    display: table; /* 1 */
+    max-width: 100%; /* 1 */
     margin: 0 -1em;
-    padding: 0.2142857em 1em; // 3px / 14px
+    padding: 0.25em 1em; // 4px / 16px
     border: 1px solid $color-border;
     background-color: $color-background-box;
     font-family: $font-serif;
-    font-size: 14px;
     font-weight: bold;
-    line-height: $base-line-height;
+    color: inherit; /* 2 */
+    white-space: normal; /* 1 */
+    box-sizing: border-box; /* 1 */
 }
 
 /**
@@ -47,29 +53,30 @@ a.button,
     color: $color-text-form;
     font-family: $font-form;
     font-size: $base-font-size; /* 3 */
-    line-height: 16px;
+    line-height: 1.375; // 22px / 16px
     vertical-align: baseline;
     box-sizing: border-box;
 }
 
 /**
- * Remove inner padding and border in Firefox 4+.
+ * Remove the inner border and padding in Firefox.
  */
 
 button::-moz-focus-inner,
-input::-moz-focus-inner {
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
     padding: 0;
-    border: 0;
+    border-style: none;
 }
 
 /**
- * Remove inner padding and search cancel button in Safari and Chrome on OS X.
- * Safari (but not Chrome) clips the cancel button when the search input has
- * padding (and `textfield` appearance).
+ * Remove inner padding in Safari and Chrome on OS X. Safari (but not Chrome)
+ * clips the cancel button when the search input has padding (and `textfield`
+ * appearance).
  */
 
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-decoration {
+[type="search"]::-webkit-search-decoration {
     -webkit-appearance: none;
 }
 
@@ -77,28 +84,26 @@ input[type="search"]::-webkit-search-decoration {
  * Styling of form input fields.
  *
  * 1. Remove browser-specific default styling.
- * 2. Make form element text on mobile 16px, to avoid auto-zooming.
- * 3. `!important` fixes autosize on viewport changes.
  */
 
-input[type="color"],
-input[type="date"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="email"],
-input[type="month"],
-input[type="number"],
-input[type="password"],
-input[type="search"],
-input[type="tel"],
-input[type="text"],
-input[type="time"],
-input[type="url"],
-input[type="week"],
+[type="color"],
+[type="date"],
+[type="datetime"],
+[type="datetime-local"],
+[type="email"],
+[type="month"],
+[type="number"],
+[type="password"],
+[type="search"],
+[type="tel"],
+[type="text"],
+[type="time"],
+[type="url"],
+[type="week"],
 select,
 textarea {
-    height: 2.4615384em; // 32px / 13px
-    padding: 0.5384615em; // 7px / 13px
+    height: 2em; // 32px / 16px
+    padding: 0.25em 0.1875em; // 8px / 16px + 3px / 16px
     border: 1px solid $color-border;
     border-radius: 0;
     background: $color-background-form;
@@ -108,19 +113,14 @@ textarea {
         border-color: $color-link-focus;
         outline: 0;
     }
-
-    @include breakpoint(max-width $breakpoint-2) {
-        font-size: 16px !important; /* 2 */
-        line-height: 1.375 !important; /* 3 */
-    }
 }
 
 /**
- * Remove padding from `color` fields.
+ * Fix vertical alignment of `color` fields with their label.
  */
 
-input[type="color"] {
-    padding: 0;
+[type="color"] {
+    vertical-align: middle;
 }
 
 /**
@@ -129,8 +129,8 @@ input[type="color"] {
  * decrement button to change from `default` to `text`.
  */
 
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
     height: auto;
 }
 
@@ -139,34 +139,56 @@ input[type="number"]::-webkit-outer-spin-button {
  * 2. Correct margins for inline checkbox/radio labels.
  */
 
-input[type="checkbox"],
-input[type="radio"] {
+[type="checkbox"],
+[type="radio"] {
     padding: 0; /* 1 */
 
     + label {
-        margin-right: 0.5em; /* 2 */
+        margin: 0 0.5em 0 0; /* 2 */
 
         &:last-of-type {
-            margin-right: 0; /* 2 */
+            margin: 0; /* 2 */
         }
     }
 }
 
 /**
- * Correct `select` style inheritance in Firefox.
+ * Use indicator icon to signify the drop-down ability of `select`.
  */
 
 select {
+    padding-right: 1.5em; // 24px / 16px
+    background: $color-background-form url("data:image/svg+xml;charset=utf-8;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxN3B4JyBoZWlnaHQ9JzVweCcgdmlld0JveD0nMCAwIDE3IDUnPjxwb2x5Z29uIGZpbGw9JyUyMzMzMycgcG9pbnRzPScwLDAgNSw1IDEwLDAnLz48L3N2Zz4=") right center no-repeat;
+    background-size: 1.0625em 0.3125em; // 17px / 16px, 5px / 16px
     text-transform: none;
 }
 
 /**
- * Override height set in a previous rule and allow auto height.
+ * Remove browser-specific `select` UI in IE 11.
+ */
+
+select::-ms-expand {
+    opacity: 0;
+}
+
+/**
+ * Remove browser-specific `select` UI in Firefox 4+.
+ */
+
+select:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 $color-text-form;
+}
+
+/**
+ * Override height and background set in a previous rule and allow auto height.
  */
 
 select[size],
 select[multiple] {
     height: auto;
+    padding-right: 0.5em;
+    background-image: none;
 }
 
 /**
@@ -175,35 +197,7 @@ select[multiple] {
 
 select[size="0"],
 select[size="1"] {
-    height: 2.4615384em; // 32px / 13px
-}
-
-@media (-webkit-min-device-pixel-ratio: 0) {
-
-    /**
-     * Address `select` alignment in Safari, Chrome, Opera.
-     */
-
-    select[size],
-    select[multiple],
-    select[multiple][size] {
-        padding-right: 0.5384615em; // 7px / 13px
-        background-image: none;
-    }
-
-    /**
-     * Use indicator icon to signify the drop-down ability of `select` in Safari,
-     * Chrome, Opera.
-     */
-
-    select,
-    select[size="0"],
-    select[size="1"] {
-        padding-right: 2em;
-        background: $color-background-form url("data:image/svg+xml,<svg version='1.1' baseProfile='full' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='13px' height='4px' viewBox='0 0 13 4' enable-background='new 0 0 13 4' xml:space='preserve'><polygon fill='#333333' points='3.5,4 0,0 7,0'/></svg>") right center no-repeat;
-        background-size: 1em 0.30769em;
-    }
-
+    height: 2em; // 32px / 16px
 }
 
 /**
@@ -211,7 +205,7 @@ select[size="1"] {
  */
 
 optgroup {
-    color: $color-text-form;;
+    color: $color-text-form;
     font-style: normal;
     font-weight: bold;
 }
@@ -238,15 +232,9 @@ textarea {
  * 2. Override default iOS opacity setting.
  */
 
-button[disabled],
-input[disabled],
-input[type="button"][disabled],
-input[type="reset"][disabled],
-input[type="submit"][disabled],
-select[disabled],
-select[disabled] option,
-select[disabled] optgroup,
-textarea[disabled] {
+[disabled],
+[disabled] option,
+[disabled] optgroup {
     border-color: $color-border-light !important;
     background: $color-background-form-disabled !important;
     color: $color-text-form-disabled !important;

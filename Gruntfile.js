@@ -272,8 +272,18 @@ module.exports = function (grunt)
                     {
                         '<%= paths.dest.js %>main.js': ['<%= paths.src.js %>main.js'],
                         '<%= paths.dest.js %>autosize.js': ['node_modules/autosize/dist/autosize.js'],
-                        '<%= paths.dest.js %>cookie.js': ['node_modules/jquery.cookie/jquery.cookie.js'],
                         '<%= paths.dest.js %>prettify.js': ['node_modules/google-code-prettify/src/prettify.js'],
+                        // TODO: Use Prism instead of Google Code Prettify
+                        '<%= paths.dest.js %>prism.js': [
+                            'node_modules/prismjs/prism.js',
+                            // Add any plugins
+                            'node_modules/prismjs/plugins/line-numbers/prism-line-numbers.js',
+                            'node_modules/prismjs/plugins/show-language/prism-show-language.js',
+                            // Add any additional languages
+                            'node_modules/prismjs/components/prism-php.js',
+                            'node_modules/prismjs/components/prism-scss.js',
+                            'node_modules/prismjs/components/prism-textile.js'
+                        ],
                         '<%= paths.dest.js %>require.js': ['node_modules/requirejs/require.js'],
                         '<%= paths.dest.js %>responsivenav.js': ['node_modules/responsive-nav/responsive-nav.js']
                     },

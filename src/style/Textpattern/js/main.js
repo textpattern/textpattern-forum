@@ -5,21 +5,18 @@
     document.documentElement.className = 'js';
 
     // Detect whether jQuery v2 features required, otherwise use jQuery v1 for higher compatibility.
+    // TODO: use jQuery v3?
 
-    var jqueryVersion = '1.11.3';
+    var jqueryVersion = '1.12.4';
 
     if (typeof JSON !== 'undefined' && 'querySelector' in document && 'addEventListener' in window) {
-        jqueryVersion = '2.1.4';
+        jqueryVersion = '2.2.4';
     }
 
     requirejs.config({
         paths: {
             'jquery': 'https://ajax.googleapis.com/ajax/libs/jquery/'+jqueryVersion+'/jquery.min',
             'recaptcha': 'https://www.google.com/recaptcha/api/js/recaptcha_ajax'
-        },
-        shim: {
-            'autosize': ['jquery'],
-            'cookie': ['jquery']
         }
     });
 
@@ -33,17 +30,17 @@
     });
 
     // Auto-growing textareas, via 'Autosize'.
-    // Allows dynamic resizing of textarea height, so that it grows as based on
-    // visitor input. More info - https://github.com/jackmoore/autosize.
+    // Allows dynamic resizing of textarea height, so that it grows as based
+    // on visitor input. More info - https://github.com/jackmoore/autosize.
 
     define('growfields', ['jquery'], function ($)
     {
-        var fields = $('form textarea');
+        var fields = $('textarea');
 
         if (fields.length) {
-            require(['autosize'], function ()
+            require(['autosize.@@timestamp'], function (autosize)
             {
-                fields.autosize();
+                autosize(fields);
             });
         }
     });
@@ -513,7 +510,7 @@
         if (code.length) {
             code.filter('.language-txp').addClass('language-html').removeClass('language-txp');
 
-            require(['prettify'], function ()
+            require(['prettify.@@timestamp'], function ()
             {
                 prettyPrint();
             });
@@ -552,35 +549,13 @@
     // Responsive navigation menu, via 'Responsive Nav'.
     // More info - https://github.com/viljamis/responsive-nav.js.
 
-    require(['responsivenav'], function ()
+    require(['responsivenav.@@timestamp'], function ()
     {
         responsiveNav('.site-navigation', {
             transition: 400,
             insert: 'before',
             navClass: 'site-navigation'
         });
-    });
-
-    // EU-cookie disclaimer, via 'jquery.cookie'.
-    // More info - https://github.com/carhartl/jquery-cookie.
-
-    require(['jquery', 'cookie'], function ($)
-    {
-        if (!$.cookie('acceptedCookies')) {
-            var disclaimer = $('<aside id="cookie-disclaimer"><div class="container"><p><strong>This website uses cookies to enhance your experience.</strong> By continuing to use this website you agree to cookies being placed on your computer. If you wish to use this website but do not wish for cookies to be placed on your computer you can change the settings in your internet browser. <a href="#" data-action="close">Close</a>.</p></div></aside>');
-            $('body').prepend(disclaimer);
-            $.cookie('acceptedCookies', 1, {expires: 1461});
-
-            disclaimer.find('a').on('click', function (e)
-            {
-                e.preventDefault();
-
-                disclaimer.slideUp('fast', function ()
-                {
-                    disclaimer.remove();
-                });
-            });
-        }
     });
 
     // reCaptcha.
