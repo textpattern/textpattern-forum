@@ -12,7 +12,7 @@ module.exports = function (grunt)
         paths: {
             src: {
                 sass: 'src/style/Textpattern/sass/',
-                js: 'src/style/Textpattern/js/'
+                js: 'src/style/Textpattern/js/',
                 templates: 'src/style/Textpattern/'
             },
             dest: {
