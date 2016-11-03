@@ -13,10 +13,7 @@ module.exports = function (grunt)
             src: {
                 sass: 'src/style/Textpattern/sass/',
                 js: 'src/style/Textpattern/js/'
-            },
-            tmp: {
-                css: 'tmp/assets/css/',
-                js: 'tmp/assets/js/'
+                templates: 'src/style/Textpattern/'
             },
             dest: {
                 css: 'public/style/Textpattern/css/',
@@ -30,9 +27,8 @@ module.exports = function (grunt)
             timestamp: '<%= new Date().getTime() %>'
         },
 
-        // Clean distribution and temporary directories to start afresh.
+        // Clean distribution directory to start afresh.
         clean: [
-            'tmp/',
             'public/style/'
         ],
 
@@ -43,7 +39,7 @@ module.exports = function (grunt)
                 'copy:branding',
                 'devUpdate',
                 'jshint',
-                'replace'
+                'theme'
             ]
         },
 
@@ -77,7 +73,6 @@ module.exports = function (grunt)
                     }
                 ]
             },
-
             theme: {
                 files: [
                     {
@@ -94,9 +89,9 @@ module.exports = function (grunt)
                     },
                     {
                         expand: true,
-                        cwd: 'src/style/Textpattern/',
+                        cwd: '<%= paths.src.templates %>',
                         src: ['**', '!*.tpl', '!sass/**', '!js/**'],
-                        dest: 'public/style/Textpattern/'
+                        dest: '<%= paths.dest.templates %>'
                     }
                 ]
             }
@@ -191,9 +186,9 @@ module.exports = function (grunt)
                 files: [
                     {
                         expand: true,
-                        cwd: 'src/style/Textpattern/',
+                        cwd: '<%= paths.src.templates %>',
                         src: ['*.tpl'],
-                        dest: 'public/style/Textpattern/'
+                        dest: '<%= paths.dest.templates %>'
                     },
                     {
                         expand: true,
@@ -277,7 +272,7 @@ module.exports = function (grunt)
                         expand: true,
                         cwd: 'node_modules/google-code-prettify/src/',
                         src: 'lang-*.js',
-                        dest: 'public/style/Textpattern/js/'
+                        dest: '<%= paths.dest.js %>'
                     }
                 ]
             }
@@ -301,11 +296,11 @@ module.exports = function (grunt)
     });
 
     // Register tasks.
-    grunt.registerTask('build', ['clean', 'theme', 'concurrent', 'uglify']);
+    grunt.registerTask('build', ['clean', 'concurrent', 'uglify']);
     grunt.registerTask('default', ['watch']);
     grunt.registerTask('postsetup', ['shell:postsetup']);
     grunt.registerTask('css', ['sasslint', 'sass', 'postcss']);
     grunt.registerTask('setup', ['shell:setup', 'build']);
-    grunt.registerTask('theme', ['copy:theme', 'replace:theme']);
-    grunt.registerTask('travis', ['jshint', 'compass']);
+    grunt.registerTask('theme', ['copy:theme', 'replace']);
+    grunt.registerTask('travis', ['jshint', 'build']);
 };
