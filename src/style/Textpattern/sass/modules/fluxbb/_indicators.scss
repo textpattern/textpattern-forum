@@ -1,12 +1,18 @@
 /* Forum indicators
    ========================================================================== */
 
-/* `tr` hightlight for new posts */
+/**
+ * `tr` hightlight for new posts.
+ */
+
 .inew {
     background-color: $color-highlight-box;
 }
 
-/* text highlights */
+/**
+ * Text highlights.
+ */
+
 .warntext,
 #page-delete .forminfo p {
     display: block;
@@ -49,7 +55,10 @@
     color: $color-info-text;
 }
 
-/* indicate posts participated in */
+/**
+ * Indicate posts participated in.
+ */
+
 .ipost {
     @include hide-text;
 

@@ -1,7 +1,10 @@
 /* Forum admin layout
    ========================================================================== */
 
-/* hide the duplicate submit button at top */
+/**
+ * Hide the duplicate submit button at top.
+ */
+
 #adminconsole p.submittop {
     display: none;
 }
@@ -31,7 +34,10 @@
     text-align: center;
 }
 
-/* column widths */
+/**
+ * Column widths.
+ */
+
 #categoryedit .tcl {
     width: 50%;
 }
@@ -43,7 +49,10 @@
     width: 30%;
 }
 
-/* user bans table */
+/**
+ * User bans table.
+ */
+
 #bans1 {
     .tcl {
         width: 30%;
@@ -64,7 +73,10 @@
     }
 }
 
-/* user search table (admin) */
+/**
+ * User search table (admin).
+ */
+
 #users2 {
     .tcl {
         width: 20%;
@@ -75,12 +87,18 @@
     }
 }
 
-/* hide 'select all' link (we filter out inline JavaScript, so it does not work) */
+/**
+ * Hide 'select all' link (we filter out inline JavaScript, so it doesn't work).
+ */
+
 .modbuttons a {
     display: none;
 }
 
-/* ad spots */
+/**
+ * Ad spots.
+ */
+
 .sponsor {
     .spot {
         margin-left: -0.5em;

@@ -1,5 +1,7 @@
-.clearer {
-    @include pie-clearfix;
+.clearer::after {
+    display: table;
+    clear: both;
+    content: "";
 }
 
 .clearl {
@@ -73,26 +75,30 @@ thead th {
    ========================================================================== */
 
 #brdwelcome {
-    @include pie-clearfix;
-
     border-bottom: 1px solid $color-border;
 
+    &::after {
+        display: table;
+        clear: both;
+        content: "";
+    }
+
     ul {
-        list-style: none;
         padding: 0;
+        list-style: none;
     }
 
     @include breakpoint($breakpoint-2) {
         li {
             display: inline;
 
-            span:before {
+            span::before {
                 color: lighten($color-text, 33%);
                 content: " \272D \0020";
             }
         }
 
-        li:first-child span:before {
+        li:first-child span::before {
             content: none;
         }
     }
@@ -101,8 +107,8 @@ thead th {
         float: left;
 
         @include breakpoint(max-width $breakpoint-2) {
-            float: none;
             margin-bottom: 0;
+            float: none;
         }
     }
 
@@ -110,8 +116,8 @@ thead th {
         float: right;
 
         @include breakpoint(max-width $breakpoint-2) {
-            float: none;
             margin-top: 0;
+            float: none;
         }
     }
 }
@@ -121,32 +127,36 @@ thead th {
    ========================================================================== */
 
 #announce {
-    @include pie-clearfix;
-
-    border-bottom: 1px solid $color-border;
     padding: 1px 0.5384615em;
+    border-bottom: 1px solid $color-border;
     background-color: $color-highlight-box;
+
+    &::after {
+        display: table;
+        clear: both;
+        content: "";
+    }
 
     .hd h2 {
         @include adjust-font-size-to(14px, 1);
 
-        float: left;
         margin: 0.8571429em 1em 0 0;
+        float: left;
         text-transform: uppercase;
 
         @include breakpoint(max-width $breakpoint-2) {
-            float: none;
             margin: 0.8571429em 0 0.25em;
+            float: none;
         }
     }
 
     .box {
-        float: left;
         margin: 1em 0;
+        float: left;
 
         @include breakpoint(max-width $breakpoint-2) {
-            float: none;
             margin: 0 0 1em;
+            float: none;
         }
     }
 }
@@ -156,8 +166,8 @@ thead th {
    ========================================================================== */
 
 .crumbs {
-    list-style: none;
     padding: 0;
+    list-style: none;
 
     li {
         display: inline-block;
@@ -197,21 +207,21 @@ thead th {
     @include pie-clearfix;
 
     .pagelink {
-        float: left;
         margin: 0;
         padding: 0.5em 0;
+        float: left;
     }
 
     .postlink {
-        float: right;
         margin: 0;
+        float: right;
     }
 
     @include breakpoint(max-width $breakpoint-2) {
         .pagelink,
         .postlink {
-            float: none;
             margin: 0.5em 0;
+            float: none;
         }
     }
 }
@@ -224,13 +234,13 @@ thead th {
     @include box-sizing;
 
     margin: 1.75em 0 1em;
-    border: 1px solid $color-border;
     padding: 0 1em;
+    border: 1px solid $color-border;
     background-color: $color-background-box;
 
     @include breakpoint($breakpoint-2) {
-        float: right;
         width: 22.8571429%;
+        float: right;
     }
 
     h2 {
@@ -246,8 +256,8 @@ thead th {
 .block2col .block,
 .block2col .blockform {
     @include breakpoint($breakpoint-2) {
-        float: left;
         width: 74.2857143%;
+        float: left;
     }
 }
 
@@ -323,8 +333,8 @@ thead th {
 
         .newtext {
             display: inline-block;
-            font-size: 0.65em;
             font-family: $font-sans-serif;
+            font-size: 0.65em;
             font-weight: normal;
         }
     }
@@ -372,15 +382,15 @@ thead th {
 
 /* post author info section */
 .postleft {
-    float: left;
     width: 30%;
+    float: left;
 
     @include breakpoint(max-width $breakpoint-2) {
         position: relative;
-        float: none;
-        padding-right: 86px;
         width: auto;
         min-height: 60px;
+        padding-right: 86px;
+        float: none;
     }
 
     dl {
@@ -413,7 +423,7 @@ thead th {
     display: inline;
 }
 
-.userrank:before {
+.userrank::before {
     color: lighten($color-text, 33%);
     content: "\0020 \272D \0020";
 }
@@ -435,20 +445,20 @@ thead th {
 }
 
 .usercontacts {
-    span:before {
+    span::before {
         content: "| \0020";
     }
 
-    span:first-child:before {
+    span:first-child::before {
         content: none;
     }
 }
 
 /* post author message section */
 .postright {
-    float: right;
-    padding: 0 2.8%;
     width: 63%;
+    padding: 0 2.8%;
+    float: right;
     background-color: $color-background;
     word-wrap: break-word;
 
@@ -457,9 +467,9 @@ thead th {
     }
 
     @include breakpoint(max-width $breakpoint-2) {
-        float: none;
-        padding: 1px 1em;
         width: auto;
+        padding: 1px 1em;
+        float: none;
     }
 }
 
@@ -469,40 +479,40 @@ thead th {
 
 /* post author online/offline section */
 .postfootleft {
-    float: left;
     width: 31.4285714%;
+    float: left;
 
     p {
         padding: 0 1em;
     }
 
     strong {
-        font-weight: normal;
         color: $color-success-text;
+        font-weight: normal;
     }
 }
 
 /* post author quote/report/etc. section */
 .postfootright {
-    float: right;
     width: 65.7142857%;
+    float: right;
 
     ul {
-        list-style: none;
         padding: 0;
         padding-right: 1em;
+        list-style: none;
         text-align: right;
     }
 
     li {
         display: inline;
 
-        span:before {
+        span::before {
             content: "| \0020";
         }
     }
 
-    li:first-child span:before {
+    li:first-child span::before {
         content: none;
     }
 }
@@ -521,8 +531,8 @@ thead th {
         @include adjust-font-size-to(18px, 1.2);
 
         margin: rhythm(1, 20px) 0;
-        border: 0;
         padding: 0;
+        border: 0;
         background-color: lighten($color-highlight-box, 2%);
     }
 
@@ -571,8 +581,8 @@ thead th {
    ========================================================================== */
 
 #brdfooter {
-    clear: both;
     margin-bottom: 1em;
+    clear: both;
 
     @include breakpoint(max-width $breakpoint-2) {
         margin-bottom: 0;
@@ -586,15 +596,15 @@ thead th {
     }
 
     .conr {
+        padding-top: 0.5em;
         float: right;
-        padding-top: 0.5384615em;
     }
 
     @include breakpoint(max-width $breakpoint-2) {
         .conl,
         .conr {
-            float: none;
             padding-top: 0;
+            float: none;
         }
     }
 }
@@ -622,12 +632,12 @@ thead th {
         display: block;
     }
 
-    span:before {
+    span::before {
         color: lighten($color-text, 33%);
         content: "\272D \0020";
     }
 
-    span:first-child:before {
+    span:first-child::before {
         content: "";
     }
 }
