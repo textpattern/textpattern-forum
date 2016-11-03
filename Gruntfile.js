@@ -47,20 +47,6 @@ module.exports = function (grunt)
             ]
         },
 
-        // Gzip compress the theme files.
-        compress: {
-            theme: {
-                options: {
-                    mode: 'gzip'
-                },
-                files: [
-                    {expand: true, src: ['public/style/**/*.js'], ext: '.js.gz'},
-                    {expand: true, src: ['public/style/**/*.css'], ext: '.css.gz'},
-                    {expand: true, src: ['public/style/**/*.svg'], ext: '.svg.gz'}
-                ]
-            }
-        },
-
         // Copy files from `src/` and `bower_components/` to `public/`.
         copy: {
             branding: {
@@ -315,7 +301,7 @@ module.exports = function (grunt)
     });
 
     // Register tasks.
-    grunt.registerTask('build', ['clean', 'theme', 'concurrent', 'uglify', 'compress:theme']);
+    grunt.registerTask('build', ['clean', 'theme', 'concurrent', 'uglify']);
     grunt.registerTask('default', ['watch']);
     grunt.registerTask('postsetup', ['shell:postsetup']);
     grunt.registerTask('css', ['sasslint', 'sass', 'postcss']);
