@@ -33,7 +33,7 @@ module.exports = function (grunt)
         // Clean distribution and temporary directories to start afresh.
         clean: [
             'tmp/',
-            '<%= paths.dest.templates %>*/'
+            'public/style/'
         ],
 
         // Run some tasks in parallel to speed up the build process.
@@ -227,8 +227,7 @@ module.exports = function (grunt)
             },
             dist: {
                 files: [
-                    {'<%= paths.dest.css %>style.css': '<%= paths.src.sass %>style.scss'},
-                    {'<%= paths.dest.css %>design-patterns.css': '<%= paths.src.sass %>design-patterns.scss'}
+                    {'<%= paths.dest.css %>style.css': '<%= paths.src.sass %>style.scss'}
                 ]
             }
         },
@@ -274,13 +273,13 @@ module.exports = function (grunt)
                         '<%= paths.dest.js %>main.js': ['<%= paths.src.js %>main.js'],
                         '<%= paths.dest.js %>autosize.js': ['node_modules/autosize/dist/autosize.js'],
                         '<%= paths.dest.js %>cookie.js': ['node_modules/jquery.cookie/jquery.cookie.js'],
-                        '<%= paths.dest.js %>prettify.js': ['bower_components/google-code-prettify/src/prettify.js'],
+                        '<%= paths.dest.js %>prettify.js': ['node_modules/google-code-prettify/src/prettify.js'],
                         '<%= paths.dest.js %>require.js': ['node_modules/requirejs/require.js'],
                         '<%= paths.dest.js %>responsivenav.js': ['node_modules/responsive-nav/responsive-nav.js']
                     },
                     {
                         expand: true,
-                        cwd: 'bower_components/google-code-prettify/src/',
+                        cwd: 'node_modules/google-code-prettify/src/',
                         src: 'lang-*.js',
                         dest: 'public/style/Textpattern/js/'
                     }

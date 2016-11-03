@@ -5,13 +5,12 @@ Here's a summary of changes in each update.
 ## Version 1.0.0 - Upcoming
 
 * Fixed: FluxBB v1.5.9. Bug fixes and security improvements.
+* Changed: Updated style for consistency with other official sites development.
 * Changed: New URL for 'documentation'.
 * Changed: New URL for 'themes'.
-* Changed: Overhauled the build process.
-* Changed: Removed Ruby from build.
-* Changed: Removed Compass from build.
-* Changed: Removed Toolkit from build.
-* Removed: meta data for apple-touch-icons/Windows tiles no longer required.
+* Changed: Completely overhauled the build process.
+* Changed: Removed Ruby, Compass, Toolkit, Singularity.gs and Sass-Breakpoint from build.
+* Removed: Meta data for favicons/apple-touch-icons/Windows tiles that are no longer required.
 
 ## Version 0.3.6 - 2015/10/12
 
@@ -29,7 +28,7 @@ Here's a summary of changes in each update.
 ## Version 0.3.4 - 2015/04/11
 
 * Changed: Improvements to ARIA and microdata.
-* Changed: Update high resolution media query syntax.
+* Changed: Updated high resolution media query syntax.
 * Changed: Updated dependencies.
 * Added: editorconfig file.
 * Added: More comments in build files.

@@ -5,7 +5,7 @@
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
     <link rel="prefetch" href="style/Textpattern/img/branding/misc/icon-sprite.svg">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700italic">
-    <link rel="stylesheet" href="style/Textpattern/css/main.@@timestamp.css">
+    <link rel="stylesheet" href="style/Textpattern/css/style.@@timestamp.css">
     <link rel="dns-prefetch" href="https://ajax.googleapis.com">
     <link rel="dns-prefetch" href="https://www.google-analytics.com">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -192,7 +192,7 @@
 
 
 <!-- JavaScript -->
-    <script data-main="style/Textpattern/js/main.@@timestamp.js" src="style/Textpattern/js/require.@@timestamp.js"></script>
+    <script data-main="style/Textpattern/js/style.@@timestamp.js" src="style/Textpattern/js/require.@@timestamp.js"></script>
     <noscript>JavaScript is currently disabled in your browser - activate it for the best experience.</noscript>
 </body>
 </html>
