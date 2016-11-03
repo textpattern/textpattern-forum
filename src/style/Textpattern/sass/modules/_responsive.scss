@@ -1,56 +1,217 @@
-/**
- * Grid column cell changes at 2nd breakpoint.
- *
- * Cells for 2 column layout are generated if `.at-break2` class is specified,
- * otherwise they stay as 1 column layout cells.
- *
- * Cells for 3 column layout cells are also generated.
- */
+/* ==========================================================================
+   Styling and layout for screen media at 1st breakpoint
+   ========================================================================== */
 
-@include breakpoint($breakpoint-2) {
+@media screen and (min-width: $breakpoint-1) {
 
-    .layout--span-1-6.at-break2 { // 2 column grid, cell 1
-        @include grid-span(6, 1);
+    /**
+     * TEMPORARY FILLER
+     */
 
-        clear: both;
-    }
-
-    .layout--span-7-12.at-break2 { // 2 column grid, cell 2
-        @include grid-span(6, 7);
-    }
-
-    .layout--span-9-12 { // 3 column grid, cell 3
-        @include grid-span(4, 9);
-    }
-
-    .layout--span-1-8,
-    #rules,
-    #regform,
-    #page-login .blockform { // 3 column grid, cell 1 and 2
-        @include grid-span(8, 1);
-
-        clear: both;
+    .layout-4col {
+        width: 50%;
     }
 
 }
 
-/**
- * Grid column cell changes at 3rd (final) breakpoint.
- *
- * Cells for 2 column layout are generated if they were not stated as
- * `.at-break2` class previously. Nested 2 column layout cells as generated.
- */
 
-@include breakpoint($breakpoint-3) {
+/* ==========================================================================
+   Styling and layout for screen media at 2nd breakpoint
+   ========================================================================== */
 
-    .layout--span-1-6 { // 2 column grid, cell 1
-        @include grid-span(6, 1);
+@media screen and (min-width: $breakpoint-2) {
 
-        clear: both;
+    /**
+     * Cells for 2 column and 3 column layouts are generated.
+     *
+     * Example HTML:
+     *
+     * <div class="layout-3col"></div>
+     * <div class="layout-3col-2span"></div>
+     */
+
+    .layout-2col {
+        width: 50%;
     }
 
-    .layout--span-7-12 { // 2 column grid, cell 2
-        @include grid-span(6, 7);
+    .layout-3col {
+        width: 33.333%;
+    }
+
+    .layout-3col-2span,
+    #rules,
+    #regform,
+    #page-login .blockform {
+        width: 66.666%;
+    }
+
+    /**
+     * Changes in styling for site header.
+     */
+
+    .masthead a {
+        width: 320px;
+        height: 52px;
+        background-image: url("../img/branding/textpattern/textpattern.svg");
+        background-size: 320px 52px;
+    }
+
+    /**
+     * Changes in styling for search form.
+     */
+
+    .search-form {
+        top: 0.75em;
+        right: 0;
+
+        input[type="search"] {
+            width: 244px;
+        }
+    }
+
+    /**
+     * Changes in styling for navigation.
+     */
+
+    .site-navigation {
+        font-family: $font-serif;
+
+        .js & {
+            max-height: none;
+        }
+
+        ul {
+            width: 90%;
+        }
+
+        li {
+            float: left;
+            border: 0 !important;
+        }
+
+        a {
+            margin: 0 0.35em 0.35em -0.35em;
+            padding: 0 0.35em;
+            border-radius: $border-radius / 2;
+            font-size: 1.375em; // 22px / 16px
+            font-weight: normal;
+        }
+    }
+
+    .nav-toggle {
+        display: none;
+    }
+
+    /**
+     * Changes in styling for site footer.
+     */
+
+    .community-details,
+    .host-details {
+        display: block;
+    }
+
+
+
+}
+
+@media screen and (max-width: $breakpoint-2) {
+
+    /**
+     * Changes in styling for search form.
+     */
+
+    .search-form {
+        input[type="search"] {
+            padding-right: 0;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #e3edfc;
+            }
+
+            &:focus {
+                width: 244px;
+                padding-right: 0.5384615em;
+                background-color: $color-background;
+                cursor: auto;
+            }
+        }
+    }
+
+    /**
+     * Changes in styling for error messages.
+     */
+
+    .http-status-description {
+        display: block;
+    }
+
+    /**
+     * Hide llustrated icons on main index page for small screen widths.
+     */
+
+    #page-index .icon {
+        display: none;
+    }
+
+    /**
+     * User bans table.
+     */
+
+    #bans1 {
+        .tcl {
+            width: auto;
+        }
+
+        .tc2,
+        .tc3 {
+            display: none;
+        }
+    }
+
+    /**
+     * User search table (admin).
+     */
+
+    #users2 {
+        .tcl {
+            width: auto;
+        }
+
+        .tc2,
+        .tc4 {
+            display: none;
+        }
+    }
+
+}
+
+
+/* ==========================================================================
+   Styling and layout for screen media at 3rd (final) breakpoint
+   ========================================================================== */
+
+@media screen and (min-width: $breakpoint-3) {
+
+    /**
+     * TEMPORARY FILLER
+     */
+
+    .layout-4col {
+        width: 50%;
+    }
+
+}
+
+@media screen and (max-width: $breakpoint-3) {
+
+    /**
+     * User search table (admin).
+     */
+
+    #users2 .tc3 {
+        display: none;
     }
 
 }

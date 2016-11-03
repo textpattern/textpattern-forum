@@ -1,27 +1,29 @@
 /* Forum icons
    ========================================================================== */
 
-/* don't show icons on topic lists */
+/**
+ * Don't show icons on topic lists.
+ */
+
 .icon {
     display: none;
 }
+
+/**
+ * Illustrated icons on main index page.
+ */
 
 #page-index .icon {
     @include hires-graphic(forum-icons, png, 480px, 180px);
 
     display: block;
-    float: left;
-    margin-right: 1em;
     width: 60px;
     height: 60px;
+    margin-right: 1em;
+    float: left;
 
     &.icon-new {
         background-color: $color-strong-highlight-box;
-    }
-
-    // hide icon at small screen widths
-    @include breakpoint(max-width $breakpoint-2) {
-        display: none;
     }
 
     .nosize {

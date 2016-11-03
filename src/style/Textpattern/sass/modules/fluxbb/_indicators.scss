@@ -10,43 +10,43 @@
 .warntext,
 #page-delete .forminfo p {
     display: block;
+    padding: 0.5em 1em; // 8px / 16px
     border: 1px solid;
-    border-radius: 0.2307692em; // 3px / 13px
-    padding: 0.5384615em 1em; // 7px / 13px
+    border-radius: 0.25em; // 4px / 16px
 }
 
 .stickytext,
 .closedtext,
 .movedtext {
-    margin-right: 0.34em;
+    margin-right: 0.33em;
+    padding: 1px 0.25em; // 4px / 16px
     border: 1px solid;
-    border-radius: 0.2307692em; // 3px / 13px
-    padding: 1px 0.2307692em; // 3px / 13px
+    border-radius: 0.25em; // 4px / 16px
 }
 
 .warntext {
     border-color: $color-warning-border;
-    color: $color-warning-text;
     background: $color-warning-background;
+    color: $color-warning-text;
 }
 
 .stickytext {
     border-color: $color-success-border;
-    color: $color-success-text;
     background: $color-success-background;
+    color: $color-success-text;
 }
 
 .closedtext,
 #page-delete .forminfo p {
     border-color: $color-error-border;
-    color: $color-error-text;
     background: $color-error-background;
+    color: $color-error-text;
 }
 
 .movedtext {
     border-color: $color-info-border;
-    color: $color-info-text;
     background: $color-info-background;
+    color: $color-info-text;
 }
 
 /* indicate posts participated in */
@@ -54,9 +54,9 @@
     @include hide-text;
 
     display: inline-block;
-    margin-right: 0.34em;
-    border-radius: 50%; // 3px / 13px
     width: 0.75em;
     height: 0.75em;
+    margin-right: 0.33em;
+    border-radius: 50%;
     background-color: #fbcf5c;
 }

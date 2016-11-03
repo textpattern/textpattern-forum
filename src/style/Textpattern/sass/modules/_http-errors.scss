@@ -2,11 +2,5 @@
    ========================================================================== */
 
 .http-status-code {
-    @include adjust-font-size-to(52px, 2.6);
-}
-
-@include breakpoint(max-width $breakpoint-2) {
-    .http-status-description {
-        display: block;
-    }
+    font-size: 3em; // 48px / 16px
 }

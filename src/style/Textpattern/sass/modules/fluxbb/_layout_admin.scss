@@ -62,17 +62,6 @@
     .tcr {
         width: 7em;
     }
-
-    @include breakpoint(max-width $breakpoint-2) {
-        .tcl {
-            width: auto;
-        }
-
-        .tc2,
-        .tc3 {
-            display: none;
-        }
-    }
 }
 
 /* user search table (admin) */
@@ -83,23 +72,6 @@
 
     .tc5 {
         display: none;
-    }
-
-    @include breakpoint(max-width $breakpoint-3) {
-        .tc3 {
-            display: none;
-        }
-    }
-
-    @include breakpoint(max-width $breakpoint-2) {
-        .tcl {
-            width: auto;
-        }
-
-        .tc2,
-        .tc4 {
-            display: none;
-        }
     }
 }
 
@@ -125,7 +97,7 @@
 
     > p {
         margin: 0;
-        font-weight: bold;
         color: $color-text-footnote;
+        font-weight: bold;
     }
 }

@@ -6,10 +6,10 @@
  */
 
 table {
+    width: 100%;
     margin: 1em 0;
     border-collapse: collapse;
     border-spacing: 0;
-    width: 100%;
 }
 
 /**
@@ -69,14 +69,14 @@ thead {
 tfoot {
     th,
     td {
-        padding: 0.6363636em; // 7px / 11px
+        padding: 0.6666667em; // 8px / 12px
     }
 
     tr:last-child {
         th,
         td {
-            border-bottom: 0;
             padding-bottom: 0;
+            border-bottom: 0;
         }
     }
 }
