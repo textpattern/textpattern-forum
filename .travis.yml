@@ -12,5 +12,5 @@ before_script:
   - composer install
   - npm install
 script:
-  - ./vendor/bin/phpcs --standard=PSR1,PSR2 src -x!*.js
+  - ./vendor/bin/phpcs --standard=PSR1,PSR2 src/lib src/setup
   - grunt setup --verbose
