@@ -144,7 +144,6 @@ EOF;
                 $buffer
             );
         } else {
-
             $login = $register = '';
 
             if (preg_match('#<li id="navlogin"(?: class="isactive")?>(.*?)</li>#', $buffer, $matches)) {
