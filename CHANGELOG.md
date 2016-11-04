@@ -2,7 +2,7 @@
 
 Here's a summary of changes in each update.
 
-## Version 1.0.0 - Upcoming
+## Version 1.0.0 - 2016/11/04
 
 * Fixed: FluxBB v1.5.10. Bug fixes and security improvements.
 * Changed: Updated style for consistency with other official sites development.
