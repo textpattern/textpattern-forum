@@ -26,19 +26,6 @@ li {
  * Style for definition lists.
  */
 
-dl {
-    padding-bottom: 1em;
-    border-bottom: 1px solid $color-border-light;
-}
-
-dt {
-    margin-top: 1em;
-    margin-bottom: 1em;
-    padding-top: 1em;
-    border-top: 1px solid $color-border-light;
-    font-weight: bolder;
-}
-
 dd {
     margin: 0 0 0 1.75em;
 }
