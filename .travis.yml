@@ -7,12 +7,9 @@ node_js:
   - "6"
 before_install:
   - composer --version
-  - git --version
-  - node --version
-  - npm --version
 before_script:
   - composer install
-  - npm install
 script:
   - ./vendor/bin/phpcs --standard=PSR1,PSR2 src/lib src/setup
   - grunt setup --verbose
+sudo: false
