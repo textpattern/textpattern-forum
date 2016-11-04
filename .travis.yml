@@ -13,5 +13,5 @@ before_script:
   - npm install
 script:
   - ./vendor/bin/phpcs --standard=PSR1,PSR2 src
-  - grunt test --verbose
+  - grunt build --verbose
   - grunt setup --verbose
