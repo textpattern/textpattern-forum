@@ -3,6 +3,8 @@
 language: php
 php:
   - "5.6"
+node_js:
+  - "6"
 before_install:
   - composer --version
   - git --version
