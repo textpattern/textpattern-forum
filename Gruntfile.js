@@ -15,6 +15,9 @@ module.exports = function (grunt)
                 js: 'src/style/Textpattern/js/',
                 templates: 'src/style/Textpattern/'
             },
+            tmp: {
+                js: 'tmp/assets/js/'
+            },
             dest: {
                 css: 'public/style/Textpattern/css/',
                 js: 'public/style/Textpattern/js/',
@@ -29,6 +32,7 @@ module.exports = function (grunt)
 
         // Clean distribution directory to start afresh.
         clean: [
+            'tmp/',
             'public/style/'
         ],
 
@@ -195,6 +199,10 @@ module.exports = function (grunt)
                         cwd: 'src/',
                         src: ['*.html'],
                         dest: 'public/'
+                    },
+                    {
+                        src: '<%= paths.src.js %>main.js',
+                        dest: '<%= paths.tmp.js %>main.js'
                     }
                 ]
             }
@@ -250,7 +258,7 @@ module.exports = function (grunt)
                 },
                 files: [
                     {
-                        '<%= paths.dest.js %>main.js': ['<%= paths.src.js %>main.js'],
+                        '<%= paths.dest.js %>main.js': ['<%= paths.tmp.js %>main.js'],
                         '<%= paths.dest.js %>autosize.js': ['node_modules/autosize/dist/autosize.js'],
                         '<%= paths.dest.js %>prettify.js': ['node_modules/google-code-prettify/src/prettify.js'],
                         // TODO: Use Prism instead of Google Code Prettify
