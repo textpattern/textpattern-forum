@@ -4,7 +4,7 @@ Here's a summary of changes in each update.
 
 ## Version 1.0.0 - Upcoming
 
-* Fixed: FluxBB v1.5.9. Bug fixes and security improvements.
+* Fixed: FluxBB v1.5.10. Bug fixes and security improvements.
 * Changed: Updated style for consistency with other official sites development.
 * Changed: New URL for 'documentation'.
 * Changed: New URL for 'themes'.
