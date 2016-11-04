@@ -41,7 +41,7 @@ thead th {
 
 .buttons a,
 .modbuttons input {
-    margin-left: 0.34em;
+    margin-left: 0.3333333em;
 }
 
 .tcmod {
@@ -64,9 +64,9 @@ thead th {
 }
 
 .rbox {
-    input[type="checkbox"],
-    input[type="radio"] {
-        margin-right: 0.34em;
+    [type="checkbox"],
+    [type="radio"] {
+        margin-right: 0.3333333em;
     }
 }
 
@@ -88,37 +88,12 @@ thead th {
         list-style: none;
     }
 
-    @include breakpoint($breakpoint-2) {
-        li {
-            display: inline;
-
-            span::before {
-                color: lighten($color-text, 33%);
-                content: " \272D \0020";
-            }
-        }
-
-        li:first-child span::before {
-            content: none;
-        }
-    }
-
     .conl {
         float: left;
-
-        @include breakpoint(max-width $breakpoint-2) {
-            margin-bottom: 0;
-            float: none;
-        }
     }
 
     .conr {
         float: right;
-
-        @include breakpoint(max-width $breakpoint-2) {
-            margin-top: 0;
-            float: none;
-        }
     }
 }
 
@@ -127,7 +102,7 @@ thead th {
    ========================================================================== */
 
 #announce {
-    padding: 1px 0.5384615em;
+    padding: 1px 0.5em;
     border-bottom: 1px solid $color-border;
     background-color: $color-highlight-box;
 
@@ -138,26 +113,15 @@ thead th {
     }
 
     .hd h2 {
-        @include adjust-font-size-to(14px, 1);
-
-        margin: 0.8571429em 1em 0 0;
+        margin: 1em 1em 0 0;
         float: left;
+        font-size: $base-font-size;
         text-transform: uppercase;
-
-        @include breakpoint(max-width $breakpoint-2) {
-            margin: 0.8571429em 0 0.25em;
-            float: none;
-        }
     }
 
     .box {
         margin: 1em 0;
         float: left;
-
-        @include breakpoint(max-width $breakpoint-2) {
-            margin: 0 0 1em;
-            float: none;
-        }
     }
 }
 
@@ -181,9 +145,9 @@ thead th {
         margin-bottom: 0.5em;
 
         strong {
-            @include adjust-font-size-to(30px, 1.75);
-
             font-family: $font-serif;
+            font-size: 1.875em; // 30px / 16px
+            line-height: 1.2666667; // 38px / 30px
 
             a {
                 color: $color-text;
@@ -204,7 +168,11 @@ thead th {
 }
 
 .pagepost {
-    @include pie-clearfix;
+    &::after {
+        display: table;
+        clear: both;
+        content: "";
+    }
 
     .pagelink {
         margin: 0;
@@ -216,14 +184,6 @@ thead th {
         margin: 0;
         float: right;
     }
-
-    @include breakpoint(max-width $breakpoint-2) {
-        .pagelink,
-        .postlink {
-            margin: 0.5em 0;
-            float: none;
-        }
-    }
 }
 
 
@@ -231,20 +191,15 @@ thead th {
    ========================================================================== */
 
 .block2col .blockmenu {
-    @include box-sizing;
-
     margin: 1.75em 0 1em;
     padding: 0 1em;
     border: 1px solid $color-border;
     background-color: $color-background-box;
-
-    @include breakpoint($breakpoint-2) {
-        width: 22.8571429%;
-        float: right;
-    }
+    box-sizing: border-box;
 
     h2 {
-        @include adjust-font-size-to(18px, 1.2);
+        font-size: 1.125em; // 18px / 16px
+        line-height: 1.4444444; // 26px / 18px
     }
 
     ul {
@@ -253,26 +208,10 @@ thead th {
     }
 }
 
-.block2col .block,
-.block2col .blockform {
-    @include breakpoint($breakpoint-2) {
-        width: 74.2857143%;
-        float: left;
-    }
-}
+/**
+ * Blockmenu active section.
+ */
 
-.blockform input[type="email"],
-.blockform input[type="number"],
-.blockform input[type="password"],
-.blockform input[type="text"],
-.blockform input[type="url"],
-.blockform select {
-    @include breakpoint(max-width $breakpoint-2) {
-        width: 100%;
-    }
-}
-
-/* blockmenu active section */
 .blockmenu .isactive {
     font-weight: bold;
 }
@@ -288,20 +227,10 @@ thead th {
     .tc2,
     .tc3 {
         width: 11%;
-
-        // hide columns at small screen widths
-        @include breakpoint(max-width $breakpoint-2) {
-            display: none;
-        }
     }
 
     .tcr {
         width: 24%;
-
-        // widen column at small screen widths
-        @include breakpoint(max-width $breakpoint-2) {
-            width: 36%;
-        }
     }
 
     td {
@@ -362,11 +291,15 @@ thead th {
    ========================================================================== */
 
 .blockpost {
-    @include pie-clearfix;
-
     margin: 1em 0;
     border: 1px solid $color-border;
     background-color: $color-background-box;
+
+    &::after {
+        display: table;
+        clear: both;
+        content: "";
+    }
 
     > h2 {
         margin: 0;
@@ -380,33 +313,24 @@ thead th {
     }
 }
 
-/* post author info section */
+/**
+ * Post author info section.
+ */
+
 .postleft {
     width: 30%;
     float: left;
 
-    @include breakpoint(max-width $breakpoint-2) {
-        position: relative;
-        width: auto;
-        min-height: 60px;
-        padding-right: 86px;
-        float: none;
-    }
-
     dl {
         margin: 0;
         padding: 0 1em;
-
-        @include breakpoint(max-width $breakpoint-2) {
-            margin-bottom: 1em;
-        }
     }
 
     dt {
-        @include adjust-font-size-to(18px, 1.2);
-
         font-family: $font-serif;
+        font-size: 1.125em; // 18px / 16px
         font-style: normal;
+        line-height: 1.4444444; // 26px / 18px
 
         a {
             color: $color-text;
@@ -428,20 +352,8 @@ thead th {
     content: "\0020 \272D \0020";
 }
 
-.postavatar {
-    @include breakpoint(max-width $breakpoint-2) {
-        position: absolute;
-        top: 0;
-        right: 1em;
-    }
-
-    img {
-        margin: 0.5em 0;
-
-        @include breakpoint(max-width $breakpoint-2) {
-            margin: 0;
-        }
-    }
+.postavatar img {
+    margin: 0.5em 0;
 }
 
 .usercontacts {
@@ -454,7 +366,10 @@ thead th {
     }
 }
 
-/* post author message section */
+/**
+ * Post author message section.
+ */
+
 .postright {
     width: 63%;
     padding: 0 2.8%;
@@ -465,19 +380,16 @@ thead th {
     > h3 {
         display: none;
     }
-
-    @include breakpoint(max-width $breakpoint-2) {
-        width: auto;
-        padding: 1px 1em;
-        float: none;
-    }
 }
 
 .postfoot {
     clear: both;
 }
 
-/* post author online/offline section */
+/**
+ * Post author online/offline section.
+ */
+
 .postfootleft {
     width: 31.4285714%;
     float: left;
@@ -492,7 +404,10 @@ thead th {
     }
 }
 
-/* post author quote/report/etc. section */
+/**
+ * Post author quote/report/etc. section.
+ */
+
 .postfootright {
     width: 65.7142857%;
     float: right;
@@ -517,7 +432,10 @@ thead th {
     }
 }
 
-/* post reply section */
+/**
+ * Post reply section.
+ */
+
 #quickpost {
     margin: 0.5em 0 1em;
     border: 1px solid $color-border;
@@ -528,23 +446,16 @@ thead th {
     }
 
     legend {
-        @include adjust-font-size-to(18px, 1.2);
-
-        margin: rhythm(1, 20px) 0;
+        margin: 1em 0;
         padding: 0;
         border: 0;
         background-color: lighten($color-highlight-box, 2%);
+        font-size: 1.125em; // 18px / 16px
+        line-height: 1.4444444; // 26px / 18px
     }
 
     .buttons {
         padding: 0 1em;
-    }
-
-    @include breakpoint($breakpoint-2) {
-        fieldset,
-        .buttons {
-            padding-left: 31.4285713%;
-        }
     }
 }
 
@@ -556,23 +467,16 @@ thead th {
 /* Forum misc layout
    ========================================================================== */
 
-/* user search table */
+/**
+ * User search table.
+ */
+
 #users1 {
     .tcl,
     .tc2,
     .tc3,
     .tcr {
         width: 25%;
-    }
-
-    @include breakpoint(max-width $breakpoint-2) {
-        .tcl {
-            width: 50%;
-        }
-
-        .tc2 {
-            display: none;
-        }
     }
 }
 
@@ -583,13 +487,12 @@ thead th {
 #brdfooter {
     margin-bottom: 1em;
     clear: both;
-
-    @include breakpoint(max-width $breakpoint-2) {
-        margin-bottom: 0;
-    }
 }
 
-/* Jump to, feed links and FluxBB link container */
+/**
+ * Jump to, feed links and FluxBB link container.
+ */
+
 #brdfooternav {
     .conl {
         float: left;
@@ -599,17 +502,12 @@ thead th {
         padding-top: 0.5em;
         float: right;
     }
-
-    @include breakpoint(max-width $breakpoint-2) {
-        .conl,
-        .conr {
-            padding-top: 0;
-            float: none;
-        }
-    }
 }
 
-/* moderator controls */
+/**
+ * Moderator controls.
+ */
+
 #modcontrols {
     dl {
         margin-top: 0;
@@ -624,13 +522,12 @@ thead th {
     }
 }
 
-/* RSS/Atom feeds */
+/**
+ * RSS/Atom feeds.
+ */
+
 #feedlinks {
     display: inline;
-
-    @include breakpoint(max-width $breakpoint-2) {
-        display: block;
-    }
 
     span::before {
         color: lighten($color-text, 33%);
@@ -642,13 +539,11 @@ thead th {
     }
 }
 
-/* FluxBB link */
+/**
+ * FluxBB link.
+ */
+
 #poweredby {
     display: inline;
     margin-left: 1em;
-
-    @include breakpoint(max-width $breakpoint-2) {
-        display: block;
-        margin-left: 0;
-    }
 }

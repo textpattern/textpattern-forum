@@ -111,7 +111,54 @@
         display: block;
     }
 
+    /**
+     * Forum header area.
+     */
 
+    #brdwelcome {
+        li {
+            display: inline;
+
+            span::before {
+                color: lighten($color-text, 33%);
+                content: " \272D \0020";
+            }
+        }
+
+        li:first-child span::before {
+            content: none;
+        }
+    }
+
+    /**
+     * Forum layouts with side menus.
+     */
+
+    .block2col .blockmenu {
+        width: 22.8571429%;
+        float: right;
+    }
+
+    /**
+     * Forum layouts with side menus.
+     */
+
+    .block2col .block,
+    .block2col .blockform {
+        width: 74.2857143%;
+        float: left;
+    }
+
+    /**
+     * Post reply section.
+     */
+
+    #quickpost {
+        fieldset,
+        .buttons {
+            padding-left: 31.4285713%;
+        }
+    }
 
 }
 
@@ -122,7 +169,7 @@
      */
 
     .search-form {
-        input[type="search"] {
+        [type="search"] {
             padding-right: 0;
             cursor: pointer;
 
@@ -183,6 +230,212 @@
         .tc4 {
             display: none;
         }
+    }
+
+    /**
+     * Forum header area.
+     */
+
+    #brdwelcome {
+        .conl {
+            margin-bottom: 0;
+            float: none;
+        }
+
+        .conr {
+            margin-top: 0;
+            float: none;
+        }
+    }
+
+    /**
+     * Forum announcement box.
+     */
+
+    #announce {
+        .hd h2 {
+            margin: 1em 0 0.25em;
+            float: none;
+        }
+
+        .box {
+            margin: 0 0 1em;
+            float: none;
+        }
+    }
+
+    /**
+     * Forum breadcrumbs, postlink and pagination layout.
+     */
+
+    .pagepost {
+        .pagelink,
+        .postlink {
+            margin: 0.5em 0;
+            float: none;
+        }
+    }
+
+    /**
+     * Forum layouts with side menus.
+     */
+
+    .blockform [type="email"],
+    .blockform [type="number"],
+    .blockform [type="password"],
+    .blockform [type="text"],
+    .blockform [type="url"],
+    .blockform select {
+        width: 100%;
+    }
+
+    /**
+     * Forum topic list, post list and search list page layout.
+     */
+
+    #page-index,
+    #page-viewforum,
+    #page-moderate,
+    #page-search {
+        .tc2,
+        .tc3 {
+            // Hide columns at small screen widths
+            display: none;
+        }
+
+        .tcr {
+            // Widen column at small screen widths
+            width: 36%;
+        }
+    }
+
+    /**
+     * Post author info section.
+     */
+
+    .postleft {
+        position: relative;
+        width: auto;
+        min-height: 60px;
+        padding-right: 86px;
+        float: none;
+
+        dl {
+            margin-bottom: 1em;
+        }
+    }
+
+    .postavatar {
+        position: absolute;
+        top: 0;
+        right: 1em;
+
+        img {
+            margin: 0;
+        }
+    }
+
+    /**
+     * Post author message section.
+     */
+
+    .postright {
+        width: auto;
+        padding: 1px 1em;
+        float: none;
+    }
+
+    /**
+     * User search table.
+     */
+
+    #users1 {
+        .tcl {
+            width: 50%;
+        }
+
+        .tc2 {
+            display: none;
+        }
+    }
+
+    /**
+     * Forum footer area.
+     */
+
+    #brdfooter {
+        margin-bottom: 0;
+    }
+
+    /**
+     * Jump to, feed links and FluxBB link container.
+     */
+
+    #brdfooternav {
+        .conl,
+        .conr {
+            padding-top: 0;
+            float: none;
+        }
+    }
+
+    /**
+     * RSS/Atom feeds.
+     */
+
+    #feedlinks {
+        display: block;
+    }
+
+    /**
+     * FluxBB link.
+     */
+
+    #poweredby {
+        display: block;
+        margin-left: 0;
+    }
+
+    /**
+     * Forum navigation menu.
+     */
+
+    #brdmenu {
+        ul {
+            margin: 0;
+            border: 0;
+        }
+
+        a {
+            display: block;
+            margin-right: 0;
+            float: none;
+            box-shadow: none;
+        }
+    }
+
+    #brdmenu .isactive a,
+    #page-help #navextra1 a {
+        border-bottom-color: $color-border;
+    }
+
+    /**
+     * Adjust navigation top margin on small devices.
+     */
+
+    #navindex,
+    #page-index #navadmin {
+        margin-top: 1em;
+    }
+
+    /**
+     * Hide some non-essential navigation links on small devices to reduce clutter.
+     */
+
+    #page-index #navindex,
+    #navuserlist,
+    #navsearch {
+        display: none;
     }
 
 }

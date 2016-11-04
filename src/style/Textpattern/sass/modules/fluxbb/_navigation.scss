@@ -3,8 +3,7 @@
 
 #brdmenu {
     ul {
-
-        margin: 1.4em 0 0;
+        margin: 1.25em 0 0;
         padding: 0;
         border-bottom: 1px solid $color-border;
         list-style: none;
@@ -13,11 +12,6 @@
             display: table;
             clear: both;
             content: "";
-        }
-
-        @include breakpoint(max-width $breakpoint-2) {
-            margin: 0;
-            border: 0;
         }
     }
 
@@ -29,14 +23,6 @@
         background-color: $color-background-box;
         color: $color-text;
         box-shadow: inset 0 -0.125em 0.25em rgba(153, 153, 153, 0.33);
-
-        @include breakpoint(max-width $breakpoint-2) {
-            @include box-shadow(none);
-
-            display: block;
-            margin-right: 0;
-            float: none;
-        }
 
         &:hover,
         &:visited {
@@ -63,27 +49,7 @@
 
 #brdmenu .isactive a,
 #page-help #navextra1 a {
-    @include box-shadow(none);
-
     border-bottom-color: $color-background;
     background-color: $color-background;
-
-    @include breakpoint(max-width $breakpoint-2) {
-        border-bottom-color: $color-border;
-    }
-}
-
-@include breakpoint(max-width $breakpoint-2) {
-    /* adjust top margin on small devices */
-    #navindex,
-    #page-index #navadmin {
-        margin-top: 1em;
-    }
-
-    /* hide some non-essential navigation links on small devices to reduce clutter */
-    #page-index #navindex,
-    #navuserlist,
-    #navsearch {
-        display: none;
-    }
+    box-shadow: none;
 }

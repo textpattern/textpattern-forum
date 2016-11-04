@@ -246,9 +246,8 @@ module.exports = function (grunt)
             dist: {
                 // Preserve all comments that start with a bang (!) or include a closure compiler style.
                 options: {
-                    preserveComments: 'some'
+                    preserveComments: require('uglify-save-license')
                 },
-
                 files: [
                     {
                         '<%= paths.dest.js %>main.js': ['<%= paths.src.js %>main.js'],

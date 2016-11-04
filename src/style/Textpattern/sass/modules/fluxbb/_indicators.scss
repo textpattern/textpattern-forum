@@ -24,7 +24,7 @@
 .stickytext,
 .closedtext,
 .movedtext {
-    margin-right: 0.33em;
+    margin-right: 0.3333333em;
     padding: 1px 0.25em; // 4px / 16px
     border: 1px solid;
     border-radius: 0.25em; // 4px / 16px
@@ -65,7 +65,7 @@
     display: inline-block;
     width: 0.75em;
     height: 0.75em;
-    margin-right: 0.33em;
+    margin-right: 0.3333333em;
     border-radius: 50%;
-    background-color: #fbcf5c;
+    background-color: $color-highlight;
 }
