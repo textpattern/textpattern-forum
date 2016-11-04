@@ -2,7 +2,7 @@
 
 language: php
 php:
-  - "5.5"
+  - "5.6"
 before_install:
   - composer --version
   - git --version
