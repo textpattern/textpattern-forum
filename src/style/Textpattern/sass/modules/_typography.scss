@@ -151,30 +151,36 @@ samp {
 /**
  * Additional stylng for preformatted text/code.
  *
- * 1. Don't wrap long words.
- * 2. Contain overflow in all browsers.
- * 3. Set tab size to 4 spaces.
+ * 1. Truncate deep code boxes.
+ * 2. Don't wrap long words.
+ * 3. Contain overflow in all browsers.
+ * 4. Set tab size to 4 spaces.
  */
 
 pre {
+    max-height: 50vh; /* 1 */
     padding: 0.5714286em 1.1428571em; // 8px / 14px + 16px / 14px
-    word-wrap: normal; /* 1 */
-    overflow-x: auto; /* 2 */
-    tab-size: 4; /* 3 */
+    word-wrap: normal; /* 2 */
+    overflow-x: auto; /* 3 */
+    tab-size: 4; /* 4 */
 
     code {
         padding: 0;
         border: 0;
         background-color: transparent;
         font-size: 1em; // 14px
-        text-align: left;
         white-space: pre;
         word-spacing: normal;
         word-break: normal;
         word-wrap: normal;
-        direction: ltr;
         hyphens: none;
     }
+}
+
+code {
+    text-align: left;
+    direction: ltr;
+    tab-size: 4; /* 4 */
 }
 
 /**
