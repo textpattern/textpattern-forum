@@ -73,8 +73,7 @@ input[type="submit"],
 
 .button-primary,
 .postlink a,
-#postform [name="submit"],
-#quickpostform [name="submit"] {
+.blockform [name="submit"] {
     @include gradient-linear($color-button-primary-gradient-from, $color-button-primary-gradient-to);
 
     border-color: $color-button-primary-border;
