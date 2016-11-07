@@ -2,7 +2,7 @@
   "name": "textpattern-forum",
   "version": "1.0.0",
   "devDependencies": {
-    "autoprefixer": "6.5.1",
+    "autoprefixer": "6.5.2",
     "cssnano": "3.8.0",
     "grunt": "~1.0",
     "grunt-cli": "~1",
@@ -17,10 +17,10 @@
     "grunt-replace": "1.0.1",
     "grunt-sass": "1.2.1",
     "grunt-sass-lint": "0.2.0",
-    "grunt-shell": "2.0.0",
+    "grunt-shell": "2.1.0",
     "load-grunt-tasks": "~3.5",
-    "node-sass": "3.11.1",
-    "sass-lint": "1.9.1",
+    "node-sass": "3.11.2",
+    "sass-lint": "1.10.0",
     "uglify-save-license": "0.4.1"
   },
   "dependencies": {
