@@ -448,11 +448,22 @@
 @media screen and (min-width: $breakpoint-3) {
 
     /**
-     * TEMPORARY FILLER
+     * Adjust baseline.
      */
 
-    .layout-4col {
-        width: 50%;
+    html,
+    h5,
+    h6,
+    pre,
+    code,
+    kbd,
+    samp,
+    small,
+    figcaption,
+    tfoot,
+    .footnote,
+    .footnotes {
+        line-height: $line-height-desktop;
     }
 
 }
