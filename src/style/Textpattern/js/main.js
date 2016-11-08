@@ -29,25 +29,9 @@
         };
     });
 
-    // Auto-growing textareas, via 'Autosize'.
-    // Allows dynamic resizing of textarea height, so that it grows as based
-    // on visitor input. More info - https://github.com/jackmoore/autosize.
-
-    define('growfields', ['jquery'], function ($)
-    {
-        var fields = $('textarea');
-
-        if (fields.length) {
-            require(['autosize.@@timestamp'], function (autosize)
-            {
-                autosize(fields);
-            });
-        }
-    });
-
     // Quoting.
 
-    require(['jquery', 'growfields'], function ($)
+    require(['jquery'], function ($)
     {
         var field = $('#quickpostform textarea[name=req_message]'), button;
 

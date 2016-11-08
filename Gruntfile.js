@@ -143,7 +143,6 @@ module.exports = function (grunt)
                     module: true,
                     require: true,
                     requirejs: true,
-                    autosize: true,
                     responsiveNav: true,
                     prettyPrint: true
                 }
@@ -259,7 +258,6 @@ module.exports = function (grunt)
                 files: [
                     {
                         '<%= paths.dest.js %>main.js': ['<%= paths.tmp.js %>main.js'],
-                        '<%= paths.dest.js %>autosize.js': ['node_modules/autosize/dist/autosize.js'],
                         '<%= paths.dest.js %>prettify.js': ['node_modules/google-code-prettify/src/prettify.js'],
                         // TODO: Use Prism instead of Google Code Prettify
                         '<%= paths.dest.js %>prism.js': [
