@@ -17,7 +17,7 @@
         paths: {
             'jquery': 'https://ajax.googleapis.com/ajax/libs/jquery/'+jqueryVersion+'/jquery.min',
             'recaptcha': 'https://www.google.com/recaptcha/api/js/recaptcha_ajax',
-            'analytics': 'https://www.google-analytics.com/analytics.js'
+            'analytics': 'https://www.google-analytics.com/analytics'
         }
     });
 
