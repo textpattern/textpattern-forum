@@ -658,17 +658,17 @@
     require(['track'], function(track)
     {
         if (track.allow) {
-            // Google Analytics.
+            // Google Analytics
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-            window._gaq = window._gaq || [];
-            window._gaq.push(['_setAccount', 'UA-191562-28']);
-            window._gaq.push(['_setDomainName', 'none']);
-            window._gaq.push(['_gat._anonymizeIp']);
-            window._gaq.push(['_setVisitorCookieTimeout', 0]);
-            window._gaq.push(['_setSessionCookieTimeout', 0]);
-            window._gaq.push(['_setCampaignCookieTimeout', 0]);
-            window._gaq.push(['_trackPageview']);
-            require(['//www.google-analytics.com/ga.js']);
+            ga('create', 'UA-191562-28', 'auto', {
+                anonymizeIp: true
+            });
+            ga('send', 'pageview');
+
         }
 
         // Ads.
