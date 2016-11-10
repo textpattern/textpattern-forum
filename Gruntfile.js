@@ -143,6 +143,7 @@ module.exports = function (grunt)
                     module: true,
                     require: true,
                     requirejs: true,
+                    ga: true,
                     responsiveNav: true,
                     prettyPrint: true
                 }

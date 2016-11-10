@@ -16,7 +16,8 @@
     requirejs.config({
         paths: {
             'jquery': 'https://ajax.googleapis.com/ajax/libs/jquery/'+jqueryVersion+'/jquery.min',
-            'recaptcha': 'https://www.google.com/recaptcha/api/js/recaptcha_ajax'
+            'recaptcha': 'https://www.google.com/recaptcha/api/js/recaptcha_ajax',
+            'analytics': 'https://www.google-analytics.com/analytics.js'
         }
     });
 
@@ -655,29 +656,19 @@
         }
     });
 
-    require(['track'], function(track)
+    require(['track', 'analytics'], function(track)
     {
-        if (track.allow) {
-            // Google Analytics
-            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        // Google Analytics
 
+        if (track.allow) {
+            /* jshint ignore:start */
+            window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+            /* jshint ignore:end */
             ga('create', 'UA-191562-28', 'auto', {
                 anonymizeIp: true
             });
             ga('send', 'pageview');
         }
-
-        // Ads.
-
-        require(['jquery'], function ($)
-        {
-            if ($('.bsarocks').length) {
-                require(['https://s3.buysellads.com/ac/bsa.js']);
-            }
-        });
     });
 
 })();
