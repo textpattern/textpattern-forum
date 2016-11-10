@@ -668,7 +668,6 @@
                 anonymizeIp: true
             });
             ga('send', 'pageview');
-
         }
 
         // Ads.
