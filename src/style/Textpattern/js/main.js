@@ -16,8 +16,7 @@
     requirejs.config({
         paths: {
             'jquery': 'https://ajax.googleapis.com/ajax/libs/jquery/'+jqueryVersion+'/jquery.min',
-            'recaptcha': 'https://www.google.com/recaptcha/api/js/recaptcha_ajax',
-            'analytics': 'https://www.google-analytics.com/analytics'
+            'recaptcha': 'https://www.google.com/recaptcha/api/js/recaptcha_ajax'
         }
     });
 
@@ -656,13 +655,16 @@
         }
     });
 
-    require(['track', 'analytics'], function(track)
-    {
-        // Google Analytics
+    // Google Analytics
 
+    require(['track'], function(track)
+    {
         if (track.allow) {
             /* jshint ignore:start */
-            window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
             /* jshint ignore:end */
             ga('create', 'UA-191562-28', 'auto', {
                 anonymizeIp: true
