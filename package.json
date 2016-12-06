@@ -1,15 +1,22 @@
 {
   "name": "textpattern-forum",
   "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/textpattern/textpattern-forum"
+  },
+  "bugs": {
+    "url": "https://github.com/textpattern/textpattern-forum/issues"
+  },
   "devDependencies": {
     "autoprefixer": "6.5.3",
-    "cssnano": "3.8.0",
+    "cssnano": "3.8.1",
     "grunt": "~1.0",
     "grunt-cli": "~1",
     "grunt-concurrent": "2.3.1",
     "grunt-contrib-clean": "1.0.0",
     "grunt-contrib-copy": "1.0.0",
-    "grunt-contrib-jshint": "1.0.0",
+    "grunt-contrib-jshint": "1.1.0",
     "grunt-contrib-uglify": "2.0.0",
     "grunt-contrib-watch": "1.0.0",
     "grunt-dev-update": "2.0.0",
@@ -19,13 +26,13 @@
     "grunt-sass-lint": "0.2.2",
     "grunt-shell": "2.1.0",
     "load-grunt-tasks": "~3.5",
-    "node-sass": "3.12.2",
+    "node-sass": "3.13.0",
     "sass-lint": "1.10.2",
     "uglify-save-license": "0.4.1"
   },
   "dependencies": {
     "google-code-prettify": "1.0.5",
-    "prismjs": "1.5.1",
+    "prismjs": "1.6.0",
     "requirejs": "2.3.2",
     "responsive-nav": "1.0.39",
     "textpattern-branding": "0.2.1"
