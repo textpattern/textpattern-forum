@@ -56,7 +56,7 @@
 <!-- Primary Content -->
         <div class="container">
             <main aria-label="Main content">
-                <h1 class="accessibility">Textpattern Forum</h1>
+                <h1 class="accessibility">Textpattern CMS support forum</h1>
 
                 <pun_redir_main>
                 <pun_footer>
