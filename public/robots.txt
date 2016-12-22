@@ -1,3 +1,3 @@
 User-agent: *
 Disallow: /img/
-Sitemap: /sitemap.xml
+Sitemap: http://forum.textpattern.com/sitemap.xml
