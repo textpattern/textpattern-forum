@@ -1,3 +1,10 @@
 User-agent: *
 Disallow: /img/
+Disallow: /*?*pid=
+Disallow: /*?*action=
+Disallow: /*?*type=
+Disallow: /*?*tid=
+Disallow: /*?*user_id=
+Disallow: /*?*search_id=
+Disallow: /*?*username=
 Sitemap: http://forum.textpattern.com/sitemap.xml
