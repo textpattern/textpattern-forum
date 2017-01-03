@@ -1,6 +1,5 @@
 User-agent: *
 Disallow: /img/
-Disallow: /*?*pid=
 Disallow: /*?*action=
 Disallow: /*?*type=
 Disallow: /*?*tid=
