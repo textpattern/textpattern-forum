@@ -58,7 +58,6 @@
             <main aria-label="Main content">
                 <h1 class="accessibility">Textpattern CMS support forum</h1>
 
-                <pun_desc>
                 <pun_navlinks>
                 <pun_status>
                 <pun_announcement>
