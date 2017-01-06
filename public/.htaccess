@@ -1,10 +1,12 @@
-DirectoryIndex index.php index.html
-Options -Indexes
+# ETags.
 
-ErrorDocument 401 "401"
-ErrorDocument 403 /403.html
-ErrorDocument 404 /404.html
-ErrorDocument 500 /500.html
+<IfModule mod_headers.c>
+    Header unset ETag
+</IfModule>
+FileETag None
+
+
+# Content Security Policy.
 
 <ifModule mod_headers.c>
     Header unset P3P
@@ -14,6 +16,17 @@ ErrorDocument 500 /500.html
     Header append Content-Security-Policy "default-src 'self'; font-src fonts.gstatic.com https://fonts.gstatic.com; img-src 'self' data: * https://*; style-src 'self' 'unsafe-inline' ajax.googleapis.com fonts.googleapis.com gist.github.com platform.twitter.com https://ajax.googleapis.com https://fonts.googleapis.com https://gist.github.com https://platform.twitter.com; script-src 'self' www.google.com ajax.googleapis.com gist.github.com cdnjs.cloudflare.com *.google-analytics.com https://www.google.com https://ajax.googleapis.com https://gist.github.com https://cdnjs.cloudflare.com https://*.google-analytics.com https://*.twitter.com; frame-src *.youtube-nocookie.com https://*.youtube-nocookie.com *.twitter.com https://*.twitter.com twitter.com https://twitter.com"
 </ifModule>
 
+
+# FluxBB.
+
+DirectoryIndex index.php index.html
+Options -Indexes
+
+ErrorDocument 401 "401"
+ErrorDocument 403 /403.html
+ErrorDocument 404 /404.html
+ErrorDocument 500 /500.html
+
 <IfModule mod_rewrite.c>
     RewriteEngine On
     RewriteCond %{REQUEST_FILENAME} /cache/ [OR]
@@ -22,3 +35,13 @@ ErrorDocument 500 /500.html
     RewriteCond %{REQUEST_FILENAME} /plugins/
     RewriteRule ^(.*) - [F]
 </IfModule>
+
+
+# Redirects.
+
+redirect 301 /viewforum.php?id=1 http://forum.textpattern.com/
+redirect 301 /viewforum.php?id=15 http://forum.textpattern.com/
+redirect 301 /viewforum.php?id=16 http://forum.textpattern.com/
+redirect 301 /viewforum.php?id=18 http://forum.textpattern.com/
+redirect 301 /viewforum.php?id=27 http://forum.textpattern.com/
+redirect 301 /viewforum.php?id=53 http://forum.textpattern.com/
