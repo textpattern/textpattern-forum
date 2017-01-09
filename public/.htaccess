@@ -35,13 +35,3 @@ ErrorDocument 500 /500.html
     RewriteCond %{REQUEST_FILENAME} /plugins/
     RewriteRule ^(.*) - [F]
 </IfModule>
-
-
-# Redirects.
-
-redirect 301 /viewforum.php?id=1 http://forum.textpattern.com/
-redirect 301 /viewforum.php?id=15 http://forum.textpattern.com/
-redirect 301 /viewforum.php?id=16 http://forum.textpattern.com/
-redirect 301 /viewforum.php?id=18 http://forum.textpattern.com/
-redirect 301 /viewforum.php?id=27 http://forum.textpattern.com/
-redirect 301 /viewforum.php?id=53 http://forum.textpattern.com/
