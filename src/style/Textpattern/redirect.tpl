@@ -2,13 +2,13 @@
 <html lang="<pun_language>">
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
     <link rel="prefetch" href="style/Textpattern/img/branding/misc/icon-sprite.svg">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700italic">
     <link rel="stylesheet" href="style/Textpattern/css/style.@@timestamp.css">
     <link rel="dns-prefetch" href="https://ajax.googleapis.com">
     <link rel="dns-prefetch" href="https://www.google-analytics.com">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="theme-color" content="#ffda44">
     <meta name="application-name" content="Textpattern Forum">
     <link rel="icon" sizes="32x32" href="favicon-32x32.png">
