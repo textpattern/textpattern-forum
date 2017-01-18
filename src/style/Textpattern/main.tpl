@@ -54,8 +54,8 @@
         </div>
 
 <!-- Primary Content -->
-        <div class="container">
-            <main aria-label="Main content">
+        <main aria-label="Main content">
+            <div class="container">
                 <h1 class="accessibility">Textpattern CMS support forum</h1>
 
                 <pun_navlinks>
@@ -64,11 +64,10 @@
                 <pun_main>
                 <pun_footer>
 
-            </main>
-        </div><!-- /.container -->
+            </div><!-- /.container -->
+        </main>
 
     </div><!-- /.wrapper -->
-
 
 <!-- Secondary Content -->
     <aside class="container complementary-content">
@@ -118,7 +117,6 @@
 
     </aside><!-- /.complementary-content -->
 
-
 <!-- Footer -->
     <footer class="site-footer" role="contentinfo">
         <p class="legal">
@@ -129,7 +127,6 @@
             Textpattern is both free and open source. <a href="http://textpattern.com/license">GPLv2 license</a>.
         </p>
     </footer>
-
 
 <!-- JavaScript -->
     <script data-main="style/Textpattern/js/main.@@timestamp.js" src="style/Textpattern/js/require.@@timestamp.js"></script>
