@@ -51,6 +51,7 @@
 
                 <pun_maint_main>
 
+                <p><a rel="external" href="https://twitter.com/txpforum"><span class="ui-icon ui-extra-icon-twitter"></span> Follow @txpforum on Twitter</a></p>
             </div><!-- /.container -->
         </main>
 
