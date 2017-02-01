@@ -1,8 +1,6 @@
 # Textpattern support forum
 
 [![Build Status](https://img.shields.io/travis/textpattern/textpattern-forum/master.svg)](https://travis-ci.org/textpattern/textpattern-forum)
-[![Dependency Status](http://img.shields.io/david/textpattern/textpattern-forum.svg)](https://david-dm.org/textpattern/textpattern-forum)
-[![devDependency Status](http://img.shields.io/david/dev/textpattern/textpattern-forum.svg)](https://david-dm.org/textpattern/textpattern-forum?type=dev)
 
 This repository contains the source code for the [Textpattern support forum](http://forum.textpattern.com/).
 
