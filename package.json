@@ -9,7 +9,7 @@
     "url": "https://github.com/textpattern/textpattern-forum/issues"
   },
   "devDependencies": {
-    "autoprefixer": "6.7.1",
+    "autoprefixer": "6.7.2",
     "cssnano": "3.10.0",
     "grunt": "~1.0",
     "grunt-cli": "~1",
@@ -26,7 +26,7 @@
     "grunt-sass-lint": "0.2.2",
     "grunt-shell": "2.1.0",
     "load-grunt-tasks": "~3.5",
-    "node-sass": "4.4.0",
+    "node-sass": "4.5.0",
     "sass-lint": "1.10.2",
     "uglify-save-license": "0.4.1"
   },
