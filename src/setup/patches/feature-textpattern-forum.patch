@@ -274,6 +274,9 @@ index 888cc91..f7b7972 100644
 +$page_head['twitter-title'] = '<meta name="twitter:title" content="Textpattern CMS support forum">';
 +$page_head['twitter-description'] = '<meta name="twitter:description" content="'.pun_htmlspecialchars($pun_config['o_board_desc']).'">';
 +$page_head['twitter-url'] = '<meta name="twitter:url" content="http://forum.textpattern.com/">';
++$page_head['og-title'] = '<meta property="og:title" content="Textpattern CMS support forum">';
++$page_head['og-description'] = '<meta property="og:description" content="'.pun_htmlspecialchars($pun_config['o_board_desc']).'">';
++$page_head['og-url'] = '<meta property="og:url" content="http://forum.textpattern.com/">';
 +$page_head['json-ld'] = '<script type="application/ld+json">'."\n".
 +'{"@context": "http://schema.org",'."\n".
 +'"@type": "WebSite",'."\n".
@@ -311,6 +314,9 @@ index 2607a21..c545b0c 100644
 +$page_head['twitter-title'] = '<meta name="twitter:title" content="'.pun_htmlspecialchars($cur_forum['forum_name']).($p == 1 ? '' : ' ('.sprintf($lang_common['Page'], $p).')').'">';
 +$page_head['twitter-description'] = '<meta name="twitter:description" content="Listings in'.($p == 1 ? '' : ' page '.$p.' of').' the ‘'.pun_htmlspecialchars($cur_forum['forum_name']).'’ subforum at the Textpattern CMS support forum.">';
 +$page_head['twitter-url'] = '<meta name="twitter:url" content="http://forum.textpattern.com/viewforum.php?id='.$id.($p == 1 ? '' : '&amp;p='.$p).'">';
++$page_head['og-title'] = '<meta property="og:title" content="'.pun_htmlspecialchars($cur_forum['forum_name']).($p == 1 ? '' : ' ('.sprintf($lang_common['Page'], $p).')').'">';
++$page_head['og-description'] = '<meta property="og:description" content="Listings in'.($p == 1 ? '' : ' page '.$p.' of').' the ‘'.pun_htmlspecialchars($cur_forum['forum_name']).'’ subforum at the Textpattern CMS support forum.">';
++$page_head['og-url'] = '<meta property="og:url" content="http://forum.textpattern.com/viewforum.php?id='.$id.($p == 1 ? '' : '&amp;p='.$p).'">';
 +$page_head['json-ld'] = '<script type="application/ld+json">'."\n".
 +'{"@context": "http://schema.org",'."\n".
 +'"@type": "WebPage",'."\n".
@@ -344,6 +350,9 @@ index 618b699..4f8d7c1 100644
 +$page_head['twitter-title'] = '<meta name="twitter:title" content="'.pun_htmlspecialchars($cur_topic['subject']).($p == 1 ? '' : ' ('.sprintf($lang_common['Page'], $p).')').'">';
 +$page_head['twitter-description'] = '<meta name="twitter:description" content="Postings in'.($p == 1 ? '' : ' page '.$p.' of').' the ‘'.pun_htmlspecialchars($cur_topic['subject']).'’ topic in the ‘'.pun_htmlspecialchars($cur_topic['forum_name']).'’ subforum.">';
 +$page_head['twitter-url'] = '<meta name="twitter:url" content="http://forum.textpattern.com/viewtopic.php?id='.$id.($p == 1 ? '' : '&amp;p='.$p).'">';
++$page_head['og-title'] = '<meta property="og:title" content="'.pun_htmlspecialchars($cur_topic['subject']).($p == 1 ? '' : ' ('.sprintf($lang_common['Page'], $p).')').'">';
++$page_head['og-description'] = '<meta property="og:description" content="Postings in'.($p == 1 ? '' : ' page '.$p.' of').' the ‘'.pun_htmlspecialchars($cur_topic['subject']).'’ topic in the ‘'.pun_htmlspecialchars($cur_topic['forum_name']).'’ subforum.">';
++$page_head['og-url'] = '<meta property="og:url" content="http://forum.textpattern.com/viewtopic.php?id='.$id.($p == 1 ? '' : '&amp;p='.$p).'">';
 +$page_head['json-ld'] = '<script type="application/ld+json">'."\n".
 +'{"@context": "http://schema.org",'."\n".
 +'"@type": "WebPage",'."\n".

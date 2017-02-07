@@ -14,6 +14,7 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@txpforum">
     <meta name="twitter:image:src" content="http://forum.textpattern.com/apple-touch-icon-180x180.png">
+    <meta property="og:image" content="http://textpattern.com/assets/img/branding/textpattern/textpattern-og.png">
     <pun_head>
     <link rel="alternate" type="application/rss+xml" href="extern.php?action=feed&amp;order=posted&amp;type=rss" title="RSS new topics feed">
 </head>
