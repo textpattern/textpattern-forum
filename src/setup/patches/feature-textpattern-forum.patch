@@ -274,6 +274,13 @@ index 888cc91..f7b7972 100644
 +$page_head['twitter-title'] = '<meta name="twitter:title" content="Textpattern CMS support forum">';
 +$page_head['twitter-description'] = '<meta name="twitter:description" content="'.pun_htmlspecialchars($pun_config['o_board_desc']).'">';
 +$page_head['twitter-url'] = '<meta name="twitter:url" content="http://forum.textpattern.com/">';
++$page_head['json-ld'] = '<script type="application/ld+json">'."\n".
++'{"@context": "http://schema.org",'."\n".
++'"@type": "WebSite",'."\n".
++'"headline": "Textpattern CMS support forum",'."\n".
++'"description": "'.pun_htmlspecialchars($pun_config['o_board_desc']).'",'."\n".
++'"url": "http://forum.textpattern.com/"}'."\n".
++'</script>';
 +$page_head['canonical'] = '<link rel="canonical" href="http://forum.textpattern.com/">';
  $page_title = array(pun_htmlspecialchars($pun_config['o_board_title']));
  define('PUN_ALLOW_INDEX', 1);
@@ -300,10 +307,17 @@ index 2607a21..c545b0c 100644
  // Add relationship meta tags
  $page_head = array();
 -$page_head['canonical'] = '<link rel="canonical" href="viewforum.php?id='.$id.($p == 1 ? '' : '&amp;p='.$p).'" title="'.sprintf($lang_common['Page'], $p).'" />';
-+$page_head['meta_desc'] = '<meta name="description" content="Listings in page '.$p.' of the ‘'.pun_htmlspecialchars($cur_forum['forum_name']).'’ subforum at the Textpattern CMS support forum.">';
-+$page_head['twitter-title'] = '<meta name="twitter:title" content="'.pun_htmlspecialchars($cur_forum['forum_name']).' ('.sprintf($lang_common['Page'], $p).')">';
-+$page_head['twitter-description'] = '<meta name="twitter:description" content="Listings in page '.$p.' of the ‘'.pun_htmlspecialchars($cur_forum['forum_name']).'’ subforum at the Textpattern CMS support forum.">';
++$page_head['meta_desc'] = '<meta name="description" content="Listings in'.($p == 1 ? '' : ' page '.$p.' of').' the ‘'.pun_htmlspecialchars($cur_forum['forum_name']).'’ subforum at the Textpattern CMS support forum.">';
++$page_head['twitter-title'] = '<meta name="twitter:title" content="'.pun_htmlspecialchars($cur_forum['forum_name']).($p == 1 ? '' : ' ('.sprintf($lang_common['Page'], $p).')').'">';
++$page_head['twitter-description'] = '<meta name="twitter:description" content="Listings in'.($p == 1 ? '' : ' page '.$p.' of').' the ‘'.pun_htmlspecialchars($cur_forum['forum_name']).'’ subforum at the Textpattern CMS support forum.">';
 +$page_head['twitter-url'] = '<meta name="twitter:url" content="http://forum.textpattern.com/viewforum.php?id='.$id.($p == 1 ? '' : '&amp;p='.$p).'">';
++$page_head['json-ld'] = '<script type="application/ld+json">'."\n".
++'{"@context": "http://schema.org",'."\n".
++'"@type": "WebPage",'."\n".
++'"headline": "'.pun_htmlspecialchars($cur_forum['forum_name']).($p == 1 ? '' : ' ('.sprintf($lang_common['Page'], $p).')').'",'."\n".
++'"description": "Listings in'.($p == 1 ? '' : ' page '.$p.' of').' the ‘'.pun_htmlspecialchars($cur_forum['forum_name']).'’ subforum at the Textpattern CMS support forum.",'."\n".
++'"url": "http://forum.textpattern.com/viewforum.php?id='.$id.($p == 1 ? '' : '&amp;p='.$p).'"}'."\n".
++'</script>';
 +$page_head['canonical'] = '<link rel="canonical" href="http://forum.textpattern.com/viewforum.php?id='.$id.($p == 1 ? '' : '&amp;p='.$p).'" title="'.sprintf($lang_common['Page'], $p).'">';
  
  if ($num_pages > 1)
@@ -326,10 +340,17 @@ index 618b699..4f8d7c1 100644
  // Add relationship meta tags
  $page_head = array();
 -$page_head['canonical'] = '<link rel="canonical" href="viewtopic.php?id='.$id.($p == 1 ? '' : '&amp;p='.$p).'" title="'.sprintf($lang_common['Page'], $p).'" />';
-+$page_head['meta_desc'] = '<meta name="description" content="Postings in page '.$p.' of the ‘'.pun_htmlspecialchars($cur_topic['subject']).'’ topic in the ‘'.pun_htmlspecialchars($cur_topic['forum_name']).'’ subforum at the Textpattern CMS support forum.">';
-+$page_head['twitter-title'] = '<meta name="twitter:title" content="'.pun_htmlspecialchars($cur_topic['subject']).' ('.sprintf($lang_common['Page'], $p).')">';
-+$page_head['twitter-description'] = '<meta name="twitter:description" content="Postings in page '.$p.' of the ‘'.pun_htmlspecialchars($cur_topic['subject']).'’ topic in the ‘'.pun_htmlspecialchars($cur_topic['forum_name']).'’ subforum at the Textpattern CMS support forum.">';
++$page_head['meta_desc'] = '<meta name="description" content="Postings in'.($p == 1 ? '' : ' page '.$p.' of').' the ‘'.pun_htmlspecialchars($cur_topic['subject']).'’ topic in the ‘'.pun_htmlspecialchars($cur_topic['forum_name']).'’ subforum.">';
++$page_head['twitter-title'] = '<meta name="twitter:title" content="'.pun_htmlspecialchars($cur_topic['subject']).($p == 1 ? '' : ' ('.sprintf($lang_common['Page'], $p).')').'">';
++$page_head['twitter-description'] = '<meta name="twitter:description" content="Postings in'.($p == 1 ? '' : ' page '.$p.' of').' the ‘'.pun_htmlspecialchars($cur_topic['subject']).'’ topic in the ‘'.pun_htmlspecialchars($cur_topic['forum_name']).'’ subforum.">';
 +$page_head['twitter-url'] = '<meta name="twitter:url" content="http://forum.textpattern.com/viewtopic.php?id='.$id.($p == 1 ? '' : '&amp;p='.$p).'">';
++$page_head['json-ld'] = '<script type="application/ld+json">'."\n".
++'{"@context": "http://schema.org",'."\n".
++'"@type": "WebPage",'."\n".
++'"headline": "'.pun_htmlspecialchars($cur_topic['subject']).($p == 1 ? '' : ' ('.sprintf($lang_common['Page'], $p).')').'",'."\n".
++'"description": "Postings in'.($p == 1 ? '' : ' page '.$p.' of').' the ‘'.pun_htmlspecialchars($cur_topic['subject']).'’ topic in the ‘'.pun_htmlspecialchars($cur_topic['forum_name']).'’ subforum.",'."\n".
++'"url": "http://forum.textpattern.com/viewtopic.php?id='.$id.($p == 1 ? '' : '&amp;p='.$p).'"}'."\n".
++'</script>';
 +$page_head['canonical'] = '<link rel="canonical" href="http://forum.textpattern.com/viewtopic.php?id='.$id.($p == 1 ? '' : '&amp;p='.$p).'" title="'.sprintf($lang_common['Page'], $p).'">';
  
  if ($num_pages > 1)
