@@ -272,7 +272,7 @@ index 888cc91..f7b7972 100644
  
 +$page_head['meta_desc'] = '<meta name="description" content="'.pun_htmlspecialchars($pun_config['o_board_desc']).'">';
 +$page_head['twitter-title'] = '<meta name="twitter:title" content="Textpattern CMS support forum">';
-+$page_head['twitter-description'] = '<meta name="twitter:description" content="'.$description.'">';
++$page_head['twitter-description'] = '<meta name="twitter:description" content="'.pun_htmlspecialchars($pun_config['o_board_desc']).'">';
 +$page_head['twitter-url'] = '<meta name="twitter:url" content="http://forum.textpattern.com/">';
 +$page_head['canonical'] = '<link rel="canonical" href="http://forum.textpattern.com/">';
  $page_title = array(pun_htmlspecialchars($pun_config['o_board_title']));
