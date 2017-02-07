@@ -270,9 +270,11 @@ index 888cc91..f7b7972 100644
  if (!$pun_user['is_guest'])
  	$forum_actions[] = '<a href="misc.php?action=markread&amp;csrf_token='.pun_csrf_token().'">'.$lang_common['Mark all as read'].'</a>';
  
-+$description = pun_htmlspecialchars($pun_config['o_board_desc']);
-+$page_head['meta_desc'] = '<meta name="description" content="'.$description.'" />';
-+$page_head['canonical'] = '<link rel="canonical" href="http://forum.textpattern.com" />';
++$page_head['meta_desc'] = '<meta name="description" content="'.pun_htmlspecialchars($pun_config['o_board_desc']).'">';
++$page_head['twitter-title'] = '<meta name="twitter:title" content="Textpattern CMS support forum">';
++$page_head['twitter-description'] = '<meta name="twitter:description" content="'.$description.'">';
++$page_head['twitter-url'] = '<meta name="twitter:url" content="http://forum.textpattern.com/">';
++$page_head['canonical'] = '<link rel="canonical" href="http://forum.textpattern.com/">';
  $page_title = array(pun_htmlspecialchars($pun_config['o_board_title']));
  define('PUN_ALLOW_INDEX', 1);
  define('PUN_ACTIVE_PAGE', 'index');
@@ -298,16 +300,20 @@ index 2607a21..c545b0c 100644
  // Add relationship meta tags
  $page_head = array();
 -$page_head['canonical'] = '<link rel="canonical" href="viewforum.php?id='.$id.($p == 1 ? '' : '&amp;p='.$p).'" title="'.sprintf($lang_common['Page'], $p).'" />';
-+$page_head['canonical'] = '<link rel="canonical" href="http://forum.textpattern.com/viewforum.php?id='.$id.($p == 1 ? '' : '&amp;p='.$p).'" title="'.sprintf($lang_common['Page'], $p).'" />';
++$page_head['meta_desc'] = '<meta name="description" content="Listings in page '.$p.' of the ‘'.pun_htmlspecialchars($cur_forum['forum_name']).'’ subforum at the Textpattern CMS support forum.">';
++$page_head['twitter-title'] = '<meta name="twitter:title" content="'.pun_htmlspecialchars($cur_forum['forum_name']).' ('.sprintf($lang_common['Page'], $p).')">';
++$page_head['twitter-description'] = '<meta name="twitter:description" content="Listings in page '.$p.' of the ‘'.pun_htmlspecialchars($cur_forum['forum_name']).'’ subforum at the Textpattern CMS support forum.">';
++$page_head['twitter-url'] = '<meta name="twitter:url" content="http://forum.textpattern.com/viewforum.php?id='.$id.($p == 1 ? '' : '&amp;p='.$p).'">';
++$page_head['canonical'] = '<link rel="canonical" href="http://forum.textpattern.com/viewforum.php?id='.$id.($p == 1 ? '' : '&amp;p='.$p).'" title="'.sprintf($lang_common['Page'], $p).'">';
  
  if ($num_pages > 1)
  {
  	if ($p > 1)
 -		$page_head['prev'] = '<link rel="prev" href="viewforum.php?id='.$id.($p == 2 ? '' : '&amp;p='.($p - 1)).'" title="'.sprintf($lang_common['Page'], $p - 1).'" />';
-+		$page_head['prev'] = '<link rel="prev" href="http://forum.textpattern.com/viewforum.php?id='.$id.($p == 2 ? '' : '&amp;p='.($p - 1)).'" title="'.sprintf($lang_common['Page'], $p - 1).'" />';
++		$page_head['prev'] = '<link rel="prev" href="http://forum.textpattern.com/viewforum.php?id='.$id.($p == 2 ? '' : '&amp;p='.($p - 1)).'" title="'.sprintf($lang_common['Page'], $p - 1).'">';
  	if ($p < $num_pages)
 -		$page_head['next'] = '<link rel="next" href="viewforum.php?id='.$id.'&amp;p='.($p + 1).'" title="'.sprintf($lang_common['Page'], $p + 1).'" />';
-+		$page_head['next'] = '<link rel="next" href="http://forum.textpattern.com/viewforum.php?id='.$id.'&amp;p='.($p + 1).'" title="'.sprintf($lang_common['Page'], $p + 1).'" />';
++		$page_head['next'] = '<link rel="next" href="http://forum.textpattern.com/viewforum.php?id='.$id.'&amp;p='.($p + 1).'" title="'.sprintf($lang_common['Page'], $p + 1).'">';
  }
  
  if ($pun_config['o_feed_type'] == '1')
@@ -320,16 +326,20 @@ index 618b699..4f8d7c1 100644
  // Add relationship meta tags
  $page_head = array();
 -$page_head['canonical'] = '<link rel="canonical" href="viewtopic.php?id='.$id.($p == 1 ? '' : '&amp;p='.$p).'" title="'.sprintf($lang_common['Page'], $p).'" />';
-+$page_head['canonical'] = '<link rel="canonical" href="http://forum.textpattern.com/viewtopic.php?id='.$id.($p == 1 ? '' : '&amp;p='.$p).'" title="'.sprintf($lang_common['Page'], $p).'" />';
++$page_head['meta_desc'] = '<meta name="description" content="Postings in page '.$p.' of the ‘'.pun_htmlspecialchars($cur_topic['subject']).'’ topic in the ‘'.pun_htmlspecialchars($cur_topic['forum_name']).'’ subforum at the Textpattern CMS support forum.">';
++$page_head['twitter-title'] = '<meta name="twitter:title" content="'.pun_htmlspecialchars($cur_topic['subject']).' ('.sprintf($lang_common['Page'], $p).')">';
++$page_head['twitter-description'] = '<meta name="twitter:description" content="Postings in page '.$p.' of the ‘'.pun_htmlspecialchars($cur_topic['subject']).'’ topic in the ‘'.pun_htmlspecialchars($cur_topic['forum_name']).'’ subforum at the Textpattern CMS support forum.">';
++$page_head['twitter-url'] = '<meta name="twitter:url" content="http://forum.textpattern.com/viewtopic.php?id='.$id.($p == 1 ? '' : '&amp;p='.$p).'">';
++$page_head['canonical'] = '<link rel="canonical" href="http://forum.textpattern.com/viewtopic.php?id='.$id.($p == 1 ? '' : '&amp;p='.$p).'" title="'.sprintf($lang_common['Page'], $p).'">';
  
  if ($num_pages > 1)
  {
  	if ($p > 1)
 -		$page_head['prev'] = '<link rel="prev" href="viewtopic.php?id='.$id.($p == 2 ? '' : '&amp;p='.($p - 1)).'" title="'.sprintf($lang_common['Page'], $p - 1).'" />';
-+		$page_head['prev'] = '<link rel="prev" href="http://forum.textpattern.com/viewtopic.php?id='.$id.($p == 2 ? '' : '&amp;p='.($p - 1)).'" title="'.sprintf($lang_common['Page'], $p - 1).'" />';
++		$page_head['prev'] = '<link rel="prev" href="http://forum.textpattern.com/viewtopic.php?id='.$id.($p == 2 ? '' : '&amp;p='.($p - 1)).'" title="'.sprintf($lang_common['Page'], $p - 1).'">';
  	if ($p < $num_pages)
 -		$page_head['next'] = '<link rel="next" href="viewtopic.php?id='.$id.'&amp;p='.($p + 1).'" title="'.sprintf($lang_common['Page'], $p + 1).'" />';
-+		$page_head['next'] = '<link rel="next" href="http://forum.textpattern.com/viewtopic.php?id='.$id.'&amp;p='.($p + 1).'" title="'.sprintf($lang_common['Page'], $p + 1).'" />';
++		$page_head['next'] = '<link rel="next" href="http://forum.textpattern.com/viewtopic.php?id='.$id.'&amp;p='.($p + 1).'" title="'.sprintf($lang_common['Page'], $p + 1).'">';
  }
  
  if ($pun_config['o_feed_type'] == '1')
