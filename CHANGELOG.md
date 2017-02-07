@@ -2,6 +2,25 @@
 
 Here's a summary of changes in each update.
 
+## Version 1.1.0 - 2017/02/07
+
+* Fixed: CSP blocking base64 encoded icon.
+* Changed: Truncate long code boxes.
+* Changed: Migrated to Google Universal Analytics.
+* Changed: Various performance optimisations and improvements.
+* Changed: Improvements to theme style, in line with work on other official sites development.
+* Changed: Removed news scraper site, added Awesome Textpattern link in footer.
+* Added: Twitter cards.
+* Added: Description meta throughout.
+* Added: JSON-LD.
+* Added: Open Graph meta.
+* Added: Robots meta 
+* Added: Basic sitemap.xml.
+* Added: forum Twitter link.
+* Removed: autosize.
+* Removed: Discretionary ligatures.
+* Removed: Ligatures on monospace font.
+
 ## Version 1.0.0 - 2016/11/04
 
 * Fixed: FluxBB v1.5.10. Bug fixes and security improvements.
