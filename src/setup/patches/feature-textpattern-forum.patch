@@ -272,11 +272,15 @@ index 888cc91..f7b7972 100644
  
 +$page_head['meta_robots'] = '<meta name="robots" content="index, follow, noodp, noydir">';
 +$page_head['meta_desc'] = '<meta name="description" content="'.pun_htmlspecialchars($pun_config['o_board_desc']).'">';
++$page_head['twitter-card'] = '<meta name="twitter:card" content="summary">';
++$page_head['twitter-site'] = '<meta name="twitter:site" content="@txpforum">';
 +$page_head['twitter-title'] = '<meta name="twitter:title" content="Textpattern CMS support forum">';
 +$page_head['twitter-description'] = '<meta name="twitter:description" content="'.pun_htmlspecialchars($pun_config['o_board_desc']).'">';
++$page_head['twitter-image'] = '<meta name="twitter:image:src" content="http://forum.textpattern.com/apple-touch-icon-180x180.png">';
 +$page_head['twitter-url'] = '<meta name="twitter:url" content="http://forum.textpattern.com/">';
 +$page_head['og-title'] = '<meta property="og:title" content="Textpattern CMS support forum">';
 +$page_head['og-description'] = '<meta property="og:description" content="'.pun_htmlspecialchars($pun_config['o_board_desc']).'">';
++$page_head['og-image'] = '<meta property="og:image" content="http://textpattern.com/assets/img/branding/textpattern/textpattern-og.png">';
 +$page_head['og-url'] = '<meta property="og:url" content="http://forum.textpattern.com/">';
 +$page_head['json-ld'] = '<script type="application/ld+json">'."\n".
 +'{"@context": "http://schema.org",'."\n".
@@ -313,11 +317,15 @@ index 2607a21..c545b0c 100644
 -$page_head['canonical'] = '<link rel="canonical" href="viewforum.php?id='.$id.($p == 1 ? '' : '&amp;p='.$p).'" title="'.sprintf($lang_common['Page'], $p).'" />';
 +$page_head['meta_robots'] = '<meta name="robots" content="noindex, follow, noodp, noydir">';
 +$page_head['meta_desc'] = '<meta name="description" content="Listings in'.($p == 1 ? '' : ' page '.$p.' of').' the ‘'.pun_htmlspecialchars($cur_forum['forum_name']).'’ subforum at the Textpattern CMS support forum.">';
++$page_head['twitter-card'] = '<meta name="twitter:card" content="summary">';
++$page_head['twitter-site'] = '<meta name="twitter:site" content="@txpforum">';
 +$page_head['twitter-title'] = '<meta name="twitter:title" content="'.pun_htmlspecialchars($cur_forum['forum_name']).($p == 1 ? '' : ' ('.sprintf($lang_common['Page'], $p).')').'">';
 +$page_head['twitter-description'] = '<meta name="twitter:description" content="Listings in'.($p == 1 ? '' : ' page '.$p.' of').' the ‘'.pun_htmlspecialchars($cur_forum['forum_name']).'’ subforum at the Textpattern CMS support forum.">';
++$page_head['twitter-image'] = '<meta name="twitter:image:src" content="http://forum.textpattern.com/apple-touch-icon-180x180.png">';
 +$page_head['twitter-url'] = '<meta name="twitter:url" content="http://forum.textpattern.com/viewforum.php?id='.$id.($p == 1 ? '' : '&amp;p='.$p).'">';
 +$page_head['og-title'] = '<meta property="og:title" content="'.pun_htmlspecialchars($cur_forum['forum_name']).($p == 1 ? '' : ' ('.sprintf($lang_common['Page'], $p).')').'">';
 +$page_head['og-description'] = '<meta property="og:description" content="Listings in'.($p == 1 ? '' : ' page '.$p.' of').' the ‘'.pun_htmlspecialchars($cur_forum['forum_name']).'’ subforum at the Textpattern CMS support forum.">';
++$page_head['og-image'] = '<meta property="og:image" content="http://textpattern.com/assets/img/branding/textpattern/textpattern-og.png">';
 +$page_head['og-url'] = '<meta property="og:url" content="http://forum.textpattern.com/viewforum.php?id='.$id.($p == 1 ? '' : '&amp;p='.$p).'">';
 +$page_head['json-ld'] = '<script type="application/ld+json">'."\n".
 +'{"@context": "http://schema.org",'."\n".
@@ -350,11 +358,15 @@ index 618b699..4f8d7c1 100644
 -$page_head['canonical'] = '<link rel="canonical" href="viewtopic.php?id='.$id.($p == 1 ? '' : '&amp;p='.$p).'" title="'.sprintf($lang_common['Page'], $p).'" />';
 +$page_head['meta_robots'] = '<meta name="robots" content="index, follow, noodp, noydir">';
 +$page_head['meta_desc'] = '<meta name="description" content="Postings in'.($p == 1 ? '' : ' page '.$p.' of').' the ‘'.pun_htmlspecialchars($cur_topic['subject']).'’ topic in the ‘'.pun_htmlspecialchars($cur_topic['forum_name']).'’ subforum.">';
++$page_head['twitter-card'] = '<meta name="twitter:card" content="summary">';
++$page_head['twitter-site'] = '<meta name="twitter:site" content="@txpforum">';
 +$page_head['twitter-title'] = '<meta name="twitter:title" content="'.pun_htmlspecialchars($cur_topic['subject']).($p == 1 ? '' : ' ('.sprintf($lang_common['Page'], $p).')').'">';
 +$page_head['twitter-description'] = '<meta name="twitter:description" content="Postings in'.($p == 1 ? '' : ' page '.$p.' of').' the ‘'.pun_htmlspecialchars($cur_topic['subject']).'’ topic in the ‘'.pun_htmlspecialchars($cur_topic['forum_name']).'’ subforum.">';
++$page_head['twitter-image'] = '<meta name="twitter:image:src" content="http://forum.textpattern.com/apple-touch-icon-180x180.png">';
 +$page_head['twitter-url'] = '<meta name="twitter:url" content="http://forum.textpattern.com/viewtopic.php?id='.$id.($p == 1 ? '' : '&amp;p='.$p).'">';
 +$page_head['og-title'] = '<meta property="og:title" content="'.pun_htmlspecialchars($cur_topic['subject']).($p == 1 ? '' : ' ('.sprintf($lang_common['Page'], $p).')').'">';
 +$page_head['og-description'] = '<meta property="og:description" content="Postings in'.($p == 1 ? '' : ' page '.$p.' of').' the ‘'.pun_htmlspecialchars($cur_topic['subject']).'’ topic in the ‘'.pun_htmlspecialchars($cur_topic['forum_name']).'’ subforum.">';
++$page_head['og-image'] = '<meta property="og:image" content="http://textpattern.com/assets/img/branding/textpattern/textpattern-og.png">';
 +$page_head['og-url'] = '<meta property="og:url" content="http://forum.textpattern.com/viewtopic.php?id='.$id.($p == 1 ? '' : '&amp;p='.$p).'">';
 +$page_head['json-ld'] = '<script type="application/ld+json">'."\n".
 +'{"@context": "http://schema.org",'."\n".
