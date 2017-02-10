@@ -8,7 +8,7 @@
  */
 
 /*
- * Copyright (C) 2013 Team Textpattern
+ * Copyright (C) 2017 Team Textpattern
  *
  * Permission is hereby granted, free of charge, to any person obtaining a
  * copy of this software and associated documentation files (the "Software"),
@@ -45,44 +45,29 @@ class Parser extends Textile
      */
 
     private $extraCodeLanguageIdentifiers = array(
-        'apollo',
-        'c',
-        'coffee',
-        'cs',
-        'clj',
+        'apacheconf',
+        'clike',
+        'coffeescript',
         'css',
-        'dart',
-        'go',
-        'hs',
+        'git',
+        'haml',
         'html',
-        'java',
+        'javascript',
         'js',
         'json',
-        'latex',
-        'lisp',
-        'lua',
-        'ml',
-        'n',
+        'less',
+        'markdown',
+        'markup',
+        'nginx',
         'perl',
         'php',
-        'proto',
-        'py',
-        'rb',
-        'regex',
-        'rust',
-        'scala',
-        'sh',
+        'ruby',
+        'sass',
+        'scss',
         'sql',
-        'tex',
-        'text',
+        'stylus',
+        'textile',
         'txp',
-        'vb',
-        'vhdl',
-        'wiki',
-        'xml',
-        'xsl',
-        'xq',
-        'xquery',
         'yaml',
     );
 
@@ -123,7 +108,7 @@ class Parser extends Textile
     {
         return preg_replace(
             '/<pre><code>(?:\/\/|#|;)?(?:\s+)?('.$this->extraCodeLanguageIdentifiers.')[\n\r]+/',
-            '<pre class="prettyprint language-$1"><code>',
+            '<pre class="prism language-$1"><code>',
             $text
         );
     }

@@ -76,16 +76,16 @@
                     </ul>
                     <h5>Displaying code blocks</h5>
                     <p>You can use the Textile <code>bc.</code> tag to add code snippets to your forum posts.</p>
-                    <pre class="language-txp prettyprint"><code>bc. &lt;txp:permlink&gt;
+                    <pre class="prism"><code class="language-txp">bc. &lt;txp:permlink&gt;
     &lt;txp:title /&gt;
 &lt;/txp:permlink&gt;</code></pre>
-                    <p>The forum also supports syntax highlighting. Add an optional language identifier to your code block, and it will get highlighted.</p>
-                    <pre class="language-html prettyprint"><code>bc. html
+                    <p>The forum also supports syntax highlighting. Add an optional language identifier to your code block after the <code>bc.</code> tag then start your code on a new line, and it will get highlighted. For example:</p>
+                    <pre class="prism"><code class="language-html">bc. html
 &lt;h1 id="main-heading"&gt;Hello World!&lt;/h1&gt;</code></pre>
-                    <p>Supported language identifiers include: apollo, bash, c, coffee, cs, clj, css, dart, go, hs, html, java, js, json, lisp, lua, ml, n, perl, php, proto, python, ruby, rust, scala, sh, sql, tex, txp, vb, vhdl, wiki, xml, xsl, xq and yaml.</p>
+                    <p>Supported language identifiers include: <code>apacheconf</code>, <code>clike</code>, <code>coffeescript</code>, <code>css</code>, <code>git</code>, <code>haml</code>, <code>javascript</code> (or <code>js</code>), <code>json</code>, <code>less</code>, <code>markup</code> (or <code>html</code>), <code>markdown</code>, <code>nginx</code>, <code>perl</code>, <code>php</code>, <code>ruby</code>, <code>sass</code>, <code>scss</code>, <code>sql</code>, <code>stylus</code>, <code>textile</code>, <code>txp</code> and <code>yaml</code>.</p>
                     <h5>Embedding media</h5>
                     <p>You can embed media to your posts from third party services to linking to the resource using normal Textile link syntax.</p>
-                    <pre><code>"$":http://www.youtube.com/watch?v=BKQ6nINAeq8
+                    <pre class="prism"><code class="language-textile">"$":http://www.youtube.com/watch?v=BKQ6nINAeq8
 "$":https://twitter.com/textpattern/status/386111138699935744
 "$":https://gist.github.com/gocom/5431041</code></pre>
                     <p>A link to a supported service becomes an embedded object if it is in its own paragraph. Links within text will stay as normal text links to avoid disturbing reading and text flow. We currently support embedding content from <a href="http://youtube.com/">YouTube</a>, <a href="https://twitter.com">Twitter</a> and <a href="https://gist.github.com/">GitHub Gist</a>.</p>

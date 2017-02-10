@@ -483,20 +483,20 @@
         });
     });
 
-    // Syntax highlighting, via 'Google Code Prettify'.
-    // Automatically applies syntax highlighting to `pre code` HTML elements.
-    // More info - https://github.com/tcollard/google-code-prettify.
+    // Syntax highlighting, via 'Prism'.
+    // Applies syntax highlighting to `code` HTML elements.
+    // More info - http://prismjs.com.
 
     require(['jquery'], function ($)
     {
-        var code = $('.prettyprint');
+        var code = $('.prism');
 
         if (code.length) {
             code.filter('.language-txp').addClass('language-html').removeClass('language-txp');
 
-            require(['prettify.@@timestamp'], function ()
+            require(['prism.@@timestamp'], function ()
             {
-                prettyPrint();
+                Prism.highlightAll();
             });
         }
     });

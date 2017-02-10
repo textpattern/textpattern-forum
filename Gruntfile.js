@@ -141,7 +141,7 @@ module.exports = function (grunt)
                     requirejs: true,
                     ga: true,
                     responsiveNav: true,
-                    prettyPrint: true
+                    Prism: true
                 }
             },
             files: [
@@ -255,17 +255,28 @@ module.exports = function (grunt)
                 files: [
                     {
                         '<%= paths.dest.js %>main.js': ['<%= paths.dest.js %>main.js'],
-                        '<%= paths.dest.js %>prettify.js': ['node_modules/google-code-prettify/src/prettify.js'],
-                        // TODO: Use Prism instead of Google Code Prettify
                         '<%= paths.dest.js %>prism.js': [
                             'node_modules/prismjs/prism.js',
                             // Add any plugins
-                            'node_modules/prismjs/plugins/line-numbers/prism-line-numbers.js',
-                            'node_modules/prismjs/plugins/show-language/prism-show-language.js',
                             // Add any additional languages
+                            'node_modules/prismjs/components/prism-apacheconf.js',
+                            'node_modules/prismjs/components/prism-coffeescript.js',
+                            'node_modules/prismjs/components/prism-git.js',
+                            'node_modules/prismjs/components/prism-haml.js',
+                            'node_modules/prismjs/components/prism-json.js',
+                            'node_modules/prismjs/components/prism-less.js',
+                            'node_modules/prismjs/components/prism-markdown.js',
+                            'node_modules/prismjs/components/prism-nginx.js',
+                            'node_modules/prismjs/components/prism-perl.js',
                             'node_modules/prismjs/components/prism-php.js',
+                            'node_modules/prismjs/components/prism-ruby.js',
+                            'node_modules/prismjs/components/prism-sass.js',
                             'node_modules/prismjs/components/prism-scss.js',
-                            'node_modules/prismjs/components/prism-textile.js'
+                            'node_modules/prismjs/components/prism-sql.js',
+                            'node_modules/prismjs/components/prism-stylus.js',
+                            'node_modules/prismjs/components/prism-textile.js',
+                            'node_modules/prismjs/components/prism-txp.js',
+                            'node_modules/prismjs/components/prism-yaml.js'
                         ],
                         '<%= paths.dest.js %>require.js': ['node_modules/requirejs/require.js'],
                         '<%= paths.dest.js %>responsivenav.js': ['node_modules/responsive-nav/responsive-nav.js']

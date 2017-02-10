@@ -31,7 +31,6 @@
     "uglify-save-license": "0.4.1"
   },
   "dependencies": {
-    "google-code-prettify": "1.0.5",
     "prismjs": "1.6.0",
     "requirejs": "2.3.2",
     "responsive-nav": "1.0.39",
