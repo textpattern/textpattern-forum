@@ -2,6 +2,13 @@
 
 Here's a summary of changes in each update.
 
+## Version 1.1.1 - 2017/02/10
+
+* Fixed: fragmentation of Twitter Card/Open Graph meta.
+* Changed: Updated to jQuery v3.x.
+* Changed: Code highlighter switched from Google Code Prettify to Prism. Added some more languages support and removed some that are not relevant to our forums.
+* Removed: rules page from sitemap (as it's not indexed by search engines).
+
 ## Version 1.1.0 - 2017/02/07
 
 * Fixed: CSP blocking base64 encoded icon.
