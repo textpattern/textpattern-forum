@@ -1,21 +1,24 @@
-# ETags.
-
 <IfModule mod_headers.c>
-    Header unset ETag
-</IfModule>
-FileETag None
 
+    # HSTS
 
-# Content Security Policy.
+    #Header set Strict-Transport-Security "max-age=15768000;"
 
-<ifModule mod_headers.c>
+    # Content Security Policy.
+
     Header unset P3P
     Header append X-XSS-Protection "1; mode=block"
     Header append X-Frame-Options "DENY"
     Header append X-Content-Type-Options "nosniff"
     Header append Content-Security-Policy "default-src 'self'; font-src fonts.gstatic.com https://fonts.gstatic.com; img-src data: *; style-src 'self' 'unsafe-inline' ajax.googleapis.com fonts.googleapis.com gist.github.com platform.twitter.com https://ajax.googleapis.com https://fonts.googleapis.com https://gist.github.com https://platform.twitter.com; script-src 'self' 'unsafe-inline' www.google.com ajax.googleapis.com gist.github.com cdnjs.cloudflare.com *.google-analytics.com *.googlesyndication.com https://www.google.com https://ajax.googleapis.com https://gist.github.com https://cdnjs.cloudflare.com https://*.google-analytics.com https://*.googlesyndication.com https://*.twitter.com; child-src *.doubleclick.net *.youtube-nocookie.com *.twitter.com twitter.com https://*.doubleclick.net https://*.youtube-nocookie.com https://*.twitter.com https://twitter.com; connect-src 'self' *.googlesyndication.com https://*.googlesyndication.com"
+
+    # ETags (pt1).
+
+    Header unset ETag
+
 </ifModule>
 
+FileETag None
 
 # FluxBB.
 
