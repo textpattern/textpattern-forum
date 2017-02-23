@@ -4,7 +4,7 @@
 [![Dependency Status](http://img.shields.io/david/textpattern/textpattern-forum.svg)](https://david-dm.org/textpattern/textpattern-forum)
 [![devDependency Status](http://img.shields.io/david/dev/textpattern/textpattern-forum.svg)](https://david-dm.org/textpattern/textpattern-forum?type=dev)
 
-This repository contains the source code for the [Textpattern support forum](http://forum.textpattern.com/).
+This repository contains the source code for the [Textpattern support forum](https://forum.textpattern.com/).
 
 ## Supported web browsers
 
@@ -112,7 +112,7 @@ Where the `@task@` is either `build`, `setup` or `watch`.
 
 ## REST API
 
-We offer a public API that can be used to retrieve data from the forums and topics. The public end point can be found from `http://forum.textpattern.com/api`. Data can be retrieved as JSON, and options can be passed optional HTTP query parameters. This API is read-only, and all requests must be done using HTTP GET method. You can also ping resource existence with HEAD, but any other methods are rejected.
+We offer a public API that can be used to retrieve data from the forums and topics. The public end point can be found from `https://forum.textpattern.com/api`. Data can be retrieved as JSON, and options can be passed optional HTTP query parameters. This API is read-only, and all requests must be done using HTTP GET method. You can also ping resource existence with HEAD, but any other methods are rejected.
 
 ### Response codes
 
@@ -129,13 +129,13 @@ HTTP status codes can be used to detect the type of response. The server respond
 Authentication happens using basic HTTP method and regular forum user account.
 
 ```ShellSession
-$ curl -u "username" http://forum.textpattern.com/api/
+$ curl -u "username" https://forum.textpattern.com/api/
 ```
 
 If you request a private or removed resource without being logged in, you will be treated with 401 response:
 
 ```ShellSession
-$ curl -I http://forum.textpattern.com/api/posts/401
+$ curl -I https://forum.textpattern.com/api/posts/401
 ```
 
 Responds with:
@@ -152,7 +152,7 @@ Content-Type: application/json; charset=UTF-8
 ### Topics
 
 ```
-GET http://forum.textpattern.com/api/topics/:forum
+GET https://forum.textpattern.com/api/topics/:forum
 ```
 
 Returns topics from the specified forum.
@@ -165,7 +165,7 @@ Returns topics from the specified forum.
 #### Example request
 
 ```ShellSession
-$ curl http://forum.textpattern.com/api/topics/2
+$ curl https://forum.textpattern.com/api/topics/2
 ```
 
 Response headers:
@@ -201,7 +201,7 @@ Response body:
 ### Posts
 
 ```
-GET http://forum.textpattern.com/api/posts/:topic
+GET https://forum.textpattern.com/api/posts/:topic
 ```
 
 Returns replies from a specific public topic.
@@ -213,7 +213,7 @@ Returns replies from a specific public topic.
 #### Example request
 
 ```ShellSession
-$ curl http://forum.textpattern.com/api/posts/40092
+$ curl https://forum.textpattern.com/api/posts/40092
 ```
 
 Response headers:
