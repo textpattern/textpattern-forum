@@ -14,7 +14,7 @@
     <pun_head>
     <link rel="alternate" type="application/rss+xml" href="extern.php?action=feed&amp;order=posted&amp;type=rss" title="RSS new topics feed">
 </head>
-<body id="page-help" itemscope itemtype="http://schema.org/WebPage">
+<body id="page-help" itemscope itemtype="https://schema.org/WebPage">
     <meta itemprop="accessibilityControl" content="fullKeyboardControl">
     <meta itemprop="accessibilityControl" content="fullMouseControl">
     <meta itemprop="accessibilityHazard" content="noFlashingHazard">
@@ -25,11 +25,11 @@
     <div class="wrapper">
 
 <!-- Header -->
-        <header class="site-header" itemscope itemtype="http://schema.org/Organization">
+        <header class="site-header" itemscope itemtype="https://schema.org/Organization">
             <h1 class="masthead" itemprop="name"><a rel="home" itemprop="url" href="http://textpattern.com/" title="Go to the Textpattern homepage">Textpattern CMS</a></h1>
             <meta itemprop="logo" content="http://textpattern.com/assets/img/branding/textpattern/textpattern.png">
 
-            <form class="search-form" role="search" action="http://www.google.com/cse">
+            <form class="search-form" role="search" action="https://www.google.com/cse">
                 <input type="search" name="q" size="32" placeholder="Search forum…">
                 <input type="hidden" name="cx" value="013284010981475036739:4p3oc9ihitk">
                 <input type="hidden" name="ie" value="UTF-8">
@@ -38,7 +38,7 @@
 
 <!-- Navigation -->
         <div class="nav-container">
-            <nav class="site-navigation" aria-label="Site navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+            <nav class="site-navigation" aria-label="Site navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">
                 <ul>
                     <li><a itemprop="url" href="http://textpattern.com/start">Get started</a></li>
                     <li><a itemprop="url" href="https://docs.textpattern.io/">Documentation</a></li>
@@ -133,7 +133,7 @@
         <div class="layout-container">
             <div class="layout-3col-2span">
                 <div class="layout-container">
-                    <section class="layout-2col" itemscope itemtype="http://schema.org/Organization">
+                    <section class="layout-2col" itemscope itemtype="https://schema.org/Organization">
                         <h4>Social channels</h4>
                         <meta itemprop="name" content="Textpattern CMS">
                         <ul class="social-channels">

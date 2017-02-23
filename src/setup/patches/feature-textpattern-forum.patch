@@ -283,7 +283,7 @@ index 888cc91..f7b7972 100644
 +$page_head['og-image'] = '<meta property="og:image" content="http://textpattern.com/assets/img/branding/textpattern/textpattern-og.png">';
 +$page_head['og-url'] = '<meta property="og:url" content="https://forum.textpattern.com/">';
 +$page_head['json-ld'] = '<script type="application/ld+json">'."\n".
-+'{"@context": "http://schema.org",'."\n".
++'{"@context": "https://schema",'."\n".
 +'"@type": "WebSite",'."\n".
 +'"headline": "Textpattern CMS support forum",'."\n".
 +'"description": "'.pun_htmlspecialchars($pun_config['o_board_desc']).'",'."\n".
@@ -328,7 +328,7 @@ index 2607a21..c545b0c 100644
 +$page_head['og-image'] = '<meta property="og:image" content="http://textpattern.com/assets/img/branding/textpattern/textpattern-og.png">';
 +$page_head['og-url'] = '<meta property="og:url" content="https://forum.textpattern.com/viewforum.php?id='.$id.($p == 1 ? '' : '&amp;p='.$p).'">';
 +$page_head['json-ld'] = '<script type="application/ld+json">'."\n".
-+'{"@context": "http://schema.org",'."\n".
++'{"@context": "https://schema",'."\n".
 +'"@type": "WebPage",'."\n".
 +'"headline": "'.pun_htmlspecialchars($cur_forum['forum_name']).($p == 1 ? '' : ' ('.sprintf($lang_common['Page'], $p).')').'",'."\n".
 +'"description": "Listings in'.($p == 1 ? '' : ' page '.$p.' of').' the ‘'.pun_htmlspecialchars($cur_forum['forum_name']).'’ subforum at the Textpattern CMS support forum.",'."\n".
@@ -371,7 +371,7 @@ index 618b699..4f8d7c1 100644
 +$page_head['adsense'] = '<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>'."\n".
 +'<script>(adsbygoogle=window.adsbygoogle||[]).push({google_ad_client:"ca-pub-9207713713454725",enable_page_level_ads:true});</script>';
 +$page_head['json-ld'] = '<script type="application/ld+json">'."\n".
-+'{"@context": "http://schema.org",'."\n".
++'{"@context": "https://schema",'."\n".
 +'"@type": "WebPage",'."\n".
 +'"headline": "'.pun_htmlspecialchars($cur_topic['subject']).($p == 1 ? '' : ' ('.sprintf($lang_common['Page'], $p).')').'",'."\n".
 +'"description": "Postings in'.($p == 1 ? '' : ' page '.$p.' of').' the ‘'.pun_htmlspecialchars($cur_topic['subject']).'’ topic in the ‘'.pun_htmlspecialchars($cur_topic['forum_name']).'’ subforum.",'."\n".

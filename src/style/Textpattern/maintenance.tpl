@@ -13,7 +13,7 @@
     <link rel="icon" sizes="16x16" href="favicon-16x16.png">
     <pun_head>
 </head>
-<body id="page-maintenance" itemscope itemtype="http://schema.org/WebPage">
+<body id="page-maintenance" itemscope itemtype="https://schema.org/WebPage">
     <meta itemprop="accessibilityControl" content="fullKeyboardControl">
     <meta itemprop="accessibilityControl" content="fullMouseControl">
     <meta itemprop="accessibilityHazard" content="noFlashingHazard">
@@ -24,14 +24,14 @@
     <div class="wrapper">
 
 <!-- Header -->
-        <header class="site-header" itemscope itemtype="http://schema.org/Organization">
+        <header class="site-header" itemscope itemtype="https://schema.org/Organization">
             <h1 class="masthead" itemprop="name"><a rel="home" itemprop="url" href="http://textpattern.com/" title="Go to the Textpattern homepage">Textpattern CMS</a></h1>
             <meta itemprop="logo" content="http://textpattern.com/assets/img/branding/textpattern/textpattern.png">
         </header>
 
 <!-- Navigation -->
         <div class="nav-container">
-            <nav class="site-navigation" aria-label="Site navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+            <nav class="site-navigation" aria-label="Site navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">
                 <ul>
                     <li><a itemprop="url" href="http://textpattern.com/start">Get started</a></li>
                     <li><a itemprop="url" href="https://docs.textpattern.io/">Documentation</a></li>
@@ -63,7 +63,7 @@
         <div class="layout-container">
             <div class="layout-3col-2span">
                 <div class="layout-container">
-                    <section class="layout-2col" itemscope itemtype="http://schema.org/Organization">
+                    <section class="layout-2col" itemscope itemtype="https://schema.org/Organization">
                         <h4>Social channels</h4>
                         <meta itemprop="name" content="Textpattern CMS">
                         <ul class="social-channels">
