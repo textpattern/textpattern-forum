@@ -27,7 +27,12 @@ ErrorDocument 500 /500.html
 <IfModule mod_rewrite.c>
     RewriteEngine On
 
-    # Redirect from the `http://` to the `https://` version of the URL
+    # Redirect from `.com` to `.io` domain.
+
+    RewriteCond %{HTTP_HOST} \forum.textpattern.com$
+    RewriteRule ^(.*)$ https://forum.textpattern.io/$1 [R=301,L]
+
+    # Redirect from `http://` to `https://` protocol.
 
     RewriteCond %{HTTPS} !=on
     RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]

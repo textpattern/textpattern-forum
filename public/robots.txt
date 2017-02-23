@@ -6,4 +6,4 @@ Disallow: /*?*tid=
 Disallow: /*?*user_id=
 Disallow: /*?*search_id=
 Disallow: /*?*username=
-Sitemap: https://forum.textpattern.com/sitemap.xml
+Sitemap: https://forum.textpattern.io/sitemap.xml

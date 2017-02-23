@@ -26,7 +26,7 @@
 <!-- Header -->
         <header class="site-header" itemscope itemtype="https://schema.org/Organization">
             <h1 class="masthead" itemprop="name"><a rel="home" itemprop="url" href="http://textpattern.com/" title="Go to the Textpattern homepage">Textpattern CMS</a></h1>
-            <meta itemprop="logo" content="http://textpattern.com/assets/img/branding/textpattern/textpattern.png">
+            <meta itemprop="logo" content="https://textpattern.io/assets/img/branding/textpattern/textpattern.png">
         </header>
 
 <!-- Navigation -->
