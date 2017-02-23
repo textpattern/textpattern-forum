@@ -20,12 +20,12 @@ FileETag None
     # Redirect from `.com` to `.io` domain.
 
     RewriteCond %{HTTP_HOST} ^forum.textpattern.com [NC]
-    RewriteRule ^(.*)$ https://forum.textpattern.io/$1 [L,R=301]
+    RewriteRule ^(.*)$ https://forum.textpattern.io/$1 [R=301,L]
 
     # Redirect from `http://` to `https://` protocol.
 
     RewriteCond %{HTTPS} !=on
-    RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301]
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
 
     RewriteCond %{REQUEST_FILENAME} /cache/ [OR]
     RewriteCond %{REQUEST_FILENAME} /include/ [OR]
