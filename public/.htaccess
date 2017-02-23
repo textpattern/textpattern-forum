@@ -1,8 +1,5 @@
 <IfModule mod_headers.c>
-
-    # HSTS
-
-    #Header set Strict-Transport-Security "max-age=15768000;"
+    #Header always set Strict-Transport-Security "max-age=16070400;"
 
     # Content Security Policy.
 
@@ -11,10 +8,8 @@
     Header append X-Frame-Options "DENY"
     Header append X-Content-Type-Options "nosniff"
     Header append Content-Security-Policy "default-src 'self'; font-src fonts.gstatic.com https://fonts.gstatic.com; img-src 'self' data: * https://*; style-src 'self' 'unsafe-inline' ajax.googleapis.com fonts.googleapis.com gist.github.com platform.twitter.com https://ajax.googleapis.com https://fonts.googleapis.com https://gist.github.com https://platform.twitter.com; script-src 'self' www.google.com ajax.googleapis.com gist.github.com cdnjs.cloudflare.com *.google-analytics.com https://www.google.com https://ajax.googleapis.com https://gist.github.com https://cdnjs.cloudflare.com https://*.google-analytics.com https://*.twitter.com; frame-src *.youtube-nocookie.com https://*.youtube-nocookie.com *.twitter.com https://*.twitter.com twitter.com https://twitter.com"
-    # ETags (pt1).
 
     Header unset ETag
-
 </ifModule>
 
 FileETag None
@@ -31,6 +26,12 @@ ErrorDocument 500 /500.html
 
 <IfModule mod_rewrite.c>
     RewriteEngine On
+
+    # Redirect from the `http://` to the `https://` version of the URL
+
+    RewriteCond %{HTTPS} !=on
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
     RewriteCond %{REQUEST_FILENAME} /cache/ [OR]
     RewriteCond %{REQUEST_FILENAME} /include/ [OR]
     RewriteCond %{REQUEST_FILENAME} /lang/ [OR]
