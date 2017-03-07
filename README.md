@@ -1,8 +1,8 @@
 # Textpattern support forum
 
 [![Build Status](https://img.shields.io/travis/textpattern/textpattern-forum.svg)](https://travis-ci.org/textpattern/textpattern-forum)
-[![Dependency Status](http://img.shields.io/david/textpattern/textpattern-forum.svg)](https://david-dm.org/textpattern/textpattern-forum)
-[![devDependency Status](http://img.shields.io/david/dev/textpattern/textpattern-forum.svg)](https://david-dm.org/textpattern/textpattern-forum?type=dev)
+[![Dependency Status](https://img.shields.io/david/textpattern/textpattern-forum.svg)](https://david-dm.org/textpattern/textpattern-forum)
+[![devDependency Status](https://img.shields.io/david/dev/textpattern/textpattern-forum.svg)](https://david-dm.org/textpattern/textpattern-forum?type=dev)
 
 This repository contains the source code for the [Textpattern support forum](https://forum.textpattern.io/).
 
@@ -15,9 +15,9 @@ Older versions of the above and other browsers may work, but these are the ones 
 
 Building this repository requires:
 
-* [Node.js](http://nodejs.org/) >=0.12.0
-* [Grunt](http://gruntjs.com/) >=0.4.0
-* [Composer](https://getcomposer.org)
+* [Node.js](https://nodejs.org/) >=4.0
+* [Grunt](https://gruntjs.com/) >=1.0
+* [Composer](https://getcomposer.org/)
 * cURL and patch CLI programs.
 
 Environment must consist of:
@@ -31,7 +31,7 @@ Environment must consist of:
 
 ### Installing required tools
 
-The project uses [Grunt](http://gruntjs.com/) to run tasks and [Sass](http://sass-lang.com/) for CSS pre-processing. This creates few dependencies in addition to your normal PHP required by Textpattern. First make sure you have base dependencies installed: [Node.js](http://nodejs.org/) and [Grunt](http://gruntjs.com/). You can install Node using the [installer](https://nodejs.org), Composer using their installers [installer](http://getcomposer.org/), and Grunt with npm:
+The project uses [Grunt](https://gruntjs.com/) to run tasks and [Sass](http://sass-lang.com/) for CSS pre-processing. This creates few dependencies in addition to your normal PHP required by FluxBB. First make sure you have base dependencies installed: [Node.js](https://nodejs.org/) and [Grunt](https://gruntjs.com/). You can install Node using the [installer](https://nodejs.org/), Composer using their installers [installer](https://getcomposer.org/), and Grunt with npm:
 
 ```ShellSession
 $ npm install -g grunt-cli
@@ -94,7 +94,7 @@ If FluxBB installation version has changed, access your forums and follow the up
 $ grunt postsetup
 ```
 
-You may need to [adjust the write permissions](http://fluxbb.org/docs/v1.5/installing#write-permissions) on the `public/cache/` directory after updating.
+You may need to [adjust the write permissions](https://fluxbb.org/docs/v1.5/installing#write-permissions) on the `public/cache/` directory after updating.
 
 ## Building
 
@@ -181,20 +181,20 @@ Response body:
 
 ```
 {
-    "url": ["http:\/\/forum.textpattern.io\/index.php"],
-    "topic": [
-        {
-            "title": "Better way to upload media",
-            "link": "http:\/\/forum.textpattern.io\/viewtopic.php?id=40096&action=new",
-            "content": "<p>+ lots<\/p>",
-            "author": {
-                "name": "tye",
-                "uri": "http:\/\/forum.textpattern.test\/profile.php?id=5751"
-            },
-            "posted": "Thu, 26 Sep 2013 21:51:18 +0000",
-            "id": "40096"
-        }
-    ]
+  "url": ["https:\/\/forum.textpattern.io\/index.php"],
+  "topic": [
+    {
+      "title": "Better way to upload media",
+      "link": "https:\/\/forum.textpattern.io\/viewtopic.php?id=40096&action=new",
+      "content": "<p>+ lots<\/p>",
+      "author": {
+        "name": "tye",
+        "uri": "https:\/\/forum.textpattern.io\/profile.php?id=5751"
+      },
+      "posted": "Thu, 26 Sep 2013 21:51:18 +0000",
+      "id": "40096"
+    }
+  ]
 }
 ```
 
@@ -229,20 +229,20 @@ Response body:
 
 ```
 {
-    "url": ["http:\/\/forum.textpattern.test\/viewtopic.php?id=40092"],
-    "post": [
-        {
-            "title": "Re: Tag tree best practise: to nest or not to nest",
-            "link": "http:\/\/forum.textpattern.test\/viewtopic.php?pid=275473#p275473",
-            "content": "<p>Stef, this is really useful &#8211; I&#8217;m on the right track. Thank you very much.<\/p>",
-            "author": {
-                "name": "gaekwad",
-                "uri": "http:\/\/forum.textpattern.test\/profile.php?id=7456"
-            },
-            "posted": "Tue, 24 Sep 2013 16:18:48 +0000",
-            "id": "275473"
-        }
-    ]
+  "url": ["http:\/\/forum.textpattern.test\/viewtopic.php?id=40092"],
+  "post": [
+    {
+      "title": "Re: Tag tree best practise: to nest or not to nest",
+      "link": "https:\/\/forum.textpattern.io\/viewtopic.php?pid=275473#p275473",
+      "content": "<p>Stef, this is really useful &#8211; I&#8217;m on the right track. Thank you very much.<\/p>",
+      "author": {
+        "name": "gaekwad",
+        "uri": "https:\/\/forum.textpattern.io\/profile.php?id=7456"
+      },
+      "posted": "Tue, 24 Sep 2013 16:18:48 +0000",
+      "id": "275473"
+    }
+  ]
 }
 ```
 
