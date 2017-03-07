@@ -31,7 +31,7 @@ Environment must consist of:
 
 ### Installing required tools
 
-The project uses [Grunt](https://gruntjs.com/) to run tasks and [Sass](http://sass-lang.com/) for CSS pre-processing. This creates few dependencies in addition to your normal PHP required by FluxBB. First make sure you have base dependencies installed: [Node.js](https://nodejs.org/) and [Grunt](https://gruntjs.com/). You can install Node using the [installer](https://nodejs.org/), Composer using their installers [installer](https://getcomposer.org/), and Grunt with npm:
+The project uses [Grunt](https://gruntjs.com/) to run tasks and [Sass](http://sass-lang.com/) for CSS pre-processing. This creates a few dependencies in addition to your normal PHP required by FluxBB. First make sure you have base dependencies installed: [Node.js](https://nodejs.org/) and [Grunt](https://gruntjs.com/). You can install Node using the [installer](https://nodejs.org/), Composer using the [installer](https://getcomposer.org/), and Grunt with npm:
 
 ```ShellSession
 $ npm install -g grunt-cli
