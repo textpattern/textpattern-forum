@@ -2,6 +2,12 @@
 
 Here's a summary of changes in each update.
 
+## Version 1.1.2 - 2017/03/07
+
+* Changed: Forum moved to new domain (forum.textpattern.io) and now uses HTTPS protocol.
+* Changed: Updated Textile to v3.6.
+* Added: Use Header Strict Transport Security (HSTS).
+
 ## Version 1.1.1 - 2017/02/10
 
 * Fixed: fragmentation of Twitter Card/Open Graph meta.
