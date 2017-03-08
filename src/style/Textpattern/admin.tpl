@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style/Textpattern/css/style.@@timestamp.css">
     <link rel="dns-prefetch" href="https://ajax.googleapis.com">
     <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#ffda44">
     <meta name="application-name" content="Textpattern Forum">
     <link rel="icon" sizes="32x32" href="favicon-32x32.png">
