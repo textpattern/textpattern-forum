@@ -1,5 +1,7 @@
 # Textpattern support forum
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/textpattern/textpattern-forum.svg)](https://greenkeeper.io/)
+
 [![Build Status](https://img.shields.io/travis/textpattern/textpattern-forum.svg)](https://travis-ci.org/textpattern/textpattern-forum)
 [![Dependency Status](https://img.shields.io/david/textpattern/textpattern-forum.svg)](https://david-dm.org/textpattern/textpattern-forum)
 [![devDependency Status](https://img.shields.io/david/dev/textpattern/textpattern-forum.svg)](https://david-dm.org/textpattern/textpattern-forum?type=dev)
