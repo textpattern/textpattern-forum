@@ -228,7 +228,7 @@ Response body:
 
 ```
 {
-  "url": ["http:\/\/forum.textpattern.test\/viewtopic.php?id=40092"],
+  "url": ["https:\/\/forum.textpattern.io\/viewtopic.php?id=40092"],
   "post": [
     {
       "title": "Re: Tag tree best practise: to nest or not to nest",
