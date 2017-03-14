@@ -190,7 +190,8 @@ Response body:
         "name": "tye",
         "uri": "https:\/\/forum.textpattern.io\/profile.php?id=5751"
       },
-      "posted": "Thu, 26 Sep 2013 21:51:18 +0000",
+      "posted": "26 September 2013 21:51",
+      "postedutc": "2013-09-24T16:18:48Z",
       "id": "40096"
     }
   ]
@@ -238,7 +239,8 @@ Response body:
         "name": "gaekwad",
         "uri": "https:\/\/forum.textpattern.io\/profile.php?id=7456"
       },
-      "posted": "Tue, 24 Sep 2013 16:18:48 +0000",
+      "posted": "26 September 2013 21:51",
+      "postedutc": "2013-09-24T16:18:48Z",
       "id": "275473"
     }
   ]

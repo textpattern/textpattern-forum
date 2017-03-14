@@ -1,3 +1,17 @@
+diff --git a/extern.php b/extern.php
+index d43574b..cfba218 100644
+--- a/extern.php
++++ b/extern.php
+@@ -242,7 +242,8 @@ function output_xml($feed)
+ 			echo "\t\t\t".'<uri>'.pun_htmlspecialchars($item['author']['uri']).'</uri>'."\n";
+ 
+ 		echo "\t\t".'</author>'."\n";
+-		echo "\t\t".'<posted>'.gmdate('r', $item['pubdate']).'</posted>'."\n";
++		echo "\t\t".'<posted>'.gmdate('d F Y H:i', $item['pubdate']).'</posted>'."\n";
++		echo "\t\t".'<postedutc>'.gmdate('Y-m-d\TH:i:s\Z', $item['pubdate']).'</postedutc>'."\n";
+ 
+ 		echo "\t".'</'.$forum_tag.'>'."\n";
+ 	}
 diff --git a/include/email.php b/include/email.php
 index ea495f3..4ef2ffa 100644
 --- a/include/email.php
@@ -151,8 +165,8 @@ index ea495f3..4ef2ffa 100644
 -		return $text;
 +	return wordwrap($text, 72);
  }
-
-
+ 
+ 
 diff --git a/include/parser.php b/include/parser.php
 index b7eb4bd..a98356c 100644
 --- a/include/parser.php
@@ -163,7 +177,7 @@ index b7eb4bd..a98356c 100644
  {
 +	return $text;
  	global $pun_config, $lang_common, $lang_post, $re_list;
-
+ 
  	// Remove empty tags
 @@ -889,46 +890,25 @@ function do_smilies($text)
  //
@@ -172,12 +186,12 @@ index b7eb4bd..a98356c 100644
 -	global $pun_config, $lang_common, $pun_user;
 +	global $pun_config, $cur_post;
 +	static $textile = null;
-
+ 
  	if ($pun_config['o_censoring'] == '1')
 +	{
  		$text = censor_words($text);
 +	}
-
+ 
 -	// Convert applicable characters to HTML entities
 -	$text = pun_htmlspecialchars($text);
 -
@@ -199,7 +213,7 @@ index b7eb4bd..a98356c 100644
 +    {
 +		$textile = new Textpattern\Fluxbb\Textile\Parser();
 +    }
-
+ 
 -	// If we split up the message before we have to concatenate it together again (code tags)
 -	if (isset($inside))
 +	if (defined('PUN_NEW_MEMBER') && $cur_post['group_id'] == PUN_NEW_MEMBER)
@@ -217,12 +231,12 @@ index b7eb4bd..a98356c 100644
 -		}
 +		return $textile->textileRestricted($text, false, true);
  	}
-
+ 
 -	return clean_paragraphs($text);
 +	return $textile->textileRestricted($text, false, false);
  }
-
-
+ 
+ 
 @@ -963,25 +943,23 @@ function clean_paragraphs($text)
  //
  function parse_signature($text)
@@ -230,12 +244,12 @@ index b7eb4bd..a98356c 100644
 -	global $pun_config, $lang_common, $pun_user;
 +	global $pun_config, $cur_post;
 +	static $textile = null;
-
+ 
  	if ($pun_config['o_censoring'] == '1')
 +	{
  		$text = censor_words($text);
 +	}
-
+ 
 -	// Convert applicable characters to HTML entities
 -	$text = pun_htmlspecialchars($text);
 -
@@ -249,7 +263,7 @@ index b7eb4bd..a98356c 100644
 +	{
 +		$textile = new Textpattern\Fluxbb\Textile\Parser();
 +	}
-
+ 
 -	// Deal with newlines, tabs and multiple spaces
 -	$pattern = array("\n", "\t", '  ', '  ');
 -	$replace = array('<br />', '&#160; &#160; ', '&#160; ', ' &#160;');
@@ -258,18 +272,18 @@ index b7eb4bd..a98356c 100644
 +	{
 +		return $textile->textileRestricted($text, false, true);
 +	}
-
+ 
 -	return clean_paragraphs($text);
 +	return $textile->textileRestricted($text, false, false);
  }
 diff --git a/index.php b/index.php
-index 888cc91..f7b7972 100644
+index 888cc91..9dc9d03 100644
 --- a/index.php
 +++ b/index.php
-@@ -62,6 +62,9 @@ $forum_actions = array();
+@@ -62,6 +62,26 @@ $forum_actions = array();
  if (!$pun_user['is_guest'])
  	$forum_actions[] = '<a href="misc.php?action=markread&amp;csrf_token='.pun_csrf_token().'">'.$lang_common['Mark all as read'].'</a>';
-
+ 
 +$page_head['meta_robots'] = '<meta name="robots" content="index, follow, noodp, noydir">';
 +$page_head['meta_desc'] = '<meta name="description" content="'.pun_htmlspecialchars($pun_config['o_board_desc']).'">';
 +$page_head['twitter-card'] = '<meta name="twitter:card" content="summary">';
@@ -307,11 +321,11 @@ index 08a2e66..6e91cd5 100644
  'No sig'						=>	'No signature currently stored in profile.',
  'Signature quote/code/list/h'	=>	'The quote, code, list, and heading BBCodes are not allowed in signatures.',
 diff --git a/viewforum.php b/viewforum.php
-index 2607a21..c545b0c 100644
+index 2607a21..1a37fc5 100644
 --- a/viewforum.php
 +++ b/viewforum.php
-@@ -80,14 +80,14 @@ $paging_links = '<span class="pages-label">'.$lang_common['Pages'].' </span>'.pa
-
+@@ -80,20 +80,39 @@ $paging_links = '<span class="pages-label">'.$lang_common['Pages'].' </span>'.pa
+ 
  // Add relationship meta tags
  $page_head = array();
 -$page_head['canonical'] = '<link rel="canonical" href="viewforum.php?id='.$id.($p == 1 ? '' : '&amp;p='.$p).'" title="'.sprintf($lang_common['Page'], $p).'" />';
@@ -335,7 +349,7 @@ index 2607a21..c545b0c 100644
 +'"url": "https://forum.textpattern.io/viewforum.php?id='.$id.($p == 1 ? '' : '&amp;p='.$p).'"}'."\n".
 +'</script>';
 +$page_head['canonical'] = '<link rel="canonical" href="https://forum.textpattern.io/viewforum.php?id='.$id.($p == 1 ? '' : '&amp;p='.$p).'" title="'.sprintf($lang_common['Page'], $p).'">';
-
+ 
  if ($num_pages > 1)
  {
  	if ($p > 1)
@@ -343,16 +357,24 @@ index 2607a21..c545b0c 100644
 +		$page_head['prev'] = '<link rel="prev" href="https://forum.textpattern.io/viewforum.php?id='.$id.($p == 2 ? '' : '&amp;p='.($p - 1)).'" title="'.sprintf($lang_common['Page'], $p - 1).'">';
  	if ($p < $num_pages)
 -		$page_head['next'] = '<link rel="next" href="viewforum.php?id='.$id.'&amp;p='.($p + 1).'" title="'.sprintf($lang_common['Page'], $p + 1).'" />';
-+		$page_head['next'] = '<link rel="next" href="https://forum.textpattern.io/viewforum.php?id='.$id.'&amp;p='.($p + 1).'" title="'.sprintf($lang_common['Page'], $p + 1).'">';
+++		$page_head['next'] = '<link rel="next" href="https://forum.textpattern.io/viewforum.php?id='.$id.'&amp;p='.($p + 1).'" title="'.sprintf($lang_common['Page'], $p + 1).'">';
  }
-
+ 
  if ($pun_config['o_feed_type'] == '1')
+-	$page_head['feed'] = '<link rel="alternate" type="application/rss+xml" href="extern.php?action=feed&amp;fid='.$id.'&amp;type=rss" title="'.$lang_common['RSS forum feed'].'" />';
++	$page_head['feed'] = '<link rel="alternate" type="application/rss+xml" href="extern.php?action=feed&amp;fid='.$id.'&amp;type=rss" title="'.$lang_common['RSS forum feed'].'">';
+ else if ($pun_config['o_feed_type'] == '2')
+-	$page_head['feed'] = '<link rel="alternate" type="application/atom+xml" href="extern.php?action=feed&amp;fid='.$id.'&amp;type=atom" title="'.$lang_common['Atom forum feed'].'" />';
++	$page_head['feed'] = '<link rel="alternate" type="application/atom+xml" href="extern.php?action=feed&amp;fid='.$id.'&amp;type=atom" title="'.$lang_common['Atom forum feed'].'">';
+ 
+ $forum_actions = array();
+ 
 diff --git a/viewtopic.php b/viewtopic.php
-index 618b699..4f8d7c1 100644
+index 618b699..2f7353a 100644
 --- a/viewtopic.php
 +++ b/viewtopic.php
-@@ -171,14 +171,14 @@ else
-
+@@ -171,20 +171,39 @@ else
+ 
  // Add relationship meta tags
  $page_head = array();
 -$page_head['canonical'] = '<link rel="canonical" href="viewtopic.php?id='.$id.($p == 1 ? '' : '&amp;p='.$p).'" title="'.sprintf($lang_common['Page'], $p).'" />';
@@ -376,7 +398,7 @@ index 618b699..4f8d7c1 100644
 +'"url": "https://forum.textpattern.io/viewtopic.php?id='.$id.($p == 1 ? '' : '&amp;p='.$p).'"}'."\n".
 +'</script>';
 +$page_head['canonical'] = '<link rel="canonical" href="https://forum.textpattern.io/viewtopic.php?id='.$id.($p == 1 ? '' : '&amp;p='.$p).'" title="'.sprintf($lang_common['Page'], $p).'">';
-
+ 
  if ($num_pages > 1)
  {
  	if ($p > 1)
@@ -386,5 +408,13 @@ index 618b699..4f8d7c1 100644
 -		$page_head['next'] = '<link rel="next" href="viewtopic.php?id='.$id.'&amp;p='.($p + 1).'" title="'.sprintf($lang_common['Page'], $p + 1).'" />';
 +		$page_head['next'] = '<link rel="next" href="https://forum.textpattern.io/viewtopic.php?id='.$id.'&amp;p='.($p + 1).'" title="'.sprintf($lang_common['Page'], $p + 1).'">';
  }
-
+ 
  if ($pun_config['o_feed_type'] == '1')
+-	$page_head['feed'] = '<link rel="alternate" type="application/rss+xml" href="extern.php?action=feed&amp;tid='.$id.'&amp;type=rss" title="'.$lang_common['RSS topic feed'].'" />';
++	$page_head['feed'] = '<link rel="alternate" type="application/rss+xml" href="extern.php?action=feed&amp;tid='.$id.'&amp;type=rss" title="'.$lang_common['RSS topic feed'].'">';
+ else if ($pun_config['o_feed_type'] == '2')
+-	$page_head['feed'] = '<link rel="alternate" type="application/atom+xml" href="extern.php?action=feed&amp;tid='.$id.'&amp;type=atom" title="'.$lang_common['Atom topic feed'].'" />';
++	$page_head['feed'] = '<link rel="alternate" type="application/atom+xml" href="extern.php?action=feed&amp;tid='.$id.'&amp;type=atom" title="'.$lang_common['Atom topic feed'].'">';
+ 
+ $page_title = array(pun_htmlspecialchars($pun_config['o_board_title']), pun_htmlspecialchars($cur_topic['forum_name']), pun_htmlspecialchars($cur_topic['subject']));
+ define('PUN_ALLOW_INDEX', 1);
