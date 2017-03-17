@@ -6,7 +6,7 @@
 
     requirejs.config({
         paths: {
-            'jquery': 'https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min',
+            'jquery': 'https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min',
             'recaptcha': 'https://www.google.com/recaptcha/api/js/recaptcha_ajax'
         }
     });
