@@ -22,10 +22,7 @@
     <meta itemprop="accessibilityHazard" content="noMotionSimulationHazard">
     <meta itemprop="accessibilityHazard" content="noSoundHazard">
     <meta itemprop="accessibilityAPI" content="ARIA">
-
     <div class="wrapper">
-
-<!-- Header -->
         <header class="site-header" itemscope itemtype="https://schema.org/Organization">
             <h1 class="masthead" itemprop="name"><a rel="home" itemprop="url" href="http://textpattern.com/" title="Go to the Textpattern homepage">Textpattern CMS</a></h1>
             <meta itemprop="logo" content="https://textpattern.io/assets/img/branding/textpattern/textpattern.png">
@@ -36,8 +33,6 @@
                 <input type="hidden" name="ie" value="UTF-8">
             </form>
         </header>
-
-<!-- Navigation -->
         <div class="nav-container">
             <nav class="site-navigation" aria-label="Site navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">
                 <ul>
@@ -51,19 +46,14 @@
                 </ul>
             </nav>
         </div>
-
-<!-- Primary Content -->
         <main aria-label="Main content">
             <div class="container">
                 <h1 class="accessibility">Textpattern CMS support forum</h1>
-
                 <pun_navlinks>
                 <pun_status>
                 <pun_announcement>
-
                 <div class="layout-3col-2span">
                     <h2>Forum help</h2>
-
                     <h3 id="forum-help-textile-formatting">Formatting</h3>
                     <p>The forum uses <a href="http://textpattern.com/textile-reference-manual">Textile markup language</a> for posts and signatures. The forum’s Textile has few additional features, including media embedding support and syntax highlighting. If you’re not already familiar with Markdown, take a quick look at <a href="http://textpattern.com/textile-reference-manual">Textile reference</a>. The few most useful Textile tags you can use to format your posts include:</p>
                     <ul>
@@ -90,7 +80,6 @@
 "$":https://twitter.com/textpattern/status/386111138699935744
 "$":https://gist.github.com/gocom/5431041</code></pre>
                     <p>A link to a supported service becomes an embedded object if it is in its own paragraph. Links within text will stay as normal text links to avoid disturbing reading and text flow. We currently support embedding content from <a href="http://youtube.com/">YouTube</a>, <a href="https://twitter.com">Twitter</a> and <a href="https://gist.github.com/">GitHub Gist</a>.</p>
-
                     <h3 id="forum-help-undeliverable-mail">Why can’t I create a forum account or receive forum emails?</h3>
                     <p>The most common cause of problems when creating forum accounts are email spam filters and blacklists. You must supply a working email address in order to create an account; when you sign-up, the forum software will send you the password you may use to login, to verify that your email address is correct and working properly. Some email servers refuse to accept these emails or incorrectly intercept them as spam. This is particularly common with free web mail services.</p>
                     <p>The following email providers seem to have problems accepting email from this forum, for one reason or another:</p>
@@ -119,74 +108,63 @@
                         <li>If you’re requesting a feature, <a href="https://forum.textpattern.io/viewtopic.php?id=10325">this article</a> lists some of the things you can do to increase its chances.</li>
                     </ol>
                 </div>
-
                 <pun_footer>
-
-                <p><a rel="external" href="https://twitter.com/txpforum"><span class="ui-icon ui-extra-icon-twitter"></span> Follow @txpforum on Twitter</a></p>
-            </div><!-- /.container -->
-        </main>
-
-    </div><!-- /.wrapper -->
-
-<!-- Secondary Content -->
-    <aside class="container complementary-content">
-
-        <div class="layout-container">
-            <div class="layout-3col-2span">
-                <div class="layout-container">
-                    <section class="layout-2col" itemscope itemtype="https://schema.org/Organization">
-                        <h4>Social channels</h4>
-                        <meta itemprop="name" content="Textpattern CMS">
-                        <ul class="social-channels">
-                            <li><a class="twitter" rel="external" itemprop="url" href="https://twitter.com/textpattern" title="Follow us on Twitter">Twitter</a></li>
-                            <li><a class="googleplus" rel="external" itemprop="url" href="https://plus.google.com/communities/111366418300163664690" title="Follow us on Google+">Google+</a></li>
-                            <li><a class="github" rel="external" itemprop="url" href="https://github.com/textpattern" title="Follow us on GitHub">GitHub</a></li>
-                        </ul>
-                        <h4>Donate</h4>
-                        <p>Your kind donations help us keep Textpattern CMS development alive!</p>
-                        <p><a class="button button-primary" href="http://textpattern.com/patrons"><span class="ui-icon ui-icon-heart"></span> Donate…</a></p>
-                    </section>
-                    <section class="layout-2col community-details">
-                        <h4>External links</h4>
-                        <ul class="community-links">
-                            <li><a rel="external" href="https://github.com/textpattern">Textpattern on GitHub</a></li>
-                            <li><a rel="external" href="https://github.com/textile">Textile on GitHub</a></li>
-                            <li><a rel="external" href="http://textpattern.tips/">Textpattern Tips</a></li>
-                            <li><a rel="external" href="https://github.com/drmonkeyninja/awesome-textpattern">Awesome Textpattern</a></li>
-                            <li><a rel="external" href="http://txpmag.com/">TXP Magazine</a></li>
-                            <li><a rel="external" href="http://textpattern.ru/">Textpattern.ru</a></li>
-                            <li><a rel="external" href="http://welovetxp.com/">We Love TXP</a></li>
-                        </ul>
-                    </section>
-                </div><!-- /.layout-container -->
             </div>
-
-            <section class="layout-3col host-details">
-                <h4 class="accessibility">Host details</h4>
-                <p><b class="host-network">Textpattern Network</b></p>
-                <p>
-                    <small>
-                        Kindly hosted by<br>
-                        <a class="joyent" rel="external" href="https://www.joyent.com/" title="Go to the Joyent website">Joyent</a>
-                    </small>
-                </p>
-            </section>
-        </div><!-- /.layout-container -->
-
-    </aside><!-- /.complementary-content -->
-
-<!-- Footer -->
-    <footer class="site-footer" role="contentinfo">
-        <p class="legal">
-            Copyright 2004–@@year The Textpattern Development Team.
-            <a href="http://textpattern.com/contact">Contact us</a>.
-            <a href="http://textpattern.com/privacy">Privacy</a>.
-            <a href="humans.txt">Colophon</a>.
-            Textpattern is both free and open source. <a href="http://textpattern.com/license">GPLv2 license</a>.
-        </p>
-    </footer>
-
-<!-- JavaScript -->
+        </main>
+    </div>
+    <div class="wrapper-footer">
+        <aside class="container complementary-content">
+            <div class="layout-container">
+                <div class="layout-3col-2span">
+                    <div class="layout-container">
+                        <section class="layout-2col" itemscope itemtype="https://schema.org/Organization">
+                            <h4>Social channels</h4>
+                            <meta itemprop="name" content="Textpattern CMS">
+                            <ul class="social-channels">
+                                <li><a class="twitter" rel="external" itemprop="url" href="https://twitter.com/textpattern" title="Follow us on Twitter">Twitter</a></li>
+                                <li><a class="googleplus" rel="external" itemprop="url" href="https://plus.google.com/communities/111366418300163664690" title="Follow us on Google+">Google+</a></li>
+                                <li><a class="github" rel="external" itemprop="url" href="https://github.com/textpattern" title="Follow us on GitHub">GitHub</a></li>
+                            </ul>
+                            <h4>Donate</h4>
+                            <p>Your kind donations help us keep Textpattern CMS development alive!</p>
+                            <p><a class="button button-primary" href="http://textpattern.com/patrons"><span class="ui-icon ui-icon-heart"></span> Donate…</a></p>
+                        </section>
+                        <section class="layout-2col community-details">
+                            <h4>External links</h4>
+                            <ul class="community-links">
+                                <li><a rel="external" href="https://github.com/textpattern">Textpattern on GitHub</a></li>
+                                <li><a rel="external" href="https://github.com/textile">Textile on GitHub</a></li>
+                                <li><a rel="external" href="http://textpattern.tips/">Textpattern Tips</a></li>
+                                <li><a rel="external" href="https://github.com/drmonkeyninja/awesome-textpattern">Awesome Textpattern</a></li>
+                                <li><a rel="external" href="http://txpmag.com/">TXP Magazine</a></li>
+                                <li><a rel="external" href="http://textpattern.ru/">Textpattern.ru</a></li>
+                                <li><a rel="external" href="http://welovetxp.com/">We Love TXP</a></li>
+                            </ul>
+                        </section>
+                    </div>
+                </div>
+                <section class="layout-3col host-details">
+                    <h4 class="accessibility">Host details</h4>
+                    <p><b class="host-network">Textpattern Network</b></p>
+                    <p>
+                        <small>
+                            Kindly hosted by<br>
+                            <a class="joyent" rel="external" href="https://www.joyent.com/" title="Go to the Joyent website">Joyent</a>
+                        </small>
+                    </p>
+                </section>
+            </div>
+        </aside>
+        <footer class="site-footer" role="contentinfo">
+            <p class="legal">
+                Copyright 2004–@@year The Textpattern Development Team.
+                <a href="http://textpattern.com/contact">Contact us</a>.
+                <a href="http://textpattern.com/privacy">Privacy</a>.
+                <a href="humans.txt">Colophon</a>.
+                Textpattern is both free and open source. <a href="http://textpattern.com/license">GPLv2 license</a>.
+            </p>
+        </footer>
+    </div>
     <script data-main="style/Textpattern/js/main.@@timestamp.js" src="style/Textpattern/js/require.@@timestamp.js"></script>
     <noscript>JavaScript is currently disabled in your browser - activate it for the best experience.</noscript>
 </body>
