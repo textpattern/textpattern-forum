@@ -277,7 +277,7 @@ index b7eb4bd..a98356c 100644
 +	return $textile->textileRestricted($text, false, false);
  }
 diff --git a/index.php b/index.php
-index 888cc91..9dc9d03 100644
+index 888cc91..b2171fc 100644
 --- a/index.php
 +++ b/index.php
 @@ -62,6 +62,26 @@ $forum_actions = array();
@@ -300,7 +300,7 @@ index 888cc91..9dc9d03 100644
 +'{"@context": "https://schema",'."\n".
 +'"@type": "WebSite",'."\n".
 +'"headline": "Textpattern CMS support forum",'."\n".
-+'"description": "'.pun_htmlspecialchars($pun_config['o_board_desc']).'",'."\n".
++'"description": '.json_encode(pun_htmlspecialchars($pun_config['o_board_desc'])).','."\n".
 +'"url": "https://forum.textpattern.io/"}'."\n".
 +'</script>';
 +$page_head['canonical'] = '<link rel="canonical" href="https://forum.textpattern.io/">';
@@ -321,7 +321,7 @@ index 08a2e66..6e91cd5 100644
  'No sig'						=>	'No signature currently stored in profile.',
  'Signature quote/code/list/h'	=>	'The quote, code, list, and heading BBCodes are not allowed in signatures.',
 diff --git a/viewforum.php b/viewforum.php
-index 2607a21..1a37fc5 100644
+index 2607a21..6ac1eec 100644
 --- a/viewforum.php
 +++ b/viewforum.php
 @@ -80,20 +80,39 @@ $paging_links = '<span class="pages-label">'.$lang_common['Pages'].' </span>'.pa
@@ -344,9 +344,9 @@ index 2607a21..1a37fc5 100644
 +$page_head['json-ld'] = '<script type="application/ld+json">'."\n".
 +'{"@context": "https://schema",'."\n".
 +'"@type": "WebPage",'."\n".
-+'"headline": "'.pun_htmlspecialchars($cur_forum['forum_name']).($p == 1 ? '' : ' ('.sprintf($lang_common['Page'], $p).')').'",'."\n".
-+'"description": "Listings in'.($p == 1 ? '' : ' page '.$p.' of').' the ‘'.pun_htmlspecialchars($cur_forum['forum_name']).'’ subforum at the Textpattern CMS support forum.",'."\n".
-+'"url": "https://forum.textpattern.io/viewforum.php?id='.$id.($p == 1 ? '' : '&amp;p='.$p).'"}'."\n".
++'"headline": '.json_encode(pun_htmlspecialchars($cur_forum['forum_name']).($p == 1 ? '' : ' ('.sprintf($lang_common['Page'], $p).')')).','."\n".
++'"description": '.json_encode(pun_htmlspecialchars('Listings in'.($p == 1 ? '' : ' page '.$p.' of').' the ‘'.pun_htmlspecialchars($cur_forum['forum_name']).'’ subforum at the Textpattern CMS support forum.')).','."\n".
++'"url": "https://forum.textpattern.io/viewforum.php?id='.intval($id).($p == 1 ? '' : '&p='.intval($p)).'"}'."\n".
 +'</script>';
 +$page_head['canonical'] = '<link rel="canonical" href="https://forum.textpattern.io/viewforum.php?id='.$id.($p == 1 ? '' : '&amp;p='.$p).'" title="'.sprintf($lang_common['Page'], $p).'">';
  
@@ -370,7 +370,7 @@ index 2607a21..1a37fc5 100644
  $forum_actions = array();
  
 diff --git a/viewtopic.php b/viewtopic.php
-index 618b699..2f7353a 100644
+index 618b699..7064342 100644
 --- a/viewtopic.php
 +++ b/viewtopic.php
 @@ -171,20 +171,39 @@ else
@@ -393,9 +393,9 @@ index 618b699..2f7353a 100644
 +$page_head['json-ld'] = '<script type="application/ld+json">'."\n".
 +'{"@context": "https://schema",'."\n".
 +'"@type": "WebPage",'."\n".
-+'"headline": "'.pun_htmlspecialchars($cur_topic['subject']).($p == 1 ? '' : ' ('.sprintf($lang_common['Page'], $p).')').'",'."\n".
-+'"description": "Postings in'.($p == 1 ? '' : ' page '.$p.' of').' the ‘'.pun_htmlspecialchars($cur_topic['subject']).'’ topic in the ‘'.pun_htmlspecialchars($cur_topic['forum_name']).'’ subforum.",'."\n".
-+'"url": "https://forum.textpattern.io/viewtopic.php?id='.$id.($p == 1 ? '' : '&amp;p='.$p).'"}'."\n".
++'"headline": '.json_encode(pun_htmlspecialchars($cur_topic['subject']).($p == 1 ? '' : ' ('.sprintf($lang_common['Page'], $p).')')).','."\n".
++'"description": '.json_encode(pun_htmlspecialchars('Postings in'.($p == 1 ? '' : ' page '.$p.' of').' the ‘'.$cur_topic['subject'].'’ topic in the ‘'.$cur_topic['forum_name'].'’ subforum.')).','."\n".
++'"url": "https://forum.textpattern.io/viewtopic.php?id='.intval($id).($p == 1 ? '' : '&p='.intval($p)).'"}'."\n".
 +'</script>';
 +$page_head['canonical'] = '<link rel="canonical" href="https://forum.textpattern.io/viewtopic.php?id='.$id.($p == 1 ? '' : '&amp;p='.$p).'" title="'.sprintf($lang_common['Page'], $p).'">';
  
