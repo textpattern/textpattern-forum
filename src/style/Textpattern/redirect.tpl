@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700italic">
     <link rel="stylesheet" href="style/Textpattern/css/style.@@timestamp.css">
-    <link rel="dns-prefetch" href="https://ajax.googleapis.com">
+    <link rel="dns-prefetch" href="https://code.jquery.com">
     <link rel="dns-prefetch" href="https://www.google-analytics.com">
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#ffda44">

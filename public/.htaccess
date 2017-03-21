@@ -14,7 +14,7 @@
     Header append X-XSS-Protection "1; mode=block"
     Header append X-Frame-Options "DENY"
     Header append X-Content-Type-Options "nosniff"
-    Header append Content-Security-Policy "default-src 'self'; font-src fonts.gstatic.com https://fonts.gstatic.com; img-src 'self' data: * https://*; style-src 'self' 'unsafe-inline' ajax.googleapis.com fonts.googleapis.com gist.github.com platform.twitter.com https://ajax.googleapis.com https://fonts.googleapis.com https://gist.github.com https://platform.twitter.com; script-src 'self' www.google.com ajax.googleapis.com gist.github.com cdnjs.cloudflare.com *.google-analytics.com https://www.google.com https://ajax.googleapis.com https://gist.github.com https://cdnjs.cloudflare.com https://*.google-analytics.com https://*.twitter.com; frame-src *.youtube-nocookie.com https://*.youtube-nocookie.com *.twitter.com https://*.twitter.com twitter.com https://twitter.com"
+    Header append Content-Security-Policy "default-src 'self'; font-src fonts.gstatic.com https://fonts.gstatic.com; img-src 'self' data: * https://*; style-src 'self' 'unsafe-inline' fonts.googleapis.com gist.github.com platform.twitter.com https://fonts.googleapis.com https://gist.github.com https://platform.twitter.com; script-src 'self' www.google.com code.jquery.com gist.github.com cdnjs.cloudflare.com *.google-analytics.com https://www.google.com https://code.jquery.com https://gist.github.com https://cdnjs.cloudflare.com https://*.google-analytics.com https://*.twitter.com; frame-src *.youtube-nocookie.com https://*.youtube-nocookie.com *.twitter.com https://*.twitter.com twitter.com https://twitter.com"
 
     Header unset ETag
 </ifModule>
