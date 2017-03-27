@@ -2,6 +2,16 @@
 
 Here's a summary of changes in each update.
 
+## Version 1.1.3 - 2017/03/27
+
+* Fixed: Scrollbar colour on iOS/MacOS.
+* Fixed: Encode JSON-LD properly.
+* Changed: Larger post edit textarea.
+* Changed: Using Greenkeeper to track dependency updates.
+* Changed: Customised the XML output slightly, for our Textpattern homepage work.
+* Changed: Use the official jQuery CDN.
+* Removed: Facebook channel.
+
 ## Version 1.1.2 - 2017/03/07
 
 * Changed: Forum moved to new domain (forum.textpattern.io) and now uses HTTPS protocol.
