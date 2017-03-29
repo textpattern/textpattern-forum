@@ -2,24 +2,19 @@
    ========================================================================== */
 
 .pagelink {
-    strong {
-        padding: 0.25em 0.5em;
-        border: 1px solid $color-border;
-        border-radius: 0.25em; // 4px / 16px
+    strong,
+    a,
+    .spacer {
+        display: inline-block;
+        min-width: 1.25em;
+        padding: 0 0.1875em; // 3px / 16px
+        text-align: center;
     }
 
-    a {
-        padding: 0.25em 0.5em;
-        border: 1px solid $color-background;
-        border-radius: 0.25em; // 4px / 16px
-
-        &:hover {
-            background-color: $color-selected;
-        }
-
-        &:active {
-            background-color: $color-selecting;
-            color: darken($color-text, 10%);
-        }
+    strong {
+        background: $color-text;
+        color: $color-text-inverse;
+        font-weight: normal;
+        cursor: default;
     }
 }
