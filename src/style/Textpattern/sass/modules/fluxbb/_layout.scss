@@ -151,6 +151,7 @@ thead th {
 
             a {
                 color: $color-text;
+                text-decoration-color: rgba($color-text, 0.5);  /* 4 */
             }
         }
     }
@@ -255,10 +256,6 @@ thead th {
 
     h3 {
         margin: 0 0 0.25em;
-
-        > a {
-            color: $color-text;
-        }
 
         .newtext {
             display: inline-block;
