@@ -3,22 +3,20 @@
 
 #brdmenu {
     ul {
-        margin: 1.25em 0 0;
+        margin: 1em 0 0;
         padding: 0;
         border-bottom: 1px solid $color-border;
         list-style: none;
+    }
 
-        &::after {
-            display: table;
-            clear: both;
-            content: "";
-        }
+    li {
+        display: inline-block;
     }
 
     a {
-        margin: 0 0.25em -1px 0; // 4px / 16px
-        padding: 0.5384616em 1em;
-        float: left;
+        display: inline-block;
+        margin-bottom: -1px;
+        padding: 0.5em 1em;
         border: 1px solid $color-border;
         background-color: $color-background-box;
         color: $color-text;
@@ -41,6 +39,7 @@
         }
 
         &:focus {
+            border-color: $color-link-focus;
             outline: 0;
             background-color: $color-selected;
         }

@@ -408,14 +408,11 @@
 
     #brdmenu {
         ul {
-            margin: 0;
             border: 0;
         }
 
         a {
-            display: block;
-            margin-right: 0;
-            float: none;
+            margin-top: 0.25em;
             box-shadow: none;
         }
     }
@@ -424,26 +421,6 @@
     #page-help #navextra1 a {
         border-bottom-color: $color-border;
     }
-
-    /**
-     * Adjust navigation top margin on small devices.
-     */
-
-    #navindex,
-    #page-index #navadmin {
-        margin-top: 1em;
-    }
-
-    /**
-     * Hide some non-essential navigation links on small devices to reduce clutter.
-     */
-
-    #page-index #navindex,
-    #navuserlist,
-    #navsearch {
-        display: none;
-    }
-
 }
 
 
