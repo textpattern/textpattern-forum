@@ -43,7 +43,7 @@ class Filter
     public function __construct()
     {
         $this->preventUnverified();
-        $this->preventMassBan();
+        //$this->preventMassBan();
     }
 
     /**
@@ -78,14 +78,14 @@ class Filter
      * @since 0.1.1
      */
 
-    protected function preventMassBan()
-    {
-        if (isset($_POST['ban_ip'])) {
-            $ip = trim((string) $_POST['ban_ip']);
-
-            if (filter_var($ip, FILTER_FLAG_IPV4) === false) {
-                $GET['ban_ip'] = $_POST['ban_ip'] = '';
-            }
-        }
-    }
+//    protected function preventMassBan()
+//    {
+//        if (isset($_POST['ban_ip'])) {
+//            $ip = trim((string) $_POST['ban_ip']);
+//
+//            if (filter_var($ip, FILTER_FLAG_IPV4) === false) {
+//                $GET['ban_ip'] = $_POST['ban_ip'] = '';
+//            }
+//        }
+//    }
 }
