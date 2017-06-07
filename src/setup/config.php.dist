@@ -48,18 +48,6 @@ define('TEXTPATTERN_FORUM_BASE_URL', 'http://forum.textpattern.test');
 define('TEXTPATTERN_TASKS_KEY', '');
 
 /**
- * reCAPTCHA public key.
- */
-
-define('TEXTPATTERN_FORUM_RECAPTCHA_PUBLIC_KEY', '');
-
-/**
- * reCAPTCHA private key.
- */
-
-define('TEXTPATTERN_FORUM_RECAPTCHA_PRIVATE_KEY', '');
-
-/**
  * Do not change anything after this line.
  *
  * These setting must not be altered.

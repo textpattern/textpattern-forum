@@ -30,8 +30,6 @@
 
 namespace Textpattern\Fluxbb;
 
-use Neutron\ReCaptcha\ReCaptcha;
-
 /**
  * Checks StopForumSpam database against user-data.
  *
@@ -90,34 +88,6 @@ class Sfs
         if (strpos($_SERVER['REQUEST_URI'], 'register.php') !== false &&
             isset($_POST['req_user']) && isset($_POST['req_email1'])
         ) {
-            if (defined('\TEXTPATTERN_FORUM_RECAPTCHA_PUBLIC_KEY')) {
-                $recaptcha = ReCaptcha::create(
-                    \TEXTPATTERN_FORUM_RECAPTCHA_PUBLIC_KEY,
-                    \TEXTPATTERN_FORUM_RECAPTCHA_PRIVATE_KEY
-                );
-
-                $response = $recaptcha->checkAnswer(
-                    $_SERVER['REMOTE_ADDR'],
-                    $_POST['recaptcha_challenge_field'],
-                    $_POST['recaptcha_response_field']
-                );
-
-                $query = http_build_query(array(
-                    'agree'         => 'Agree',
-                    'req_user'      => $_POST['req_user'],
-                    'req_email1'    => $_POST['req_email1'],
-                    'req_email2'    => $_POST['req_email2'],
-                    'timezone'      => $_POST['timezone'],
-                    'email_setting' => $_POST['email_setting'],
-                ));
-
-                if (!$response->isValid()) {
-                    setcookie('textpattern_fluxbb_message', 3);
-                    header('Location: '.\TEXTPATTERN_FORUM_BASE_URL.'/register.php?'.$query);
-                    die;
-                }
-            }
-
             $this->email = (string) $_POST['req_email1'];
 
             if ($this->isBanned() === false && $data = $this->getRecord()) {

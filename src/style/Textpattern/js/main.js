@@ -6,8 +6,7 @@
 
     requirejs.config({
         paths: {
-            'jquery': 'https://code.jquery.com/jquery-3.2.1.min',
-            'recaptcha': 'https://www.google.com/recaptcha/api/js/recaptcha_ajax'
+            'jquery': 'https://code.jquery.com/jquery-3.2.1.min'
         }
     });
 
@@ -530,55 +529,6 @@
             transition: 400,
             insert: 'before',
             navClass: 'site-navigation'
-        });
-    });
-
-    // reCaptcha.
-
-    require(['jquery'], function ($)
-    {
-        // jshint camelcase: false
-
-        var widget = $('.recaptcha-widget');
-
-        if (!widget.length) {
-            return;
-        }
-
-        require(['recaptcha'], function ()
-        {
-            window.Recaptcha.create(
-                widget.attr('data-recaptcha-key'),
-                widget.get(0),
-                {
-                    theme: 'custom',
-                    custom_theme_widget: 'recaptcha_widget'
-                }
-            );
-
-            $('a.recaptcha-reload').on('click', function (e)
-            {
-                e.preventDefault();
-                window.Recaptcha.reload();
-            });
-
-            $('a.recaptcha-switch-audio').on('click', function (e)
-            {
-                e.preventDefault();
-                window.Recaptcha.switch_type('audio');
-            });
-
-            $('a.recaptcha-switch-image').on('click', function (e)
-            {
-                e.preventDefault();
-                window.Recaptcha.switch_type('image');
-            });
-
-            $('a.recaptcha-show-help').on('click', function (e)
-            {
-                e.preventDefault();
-                window.Recaptcha.showhelp();
-            });
         });
     });
 
