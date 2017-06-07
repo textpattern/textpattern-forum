@@ -2,8 +2,5 @@
   "require": {
     "netcarver/textile": "3.6.0",
     "neutron/recaptcha": "0.1.3"
-},
-  "require-dev": {
-    "squizlabs/php_codesniffer": "2.*"
   }
 }
