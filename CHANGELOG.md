@@ -2,6 +2,19 @@
 
 Here's a summary of changes in each update.
 
+## Version 1.1.4 - UPCOMING
+
+* Fixed: Link underline styling.
+* Changed: Navigation focus style improvements.
+* Changed: Better tabs layout.
+* Changed: Consistent pagination style with upcoming main site.
+* Changed: Style the `<noscript>` notice.
+* Changed: Content Security Policy `frame-src` deprecated, now using `child-src`.
+* Changed: Support Node v8 and NPM v5.
+* Removed: `role="contentinfo"` not required on `<footer>` (source: W3C Validator).
+* Removed: DMOZ `noodp` and Yahoo Directory `noydir` are dead.
+* Removed: PHP_CodeSniffer - not using it in dev.
+
 ## Version 1.1.3 - 2017/03/27
 
 * Fixed: Scrollbar colour on iOS/MacOS.
