@@ -5,6 +5,7 @@ Here's a summary of changes in each update.
 ## Version 1.1.4 - UPCOMING
 
 * Fixed: Link underline styling.
+* Changed: Use the official FluxBB reCAPTCHA plugin, instead of bespoke reCAPTCHA code.
 * Changed: Navigation focus style improvements.
 * Changed: Better tabs layout.
 * Changed: Consistent pagination style with upcoming main site.
