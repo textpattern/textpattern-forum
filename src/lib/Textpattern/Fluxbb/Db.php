@@ -61,7 +61,7 @@ class Db
                 $db_username,
                 $db_password,
                 array(
-                    \PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'",
+                    \PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8mb4'",
                 )
             );
 
