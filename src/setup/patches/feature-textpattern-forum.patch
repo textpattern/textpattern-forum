@@ -1,5 +1,31 @@
+diff --git a/db_update.php b/db_update.php
+index f001b5e7..52cf9744 100644
+--- a/db_update.php
++++ b/db_update.php
+@@ -116,7 +116,7 @@ require PUN_ROOT.'include/dblayer/common_db.php';
+ $old_connection_charset = defined('FORUM_DEFAULT_CHARSET') ? FORUM_DEFAULT_CHARSET : $db->get_names();
+
+ // Set the connection to UTF-8 now
+-$db->set_names('utf8');
++$db->set_names('utf8mb4');
+
+ // Get the forum config
+ $result = $db->query('SELECT * FROM '.$db->prefix.'config') or error('Unable to fetch config.', __FILE__, __LINE__, $db->error());
+diff --git a/edit.php b/edit.php
+index d757eeb0..004c548a 100644
+--- a/edit.php
++++ b/edit.php
+@@ -113,7 +113,7 @@ if (isset($_POST['form_sent']))
+ 		$stick_topic = $cur_post['sticky'];
+
+ 	// Replace four-byte characters (MySQL cannot handle them)
+-	$message = strip_bad_multibyte_chars($message);
++	//$message = strip_bad_multibyte_chars($message);
+
+ 	// Did everything go according to plan?
+ 	if (empty($errors) && !isset($_POST['preview']))
 diff --git a/extern.php b/extern.php
-index d43574b..cfba218 100644
+index d43574be..cfba2187 100644
 --- a/extern.php
 +++ b/extern.php
 @@ -242,7 +242,8 @@ function output_xml($feed)
@@ -12,8 +38,73 @@ index d43574b..cfba218 100644
 
  		echo "\t".'</'.$forum_tag.'>'."\n";
  	}
+diff --git a/include/dblayer/mysql.php b/include/dblayer/mysql.php
+index 9b3a91f7..23183a0a 100644
+--- a/include/dblayer/mysql.php
++++ b/include/dblayer/mysql.php
+@@ -47,7 +47,7 @@ class DBLayer
+
+ 		// Setup the client-server character set (UTF-8)
+ 		if (!defined('FORUM_NO_SET_NAMES'))
+-			$this->set_names('utf8');
++			$this->set_names('utf8mb4');
+
+ 		return $this->link_id;
+ 	}
+diff --git a/include/dblayer/mysql_innodb.php b/include/dblayer/mysql_innodb.php
+index 52c467c2..ca35f330 100644
+--- a/include/dblayer/mysql_innodb.php
++++ b/include/dblayer/mysql_innodb.php
+@@ -48,7 +48,7 @@ class DBLayer
+
+ 		// Setup the client-server character set (UTF-8)
+ 		if (!defined('FORUM_NO_SET_NAMES'))
+-			$this->set_names('utf8');
++			$this->set_names('utf8mb4');
+
+ 		return $this->link_id;
+ 	}
+diff --git a/include/dblayer/mysqli.php b/include/dblayer/mysqli.php
+index 2f41e838..4050c0db 100644
+--- a/include/dblayer/mysqli.php
++++ b/include/dblayer/mysqli.php
+@@ -49,7 +49,7 @@ class DBLayer
+
+ 		// Setup the client-server character set (UTF-8)
+ 		if (!defined('FORUM_NO_SET_NAMES'))
+-			$this->set_names('utf8');
++			$this->set_names('utf8mb4');
+
+ 		return $this->link_id;
+ 	}
+diff --git a/include/dblayer/mysqli_innodb.php b/include/dblayer/mysqli_innodb.php
+index 2468fb16..c9519c07 100644
+--- a/include/dblayer/mysqli_innodb.php
++++ b/include/dblayer/mysqli_innodb.php
+@@ -50,7 +50,7 @@ class DBLayer
+
+ 		// Setup the client-server character set (UTF-8)
+ 		if (!defined('FORUM_NO_SET_NAMES'))
+-			$this->set_names('utf8');
++			$this->set_names('utf8mb4');
+
+ 		return $this->link_id;
+ 	}
+diff --git a/include/dblayer/pgsql.php b/include/dblayer/pgsql.php
+index 983a886f..f16e492b 100644
+--- a/include/dblayer/pgsql.php
++++ b/include/dblayer/pgsql.php
+@@ -69,7 +69,7 @@ class DBLayer
+
+ 		// Setup the client-server character set (UTF-8)
+ 		if (!defined('FORUM_NO_SET_NAMES'))
+-			$this->set_names('utf8');
++			$this->set_names('utf8mb4');
+
+ 		return $this->link_id;
+ 	}
 diff --git a/include/email.php b/include/email.php
-index ea495f3..4ef2ffa 100644
+index ea495f3d..4ef2ffa5 100644
 --- a/include/email.php
 +++ b/include/email.php
 @@ -64,149 +64,7 @@ function encode_mail_text($str)
@@ -168,7 +259,7 @@ index ea495f3..4ef2ffa 100644
 
 
 diff --git a/include/parser.php b/include/parser.php
-index b7eb4bd..a98356c 100644
+index b7eb4bd0..a98356c3 100644
 --- a/include/parser.php
 +++ b/include/parser.php
 @@ -64,6 +64,7 @@ $smilies = array(
@@ -277,7 +368,7 @@ index b7eb4bd..a98356c 100644
 +	return $textile->textileRestricted($text, false, false);
  }
 diff --git a/index.php b/index.php
-index 888cc91..b2171fc 100644
+index 888cc91a..ae25dbc7 100644
 --- a/index.php
 +++ b/index.php
 @@ -62,6 +62,26 @@ $forum_actions = array();
@@ -308,7 +399,7 @@ index 888cc91..b2171fc 100644
  define('PUN_ALLOW_INDEX', 1);
  define('PUN_ACTIVE_PAGE', 'index');
 diff --git a/lang/English/profile.php b/lang/English/profile.php
-index 08a2e66..6e91cd5 100644
+index 08a2e660..6e91cd54 100644
 --- a/lang/English/profile.php
 +++ b/lang/English/profile.php
 @@ -95,7 +95,7 @@ $lang_profile = array(
@@ -320,8 +411,21 @@ index 08a2e66..6e91cd5 100644
  'Sig preview'					=>	'Current signature preview:',
  'No sig'						=>	'No signature currently stored in profile.',
  'Signature quote/code/list/h'	=>	'The quote, code, list, and heading BBCodes are not allowed in signatures.',
+diff --git a/post.php b/post.php
+index cc01a1a0..5936a15d 100644
+--- a/post.php
++++ b/post.php
+@@ -159,7 +159,7 @@ if (isset($_POST['form_sent']))
+ 	$stick_topic = isset($_POST['stick_topic']) && $is_admmod ? '1' : '0';
+
+ 	// Replace four-byte characters (MySQL cannot handle them)
+-	$message = strip_bad_multibyte_chars($message);
++	//$message = strip_bad_multibyte_chars($message);
+
+ 	$now = time();
+
 diff --git a/viewforum.php b/viewforum.php
-index 2607a21..6ac1eec 100644
+index 2607a219..63936749 100644
 --- a/viewforum.php
 +++ b/viewforum.php
 @@ -80,20 +80,39 @@ $paging_links = '<span class="pages-label">'.$lang_common['Pages'].' </span>'.pa
@@ -370,7 +474,7 @@ index 2607a21..6ac1eec 100644
  $forum_actions = array();
 
 diff --git a/viewtopic.php b/viewtopic.php
-index 618b699..7064342 100644
+index 618b699d..f2e25882 100644
 --- a/viewtopic.php
 +++ b/viewtopic.php
 @@ -171,20 +171,39 @@ else
