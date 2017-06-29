@@ -188,10 +188,10 @@ rules:
   no-universal-selectors: 0
 
   # Enforce that domains are not used within URLs.
-  no-url-domains: 1
+  no-url-domains: 0
 
   # Enforce that protocols and domains are not used within URLs.
-  no-url-protocols: 1
+  no-url-protocols: 0
 
   # Enforce that vendor prefixes are not allowed to be used.
   no-vendor-prefixes: 0
