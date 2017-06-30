@@ -9,6 +9,8 @@ Here's a summary of changes in each update.
 * Changed: Navigation focus style improvements.
 * Changed: Better tabs layout.
 * Changed: Consistent pagination style with upcoming main site.
+* Changed: Fonts served from local server, not Google Web Fonts. Also, use `latin-extended` version of PT Serif for wider language support.
+* Changed: Forum is now `utf8mb4` - allows emojis.
 * Changed: Style the `<noscript>` notice.
 * Changed: Content Security Policy `frame-src` deprecated, now using `child-src`.
 * Changed: Support Node v8 and NPM v5.
