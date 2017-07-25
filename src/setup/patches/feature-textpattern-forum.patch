@@ -388,7 +388,7 @@ index 888cc91a..ae25dbc7 100644
 +$page_head['og-image'] = '<meta property="og:image" content="https://textpattern.io/assets/img/branding/textpattern/textpattern-og.png">';
 +$page_head['og-url'] = '<meta property="og:url" content="https://forum.textpattern.io/">';
 +$page_head['json-ld'] = '<script type="application/ld+json">'."\n".
-+'{"@context": "https://schema",'."\n".
++'{"@context": "https://schema.org",'."\n".
 +'"@type": "WebSite",'."\n".
 +'"headline": "Textpattern CMS support forum",'."\n".
 +'"description": '.json_encode(pun_htmlspecialchars($pun_config['o_board_desc'])).','."\n".
@@ -446,7 +446,7 @@ index 2607a219..63936749 100644
 +$page_head['og-image'] = '<meta property="og:image" content="https://textpattern.io/assets/img/branding/textpattern/textpattern-og.png">';
 +$page_head['og-url'] = '<meta property="og:url" content="https://forum.textpattern.io/viewforum.php?id='.$id.($p == 1 ? '' : '&amp;p='.$p).'">';
 +$page_head['json-ld'] = '<script type="application/ld+json">'."\n".
-+'{"@context": "https://schema",'."\n".
++'{"@context": "https://schema.org",'."\n".
 +'"@type": "WebPage",'."\n".
 +'"headline": '.json_encode(pun_htmlspecialchars($cur_forum['forum_name']).($p == 1 ? '' : ' ('.sprintf($lang_common['Page'], $p).')')).','."\n".
 +'"description": '.json_encode(pun_htmlspecialchars('Listings in'.($p == 1 ? '' : ' page '.$p.' of').' the ‘'.pun_htmlspecialchars($cur_forum['forum_name']).'’ subforum at the Textpattern CMS support forum.')).','."\n".
@@ -495,7 +495,7 @@ index 618b699d..f2e25882 100644
 +$page_head['og-image'] = '<meta property="og:image" content="https://textpattern.io/assets/img/branding/textpattern/textpattern-og.png">';
 +$page_head['og-url'] = '<meta property="og:url" content="https://forum.textpattern.io/viewtopic.php?id='.$id.($p == 1 ? '' : '&amp;p='.$p).'">';
 +$page_head['json-ld'] = '<script type="application/ld+json">'."\n".
-+'{"@context": "https://schema",'."\n".
++'{"@context": "https://schema.org",'."\n".
 +'"@type": "WebPage",'."\n".
 +'"headline": '.json_encode(pun_htmlspecialchars($cur_topic['subject']).($p == 1 ? '' : ' ('.sprintf($lang_common['Page'], $p).')')).','."\n".
 +'"description": '.json_encode(pun_htmlspecialchars('Postings in'.($p == 1 ? '' : ' page '.$p.' of').' the ‘'.$cur_topic['subject'].'’ topic in the ‘'.$cur_topic['forum_name'].'’ subforum.')).','."\n".
