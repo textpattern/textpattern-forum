@@ -607,9 +607,9 @@
             m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
             })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
             /* jshint ignore:end */
-            ga('create', 'UA-191562-28', 'auto', {
-                anonymizeIp: true
-            });
+            ga('create', 'UA-191562-28', 'auto');
+            ga('set', 'transport', 'beacon');
+            ga('set', 'anonymizeIp', true);
             ga('send', 'pageview');
         }
     });
