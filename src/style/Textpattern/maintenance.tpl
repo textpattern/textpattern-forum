@@ -21,7 +21,7 @@
     <meta itemprop="accessibilityAPI" content="ARIA">
     <div class="wrapper">
         <header class="site-header" itemscope itemtype="https://schema.org/Organization">
-            <h1 class="masthead" itemprop="name"><a rel="home" itemprop="url" href="http://textpattern.com/" title="Go to the Textpattern homepage">Textpattern CMS</a></h1>
+            <h1 class="masthead" itemprop="name"><a rel="home" itemprop="url" href="https://textpattern.com/" title="Go to the Textpattern homepage">Textpattern CMS</a></h1>
             <meta itemprop="logo" content="https://textpattern.io/assets/img/branding/textpattern/textpattern.png">
         </header>
         <div class="nav-container">
@@ -89,10 +89,10 @@
         <footer class="site-footer">
             <p class="legal">
                 Copyright 2004–@@year The Textpattern Development Team.
-                <a href="http://textpattern.com/contact">Contact us</a>.
-                <a href="http://textpattern.com/privacy">Privacy</a>.
+                <a href="https://textpattern.com/contact">Contact us</a>.
+                <a href="https://textpattern.com/privacy">Privacy</a>.
                 <a href="humans.txt">Colophon</a>.
-                Textpattern is both free and open source. <a href="http://textpattern.com/license">GPLv2 license</a>.
+                Textpattern is both free and open source. <a href="https://textpattern.com/license">GPLv2 license</a>.
             </p>
         </footer>
     </div>
