@@ -31,7 +31,7 @@
   },
   "dependencies": {
     "prismjs": "1.6.0",
-    "requirejs": "2.3.4",
+    "requirejs": "2.3.5",
     "responsive-nav": "1.0.39",
     "textpattern-branding": "0.2.8"
   },
