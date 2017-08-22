@@ -7,4 +7,3 @@ Disallow: /*?*user_id=
 Disallow: /*?*search_id=
 Disallow: /*?*username=
 Sitemap: https://forum.textpattern.io/sitemap.xml
-Host: forum.textpattern.io
