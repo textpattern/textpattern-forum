@@ -5,7 +5,7 @@
 # TEAM
 
   Developer: Team Textpattern
-  Site: http://textpattern.com
+  Site: https://textpattern.com
   Twitter: https://twitter.com/textpattern
   GitHub: https://github.com/textpattern
   Location: Everywhere

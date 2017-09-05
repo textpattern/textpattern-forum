@@ -58,10 +58,10 @@
                 <div class="layout-3col-2span">
                     <h2>Forum help</h2>
                     <h3 id="forum-help-textile-formatting">Formatting</h3>
-                    <p>The forum uses <a href="http://textpattern.com/textile-reference-manual">Textile markup language</a> for posts and signatures. The forum’s Textile has few additional features, including media embedding support and syntax highlighting. If you’re not already familiar with Markdown, take a quick look at <a href="http://textpattern.com/textile-reference-manual">Textile reference</a>. The few most useful Textile tags you can use to format your posts include:</p>
+                    <p>The forum uses <a href="https://textpattern.com/textile-reference-manual">Textile markup language</a> for posts and signatures. The forum’s Textile has few additional features, including media embedding support and syntax highlighting. If you’re not already familiar with Markdown, take a quick look at <a href="https://textpattern.com/textile-reference-manual">Textile reference</a>. The few most useful Textile tags you can use to format your posts include:</p>
                     <ul>
-                        <li><code>!http://textpattern.com/hi.png!</code> → <img src="http://textpattern.com/hi.png" alt=""></li>
-                        <li><code>"link":http://textpattern.com</code> → <a href="http://textpattern.com">link</a></li>
+                        <li><code>!https://textpattern.com/hi.png!</code> → <img src="https://textpattern.com/hi.png" alt=""></li>
+                        <li><code>"link":https://textpattern.com</code> → <a href="https://textpattern.com">link</a></li>
                         <li><code>@inline code@</code> → <code>inline code</code></li>
                         <li><code>*strong*</code> → <strong>strong</strong></li>
                         <li><code>_emphasis_</code> → <em>emphasis</em></li>
@@ -100,7 +100,7 @@
                     <p>The Textpattern CMS Support Forum is for discussion and support of all things Textpattern. Please bear in mind that it is a community forum—when you ask for assistance, you are asking volunteers and fellow users, not paid technical support staff. The usual common-sense conventions of etiquette and politeness apply.</p>
                     <p>A few rules of thumb specific to the Textpattern forum:</p>
                     <ol>
-                        <li>Please make an effort to check the <a href="http://textpattern.com/support" rel="external">Textpattern CMS User Documentation</a> before posting, and check for duplicate threads on the forum.</li>
+                        <li>Please make an effort to check the <a href="https://textpattern.com/support" rel="external">Textpattern CMS User Documentation</a> before posting, and check for duplicate threads on the forum.</li>
                         <li>Try to choose the most appropriate forum for your question. ‘Troubleshooting’ is for when you’ve tried something and it doesn’t work as expected. ‘How do I…?’ is self explanatory. Questions about plugins should go to the ‘Plugins’ forum, not ‘How do I…?’ or ‘Troubleshooting’.</li>
                         <li>If you’re asking for help with a problem or error, please describe the problem clearly and unambiguously. If there is an error message, please include an exact copy of the message in your post. If something doesn’t work as expected, describe what you’re expecting to see, and the actual behaviour. A link to the page in question is usually helpful, and sometimes a screenshot might be appropriate. Descriptions like “doesn’t work” or “it’s broken” are too vague, and unlikely to receive an answer.</li>
                         <li>Most suspected bugs aren’t really bugs, but problems caused by external factors. Unless you’ve confirmed the problem with a fresh install, or can identify the problem in the PHP source, start with a ‘Troubleshooting’ post rather than a bug report.</li>
@@ -131,7 +131,7 @@
                             </ul>
                             <h4>Donate</h4>
                             <p>Your kind donations help us keep Textpattern CMS development alive!</p>
-                            <p><a class="button button-primary" href="http://textpattern.com/donate"><span class="ui-icon ui-icon-heart"></span> Donate…</a></p>
+                            <p><a class="button button-primary" href="https://textpattern.com/donate"><span class="ui-icon ui-icon-heart"></span> Donate…</a></p>
                         </section>
                         <section class="layout-2col community-details">
                             <h4>External links</h4>
