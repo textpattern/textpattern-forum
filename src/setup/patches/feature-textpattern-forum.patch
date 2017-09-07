@@ -4,11 +4,11 @@ index f001b5e7..52cf9744 100644
 +++ b/db_update.php
 @@ -116,7 +116,7 @@ require PUN_ROOT.'include/dblayer/common_db.php';
  $old_connection_charset = defined('FORUM_DEFAULT_CHARSET') ? FORUM_DEFAULT_CHARSET : $db->get_names();
-
+ 
  // Set the connection to UTF-8 now
 -$db->set_names('utf8');
 +$db->set_names('utf8mb4');
-
+ 
  // Get the forum config
  $result = $db->query('SELECT * FROM '.$db->prefix.'config') or error('Unable to fetch config.', __FILE__, __LINE__, $db->error());
 diff --git a/edit.php b/edit.php
@@ -17,11 +17,11 @@ index d757eeb0..004c548a 100644
 +++ b/edit.php
 @@ -113,7 +113,7 @@ if (isset($_POST['form_sent']))
  		$stick_topic = $cur_post['sticky'];
-
+ 
  	// Replace four-byte characters (MySQL cannot handle them)
 -	$message = strip_bad_multibyte_chars($message);
 +	//$message = strip_bad_multibyte_chars($message);
-
+ 
  	// Did everything go according to plan?
  	if (empty($errors) && !isset($_POST['preview']))
 diff --git a/extern.php b/extern.php
@@ -30,12 +30,12 @@ index d43574be..cfba2187 100644
 +++ b/extern.php
 @@ -242,7 +242,8 @@ function output_xml($feed)
  			echo "\t\t\t".'<uri>'.pun_htmlspecialchars($item['author']['uri']).'</uri>'."\n";
-
+ 
  		echo "\t\t".'</author>'."\n";
 -		echo "\t\t".'<posted>'.gmdate('r', $item['pubdate']).'</posted>'."\n";
 +		echo "\t\t".'<posted>'.gmdate('d F Y H:i', $item['pubdate']).'</posted>'."\n";
 +		echo "\t\t".'<postedutc>'.gmdate('Y-m-d\TH:i:s\Z', $item['pubdate']).'</postedutc>'."\n";
-
+ 
  		echo "\t".'</'.$forum_tag.'>'."\n";
  	}
 diff --git a/include/dblayer/mysql.php b/include/dblayer/mysql.php
@@ -43,12 +43,12 @@ index 9b3a91f7..23183a0a 100644
 --- a/include/dblayer/mysql.php
 +++ b/include/dblayer/mysql.php
 @@ -47,7 +47,7 @@ class DBLayer
-
+ 
  		// Setup the client-server character set (UTF-8)
  		if (!defined('FORUM_NO_SET_NAMES'))
 -			$this->set_names('utf8');
 +			$this->set_names('utf8mb4');
-
+ 
  		return $this->link_id;
  	}
 diff --git a/include/dblayer/mysql_innodb.php b/include/dblayer/mysql_innodb.php
@@ -56,12 +56,12 @@ index 52c467c2..ca35f330 100644
 --- a/include/dblayer/mysql_innodb.php
 +++ b/include/dblayer/mysql_innodb.php
 @@ -48,7 +48,7 @@ class DBLayer
-
+ 
  		// Setup the client-server character set (UTF-8)
  		if (!defined('FORUM_NO_SET_NAMES'))
 -			$this->set_names('utf8');
 +			$this->set_names('utf8mb4');
-
+ 
  		return $this->link_id;
  	}
 diff --git a/include/dblayer/mysqli.php b/include/dblayer/mysqli.php
@@ -69,12 +69,12 @@ index 2f41e838..4050c0db 100644
 --- a/include/dblayer/mysqli.php
 +++ b/include/dblayer/mysqli.php
 @@ -49,7 +49,7 @@ class DBLayer
-
+ 
  		// Setup the client-server character set (UTF-8)
  		if (!defined('FORUM_NO_SET_NAMES'))
 -			$this->set_names('utf8');
 +			$this->set_names('utf8mb4');
-
+ 
  		return $this->link_id;
  	}
 diff --git a/include/dblayer/mysqli_innodb.php b/include/dblayer/mysqli_innodb.php
@@ -82,12 +82,12 @@ index 2468fb16..c9519c07 100644
 --- a/include/dblayer/mysqli_innodb.php
 +++ b/include/dblayer/mysqli_innodb.php
 @@ -50,7 +50,7 @@ class DBLayer
-
+ 
  		// Setup the client-server character set (UTF-8)
  		if (!defined('FORUM_NO_SET_NAMES'))
 -			$this->set_names('utf8');
 +			$this->set_names('utf8mb4');
-
+ 
  		return $this->link_id;
  	}
 diff --git a/include/dblayer/pgsql.php b/include/dblayer/pgsql.php
@@ -95,12 +95,12 @@ index 983a886f..f16e492b 100644
 --- a/include/dblayer/pgsql.php
 +++ b/include/dblayer/pgsql.php
 @@ -69,7 +69,7 @@ class DBLayer
-
+ 
  		// Setup the client-server character set (UTF-8)
  		if (!defined('FORUM_NO_SET_NAMES'))
 -			$this->set_names('utf8');
 +			$this->set_names('utf8mb4');
-
+ 
  		return $this->link_id;
  	}
 diff --git a/include/email.php b/include/email.php
@@ -256,8 +256,8 @@ index ea495f3d..4ef2ffa5 100644
 -		return $text;
 +	return wordwrap($text, 72);
  }
-
-
+ 
+ 
 diff --git a/include/parser.php b/include/parser.php
 index b7eb4bd0..a98356c3 100644
 --- a/include/parser.php
@@ -268,7 +268,7 @@ index b7eb4bd0..a98356c3 100644
  {
 +	return $text;
  	global $pun_config, $lang_common, $lang_post, $re_list;
-
+ 
  	// Remove empty tags
 @@ -889,46 +890,25 @@ function do_smilies($text)
  //
@@ -277,12 +277,12 @@ index b7eb4bd0..a98356c3 100644
 -	global $pun_config, $lang_common, $pun_user;
 +	global $pun_config, $cur_post;
 +	static $textile = null;
-
+ 
  	if ($pun_config['o_censoring'] == '1')
 +	{
  		$text = censor_words($text);
 +	}
-
+ 
 -	// Convert applicable characters to HTML entities
 -	$text = pun_htmlspecialchars($text);
 -
@@ -304,7 +304,7 @@ index b7eb4bd0..a98356c3 100644
 +    {
 +		$textile = new Textpattern\Fluxbb\Textile\Parser();
 +    }
-
+ 
 -	// If we split up the message before we have to concatenate it together again (code tags)
 -	if (isset($inside))
 +	if (defined('PUN_NEW_MEMBER') && $cur_post['group_id'] == PUN_NEW_MEMBER)
@@ -322,12 +322,12 @@ index b7eb4bd0..a98356c3 100644
 -		}
 +		return $textile->textileRestricted($text, false, true);
  	}
-
+ 
 -	return clean_paragraphs($text);
 +	return $textile->textileRestricted($text, false, false);
  }
-
-
+ 
+ 
 @@ -963,25 +943,23 @@ function clean_paragraphs($text)
  //
  function parse_signature($text)
@@ -335,12 +335,12 @@ index b7eb4bd0..a98356c3 100644
 -	global $pun_config, $lang_common, $pun_user;
 +	global $pun_config, $cur_post;
 +	static $textile = null;
-
+ 
  	if ($pun_config['o_censoring'] == '1')
 +	{
  		$text = censor_words($text);
 +	}
-
+ 
 -	// Convert applicable characters to HTML entities
 -	$text = pun_htmlspecialchars($text);
 -
@@ -354,7 +354,7 @@ index b7eb4bd0..a98356c3 100644
 +	{
 +		$textile = new Textpattern\Fluxbb\Textile\Parser();
 +	}
-
+ 
 -	// Deal with newlines, tabs and multiple spaces
 -	$pattern = array("\n", "\t", '  ', '  ');
 -	$replace = array('<br />', '&#160; &#160; ', '&#160; ', ' &#160;');
@@ -363,18 +363,18 @@ index b7eb4bd0..a98356c3 100644
 +	{
 +		return $textile->textileRestricted($text, false, true);
 +	}
-
+ 
 -	return clean_paragraphs($text);
 +	return $textile->textileRestricted($text, false, false);
  }
 diff --git a/index.php b/index.php
-index 888cc91a..ae25dbc7 100644
+index 888cc91a..4321f46c 100644
 --- a/index.php
 +++ b/index.php
-@@ -62,6 +62,26 @@ $forum_actions = array();
+@@ -62,6 +62,31 @@ $forum_actions = array();
  if (!$pun_user['is_guest'])
  	$forum_actions[] = '<a href="misc.php?action=markread&amp;csrf_token='.pun_csrf_token().'">'.$lang_common['Mark all as read'].'</a>';
-
+ 
 +$page_head['meta_robots'] = '<meta name="robots" content="index, follow">';
 +$page_head['meta_desc'] = '<meta name="description" content="'.pun_htmlspecialchars($pun_config['o_board_desc']).'">';
 +$page_head['twitter-card'] = '<meta name="twitter:card" content="summary">';
@@ -383,9 +383,14 @@ index 888cc91a..ae25dbc7 100644
 +$page_head['twitter-description'] = '<meta name="twitter:description" content="'.pun_htmlspecialchars($pun_config['o_board_desc']).'">';
 +$page_head['twitter-image'] = '<meta name="twitter:image:src" content="https://forum.textpattern.io/apple-touch-icon-180x180.png">';
 +$page_head['twitter-url'] = '<meta name="twitter:url" content="https://forum.textpattern.io/">';
++$page_head['og-site'] = '<meta property="og:site_name" content="Textpattern CMS support forum">';
++$page_head['og-type'] = '<meta property="og:type" content="website">';
 +$page_head['og-title'] = '<meta property="og:title" content="Textpattern CMS support forum">';
 +$page_head['og-description'] = '<meta property="og:description" content="'.pun_htmlspecialchars($pun_config['o_board_desc']).'">';
 +$page_head['og-image'] = '<meta property="og:image" content="https://textpattern.io/assets/img/branding/textpattern/textpattern-og.png">';
++$page_head['og-image-width'] = '<meta property="og:image:width" content="1200">';
++$page_head['og-image-height'] = '<meta property="og:image:height" content="1200">';
++$page_head['og-image-alt'] = '<meta property="og:image:alt" content="Textpattern logo">';
 +$page_head['og-url'] = '<meta property="og:url" content="https://forum.textpattern.io/">';
 +$page_head['json-ld'] = '<script type="application/ld+json">'."\n".
 +'{"@context": "https://schema.org",'."\n".
@@ -417,19 +422,19 @@ index cc01a1a0..5936a15d 100644
 +++ b/post.php
 @@ -159,7 +159,7 @@ if (isset($_POST['form_sent']))
  	$stick_topic = isset($_POST['stick_topic']) && $is_admmod ? '1' : '0';
-
+ 
  	// Replace four-byte characters (MySQL cannot handle them)
 -	$message = strip_bad_multibyte_chars($message);
 +	//$message = strip_bad_multibyte_chars($message);
-
+ 
  	$now = time();
-
+ 
 diff --git a/viewforum.php b/viewforum.php
-index 2607a219..63936749 100644
+index 2607a219..6423f188 100644
 --- a/viewforum.php
 +++ b/viewforum.php
-@@ -80,20 +80,39 @@ $paging_links = '<span class="pages-label">'.$lang_common['Pages'].' </span>'.pa
-
+@@ -80,20 +80,44 @@ $paging_links = '<span class="pages-label">'.$lang_common['Pages'].' </span>'.pa
+ 
  // Add relationship meta tags
  $page_head = array();
 -$page_head['canonical'] = '<link rel="canonical" href="viewforum.php?id='.$id.($p == 1 ? '' : '&amp;p='.$p).'" title="'.sprintf($lang_common['Page'], $p).'" />';
@@ -441,9 +446,14 @@ index 2607a219..63936749 100644
 +$page_head['twitter-description'] = '<meta name="twitter:description" content="Listings in'.($p == 1 ? '' : ' page '.$p.' of').' the ‘'.pun_htmlspecialchars($cur_forum['forum_name']).'’ subforum at the Textpattern CMS support forum.">';
 +$page_head['twitter-image'] = '<meta name="twitter:image:src" content="https://forum.textpattern.io/apple-touch-icon-180x180.png">';
 +$page_head['twitter-url'] = '<meta name="twitter:url" content="https://forum.textpattern.io/viewforum.php?id='.$id.($p == 1 ? '' : '&amp;p='.$p).'">';
++$page_head['og-site'] = '<meta property="og:site_name" content="Textpattern CMS support forum">';
++$page_head['og-type'] = '<meta property="og:type" content="website">';
 +$page_head['og-title'] = '<meta property="og:title" content="'.pun_htmlspecialchars($cur_forum['forum_name']).($p == 1 ? '' : ' ('.sprintf($lang_common['Page'], $p).')').'">';
 +$page_head['og-description'] = '<meta property="og:description" content="Listings in'.($p == 1 ? '' : ' page '.$p.' of').' the ‘'.pun_htmlspecialchars($cur_forum['forum_name']).'’ subforum at the Textpattern CMS support forum.">';
 +$page_head['og-image'] = '<meta property="og:image" content="https://textpattern.io/assets/img/branding/textpattern/textpattern-og.png">';
++$page_head['og-image-width'] = '<meta property="og:image:width" content="1200">';
++$page_head['og-image-height'] = '<meta property="og:image:height" content="1200">';
++$page_head['og-image-alt'] = '<meta property="og:image:alt" content="Textpattern logo">';
 +$page_head['og-url'] = '<meta property="og:url" content="https://forum.textpattern.io/viewforum.php?id='.$id.($p == 1 ? '' : '&amp;p='.$p).'">';
 +$page_head['json-ld'] = '<script type="application/ld+json">'."\n".
 +'{"@context": "https://schema.org",'."\n".
@@ -453,7 +463,7 @@ index 2607a219..63936749 100644
 +'"url": "https://forum.textpattern.io/viewforum.php?id='.intval($id).($p == 1 ? '' : '&p='.intval($p)).'"}'."\n".
 +'</script>';
 +$page_head['canonical'] = '<link rel="canonical" href="https://forum.textpattern.io/viewforum.php?id='.$id.($p == 1 ? '' : '&amp;p='.$p).'" title="'.sprintf($lang_common['Page'], $p).'">';
-
+ 
  if ($num_pages > 1)
  {
  	if ($p > 1)
@@ -463,22 +473,22 @@ index 2607a219..63936749 100644
 -		$page_head['next'] = '<link rel="next" href="viewforum.php?id='.$id.'&amp;p='.($p + 1).'" title="'.sprintf($lang_common['Page'], $p + 1).'" />';
 ++		$page_head['next'] = '<link rel="next" href="https://forum.textpattern.io/viewforum.php?id='.$id.'&amp;p='.($p + 1).'" title="'.sprintf($lang_common['Page'], $p + 1).'">';
  }
-
+ 
  if ($pun_config['o_feed_type'] == '1')
 -	$page_head['feed'] = '<link rel="alternate" type="application/rss+xml" href="extern.php?action=feed&amp;fid='.$id.'&amp;type=rss" title="'.$lang_common['RSS forum feed'].'" />';
 +	$page_head['feed'] = '<link rel="alternate" type="application/rss+xml" href="extern.php?action=feed&amp;fid='.$id.'&amp;type=rss" title="'.$lang_common['RSS forum feed'].'">';
  else if ($pun_config['o_feed_type'] == '2')
 -	$page_head['feed'] = '<link rel="alternate" type="application/atom+xml" href="extern.php?action=feed&amp;fid='.$id.'&amp;type=atom" title="'.$lang_common['Atom forum feed'].'" />';
 +	$page_head['feed'] = '<link rel="alternate" type="application/atom+xml" href="extern.php?action=feed&amp;fid='.$id.'&amp;type=atom" title="'.$lang_common['Atom forum feed'].'">';
-
+ 
  $forum_actions = array();
-
+ 
 diff --git a/viewtopic.php b/viewtopic.php
-index 618b699d..f2e25882 100644
+index 618b699d..da9d3165 100644
 --- a/viewtopic.php
 +++ b/viewtopic.php
-@@ -171,20 +171,39 @@ else
-
+@@ -171,20 +171,44 @@ else
+ 
  // Add relationship meta tags
  $page_head = array();
 -$page_head['canonical'] = '<link rel="canonical" href="viewtopic.php?id='.$id.($p == 1 ? '' : '&amp;p='.$p).'" title="'.sprintf($lang_common['Page'], $p).'" />';
@@ -490,9 +500,14 @@ index 618b699d..f2e25882 100644
 +$page_head['twitter-description'] = '<meta name="twitter:description" content="Postings in'.($p == 1 ? '' : ' page '.$p.' of').' the ‘'.pun_htmlspecialchars($cur_topic['subject']).'’ topic in the ‘'.pun_htmlspecialchars($cur_topic['forum_name']).'’ subforum.">';
 +$page_head['twitter-image'] = '<meta name="twitter:image:src" content="https://forum.textpattern.io/apple-touch-icon-180x180.png">';
 +$page_head['twitter-url'] = '<meta name="twitter:url" content="https://forum.textpattern.io/viewtopic.php?id='.$id.($p == 1 ? '' : '&amp;p='.$p).'">';
++$page_head['og-site'] = '<meta property="og:site_name" content="Textpattern CMS support forum">';
++$page_head['og-type'] = '<meta property="og:type" content="website">';
 +$page_head['og-title'] = '<meta property="og:title" content="'.pun_htmlspecialchars($cur_topic['subject']).($p == 1 ? '' : ' ('.sprintf($lang_common['Page'], $p).')').'">';
 +$page_head['og-description'] = '<meta property="og:description" content="Postings in'.($p == 1 ? '' : ' page '.$p.' of').' the ‘'.pun_htmlspecialchars($cur_topic['subject']).'’ topic in the ‘'.pun_htmlspecialchars($cur_topic['forum_name']).'’ subforum.">';
 +$page_head['og-image'] = '<meta property="og:image" content="https://textpattern.io/assets/img/branding/textpattern/textpattern-og.png">';
++$page_head['og-image-width'] = '<meta property="og:image:width" content="1200">';
++$page_head['og-image-height'] = '<meta property="og:image:height" content="1200">';
++$page_head['og-image-alt'] = '<meta property="og:image:alt" content="Textpattern logo">';
 +$page_head['og-url'] = '<meta property="og:url" content="https://forum.textpattern.io/viewtopic.php?id='.$id.($p == 1 ? '' : '&amp;p='.$p).'">';
 +$page_head['json-ld'] = '<script type="application/ld+json">'."\n".
 +'{"@context": "https://schema.org",'."\n".
@@ -502,7 +517,7 @@ index 618b699d..f2e25882 100644
 +'"url": "https://forum.textpattern.io/viewtopic.php?id='.intval($id).($p == 1 ? '' : '&p='.intval($p)).'"}'."\n".
 +'</script>';
 +$page_head['canonical'] = '<link rel="canonical" href="https://forum.textpattern.io/viewtopic.php?id='.$id.($p == 1 ? '' : '&amp;p='.$p).'" title="'.sprintf($lang_common['Page'], $p).'">';
-
+ 
  if ($num_pages > 1)
  {
  	if ($p > 1)
@@ -512,13 +527,13 @@ index 618b699d..f2e25882 100644
 -		$page_head['next'] = '<link rel="next" href="viewtopic.php?id='.$id.'&amp;p='.($p + 1).'" title="'.sprintf($lang_common['Page'], $p + 1).'" />';
 +		$page_head['next'] = '<link rel="next" href="https://forum.textpattern.io/viewtopic.php?id='.$id.'&amp;p='.($p + 1).'" title="'.sprintf($lang_common['Page'], $p + 1).'">';
  }
-
+ 
  if ($pun_config['o_feed_type'] == '1')
 -	$page_head['feed'] = '<link rel="alternate" type="application/rss+xml" href="extern.php?action=feed&amp;tid='.$id.'&amp;type=rss" title="'.$lang_common['RSS topic feed'].'" />';
 +	$page_head['feed'] = '<link rel="alternate" type="application/rss+xml" href="extern.php?action=feed&amp;tid='.$id.'&amp;type=rss" title="'.$lang_common['RSS topic feed'].'">';
  else if ($pun_config['o_feed_type'] == '2')
 -	$page_head['feed'] = '<link rel="alternate" type="application/atom+xml" href="extern.php?action=feed&amp;tid='.$id.'&amp;type=atom" title="'.$lang_common['Atom topic feed'].'" />';
 +	$page_head['feed'] = '<link rel="alternate" type="application/atom+xml" href="extern.php?action=feed&amp;tid='.$id.'&amp;type=atom" title="'.$lang_common['Atom topic feed'].'">';
-
+ 
  $page_title = array(pun_htmlspecialchars($pun_config['o_board_title']), pun_htmlspecialchars($cur_topic['forum_name']), pun_htmlspecialchars($cur_topic['subject']));
  define('PUN_ALLOW_INDEX', 1);
