@@ -10,7 +10,7 @@
 
     # Referrer Policy.
 
-    Header always set Referrer-Policy "no-referrer"
+    Header always set Referrer-Policy "no-referrer-when-downgrade"
 
     # Content Security Policy.
 
