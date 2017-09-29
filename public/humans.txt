@@ -15,18 +15,17 @@
   Standards: HTML5, CSS3
   Server: Apache, MySQL, PHP
   Components:
-    FluxBB: https://fluxbb.org
+    FluxBB: https://fluxbb.org/
     PHP-Textile: https://github.com/textile/php-textile
-    jQuery: http://jquery.com
-    Require.js: http://requirejs.org
-    Autosize: https://github.com/jackmoore/autosize
-    Google Code Prettify: https://github.com/tcollard/google-code-prettify
+    jQuery: https://jquery.com/
+    Require.js: http://requirejs.org/
+    Prism: http://prismjs.com/
     Responsive Nav: https://github.com/viljamis/responsive-nav.js
   Software:
-    Node.js: http://nodejs.org
-    Grunt.js: http://gruntjs.com
-    Composer: http://getcomposer.org
-    git: http://git-scm.com
+    Node.js: https://nodejs.org/
+    Grunt.js: https://gruntjs.com/
+    Composer: https://getcomposer.org/
+    git: https://git-scm.com/
   Source: https://github.com/textpattern/textpattern-forum
 
 
