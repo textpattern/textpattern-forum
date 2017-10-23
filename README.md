@@ -36,7 +36,7 @@ The project uses [Grunt](https://gruntjs.com/) to run tasks and [Sass](http://sa
 $ npm install -g grunt-cli
 ```
 
-Consult the Grunt documentation for more instructions if necessary. You might need to use `sudo npm install -g grunt-cli` instead when installing on certain Unix-based systems. Outside from these, the project will also require the normal git, Apache, MySQL and PHP. All requirements must be added to your path variable.
+Consult the Grunt documentation for more instructions if necessary.
 
 ### Setting up Apache virtual host
 
@@ -61,7 +61,7 @@ $ npm install
 $ composer install
 ```
 
-**npm** installs Node modules for Grunt and **composer** installs PHP libraries. You might need to use `sudo` instead when installing on certain Unix-based systems.
+**npm** installs Node modules for Grunt and **composer** installs PHP libraries.
 
 ### Installing FluxBB
 
