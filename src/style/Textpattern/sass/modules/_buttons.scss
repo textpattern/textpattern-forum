@@ -27,6 +27,7 @@ input[type="submit"],
     @include gradient-linear($color-button-gradient-from, $color-button-gradient-to);
 
     display: inline-block;
+    position: relative;
     width: auto;
     height: 2em; // 32px / 16px
     padding: 0.25em 1em; // 4px / 16px
@@ -49,7 +50,6 @@ input[type="submit"],
     }
 
     &:active {
-        position: relative;
         top: 2px;
         border-color: darken($color-button-border, 13%);
         color: $color-text-button-active;
