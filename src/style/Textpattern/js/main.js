@@ -10,15 +10,6 @@
         }
     });
 
-    // Detect whether user enabled 'Do No Track' in their browser, and honour it.
-
-    define('track', function ()
-    {
-        return {
-            allow : navigator.doNotTrack !== 'yes' && navigator.doNotTrack !== '1' && window.doNotTrack !== 'yes' && window.doNotTrack !== '1'
-        };
-    });
-
     // Quoting.
 
     require(['jquery'], function ($)
@@ -593,24 +584,6 @@
         if (loadTwitter) {
             $('head').append('<meta name="twitter:widgets:csp" content="on" />');
             require(['https://platform.twitter.com/widgets.js']);
-        }
-    });
-
-    // Google Analytics
-
-    require(['track'], function(track)
-    {
-        if (track.allow) {
-            /* jshint ignore:start */
-            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-            /* jshint ignore:end */
-            ga('create', 'UA-191562-28', 'auto');
-            ga('set', 'transport', 'beacon');
-            ga('set', 'anonymizeIp', true);
-            ga('send', 'pageview');
         }
     });
 
