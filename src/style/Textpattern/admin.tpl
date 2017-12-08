@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="style/Textpattern/css/style.@@timestamp.css">
     <link rel="dns-prefetch" href="https://code.jquery.com">
     <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#ffda44">
     <meta name="application-name" content="Textpattern Forum">
     <link rel="icon" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" sizes="16x16" href="favicon-16x16.png">
