@@ -346,7 +346,7 @@ thead th {
 
 .userrank::before {
     color: lighten($color-text, 33%);
-    content: "\0020 \272D \0020";
+    content: "\0020 \2605 \0020";
 }
 
 .postavatar img {
@@ -536,7 +536,7 @@ thead th {
 
     span::before {
         color: lighten($color-text, 33%);
-        content: "\272D \0020";
+        content: "\2605 \0020";
     }
 
     span:first-child::before {
