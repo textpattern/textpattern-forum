@@ -124,8 +124,6 @@ module.exports = function (grunt)
                     module: true,
                     require: true,
                     requirejs: true,
-                    ga: true,
-                    responsiveNav: true,
                     Prism: true
                 }
             },
@@ -260,14 +258,7 @@ module.exports = function (grunt)
                             'node_modules/prismjs/components/prism-txp.js',
                             'node_modules/prismjs/components/prism-yaml.js'
                         ],
-                        '<%= paths.dest.js %>require.js': ['node_modules/requirejs/require.js'],
-                        '<%= paths.dest.js %>responsivenav.js': ['node_modules/responsive-nav/responsive-nav.js']
-                    },
-                    {
-                        expand: true,
-                        cwd: 'node_modules/google-code-prettify/src/',
-                        src: 'lang-*.js',
-                        dest: '<%= paths.dest.js %>'
+                        '<%= paths.dest.js %>require.js': ['node_modules/requirejs/require.js']
                     }
                 ]
             }

@@ -511,16 +511,15 @@
         });
     });
 
-    // Responsive navigation menu, via 'Responsive Nav'.
-    // More info - https://github.com/viljamis/responsive-nav.js.
+    // Responsive navigation menu.
 
-    require(['responsivenav.@@timestamp'], function ()
-    {
-        responsiveNav('.site-navigation', {
-            transition: 400,
-            insert: 'before',
-            navClass: 'site-navigation'
-        });
+    var navtoggle = document.getElementById('site-navigation-toggle'),
+        navmenu = document.getElementById('site-navigation');
+
+    navtoggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        navtoggle.classList.toggle('site-navigation-toggle-active');
+        navmenu.classList.toggle('site-navigation-open');
     });
 
     // Embed widgets.

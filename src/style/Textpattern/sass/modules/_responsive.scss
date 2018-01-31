@@ -73,7 +73,7 @@
      * Changes in styling for navigation.
      */
 
-    .site-navigation {
+    #site-navigation {
         font-family: $font-serif;
 
         .js & {
@@ -104,7 +104,7 @@
         }
     }
 
-    .nav-toggle {
+    #site-navigation-toggle {
         display: none;
     }
 
