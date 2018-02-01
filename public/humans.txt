@@ -20,7 +20,6 @@
     jQuery: https://jquery.com/
     Require.js: http://requirejs.org/
     Prism: http://prismjs.com/
-    Responsive Nav: https://github.com/viljamis/responsive-nav.js
   Software:
     Node.js: https://nodejs.org/
     Grunt.js: https://gruntjs.com/
