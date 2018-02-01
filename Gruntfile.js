@@ -100,23 +100,10 @@ module.exports = function (grunt)
         jshint: {
             options: {
                 bitwise: true,
-                camelcase: true,
                 curly: true,
                 eqeqeq: true,
-                es3: true,
+                esversion: 5,
                 forin: true,
-                immed: true,
-                indent: 4,
-                latedef: true,
-                noarg: true,
-                noempty: true,
-                nonew: true,
-                quotmark: 'single',
-                undef: true,
-                unused: true,
-                strict: true,
-                trailing: true,
-                browser: true,
                 globals: {
                     jQuery: true,
                     Zepto: true,
@@ -125,7 +112,15 @@ module.exports = function (grunt)
                     require: true,
                     requirejs: true,
                     Prism: true
-                }
+                },
+                latedef: true,
+                noarg: true,
+                nonew: true,
+                quotmark: 'single',
+                undef: true,
+                unused: false,
+                strict: true,
+                browser: true
             },
             files: [
                 'Gruntfile.js',
