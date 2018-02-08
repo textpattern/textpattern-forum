@@ -1,3 +1,5 @@
+//import Prism from 'prism';
+
 (function ()
 {
     'use strict';
