@@ -10,7 +10,11 @@
 
     # Referrer Policy.
 
-    Header always set Referrer-Policy "no-referrer-when-downgrade"
+    Header set Referrer-Policy "no-referrer-when-downgrade"
+
+    <FilesMatch "\.(appcache|atom|bbaw|bmp|css|f4[abpv]|flv|gif|ic[os]|jpe?g|json(ld)?|m4[av]|manifest|map|md|mp4|otf|pdf|png|rdf|rss|svgz?|swf|tt[cf]|txt|vcard|vcf|vtt|webapp|web[mp]|webmanifest|woff2?|xml|xpi)$">
+        Header unset Referrer-Policy
+    </FilesMatch>
 
     # Content Security Policy.
 
