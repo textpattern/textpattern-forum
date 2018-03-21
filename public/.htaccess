@@ -17,7 +17,7 @@
     Header unset P3P
     Header always set X-XSS-Protection "1; mode=block"
     Header always set X-Content-Type-Options "nosniff"
-    Header always set Content-Security-Policy "default-src 'self'; connect-src 'self' https://syndication.twitter.com; font-src textpattern.io https://textpattern.io; img-src 'self' data: * https://*; style-src 'self' 'unsafe-inline' gist.github.com *.twitter.com *.twimg.com https://gist.github.com https://*.twitter.com https://*.twimg.com; script-src 'self' code.jquery.com gist.github.com *.twitter.com *.twimg.com https://code.jquery.com https://gist.github.com https://*.twitter.com https://*.twimg.com https://www.google.com/recaptcha/ https://www.gstatic.com/recaptcha/; frame-src *.youtube-nocookie.com https://*.youtube-nocookie.com *.twitter.com https://*.twitter.com twitter.com https://twitter.com https://www.google.com/recaptcha/"
+    Header always set Content-Security-Policy "default-src 'self'; connect-src 'self' https://syndication.twitter.com; font-src https://textpattern.io; img-src 'self' data: * https://*; style-src 'self' 'unsafe-inline' https://gist.github.com https://*.twitter.com https://*.twimg.com; script-src 'self' https://code.jquery.com https://gist.github.com https://*.twitter.com https://*.twimg.com https://www.google.com/recaptcha/ https://www.gstatic.com/recaptcha/; frame-src https://*.youtube-nocookie.com https://*.twitter.com https://twitter.com https://www.google.com/recaptcha/"
 
     # Expect-CT (TODO: currently in testing).
 
