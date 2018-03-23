@@ -102,6 +102,7 @@ thead th {
    ========================================================================== */
 
 #announce {
+    padding: 1px 0;
     border-bottom: 1px solid $color-border;
     background-color: $color-highlight-box;
 
@@ -112,7 +113,7 @@ thead th {
     }
 
     .hd h2 {
-        margin: 1em 1em 0 0;
+        margin: 0.5em 1em 0 0;
         float: left;
         font-size: $base-font-size;
         line-height: $line-height-desktop;
@@ -120,7 +121,7 @@ thead th {
     }
 
     .box {
-        margin: 1em 0;
+        margin: 0.5em 0;
         float: left;
     }
 }
