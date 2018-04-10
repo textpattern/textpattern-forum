@@ -30,7 +30,8 @@
                     <input type="hidden" name="action" value="search">
                     <input type="hidden" name="show_as" value="posts">
                     <input type="hidden" name="sort_dir" value="DESC">
-                    <input name="keywords" type="search" size="32" placeholder="Search forum…" itemprop="query-input">
+                    <label class="accessibility" for="q">Search</label>
+                    <input id="q" name="keywords" type="search" size="32" placeholder="Search forum…" itemprop="query-input">
                 </form>
             </div>
         </header>
