@@ -30,7 +30,7 @@
     "uglify-save-license": "0.4.1"
   },
   "dependencies": {
-    "prismjs": "1.13.0",
+    "prismjs": "1.14.0",
     "requirejs": "2.3.5",
     "textpattern-branding": "0.2.8"
   },
