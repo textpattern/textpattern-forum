@@ -234,6 +234,7 @@ module.exports = function (grunt)
                             'node_modules/prismjs/prism.js',
                             // Add any plugins
                             // Add any additional languages
+                            'node_modules/prismjs/components/prism-markup-templating.js',
                             'node_modules/prismjs/components/prism-apacheconf.js',
                             'node_modules/prismjs/components/prism-bash.js',
                             'node_modules/prismjs/components/prism-coffeescript.js',
