@@ -14,8 +14,8 @@ Older versions of the above and other browsers may work, but these are the ones 
 
 Building this repository requires:
 
-* [Node.js](https://nodejs.org/) >=4.0
-* [Grunt](https://gruntjs.com/) >=1.0
+* [Node.js](https://nodejs.org/)
+* [Grunt](https://gruntjs.com/)
 * [Composer](https://getcomposer.org/)
 * cURL and patch CLI programs.
 
