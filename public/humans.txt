@@ -13,7 +13,7 @@
 # TECHNOLOGY COLOPHON
 
   Standards: HTML5, CSS3
-  Server: Apache, MySQL, PHP
+  Server: Apache, Nginx, MySQL, PHP
   Components:
     FluxBB: https://fluxbb.org/
     PHP-Textile: https://github.com/textile/php-textile
