@@ -9,7 +9,6 @@
 /*.md
 /.*
 !/.gitignore
-!/.htaccess
 /*.png
 /*.ico
 /*.html
