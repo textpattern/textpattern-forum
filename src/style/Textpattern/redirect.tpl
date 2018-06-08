@@ -22,7 +22,7 @@
     <div class="wrapper">
         <header class="site-header" itemscope itemtype="https://schema.org/Organization">
             <h1 class="masthead" itemprop="name"><a rel="home" itemprop="url" href="https://textpattern.com/" title="Go to the Textpattern homepage">Textpattern CMS</a></h1>
-            <meta itemprop="logo" content="https://textpattern.io/assets/img/branding/textpattern/textpattern.png">
+            <meta itemprop="logo" content="https://textpattern.com/assets/img/branding/textpattern/textpattern.png">
             <div itemscope itemtype="https://schema.org/WebSite">
                 <meta itemprop="url" content="https://forum.textpattern.io/">
                 <form class="search-form" role="search" method="get" action="https://forum.textpattern.io/search.php" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction">
