@@ -2,6 +2,7 @@
 /cache
 /include
 /lang
+/lib
 /style
 /COPYING
 /*.php

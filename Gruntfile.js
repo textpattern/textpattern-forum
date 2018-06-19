@@ -42,7 +42,7 @@ module.exports = function (grunt)
             ]
         },
 
-        // Copy files from `src/` and `bower_components/` to `public/`.
+        // Copy files from `src/` and `node_modules/` to `public/`.
         copy: {
             branding: {
                 files: [
@@ -91,7 +91,13 @@ module.exports = function (grunt)
                         cwd: '<%= paths.src.templates %>',
                         src: ['**', '!*.tpl', '!sass/**', '!js/**'],
                         dest: '<%= paths.dest.templates %>'
-                    }
+                    },
+                    {
+                        expand: true,
+                        cwd: 'src/lib/',
+                        src: ['**'],
+                        dest: 'public/lib/'
+                    },
                 ]
             }
         },
