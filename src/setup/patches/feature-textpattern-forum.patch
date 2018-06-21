@@ -39,7 +39,7 @@ index d43574be..cfba2187 100644
  		echo "\t".'</'.$forum_tag.'>'."\n";
  	}
 diff --git a/include/dblayer/mysql.php b/include/dblayer/mysql.php
-index 9b3a91f7..23183a0a 100644
+index 1b366482..2885297c 100644
 --- a/include/dblayer/mysql.php
 +++ b/include/dblayer/mysql.php
 @@ -47,7 +47,7 @@ class DBLayer
@@ -52,7 +52,7 @@ index 9b3a91f7..23183a0a 100644
  		return $this->link_id;
  	}
 diff --git a/include/dblayer/mysql_innodb.php b/include/dblayer/mysql_innodb.php
-index 52c467c2..ca35f330 100644
+index d284f672..cfe70127 100644
 --- a/include/dblayer/mysql_innodb.php
 +++ b/include/dblayer/mysql_innodb.php
 @@ -48,7 +48,7 @@ class DBLayer
@@ -65,7 +65,7 @@ index 52c467c2..ca35f330 100644
  		return $this->link_id;
  	}
 diff --git a/include/dblayer/mysqli.php b/include/dblayer/mysqli.php
-index 2f41e838..4050c0db 100644
+index 05ae5996..834e635f 100644
 --- a/include/dblayer/mysqli.php
 +++ b/include/dblayer/mysqli.php
 @@ -49,7 +49,7 @@ class DBLayer
@@ -78,7 +78,7 @@ index 2f41e838..4050c0db 100644
  		return $this->link_id;
  	}
 diff --git a/include/dblayer/mysqli_innodb.php b/include/dblayer/mysqli_innodb.php
-index 2468fb16..c9519c07 100644
+index f1322760..ec787125 100644
 --- a/include/dblayer/mysqli_innodb.php
 +++ b/include/dblayer/mysqli_innodb.php
 @@ -50,7 +50,7 @@ class DBLayer
@@ -91,7 +91,7 @@ index 2468fb16..c9519c07 100644
  		return $this->link_id;
  	}
 diff --git a/include/dblayer/pgsql.php b/include/dblayer/pgsql.php
-index 983a886f..f16e492b 100644
+index 8d13ad95..6a1f7260 100644
 --- a/include/dblayer/pgsql.php
 +++ b/include/dblayer/pgsql.php
 @@ -69,7 +69,7 @@ class DBLayer
@@ -104,7 +104,7 @@ index 983a886f..f16e492b 100644
  		return $this->link_id;
  	}
 diff --git a/include/email.php b/include/email.php
-index ea495f3d..4ef2ffa5 100644
+index b66b5844..4ef2ffa5 100644
 --- a/include/email.php
 +++ b/include/email.php
 @@ -64,149 +64,7 @@ function encode_mail_text($str)
@@ -160,7 +160,7 @@ index ea495f3d..4ef2ffa5 100644
 -			$replacement = preg_replace(
 -				array('%^(?=\>)%m', '%^(?!\>)%m'),
 -				array('>', '> '),
--				$matches[2]." said:\n".$matches[3]);
+-				$matches[2].":\n".$matches[3]);
 -		}
 -
 -		// List items
@@ -368,7 +368,7 @@ index b7eb4bd0..a98356c3 100644
 +	return $textile->textileRestricted($text, false, false);
  }
 diff --git a/index.php b/index.php
-index 888cc91a..4321f46c 100644
+index 888cc91a..b8d0a3b9 100644
 --- a/index.php
 +++ b/index.php
 @@ -62,6 +62,31 @@ $forum_actions = array();
@@ -381,8 +381,8 @@ index 888cc91a..4321f46c 100644
 +$page_head['twitter-site'] = '<meta name="twitter:site" content="@txpforum">';
 +$page_head['twitter-title'] = '<meta name="twitter:title" content="Textpattern CMS support forum">';
 +$page_head['twitter-description'] = '<meta name="twitter:description" content="'.pun_htmlspecialchars($pun_config['o_board_desc']).'">';
-+$page_head['twitter-image'] = '<meta name="twitter:image:src" content="https://forum.textpattern.io/apple-touch-icon-180x180.png">';
-+$page_head['twitter-url'] = '<meta name="twitter:url" content="https://forum.textpattern.io/">';
++$page_head['twitter-image'] = '<meta name="twitter:image:src" content="https://forum.textpattern.com/apple-touch-icon-180x180.png">';
++$page_head['twitter-url'] = '<meta name="twitter:url" content="https://forum.textpattern.com/">';
 +$page_head['og-site'] = '<meta property="og:site_name" content="Textpattern CMS support forum">';
 +$page_head['og-type'] = '<meta property="og:type" content="website">';
 +$page_head['og-title'] = '<meta property="og:title" content="Textpattern CMS support forum">';
@@ -391,18 +391,31 @@ index 888cc91a..4321f46c 100644
 +$page_head['og-image-width'] = '<meta property="og:image:width" content="1200">';
 +$page_head['og-image-height'] = '<meta property="og:image:height" content="1200">';
 +$page_head['og-image-alt'] = '<meta property="og:image:alt" content="Textpattern logo">';
-+$page_head['og-url'] = '<meta property="og:url" content="https://forum.textpattern.io/">';
++$page_head['og-url'] = '<meta property="og:url" content="https://forum.textpattern.com/">';
 +$page_head['json-ld'] = '<script type="application/ld+json">'."\n".
 +'{"@context": "https://schema.org",'."\n".
 +'"@type": "WebSite",'."\n".
 +'"headline": "Textpattern CMS support forum",'."\n".
 +'"description": '.json_encode(pun_htmlspecialchars($pun_config['o_board_desc'])).','."\n".
-+'"url": "https://forum.textpattern.io/"}'."\n".
++'"url": "https://forum.textpattern.com/"}'."\n".
 +'</script>';
-+$page_head['canonical'] = '<link rel="canonical" href="https://forum.textpattern.io/">';
++$page_head['canonical'] = '<link rel="canonical" href="https://forum.textpattern.com/">';
  $page_title = array(pun_htmlspecialchars($pun_config['o_board_title']));
  define('PUN_ALLOW_INDEX', 1);
  define('PUN_ACTIVE_PAGE', 'index');
+diff --git a/lang/English/login.php b/lang/English/login.php
+index fab1faeb..3b6b9b65 100644
+--- a/lang/English/login.php
++++ b/lang/English/login.php
+@@ -16,7 +16,7 @@ $lang_login = array(
+ 'Request pass info'			=>	'A new password together with a link to activate the new password will be sent to that address.',
+ 'Not registered'			=>	'Not registered yet?',
+ 'Login legend'				=>	'Enter your username and password below',
+-'Remember me'				=>	'Log me in automatically each time I visit.',
++'Remember me'				=>	'Log me in automatically each time I visit (using a cookie).',
+ 'Login info'				=>	'If you have not registered or have forgotten your password click on the appropriate link below.',
+ 'New password errors'		=>	'Password request error',
+ 'New passworderrors info'	=>	'The following error needs to be corrected before a new password can be sent:',
 diff --git a/lang/English/profile.php b/lang/English/profile.php
 index 08a2e660..6e91cd54 100644
 --- a/lang/English/profile.php
@@ -417,10 +430,10 @@ index 08a2e660..6e91cd54 100644
  'No sig'						=>	'No signature currently stored in profile.',
  'Signature quote/code/list/h'	=>	'The quote, code, list, and heading BBCodes are not allowed in signatures.',
 diff --git a/post.php b/post.php
-index cc01a1a0..5936a15d 100644
+index a9de1c8f..cf51c42f 100644
 --- a/post.php
 +++ b/post.php
-@@ -159,7 +159,7 @@ if (isset($_POST['form_sent']))
+@@ -166,7 +166,7 @@ if (isset($_POST['form_sent']))
  	$stick_topic = isset($_POST['stick_topic']) && $is_admmod ? '1' : '0';
  
  	// Replace four-byte characters (MySQL cannot handle them)
@@ -430,7 +443,7 @@ index cc01a1a0..5936a15d 100644
  	$now = time();
  
 diff --git a/viewforum.php b/viewforum.php
-index 2607a219..6423f188 100644
+index 2607a219..6f49847a 100644
 --- a/viewforum.php
 +++ b/viewforum.php
 @@ -80,20 +80,44 @@ $paging_links = '<span class="pages-label">'.$lang_common['Pages'].' </span>'.pa
@@ -444,8 +457,8 @@ index 2607a219..6423f188 100644
 +$page_head['twitter-site'] = '<meta name="twitter:site" content="@txpforum">';
 +$page_head['twitter-title'] = '<meta name="twitter:title" content="'.pun_htmlspecialchars($cur_forum['forum_name']).($p == 1 ? '' : ' ('.sprintf($lang_common['Page'], $p).')').'">';
 +$page_head['twitter-description'] = '<meta name="twitter:description" content="Listings in'.($p == 1 ? '' : ' page '.$p.' of').' the ‘'.pun_htmlspecialchars($cur_forum['forum_name']).'’ subforum at the Textpattern CMS support forum.">';
-+$page_head['twitter-image'] = '<meta name="twitter:image:src" content="https://forum.textpattern.io/apple-touch-icon-180x180.png">';
-+$page_head['twitter-url'] = '<meta name="twitter:url" content="https://forum.textpattern.io/viewforum.php?id='.$id.($p == 1 ? '' : '&amp;p='.$p).'">';
++$page_head['twitter-image'] = '<meta name="twitter:image:src" content="https://forum.textpattern.com/apple-touch-icon-180x180.png">';
++$page_head['twitter-url'] = '<meta name="twitter:url" content="https://forum.textpattern.com/viewforum.php?id='.$id.($p == 1 ? '' : '&amp;p='.$p).'">';
 +$page_head['og-site'] = '<meta property="og:site_name" content="Textpattern CMS support forum">';
 +$page_head['og-type'] = '<meta property="og:type" content="website">';
 +$page_head['og-title'] = '<meta property="og:title" content="'.pun_htmlspecialchars($cur_forum['forum_name']).($p == 1 ? '' : ' ('.sprintf($lang_common['Page'], $p).')').'">';
@@ -454,24 +467,24 @@ index 2607a219..6423f188 100644
 +$page_head['og-image-width'] = '<meta property="og:image:width" content="1200">';
 +$page_head['og-image-height'] = '<meta property="og:image:height" content="1200">';
 +$page_head['og-image-alt'] = '<meta property="og:image:alt" content="Textpattern logo">';
-+$page_head['og-url'] = '<meta property="og:url" content="https://forum.textpattern.io/viewforum.php?id='.$id.($p == 1 ? '' : '&amp;p='.$p).'">';
++$page_head['og-url'] = '<meta property="og:url" content="https://forum.textpattern.com/viewforum.php?id='.$id.($p == 1 ? '' : '&amp;p='.$p).'">';
 +$page_head['json-ld'] = '<script type="application/ld+json">'."\n".
 +'{"@context": "https://schema.org",'."\n".
 +'"@type": "WebPage",'."\n".
 +'"headline": '.json_encode(pun_htmlspecialchars($cur_forum['forum_name']).($p == 1 ? '' : ' ('.sprintf($lang_common['Page'], $p).')')).','."\n".
 +'"description": '.json_encode(pun_htmlspecialchars('Listings in'.($p == 1 ? '' : ' page '.$p.' of').' the ‘'.pun_htmlspecialchars($cur_forum['forum_name']).'’ subforum at the Textpattern CMS support forum.')).','."\n".
-+'"url": "https://forum.textpattern.io/viewforum.php?id='.intval($id).($p == 1 ? '' : '&p='.intval($p)).'"}'."\n".
++'"url": "https://forum.textpattern.com/viewforum.php?id='.intval($id).($p == 1 ? '' : '&p='.intval($p)).'"}'."\n".
 +'</script>';
-+$page_head['canonical'] = '<link rel="canonical" href="https://forum.textpattern.io/viewforum.php?id='.$id.($p == 1 ? '' : '&amp;p='.$p).'" title="'.sprintf($lang_common['Page'], $p).'">';
++$page_head['canonical'] = '<link rel="canonical" href="https://forum.textpattern.com/viewforum.php?id='.$id.($p == 1 ? '' : '&amp;p='.$p).'" title="'.sprintf($lang_common['Page'], $p).'">';
  
  if ($num_pages > 1)
  {
  	if ($p > 1)
 -		$page_head['prev'] = '<link rel="prev" href="viewforum.php?id='.$id.($p == 2 ? '' : '&amp;p='.($p - 1)).'" title="'.sprintf($lang_common['Page'], $p - 1).'" />';
-+		$page_head['prev'] = '<link rel="prev" href="https://forum.textpattern.io/viewforum.php?id='.$id.($p == 2 ? '' : '&amp;p='.($p - 1)).'" title="'.sprintf($lang_common['Page'], $p - 1).'">';
++		$page_head['prev'] = '<link rel="prev" href="https://forum.textpattern.com/viewforum.php?id='.$id.($p == 2 ? '' : '&amp;p='.($p - 1)).'" title="'.sprintf($lang_common['Page'], $p - 1).'">';
  	if ($p < $num_pages)
 -		$page_head['next'] = '<link rel="next" href="viewforum.php?id='.$id.'&amp;p='.($p + 1).'" title="'.sprintf($lang_common['Page'], $p + 1).'" />';
-++		$page_head['next'] = '<link rel="next" href="https://forum.textpattern.io/viewforum.php?id='.$id.'&amp;p='.($p + 1).'" title="'.sprintf($lang_common['Page'], $p + 1).'">';
+++		$page_head['next'] = '<link rel="next" href="https://forum.textpattern.com/viewforum.php?id='.$id.'&amp;p='.($p + 1).'" title="'.sprintf($lang_common['Page'], $p + 1).'">';
  }
  
  if ($pun_config['o_feed_type'] == '1')
@@ -484,7 +497,7 @@ index 2607a219..6423f188 100644
  $forum_actions = array();
  
 diff --git a/viewtopic.php b/viewtopic.php
-index 618b699d..da9d3165 100644
+index 4a21a556..10fb06fe 100644
 --- a/viewtopic.php
 +++ b/viewtopic.php
 @@ -171,20 +171,44 @@ else
@@ -498,8 +511,8 @@ index 618b699d..da9d3165 100644
 +$page_head['twitter-site'] = '<meta name="twitter:site" content="@txpforum">';
 +$page_head['twitter-title'] = '<meta name="twitter:title" content="'.pun_htmlspecialchars($cur_topic['subject']).($p == 1 ? '' : ' ('.sprintf($lang_common['Page'], $p).')').'">';
 +$page_head['twitter-description'] = '<meta name="twitter:description" content="Postings in'.($p == 1 ? '' : ' page '.$p.' of').' the ‘'.pun_htmlspecialchars($cur_topic['subject']).'’ topic in the ‘'.pun_htmlspecialchars($cur_topic['forum_name']).'’ subforum.">';
-+$page_head['twitter-image'] = '<meta name="twitter:image:src" content="https://forum.textpattern.io/apple-touch-icon-180x180.png">';
-+$page_head['twitter-url'] = '<meta name="twitter:url" content="https://forum.textpattern.io/viewtopic.php?id='.$id.($p == 1 ? '' : '&amp;p='.$p).'">';
++$page_head['twitter-image'] = '<meta name="twitter:image:src" content="https://forum.textpattern.com/apple-touch-icon-180x180.png">';
++$page_head['twitter-url'] = '<meta name="twitter:url" content="https://forum.textpattern.com/viewtopic.php?id='.$id.($p == 1 ? '' : '&amp;p='.$p).'">';
 +$page_head['og-site'] = '<meta property="og:site_name" content="Textpattern CMS support forum">';
 +$page_head['og-type'] = '<meta property="og:type" content="website">';
 +$page_head['og-title'] = '<meta property="og:title" content="'.pun_htmlspecialchars($cur_topic['subject']).($p == 1 ? '' : ' ('.sprintf($lang_common['Page'], $p).')').'">';
@@ -508,24 +521,24 @@ index 618b699d..da9d3165 100644
 +$page_head['og-image-width'] = '<meta property="og:image:width" content="1200">';
 +$page_head['og-image-height'] = '<meta property="og:image:height" content="1200">';
 +$page_head['og-image-alt'] = '<meta property="og:image:alt" content="Textpattern logo">';
-+$page_head['og-url'] = '<meta property="og:url" content="https://forum.textpattern.io/viewtopic.php?id='.$id.($p == 1 ? '' : '&amp;p='.$p).'">';
++$page_head['og-url'] = '<meta property="og:url" content="https://forum.textpattern.com/viewtopic.php?id='.$id.($p == 1 ? '' : '&amp;p='.$p).'">';
 +$page_head['json-ld'] = '<script type="application/ld+json">'."\n".
 +'{"@context": "https://schema.org",'."\n".
 +'"@type": "WebPage",'."\n".
 +'"headline": '.json_encode(pun_htmlspecialchars($cur_topic['subject']).($p == 1 ? '' : ' ('.sprintf($lang_common['Page'], $p).')')).','."\n".
 +'"description": '.json_encode(pun_htmlspecialchars('Postings in'.($p == 1 ? '' : ' page '.$p.' of').' the ‘'.$cur_topic['subject'].'’ topic in the ‘'.$cur_topic['forum_name'].'’ subforum.')).','."\n".
-+'"url": "https://forum.textpattern.io/viewtopic.php?id='.intval($id).($p == 1 ? '' : '&p='.intval($p)).'"}'."\n".
++'"url": "https://forum.textpattern.com/viewtopic.php?id='.intval($id).($p == 1 ? '' : '&p='.intval($p)).'"}'."\n".
 +'</script>';
-+$page_head['canonical'] = '<link rel="canonical" href="https://forum.textpattern.io/viewtopic.php?id='.$id.($p == 1 ? '' : '&amp;p='.$p).'" title="'.sprintf($lang_common['Page'], $p).'">';
++$page_head['canonical'] = '<link rel="canonical" href="https://forum.textpattern.com/viewtopic.php?id='.$id.($p == 1 ? '' : '&amp;p='.$p).'" title="'.sprintf($lang_common['Page'], $p).'">';
  
  if ($num_pages > 1)
  {
  	if ($p > 1)
 -		$page_head['prev'] = '<link rel="prev" href="viewtopic.php?id='.$id.($p == 2 ? '' : '&amp;p='.($p - 1)).'" title="'.sprintf($lang_common['Page'], $p - 1).'" />';
-+		$page_head['prev'] = '<link rel="prev" href="https://forum.textpattern.io/viewtopic.php?id='.$id.($p == 2 ? '' : '&amp;p='.($p - 1)).'" title="'.sprintf($lang_common['Page'], $p - 1).'">';
++		$page_head['prev'] = '<link rel="prev" href="https://forum.textpattern.com/viewtopic.php?id='.$id.($p == 2 ? '' : '&amp;p='.($p - 1)).'" title="'.sprintf($lang_common['Page'], $p - 1).'">';
  	if ($p < $num_pages)
 -		$page_head['next'] = '<link rel="next" href="viewtopic.php?id='.$id.'&amp;p='.($p + 1).'" title="'.sprintf($lang_common['Page'], $p + 1).'" />';
-+		$page_head['next'] = '<link rel="next" href="https://forum.textpattern.io/viewtopic.php?id='.$id.'&amp;p='.($p + 1).'" title="'.sprintf($lang_common['Page'], $p + 1).'">';
++		$page_head['next'] = '<link rel="next" href="https://forum.textpattern.com/viewtopic.php?id='.$id.'&amp;p='.($p + 1).'" title="'.sprintf($lang_common['Page'], $p + 1).'">';
  }
  
  if ($pun_config['o_feed_type'] == '1')
