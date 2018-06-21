@@ -24,9 +24,9 @@
             <h1 class="masthead" itemprop="name"><a rel="home" itemprop="url" href="https://textpattern.com/" title="Go to the Textpattern homepage">Textpattern CMS</a></h1>
             <meta itemprop="logo" content="https://textpattern.com/assets/img/branding/textpattern/textpattern.png">
             <div itemscope itemtype="https://schema.org/WebSite">
-                <meta itemprop="url" content="https://forum.textpattern.io/">
-                <form class="search-form" role="search" method="get" action="https://forum.textpattern.io/search.php" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction">
-                    <meta itemprop="target" content="https://forum.textpattern.io/search.php?action=search&show_as=posts&sort_dir=DESC&keywords={keywords}">
+                <meta itemprop="url" content="https://forum.textpattern.com/">
+                <form class="search-form" role="search" method="get" action="https://forum.textpattern.com/search.php" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction">
+                    <meta itemprop="target" content="https://forum.textpattern.com/search.php?action=search&show_as=posts&sort_dir=DESC&keywords={keywords}">
                     <input type="hidden" name="action" value="search">
                     <input type="hidden" name="show_as" value="posts">
                     <input type="hidden" name="sort_dir" value="DESC">
@@ -108,7 +108,7 @@
                         <li>Questions about templates and appearance will usually benefit from including a minimal copy of the code in question. Edit out as much irrelevant code as you can—a short snippet of code is much easier for people to quickly diagnose than an entire page.</li>
                         <li>If you haven’t received an answer in a day or so, there’s probably a good reason: an ambiguous or rambling question, or not enough information. Don’t ‘bump’ your thread with a single-word post, it’s more likely to annoy people than attract an answer—post some more information instead.</li>
                         <li>Don’t post a troubleshooting question as a reply to an existing thread unless your problem is exactly the same as the one described at the beginning of the thread.</li>
-                        <li>If you’re requesting a feature, <a href="https://forum.textpattern.io/viewtopic.php?id=10325">this article</a> lists some of the things you can do to increase its chances.</li>
+                        <li>If you’re requesting a feature, <a href="https://forum.textpattern.com/viewtopic.php?id=10325">this article</a> lists some of the things you can do to increase its chances.</li>
                     </ol>
                 </div>
                 <pun_footer>

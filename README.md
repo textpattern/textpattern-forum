@@ -3,7 +3,7 @@
 [![Greenkeeper badge](https://badges.greenkeeper.io/textpattern/textpattern-forum.svg)](https://greenkeeper.io/)
 [![Build Status](https://img.shields.io/travis/textpattern/textpattern-forum.svg)](https://travis-ci.org/textpattern/textpattern-forum)
 
-This repository contains the source code for the [Textpattern support forum](https://forum.textpattern.io/).
+This repository contains the source code for the [Textpattern support forum](https://forum.textpattern.com/).
 
 ## Supported web browsers
 
@@ -111,7 +111,7 @@ Where the `@task@` is either `build`, `setup` or `watch`.
 
 ## REST API
 
-We offer a public API that can be used to retrieve data from the forums and topics. The public end point can be found from `https://forum.textpattern.io/api`. Data can be retrieved as JSON, and options can be passed optional HTTP query parameters. This API is read-only, and all requests must be done using HTTP GET method. You can also ping resource existence with HEAD, but any other methods are rejected.
+We offer a public API that can be used to retrieve data from the forums and topics. The public end point can be found from `https://forum.textpattern.com/api`. Data can be retrieved as JSON, and options can be passed optional HTTP query parameters. This API is read-only, and all requests must be done using HTTP GET method. You can also ping resource existence with HEAD, but any other methods are rejected.
 
 ### Response codes
 
@@ -128,13 +128,13 @@ HTTP status codes can be used to detect the type of response. The server respond
 Authentication happens using basic HTTP method and regular forum user account.
 
 ```ShellSession
-$ curl -u "username" https://forum.textpattern.io/api/
+$ curl -u "username" https://forum.textpattern.com/api/
 ```
 
 If you request a private or removed resource without being logged in, you will be treated with 401 response:
 
 ```ShellSession
-$ curl -I https://forum.textpattern.io/api/posts/401
+$ curl -I https://forum.textpattern.com/api/posts/401
 ```
 
 Responds with:
@@ -151,7 +151,7 @@ Content-Type: application/json; charset=UTF-8
 ### Topics
 
 ```
-GET https://forum.textpattern.io/api/topics/:forum
+GET https://forum.textpattern.com/api/topics/:forum
 ```
 
 Returns topics from the specified forum.
@@ -164,7 +164,7 @@ Returns topics from the specified forum.
 #### Example request
 
 ```ShellSession
-$ curl https://forum.textpattern.io/api/topics/2
+$ curl https://forum.textpattern.com/api/topics/2
 ```
 
 Response headers:
@@ -180,15 +180,15 @@ Response body:
 
 ```
 {
-  "url": ["https:\/\/forum.textpattern.io\/index.php"],
+  "url": ["https:\/\/forum.textpattern.com\/index.php"],
   "topic": [
     {
       "title": "Better way to upload media",
-      "link": "https:\/\/forum.textpattern.io\/viewtopic.php?id=40096&action=new",
+      "link": "https:\/\/forum.textpattern.com\/viewtopic.php?id=40096&action=new",
       "content": "<p>+ lots<\/p>",
       "author": {
         "name": "tye",
-        "uri": "https:\/\/forum.textpattern.io\/profile.php?id=5751"
+        "uri": "https:\/\/forum.textpattern.com\/profile.php?id=5751"
       },
       "posted": "26 September 2013 21:51",
       "postedutc": "2013-09-24T16:18:48Z",
@@ -201,7 +201,7 @@ Response body:
 ### Posts
 
 ```
-GET https://forum.textpattern.io/api/posts/:topic
+GET https://forum.textpattern.com/api/posts/:topic
 ```
 
 Returns replies from a specific public topic.
@@ -213,7 +213,7 @@ Returns replies from a specific public topic.
 #### Example request
 
 ```ShellSession
-$ curl https://forum.textpattern.io/api/posts/40092
+$ curl https://forum.textpattern.com/api/posts/40092
 ```
 
 Response headers:
@@ -229,15 +229,15 @@ Response body:
 
 ```
 {
-  "url": ["https:\/\/forum.textpattern.io\/viewtopic.php?id=40092"],
+  "url": ["https:\/\/forum.textpattern.com\/viewtopic.php?id=40092"],
   "post": [
     {
       "title": "Re: Tag tree best practise: to nest or not to nest",
-      "link": "https:\/\/forum.textpattern.io\/viewtopic.php?pid=275473#p275473",
+      "link": "https:\/\/forum.textpattern.com\/viewtopic.php?pid=275473#p275473",
       "content": "<p>Stef, this is really useful &#8211; I&#8217;m on the right track. Thank you very much.<\/p>",
       "author": {
         "name": "gaekwad",
-        "uri": "https:\/\/forum.textpattern.io\/profile.php?id=7456"
+        "uri": "https:\/\/forum.textpattern.com\/profile.php?id=7456"
       },
       "posted": "26 September 2013 21:51",
       "postedutc": "2013-09-24T16:18:48Z",

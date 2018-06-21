@@ -21,7 +21,7 @@
 
     # Expect-CT (TODO: currently in testing).
 
-    Header set Expect-CT "max-age=0; report-uri=https://forum.textpattern.io/expect-ct-report"
+    Header set Expect-CT "max-age=0; report-uri=https://forum.textpattern.com/expect-ct-report"
 
     Header unset ETag
 </ifModule>
@@ -34,7 +34,7 @@ FileETag None
     # Redirect from `.com` to `.io` domain.
 
     RewriteCond %{HTTP_HOST} ^forum.textpattern.com [NC]
-    RewriteRule ^(.*)$ https://forum.textpattern.io/$1 [R=301,L]
+    RewriteRule ^(.*)$ https://forum.textpattern.com/$1 [R=301,L]
 
     # Redirect from `http://` to `https://` protocol.
 

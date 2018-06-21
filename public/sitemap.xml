@@ -1,87 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
-		<loc>http://forum.textpattern.io</loc>
+		<loc>http://forum.textpattern.com</loc>
 		<priority>0.75</priority>
 	</url>
 	<url>
-		<loc>https://forum.textpattern.io/register.php</loc>
+		<loc>https://forum.textpattern.com/register.php</loc>
 		<priority>0.4</priority>
 	</url>
 	<url>
-		<loc>https://forum.textpattern.io/login.php</loc>
+		<loc>https://forum.textpattern.com/login.php</loc>
 		<priority>0.4</priority>
 	</url>
 	<url>
-		<loc>https://forum.textpattern.io/help.php</loc>
+		<loc>https://forum.textpattern.com/help.php</loc>
 		<priority>0.4</priority>
 	</url>
 	<url>
-		<loc>https://forum.textpattern.io/viewforum.php?id=4</loc>
+		<loc>https://forum.textpattern.com/viewforum.php?id=4</loc>
 		<priority>0.5</priority>
 	</url>
 	<url>
-		<loc>https://forum.textpattern.io/viewforum.php?id=31</loc>
+		<loc>https://forum.textpattern.com/viewforum.php?id=31</loc>
 		<priority>0.5</priority>
 	</url>
 	<url>
-		<loc>https://forum.textpattern.io/viewforum.php?id=11</loc>
+		<loc>https://forum.textpattern.com/viewforum.php?id=11</loc>
 		<priority>0.5</priority>
 	</url>
 	<url>
-		<loc>https://forum.textpattern.io/viewforum.php?id=2</loc>
+		<loc>https://forum.textpattern.com/viewforum.php?id=2</loc>
 		<priority>0.5</priority>
 	</url>
 	<url>
-		<loc>https://forum.textpattern.io/viewforum.php?id=5</loc>
+		<loc>https://forum.textpattern.com/viewforum.php?id=5</loc>
 		<priority>0.5</priority>
 	</url>
 	<url>
-		<loc>https://forum.textpattern.io/viewforum.php?id=67</loc>
+		<loc>https://forum.textpattern.com/viewforum.php?id=67</loc>
 		<priority>0.5</priority>
 	</url>
 	<url>
-		<loc>https://forum.textpattern.io/viewforum.php?id=79</loc>
+		<loc>https://forum.textpattern.com/viewforum.php?id=79</loc>
 		<priority>0.5</priority>
 	</url>
 	<url>
-		<loc>https://forum.textpattern.io/viewforum.php?id=13</loc>
+		<loc>https://forum.textpattern.com/viewforum.php?id=13</loc>
 		<priority>0.5</priority>
 	</url>
 	<url>
-		<loc>https://forum.textpattern.io/viewforum.php?id=29</loc>
+		<loc>https://forum.textpattern.com/viewforum.php?id=29</loc>
 		<priority>0.5</priority>
 	</url>
 	<url>
-		<loc>https://forum.textpattern.io/viewforum.php?id=8</loc>
+		<loc>https://forum.textpattern.com/viewforum.php?id=8</loc>
 		<priority>0.5</priority>
 	</url>
 	<url>
-		<loc>https://forum.textpattern.io/viewforum.php?id=12</loc>
+		<loc>https://forum.textpattern.com/viewforum.php?id=12</loc>
 		<priority>0.5</priority>
 	</url>
 	<url>
-		<loc>https://forum.textpattern.io/viewforum.php?id=56</loc>
+		<loc>https://forum.textpattern.com/viewforum.php?id=56</loc>
 		<priority>0.5</priority>
 	</url>
 	<url>
-		<loc>https://forum.textpattern.io/viewforum.php?id=77</loc>
+		<loc>https://forum.textpattern.com/viewforum.php?id=77</loc>
 		<priority>0.5</priority>
 	</url>
 	<url>
-		<loc>https://forum.textpattern.io/viewforum.php?id=6</loc>
+		<loc>https://forum.textpattern.com/viewforum.php?id=6</loc>
 		<priority>0.5</priority>
 	</url>
 	<url>
-		<loc>https://forum.textpattern.io/viewforum.php?id=60</loc>
+		<loc>https://forum.textpattern.com/viewforum.php?id=60</loc>
 		<priority>0.5</priority>
 	</url>
 	<url>
-		<loc>https://forum.textpattern.io/viewforum.php?id=7</loc>
+		<loc>https://forum.textpattern.com/viewforum.php?id=7</loc>
 		<priority>0.5</priority>
 	</url>
 	<url>
-		<loc>https://forum.textpattern.io/humans.txt</loc>
+		<loc>https://forum.textpattern.com/humans.txt</loc>
 		<priority>0.25</priority>
 	</url>
 </urlset>
