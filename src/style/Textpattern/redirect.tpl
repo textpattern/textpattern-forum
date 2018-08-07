@@ -110,7 +110,7 @@
             </p>
         </footer>
     </div>
-    <script async data-main="style/Textpattern/js/main.@@timestamp.js" src="style/Textpattern/js/require.@@timestamp.js"></script>
+    <script async src="style/Textpattern/js/app.@@timestamp.js"></script>
     <noscript>JavaScript is currently disabled in your browser - activate it for the best experience.</noscript>
 </body>
 </html>

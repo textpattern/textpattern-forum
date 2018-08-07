@@ -31,6 +31,26 @@ module.exports = function (grunt)
             timestamp: '<%= new Date().getTime() %>'
         },
 
+        // Bundle up the JavaScript.
+        browserify: {
+            development: {
+                src: [
+                    '<%= paths.src.js %>app.js'
+                ],
+                dest: '<%= paths.dest.js %>app.js',
+                options: {
+                    browserifyOptions: {
+                        debug: false
+                    },
+                    transform: [[
+                        'babelify', {
+                            'presets': ['env']
+                        }
+                    ]]
+                }
+            }
+        },
+
         // Clean distribution directory to start afresh.
         clean: [
             'public/style/'
@@ -133,7 +153,7 @@ module.exports = function (grunt)
             },
             files: [
                 'Gruntfile.js',
-                'src/style/*/js/*.js'
+                'src/style/Textpattern/js/main.js'
             ]
         },
 
@@ -229,18 +249,13 @@ module.exports = function (grunt)
             }
         },
 
-        // Uglify and copy JavaScript files from `bower-components`, and also `main.js`, to `public/assets/js/`.
+        // Uglify and copy JavaScript files from `node_modules`, and also `main.js`, to `public/assets/js/`.
         uglify: {
             dist: {
-                // Preserve all comments that start with a bang (!) or include a closure compiler style.
-                options: {
-                    output: {
-                        comments: require('uglify-save-license')
-                    }
-                },
                 files: [
                     {
                         '<%= paths.dest.js %>main.js': ['<%= paths.dest.js %>main.js'],
+                        '<%= paths.dest.js %>jquery.js': ['node_modules/jquery/dist/jquery.js'],
                         '<%= paths.dest.js %>prism.js': [
                             'node_modules/prismjs/prism.js',
                             // Add any plugins
@@ -263,7 +278,6 @@ module.exports = function (grunt)
                             'node_modules/prismjs/components/prism-sql.js',
                             'node_modules/prismjs/components/prism-stylus.js',
                             'node_modules/prismjs/components/prism-textile.js',
-                            'node_modules/prismjs/components/prism-txp.js',
                             'node_modules/prismjs/components/prism-yaml.js'
                         ],
                         '<%= paths.dest.js %>require.js': ['node_modules/requirejs/require.js']
@@ -290,7 +304,7 @@ module.exports = function (grunt)
     });
 
     // Register tasks.
-    grunt.registerTask('build', ['clean', 'concurrent', 'uglify']);
+    grunt.registerTask('build', ['clean', 'concurrent', 'uglify', 'browserify']);
     grunt.registerTask('default', ['watch']);
     grunt.registerTask('postsetup', ['shell:postsetup']);
     grunt.registerTask('css', ['sasslint', 'sass', 'postcss']);

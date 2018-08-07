@@ -10,10 +10,14 @@
   },
   "devDependencies": {
     "autoprefixer": "9.1.0",
+    "babel-core": "6.26.3",
+    "babel-preset-env": "1.7.0",
+    "babelify": "8.0.0",
     "cssnano": "4.0.5",
     "dart-sass": "1.10.3",
     "fibers": "3.0.0",
     "grunt": "~1",
+    "grunt-browserify": "5.3.0",
     "grunt-cli": "~1",
     "grunt-concurrent": "2.3.1",
     "grunt-contrib-clean": "1.1.0",
@@ -27,10 +31,10 @@
     "grunt-sass-lint": "0.2.4",
     "grunt-shell": "2.1.0",
     "load-grunt-tasks": "~4",
-    "sass-lint": "1.12.1",
-    "uglify-save-license": "0.4.1"
+    "sass-lint": "1.12.1"
   },
   "dependencies": {
+    "jquery": "3.3.1",
     "prismjs": "1.15.0",
     "requirejs": "2.3.5",
     "textpattern-branding": "0.2.8"
