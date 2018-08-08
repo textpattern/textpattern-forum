@@ -147,299 +147,290 @@
 
     require(['jquery'], function ($)
     {
-        var ranks =
-        [
+        var ranks = [
             {
-                posts : 0,
-                title : 'alpha'
+                posts: 0,
+                title: 'alpha'
             },
             {
-                posts : 10,
-                title : 'beta'
+                posts: 10,
+                title: 'beta'
             },
             {
-                posts : 35,
-                title : 'gamma'
+                posts: 35,
+                title: 'gamma'
             },
             {
-                posts : 50,
-                title : 'delta'
+                posts: 50,
+                title: 'delta'
             },
             {
-                posts : 75,
-                title : 'epsilon'
+                posts: 75,
+                title: 'epsilon'
             },
             {
-                posts : 100,
-                title : 'zêta'
+                posts: 100,
+                title: 'zêta'
             },
             {
-                posts : 150,
-                title : 'êta'
+                posts: 150,
+                title: 'êta'
             },
             {
-                posts : 250,
-                title : 'thêta'
+                posts: 250,
+                title: 'thêta'
             },
             {
-                posts : 300,
-                title : 'iota'
+                posts: 300,
+                title: 'iota'
             },
             {
-                posts : 350,
-                title : 'kappa'
+                posts: 350,
+                title: 'kappa'
             },
             {
-                posts : 400,
-                title : 'lambda'
+                posts: 400,
+                title: 'lambda'
             },
             {
-                posts : 500,
-                title : 'mu'
+                posts: 500,
+                title: 'mu'
             },
             {
-                posts : 600,
-                title : 'nu'
+                posts: 600,
+                title: 'nu'
             },
             {
-                posts : 700,
-                title : 'xi'
+                posts: 700,
+                title: 'xi'
             },
             {
-                posts : 800,
-                title : 'omicron'
+                posts: 800,
+                title: 'omicron'
             },
             {
-                posts : 900,
-                title : 'pi'
+                posts: 900,
+                title: 'pi'
             },
             {
-                posts : 1000,
-                title : 'rho'
+                posts: 1000,
+                title: 'rho'
             },
             {
-                posts : 1100,
-                title : 'sigma'
+                posts: 1100,
+                title: 'sigma'
             },
             {
-                posts : 1200,
-                title : 'tau'
+                posts: 1200,
+                title: 'tau'
             },
             {
-                posts : 1300,
-                title : 'upsilon'
+                posts: 1300,
+                title: 'upsilon'
             },
             {
-                posts : 1400,
-                title : 'phi'
+                posts: 1400,
+                title: 'phi'
             },
             {
-                posts : 1500,
-                title : 'chi'
+                posts: 1500,
+                title: 'chi'
             },
             {
-                posts : 1600,
-                title : 'psi'
+                posts: 1600,
+                title: 'psi'
             },
             {
-                posts : 1700,
-                title : 'omega'
+                posts: 1700,
+                title: 'omega'
             },
             {
-                posts : 2000,
-                title : 'zero'
+                posts: 1800,
+                title: 'zero'
             },
             {
-                posts : 2100,
-                title : 'ichi'
+                posts: 1900,
+                title: 'ichi'
             },
             {
-                posts : 2200,
-                title : 'ni'
+                posts: 2000,
+                title: 'ni'
             },
             {
-                posts : 2300,
-                title : 'san'
+                posts: 2100,
+                title: 'san'
             },
             {
-                posts : 2400,
-                title : 'yon'
+                posts: 2200,
+                title: 'yon'
             },
             {
-                posts : 2500,
-                title : 'go'
+                posts: 2300,
+                title: 'go'
             },
             {
-                posts : 2600,
-                title : 'roku'
+                posts: 2400,
+                title: 'roku'
             },
             {
-                posts : 2700,
-                title : 'nana'
+                posts: 2500,
+                title: 'nana'
             },
             {
-                posts : 2800,
-                title : 'hachi'
+                posts: 2600,
+                title: 'hachi'
             },
             {
-                posts : 2900,
-                title : 'kyū'
+                posts: 2700,
+                title: 'kyū'
             },
             {
-                posts : 3000,
-                title : 'Mau'
+                posts: 2800,
+                title: 'Mau'
             },
             {
-                posts : 3005,
-                title : 'Octopus'
+                posts: 2900,
+                title: 'Octopus'
             },
             {
-                posts : 3006,
-                title : '0ctocat'
+                posts: 3000,
+                title: 'Mautwo'
             },
             {
-                posts : 3077,
-                title : 'Mautwo'
+                posts: 3100,
+                title: 'Byakko'
             },
             {
-                posts : 3100,
-                title : 'Byakko'
+                posts: 3200,
+                title: 'Kasha'
             },
             {
-                posts : 3200,
-                title : 'Kasha'
+                posts: 3300,
+                title: 'Bakeneko'
             },
             {
-                posts : 3300,
-                title : 'Bakeneko'
+                posts: 3400,
+                title: 'Nue'
             },
             {
-                posts : 3400,
-                title : 'Nue'
+                posts: 3500,
+                title: 'Shachihoko'
             },
             {
-                posts : 3500,
-                title : 'Shachihoko'
+                posts: 3600,
+                title: 'Isuteritosu'
             },
             {
-                posts : 4000,
-                title : 'Isuteritosu'
+                posts: 3700,
+                title: 'Ogopogo'
             },
             {
-                posts : 4200,
-                title : 'Ogopogo'
+                posts: 3800,
+                title: 'Wyvern'
             },
             {
-                posts : 4300,
-                title : 'Wyvern'
+                posts: 3900,
+                title: 'Serpion'
             },
             {
-                posts : 4400,
-                title : 'Serpion'
+                posts: 4000,
+                title: 'Kusanagi'
             },
             {
-                posts : 4444,
-                title : 'Kusanagi'
+                posts: 4200,
+                title: 'Leviathan'
             },
             {
-                posts : 4600,
-                title : 'Leviathan'
+                posts: 4400,
+                title: 'Zalamander'
             },
             {
-                posts : 4700,
-                title : 'Zalamander'
+                posts: 4600,
+                title: 'Gizamaluk'
             },
             {
-                posts : 4800,
-                title : 'Gizamaluk'
+                posts: 4800,
+                title: 'Vyraal'
             },
             {
-                posts : 4900,
-                title : 'Vyraal'
+                posts: 5000,
+                title: 'Abelisk'
             },
             {
-                posts : 5000,
-                title : 'Abelisk'
+                posts: 5250,
+                title: 'Sugari no Ontachi'
             },
             {
-                posts : 5555,
-                title : 'Sugari no Ontachi'
+                posts: 5500,
+                title: 'Tiamat'
             },
             {
-                posts : 5600,
-                title : 'Tiamat'
+                posts: 5750,
+                title: 'Shinryu'
             },
             {
-                posts : 5800,
-                title : 'Shinryu'
+                posts: 6000,
+                title: 'Bahamut'
             },
             {
-                posts : 6000,
-                title : 'Bahamut'
+                posts: 6250,
+                title: 'Kirin'
             },
             {
-                posts : 6500,
-                title : 'Kirin'
+                posts: 6500,
+                title: 'Masamune'
             },
             {
-                posts : 6666,
-                title : 'Masamune'
+                posts: 6750,
+                title: 'Ryū'
             },
             {
-                posts : 6800,
-                title : 'Ryū'
+                posts: 7000,
+                title: 'Chrysophylax'
             },
             {
-                posts : 7000,
-                title : 'Chrysophylax'
+                posts: 7500,
+                title: 'Glaurung'
             },
             {
-                posts : 7500,
-                title : 'Glaurung'
+                posts: 8000,
+                title: 'Icefyre'
             },
             {
-                posts : 8000,
-                title : 'Icefyre'
+                posts: 8500,
+                title: 'Mizuchi'
             },
             {
-                posts : 8500,
-                title : 'Mizuchi'
+                posts: 9000,
+                title: 'Kuzuryū'
             },
             {
-                posts : 9000,
-                title : 'Kuzuryū'
+                posts: 9500,
+                title: 'Azure'
             },
             {
-                posts : 9500,
-                title : 'Azure'
+                posts: 10000,
+                title: 'Mizuchi'
             },
             {
-                posts : 10000,
-                title : 'Mizuchi'
+                posts: 11000,
+                title: 'Watatsumi'
             },
             {
-                posts : 10500,
-                title : 'Watatsumi'
+                posts: 12000,
+                title: 'Ryūjin'
             },
             {
-                posts : 11000,
-                title : 'Ryūjin'
+                posts: 13000,
+                title: 'Zennyo Ryūō'
             },
             {
-                posts : 11500,
-                title : 'Zennyo Ryūō'
+                posts: 14000,
+                title: 'Amaterasu'
             },
             {
-                posts : 12000,
-                title : 'Amaterasu'
-            },
-            {
-                posts : 30246,
-                title : 'Code Is Pottery'
-            },
-            {
-                posts : 36625,
-                title : 'Sandal I\'d Own'
+                posts: 15000,
+                title: 'Code Is Pottery'
             }
         ];
 
@@ -479,23 +470,6 @@
             {
                 Prism.highlightAll();
             });
-        }
-    });
-
-    // Focus to the username/password on the login page.
-
-    require(['jquery'], function ($)
-    {
-        if (!$('#page-login').length) {
-            return;
-        }
-
-        var user = $('#login [name=req_username]'), pass = $('#login [name=req_password]');
-
-        if (user.val() === '' || pass.val() !== '') {
-            user.focus();
-        } else {
-            pass.focus();
         }
     });
 
