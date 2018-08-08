@@ -280,8 +280,7 @@ module.exports = function (grunt)
                             'node_modules/prismjs/components/prism-stylus.js',
                             'node_modules/prismjs/components/prism-textile.js',
                             'node_modules/prismjs/components/prism-yaml.js'
-                        ],
-                        '<%= paths.dest.js %>require.js': ['node_modules/requirejs/require.js']
+                        ]
                     }
                 ]
             }
