@@ -195,4 +195,69 @@ require('prismjs/components/prism-yaml');
         $('.postfootright ul').append($('<li class="textile-quote-post" />').html($('<span />').html(button)));
     });
 
+    // Embed widgets.
+
+    $(function ()
+    {
+        var loadTwitter = false,
+            tweetRegex = /^https?:\/\/twitter\.com\/(#!\/)?[a-z0-9]+\/status(es)?\/[0-9]+$/i,
+            youtubeRegex = /^https?:\/\/(?:www\.)?(?:youtube\.com\/watch(?:\/|\?v=)|youtu\.be\/)([a-z0-9\-\_]+)$/i;
+
+        $('.postmsg > p > a').each(function ()
+        {
+            var $this = $(this), href = $this.attr('href'), matches;
+
+            if ($this.parent().text() !== $this.text()) {
+                return;
+            }
+
+            if (tweetRegex.test(href)) {
+                loadTwitter = true;
+
+                $this.parent().after(
+                    $('<blockquote class="twitter-tweet" data-dnt="true" />').html($this.parent().html())
+                ).hide();
+
+                return;
+            }
+
+            matches = href.match(youtubeRegex);
+
+            if (matches) {
+                $this.parent().after(
+                    $('<div class="embed-video embed-youtube" />').html(
+                        $('<iframe frameborder="0" allowfullscreen></iframe>').attr('src', 'https://www.youtube-nocookie.com/embed/' + matches[1])
+                    )
+                ).hide();
+
+                return;
+            }
+        });
+
+        if (loadTwitter) {
+            $('head').append('<meta name="twitter:widgets:csp" content="on">');
+
+            window.twttr = (function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0],
+                t = window.twttr || {};
+
+                if (d.getElementById(id)){
+                    return t;
+                }
+
+                js = d.createElement(s);
+                js.id = id;
+                js.src = "https://platform.twitter.com/widgets.js";
+                fjs.parentNode.insertBefore(js, fjs);
+                t._e = [];
+                t.ready = function(f) {
+                t._e.push(f);
+            };
+
+            return t;
+            }(document, "script", "twitter-wjs"));
+
+        }
+    });
+
 })();
