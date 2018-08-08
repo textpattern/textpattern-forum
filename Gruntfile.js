@@ -254,6 +254,7 @@ module.exports = function (grunt)
             dist: {
                 files: [
                     {
+                        '<%= paths.dest.js %>app.js': ['<%= paths.dest.js %>app.js'],
                         '<%= paths.dest.js %>main.js': ['<%= paths.dest.js %>main.js'],
                         '<%= paths.dest.js %>jquery.js': ['node_modules/jquery/dist/jquery.js'],
                         '<%= paths.dest.js %>prism.js': [
@@ -304,7 +305,7 @@ module.exports = function (grunt)
     });
 
     // Register tasks.
-    grunt.registerTask('build', ['clean', 'concurrent', 'uglify', 'browserify']);
+    grunt.registerTask('build', ['clean', 'concurrent', 'browserify', 'uglify']);
     grunt.registerTask('default', ['watch']);
     grunt.registerTask('postsetup', ['shell:postsetup']);
     grunt.registerTask('css', ['sasslint', 'sass', 'postcss']);
