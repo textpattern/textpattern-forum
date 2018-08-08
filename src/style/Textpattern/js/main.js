@@ -473,18 +473,6 @@
         }
     });
 
-    // Forms.
-
-    require(['jquery'], function ($)
-    {
-        $('input[type!=hidden][name^=req_], textarea[name^=req_]').prop('required', true);
-
-        $('#qjump select').change(function ()
-        {
-            window.location = 'viewforum.php?id=' + $(this).val();
-        });
-    });
-
     // Responsive navigation menu.
 
     var navtoggle = document.getElementById('site-navigation-toggle'),
