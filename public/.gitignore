@@ -1,10 +1,11 @@
 /.htaccess
 /cache
+/COPYING
 /include
 /lang
 /lib
 /style
-/COPYING
+/vendor
 /*.php
 /*.js
 /*.md

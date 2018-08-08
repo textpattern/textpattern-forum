@@ -1,4 +1,7 @@
 {
+  "config": {
+     "vendor-dir": "public/vendor"
+  },
   "require": {
     "netcarver/textile": "3.6.0"
   }

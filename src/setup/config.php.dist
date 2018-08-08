@@ -65,4 +65,4 @@ define('PUN', 1);
 define('FORUM_BEHIND_REVERSE_PROXY', 1);
 define('PUN_NEW_MEMBER', 5);
 
-include dirname(dirname(__FILE__)) . '/src/lib/Textpattern/Bootstrap.php';
+include PUN_ROOT.'/lib/Textpattern/Bootstrap.php';

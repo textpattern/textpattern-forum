@@ -37,7 +37,7 @@ use Textpattern\Fluxbb\Sfs;
 use Textpattern\Fluxbb\Trap;
 use Textpattern\Fluxbb\Tasks;
 
-include dirname(dirname(dirname(dirname(__FILE__)))) . '/vendor/autoload.php';
+include PUN_ROOT.'/vendor/autoload.php';
 $loader = new ClassLoader();
 $loader->add('Textpattern\\Fluxbb', dirname(__DIR__));
 $loader->register();
