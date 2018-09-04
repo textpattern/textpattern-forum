@@ -249,7 +249,7 @@ Response body:
 
 ## Contributing
 
-Want to help out with the development of Textpattern CMS? Please refer to the [Contributing documentation](https://docs.textpattern.io/development/contributing) for full details.
+Want to help out with the development of Textpattern CMS? Please refer to the [Contributing documentation](https://docs.textpattern.com/development/contributing) for full details.
 
 ## License
 
