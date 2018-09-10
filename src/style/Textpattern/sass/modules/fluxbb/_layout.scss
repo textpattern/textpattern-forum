@@ -490,7 +490,6 @@ thead th {
    ========================================================================== */
 
 #brdfooter {
-    margin-bottom: 1em;
     clear: both;
 }
 
@@ -542,13 +541,4 @@ thead th {
     span:first-child::before {
         content: "";
     }
-}
-
-/**
- * FluxBB link.
- */
-
-#poweredby {
-    display: inline;
-    margin-left: 1em;
 }

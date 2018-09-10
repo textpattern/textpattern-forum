@@ -1,21 +1,4 @@
 /* ==========================================================================
-   Styling and layout for screen media at 1st breakpoint
-   ========================================================================== */
-
-@media screen and (min-width: $breakpoint-1) {
-
-    /**
-     * TEMPORARY FILLER
-     */
-
-    .layout-4col {
-        width: 50%;
-    }
-
-}
-
-
-/* ==========================================================================
    Styling and layout for screen media at 2nd breakpoint
    ========================================================================== */
 
@@ -364,14 +347,6 @@
     }
 
     /**
-     * Forum footer area.
-     */
-
-    #brdfooter {
-        margin-bottom: 0;
-    }
-
-    /**
      * RSS/Atom feeds.
      */
 
@@ -380,12 +355,13 @@
     }
 
     /**
-     * FluxBB link.
+     * Don't let long words break mobile layouts.
      */
 
-    #poweredby {
-        display: block;
-        margin-left: 0;
+    #page-viewforum .tclcon,
+    #page-moderate .tclcon,
+    #page-search .tclcon {
+        hyphens: auto;
     }
 
     /**
