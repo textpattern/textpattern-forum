@@ -44,7 +44,7 @@ module.exports = function (grunt)
                     },
                     transform: [[
                         'babelify', {
-                            'presets': ['env']
+                            'presets': ['@babel/preset-env']
                         }
                     ]]
                 }
