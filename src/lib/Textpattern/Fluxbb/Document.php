@@ -174,7 +174,7 @@ EOF;
         $buffer = preg_replace(
             '/<ul class="bblinks">.*?<\/ul>/s',
             '<p class="textile-help-links">Formatting: '.
-            '<a target="_blank" href="https://textpattern.com/textile-reference-manual">Textile</a>'.
+            '<a target="_blank" rel="noopener" href="https://textpattern.com/textile-reference-manual">Textile</a>'.
             '</p>',
             $buffer
         );
