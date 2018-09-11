@@ -494,21 +494,6 @@ thead th {
 }
 
 /**
- * Jump to, feed links and FluxBB link container.
- */
-
-#brdfooternav {
-    .conl {
-        float: left;
-    }
-
-    .conr {
-        padding-top: 0.5em;
-        float: right;
-    }
-}
-
-/**
  * Moderator controls.
  */
 
@@ -523,22 +508,5 @@ thead th {
 
     dd {
         margin: 0;
-    }
-}
-
-/**
- * RSS/Atom feeds.
- */
-
-#feedlinks {
-    display: inline;
-
-    span::before {
-        color: lighten($color-text, 33%);
-        content: "\2605 \0020";
-    }
-
-    span:first-child::before {
-        content: "";
     }
 }
