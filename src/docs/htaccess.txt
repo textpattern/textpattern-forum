@@ -1,9 +1,4 @@
 <IfModule mod_headers.c>
-    # Allow base Textpattern.io domain to access the Forum API.
-
-    SetEnvIf Origin "http(s)?://(www\.)?(textpattern.com|textpattern.io|www.textpattern-com.dev)$" AccessControlAllowOrigin=$0
-    Header add Access-Control-Allow-Origin %{AccessControlAllowOrigin}e env=AccessControlAllowOrigin
-
     # HSTS.
 
     Header set Strict-Transport-Security "max-age=16070400"
