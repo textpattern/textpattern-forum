@@ -281,3 +281,29 @@ textarea {
     cursor: default !important; /* 1 */
     opacity: 1; /* 2 */
 }
+
+/**
+ * Styling for form field validation.
+ */
+
+input,
+select,
+textarea {
+    &:focus:invalid {
+        border-color: $color-error-text;
+        box-shadow: none; // Normalize Firefox styling
+    }
+}
+
+/**
+ * Styling for Firefox-specfic form field validation.
+ */
+
+input,
+select,
+textarea {
+    &:-moz-ui-invalid {
+        border-color: $color-error-text;
+        box-shadow: none;
+    }
+}
