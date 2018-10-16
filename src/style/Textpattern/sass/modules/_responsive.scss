@@ -14,18 +14,15 @@
      */
 
     .layout-2col {
-        width: 50%;
+        grid-column: span 6;
     }
 
     .layout-3col {
-        width: 33.333%;
+        grid-column: span 4;
     }
 
-    .layout-3col-2span,
-    #rules,
-    #regform,
-    #page-login .blockform {
-        width: 66.666%;
+    .layout-3col-2span {
+        grid-column: span 8;
     }
 
     /**
@@ -57,6 +54,7 @@
      */
 
     #site-navigation {
+        transition: none;
         font-family: $font-serif;
 
         .js & {
@@ -117,6 +115,16 @@
         li:first-child span::before {
             content: none;
         }
+    }
+
+    /**
+     * Limit width of login panels on larger screens.
+     */
+
+    #rules,
+    #regform,
+    #page-login .blockform {
+        width: 66.666%;
     }
 
     /**

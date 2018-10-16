@@ -3,19 +3,13 @@
    ========================================================================== */
 
 /**
- * Flex container.
+ * Grid container.
  */
 
 .layout-container {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 -1em;
-
-    > * {
-        min-width: 0;
-        padding: 0 1em;
-        box-sizing: border-box;
-    }
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 2em;
 }
 
 /**
@@ -38,9 +32,6 @@
 .layout-1col,
 .layout-2col,
 .layout-3col,
-.layout-3col-2span,
-#rules,
-#regform,
-#page-login .blockform {
-    width: 100%;
+.layout-3col-2span {
+    grid-column: span 12;
 }
