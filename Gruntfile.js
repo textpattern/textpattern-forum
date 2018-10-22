@@ -277,5 +277,5 @@ module.exports = function (grunt)
     grunt.registerTask('css', ['sasslint', 'sass', 'postcss']);
     grunt.registerTask('setup', ['shell:setup', 'build']);
     grunt.registerTask('theme', ['copy:theme', 'replace']);
-    grunt.registerTask('travis', ['jshint', 'build']);
+    grunt.registerTask('travis', ['build']);
 };
