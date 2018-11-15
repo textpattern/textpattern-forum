@@ -16,8 +16,7 @@ fieldset {
 /**
  * Stylize fieldset legends.
  *
- * 1. Correct wrapping not present in IE 11 and Edge 12/13.
- * 2. Correct `color` not being inherited from fieldset in IE 11.
+ * 1. Correct wrapping not present in Edge 12/13.
  */
 
 legend {
@@ -27,7 +26,6 @@ legend {
     padding: 0.25em 1em; // 4px / 16px
     border: 1px solid $color-border;
     background-color: $color-background-box;
-    color: inherit; /* 2 */
     font-family: $font-serif;
     font-weight: bold;
     white-space: normal; /* 1 */
@@ -202,14 +200,6 @@ select {
 }
 
 /**
- * Remove browser-specific `select` UI in IE 11.
- */
-
-select::-ms-expand {
-    opacity: 0;
-}
-
-/**
  * Remove browser-specific `select` UI in Firefox 4+.
  */
 
@@ -249,18 +239,16 @@ optgroup {
 }
 
 /**
- * 1. Remove default vertical scrollbar in IE 11.
- * 2. Remove unwanted space below `textarea` in Safari, Chrome, Opera.
- * 3. Restrict to vertical resizing to prevent layout breakage.
+ * 1. Remove unwanted space below `textarea` in Safari, Chrome, Opera.
+ * 2. Restrict to vertical resizing to prevent layout breakage.
  */
 
 textarea {
     width: 100%;
     height: 25vh;
     min-height: 3em;
-    overflow: auto; /* 1 */
-    vertical-align: top; /* 2 */
-    resize: vertical; /* 3 */
+    vertical-align: top; /* 1 */
+    resize: vertical; /* 2 */
 }
 
 /**
