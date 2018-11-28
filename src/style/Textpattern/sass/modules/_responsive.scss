@@ -5,13 +5,36 @@
 @media screen and (min-width: $breakpoint-2) {
 
     /**
-     * Cells for 2 column and 3 column layouts are generated.
+     * Grid container.
+     */
+
+    .layout-container {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-gap: 0 2em;
+
+        > * {
+            overflow: auto; // Avoid content spillage.
+        }
+    }
+
+    /**
+     * Generate sizes all for grid column cells.
      *
      * Example HTML:
      *
-     * <div class="layout-3col"></div>
+     * <div class="layout-1col"></div>
+     *
+     * <div class="layout-2col">
+     * <div class="layout-2col">
+     *
      * <div class="layout-3col-2span"></div>
+     * <div class="layout-3col"></div>
      */
+
+    .layout-1col {
+        grid-column: span 12;
+    }
 
     .layout-2col {
         grid-column: span 6;
