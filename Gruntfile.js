@@ -261,11 +261,20 @@ module.exports = function (grunt)
             },
             js: {
                 files: '<%= paths.src.js %>**',
-                tasks: ['jshint', 'uglify', 'compress:theme']
+                tasks: [
+                    'jshint',
+                    'browserify',
+                    'uglify'
+                ]
             },
             theme: {
-                files: ['!src/style/*/sass/**', '!src/style/*/js/**', 'src/style/*/**', 'src/*.html'],
-                tasks: ['theme']
+                files: [
+                    '!src/style/*/sass/**',
+                    '!src/style/*/js/**',
+                    'src/style/*/**',
+                    'src/*.html'
+                ],
+                tasks: 'theme'
             }
         }
     });
