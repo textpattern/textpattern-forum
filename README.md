@@ -7,7 +7,6 @@ This repository contains the source code for the [Textpattern support forum](htt
 
 ## Supported web browsers
 
-* Internet Explorer 11.
 * Chrome, Edge, Firefox, Safari and Opera the last two recent stable releases.
 * Firefox ESR latest major point release.
 
