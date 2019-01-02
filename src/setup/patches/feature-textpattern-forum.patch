@@ -1,5 +1,5 @@
 diff --git a/admin_bans.php b/admin_bans.php
-index 867fb11d..cd3f133f 100644
+index 6ee8c58e..06b22c3c 100644
 --- a/admin_bans.php
 +++ b/admin_bans.php
 @@ -120,21 +120,21 @@ if (isset($_REQUEST['add_ban']) || isset($_GET['edit_ban']))
@@ -53,7 +53,7 @@ index 867fb11d..cd3f133f 100644
  			</form>
  		</div>
  	</div>
-@@ -491,9 +491,9 @@ generate_admin_menu('bans');
+@@ -524,9 +524,9 @@ generate_admin_menu('bans');
  						<div class="infldset">
  							<table class="aligntop">
  								<tr>
@@ -65,7 +65,7 @@ index 867fb11d..cd3f133f 100644
  										<span><?php echo $lang_admin_bans['Username advanced help'] ?></span>
  									</td>
  								</tr>
-@@ -507,7 +507,7 @@ generate_admin_menu('bans');
+@@ -540,7 +540,7 @@ generate_admin_menu('bans');
  		<h2 class="block2"><span><?php echo $lang_admin_bans['Ban search head'] ?></span></h2>
  		<div class="box">
  			<form id="find_bans" method="get" action="admin_bans.php">
@@ -74,7 +74,7 @@ index 867fb11d..cd3f133f 100644
  				<div class="inform">
  					<fieldset>
  						<legend><?php echo $lang_admin_bans['Ban search subhead'] ?></legend>
-@@ -516,39 +516,39 @@ generate_admin_menu('bans');
+@@ -549,39 +549,39 @@ generate_admin_menu('bans');
  							<table class="aligntop">
  								<tr>
  									<th scope="row"><?php echo $lang_admin_bans['Username label'] ?></th>
@@ -122,7 +122,7 @@ index 867fb11d..cd3f133f 100644
  											<option value="ASC" selected="selected"><?php echo $lang_admin_bans['Ascending'] ?></option>
  											<option value="DESC"><?php echo $lang_admin_bans['Descending'] ?></option>
  										</select>
-@@ -558,7 +558,7 @@ generate_admin_menu('bans');
+@@ -591,7 +591,7 @@ generate_admin_menu('bans');
  						</div>
  					</fieldset>
  				</div>
@@ -602,10 +602,10 @@ index db205d79..6a63b21a 100644
  ?>
  							</table>
 diff --git a/admin_maintenance.php b/admin_maintenance.php
-index 26dc38d8..fc4bd783 100644
+index 45a63767..6617e4f0 100644
 --- a/admin_maintenance.php
 +++ b/admin_maintenance.php
-@@ -266,26 +266,26 @@ generate_admin_menu('maintenance');
+@@ -268,26 +268,26 @@ generate_admin_menu('maintenance');
  								<tr>
  									<th scope="row"><?php echo $lang_admin_maintenance['Posts per cycle label'] ?></th>
  									<td>
@@ -636,7 +636,7 @@ index 26dc38d8..fc4bd783 100644
  						</div>
  					</fieldset>
  				</div>
-@@ -301,14 +301,14 @@ generate_admin_menu('maintenance');
+@@ -303,14 +303,14 @@ generate_admin_menu('maintenance');
  								<tr>
  									<th scope="row"><?php echo $lang_admin_maintenance['Days old label'] ?></th>
  									<td>
@@ -653,7 +653,7 @@ index 26dc38d8..fc4bd783 100644
  										<label class="conl"><input type="radio" name="prune_sticky" value="0" />&#160;<strong><?php echo $lang_admin_common['No'] ?></strong></label>
  										<span class="clearb"><?php echo $lang_admin_maintenance['Prune sticky help'] ?></span>
  									</td>
-@@ -316,7 +316,7 @@ generate_admin_menu('maintenance');
+@@ -318,7 +318,7 @@ generate_admin_menu('maintenance');
  								<tr>
  									<th scope="row"><?php echo $lang_admin_maintenance['Prune from label'] ?></th>
  									<td>
@@ -662,7 +662,7 @@ index 26dc38d8..fc4bd783 100644
  											<option value="all"><?php echo $lang_admin_maintenance['All forums'] ?></option>
  <?php
  
-@@ -345,7 +345,7 @@ generate_admin_menu('maintenance');
+@@ -347,7 +347,7 @@ generate_admin_menu('maintenance');
  								</tr>
  							</table>
  							<p class="topspace"><?php printf($lang_admin_maintenance['Prune info'], '<a href="admin_options.php#maintenance">'.$lang_admin_common['Maintenance mode'].'</a>') ?></p>
@@ -1325,10 +1325,10 @@ index ac076d8f..dd54d35f 100644
  								</tr>
  							</table>
 diff --git a/db_update.php b/db_update.php
-index f001b5e7..bd44c410 100644
+index 2964bf31..6cefcbaf 100644
 --- a/db_update.php
 +++ b/db_update.php
-@@ -116,7 +116,7 @@ require PUN_ROOT.'include/dblayer/common_db.php';
+@@ -118,7 +118,7 @@ $db->start_transaction();
  $old_connection_charset = defined('FORUM_DEFAULT_CHARSET') ? FORUM_DEFAULT_CHARSET : $db->get_names();
  
  // Set the connection to UTF-8 now
@@ -1337,7 +1337,7 @@ index f001b5e7..bd44c410 100644
  
  // Get the forum config
  $result = $db->query('SELECT * FROM '.$db->prefix.'config') or error('Unable to fetch config.', __FILE__, __LINE__, $db->error());
-@@ -577,7 +577,7 @@ if (empty($stage))
+@@ -579,7 +579,7 @@ if (empty($stage))
  					<legend><?php echo $lang_update['Charset conversion'] ?></legend>
  					<div class="infldset">
  						<div class="rbox">
@@ -1347,10 +1347,10 @@ index f001b5e7..bd44c410 100644
  						<label>
  							<strong><?php echo $lang_update['Current character set label'] ?></strong><br /><?php echo $lang_update['Current character set info'] ?><br />
 diff --git a/edit.php b/edit.php
-index d757eeb0..8ed4d1a8 100644
+index 5aba54da..bad28ab1 100644
 --- a/edit.php
 +++ b/edit.php
-@@ -113,7 +113,7 @@ if (isset($_POST['form_sent']))
+@@ -115,7 +115,7 @@ if (isset($_POST['form_sent']))
  		$stick_topic = $cur_post['sticky'];
  
  	// Replace four-byte characters (MySQL cannot handle them)
@@ -1359,19 +1359,19 @@ index d757eeb0..8ed4d1a8 100644
  
  	// Did everything go according to plan?
  	if (empty($errors) && !isset($_POST['preview']))
-@@ -224,9 +224,9 @@ else if (isset($_POST['preview']))
+@@ -226,9 +226,9 @@ else if (isset($_POST['preview']))
  					<input type="hidden" name="form_sent" value="1" />
  					<div class="infldset txtarea">
  <?php if ($can_edit_subject): ?>						<label class="required"><strong><?php echo $lang_common['Subject'] ?> <span><?php echo $lang_common['Required'] ?></span></strong><br />
 -						<input class="longinput" type="text" name="req_subject" size="80" maxlength="70" tabindex="<?php echo $cur_index++ ?>" value="<?php echo pun_htmlspecialchars(isset($_POST['req_subject']) ? $_POST['req_subject'] : $cur_post['subject']) ?>" /><br /></label>
-+						<input class="longinput" type="text" name="req_subject" size="80" maxlength="70" value="<?php echo pun_htmlspecialchars(isset($_POST['req_subject']) ? $_POST['req_subject'] : $cur_post['subject']) ?>" required /><br /></label>
++						<input class="longinput" type="text" name="req_subject" size="80" maxlength="70" value="<?php echo pun_htmlspecialchars(isset($_POST['req_subject']) ? $_POST['req_subject'] : $cur_post['subject']) ?>" required autofocus /><br /></label>
  <?php endif; ?>						<label class="required"><strong><?php echo $lang_common['Message'] ?> <span><?php echo $lang_common['Required'] ?></span></strong><br />
 -						<textarea name="req_message" rows="20" cols="95" tabindex="<?php echo $cur_index++ ?>"><?php echo pun_htmlspecialchars(isset($_POST['req_message']) ? $message : $cur_post['message']) ?></textarea><br /></label>
-+						<textarea name="req_message" rows="20" cols="95" required><?php echo pun_htmlspecialchars(isset($_POST['req_message']) ? $message : $cur_post['message']) ?></textarea><br /></label>
++						<textarea name="req_message" rows="20" cols="95" required<?php if (!$can_edit_subject): ?> autofocus<?php endif; ?>><?php echo pun_htmlspecialchars(isset($_POST['req_message']) ? $message : $cur_post['message']) ?></textarea><br /></label>
  						<ul class="bblinks">
  							<li><span><a href="help.php#bbcode" onclick="window.open(this.href); return false;"><?php echo $lang_common['BBCode'] ?></a> <?php echo ($pun_config['p_message_bbcode'] == '1') ? $lang_common['on'] : $lang_common['off']; ?></span></li>
  							<li><span><a href="help.php#url" onclick="window.open(this.href); return false;"><?php echo $lang_common['url tag'] ?></a> <?php echo ($pun_config['p_message_bbcode'] == '1' && $pun_user['g_post_links'] == '1') ? $lang_common['on'] : $lang_common['off']; ?></span></li>
-@@ -241,25 +241,25 @@ $checkboxes = array();
+@@ -243,25 +243,25 @@ $checkboxes = array();
  if ($can_edit_subject && $is_admmod)
  {
  	if (isset($_POST['stick_topic']) || !isset($_POST['form_sent']) && $cur_post['sticky'] == '1')
@@ -1403,7 +1403,7 @@ index d757eeb0..8ed4d1a8 100644
  }
  
  if (!empty($checkboxes))
-@@ -282,7 +282,7 @@ if (!empty($checkboxes))
+@@ -284,7 +284,7 @@ if (!empty($checkboxes))
  
  ?>
  			</div>
@@ -1818,26 +1818,26 @@ index 08a2e660..6e91cd54 100644
  'No sig'						=>	'No signature currently stored in profile.',
  'Signature quote/code/list/h'	=>	'The quote, code, list, and heading BBCodes are not allowed in signatures.',
 diff --git a/login.php b/login.php
-index 2d0aa802..f311dcf6 100644
+index 323629a6..ac2b70cf 100644
 --- a/login.php
 +++ b/login.php
-@@ -235,7 +235,7 @@ if (!empty($errors))
+@@ -237,7 +237,7 @@ if (!empty($errors))
  					<legend><?php echo $lang_login['Request pass legend'] ?></legend>
  					<div class="infldset">
  						<input type="hidden" name="form_sent" value="1" />
 -						<label class="required"><strong><?php echo $lang_common['Email'] ?> <span><?php echo $lang_common['Required'] ?></span></strong><br /><input id="req_email" type="text" name="req_email" value="<?php if (isset($_POST['req_email'])) echo pun_htmlspecialchars($_POST['req_email']); ?>" size="50" maxlength="80" /><br /></label>
-+						<label class="required"><strong><?php echo $lang_common['Email'] ?> <span><?php echo $lang_common['Required'] ?></span></strong><br /><input id="req_email" type="text" name="req_email" value="<?php if (isset($_POST['req_email'])) echo pun_htmlspecialchars($_POST['req_email']); ?>" size="50" maxlength="80" required /><br /></label>
++						<label class="required"><strong><?php echo $lang_common['Email'] ?> <span><?php echo $lang_common['Required'] ?></span></strong><br /><input id="req_email" type="email" name="req_email" value="<?php if (isset($_POST['req_email'])) echo pun_htmlspecialchars($_POST['req_email']); ?>" size="50" maxlength="80" autocomplete="email" required /><br /></label>
  						<p><?php echo $lang_login['Request pass info'] ?></p>
  					</div>
  				</fieldset>
-@@ -310,20 +310,20 @@ if (!empty($errors))
- 					<div class="infldset">
+@@ -313,20 +313,20 @@ if (!empty($errors))
  						<input type="hidden" name="form_sent" value="1" />
  						<input type="hidden" name="redirect_url" value="<?php echo pun_htmlspecialchars($redirect_url) ?>" />
+ 						<input type="hidden" name="csrf_token" value="<?php echo pun_csrf_token() ?>" />
 -						<label class="conl required"><strong><?php echo $lang_common['Username'] ?> <span><?php echo $lang_common['Required'] ?></span></strong><br /><input type="text" name="req_username" value="<?php if (isset($_POST['req_username'])) echo pun_htmlspecialchars($_POST['req_username']); ?>" size="25" maxlength="25" tabindex="1" /><br /></label>
 -						<label class="conl required"><strong><?php echo $lang_common['Password'] ?> <span><?php echo $lang_common['Required'] ?></span></strong><br /><input type="password" name="req_password" size="25" tabindex="2" /><br /></label>
-+						<label class="conl required"><strong><?php echo $lang_common['Username'] ?> <span><?php echo $lang_common['Required'] ?></span></strong><br /><input type="text" name="req_username" value="<?php if (isset($_POST['req_username'])) echo pun_htmlspecialchars($_POST['req_username']); ?>" size="25" maxlength="25" autofocus required /><br /></label>
-+						<label class="conl required"><strong><?php echo $lang_common['Password'] ?> <span><?php echo $lang_common['Required'] ?></span></strong><br /><input type="password" name="req_password" size="25" required /><br /></label>
++						<label class="conl required"><strong><?php echo $lang_common['Username'] ?> <span><?php echo $lang_common['Required'] ?></span></strong><br /><input type="text" name="req_username" value="<?php if (isset($_POST['req_username'])) echo pun_htmlspecialchars($_POST['req_username']); ?>" size="25" maxlength="25" autocomplete="username" autofocus required /><br /></label>
++						<label class="conl required"><strong><?php echo $lang_common['Password'] ?> <span><?php echo $lang_common['Required'] ?></span></strong><br /><input type="password" name="req_password" size="25" autocomplete="current-password" required /><br /></label>
  
  						<div class="rbox clearb">
 -							<label><input type="checkbox" name="save_pass" value="1"<?php if (isset($_POST['save_pass'])) echo ' checked="checked"'; ?> tabindex="3" /><?php echo $lang_login['Remember me'] ?><br /></label>
@@ -1910,10 +1910,10 @@ index 02d62b08..019a9a07 100644
  					</div>
  				</fieldset>
 diff --git a/post.php b/post.php
-index a9de1c8f..852015b6 100644
+index 067d87b5..18c8b706 100644
 --- a/post.php
 +++ b/post.php
-@@ -166,7 +166,7 @@ if (isset($_POST['form_sent']))
+@@ -168,7 +168,7 @@ if (isset($_POST['form_sent']))
  	$stick_topic = isset($_POST['stick_topic']) && $is_admmod ? '1' : '0';
  
  	// Replace four-byte characters (MySQL cannot handle them)
@@ -1922,14 +1922,14 @@ index a9de1c8f..852015b6 100644
  
  	$now = time();
  
-@@ -645,17 +645,17 @@ if ($pun_user['is_guest'])
+@@ -647,17 +647,17 @@ if ($pun_user['is_guest'])
  	$email_form_name = ($pun_config['p_force_guest_email'] == '1') ? 'req_email' : 'email';
  
  ?>
 -						<label class="conl required"><strong><?php echo $lang_post['Guest name'] ?> <span><?php echo $lang_common['Required'] ?></span></strong><br /><input type="text" name="req_username" value="<?php if (isset($_POST['req_username'])) echo pun_htmlspecialchars($username); ?>" size="25" maxlength="25" tabindex="<?php echo $cur_index++ ?>" /><br /></label>
 -						<label class="conl<?php echo ($pun_config['p_force_guest_email'] == '1') ? ' required' : '' ?>"><?php echo $email_label ?><br /><input type="text" name="<?php echo $email_form_name ?>" value="<?php if (isset($_POST[$email_form_name])) echo pun_htmlspecialchars($email); ?>" size="50" maxlength="80" tabindex="<?php echo $cur_index++ ?>" /><br /></label>
-+						<label class="conl required"><strong><?php echo $lang_post['Guest name'] ?> <span><?php echo $lang_common['Required'] ?></span></strong><br /><input type="text" name="req_username" value="<?php if (isset($_POST['req_username'])) echo pun_htmlspecialchars($username); ?>" size="25" maxlength="25" required /><br /></label>
-+						<label class="conl<?php echo ($pun_config['p_force_guest_email'] == '1') ? ' required' : '' ?>"><?php echo $email_label ?><br /><input type="text" name="<?php echo $email_form_name ?>" value="<?php if (isset($_POST[$email_form_name])) echo pun_htmlspecialchars($email); ?>" size="50" maxlength="80" /><br /></label>
++						<label class="conl required"><strong><?php echo $lang_post['Guest name'] ?> <span><?php echo $lang_common['Required'] ?></span></strong><br /><input type="text" name="req_username" value="<?php if (isset($_POST['req_username'])) echo pun_htmlspecialchars($username); ?>" size="25" maxlength="25" autocomplete="username" required /><br /></label>
++						<label class="conl<?php echo ($pun_config['p_force_guest_email'] == '1') ? ' required' : '' ?>"><?php echo $email_label ?><br /><input type="email" name="<?php echo $email_form_name ?>" value="<?php if (isset($_POST[$email_form_name])) echo pun_htmlspecialchars($email); ?>" size="50" maxlength="80" autocomplete="email" /><br /></label>
  						<div class="clearer"></div>
  <?php
  
@@ -1944,7 +1944,7 @@ index a9de1c8f..852015b6 100644
  						<ul class="bblinks">
  							<li><span><a href="help.php#bbcode" onclick="window.open(this.href); return false;"><?php echo $lang_common['BBCode'] ?></a> <?php echo ($pun_config['p_message_bbcode'] == '1') ? $lang_common['on'] : $lang_common['off']; ?></span></li>
  							<li><span><a href="help.php#url" onclick="window.open(this.href); return false;"><?php echo $lang_common['url tag'] ?></a> <?php echo ($pun_config['p_message_bbcode'] == '1' && $pun_user['g_post_links'] == '1') ? $lang_common['on'] : $lang_common['off']; ?></span></li>
-@@ -668,12 +668,12 @@ if ($fid): ?>
+@@ -670,12 +670,12 @@ if ($fid): ?>
  
  $checkboxes = array();
  if ($fid && $is_admmod)
@@ -1959,7 +1959,7 @@ index a9de1c8f..852015b6 100644
  
  	if ($pun_config['o_topic_subscriptions'] == '1')
  	{
-@@ -689,11 +689,11 @@ if (!$pun_user['is_guest'])
+@@ -691,11 +691,11 @@ if (!$pun_user['is_guest'])
  		else if ($is_subscribed)
  			$subscr_checked = true;
  
@@ -1973,7 +1973,7 @@ index a9de1c8f..852015b6 100644
  
  if (!empty($checkboxes))
  {
-@@ -716,7 +716,7 @@ if (!empty($checkboxes))
+@@ -718,7 +718,7 @@ if (!empty($checkboxes))
  ?>
  			</div>
  <?php flux_hook('post_before_submit') ?>
@@ -1983,7 +1983,7 @@ index a9de1c8f..852015b6 100644
  	</div>
  </div>
 diff --git a/profile.php b/profile.php
-index 8b0eb864..b03464eb 100644
+index 8b0eb864..baebec5d 100644
 --- a/profile.php
 +++ b/profile.php
 @@ -136,11 +136,11 @@ if ($action == 'change_pass')
@@ -2016,8 +2016,8 @@ index 8b0eb864..b03464eb 100644
  						<input type="hidden" name="form_sent" value="1" />
 -						<label class="required"><strong><?php echo $lang_profile['New email'] ?> <span><?php echo $lang_common['Required'] ?></span></strong><br /><input type="text" name="req_new_email" size="50" maxlength="80" /><br /></label>
 -						<label class="required"><strong><?php echo $lang_common['Password'] ?> <span><?php echo $lang_common['Required'] ?></span></strong><br /><input type="password" name="req_password" size="16" /><br /></label>
-+						<label class="required"><strong><?php echo $lang_profile['New email'] ?> <span><?php echo $lang_common['Required'] ?></span></strong><br /><input type="text" name="req_new_email" size="50" maxlength="80" required /><br /></label>
-+						<label class="required"><strong><?php echo $lang_common['Password'] ?> <span><?php echo $lang_common['Required'] ?></span></strong><br /><input type="password" name="req_password" size="16" required /><br /></label>
++						<label class="required"><strong><?php echo $lang_profile['New email'] ?> <span><?php echo $lang_common['Required'] ?></span></strong><br /><input type="text" name="req_new_email" size="50" maxlength="80" autocomplete="email" required /><br /></label>
++						<label class="required"><strong><?php echo $lang_common['Password'] ?> <span><?php echo $lang_common['Required'] ?></span></strong><br /><input type="password" name="req_password" size="16" autocomplete="current-password" required /><br /></label>
  						<p><?php echo $lang_profile['Email instructions'] ?></p>
  					</div>
  				</fieldset>
@@ -2053,12 +2053,12 @@ index 8b0eb864..b03464eb 100644
  		{
  			if ($pun_user['g_id'] == PUN_ADMIN || $pun_user['g_mod_rename_users'] == '1')
 -				$username_field = '<label class="required"><strong>'.$lang_common['Username'].' <span>'.$lang_common['Required'].'</span></strong><br /><input type="text" name="req_username" value="'.pun_htmlspecialchars($user['username']).'" size="25" maxlength="25" /><br /></label>'."\n";
-+				$username_field = '<label class="required"><strong>'.$lang_common['Username'].' <span>'.$lang_common['Required'].'</span></strong><br /><input type="text" name="req_username" value="'.pun_htmlspecialchars($user['username']).'" size="25" maxlength="25" required /><br /></label>'."\n";
++				$username_field = '<label class="required"><strong>'.$lang_common['Username'].' <span>'.$lang_common['Required'].'</span></strong><br /><input type="text" name="req_username" value="'.pun_htmlspecialchars($user['username']).'" size="25" maxlength="25" autocomplete="username" required /><br /></label>'."\n";
  			else
  				$username_field = '<p>'.sprintf($lang_profile['Username info'], pun_htmlspecialchars($user['username'])).'</p>'."\n";
  
 -			$email_field = '<label class="required"><strong>'.$lang_common['Email'].' <span>'.$lang_common['Required'].'</span></strong><br /><input type="text" name="req_email" value="'.pun_htmlspecialchars($user['email']).'" size="40" maxlength="80" /><br /></label><p><span class="email"><a href="misc.php?email='.$id.'">'.$lang_common['Send email'].'</a></span></p>'."\n";
-+			$email_field = '<label class="required"><strong>'.$lang_common['Email'].' <span>'.$lang_common['Required'].'</span></strong><br /><input type="text" name="req_email" value="'.pun_htmlspecialchars($user['email']).'" size="40" maxlength="80" required /><br /></label><p><span class="email"><a href="misc.php?email='.$id.'">'.$lang_common['Send email'].'</a></span></p>'."\n";
++			$email_field = '<label class="required"><strong>'.$lang_common['Email'].' <span>'.$lang_common['Required'].'</span></strong><br /><input type="email" name="req_email" value="'.pun_htmlspecialchars($user['email']).'" size="40" maxlength="80" autocomplete="email" required /><br /></label><p><span class="email"><a href="misc.php?email='.$id.'">'.$lang_common['Send email'].'</a></span></p>'."\n";
  		}
  		else
  		{
@@ -2067,7 +2067,7 @@ index 8b0eb864..b03464eb 100644
  				$email_field = '<p>'.sprintf($lang_profile['Email info'], pun_htmlspecialchars($user['email']).' - <a href="profile.php?action=change_email&amp;id='.$id.'">'.$lang_profile['Change email'].'</a>').'</p>'."\n";
  			else
 -				$email_field = '<label class="required"><strong>'.$lang_common['Email'].' <span>'.$lang_common['Required'].'</span></strong><br /><input type="text" name="req_email" value="'.$user['email'].'" size="40" maxlength="80" /><br /></label>'."\n";
-+				$email_field = '<label class="required"><strong>'.$lang_common['Email'].' <span>'.$lang_common['Required'].'</span></strong><br /><input type="text" name="req_email" value="'.$user['email'].'" size="40" maxlength="80" required /><br /></label>'."\n";
++				$email_field = '<label class="required"><strong>'.$lang_common['Email'].' <span>'.$lang_common['Required'].'</span></strong><br /><input type="email" name="req_email" value="'.$user['email'].'" size="40" maxlength="80" autocomplete="email" required /><br /></label>'."\n";
  		}
  
  		$posts_field = '';
@@ -2080,6 +2080,19 @@ index 8b0eb864..b03464eb 100644
  							</div>
  							<label><?php echo $lang_prof_reg['Time format'] ?>
  
+@@ -1489,10 +1489,10 @@ else
+ 						<legend><?php echo $lang_profile['Personal details legend'] ?></legend>
+ 						<div class="infldset">
+ 							<input type="hidden" name="form_sent" value="1" />
+-							<label><?php echo $lang_profile['Realname'] ?><br /><input type="text" name="form[realname]" value="<?php echo pun_htmlspecialchars($user['realname']) ?>" size="40" maxlength="40" /><br /></label>
++							<label><?php echo $lang_profile['Realname'] ?><br /><input type="text" name="form[realname]" value="<?php echo pun_htmlspecialchars($user['realname']) ?>" size="40" maxlength="40" autocomplete="name" /><br /></label>
+ <?php if (isset($title_field)): ?>							<?php echo $title_field ?>
+ <?php endif; ?>							<label><?php echo $lang_profile['Location'] ?><br /><input type="text" name="form[location]" value="<?php echo pun_htmlspecialchars($user['location']) ?>" size="30" maxlength="30" /><br /></label>
+-<?php if ($pun_user['g_post_links'] == '1' || $pun_user['g_id'] == PUN_ADMIN) : ?>							<label><?php echo $lang_profile['Website'] ?><br /><input type="text" name="form[url]" value="<?php echo pun_htmlspecialchars($user['url']) ?>" size="50" maxlength="80" /><br /></label>
++<?php if ($pun_user['g_post_links'] == '1' || $pun_user['g_id'] == PUN_ADMIN) : ?>							<label><?php echo $lang_profile['Website'] ?><br /><input type="url" name="form[url]" value="<?php echo pun_htmlspecialchars($user['url']) ?>" size="50" maxlength="80" placeholder="http(s)://" autocomplete="url" /><br /></label>
+ <?php endif; ?>
+ 						</div>
+ 					</fieldset>
 @@ -1664,11 +1664,11 @@ else
  						<div class="infldset">
  							<p><?php echo $lang_profile['Post display info'] ?></p>
@@ -2131,7 +2144,7 @@ index 8b0eb864..b03464eb 100644
  
  ?>
 diff --git a/register.php b/register.php
-index 04a6417f..008b61fb 100644
+index 04a6417f..1bf7773a 100644
 --- a/register.php
 +++ b/register.php
 @@ -316,7 +316,7 @@ if (!empty($errors))
@@ -2139,7 +2152,7 @@ index 04a6417f..008b61fb 100644
  					<div class="infldset">
  						<input type="hidden" name="form_sent" value="1" />
 -						<label class="required"><strong><?php echo $lang_common['Username'] ?> <span><?php echo $lang_common['Required'] ?></span></strong><br /><input type="text" name="req_user" value="<?php if (isset($_POST['req_user'])) echo pun_htmlspecialchars($_POST['req_user']); ?>" size="25" maxlength="25" /><br /></label>
-+						<label class="required"><strong><?php echo $lang_common['Username'] ?> <span><?php echo $lang_common['Required'] ?></span></strong><br /><input type="text" name="req_user" value="<?php if (isset($_POST['req_user'])) echo pun_htmlspecialchars($_POST['req_user']); ?>" size="25" maxlength="25" required /><br /></label>
++						<label class="required"><strong><?php echo $lang_common['Username'] ?> <span><?php echo $lang_common['Required'] ?></span></strong><br /><input type="text" name="req_user" value="<?php if (isset($_POST['req_user'])) echo pun_htmlspecialchars($_POST['req_user']); ?>" size="25" maxlength="25" autocomplete="username" required /><br /></label>
  					</div>
  				</fieldset>
  			</div>
@@ -2149,8 +2162,8 @@ index 04a6417f..008b61fb 100644
  					<div class="infldset">
 -						<label class="conl required"><strong><?php echo $lang_common['Password'] ?> <span><?php echo $lang_common['Required'] ?></span></strong><br /><input type="password" name="req_password1" value="<?php if (isset($_POST['req_password1'])) echo pun_htmlspecialchars($_POST['req_password1']); ?>" size="16" /><br /></label>
 -						<label class="conl required"><strong><?php echo $lang_prof_reg['Confirm pass'] ?> <span><?php echo $lang_common['Required'] ?></span></strong><br /><input type="password" name="req_password2" value="<?php if (isset($_POST['req_password2'])) echo pun_htmlspecialchars($_POST['req_password2']); ?>" size="16" /><br /></label>
-+						<label class="conl required"><strong><?php echo $lang_common['Password'] ?> <span><?php echo $lang_common['Required'] ?></span></strong><br /><input type="password" name="req_password1" value="<?php if (isset($_POST['req_password1'])) echo pun_htmlspecialchars($_POST['req_password1']); ?>" size="16" required /><br /></label>
-+						<label class="conl required"><strong><?php echo $lang_prof_reg['Confirm pass'] ?> <span><?php echo $lang_common['Required'] ?></span></strong><br /><input type="password" name="req_password2" value="<?php if (isset($_POST['req_password2'])) echo pun_htmlspecialchars($_POST['req_password2']); ?>" size="16" required /><br /></label>
++						<label class="conl required"><strong><?php echo $lang_common['Password'] ?> <span><?php echo $lang_common['Required'] ?></span></strong><br /><input type="password" name="req_password1" value="<?php if (isset($_POST['req_password1'])) echo pun_htmlspecialchars($_POST['req_password1']); ?>" size="16" autocomplete="new-password" required /><br /></label>
++						<label class="conl required"><strong><?php echo $lang_prof_reg['Confirm pass'] ?> <span><?php echo $lang_common['Required'] ?></span></strong><br /><input type="password" name="req_password2" value="<?php if (isset($_POST['req_password2'])) echo pun_htmlspecialchars($_POST['req_password2']); ?>" size="16" autocomplete="new-password" required /><br /></label>
  						<p class="clearb"><?php echo $lang_register['Pass info'] ?></p>
  					</div>
  				</fieldset>
@@ -2159,10 +2172,10 @@ index 04a6417f..008b61fb 100644
  <?php if ($pun_config['o_regs_verify'] == '1'): ?>						<p><?php echo $lang_register['Email info'] ?></p>
  <?php endif; ?>						<label class="required"><strong><?php echo $lang_common['Email'] ?> <span><?php echo $lang_common['Required'] ?></span></strong><br />
 -						<input type="text" name="req_email1" value="<?php if (isset($_POST['req_email1'])) echo pun_htmlspecialchars($_POST['req_email1']); ?>" size="50" maxlength="80" /><br /></label>
-+						<input type="text" name="req_email1" value="<?php if (isset($_POST['req_email1'])) echo pun_htmlspecialchars($_POST['req_email1']); ?>" size="50" maxlength="80" required /><br /></label>
++						<input type="email" name="req_email1" value="<?php if (isset($_POST['req_email1'])) echo pun_htmlspecialchars($_POST['req_email1']); ?>" size="50" maxlength="80" autocomplete="email" required /><br /></label>
  <?php if ($pun_config['o_regs_verify'] == '1'): ?>						<label class="required"><strong><?php echo $lang_register['Confirm email'] ?> <span><?php echo $lang_common['Required'] ?></span></strong><br />
 -						<input type="text" name="req_email2" value="<?php if (isset($_POST['req_email2'])) echo pun_htmlspecialchars($_POST['req_email2']); ?>" size="50" maxlength="80" /><br /></label>
-+						<input type="text" name="req_email2" value="<?php if (isset($_POST['req_email2'])) echo pun_htmlspecialchars($_POST['req_email2']); ?>" size="50" maxlength="80" required /><br /></label>
++						<input type="email" name="req_email2" value="<?php if (isset($_POST['req_email2'])) echo pun_htmlspecialchars($_POST['req_email2']); ?>" size="50" maxlength="80" autocomplete="email" required /><br /></label>
  <?php endif; ?>					</div>
  				</fieldset>
  			</div>
