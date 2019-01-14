@@ -3,6 +3,6 @@
      "vendor-dir": "public/vendor"
   },
   "require": {
-    "netcarver/textile": "3.6.1"
+    "netcarver/textile": "3.7.0"
   }
 }
