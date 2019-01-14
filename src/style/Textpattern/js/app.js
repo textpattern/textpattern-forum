@@ -185,6 +185,8 @@ require('prismjs/components/prism-yaml');
                 value = value + 'h6. In reply to ==' + name + '== "#' + postId + '":./' + link + ':\n\n';
             }
 
+            field.val(value).focus();
+
             if ($.type(field[0].setSelectionRange) !== 'undefined') {
                 field[0].setSelectionRange(value.length, value.length);
             }
