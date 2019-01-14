@@ -168,7 +168,8 @@ rules:
   no-misspelled-properties:
     - 1
     - extra-properties:
-        - font-display
+        - overscroll-behavior
+        - text-decoration-skip-ink
         - touch-callout
 
   # Enforce that selectors are not allowed to have qualifying elements.
