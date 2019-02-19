@@ -12,7 +12,7 @@
     Header unset P3P
     Header always set X-XSS-Protection "1; mode=block"
     Header always set X-Content-Type-Options "nosniff"
-    Header always set Content-Security-Policy "default-src 'self'; base-uri 'self'; connect-src 'self' https://syndication.twitter.com; font-src https://textpattern.com; img-src 'self' data: * https://*; style-src 'self' 'unsafe-inline' https://*.twitter.com https://*.twimg.com; script-src 'self' https://*.twitter.com https://*.twimg.com https://www.google.com/recaptcha/ https://www.gstatic.com/recaptcha/; frame-src https://*.youtube-nocookie.com https://*.twitter.com https://twitter.com https://www.google.com/recaptcha/"
+    Header always set Content-Security-Policy "default-src 'self'; base-uri 'self'; connect-src 'self' https://syndication.twitter.com; form-action 'self'; font-src https://textpattern.com; img-src 'self' data: * https://*; style-src 'self' 'unsafe-inline' https://*.twitter.com https://*.twimg.com; script-src 'self' https://*.twitter.com https://*.twimg.com https://www.google.com/recaptcha/ https://www.gstatic.com/recaptcha/; frame-src https://*.youtube-nocookie.com https://*.twitter.com https://twitter.com https://www.google.com/recaptcha/"
     Header always set Feature-Policy "camera 'self'; geolocation 'none'; microphone 'none'; midi 'none'; payment 'none'"
 
     # Expect-CT (TODO: currently in testing).
