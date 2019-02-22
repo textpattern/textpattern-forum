@@ -19,8 +19,8 @@ body {
     flex-direction: column;
     min-height: 100vh;
     margin: 0; /* 1 */
-    background: $color-background;
-    color: $color-text;
+    background-color: $color-text;
+    color: $color-text-inverse;
 }
 
 /**
@@ -51,6 +51,8 @@ noscript {
 .wrapper {
     position: relative;
     padding: 1px 0;
+    background: $color-background;
+    color: $color-text;
 }
 
 /**
@@ -67,8 +69,6 @@ noscript {
 .wrapper-footer {
     flex: 1;
     padding-bottom: 0.5em;
-    background-color: $color-text;
-    color: $color-text-inverse;
 }
 
 /**
