@@ -69,6 +69,17 @@ h6 {
     line-height: $line-height-mobile;
 }
 
+@media (prefers-color-scheme: dark) {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: $dark-color-text-heading;
+    }
+}
+
 /**
  * Add the correct font weight in Chrome, Edge, and Safari.
  */

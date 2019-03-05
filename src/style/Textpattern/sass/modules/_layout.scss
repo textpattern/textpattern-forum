@@ -20,7 +20,7 @@ body {
     min-height: 100vh;
     margin: 0; /* 1 */
     background-color: $color-text;
-    color: $color-text-inverse;
+    color: $color-text-white-out;
     scroll-behavior: smooth; // https://caniuse.com/#search=scroll-behavior
 }
 
@@ -54,6 +54,13 @@ noscript {
     padding: 1px 0;
     background: $color-background;
     color: $color-text;
+}
+
+@media (prefers-color-scheme: dark) {
+    .wrapper {
+        background: $dark-color-background;
+        color: $dark-color-text;
+    }
 }
 
 /**
