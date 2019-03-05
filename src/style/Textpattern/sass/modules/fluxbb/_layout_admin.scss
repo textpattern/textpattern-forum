@@ -94,28 +94,3 @@
 .modbuttons a {
     display: none;
 }
-
-/**
- * Ad spots.
- */
-
-.sponsor {
-    .spot {
-        margin-left: -0.5em;
-        overflow: hidden;
-
-        a {
-            margin: 0 0 0.5em 0.5em !important;
-        }
-    }
-
-    .spot-125 {
-        min-height: 125px;
-    }
-
-    > p {
-        margin: 0;
-        color: $color-text-footnote;
-        font-weight: bold;
-    }
-}
