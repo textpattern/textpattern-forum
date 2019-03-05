@@ -2,16 +2,21 @@
    ========================================================================== */
 
 /**
- * Images.
- *
- * 1. Make embedded images responsive.
- * 2. Remove the gap between images and the bottom of their containers.
+ * Make embedded elements responsive.
+ */
+
+img,
+video {
+    max-width: 100%;
+    height: auto;
+}
+
+/**
+ * Remove the gap between images and the bottom of their containers.
  */
 
 img {
-    max-width: 100%; /* 1 */
-    height: auto; /* 1 */
-    vertical-align: middle; /* 2 */
+    vertical-align: middle;
 }
 
 /**

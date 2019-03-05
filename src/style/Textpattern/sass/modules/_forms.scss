@@ -38,6 +38,13 @@ legend {
     box-sizing: border-box; /* 1 */
 }
 
+@media (prefers-color-scheme: dark) {
+    legend {
+        border-color: $dark-color-border;
+        background-color: $dark-color-background-box;
+    }
+}
+
 /**
  * Show the overflow in Edge.
  */

@@ -134,6 +134,17 @@
         }
     }
 
+    @media (prefers-color-scheme: dark) {
+        #site-navigation  a {
+            border-color: $dark-color-background;
+
+            &:focus {
+                border-color: $dark-color-link-focus;
+                outline: 2px solid transparent; // Allows for repainting in high contrast modes.
+            }
+        }
+    }
+
     #site-navigation-toggle {
         display: none;
     }
