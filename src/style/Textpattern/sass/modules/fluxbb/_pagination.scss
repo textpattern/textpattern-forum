@@ -18,3 +18,9 @@
         cursor: default;
     }
 }
+
+@media (prefers-color-scheme: dark) {
+    .pagelink strong {
+        background: $dark-color-background-form;
+    }
+}
