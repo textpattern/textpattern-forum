@@ -19,7 +19,7 @@
 #brdstats,
 #vf h2,
 #brdfooter h2,
-#quickpost h2,
+#quickpost > h2,
 .blockform > h2,
 .modlist,
 #navrules,
@@ -298,14 +298,14 @@ thead th {
         content: "";
     }
 
-    > h2 {
-        margin: 0;
-        padding: 1em;
+    .postleft h2 {
+        margin: 1em;
         font-family: $font-sans-serif;
         font-size: 1em;
 
         .conr {
-            display: none;
+            color: $color-info-text;
+            font-weight: normal;
         }
     }
 }
