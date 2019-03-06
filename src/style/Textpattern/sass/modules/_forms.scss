@@ -117,7 +117,7 @@ textarea {
     appearance: none; /* 1 */
 
     &:hover {
-        border-color: shade($color-border, 15%);
+        border-color: $color-border-extra-dark;
     }
 
     &:focus {
@@ -143,11 +143,11 @@ textarea {
     [type="week"],
     select,
     textarea {
-        border-color: $dark-color-border;
+        border-color: $dark-color-border-extra-dark;
         background-color: $dark-color-background-form;
 
         &:hover {
-            border-color: tint($dark-color-border, 15%);
+            border-color: $dark-color-border-extra-light;
         }
 
         &:focus {
@@ -168,7 +168,7 @@ textarea {
     width: 16px;
     height: 16px;
     padding: 0; /* 1 */
-    border: 1px solid shade($color-border, 15%);
+    border: 1px solid $color-border-extra-dark;
     background: $color-background-form;
     appearance: none;
     box-sizing: border-box;
@@ -182,7 +182,7 @@ textarea {
     }
 
     &:hover {
-        border-color: shade($color-border, 30%);
+        border-color: shade($color-border-extra-dark, 15%);
         cursor: pointer;
     }
 
@@ -199,11 +199,11 @@ textarea {
 @media (prefers-color-scheme: dark) {
     [type="checkbox"],
     [type="radio"] {
-        border-color: tint($dark-color-border, 15%);
+        border-color: $dark-color-border-extra-dark;
         background-color: $dark-color-background-form;
 
         &:hover {
-            border-color: tint($dark-color-border, 30%);
+            border-color: $dark-color-border-extra-light;
         }
 
         &:focus {
@@ -301,7 +301,7 @@ textarea {
     appearance: none;
 
     &:hover {
-        border-color: shade($color-border, 15%);
+        border-color: $color-border-extra-dark;
     }
 
     &:focus {
@@ -312,11 +312,11 @@ textarea {
 
 @media (prefers-color-scheme: dark) {
     [type="file"] {
-        border-color: $dark-color-border;
+        border-color: $dark-color-border-extra-dark;
         background-color: $dark-color-background-form;
 
         &:hover {
-            border-color: tint($dark-color-border, 15%);
+            border-color: $dark-color-border-extra-light;
         }
 
         &:focus {
