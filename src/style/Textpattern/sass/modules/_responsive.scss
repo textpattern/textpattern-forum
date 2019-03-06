@@ -167,8 +167,8 @@
             display: inline;
 
             span::before {
-                color: lighten($color-text, 33%);
                 content: " \2605 \0020";
+                opacity: 0.5;
             }
         }
 
@@ -442,6 +442,21 @@
     #brdmenu .isactive a,
     #page-help #navextra1 a {
         border-bottom-color: $color-border;
+
+        &:hover {
+            border-bottom-color: $color-border-extra-dark;
+        }
+    }
+
+    @media (prefers-color-scheme: dark) {
+        #brdmenu .isactive a,
+        #page-help #navextra1 a {
+            border-bottom-color: $dark-color-border-light;
+
+            &:hover {
+                border-bottom-color: $dark-color-border;
+            }
+        }
     }
 }
 

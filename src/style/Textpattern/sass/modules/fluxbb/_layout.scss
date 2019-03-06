@@ -98,7 +98,7 @@ thead th {
 
 @media (prefers-color-scheme: dark) {
     #brdwelcome {
-        border-bottom-color: $dark-color-border;
+        border-bottom-color: $dark-color-border-light;
     }
 }
 
@@ -133,7 +133,7 @@ thead th {
 
 @media (prefers-color-scheme: dark) {
     #announce {
-        border-bottom-color: $dark-color-border;
+        border-bottom-color: $dark-color-border-light;
         background-color: $dark-color-highlight-box;
     }
 }
@@ -339,8 +339,12 @@ thead th {
 
 @media (prefers-color-scheme: dark) {
     .blockpost {
-        border-color: $dark-color-border;
+        border-color: $dark-color-border-light;
         background-color: $dark-color-background-box;
+
+        .postleft h2 .conr {
+            color: $dark-color-info-text;
+        }
     }
 }
 
