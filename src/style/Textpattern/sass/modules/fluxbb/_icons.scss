@@ -20,14 +20,15 @@
     margin-right: 1em;
     float: left;
     background-image: url("../img/forum-icons.png");
-    background-size: 480px 360px;
+    background-size: 1020px 120px;
+    background-position-y: 0;
 
     @media (min-resolution: 1.25dppx), (min-resolution: 120dpi) {
         background-image: url("../img/forum-icons@2x.png");
     }
 
     &.icon-new {
-        background-color: $color-strong-highlight-box;
+        background-position-y: -60px;
     }
 
     .nosize {
@@ -55,74 +56,74 @@
 
 #idx1 table tbody {
     tr:nth-child(1) .icon {
-        background-position: 0 0;
+        background-position-x: 0;
     }
 
     tr:nth-child(2) .icon {
-        background-position: -60px 0;
+        background-position-x: -60px;
     }
 
     tr:nth-child(3) .icon {
-        background-position: -120px 0;
+        background-position-x: -120px;
     }
 
     tr:nth-child(4) .icon {
-        background-position: -180px 0;
+        background-position-x: -180px;
     }
 }
 
 #idx2 table tbody {
     tr:nth-child(1) .icon {
-        background-position: -240px 0;
+        background-position-x: -240px;
     }
 
     tr:nth-child(2) .icon {
-        background-position: -300px 0;
+        background-position-x: -300px;
     }
 
     tr:nth-child(3) .icon {
-        background-position: -360px 0;
+        background-position-x: -360px;
     }
 
     tr:nth-child(4) .icon {
-        background-position: -420px 0;
+        background-position-x: -420px;
     }
 
     tr:nth-child(5) .icon {
-        background-position: 0 -60px;
+        background-position-x: -480px;
     }
 
     tr:nth-child(6) .icon {
-        background-position: -60px -60px;
+        background-position-x: -540px;
     }
 }
 
 #idx3 table tbody {
     tr:nth-child(1) .icon {
-        background-position: -120px -60px;
+        background-position-x: -600px;
     }
 
     tr:nth-child(2) .icon {
-        background-position: -180px -60px;
+        background-position-x: -660px;
     }
 
     tr:nth-child(3) .icon {
-        background-position: -240px -60px;
+        background-position-x: -720px;
     }
 
     tr:nth-child(4) .icon {
-        background-position: -300px -60px;
+        background-position-x: -780px;
     }
 
     tr:nth-child(5) .icon {
-        background-position: -360px -60px;
+        background-position-x: -840px;
     }
 
     tr:nth-child(6) .icon {
-        background-position: -420px -60px;
+        background-position-x: -900px;
     }
 
     tr:nth-child(7) .icon {
-        background-position: 0 -120px;
+        background-position-x: -960px;
     }
 }
