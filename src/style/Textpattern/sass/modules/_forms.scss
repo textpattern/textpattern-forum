@@ -409,6 +409,14 @@ select[size="1"] {
 }
 
 /**
+ * Remove browser-specific `select` UI in IE 11.
+ */
+
+select::-ms-expand {
+    opacity: 0;
+}
+
+/**
  * Normalize styling of `optgroup`.
  */
 
