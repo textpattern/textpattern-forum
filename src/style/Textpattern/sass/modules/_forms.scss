@@ -389,15 +389,6 @@ select {
 }
 
 /**
- * Remove browser-specific `select` UI in Firefox 4+.
- */
-
-select:-moz-focusring {
-    color: transparent;
-    text-shadow: none;
-}
-
-/**
  * Override height and background set in a previous rule and allow auto height.
  */
 
