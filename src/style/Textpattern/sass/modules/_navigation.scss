@@ -45,14 +45,10 @@
         color: $color-text;
         font-weight: bold;
 
-        &:hover,
-        &:visited {
-            color: $color-text;
-            text-decoration: none;
-        }
-
         &:hover {
             background-color: $color-selected;
+            color: $color-text;
+            text-decoration: none;
         }
 
         &:active {
@@ -87,24 +83,24 @@
 
 @media (prefers-color-scheme: dark) {
     #site-navigation {
+        ul {
+            background-color: $dark-color-background-box;
+        }
+
         li {
-            border-top-color: $dark-color-border;
+            border-top-color: $dark-color-border-light;
 
             &:first-child {
-                border-top-color: $dark-color-text;
+                border-top-color: $dark-color-border-extra-dark;
             }
         }
 
         a {
             color: $dark-color-text;
 
-            &:hover,
-            &:visited {
-                color: $dark-color-text;
-            }
-
             &:hover {
                 background-color: $dark-color-selecting;
+                color: $dark-color-text;
             }
 
             &:active {
@@ -178,11 +174,12 @@
 
 @media (prefers-color-scheme: dark) {
     #site-navigation-toggle {
-        border-color: shade($dark-color-background-form, 15%);
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%23ced4da' d='M4 6h24v4H4zm0 8h24v4H4zm0 8h24v4H4z'/%3E%3C/svg%3E");
+        border-color: $dark-color-border-extra-dark;
+        background: $dark-color-background-form url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%23ced4da' d='M4 6h24v4H4zm0 8h24v4H4zm0 8h24v4H4z'/%3E%3C/svg%3E");
 
         &:hover {
-            background-color: $dark-color-selected;
+            border-color: $dark-color-border-extra-light;
+            background-color: $dark-color-selecting;
         }
 
         &.site-navigation-toggle-active {
@@ -190,7 +187,7 @@
         }
 
         &:active {
-            background-color: $dark-color-selecting;
+            background-color: $dark-color-selected;
         }
 
         &:focus {
