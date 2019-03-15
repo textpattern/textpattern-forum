@@ -226,3 +226,11 @@ noscript {
 .legal {
     font-size: $small-font-size;
 }
+
+/**
+ * Error page subheadings.
+ */
+
+.http-status-description {
+    display: inline-block;
+}
