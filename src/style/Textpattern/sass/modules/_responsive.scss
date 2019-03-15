@@ -112,7 +112,6 @@
 
         ul {
             width: 90%;
-            background-color: $dark-color-background;
         }
 
         li {
@@ -136,12 +135,18 @@
     }
 
     @media (prefers-color-scheme: dark) {
-        #site-navigation  a {
-            border-color: $dark-color-background;
+        #site-navigation {
+            ul {
+                background-color: $dark-color-background;
+            }
 
-            &:focus {
-                border-color: $dark-color-link-focus;
-                outline: 2px solid transparent; // Allows for repainting in high contrast modes.
+            a {
+                border-color: $dark-color-background;
+
+                &:focus {
+                    border-color: $dark-color-link-focus;
+                    outline: 2px solid transparent; // Allows for repainting in high contrast modes.
+                }
             }
         }
     }
@@ -232,14 +237,29 @@
             cursor: pointer;
 
             &:hover {
-                background-color: #e3edfc;
+                background-color: $color-selected;
             }
 
             &:focus {
                 width: 244px;
                 padding-right: 0.5384615em;
-                background-color: $color-background;
+                background-color: $color-background-form;
                 cursor: auto;
+            }
+        }
+    }
+
+    @media (prefers-color-scheme: dark) {
+        .search-form {
+            [type="search"] {
+                &:hover {
+                    border-color: $dark-color-border-extra-light;
+                    background-color: $dark-color-selecting;
+                }
+
+                &:focus {
+                    background-color: $dark-color-background-form;
+                }
             }
         }
     }

@@ -114,15 +114,15 @@
         }
 
         li.active a {
-            background-color: $dark-color-selected;
+            background-color: $dark-color-selecting;
 
             &:hover,
             &:focus {
-                background-color: $dark-color-selecting;
+                background-color: $dark-color-selected;
             }
 
             &:active {
-                background-color: $dark-color-selected;
+                background-color: $dark-color-selecting;
             }
         }
     }
