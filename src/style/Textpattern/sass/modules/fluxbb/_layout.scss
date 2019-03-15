@@ -482,7 +482,7 @@ thead th {
 #quickpost {
     margin: 0.5em 0 1em;
     border: 1px solid $color-border;
-    background-color: lighten($color-highlight-box, 2%);
+    background-color: tint($color-highlight-box, 28%);
 
     fieldset {
         border: 0;
@@ -492,13 +492,24 @@ thead th {
         margin: 1em 0 0;
         padding: 0;
         border: 0;
-        background-color: lighten($color-highlight-box, 2%);
+        background-color: tint($color-highlight-box, 28%);
         font-size: 1.125em; // 18px / 16px
         line-height: 1.4444444; // 26px / 18px
     }
 
     .buttons {
         padding: 0 1em;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    #quickpost {
+        border-color: $dark-color-border-light;
+        background-color: shade($dark-color-highlight-box, 15%);
+
+        legend {
+            background-color: shade($dark-color-highlight-box, 15%);
+        }
     }
 }
 
