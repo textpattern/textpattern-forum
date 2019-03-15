@@ -69,6 +69,17 @@ h6 {
     line-height: $line-height-mobile;
 }
 
+@media (prefers-color-scheme: dark) {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: $dark-color-text-heading;
+    }
+}
+
 /**
  * Add the correct font weight in Chrome, Edge, and Safari.
  */
@@ -98,6 +109,13 @@ blockquote {
     background-color: $color-highlight-box;
 }
 
+@media (prefers-color-scheme: dark) {
+    blockquote {
+        border-left-color: $dark-color-highlight;
+        background-color: $dark-color-highlight-box;
+    }
+}
+
 /**
  * 1. Remove the bottom border in Chrome 57+.
  * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
@@ -120,6 +138,14 @@ var {
     color: $color-text;
 }
 
+@media (prefers-color-scheme: dark) {
+    mark,
+    var {
+        background-color: $dark-color-selected;
+        color: $dark-color-text;
+    }
+}
+
 /**
  * Harmonize size and style of computer text.
  *
@@ -130,7 +156,7 @@ pre,
 code,
 kbd,
 samp {
-    border: 1px solid lighten($color-border, 9%);
+    border: 1px solid $color-border-extra-light;
     border-radius: 0.2857143em; // 4px / 14px
     background-color: $color-background-box;
     color: $color-text;
@@ -138,6 +164,17 @@ samp {
     font-size: $code-font-size;
     line-height: $line-height-mobile;
     font-feature-settings: normal; /* 1 */
+}
+
+@media (prefers-color-scheme: dark) {
+    pre,
+    code,
+    kbd,
+    samp {
+        border-color: $dark-color-border-extra-light;
+        background-color: $dark-color-background-box;
+        color: $dark-color-text;
+    }
 }
 
 code,
@@ -173,12 +210,6 @@ pre {
         word-wrap: normal;
         hyphens: none;
     }
-}
-
-code {
-    text-align: left;
-    direction: ltr;
-    tab-size: 4; /* 4 */
 }
 
 /**
@@ -225,4 +256,10 @@ hr {
     border-bottom: 1px solid $color-border;
     overflow: visible; /* 1 */
     box-sizing: content-box; /* 2 */
+}
+
+@media (prefers-color-scheme: dark) {
+    hr {
+        border-bottom-color: $dark-color-border;
+    }
 }

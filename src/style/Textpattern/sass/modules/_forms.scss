@@ -13,6 +13,12 @@ fieldset {
     border: 1px solid $color-border; /* 2 */
 }
 
+@media (prefers-color-scheme: dark) {
+    fieldset {
+        border-color: $dark-color-border;
+    }
+}
+
 /**
  * Stylize fieldset legends.
  *
@@ -30,6 +36,13 @@ legend {
     font-weight: bold;
     white-space: normal; /* 1 */
     box-sizing: border-box; /* 1 */
+}
+
+@media (prefers-color-scheme: dark) {
+    legend {
+        border-color: $dark-color-border;
+        background-color: $dark-color-background-box;
+    }
 }
 
 /**
@@ -65,6 +78,15 @@ textarea,
     box-sizing: border-box;
 }
 
+@media (prefers-color-scheme: dark) {
+    input,
+    select,
+    optgroup,
+    textarea {
+        color: $dark-color-text-form;
+    }
+}
+
 /**
  * Styling of form input fields.
  *
@@ -95,12 +117,42 @@ textarea {
     appearance: none; /* 1 */
 
     &:hover {
-        border-color: shade($color-border, 15%);
+        border-color: $color-border-extra-dark;
     }
 
     &:focus {
         border-color: $color-link-focus;
-        outline: 1px solid transparent; // Allows for repainting in high contrast modes.
+        outline: 2px solid transparent; // Allows for repainting in high contrast modes.
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    [type="color"],
+    [type="date"],
+    [type="datetime"],
+    [type="datetime-local"],
+    [type="email"],
+    [type="month"],
+    [type="number"],
+    [type="password"],
+    [type="search"],
+    [type="tel"],
+    [type="text"],
+    [type="time"],
+    [type="url"],
+    [type="week"],
+    select,
+    textarea {
+        border-color: $dark-color-border-extra-dark;
+        background-color: $dark-color-background-form;
+
+        &:hover {
+            border-color: $dark-color-border-extra-light;
+        }
+
+        &:focus {
+            border-color: $dark-color-link-focus;
+        }
     }
 }
 
@@ -109,19 +161,19 @@ textarea {
  * 2. Correct margins for inline checkbox/radio labels.
  */
 
-[type="checkbox"]:not(.ui-checkboxradio),
-[type="radio"]:not(.ui-checkboxradio) {
+[type="checkbox"],
+[type="radio"] {
     position: relative;
     bottom: -2px;
     width: 16px;
     height: 16px;
     padding: 0; /* 1 */
-    border: 1px solid shade($color-border, 15%);
+    border: 1px solid $color-border-extra-dark;
     background: $color-background-form;
     appearance: none;
     box-sizing: border-box;
 
-    + label:not(.ui-controlgroup-item) {
+    + label {
         margin: 0 0.5em 0 0; /* 2 */
 
         &:last-of-type {
@@ -130,13 +182,13 @@ textarea {
     }
 
     &:hover {
-        border-color: shade($color-border, 30%);
+        border-color: shade($color-border-extra-dark, 15%);
         cursor: pointer;
     }
 
     &:focus {
         border-color: $color-link-focus;
-        outline: 1px solid transparent; // Allows for repainting in high contrast modes.
+        outline: 2px solid transparent; // Allows for repainting in high contrast modes.
     }
 
     &:not([disabled]) + label:hover {
@@ -144,9 +196,23 @@ textarea {
     }
 }
 
-[type="checkbox"]:not(.ui-checkboxradio) {
-    border-radius: 0.2em;
+@media (prefers-color-scheme: dark) {
+    [type="checkbox"],
+    [type="radio"] {
+        border-color: $dark-color-border-extra-dark;
+        background-color: $dark-color-background-form;
 
+        &:hover {
+            border-color: $dark-color-border-extra-light;
+        }
+
+        &:focus {
+            border-color: $dark-color-link-focus;
+        }
+    }
+}
+
+[type="checkbox"] {
     &:checked {
         border: 0;
         background: $color-text-footnote url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23fff' d='M13 2.5l-7 7-2-2-2 2 4 4L15 4.5z'/%3E%3C/svg%3E");
@@ -166,7 +232,28 @@ textarea {
     }
 }
 
-[type="radio"]:not(.ui-checkboxradio) {
+@media (prefers-color-scheme: dark) {
+    [type="checkbox"] {
+        &:checked {
+            background: $dark-color-text url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23282d32' d='M13 2.5l-7 7-2-2-2 2 4 4L15 4.5z'/%3E%3C/svg%3E");
+
+            &:hover,
+            &:active {
+                background-color: $dark-color-text-heading;
+            }
+
+            &:focus {
+                background-color: $dark-color-link-focus;
+            }
+        }
+
+        &[disabled]:checked {
+            background: $dark-color-text url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23282d32' d='M13 2.5l-7 7-2-2-2 2 4 4L15 4.5z'/%3E%3C/svg%3E") !important;
+        }
+    }
+}
+
+[type="radio"] {
     border-radius: 100%;
 
     &:checked {
@@ -183,8 +270,90 @@ textarea {
     }
 }
 
+@media (prefers-color-scheme: dark) {
+    [type="radio"]:checked {
+        border-color: $dark-color-text;
+
+        &:hover,
+        &:active {
+            border-color: $dark-color-text-heading;
+        }
+
+        &:focus {
+            border-color: $dark-color-link-focus;
+        }
+    }
+}
+
 /**
- * Correct the cursor style of increment and decrement buttons in Safari.
+ * Styling for file inputs.
+ */
+
+[type="file"] {
+    height: auto;
+    min-height: 2em; // 32px / 16px
+    padding: 0.25em 0.1875em; // 8px / 16px + 3px / 16px
+    border: 1px solid $color-border;
+    border-radius: 0;
+    background: $color-background-form;
+    cursor: pointer;
+    box-sizing: border-box;
+    appearance: none;
+
+    &:hover {
+        border-color: $color-border-extra-dark;
+    }
+
+    &:focus {
+        border-color: $color-link-focus;
+        outline: 2px solid transparent; // Allows for repainting in high contrast modes.
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    [type="file"] {
+        border-color: $dark-color-border-extra-dark;
+        background-color: $dark-color-background-form;
+
+        &:hover {
+            border-color: $dark-color-border-extra-light;
+        }
+
+        &:focus {
+            border-color: $dark-color-link-focus;
+        }
+    }
+}
+
+::-webkit-file-upload-button {
+    @include gradient-linear($color-button-gradient-from, $color-button-gradient-to);
+
+    padding: 0 0.25em;
+    border: 0;
+    color: $color-text-button;
+    font: inherit;
+    cursor: pointer;
+    /* autoprefixer: off */
+    appearance: none;
+}
+
+::-ms-browse {
+    @include gradient-linear($color-button-gradient-from, $color-button-gradient-to);
+
+    padding: 0 0.25em;
+    border: 0;
+    color: $color-text-button;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: normal;
+    line-height: inherit;
+    cursor: pointer;
+    /* autoprefixer: off */
+    appearance: none;
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
  */
 
 [type="number"]::-webkit-inner-spin-button,
@@ -212,13 +381,11 @@ select {
     text-transform: none;
 }
 
-/**
- * Remove browser-specific `select` UI in Firefox 4+.
- */
-
-select:-moz-focusring {
-    color: transparent;
-    text-shadow: none;
+@media (prefers-color-scheme: dark) {
+    select {
+        background-color: $dark-color-background-form;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='5' viewBox='0 0 17 5'%3E%3Cpolygon fill='%23788591' points='0,0 5,5 10,0'/%3E%3C/svg%3E");
+    }
 }
 
 /**
@@ -249,6 +416,12 @@ optgroup {
     color: $color-text-form;
     font-style: normal;
     font-weight: bold;
+}
+
+@media (prefers-color-scheme: dark) {
+    optgroup {
+        color: $dark-color-text-form;
+    }
 }
 
 /**
@@ -283,6 +456,18 @@ span.disabled {
     opacity: 0.33 !important;
 }
 
+@media (prefers-color-scheme: dark) {
+    [disabled],
+    [disabled] option,
+    [disabled] optgroup,
+    span.disabled,
+    .ui-checkboxradio-disabled {
+        border: 1px solid $dark-color-border !important;
+        background-color: $dark-color-background-form-disabled !important;
+        opacity: 0.25 !important;
+    }
+}
+
 /**
  * Styling for form field validation.
  */
@@ -293,6 +478,16 @@ textarea {
     &:focus:invalid {
         border-color: $color-error-text;
         box-shadow: none; // Normalize Firefox styling
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    input,
+    select,
+    textarea {
+        &:focus:invalid {
+            border-color: $dark-color-error-text;
+        }
     }
 }
 
@@ -309,6 +504,16 @@ textarea {
     }
 }
 
+@media (prefers-color-scheme: dark) {
+    input,
+    select,
+    textarea {
+        &:-moz-ui-invalid {
+            border-color: $dark-color-error-text;
+        }
+    }
+}
+
 /**
  * Normalize form placeholder style across browsers.
  *
@@ -319,4 +524,10 @@ textarea {
     color: $color-text-form-placeholder;
     font: inherit; /* 1 */
     opacity: 1;
+}
+
+@media (prefers-color-scheme: dark) {
+    ::placeholder {
+        color: $dark-color-text-form-placeholder;
+    }
 }

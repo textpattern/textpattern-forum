@@ -42,6 +42,13 @@ td {
     }
 }
 
+@media (prefers-color-scheme: dark) {
+    th,
+    td {
+        border-bottom-color: $dark-color-border-light;
+    }
+}
+
 /**
  * Table `thead` non-global borders and padding.
  */
@@ -58,6 +65,15 @@ thead {
         th,
         td {
             border-bottom: 2px solid $color-border;
+        }
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    thead tr:last-child {
+        th,
+        td {
+            border-bottom-color: $dark-color-border-light;
         }
     }
 }
@@ -89,6 +105,15 @@ tbody tr:first-child {
     td,
     th {
         border-top: 1px solid $color-border;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    tbody tr:first-child {
+        td,
+        th {
+            border-top-color: $dark-color-border-light;
+        }
     }
 }
 

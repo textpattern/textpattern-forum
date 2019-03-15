@@ -9,6 +9,12 @@
     background-color: $color-highlight-box;
 }
 
+@media (prefers-color-scheme: dark) {
+    .inew {
+        background-color: $dark-color-highlight-box;
+    }
+}
+
 /**
  * Text highlights.
  */
@@ -36,10 +42,26 @@
     color: $color-warning-text;
 }
 
+@media (prefers-color-scheme: dark) {
+    .warntext {
+        border-color: $dark-color-warning-border;
+        background: $dark-color-warning-background;
+        color: $dark-color-warning-text;
+    }
+}
+
 .stickytext {
     border-color: $color-success-border;
     background: $color-success-background;
     color: $color-success-text;
+}
+
+@media (prefers-color-scheme: dark) {
+    .stickytext {
+        border-color: $dark-color-success-border;
+        background: $dark-color-success-background;
+        color: $dark-color-success-text;
+    }
 }
 
 .closedtext,
@@ -49,10 +71,27 @@
     color: $color-error-text;
 }
 
+@media (prefers-color-scheme: dark) {
+    .closedtext,
+    #page-delete .forminfo p {
+        border-color: $dark-color-error-border;
+        background: $dark-color-error-background;
+        color: $dark-color-error-text;
+    }
+}
+
 .movedtext {
     border-color: $color-info-border;
     background: $color-info-background;
     color: $color-info-text;
+}
+
+@media (prefers-color-scheme: dark) {
+    .movedtext {
+        border-color: $dark-color-info-border;
+        background: $dark-color-info-background;
+        color: $dark-color-info-text;
+    }
 }
 
 /**
@@ -68,4 +107,10 @@
     margin-right: 0.3333333em;
     border-radius: 50%;
     background-color: $color-highlight;
+}
+
+@media (prefers-color-scheme: dark) {
+    .ipost {
+        background-color: $dark-color-highlight;
+    }
 }

@@ -14,34 +14,60 @@
     }
 
     a {
-        display: inline-block;
-        margin-bottom: -1px;
+        display: block;
+        position: relative;
+        bottom: -1px;
         padding: 0.5em 1em;
         border: 1px solid $color-border;
         background-color: $color-background-box;
         color: $color-text;
-        box-shadow: inset 0 -0.125em 0.25em rgba(153, 153, 153, 0.33);
-
-        &:hover,
-        &:visited {
-            color: $color-text;
-            text-decoration: none;
-        }
+        text-decoration: none;
+        box-shadow: inset 0 -0.125em 0.25em rgba(#666666, 0.2);
 
         &:hover {
+            border-color: $color-border-extra-dark;
             background-color: $color-selected;
         }
 
         &:active {
             background-color: $color-selecting;
             color: darken($color-text, 10%);
-            text-decoration: none;
         }
 
         &:focus {
             border-color: $color-link-focus;
-            outline: 1px solid transparent; // Allows for repainting in high contrast modes.
+            outline: 2px solid transparent; // Allows for repainting in high contrast modes.
             background-color: $color-selected;
+        }
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    #brdmenu {
+        ul {
+            border-bottom-color: $dark-color-border-light;
+        }
+
+        a {
+            border-color: $dark-color-border-light;
+            background-color: $dark-color-background-box;
+            color: $dark-color-text;
+            box-shadow: inset 0 -0.125em 0.25em rgba(#000000, 0.2);
+
+            &:hover {
+                border-color: $dark-color-border;
+                background-color: $dark-color-selecting;
+            }
+
+            &:active {
+                background-color: $dark-color-selected;
+                color: tint($dark-color-text, 10%);
+            }
+
+            &:focus {
+                border-color: $dark-color-link-focus;
+                background-color: $dark-color-selecting;
+            }
         }
     }
 }
@@ -51,4 +77,13 @@
     border-bottom-color: $color-background;
     background-color: $color-background;
     box-shadow: none;
+}
+
+@media (prefers-color-scheme: dark) {
+    #brdmenu .isactive a,
+    #page-help #navextra1 a {
+        border-bottom-color: $dark-color-background;
+        background-color: $dark-color-background;
+        box-shadow: none;
+    }
 }

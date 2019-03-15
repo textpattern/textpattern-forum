@@ -13,8 +13,14 @@
 
     strong {
         background: $color-text;
-        color: $color-text-inverse;
+        color: $color-text-white-out;
         font-weight: normal;
         cursor: default;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .pagelink strong {
+        background: $dark-color-background-form;
     }
 }

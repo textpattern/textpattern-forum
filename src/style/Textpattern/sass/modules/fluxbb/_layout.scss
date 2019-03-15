@@ -96,6 +96,12 @@ thead th {
     }
 }
 
+@media (prefers-color-scheme: dark) {
+    #brdwelcome {
+        border-bottom-color: $dark-color-border-light;
+    }
+}
+
 
 /* Forum announcement box
    ========================================================================== */
@@ -122,6 +128,13 @@ thead th {
     .box {
         margin: 0.5em 0;
         float: left;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    #announce {
+        border-bottom-color: $dark-color-border-light;
+        background-color: $dark-color-highlight-box;
     }
 }
 
@@ -159,6 +172,13 @@ thead th {
     li:first-child,
     span {
         display: none;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .linkst .crumbs li strong a {
+        color: $dark-color-text-heading;
+        text-decoration-color: rgba($dark-color-text-heading, 0.5);  /* 4 */
     }
 }
 
@@ -206,6 +226,13 @@ thead th {
     ul {
         padding: 0;
         list-style: none;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .block2col .blockmenu {
+        border-color: $dark-color-border;
+        background-color: $dark-color-background-box;
     }
 }
 
@@ -310,6 +337,17 @@ thead th {
     }
 }
 
+@media (prefers-color-scheme: dark) {
+    .blockpost {
+        border-color: $dark-color-border-light;
+        background-color: $dark-color-background-box;
+
+        .postleft h2 .conr {
+            color: $dark-color-info-text;
+        }
+    }
+}
+
 /**
  * Post author info section.
  */
@@ -339,14 +377,10 @@ thead th {
     }
 }
 
-.usertitle,
-.userrank {
-    display: inline;
-}
-
-.userrank::before {
-    color: lighten($color-text, 33%);
-    content: "\0020 \2605 \0020";
+@media (prefers-color-scheme: dark) {
+    .postleft dt a {
+        color: $dark-color-text-heading;
+    }
 }
 
 .postavatar img {
@@ -379,6 +413,12 @@ thead th {
     }
 }
 
+@media (prefers-color-scheme: dark) {
+    .postright {
+        background-color: $dark-color-background;
+    }
+}
+
 .postfoot {
     clear: both;
 }
@@ -398,6 +438,12 @@ thead th {
     strong {
         color: $color-success-text;
         font-weight: normal;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .postfootleft strong {
+        color: $dark-color-success-text;
     }
 }
 
@@ -436,7 +482,7 @@ thead th {
 #quickpost {
     margin: 0.5em 0 1em;
     border: 1px solid $color-border;
-    background-color: lighten($color-highlight-box, 2%);
+    background-color: tint($color-highlight-box, 28%);
 
     fieldset {
         border: 0;
@@ -446,13 +492,24 @@ thead th {
         margin: 1em 0 0;
         padding: 0;
         border: 0;
-        background-color: lighten($color-highlight-box, 2%);
+        background-color: tint($color-highlight-box, 28%);
         font-size: 1.125em; // 18px / 16px
         line-height: 1.4444444; // 26px / 18px
     }
 
     .buttons {
         padding: 0 1em;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    #quickpost {
+        border-color: $dark-color-border-light;
+        background-color: shade($dark-color-highlight-box, 15%);
+
+        legend {
+            background-color: shade($dark-color-highlight-box, 15%);
+        }
     }
 }
 
