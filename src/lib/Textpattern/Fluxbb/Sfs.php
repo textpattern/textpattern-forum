@@ -207,7 +207,7 @@ class Sfs
         }
 
         $data = file_get_contents(
-            'http://www.stopforumspam.com/api?f=json&unix&'.$query,
+            'https://www.stopforumspam.com/api?f=json&unix&'.$query,
             false,
             stream_context_create(array('http' => array('timeout' => 15)))
         );
@@ -260,7 +260,7 @@ class Sfs
             return;
         }
 
-        $message .= ' - http://www.stopforumspam.com/search?q=';
+        $message .= ' - https://www.stopforumspam.com/search?q=';
         $sth = Db::pdo()->prepare("INSERT INTO bans SET $type = :value, message = :message, expire = :expires");
 
         foreach ((array) $this->$type as $value) {
