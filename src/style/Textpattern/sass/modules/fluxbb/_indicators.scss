@@ -9,7 +9,7 @@
     background-color: $color-highlight-box;
 }
 
-@media (prefers-color-scheme: dark) {
+@include dark-mode {
     .inew {
         background-color: $dark-color-highlight-box;
     }
@@ -42,7 +42,7 @@
     color: $color-warning-text;
 }
 
-@media (prefers-color-scheme: dark) {
+@include dark-mode {
     .warntext {
         border-color: $dark-color-warning-border;
         background: $dark-color-warning-background;
@@ -56,7 +56,7 @@
     color: $color-success-text;
 }
 
-@media (prefers-color-scheme: dark) {
+@include dark-mode {
     .stickytext {
         border-color: $dark-color-success-border;
         background: $dark-color-success-background;
@@ -71,7 +71,7 @@
     color: $color-error-text;
 }
 
-@media (prefers-color-scheme: dark) {
+@include dark-mode {
     .closedtext,
     #page-delete .forminfo p {
         border-color: $dark-color-error-border;
@@ -86,7 +86,7 @@
     color: $color-info-text;
 }
 
-@media (prefers-color-scheme: dark) {
+@include dark-mode {
     .movedtext {
         border-color: $dark-color-info-border;
         background: $dark-color-info-background;
@@ -109,7 +109,7 @@
     background-color: $color-highlight;
 }
 
-@media (prefers-color-scheme: dark) {
+@include dark-mode {
     .ipost {
         background-color: $dark-color-highlight;
     }

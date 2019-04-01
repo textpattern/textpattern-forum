@@ -19,7 +19,7 @@
     }
 }
 
-@media (prefers-color-scheme: dark) {
+@include dark-mode {
     .pagelink strong {
         background: $dark-color-background-form;
     }

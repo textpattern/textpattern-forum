@@ -13,7 +13,7 @@ fieldset {
     border: 1px solid $color-border; /* 2 */
 }
 
-@media (prefers-color-scheme: dark) {
+@include dark-mode {
     fieldset {
         border-color: $dark-color-border;
     }
@@ -38,7 +38,7 @@ legend {
     box-sizing: border-box; /* 1 */
 }
 
-@media (prefers-color-scheme: dark) {
+@include dark-mode {
     legend {
         border-color: $dark-color-border;
         background-color: $dark-color-background-box;
@@ -78,7 +78,7 @@ textarea,
     box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
+@include dark-mode {
     input,
     select,
     optgroup,
@@ -126,7 +126,7 @@ textarea {
     }
 }
 
-@media (prefers-color-scheme: dark) {
+@include dark-mode {
     [type="color"],
     [type="date"],
     [type="datetime"],
@@ -196,7 +196,7 @@ textarea {
     }
 }
 
-@media (prefers-color-scheme: dark) {
+@include dark-mode {
     [type="checkbox"],
     [type="radio"] {
         border-color: $dark-color-border-extra-dark;
@@ -232,7 +232,7 @@ textarea {
     }
 }
 
-@media (prefers-color-scheme: dark) {
+@include dark-mode {
     [type="checkbox"] {
         &:checked {
             background: $dark-color-text url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23282d32' d='M13 2.5l-7 7-2-2-2 2 4 4L15 4.5z'/%3E%3C/svg%3E");
@@ -270,7 +270,7 @@ textarea {
     }
 }
 
-@media (prefers-color-scheme: dark) {
+@include dark-mode {
     [type="radio"]:checked {
         border-color: $dark-color-text;
 
@@ -310,7 +310,7 @@ textarea {
     }
 }
 
-@media (prefers-color-scheme: dark) {
+@include dark-mode {
     [type="file"] {
         border-color: $dark-color-border-extra-dark;
         background-color: $dark-color-background-form;
@@ -381,7 +381,7 @@ select {
     text-transform: none;
 }
 
-@media (prefers-color-scheme: dark) {
+@include dark-mode {
     select {
         background-color: $dark-color-background-form;
         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='5' viewBox='0 0 17 5'%3E%3Cpolygon fill='%23788591' points='0,0 5,5 10,0'/%3E%3C/svg%3E");
@@ -426,7 +426,7 @@ optgroup {
     font-weight: bold;
 }
 
-@media (prefers-color-scheme: dark) {
+@include dark-mode {
     optgroup {
         color: $dark-color-text-form;
     }
@@ -464,7 +464,7 @@ span.disabled {
     opacity: 0.33 !important;
 }
 
-@media (prefers-color-scheme: dark) {
+@include dark-mode {
     [disabled],
     [disabled] option,
     [disabled] optgroup,
@@ -489,7 +489,7 @@ textarea {
     }
 }
 
-@media (prefers-color-scheme: dark) {
+@include dark-mode {
     input,
     select,
     textarea {
@@ -512,7 +512,7 @@ textarea {
     }
 }
 
-@media (prefers-color-scheme: dark) {
+@include dark-mode {
     input,
     select,
     textarea {
@@ -534,7 +534,7 @@ textarea {
     opacity: 1;
 }
 
-@media (prefers-color-scheme: dark) {
+@include dark-mode {
     ::placeholder {
         color: $dark-color-text-form-placeholder;
     }

@@ -42,7 +42,7 @@ td {
     }
 }
 
-@media (prefers-color-scheme: dark) {
+@include dark-mode {
     th,
     td {
         border-bottom-color: $dark-color-border-light;
@@ -69,7 +69,7 @@ thead {
     }
 }
 
-@media (prefers-color-scheme: dark) {
+@include dark-mode {
     thead tr:last-child {
         th,
         td {
@@ -108,7 +108,7 @@ tbody tr:first-child {
     }
 }
 
-@media (prefers-color-scheme: dark) {
+@include dark-mode {
     tbody tr:first-child {
         td,
         th {

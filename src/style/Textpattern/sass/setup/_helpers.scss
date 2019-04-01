@@ -1,3 +1,11 @@
+// Dark Mode shorthand.
+
+@mixin dark-mode {
+    @media (prefers-color-scheme: dark) {
+        @content;
+    }
+}
+
 // standard gradients
 
 @mixin gradient-linear($color-gradient-from, $color-gradient-to) {

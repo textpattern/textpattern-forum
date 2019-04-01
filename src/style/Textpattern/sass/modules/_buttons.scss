@@ -107,7 +107,7 @@ button,
     }
 }
 
-@media (prefers-color-scheme: dark) {
+@include dark-mode {
     button,
     [type="button"],
     [type="reset"],

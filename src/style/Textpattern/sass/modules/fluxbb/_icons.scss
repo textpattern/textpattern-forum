@@ -36,7 +36,7 @@
     }
 }
 
-@media (prefers-color-scheme: dark) {
+@include dark-mode {
     #page-index .icon {
         background-image: url("../img/dark-forum-icons.png");
 

@@ -69,7 +69,7 @@ h6 {
     line-height: $line-height-mobile;
 }
 
-@media (prefers-color-scheme: dark) {
+@include dark-mode {
     h1,
     h2,
     h3,
@@ -109,7 +109,7 @@ blockquote {
     background-color: $color-highlight-box;
 }
 
-@media (prefers-color-scheme: dark) {
+@include dark-mode {
     blockquote {
         border-left-color: $dark-color-highlight;
         background-color: $dark-color-highlight-box;
@@ -138,7 +138,7 @@ var {
     color: $color-text;
 }
 
-@media (prefers-color-scheme: dark) {
+@include dark-mode {
     mark,
     var {
         background-color: $dark-color-selected;
@@ -166,7 +166,7 @@ samp {
     font-feature-settings: normal; /* 1 */
 }
 
-@media (prefers-color-scheme: dark) {
+@include dark-mode {
     pre,
     code,
     kbd,
@@ -258,7 +258,7 @@ hr {
     box-sizing: content-box; /* 2 */
 }
 
-@media (prefers-color-scheme: dark) {
+@include dark-mode {
     hr {
         border-bottom-color: $dark-color-border;
     }

@@ -42,7 +42,7 @@
     }
 }
 
-@media (prefers-color-scheme: dark) {
+@include dark-mode {
     #brdmenu {
         ul {
             border-bottom-color: $dark-color-border-light;
@@ -79,7 +79,7 @@
     box-shadow: none;
 }
 
-@media (prefers-color-scheme: dark) {
+@include dark-mode {
     #brdmenu .isactive a,
     #page-help #navextra1 a {
         border-bottom-color: $dark-color-background;

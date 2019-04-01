@@ -96,7 +96,7 @@ thead th {
     }
 }
 
-@media (prefers-color-scheme: dark) {
+@include dark-mode {
     #brdwelcome {
         border-bottom-color: $dark-color-border-light;
     }
@@ -131,7 +131,7 @@ thead th {
     }
 }
 
-@media (prefers-color-scheme: dark) {
+@include dark-mode {
     #announce {
         border-bottom-color: $dark-color-border-light;
         background-color: $dark-color-highlight-box;
@@ -175,7 +175,7 @@ thead th {
     }
 }
 
-@media (prefers-color-scheme: dark) {
+@include dark-mode {
     .linkst .crumbs li strong a {
         color: $dark-color-text-heading;
         text-decoration-color: rgba($dark-color-text-heading, 0.5);  /* 4 */
@@ -229,7 +229,7 @@ thead th {
     }
 }
 
-@media (prefers-color-scheme: dark) {
+@include dark-mode {
     .block2col .blockmenu {
         border-color: $dark-color-border;
         background-color: $dark-color-background-box;
@@ -337,7 +337,7 @@ thead th {
     }
 }
 
-@media (prefers-color-scheme: dark) {
+@include dark-mode {
     .blockpost {
         border-color: $dark-color-border-light;
         background-color: $dark-color-background-box;
@@ -377,7 +377,7 @@ thead th {
     }
 }
 
-@media (prefers-color-scheme: dark) {
+@include dark-mode {
     .postleft dt a {
         color: $dark-color-text-heading;
     }
@@ -413,7 +413,7 @@ thead th {
     }
 }
 
-@media (prefers-color-scheme: dark) {
+@include dark-mode {
     .postright {
         background-color: $dark-color-background;
     }
@@ -441,7 +441,7 @@ thead th {
     }
 }
 
-@media (prefers-color-scheme: dark) {
+@include dark-mode {
     .postfootleft strong {
         color: $dark-color-success-text;
     }
@@ -502,7 +502,7 @@ thead th {
     }
 }
 
-@media (prefers-color-scheme: dark) {
+@include dark-mode {
     #quickpost {
         border-color: $dark-color-border-light;
         background-color: shade($dark-color-highlight-box, 15%);
