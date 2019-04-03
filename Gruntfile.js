@@ -101,12 +101,6 @@ module.exports = function (grunt)
                 files: [
                     {
                         expand: true,
-                        cwd: 'src/style/imports/',
-                        src: ['**'],
-                        dest: 'public/style/imports/'
-                    },
-                    {
-                        expand: true,
                         cwd: 'src/style/',
                         src: ['Textpattern.css', '.htaccess'],
                         dest: 'public/style/'

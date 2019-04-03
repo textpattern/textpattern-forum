@@ -105,7 +105,6 @@ EOF;
     {
         $buffer = str_replace(
             array(
-                '<!--[if lte IE 6]><script type="text/javascript" src="style/imports/minmax.js"></script><![endif]-->',
                 '<link rel="stylesheet" type="text/css" href="style/Textpattern.css" />',
             ),
             '',
