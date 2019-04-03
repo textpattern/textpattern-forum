@@ -109,7 +109,7 @@
             </p>
         </footer>
     </div>
-    <script async src="style/Textpattern/js/app.@@timestamp.js"></script>
+    <script src="style/Textpattern/js/app.@@timestamp.js"></script>
     <noscript>JavaScript is currently disabled in your browser - activate it for the best experience.</noscript>
 </body>
 </html>
