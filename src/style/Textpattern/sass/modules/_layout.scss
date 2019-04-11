@@ -28,6 +28,10 @@ body {
     body {
         background-color: $dark-color-background-form;
     }
+
+    .page-error {
+        filter: contrast(150%);
+    }
 }
 
 /**
