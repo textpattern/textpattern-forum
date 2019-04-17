@@ -74,25 +74,25 @@ module.exports = function (grunt)
                     {
                         expand: true,
                         cwd: 'node_modules/textpattern-branding/assets/img/',
-                        src: ['**'],
+                        src: '**',
                         dest: 'public/style/Textpattern/img/branding/'
                     },
                     {
                         expand: true,
                         cwd: 'node_modules/textpattern-branding/assets/img/apple-touch-icon/textpattern/',
-                        src: ['**'],
+                        src: '**',
                         dest: 'public/'
                     },
                     {
                         expand: true,
                         cwd: 'node_modules/textpattern-branding/assets/img/favicon/textpattern/',
-                        src: ['**'],
+                        src: '**',
                         dest: 'public/'
                     },
                     {
                         expand: true,
                         cwd: 'node_modules/textpattern-branding/assets/img/windows-site-tile/textpattern/',
-                        src: ['**'],
+                        src: '**',
                         dest: 'public/'
                     }
                 ]
@@ -114,7 +114,7 @@ module.exports = function (grunt)
                     {
                         expand: true,
                         cwd: 'src/lib/',
-                        src: ['**'],
+                        src: '**',
                         dest: 'public/lib/'
                     },
                 ]
