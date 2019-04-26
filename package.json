@@ -32,7 +32,7 @@
     "grunt-sass-lint": "0.2.4",
     "grunt-shell": "3.0.1",
     "load-grunt-tasks": "4.0.0",
-    "sass-lint": "1.13.0"
+    "sass-lint": "1.13.1"
   },
   "dependencies": {
     "jquery": "3.4.0",
