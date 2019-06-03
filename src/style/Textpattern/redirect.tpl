@@ -2,7 +2,7 @@
 <html lang="<pun_language>">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <link rel="stylesheet" href="style/Textpattern/css/style.@@timestamp.css">
     <link rel="manifest" href="/site.webmanifest">
     <meta name="application-name" content="Textpattern Forum">
