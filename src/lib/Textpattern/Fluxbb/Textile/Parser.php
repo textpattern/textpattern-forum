@@ -41,7 +41,7 @@ class Parser extends Textile
     /**
      * Language identifiers.
      *
-     * @var array|string
+     * @var string[]
      */
 
     private $extraCodeLanguageIdentifiers = array(
@@ -75,19 +75,25 @@ class Parser extends Textile
      * {@inheritdoc}
      */
 
-    public function __construct($doctype = 'html5')
+    protected function configure()
     {
-        $this->extraCodeLanguageIdentifiers = join('|', $this->extraCodeLanguageIdentifiers);
-        parent::__construct($doctype);
+        $this->extraCodeLanguageIdentifiers = implode('|', $this->extraCodeLanguageIdentifiers);
+
+        $this
+            ->setDocumentType('html5')
+            ->setRestricted(true)
+            ->setLite(false)
+            ->setImages(false)
+            ->setLinkRelationShip('nofollow');
     }
 
     /**
      * {@inheritdoc}
      */
 
-    public function textileRestricted($text, $lite = true, $noimage = true, $rel = 'nofollow')
+    public function parse($text)
     {
-        $text = parent::textileRestricted($text, $lite, $noimage, $rel);
+        $text = parent::parse($text);
         $text = $this->extraCodeLanguageHinting($text);
         return $text;
     }
