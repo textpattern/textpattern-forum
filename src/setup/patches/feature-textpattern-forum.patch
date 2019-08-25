@@ -2243,7 +2243,7 @@ index 2607a219..6f49847a 100644
 +		$page_head['prev'] = '<link rel="prev" href="https://forum.textpattern.com/viewforum.php?id='.$id.($p == 2 ? '' : '&amp;p='.($p - 1)).'" title="'.sprintf($lang_common['Page'], $p - 1).'">';
  	if ($p < $num_pages)
 -		$page_head['next'] = '<link rel="next" href="viewforum.php?id='.$id.'&amp;p='.($p + 1).'" title="'.sprintf($lang_common['Page'], $p + 1).'" />';
-++		$page_head['next'] = '<link rel="next" href="https://forum.textpattern.com/viewforum.php?id='.$id.'&amp;p='.($p + 1).'" title="'.sprintf($lang_common['Page'], $p + 1).'">';
++		$page_head['next'] = '<link rel="next" href="https://forum.textpattern.com/viewforum.php?id='.$id.'&amp;p='.($p + 1).'" title="'.sprintf($lang_common['Page'], $p + 1).'">';
  }
  
  if ($pun_config['o_feed_type'] == '1')
