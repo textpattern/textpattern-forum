@@ -36,7 +36,7 @@ require('prismjs/components/prism-yaml');
 
     // Syntax highlighting, via 'Prism'.
     // Applies syntax highlighting to `code` HTML elements.
-    // More info - http://prismjs.com.
+    // More info - https://prismjs.com.
 
     if (code.length) {
         var elems = document.querySelectorAll('.language-txp');

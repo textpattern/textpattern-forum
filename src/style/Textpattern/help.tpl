@@ -78,7 +78,7 @@
                     <p>Supported language identifiers include: <code>apacheconf</code>, <code>bash</code> (or <code>shell</code>), <code>clike</code>, <code>coffeescript</code>, <code>css</code>, <code>git</code>, <code>haml</code>, <code>javascript</code> (or <code>js</code>), <code>json</code>, <code>less</code>, <code>markup</code> (or <code>html</code>), <code>markdown</code>, <code>nginx</code>, <code>perl</code>, <code>php</code>, <code>ruby</code>, <code>sass</code>, <code>scss</code>, <code>sql</code>, <code>stylus</code>, <code>textile</code>, <code>txp</code> and <code>yaml</code>.</p>
                     <h5>Embedding media</h5>
                     <p>You can embed media to your posts from third party services to linking to the resource using normal Textile link syntax.</p>
-                    <pre class="prism"><code class="language-textile">"$":http://www.youtube.com/watch?v=BKQ6nINAeq8
+                    <pre class="prism"><code class="language-textile">"$":https://www.youtube.com/watch?v=BKQ6nINAeq8
 "$":https://twitter.com/textpattern/status/386111138699935744</code></pre>
                     <p>A link to a supported service becomes an embedded object if it is in its own paragraph. Links within text will stay as normal text links to avoid disturbing reading and text flow. We currently support embedding content from <a href="https://www.youtube.com">YouTube</a> and <a href="https://twitter.com">Twitter</a>.</p>
                     <h3 id="forum-help-undeliverable-mail">Why can’t I create a forum account or receive forum emails?</h3>

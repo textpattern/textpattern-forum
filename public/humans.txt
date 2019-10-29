@@ -18,7 +18,7 @@
     FluxBB: https://fluxbb.org/
     PHP-Textile: https://github.com/textile/php-textile
     jQuery: https://jquery.com/
-    Prism: http://prismjs.com/
+    Prism: https://prismjs.com/
   Software:
     Node.js: https://nodejs.org/
     Grunt.js: https://gruntjs.com/
