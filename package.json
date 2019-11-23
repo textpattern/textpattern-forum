@@ -10,7 +10,7 @@
   },
   "devDependencies": {
     "@babel/core": "7.7.4",
-    "@babel/preset-env": "7.7.1",
+    "@babel/preset-env": "7.7.4",
     "autoprefixer": "9.7.2",
     "babelify": "10.0.0",
     "css-mqpacker": "7.0.0",
