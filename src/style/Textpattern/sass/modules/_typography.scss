@@ -98,6 +98,15 @@ address {
 }
 
 /**
+ * Oxford English quote behaviour (quotes: ‘ ’, quotes within quotes: “ ”).
+ */
+
+q,
+blockquote {
+    quotes: "\2018" "\2019" "\201C" "\201D";
+}
+
+/**
  * Additional styling for blockquotes.
  */
 
@@ -161,9 +170,9 @@ samp {
     background-color: $color-background-box;
     color: $color-text;
     font-family: $font-code;
+    font-feature-settings: normal; /* 1 */
     font-size: $code-font-size;
     line-height: $line-height-mobile;
-    font-feature-settings: normal; /* 1 */
 }
 
 @include dark-mode {
@@ -187,16 +196,16 @@ samp {
  * Additional stylng for preformatted text/code.
  *
  * 1. Truncate deep code boxes.
- * 2. Don't wrap long words.
- * 3. Contain overflow in all browsers.
+ * 2. Contain overflow in all browsers.
+ * 3. Don't wrap long words.
  * 4. Set tab size to 4 spaces.
  */
 
 pre {
     max-height: 50vh; /* 1 */
     padding: 0.5714286em 1.1428571em; // 8px / 14px + 16px / 14px
-    word-wrap: normal; /* 2 */
-    overflow-x: auto; /* 3 */
+    overflow-x: auto; /* 2 */
+    word-wrap: normal; /* 3 */
     tab-size: 4; /* 4 */
 
     code {
@@ -204,11 +213,11 @@ pre {
         border: 0;
         background-color: transparent;
         font-size: 1em; // 14px
-        white-space: pre;
-        word-spacing: normal;
-        word-break: normal;
-        word-wrap: normal;
         hyphens: none;
+        word-wrap: normal;
+        word-break: normal;
+        word-spacing: normal;
+        white-space: pre;
     }
 }
 
@@ -217,8 +226,7 @@ pre {
  */
 
 sub,
-// override Textile class
-sup.footnote,
+sup.footnote, // override Textile class
 sup {
     position: relative;
     font-size: 0.75em; // 12px / 16px
@@ -251,11 +259,11 @@ tfoot,
  */
 
 hr {
+    box-sizing: content-box; /* 2 */
     height: 0;
+    overflow: visible; /* 1 */
     border: 0; // remove the default `hr` border
     border-bottom: 1px solid $color-border;
-    overflow: visible; /* 1 */
-    box-sizing: content-box; /* 2 */
 }
 
 @include dark-mode {

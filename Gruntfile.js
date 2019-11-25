@@ -149,7 +149,6 @@ module.exports = function (grunt)
             options: {
                 processors: [
                     require('autoprefixer'),
-                    require("css-mqpacker"),
                     require('cssnano')
                 ]
             },
@@ -204,12 +203,12 @@ module.exports = function (grunt)
             }
         },
 
-        // Validate Sass files via sass-lint.
-        sasslint: {
+        // Validate CSS files via stylelint.
+        stylelint: {
             options: {
-                configFile: '.sass-lint.yml'
+                configFile: '.stylelintrc.yml'
             },
-            target: ['<%= paths.src.sass %>**/*.scss']
+            src: ['<%= paths.src.sass %>**/*.{css,scss}']
         },
 
         // Run forum setup and postsetup scripts.
@@ -273,7 +272,7 @@ module.exports = function (grunt)
     grunt.registerTask('build', ['clean', 'concurrent', 'uglify']);
     grunt.registerTask('default', ['watch']);
     grunt.registerTask('postsetup', ['shell:postsetup']);
-    grunt.registerTask('css', ['sasslint', 'sass', 'postcss']);
+    grunt.registerTask('css', ['stylelint', 'sass', 'postcss']);
     grunt.registerTask('setup', ['shell:setup', 'build']);
     grunt.registerTask('theme', ['copy:theme', 'replace']);
     grunt.registerTask('travis', ['build']);

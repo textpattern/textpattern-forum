@@ -23,7 +23,6 @@
    ========================================================================== */
 
 @media screen {
-
     @import "modules/layout";
     @import "modules/navigation";
     @import "modules/links";
@@ -39,14 +38,12 @@
     @import "modules/misc";
     @import "modules/http-errors";
     @import "modules/icons";
-
     @import "modules/fluxbb/layout";
     @import "modules/fluxbb/layout_admin";
     @import "modules/fluxbb/navigation";
     @import "modules/fluxbb/indicators";
     @import "modules/fluxbb/pagination";
     @import "modules/fluxbb/icons";
-
 }
 
 @import "modules/responsive";
@@ -58,7 +55,5 @@
    ========================================================================== */
 
 @media print {
-
     @import "modules/print";
-
 }

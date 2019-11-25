@@ -20,9 +20,9 @@
         padding: 0.5em 1em;
         border: 1px solid $color-border;
         background-color: $color-background-box;
+        box-shadow: inset 0 -0.125em 0.25em rgba(#666666, 0.2);
         color: $color-text;
         text-decoration: none;
-        box-shadow: inset 0 -0.125em 0.25em rgba(#666666, 0.2);
 
         &:hover {
             border-color: $color-border-extra-dark;
@@ -51,8 +51,8 @@
         a {
             border-color: $dark-color-border-light;
             background-color: $dark-color-background-box;
-            color: $dark-color-text;
             box-shadow: inset 0 -0.125em 0.25em rgba(#000000, 0.2);
+            color: $dark-color-text;
 
             &:hover {
                 border-color: $dark-color-border;
@@ -73,7 +73,7 @@
 }
 
 #brdmenu .isactive a,
-#page-help #navextra1 a {
+#navextra1 a {
     border-bottom-color: $color-background;
     background-color: $color-background;
     box-shadow: none;
@@ -81,7 +81,7 @@
 
 @include dark-mode {
     #brdmenu .isactive a,
-    #page-help #navextra1 a {
+    #navextra1 a {
         border-bottom-color: $dark-color-background;
         background-color: $dark-color-background;
         box-shadow: none;

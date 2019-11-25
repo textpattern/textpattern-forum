@@ -27,6 +27,7 @@ fieldset {
 
 legend {
     display: table; /* 1 */
+    box-sizing: border-box; /* 1 */
     max-width: 100%; /* 1 */
     margin: 0 -1em;
     padding: 0.25em 1em; // 4px / 16px
@@ -35,7 +36,6 @@ legend {
     font-family: $font-serif;
     font-weight: bold;
     white-space: normal; /* 1 */
-    box-sizing: border-box; /* 1 */
 }
 
 @include dark-mode {
@@ -68,6 +68,7 @@ textarea,
 .button,
 .postlink a,
 .subscribelink a {
+    box-sizing: border-box;
     max-width: 100%; /* 1 */
     margin: 0; /* 2 */
     color: $color-text-form;
@@ -75,7 +76,6 @@ textarea,
     font-size: 1rem; /* 3 */
     line-height: 1.375; // 22px / 16px
     vertical-align: baseline;
-    box-sizing: border-box;
 }
 
 @include dark-mode {
@@ -165,13 +165,13 @@ textarea {
 [type="radio"] {
     position: relative;
     bottom: -2px;
+    box-sizing: border-box;
     width: 16px;
     height: 16px;
     padding: 0; /* 1 */
     border: 1px solid $color-border-extra-dark;
     background: $color-background-form;
     appearance: none;
-    box-sizing: border-box;
 
     + label {
         margin: 0 0.5em 0 0; /* 2 */
@@ -215,7 +215,7 @@ textarea {
 [type="checkbox"] {
     &:checked {
         border: 0;
-        background: $color-text-footnote url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23fff' d='M13 2.5l-7 7-2-2-2 2 4 4L15 4.5z'/%3E%3C/svg%3E");
+        background: $color-text-visual-de-emphasis url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23fff' d='M13 2.5l-7 7-2-2-2 2 4 4L15 4.5z'/%3E%3C/svg%3E");
 
         &:hover,
         &:active {
@@ -228,7 +228,7 @@ textarea {
     }
 
     &[disabled]:checked {
-        background: $color-text-footnote url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23fff' d='M13 2.5l-7 7-2-2-2 2 4 4L15 4.5z'/%3E%3C/svg%3E") !important;
+        background: $color-text-visual-de-emphasis url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23fff' d='M13 2.5l-7 7-2-2-2 2 4 4L15 4.5z'/%3E%3C/svg%3E") !important;
     }
 }
 
@@ -257,7 +257,7 @@ textarea {
     border-radius: 100%;
 
     &:checked {
-        border: 5px solid $color-text-footnote;
+        border: 5px solid $color-text-visual-de-emphasis;
 
         &:hover,
         &:active {
@@ -290,15 +290,15 @@ textarea {
  */
 
 [type="file"] {
+    box-sizing: border-box;
     height: auto;
     min-height: 2em; // 32px / 16px
     padding: 0.25em 0.1875em; // 8px / 16px + 3px / 16px
     border: 1px solid $color-border;
     border-radius: 0;
     background: $color-background-form;
-    cursor: pointer;
-    box-sizing: border-box;
     appearance: none;
+    cursor: pointer;
 
     &:hover {
         border-color: $color-border-extra-dark;
@@ -332,9 +332,9 @@ textarea {
     border: 0;
     color: $color-text-button;
     font: inherit;
-    cursor: pointer;
     /* autoprefixer: off */
     appearance: none;
+    cursor: pointer;
 }
 
 ::-ms-browse {
@@ -347,9 +347,9 @@ textarea {
     font-size: 1rem;
     font-weight: normal;
     line-height: inherit;
-    cursor: pointer;
     /* autoprefixer: off */
     appearance: none;
+    cursor: pointer;
 }
 
 /**
@@ -458,10 +458,10 @@ textarea {
 [disabled] optgroup,
 span.disabled {
     border: 1px solid $color-border !important;
+    opacity: 0.33 !important;
     background-color: $color-background-form-disabled !important;
     box-shadow: none !important;
     cursor: default !important; /* 1 */
-    opacity: 0.33 !important;
 }
 
 @include dark-mode {
@@ -471,8 +471,8 @@ span.disabled {
     span.disabled,
     .ui-checkboxradio-disabled {
         border: 1px solid $dark-color-border !important;
-        background-color: $dark-color-background-form-disabled !important;
         opacity: 0.25 !important;
+        background-color: $dark-color-background-form-disabled !important;
     }
 }
 
@@ -529,9 +529,9 @@ textarea {
  */
 
 ::placeholder {
+    opacity: 1;
     color: $color-text-form-placeholder;
     font: inherit; /* 1 */
-    opacity: 1;
 }
 
 @include dark-mode {

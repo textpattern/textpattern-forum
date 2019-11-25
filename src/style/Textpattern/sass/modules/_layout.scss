@@ -152,11 +152,12 @@ noscript {
 
 .search-form {
     position: absolute;
+    z-index: 3;
     top: 0;
     right: 48px;
-    z-index: 3;
 
     // search input field
+
     input[type="search"] {
         width: 34px;
         height: 34px;

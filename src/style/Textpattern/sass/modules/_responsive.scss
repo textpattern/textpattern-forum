@@ -11,15 +11,15 @@
     .layout-container {
         display: flex; // Flexbox fallback for browsers without CSS Grid support.
         display: grid;
+        gap: 0 2em;
+        grid-template-columns: repeat(12, 1fr);
         flex-wrap: wrap; // Flexbox fallback for browsers without CSS Grid support.
         margin: 0 -1em; // Flexbox fallback for browsers without CSS Grid support.
-        grid-template-columns: repeat(12, 1fr);
-        grid-gap: 0 2em;
 
         > * {
+            box-sizing: border-box; // Flexbox fallback.
             min-width: 0; // Fix Firefox `pre` overflow issues.
             padding: 0 1em; // Flexbox fallback.
-            box-sizing: border-box; // Flexbox fallback.
         }
     }
 
@@ -42,18 +42,18 @@
     }
 
     .layout-2col {
-        width: 50%; // Flexbox fallback.
         grid-column: span 6;
+        width: 50%; // Flexbox fallback.
     }
 
     .layout-3col {
-        width: 33.333%; // Flexbox fallback.
         grid-column: span 4;
+        width: 33.333%; // Flexbox fallback.
     }
 
     .layout-3col-2span {
-        width: 66.666%; // Flexbox fallback.
         grid-column: span 8;
+        width: 66.666%; // Flexbox fallback.
     }
 
     // Override Flexbox fallback for browsers with CSS Grid support.
@@ -222,7 +222,6 @@
             padding-left: 31.4285713%;
         }
     }
-
 }
 
 @media screen and (max-width: $breakpoint-2) {
@@ -453,7 +452,7 @@
     }
 
     #brdmenu .isactive a,
-    #page-help #navextra1 a {
+    #navextra1 a {
         border-bottom-color: $color-border;
 
         &:hover {
@@ -463,7 +462,7 @@
 
     @include dark-mode {
         #brdmenu .isactive a,
-        #page-help #navextra1 a {
+        #navextra1 a {
             border-bottom-color: $dark-color-border-light;
 
             &:hover {
@@ -497,7 +496,6 @@
     .footnotes {
         line-height: $line-height-desktop;
     }
-
 }
 
 @media screen and (max-width: $breakpoint-3) {
@@ -509,5 +507,4 @@
     #users2 .tc3 {
         display: none;
     }
-
 }

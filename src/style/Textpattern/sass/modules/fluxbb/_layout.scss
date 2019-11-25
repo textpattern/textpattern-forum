@@ -1,7 +1,7 @@
 .clearer::after {
+    content: "";
     display: table;
     clear: both;
-    content: "";
 }
 
 .clearl {
@@ -77,9 +77,9 @@ thead th {
     border-bottom: 1px solid $color-border;
 
     &::after {
+        content: "";
         display: table;
         clear: both;
-        content: "";
     }
 
     ul {
@@ -112,9 +112,9 @@ thead th {
     background-color: $color-highlight-box;
 
     &::after {
+        content: "";
         display: table;
         clear: both;
-        content: "";
     }
 
     .hd h2 {
@@ -148,7 +148,6 @@ thead th {
 
     li {
         display: inline-block;
-
     }
 }
 
@@ -184,9 +183,9 @@ thead th {
 
 .pagepost {
     &::after {
+        content: "";
         display: table;
         clear: both;
-        content: "";
     }
 
     .pagelink {
@@ -206,11 +205,11 @@ thead th {
    ========================================================================== */
 
 .block2col .blockmenu {
+    box-sizing: border-box;
     margin: 1.75em 0 1em;
     padding: 0 1em;
     border: 1px solid $color-border;
     background-color: $color-background-box;
-    box-sizing: border-box;
 
     h2 {
         font-size: 1.125em; // 18px / 16px
@@ -314,9 +313,9 @@ thead th {
     background-color: $color-background-box;
 
     &::after {
+        content: "";
         display: table;
         clear: both;
-        content: "";
     }
 
     .postleft h2 {
