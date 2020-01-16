@@ -11,7 +11,7 @@
   "devDependencies": {
     "@babel/core": "7.8.0",
     "@babel/preset-env": "7.8.2",
-    "autoprefixer": "9.7.3",
+    "autoprefixer": "9.7.4",
     "babelify": "10.0.0",
     "cssnano": "4.1.10",
     "grunt": "1.0.4",
