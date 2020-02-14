@@ -18,6 +18,7 @@
     <meta itemprop="accessibilityHazard" content="noMotionSimulationHazard">
     <meta itemprop="accessibilityHazard" content="noSoundHazard">
     <meta itemprop="accessibilityAPI" content="ARIA">
+    <a class="a--skip-link" href="#main">Go to main content</a>
     <div class="wrapper">
         <header class="site-header" itemscope itemtype="https://schema.org/Organization">
             <h1 class="masthead" itemprop="name"><a rel="home" itemprop="url" href="https://textpattern.com/" title="Go to the Textpattern homepage">Textpattern CMS</a></h1>
@@ -48,7 +49,7 @@
                 </ul>
             </nav>
         </div>
-        <main aria-label="Main content">
+        <main id="main" aria-label="Main content">
             <div class="container">
                 <h1 class="accessibility">Textpattern CMS support forum</h1>
                 <pun_navlinks>
