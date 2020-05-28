@@ -4,6 +4,7 @@
 [![Known Vulnerabilities](https://snyk.io/test/github/textpattern/textpattern-forum/badge.svg?targetFile=package.json)](https://snyk.io/test/github/textpattern/textpattern-forum?targetFile=package.json)
 [![Dependencies Status](https://david-dm.org/textpattern/textpattern-forum/status.svg)](https://david-dm.org/textpattern/textpattern-forum)
 [![devDependencies Status](https://david-dm.org/textpattern/textpattern-forum/dev-status.svg)](https://david-dm.org/textpattern/textpattern-forum?type=dev)
+[![optionalDependencies Status](https://david-dm.org/textpattern/textpattern-forum/optional-status.svg)](https://david-dm.org/textpattern/textpattern-forum?type=optional)
 
 This repository contains the source code for the [Textpattern support forum](https://forum.textpattern.com/).
 
