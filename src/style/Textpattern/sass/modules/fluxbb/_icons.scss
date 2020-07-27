@@ -88,34 +88,42 @@
     tr:nth-child(6) .icon {
         background-position-x: -540px;
     }
+
+    tr:nth-child(7) .icon {
+        background-position-x: -600px;
+    }
+
+    tr:nth-child(8) .icon {
+        background-position-x: -660px;
+    }
 }
 
 #idx3 tbody {
     tr:nth-child(1) .icon {
-        background-position-x: -600px;
-    }
-
-    tr:nth-child(2) .icon {
-        background-position-x: -660px;
-    }
-
-    tr:nth-child(3) .icon {
         background-position-x: -720px;
     }
 
-    tr:nth-child(4) .icon {
+    tr:nth-child(2) .icon {
         background-position-x: -780px;
     }
 
-    tr:nth-child(5) .icon {
+    tr:nth-child(3) .icon {
         background-position-x: -840px;
     }
 
-    tr:nth-child(6) .icon {
+    tr:nth-child(4) .icon {
         background-position-x: -900px;
     }
 
-    tr:nth-child(7) .icon {
+    tr:nth-child(5) .icon {
         background-position-x: -960px;
+    }
+
+    tr:nth-child(6) .icon {
+        background-position-x: -1020px;
+    }
+
+    tr:nth-child(7) .icon {
+        background-position-x: -1080px;
     }
 }
