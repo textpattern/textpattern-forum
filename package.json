@@ -9,7 +9,7 @@
     "url": "https://github.com/textpattern/textpattern-forum/issues"
   },
   "devDependencies": {
-    "@babel/core": "7.10.5",
+    "@babel/core": "7.11.0",
     "@babel/preset-env": "7.11.0",
     "autoprefixer": "9.8.5",
     "babelify": "10.0.0",
