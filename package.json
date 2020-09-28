@@ -30,7 +30,7 @@
     "grunt-shell": "3.0.1",
     "load-grunt-tasks": "5.1.0",
     "sass": "1.26.11",
-    "stylelint": "13.7.1",
+    "stylelint": "13.7.2",
     "stylelint-order": "4.1.0",
     "stylelint-scss": "3.18.0"
   },
