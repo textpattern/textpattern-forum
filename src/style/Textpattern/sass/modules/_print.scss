@@ -1,17 +1,4 @@
 /**
- * Remove unnecessary global styling from printed media.
- */
-
-*,
-*::before,
-*::after {
-    background: transparent !important;
-    box-shadow: none !important;
-    color: $color-text-print !important;
-    text-shadow: none !important;
-}
-
-/**
  * Use a print-friendly font size.
  */
 
@@ -27,6 +14,7 @@ html {
 body {
     margin: 0.5cm;
     padding: 2em 5em;
+    color: $color-text-print;
     font-family: $font-print;
 }
 
@@ -187,7 +175,7 @@ pre {
     margin-bottom: 8pt;
     padding: 8pt;
     border: 1pt solid $color-text-print;
-    white-space: pre-wrap !important; /* 1 */
+    white-space: pre-wrap; /* 1 */
 }
 
 /**
