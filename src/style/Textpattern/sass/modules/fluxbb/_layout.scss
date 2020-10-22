@@ -25,7 +25,8 @@
 #navrules,
 .textpattern-fluxbb-t,
 .postlinksb .postlink,
-#brdfooternav {
+#brdfooternav ,
+.usernamefield {
     display: none !important;
 }
 
@@ -559,12 +560,4 @@ thead th {
     dd {
         margin: 0;
     }
-}
-
-
-/* Extra stylimng for spambarrier mod
-   ========================================================================== */
-
-.usernamefield {
-    display: none !important;
 }
