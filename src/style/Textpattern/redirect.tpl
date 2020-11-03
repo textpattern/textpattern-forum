@@ -7,9 +7,10 @@
     <link rel="preload" href="https://textpattern.com/assets/fonts/pt-serif-v11-latin-ext-700.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="style/Textpattern/css/style.@@timestamp.css">
     <link rel="manifest" href="/site.webmanifest">
-    <meta name="application-name" content="Textpattern Forum">
     <link rel="icon" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" sizes="16x16" href="/favicon-16x16.png">
+    <meta name="color-scheme" content="dark light">
+    <meta name="application-name" content="Textpattern Forum">
     <pun_head>
     <link rel="alternate" type="application/rss+xml" href="extern.php?action=feed&amp;order=posted&amp;type=rss" title="RSS new topics feed">
 </head>
@@ -34,6 +35,7 @@
                     <input type="hidden" name="sort_dir" value="DESC">
                     <label class="accessibility" for="q">Search</label>
                     <input id="q" name="keywords" type="search" size="32" placeholder="Search forum…" itemprop="query-input">
+                    <button class="accessibility" type="submit">Submit Search</button>
                 </form>
             </div>
         </header>
