@@ -1,7 +1,6 @@
 # Textpattern support forum
 
 [![Build Status](https://travis-ci.org/textpattern/textpattern-forum.svg)](https://travis-ci.org/textpattern/textpattern-forum)
-[![Known Vulnerabilities](https://snyk.io/test/github/textpattern/textpattern-forum/badge.svg?targetFile=package.json)](https://snyk.io/test/github/textpattern/textpattern-forum?targetFile=package.json)
 
 This repository contains the source code for the [Textpattern support forum](https://forum.textpattern.com/).
 
