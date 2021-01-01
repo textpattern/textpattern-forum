@@ -37,7 +37,7 @@
   },
   "dependencies": {
     "jquery": "3.5.1",
-    "prismjs": "1.22.0",
+    "prismjs": "1.23.0",
     "textpattern-branding": "0.2.12"
   },
   "browserslist": [
