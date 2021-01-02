@@ -1,6 +1,6 @@
 # Textpattern support forum
 
-[![Build Status](https://travis-ci.org/textpattern/textpattern-forum.svg)](https://travis-ci.org/textpattern/textpattern-forum)
+[![Build Status](https://travis-ci.com/textpattern/textpattern-forum.svg)](https://travis-ci.com/textpattern/textpattern-forum)
 
 This repository contains the source code for the [Textpattern support forum](https://forum.textpattern.com/).
 
