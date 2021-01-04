@@ -8,7 +8,7 @@
  */
 
 /*
- * Copyright (C) 2019 Team Textpattern
+ * Copyright (C) 2021 Team Textpattern
  *
  * Permission is hereby granted, free of charge, to any person obtaining a
  * copy of this software and associated documentation files (the "Software"),
