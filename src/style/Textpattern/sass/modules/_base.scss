@@ -18,19 +18,3 @@ input,
 button {
     touch-action: manipulation;
 }
-
-
-/* Clearfix
-   ========================================================================== */
-
-header,
-footer,
-nav ul,
-nav ol,
-.clearfix {
-    &::after {
-        content: "";
-        display: table;
-        clear: both;
-    }
-}
