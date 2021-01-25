@@ -1,3 +1,5 @@
+@use "../setup";
+
 /* Lists
    ========================================================================== */
 
@@ -27,13 +29,7 @@ li {
  */
 
 li::marker {
-    color: $color-text-form;
-}
-
-@include dark-mode {
-    li::marker {
-        color: $dark-color-text-heading;
-    }
+    color: var(--clr-text-promoted);
 }
 
 /**
@@ -49,11 +45,6 @@ dd {
  */
 
 dt {
+    color: var(--clr-text-promoted);
     font-weight: bolder;
-}
-
-@include dark-mode {
-    dt {
-        color: $dark-color-text-heading;
-    }
 }

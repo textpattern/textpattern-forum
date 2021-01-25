@@ -1,3 +1,5 @@
+@use "../setup";
+
 /* Alert messages
    ========================================================================== */
 
@@ -13,37 +15,19 @@
  */
 
 .success {
-    color: $color-success-text;
+    color: var(--clr-success-text);
 }
 
 .warning {
-    color: $color-warning-text;
+    color: var(--clr-warning-text);
 }
 
 .error {
-    color: $color-error-text;
+    color: var(--clr-error-text);
 }
 
 .information {
-    color: $color-info-text;
-}
-
-@include dark-mode {
-    .success {
-        color: $dark-color-success-text;
-    }
-
-    .warning {
-        color: $dark-color-warning-text;
-    }
-
-    .error {
-        color: $dark-color-error-text;
-    }
-
-    .information {
-        color: $dark-color-info-text;
-    }
+    color: var(--clr-info-text);
 }
 
 /**
@@ -60,50 +44,27 @@
 .alert-block {
     padding: 0.5em 1em;
     border: 1px solid;
-    border-radius: $border-radius / 2;
+    border-radius: setup.$border-radius / 2;
     word-wrap: break-word; /* 1 */
 
     &.success {
-        border-color: $color-success-border;
-        background: $color-success-background;
+        border-color: var(--clr-success-brdr);
+        background: var(--clr-success-bkgd);
     }
 
     &.warning {
-        border-color: $color-warning-border;
-        background: $color-warning-background;
+        border-color: var(--clr-warning-brdr);
+        background: var(--clr-warning-bkgd);
     }
 
     &.error {
-        border-color: $color-error-border;
-        background: $color-error-background;
+        border-color: var(--clr-error-brdr);
+        background: var(--clr-error-bkgd);
     }
 
     &.information {
-        border-color: $color-info-border;
-        background: $color-info-background;
+        border-color: var(--clr-info-brdr);
+        background: var(--clr-info-bkgd);
     }
 }
 
-@include dark-mode {
-    .alert-block {
-        &.success {
-            border-color: $dark-color-success-border;
-            background: $dark-color-success-background;
-        }
-
-        &.warning {
-            border-color: $dark-color-warning-border;
-            background: $dark-color-warning-background;
-        }
-
-        &.error {
-            border-color: $dark-color-error-border;
-            background: $dark-color-error-background;
-        }
-
-        &.information {
-            border-color: $dark-color-info-border;
-            background: $dark-color-info-background;
-        }
-    }
-}

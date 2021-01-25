@@ -1,3 +1,5 @@
+@use "../../setup";
+
 /* Forum pagination links
    ========================================================================== */
 
@@ -12,15 +14,15 @@
     }
 
     strong {
-        background: $color-text;
-        color: $color-text-white-out;
+        background: var(--clr-text);
+        color: var(--clr-text-white-enforced);
         font-weight: normal;
         cursor: default;
     }
 }
 
-@include dark-mode {
+@include setup.dark-mode {
     .pagelink strong {
-        background: $dark-color-background-form;
+        background: var(--clr-bkgd-form);
     }
 }

@@ -1,3 +1,5 @@
+@use "../../setup";
+
 /* Forum icons
    ========================================================================== */
 
@@ -36,7 +38,7 @@
     }
 }
 
-@include dark-mode {
+@include setup.dark-mode {
     #page-index .icon {
         background-image: url("../img/dark-forum-icons.png");
 

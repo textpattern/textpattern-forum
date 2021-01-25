@@ -1,3 +1,5 @@
+@use "../setup";
+
 /* Embedded content
    ========================================================================== */
 
@@ -21,11 +23,14 @@ img {
 
 /**
  * Make embedded videos responsive.
+ *
+ * TODO: use `aspect-ratio: var(--aspect-ratio, 16 / 9);` when browser support
+ * is better.
  */
 
 .embed-video {
     position: relative;
-    padding-top: 56.25%;
+    padding-top: 56.25%; // TODO: see comment above.
 
     iframe {
         position: absolute;

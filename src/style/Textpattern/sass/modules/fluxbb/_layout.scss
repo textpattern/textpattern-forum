@@ -1,3 +1,5 @@
+@use "../../setup";
+
 .clearer::after {
     content: "";
     display: table;
@@ -75,7 +77,7 @@ thead th {
    ========================================================================== */
 
 #brdwelcome {
-    border-bottom: 1px solid $color-border;
+    border-bottom: 1px solid var(--clr-brdr);
 
     &::after {
         content: "";
@@ -97,9 +99,9 @@ thead th {
     }
 }
 
-@include dark-mode {
+@include setup.dark-mode {
     #brdwelcome {
-        border-bottom-color: $dark-color-border-light;
+        border-bottom-color: var(--clr-brdr-lite);
     }
 }
 
@@ -109,8 +111,8 @@ thead th {
 
 #announce {
     padding: 1px 0;
-    border-bottom: 1px solid $color-border;
-    background-color: $color-highlight-box;
+    border-bottom: 1px solid var(--clr-brdr);
+    background-color: var(--clr-hilite-box);
 
     &::after {
         content: "";
@@ -121,8 +123,8 @@ thead th {
     .hd h2 {
         margin: 0.5em 1em 0 0;
         float: left;
-        font-size: $base-font-size;
-        line-height: $line-height-desktop;
+        font-size: setup.$base-font-size;
+        line-height: setup.$line-height-desktop;
         text-transform: uppercase;
     }
 
@@ -132,10 +134,9 @@ thead th {
     }
 }
 
-@include dark-mode {
+@include setup.dark-mode {
     #announce {
-        border-bottom-color: $dark-color-border-light;
-        background-color: $dark-color-highlight-box;
+        border-bottom-color: var(--clr-brdr-lite);
     }
 }
 
@@ -158,13 +159,13 @@ thead th {
         margin-bottom: 0.5em;
 
         strong {
-            font-family: $font-serif;
+            font-family: var(--var-font-serif);
             font-size: 1.75em; // 28px / 16px
             line-height: 1.25; // 35px / 30px
 
             a {
-                color: $color-text;
-                text-decoration-color: rgba($color-text, 0.5);  /* 4 */
+                color: var(--clr-text-promoted);
+                text-decoration-color: rgba(var(--clr-text-promoted), 0.5);  /* 4 */
             }
         }
     }
@@ -172,13 +173,6 @@ thead th {
     li:first-child,
     span {
         display: none;
-    }
-}
-
-@include dark-mode {
-    .linkst .crumbs li strong a {
-        color: $dark-color-text-heading;
-        text-decoration-color: rgba($dark-color-text-heading, 0.5);  /* 4 */
     }
 }
 
@@ -209,8 +203,8 @@ thead th {
     box-sizing: border-box;
     margin: 1.75em 0 1em;
     padding: 0 1em;
-    border: 1px solid $color-border;
-    background-color: $color-background-box;
+    border: 1px solid var(--clr-brdr);
+    background-color: var(--clr-bkgd-box);
 
     h2 {
         font-size: 1.125em; // 18px / 16px
@@ -220,13 +214,6 @@ thead th {
     ul {
         padding: 0;
         list-style: none;
-    }
-}
-
-@include dark-mode {
-    .block2col .blockmenu {
-        border-color: $dark-color-border;
-        background-color: $dark-color-background-box;
     }
 }
 
@@ -280,7 +267,7 @@ thead th {
 
         .newtext {
             display: inline-block;
-            font-family: $font-sans-serif;
+            font-family: var(--var-font-sans-serif);
             font-size: 0.65em;
             font-weight: normal;
         }
@@ -310,8 +297,8 @@ thead th {
 
 .blockpost {
     margin: 1em 0;
-    border: 1px solid $color-border;
-    background-color: $color-background-box;
+    border: 1px solid var(--clr-brdr);
+    background-color: var(--clr-bkgd-box);
 
     &::after {
         content: "";
@@ -321,24 +308,19 @@ thead th {
 
     .postleft h2 {
         margin: 1em;
-        font-family: $font-sans-serif;
+        font-family: var(--var-font-sans-serif);
         font-size: 1em;
 
         .conr {
-            color: $color-info-text;
+            color: var(--clr-info-text);
             font-weight: normal;
         }
     }
 }
 
-@include dark-mode {
+@include setup.dark-mode {
     .blockpost {
-        border-color: $dark-color-border-light;
-        background-color: $dark-color-background-box;
-
-        .postleft h2 .conr {
-            color: $dark-color-info-text;
-        }
+        border-color: var(--clr-brdr-lite);
     }
 }
 
@@ -356,24 +338,18 @@ thead th {
     }
 
     dt {
-        font-family: $font-serif;
+        font-family: var(--var-font-serif);
         font-size: 1.125em; // 18px / 16px
         font-style: normal;
         line-height: 1.4444444; // 26px / 18px
 
         a {
-            color: $color-text;
+            color: var(--clr-text-promoted);
         }
     }
 
     dd {
         margin: 0;
-    }
-}
-
-@include dark-mode {
-    .postleft dt a {
-        color: $dark-color-text-heading;
     }
 }
 
@@ -399,17 +375,11 @@ thead th {
     width: 63%;
     padding: 0 2.8%;
     float: right;
-    background-color: $color-background;
+    background-color: var(--clr-bkgd);
     word-wrap: break-word;
 
     > h3 {
         display: none;
-    }
-}
-
-@include dark-mode {
-    .postright {
-        background-color: $dark-color-background;
     }
 }
 
@@ -430,14 +400,8 @@ thead th {
     }
 
     strong {
-        color: $color-success-text;
+        color: var(--clr-success-text);
         font-weight: normal;
-    }
-}
-
-@include dark-mode {
-    .postfootleft strong {
-        color: $dark-color-success-text;
     }
 }
 
@@ -475,8 +439,8 @@ thead th {
 
 #quickpost {
     margin: 0.5em 0 1em;
-    border: 1px solid $color-border;
-    background-color: tint($color-highlight-box, 28%);
+    border: 1px solid var(--clr-brdr);
+    background-color: hsl(48, 100%, 96%);
 
     fieldset {
         border: 0;
@@ -486,7 +450,7 @@ thead th {
         margin: 1em 0 0;
         padding: 0;
         border: 0;
-        background-color: tint($color-highlight-box, 28%);
+        background-color: hsl(48, 100%, 96%);
         font-size: 1.125em; // 18px / 16px
         line-height: 1.4444444; // 26px / 18px
     }
@@ -496,13 +460,13 @@ thead th {
     }
 }
 
-@include dark-mode {
+@include setup.dark-mode {
     #quickpost {
-        border-color: $dark-color-border-light;
-        background-color: shade($dark-color-highlight-box, 15%);
+        border-color: var(--clr-brdr-lite);
+        background-color: hsl(48, 20%, 26%);
 
         legend {
-            background-color: shade($dark-color-highlight-box, 15%);
+            background-color: hsl(48, 20%, 26%);
         }
     }
 }

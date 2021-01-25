@@ -1,12 +1,14 @@
+@use "../setup";
+
 /* Buttons
    ========================================================================== */
 
 /**
- * Remove the inheritance of text transform in Edge, Firefox, and IE 11.
+ * 1. Correct `button` style inheritance in Firefox and Opera.
  */
 
 button {
-    text-transform: none;
+    text-transform: none; /* 1 */
 }
 
 /**
@@ -34,42 +36,43 @@ button,
 .button,
 .postlink a,
 .subscribelink a {
-    @include gradient-linear($color-button-gradient-from, $color-button-gradient-to);
+    @include setup.gradient-linear(var(--clr-btn-grad-from), var(--clr-btn-grad-to));
 
     display: inline-block;
     position: relative;
     width: auto;
-    height: 2em; // 32px / 16px
+    height: auto;
     padding: 0.25em 1em; // 4px / 16px
-    border: 1px solid $color-button-border;
+    border: 1px solid var(--clr-btn-brdr);
     border-radius: 1em;
     background-clip: padding-box;
-    box-shadow: 0 2px 0 $color-button-shadow;
-    color: $color-text-button;
+    box-shadow: 0 2px 0 var(--clr-btn-shadow);
+    color: var(--clr-text-btn);
     font-weight: normal;
     text-align: center;
     appearance: none; /* 2 */
     cursor: pointer; /* 1 */
     user-select: none;
 
-    &:hover {
-        @include gradient-linear(lighten($color-button-gradient-from, 4%), lighten($color-button-gradient-to, 4%));
-
-        border-color: shade($color-button-border, 15%);
-        color: $color-text-button-hover;
+    &:hover,
+    &:active {
+        border-color: var(--clr-btn-brdr-interact);
+        color: var(--clr-text-btn-interact);
         text-decoration: none;
+    }
+
+    &:hover {
+        filter: brightness(1.05);
     }
 
     &:active {
         top: 2px;
-        border-color: shade($color-button-border, 15%);
         box-shadow: none;
-        color: $color-text-button-active;
-        text-decoration: none;
+        filter: brightness(0.95);
     }
 
     &:focus {
-        border-color: $color-link-focus;
+        border-color: var(--clr-focus);
         outline: 2px solid transparent; // Allows for repainting in high contrast modes.
     }
 }
@@ -85,40 +88,23 @@ button,
 .button-primary,
 .postlink a,
 .blockform [name="submit"] {
-    @include gradient-linear($color-button-primary-gradient-from, $color-button-primary-gradient-to);
+    @include setup.gradient-linear(var(--clr-btn-primary-grad-from), var(--clr-btn-primary-grad-to));
 
-    border-color: $color-button-primary-border;
-    box-shadow: 0 2px 0 $color-button-primary-shadow;
+    border-color: var(--clr-btn-primary-brdr);
+    box-shadow: 0 2px 0 var(--clr-btn-primary-shadow);
     font-weight: bolder;
 
-    &:hover {
-        @include gradient-linear(lighten($color-button-primary-gradient-from, 6%), lighten($color-button-primary-gradient-to, 6%));
-
-        border-color: shade($color-button-primary-border, 15%);
+    &:hover,
+    &:active {
+        border-color: var(--clr-btn-primary-brdr-interact);
     }
 
     &:active {
-        border-color: shade($color-button-primary-border, 15%);
         box-shadow: none;
     }
 
     &:focus {
-        border-color: $color-link-focus;
-    }
-}
-
-@include dark-mode {
-    button,
-    [type="button"],
-    [type="reset"],
-    [type="submit"],
-    .button,
-    .postlink a,
-    .subscribelink a,
-    .button-primary {
-        &:focus {
-            border-color: $dark-color-link-focus;
-        }
+        border-color: var(--clr-focus);
     }
 }
 
@@ -136,5 +122,5 @@ button[disabled],
 [type="submit"][disabled],
 .button.disabled {
     top: 0 !important;
-    background: $color-background-form-disabled !important;
+    background: var(--clr-btn-bkgd-disabled) !important;
 }

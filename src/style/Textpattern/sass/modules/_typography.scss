@@ -1,16 +1,17 @@
+@use "../setup";
+
 /* Typography
    ========================================================================== */
 
 /**
  * Establish baseline.
  *
- * 1. Prevent adjustments of font size after orientation changes in
- *    IE on Windows Phone and in iOS.
+ * 1. Prevent adjustments of font size after orientation changes in iOS.
  */
 
 html {
-    font-size: $base-font-size;
-    line-height: $line-height-mobile;
+    font-size: setup.$base-font-size;
+    line-height: setup.$line-height-mobile;
     text-size-adjust: 100%; /* 1 */
 }
 
@@ -21,7 +22,7 @@ html {
  */
 
 body {
-    font-family: $font-sans-serif;
+    font-family: var(--font-sans-serif);
     font-feature-settings: "liga"; /* 1 */
 }
 
@@ -36,7 +37,18 @@ h4,
 h5,
 h6 {
     clear: both;
-    font-family: $font-serif;
+    font-family: var(--font-serif);
+}
+
+main {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6, {
+        color: var(--clr-text-promoted);
+    }
 }
 
 h1,
@@ -73,18 +85,7 @@ h5,
 h6 {
     margin: 1em 0; // 16px
     font-size: 1rem;
-    line-height: $line-height-mobile;
-}
-
-@include dark-mode {
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        color: $dark-color-text-heading;
-    }
+    line-height: setup.$line-height-mobile;
 }
 
 /**
@@ -120,21 +121,14 @@ blockquote {
 blockquote {
     margin: 1em 0;
     padding: 1px 1em 1px 1.5em;
-    border-left: 0.25em solid $color-highlight;
-    border-radius: 0 $border-radius $border-radius 0;
-    background-color: $color-highlight-box;
-}
-
-@include dark-mode {
-    blockquote {
-        border-left-color: $dark-color-highlight;
-        background-color: $dark-color-highlight-box;
-    }
+    border-left: 0.25em solid var(--clr-hilite);
+    border-radius: 0 setup.$border-radius setup.$border-radius 0;
+    background-color: var(--clr-hilite-box);
 }
 
 /**
  * 1. Remove the bottom border in Chrome 57+.
- * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ * 2. Add the correct text decoration in Chrome, Edge, Opera, and Safari.
  */
 
 abbr[title] {
@@ -149,17 +143,9 @@ abbr[title] {
 mark,
 var {
     padding: 0 0.25em; // 0 4px
-    border-radius: $border-radius / 2;
-    background: $color-selected;
-    color: $color-text;
-}
-
-@include dark-mode {
-    mark,
-    var {
-        background-color: $dark-color-selected;
-        color: $dark-color-text;
-    }
+    border-radius: setup.$border-radius / 2;
+    background: var(--clr-hilite-box);
+    color: var(--clr-text);
 }
 
 /**
@@ -172,25 +158,14 @@ pre,
 code,
 kbd,
 samp {
-    border: 1px solid $color-border-extra-light;
+    border: 1px solid var(--clr-brdr-x-lite);
     border-radius: 0.2857143em; // 4px / 14px
-    background-color: $color-background-box;
-    color: $color-text;
-    font-family: $font-code;
+    background-color: var(--clr-bkgd-box);
+    color: var(--clr-text);
+    font-family: var(--font-monospaced);
     font-feature-settings: normal; /* 1 */
-    font-size: $code-font-size;
-    line-height: $line-height-mobile;
-}
-
-@include dark-mode {
-    pre,
-    code,
-    kbd,
-    samp {
-        border-color: $dark-color-border-extra-light;
-        background-color: $dark-color-background-box;
-        color: $dark-color-text;
-    }
+    font-size: setup.$code-font-size;
+    line-height: setup.$line-height-mobile;
 }
 
 code,
@@ -256,8 +231,8 @@ sub {
 small,
 tfoot,
 .footnote {
-    font-size: $small-font-size;
-    line-height: $line-height-mobile;
+    font-size: setup.$small-font-size;
+    line-height: setup.$line-height-mobile;
 }
 
 /**
@@ -270,11 +245,5 @@ hr {
     height: 0;
     overflow: visible; /* 1 */
     border: 0; // remove the default `hr` border
-    border-bottom: 1px solid $color-border;
-}
-
-@include dark-mode {
-    hr {
-        border-bottom-color: $dark-color-border;
-    }
+    border-bottom: 1px solid var(--clr-brdr);
 }

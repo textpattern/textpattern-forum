@@ -1,3 +1,5 @@
+@use "../setup";
+
 /* Forms
    ========================================================================== */
 
@@ -10,13 +12,7 @@ fieldset {
     min-width: 0; /* 1 */
     margin: 1em 0; /* 2 */
     padding: 1px 1em; /* 2 */
-    border: 1px solid $color-border; /* 2 */
-}
-
-@include dark-mode {
-    fieldset {
-        border-color: $dark-color-border;
-    }
+    border: 1px solid var(--clr-brdr); /* 2 */
 }
 
 /**
@@ -31,27 +27,20 @@ legend {
     max-width: 100%; /* 1 */
     margin: 0 -1em;
     padding: 0.25em 1em; // 4px / 16px
-    border: 1px solid $color-border;
-    background-color: $color-background-box;
-    font-family: $font-serif;
+    border: 1px solid var(--clr-brdr);
+    background-color: var(--clr-bkgd-box);
+    font-family: var(--font-serif);
     font-weight: bold;
     white-space: normal; /* 1 */
 }
 
-@include dark-mode {
-    legend {
-        border-color: $dark-color-border;
-        background-color: $dark-color-background-box;
-    }
-}
-
 /**
- * Show the overflow in Edge.
+ * Remove tap delay in modern browsers.
  */
 
-button,
-input {
-    overflow: visible;
+input,
+button {
+    touch-action: manipulation;
 }
 
 /**
@@ -71,20 +60,11 @@ textarea,
     box-sizing: border-box;
     max-width: 100%; /* 1 */
     margin: 0; /* 2 */
-    color: $color-text-form;
-    font-family: $font-form;
+    color: var(--clr-text-form);
+    font-family: var(--font-sans-serif);
     font-size: 1rem; /* 3 */
     line-height: 1.375; // 22px / 16px
     vertical-align: baseline;
-}
-
-@include dark-mode {
-    input,
-    select,
-    optgroup,
-    textarea {
-        color: $dark-color-text-form;
-    }
 }
 
 /**
@@ -111,22 +91,22 @@ select,
 textarea {
     height: 2em; // 32px / 16px
     padding: 0.25em 0.1875em; // 8px / 16px + 3px / 16px
-    border: 1px solid $color-border;
+    border: 1px solid var(--clr-brdr);
     border-radius: 0;
-    background: $color-background-form;
+    background: var(--clr-bkgd-form);
     appearance: none; /* 1 */
 
     &:hover {
-        border-color: $color-border-extra-dark;
+        border-color: var(--clr-brdr-x-dark);
     }
 
     &:focus {
-        border-color: $color-link-focus;
+        border-color: var(--clr-focus);
         outline: 2px solid transparent; // Allows for repainting in high contrast modes.
     }
 }
 
-@include dark-mode {
+@include setup.dark-mode {
     [type="color"],
     [type="date"],
     [type="datetime"],
@@ -143,15 +123,14 @@ textarea {
     [type="week"],
     select,
     textarea {
-        border-color: $dark-color-border-extra-dark;
-        background-color: $dark-color-background-form;
+        border-color: var(--clr-brdr-x-dark);
 
         &:hover {
-            border-color: $dark-color-border-extra-light;
+            border-color: var(--clr-brdr-x-lite);
         }
 
         &:focus {
-            border-color: $dark-color-link-focus;
+            border-color: var(--clr-focus);
         }
     }
 }
@@ -169,8 +148,8 @@ textarea {
     width: 16px;
     height: 16px;
     padding: 0; /* 1 */
-    border: 1px solid $color-border-extra-dark;
-    background: $color-background-form;
+    border: 1px solid var(--clr-brdr-x-dark);
+    background: var(--clr-bkgd-form);
     appearance: none;
 
     + label {
@@ -182,12 +161,16 @@ textarea {
     }
 
     &:hover {
-        border-color: shade($color-border-extra-dark, 15%);
+        filter: brightness(1.05);
         cursor: pointer;
     }
 
+    &:active {
+        filter: brightness(0.95);
+    }
+
     &:focus {
-        border-color: $color-link-focus;
+        border-color: var(--clr-focus);
         outline: 2px solid transparent; // Allows for repainting in high contrast modes.
     }
 
@@ -196,18 +179,11 @@ textarea {
     }
 }
 
-@include dark-mode {
+@include setup.dark-mode {
     [type="checkbox"],
     [type="radio"] {
-        border-color: $dark-color-border-extra-dark;
-        background-color: $dark-color-background-form;
-
         &:hover {
-            border-color: $dark-color-border-extra-light;
-        }
-
-        &:focus {
-            border-color: $dark-color-link-focus;
+            border-color: var(--clr-brdr-x-lite);
         }
     }
 }
@@ -215,40 +191,40 @@ textarea {
 [type="checkbox"] {
     &:checked {
         border: 0;
-        background: $color-text-visual-de-emphasis url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23fff' d='M13 2.5l-7 7-2-2-2 2 4 4L15 4.5z'/%3E%3C/svg%3E");
+        background: var(--clr-text-demoted) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23fff' d='M13 2.5l-7 7-2-2-2 2 4 4L15 4.5z'/%3E%3C/svg%3E");
 
         &:hover,
         &:active {
-            background-color: $color-text;
+            background-color: var(--clr-text);
         }
 
         &:focus {
-            background-color: $color-link-focus;
+            background-color: var(--clr-focus);
         }
     }
 
     &[disabled]:checked {
-        background: $color-text-visual-de-emphasis url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23fff' d='M13 2.5l-7 7-2-2-2 2 4 4L15 4.5z'/%3E%3C/svg%3E");
+        background: var(color-text-visual-de-emphasis) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23fff' d='M13 2.5l-7 7-2-2-2 2 4 4L15 4.5z'/%3E%3C/svg%3E");
     }
 }
 
-@include dark-mode {
+@include setup.dark-mode {
     [type="checkbox"] {
         &:checked {
-            background: $dark-color-text url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23282d32' d='M13 2.5l-7 7-2-2-2 2 4 4L15 4.5z'/%3E%3C/svg%3E");
+            background: var(--clr-text) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23282d32' d='M13 2.5l-7 7-2-2-2 2 4 4L15 4.5z'/%3E%3C/svg%3E");
 
             &:hover,
             &:active {
-                background-color: $dark-color-text-heading;
+                background-color: var(--clr-text-promoted);
             }
 
             &:focus {
-                background-color: $dark-color-link-focus;
+                background-color: var(--clr-focus);
             }
         }
 
         &[disabled]:checked {
-            background: $dark-color-text url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23282d32' d='M13 2.5l-7 7-2-2-2 2 4 4L15 4.5z'/%3E%3C/svg%3E");
+            background: var(--clr-text) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23282d32' d='M13 2.5l-7 7-2-2-2 2 4 4L15 4.5z'/%3E%3C/svg%3E");
         }
     }
 }
@@ -257,30 +233,28 @@ textarea {
     border-radius: 100%;
 
     &:checked {
-        border: 5px solid $color-text-visual-de-emphasis;
+        border: 5px solid var(--clr-text-demoted);
 
         &:hover,
         &:active {
-            border-color: $color-text;
+            border-color: var(--clr-text);
         }
 
         &:focus {
-            border-color: $color-link-focus;
+            border-color: var(--clr-focus);
         }
     }
 }
 
-@include dark-mode {
+@include setup.dark-mode {
     [type="radio"]:checked {
-        border-color: $dark-color-text;
-
         &:hover,
         &:active {
-            border-color: $dark-color-text-heading;
+            border-color: var(--clr-text-promoted);
         }
 
         &:focus {
-            border-color: $dark-color-link-focus;
+            border-color: var(--clr-focus);
         }
     }
 }
@@ -294,71 +268,55 @@ textarea {
     height: auto;
     min-height: 2em; // 32px / 16px
     padding: 0.25em 0.1875em; // 8px / 16px + 3px / 16px
-    border: 1px solid $color-border;
+    border: 1px solid var(--clr-brdr);
     border-radius: 0;
-    background: $color-background-form;
+    background: var(--clr-bkgd-form);
     appearance: none;
     cursor: pointer;
 
     &:hover {
-        border-color: $color-border-extra-dark;
+        border-color: var(--clr-brdr-x-dark);
     }
 
     &:focus {
-        border-color: $color-link-focus;
+        border-color: var(--clr-focus);
         outline: 2px solid transparent; // Allows for repainting in high contrast modes.
     }
 }
 
-@include dark-mode {
+@include setup.dark-mode {
     [type="file"] {
-        border-color: $dark-color-border-extra-dark;
-        background-color: $dark-color-background-form;
+        border-color: var(--clr-brdr-x-dark);
 
         &:hover {
-            border-color: $dark-color-border-extra-light;
+            border-color: var(--clr-brdr-x-lite);
         }
 
         &:focus {
-            border-color: $dark-color-link-focus;
+            border-color: var(--clr-focus);
         }
     }
 }
 
-::-webkit-file-upload-button {
-    @include gradient-linear($color-button-gradient-from, $color-button-gradient-to);
+[type="file"]::-webkit-file-upload-button {
+    @include setup.gradient-linear(var(--clr-btn-grad-from), var(--clr-btn-grad-to));
 
     padding: 0 0.25em;
     border: 0;
-    color: $color-text-button;
+    border-radius: 0.25em;
+    color: var(--clr-text-btn);
     font: inherit;
     /* autoprefixer: off */
     appearance: none;
     cursor: pointer;
 }
 
-::-ms-browse {
-    @include gradient-linear($color-button-gradient-from, $color-button-gradient-to);
-
-    padding: 0 0.25em;
-    border: 0;
-    color: $color-text-button;
-    font-family: inherit;
-    font-size: 1rem;
-    font-weight: normal;
-    line-height: inherit;
-    /* autoprefixer: off */
-    appearance: none;
-    cursor: pointer;
+[type="file"]:hover::-webkit-file-upload-button {
+    filter: brightness(1.05);
 }
 
-/**
- * Correct the cursor style of increment and decrement buttons in Chrome.
- */
-
-[type="number"]::-webkit-inner-spin-button,
-[type="number"]::-webkit-outer-spin-button {
-    height: auto;
+[type="file"]:active::-webkit-file-upload-button {
+    filter: brightness(0.95);
 }
 
 /**
@@ -376,14 +334,13 @@ textarea {
 
 select {
     padding-right: 1.5em; // 24px / 16px
-    background: $color-background-form url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='5' viewBox='0 0 17 5'%3E%3Cpolygon fill='%23333' points='0,0 5,5 10,0'/%3E%3C/svg%3E") right center no-repeat;
+    background: var(--clr-bkgd-form) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='5' viewBox='0 0 17 5'%3E%3Cpolygon fill='%23333' points='0,0 5,5 10,0'/%3E%3C/svg%3E") right center no-repeat;
     background-size: 1.0625em 0.3125em; // 17px / 16px, 5px / 16px
     text-transform: none;
 }
 
-@include dark-mode {
+@include setup.dark-mode {
     select {
-        background-color: $dark-color-background-form;
         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='5' viewBox='0 0 17 5'%3E%3Cpolygon fill='%23788591' points='0,0 5,5 10,0'/%3E%3C/svg%3E");
     }
 }
@@ -399,7 +356,7 @@ select[multiple] {
     background-image: none;
 }
 
-@include dark-mode {
+@include setup.dark-mode {
     select[size],
     select[multiple] {
         background-image: none;
@@ -433,18 +390,16 @@ optgroup {
 }
 
 /**
- * 1. Remove the default vertical scrollbar in IE 11.
- * 2. Remove unwanted space below `textarea` in Safari, Chrome, Opera.
- * 3. Restrict to vertical resizing to prevent layout breakage.
+ * 1. Remove unwanted space below `textarea` in Safari, Chrome, Opera.
+ * 2. Restrict to vertical resizing to prevent layout breakage.
  */
 
 textarea {
     width: 100%;
     height: 25vh;
     min-height: 3em;
-    overflow: auto; /* 1 */
-    vertical-align: top; /* 2 */
-    resize: vertical; /* 3 */
+    vertical-align: top; /* 1 */
+    resize: vertical; /* 2 */
 }
 
 /**
@@ -457,22 +412,19 @@ textarea {
 [disabled] option,
 [disabled] optgroup,
 span.disabled {
-    border: 1px solid $color-border !important;
+    border: 1px solid var(--clr-brdr) !important;
     opacity: 0.33 !important;
-    background-color: $color-background-form-disabled !important;
+    background-color: var(--clr-bkgd-form-disabled) !important;
     box-shadow: none !important;
     cursor: default !important; /* 1 */
 }
 
-@include dark-mode {
+@include setup.dark-mode {
     [disabled],
     [disabled] option,
     [disabled] optgroup,
-    span.disabled,
-    .ui-checkboxradio-disabled {
-        border: 1px solid $dark-color-border !important;
+    span.disabled {
         opacity: 0.25 !important;
-        background-color: $dark-color-background-form-disabled !important;
     }
 }
 
@@ -484,18 +436,8 @@ input,
 select,
 textarea {
     &:focus:invalid {
-        border-color: $color-error-text;
+        border-color: var(--clr-error-text);
         box-shadow: none; // Normalize Firefox styling
-    }
-}
-
-@include dark-mode {
-    input,
-    select,
-    textarea {
-        &:focus:invalid {
-            border-color: $dark-color-error-text;
-        }
     }
 }
 
@@ -507,18 +449,8 @@ input,
 select,
 textarea {
     &:-moz-ui-invalid {
-        border-color: $color-error-text;
+        border-color: var(--clr-error-text);
         box-shadow: none;
-    }
-}
-
-@include dark-mode {
-    input,
-    select,
-    textarea {
-        &:-moz-ui-invalid {
-            border-color: $dark-color-error-text;
-        }
     }
 }
 
@@ -530,12 +462,6 @@ textarea {
 
 ::placeholder {
     opacity: 1;
-    color: $color-text-form-placeholder;
+    color: var(--clr-text-placeholder);
     font: inherit; /* 1 */
-}
-
-@include dark-mode {
-    ::placeholder {
-        color: $dark-color-text-form-placeholder;
-    }
 }

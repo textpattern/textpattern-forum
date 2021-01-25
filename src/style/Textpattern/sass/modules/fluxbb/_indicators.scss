@@ -1,3 +1,5 @@
+@use "../../setup";
+
 /* Forum indicators
    ========================================================================== */
 
@@ -6,13 +8,7 @@
  */
 
 .inew {
-    background-color: $color-highlight-box;
-}
-
-@include dark-mode {
-    .inew {
-        background-color: $dark-color-highlight-box;
-    }
+    background-color: var(--clr-hilite-box);
 }
 
 /**
@@ -37,61 +33,28 @@
 }
 
 .warntext {
-    border-color: $color-warning-border;
-    background: $color-warning-background;
-    color: $color-warning-text;
-}
-
-@include dark-mode {
-    .warntext {
-        border-color: $dark-color-warning-border;
-        background: $dark-color-warning-background;
-        color: $dark-color-warning-text;
-    }
+    border-color: var(--clr-warning-brdr);
+    background: var(--clr-warning-bkgd);
+    color: var(--clr-warning-text);
 }
 
 .stickytext {
-    border-color: $color-success-border;
-    background: $color-success-background;
-    color: $color-success-text;
-}
-
-@include dark-mode {
-    .stickytext {
-        border-color: $dark-color-success-border;
-        background: $dark-color-success-background;
-        color: $dark-color-success-text;
-    }
+    border-color: var(--clr-success-brdr);
+    background: var(--clr-success-bkgd);
+    color: var(--clr-success-text);
 }
 
 .closedtext,
 #page-delete .forminfo p {
-    border-color: $color-error-border;
-    background: $color-error-background;
-    color: $color-error-text;
-}
-
-@include dark-mode {
-    .closedtext,
-    #page-delete .forminfo p {
-        border-color: $dark-color-error-border;
-        background: $dark-color-error-background;
-        color: $dark-color-error-text;
-    }
+    border-color: var(--clr-error-brdr);
+    background: var(--clr-error-bkgd);
+    color: var(--clr-error-text);
 }
 
 .movedtext {
-    border-color: $color-info-border;
-    background: $color-info-background;
-    color: $color-info-text;
-}
-
-@include dark-mode {
-    .movedtext {
-        border-color: $dark-color-info-border;
-        background: $dark-color-info-background;
-        color: $dark-color-info-text;
-    }
+    border-color: var(--clr-info-brdr);
+    background: var(--clr-info-bkgd);
+    color: var(--clr-info-text);
 }
 
 /**
@@ -99,18 +62,12 @@
  */
 
 .ipost {
-    @include hide-text;
+    @include setup.hide-text;
 
     display: inline-block;
     width: 0.75em;
     height: 0.75em;
     margin-right: 0.3333333em;
     border-radius: 50%;
-    background-color: $color-highlight;
-}
-
-@include dark-mode {
-    .ipost {
-        background-color: $dark-color-highlight;
-    }
+    background-color: var(--clr-hilite);
 }
