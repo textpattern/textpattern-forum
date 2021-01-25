@@ -47,10 +47,8 @@ class Parser extends Textile
     private $extraCodeLanguageIdentifiers = array(
         'apacheconf',
         'clike',
-        'coffeescript',
         'css',
         'git',
-        'haml',
         'html',
         'javascript',
         'js',
@@ -61,14 +59,12 @@ class Parser extends Textile
         'nginx',
         'perl',
         'php',
-        'ruby',
         'sass',
         'scss',
         'sql',
         'stylus',
         'textile',
         'txp',
-        'yaml',
     );
 
     /**
