@@ -27,26 +27,6 @@ module.exports = function (grunt)
             timestamp: '<%= new Date().getTime() %>'
         },
 
-        // Bundle up the JavaScript.
-        browserify: {
-            development: {
-                src: [
-                    '<%= paths.src.js %>app.js'
-                ],
-                dest: '<%= paths.dest.js %>app.js',
-                options: {
-                    browserifyOptions: {
-                        debug: false
-                    },
-                    transform: [[
-                        'babelify', {
-                            'presets': ['@babel/preset-env']
-                        }
-                    ]]
-                }
-            }
-        },
-
         // Clean distribution directory to start afresh.
         clean: [
             'public/style/'
@@ -55,7 +35,6 @@ module.exports = function (grunt)
         // Run some tasks in parallel to speed up the build process.
         concurrent: {
             dist: [
-                'browserify',
                 'copy:branding',
                 'css',
                 'jshint',
@@ -127,6 +106,8 @@ module.exports = function (grunt)
                 esversion: 6,
                 forin: true,
                 globals: {
+                    $: true,
+                    jquery: true,
                     module: true,
                     require: true,
                     Prism: true
@@ -232,11 +213,30 @@ module.exports = function (grunt)
         },
 
         // Minify `app.js`.
-        uglify: {
+        terser: {
             dist: {
                 files: [
                     {
-                        '<%= paths.dest.js %>app.js': ['<%= paths.dest.js %>app.js']
+                        '<%= paths.dest.js %>app.js': [
+                            'node_modules/jquery/dist/jquery.slim.js',
+                            'node_modules/prismjs/prism.js',
+                            'node_modules/prismjs/components/prism-markup-templating.js',
+                            'node_modules/prismjs/components/prism-apacheconf.js',
+                            'node_modules/prismjs/components/prism-bash.js',
+                            'node_modules/prismjs/components/prism-git.js',
+                            'node_modules/prismjs/components/prism-json.js',
+                            'node_modules/prismjs/components/prism-less.js',
+                            'node_modules/prismjs/components/prism-markdown.js',
+                            'node_modules/prismjs/components/prism-nginx.js',
+                            'node_modules/prismjs/components/prism-perl.js',
+                            'node_modules/prismjs/components/prism-php.js',
+                            'node_modules/prismjs/components/prism-sass.js',
+                            'node_modules/prismjs/components/prism-scss.js',
+                            'node_modules/prismjs/components/prism-sql.js',
+                            'node_modules/prismjs/components/prism-stylus.js',
+                            'node_modules/prismjs/components/prism-textile.js',
+                            '<%= paths.src.js %>app.js'
+                        ]
                     }
                 ]
             }
@@ -269,7 +269,7 @@ module.exports = function (grunt)
     });
 
     // Register tasks.
-    grunt.registerTask('build', ['clean', 'concurrent', 'uglify']);
+    grunt.registerTask('build', ['clean', 'concurrent', 'terser']);
     grunt.registerTask('default', ['watch']);
     grunt.registerTask('postsetup', ['shell:postsetup']);
     grunt.registerTask('css', ['stylelint', 'sass', 'postcss']);

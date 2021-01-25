@@ -1,22 +1,3 @@
-var $ = require('jquery/dist/jquery.slim');
-
-import Prism from 'prismjs';
-require('prismjs/components/prism-markup-templating');
-require('prismjs/components/prism-apacheconf');
-require('prismjs/components/prism-bash');
-require('prismjs/components/prism-git');
-require('prismjs/components/prism-json');
-require('prismjs/components/prism-less');
-require('prismjs/components/prism-markdown');
-require('prismjs/components/prism-nginx');
-require('prismjs/components/prism-perl');
-require('prismjs/components/prism-php');
-require('prismjs/components/prism-sass');
-require('prismjs/components/prism-scss');
-require('prismjs/components/prism-sql');
-require('prismjs/components/prism-stylus');
-require('prismjs/components/prism-textile');
-
 (function ()
 {
     'use strict';

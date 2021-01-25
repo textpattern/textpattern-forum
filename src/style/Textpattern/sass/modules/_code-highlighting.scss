@@ -5,9 +5,7 @@
 
 code[class*="language-"],
 pre[class*="language-"] {
-    direction: ltr;
     hyphens: none;
-    text-align: left;
     word-wrap: normal;
     word-break: normal;
     word-spacing: normal;
@@ -95,47 +93,6 @@ pre[class*="language-"] {
 
 .token.entity {
     cursor: help;
-}
-
-/*
- * Line numbers (plugin).
- */
-
-pre.line-numbers {
-    position: relative;
-    padding-left: 3.8em;
-    counter-reset: linenumber;
-}
-
-pre.line-numbers > code {
-    position: relative;
-}
-
-.line-numbers .line-numbers-rows {
-    position: absolute;
-    top: 0;
-    left: -3.8em;
-    width: 3em; // Works for line-numbers below 1000 lines
-    border-right: 1px solid var(--clr-brdr-lite);
-    font-size: 1em;
-    letter-spacing: -1px;
-    pointer-events: none;
-    user-select: none;
-}
-
-.line-numbers-rows > span {
-    display: block;
-    counter-increment: linenumber;
-    pointer-events: none;
-}
-
-.line-numbers-rows > span::before {
-    content: counter(linenumber);
-    display: block;
-    padding-right: 0.8em;
-    color: var(--clr-text-footnote);
-    direction: ltr;
-    text-align: right;
 }
 
 @include setup.dark-mode {
