@@ -159,7 +159,7 @@ thead th {
         margin-bottom: 0.5em;
 
         strong {
-            font-family: var(--var-font-serif);
+            font-family: var(--font-serif);
             font-size: 1.75em; // 28px / 16px
             line-height: 1.25; // 35px / 30px
 
@@ -267,7 +267,7 @@ thead th {
 
         .newtext {
             display: inline-block;
-            font-family: var(--var-font-sans-serif);
+            font-family: var(--font-sans-serif);
             font-size: 0.65em;
             font-weight: normal;
         }
@@ -308,7 +308,7 @@ thead th {
 
     .postleft h2 {
         margin: 1em;
-        font-family: var(--var-font-sans-serif);
+        font-family: var(--font-sans-serif);
         font-size: 1em;
 
         .conr {
@@ -338,7 +338,7 @@ thead th {
     }
 
     dt {
-        font-family: var(--var-font-serif);
+        font-family: var(--font-serif);
         font-size: 1.125em; // 18px / 16px
         font-style: normal;
         line-height: 1.4444444; // 26px / 18px
