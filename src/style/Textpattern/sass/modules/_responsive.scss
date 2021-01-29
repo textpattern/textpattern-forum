@@ -368,6 +368,7 @@
         width: auto;
         padding: 1px 1em;
         float: none;
+        border-radius: 0;
     }
 
     /**
@@ -405,6 +406,7 @@
 
         a {
             margin-top: 0.25em;
+            border-radius: setup.$border-radius / 2;
             box-shadow: none;
         }
     }

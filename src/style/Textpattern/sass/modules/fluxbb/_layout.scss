@@ -296,8 +296,9 @@ thead th {
    ========================================================================== */
 
 .blockpost {
-    margin: 1em 0;
+    margin: 0.5em 0;
     border: 1px solid var(--clr-brdr);
+    border-radius: setup.$border-radius / 2;
     background-color: var(--clr-bkgd-box);
 
     &::after {
@@ -375,12 +376,18 @@ thead th {
     width: 63%;
     padding: 0 2.8%;
     float: right;
+    overflow: hidden;
+    border-radius: 0 (setup.$border-radius / 2);
     background-color: var(--clr-bkgd);
     word-wrap: break-word;
 
     > h3 {
         display: none;
     }
+}
+
+.postsignature hr {
+    border-style: dashed;
 }
 
 .postfoot {
@@ -399,7 +406,25 @@ thead th {
         padding: 0 1em;
     }
 
+    span,
     strong {
+        display: inline-block;
+        padding: 0.125em 0.33em;
+        border: 1px solid;
+        border-radius: setup.$border-radius / 2;
+        font-size: setup.$small-font-size;
+        line-height: setup.$line-height-mobile;
+    }
+
+    span { // offline
+        border-color: var(--clr-brdr-x-lite);
+        background: var(--clr-bkgd-box);
+        color: var(--clr-text-demoted);
+    }
+
+    strong { // online
+        border-color: var(--clr-success-brdr);
+        background: var(--clr-success-bkgd);
         color: var(--clr-success-text);
         font-weight: normal;
     }
