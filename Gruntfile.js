@@ -214,6 +214,16 @@ module.exports = function (grunt)
 
         // Minify `app.js`.
         terser: {
+            options: {
+                ecma: 2015,
+                compress: {
+                    booleans_as_integers: true,
+                    drop_console: true
+                },
+                format: {
+                    comments: false
+                }
+            },
             dist: {
                 files: [
                     {
