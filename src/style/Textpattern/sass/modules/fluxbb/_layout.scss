@@ -313,6 +313,7 @@ thead th {
         font-size: 1em;
 
         .conr {
+            margin-right: 0.33em;
             color: var(--clr-info-text);
             font-weight: normal;
         }
@@ -458,16 +459,22 @@ thead th {
     }
 }
 
+.subscribelink {
+    margin: 2em 0;
+}
+
 /**
  * Post reply section.
  */
 
 #quickpost {
-    margin: 0.5em 0 1em;
+    margin: 0 0 2em;
     border: 1px solid var(--clr-brdr);
+    border-radius: setup.$border-radius / 2;
     background-color: hsl(48, 100%, 96%);
 
     fieldset {
+        margin-bottom: 0;
         border: 0;
     }
 
@@ -475,12 +482,18 @@ thead th {
         margin: 1em 0 0;
         padding: 0;
         border: 0;
-        background-color: hsl(48, 100%, 96%);
-        font-size: 1.125em; // 18px / 16px
-        line-height: 1.4444444; // 26px / 18px
+        background-color: transparent;
+        color: var(--clr-text-promoted);
+        font-size: 1.375rem; // 22px / 16px
+        line-height: 1.3181818; // 29px / 22px
+    }
+
+    .infldset label {
+        margin: 0;
     }
 
     .buttons {
+        margin: 0 0 1.5em;
         padding: 0 1em;
     }
 }
@@ -489,11 +502,11 @@ thead th {
     #quickpost {
         border-color: var(--clr-brdr-lite);
         background-color: hsl(48, 20%, 26%);
-
-        legend {
-            background-color: hsl(48, 20%, 26%);
-        }
     }
+}
+
+.textile-help-links {
+    margin: 0.5em 0;
 }
 
 #postreview .postleft {
