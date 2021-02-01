@@ -479,13 +479,13 @@ thead th {
     }
 
     legend {
-        margin: 1em 0 0;
+        margin: 1rem 0 0;
         padding: 0;
         border: 0;
         background-color: transparent;
         color: var(--clr-text-promoted);
-        font-size: 1.375rem; // 22px / 16px
-        line-height: 1.3181818; // 29px / 22px
+        font-size: 1.125rem; // 18px / 16px
+        line-height: 1.4444444; // 26px / 18px
     }
 
     .infldset label {
