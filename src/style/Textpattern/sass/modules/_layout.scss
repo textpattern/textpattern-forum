@@ -90,6 +90,8 @@ noscript {
 .wrapper-footer {
     flex: 1;
     padding-bottom: 0.5em;
+    content-visibility: auto;
+    contains-intrinsic-size: 0 320px;
 }
 
 /**
