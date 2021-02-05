@@ -4,8 +4,10 @@
     <script async src="style/Textpattern/js/hi.js"></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <link rel="preload" href="https://textpattern.com/assets/fonts/pt-serif-v11-latin-ext-regular.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="https://textpattern.com/assets/fonts/pt-serif-v11-latin-ext-700.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://textpattern.com/assets/fonts/pt-serif-v12-latin-ext-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://textpattern.com/assets/fonts/pt-serif-v12-latin-ext-italic.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://textpattern.com/assets/fonts/pt-serif-v12-latin-ext-700.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://textpattern.com/assets/fonts/pt-serif-v12-latin-ext-700italic.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="style/Textpattern/css/style.@@timestamp.css">
     <link rel="manifest" href="/site.webmanifest">
     <link rel="icon" sizes="32x32" href="/favicon-32x32.png">
