@@ -5,6 +5,7 @@
 /lang
 /lib
 /style
+/tests
 /vendor
 /*.php
 /*.js
