@@ -12,6 +12,7 @@
 /*.md
 /.*
 !/.gitignore
-/*.png
-/*.ico
 /*.html
+/*.ico
+/*.png
+/*.svg

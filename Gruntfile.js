@@ -48,25 +48,13 @@ module.exports = function (grunt)
                 files: [
                     {
                         expand: true,
-                        cwd: 'node_modules/textpattern-branding/assets/img/',
+                        cwd: 'node_modules/textpattern-branding/img/',
                         src: '**',
                         dest: 'public/style/Textpattern/img/branding/'
                     },
                     {
                         expand: true,
-                        cwd: 'node_modules/textpattern-branding/assets/img/apple-touch-icon/textpattern/',
-                        src: '**',
-                        dest: 'public/'
-                    },
-                    {
-                        expand: true,
-                        cwd: 'node_modules/textpattern-branding/assets/img/favicon/textpattern/',
-                        src: '**',
-                        dest: 'public/'
-                    },
-                    {
-                        expand: true,
-                        cwd: 'node_modules/textpattern-branding/assets/img/windows-site-tile/textpattern/',
+                        cwd: 'node_modules/textpattern-branding/img/favicons/',
                         src: '**',
                         dest: 'public/'
                     }
