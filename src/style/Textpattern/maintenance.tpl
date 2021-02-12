@@ -4,10 +4,10 @@
     <script async src="style/Textpattern/js/hi.js"></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <link rel="preload" href="https://textpattern.com/assets/fonts/pt-serif-v12-latin-ext-regular.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="https://textpattern.com/assets/fonts/pt-serif-v12-latin-ext-italic.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="https://textpattern.com/assets/fonts/pt-serif-v12-latin-ext-700.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="https://textpattern.com/assets/fonts/pt-serif-v12-latin-ext-700italic.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://forum.textpattern.com/style/Textpattern/fonts/pt-serif-v12-latin-ext-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://forum.textpattern.com/style/Textpattern/fonts/pt-serif-v12-latin-ext-italic.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://forum.textpattern.com/style/Textpattern/fonts/pt-serif-v12-latin-ext-700.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://forum.textpattern.com/style/Textpattern/fonts/pt-serif-v12-latin-ext-700italic.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="style/Textpattern/css/style.@@timestamp.css">
     <link rel="icon" href="/favicon.ico">
     <link rel="icon" href="/icon.svg" type="image/svg+xml">

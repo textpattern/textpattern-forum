@@ -11,12 +11,14 @@ module.exports = function (grunt)
         // Set up paths.
         paths: {
             src: {
+                fonts: 'src/style/Textpattern/fonts/',
                 sass: 'src/style/Textpattern/sass/',
                 js: 'src/style/Textpattern/js/',
                 templates: 'src/style/Textpattern/'
             },
             dest: {
                 css: 'public/style/Textpattern/css/',
+                fonts: 'public/style/Textpattern/fonts/',
                 js: 'public/style/Textpattern/js/',
                 templates: 'public/style/Textpattern/'
             }
@@ -46,6 +48,12 @@ module.exports = function (grunt)
         copy: {
             branding: {
                 files: [
+                    {
+                        expand: true,
+                        cwd: '<%= paths.src.fonts %>',
+                        src: '**',
+                        dest: '<%= paths.dest.fonts %>'
+                    },
                     {
                         expand: true,
                         cwd: 'node_modules/textpattern-branding/img/',
