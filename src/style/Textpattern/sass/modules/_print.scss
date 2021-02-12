@@ -23,14 +23,6 @@ body {
 }
 
 /**
- * Visually separate site header from body.
- */
-
-.site-header {
-    border-bottom: 1pt solid black;
-}
-
-/**
  * Hide unnecessary content from print.
  */
 
@@ -43,9 +35,10 @@ form,
 #brdstats,
 #brdfooter,
 #quickpost,
+.site-header,
+.site-footer,
 .search-form,
 .complementary-content,
-.site-footer,
 .a--skip-link,
 .linkst,
 .postlinksb,

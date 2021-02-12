@@ -73,20 +73,13 @@ textarea,
  * 1. Remove browser-specific default styling.
  */
 
-[type="color"],
-[type="date"],
-[type="datetime"],
-[type="datetime-local"],
 [type="email"],
-[type="month"],
 [type="number"],
 [type="password"],
 [type="search"],
 [type="tel"],
 [type="text"],
-[type="time"],
 [type="url"],
-[type="week"],
 select,
 textarea {
     height: 2em; // 32px / 16px
@@ -107,20 +100,13 @@ textarea {
 }
 
 @include setup.dark-mode {
-    [type="color"],
-    [type="date"],
-    [type="datetime"],
-    [type="datetime-local"],
     [type="email"],
-    [type="month"],
     [type="number"],
     [type="password"],
     [type="search"],
     [type="tel"],
     [type="text"],
-    [type="time"],
     [type="url"],
-    [type="week"],
     select,
     textarea {
         border-color: var(--clr-brdr-x-dark);
@@ -370,14 +356,6 @@ select[multiple] {
 select[size="0"],
 select[size="1"] {
     height: 2em; // 32px / 16px
-}
-
-/**
- * Remove browser-specific `select` UI in IE 11.
- */
-
-select::-ms-expand {
-    opacity: 0;
 }
 
 /**
