@@ -360,12 +360,27 @@ thead th {
 }
 
 .usercontacts {
-    span::before {
-        content: "| \0020";
-    }
+    a {
+        display: inline-block;
+        margin: 0.5rem 0.25rem 0 0;
+        padding: 1px 5px;
+        border: 1px solid var(--clr-brdr);
+        border-radius: setup.$border-radius / 2;
+        background-color: var(--clr-bkgd-box);
 
-    span:first-child::before {
-        content: none;
+        &:hover {
+            background-color: var(--clr-nav-interact);
+            filter: brightness(1.05);
+        }
+
+        &:active {
+            filter: brightness(0.95);
+        }
+
+        &:focus {
+            border-color: var(--clr-focus);
+            outline: 2px solid transparent; // Allows for repainting in high contrast modes.
+        }
     }
 }
 
