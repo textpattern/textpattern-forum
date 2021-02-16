@@ -70,7 +70,7 @@ Once you have Grunt installed, installing and updating FluxBB is easy. To setup 
 $ grunt setup
 ```
 
-This will download the correct release version FluxBB, patch it with mods and place it in the `public/` directory. Complete FluxBB's installation by following the normal [Installation steps](http://fluxbb.org/docs/v1.5/installing), and use [this as your config.php template](https://github.com/textpattern/textpattern-forum/blob/master/src/setup/config.php.dist).
+This will download the correct release version FluxBB, patch it with mods and place it in the `public/` directory. Complete FluxBB's installation by following the normal [Installation steps](http://fluxbb.org/docs/v1.5/installing), and use [this as your config.php template](https://github.com/textpattern/textpattern-forum/blob/main/src/setup/config.php.dist).
 
 After you have finished installing, run the postsetup task to remove extra trash left by the setup:
 
@@ -80,7 +80,7 @@ $ grunt postsetup
 
 ### Updating and patching FluxBB
 
-Periodically we update the [patch files](https://github.com/textpattern/textpattern-forum/tree/master/src/setup/patches) that ship with the repository. To re-patch and update your FluxBB installation, run the setup task again:
+Periodically we update the [patch files](https://github.com/textpattern/textpattern-forum/tree/main/src/setup/patches) that ship with the repository. To re-patch and update your FluxBB installation, run the setup task again:
 
 ```ShellSession
 $ grunt setup
