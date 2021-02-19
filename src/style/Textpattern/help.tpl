@@ -12,6 +12,7 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="manifest" href="/site.webmanifest">
     <meta name="color-scheme" content="dark light">
+    <meta name="theme-color" content="#ffda44">
     <meta name="application-name" content="Textpattern Forum">
     <script defer src="style/Textpattern/js/app.@@timestamp.js"></script>
     <pun_head>
