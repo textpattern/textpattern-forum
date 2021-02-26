@@ -258,8 +258,7 @@ module.exports = function (grunt)
                 files: '<%= paths.src.js %>**',
                 tasks: [
                     'jshint',
-                    'browserify',
-                    'uglify'
+                    'terser'
                 ]
             },
             theme: {
