@@ -32,7 +32,7 @@
     "stylelint-scss": "3.19.0"
   },
   "dependencies": {
-    "jquery": "3.5.1",
+    "jquery": "3.6.0",
     "prismjs": "1.23.0",
     "textpattern-branding": "0.3.1"
   },
