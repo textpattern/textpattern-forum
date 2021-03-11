@@ -77,10 +77,8 @@ class Tasks
 
     public function taskRemoveUnverifiedAccounts()
     {
-        global $db;
-
         $time = strtotime('-3 day');
-        return (int) Db::pdo()->exec("DELETE FROM ".$db->prefix."users WHERE group_id = 0 and registered < {$time}");
+        return (int) Db::pdo()->exec("DELETE FROM fbb_users WHERE group_id = 0 and registered < {$time}");
     }
 
     /**
@@ -92,15 +90,13 @@ class Tasks
 
     public function taskCleanVerifiedIps()
     {
-        global $db;
-
         $time = strtotime('-14 days');
         return (int) Db::pdo()->exec(
-            "UPDATE ".$db->prefix."users SET registration_ip = '0.0.0.0' WHERE ".
+            "UPDATE fbb_users SET registration_ip = '0.0.0.0' WHERE ".
             "group_id NOT IN(0, 5) and registered < {$time} ".
             "and num_posts > 1 and registration_ip != '0.0.0.0'"
         ) + (int) Db::pdo()->exec(
-            "UPDATE ".$db->prefix."posts SET poster_ip = '0.0.0.0' WHERE poster_ip != '0.0.0.0' and posted < {$time}"
+            "UPDATE fbb_posts SET poster_ip = '0.0.0.0' WHERE poster_ip != '0.0.0.0' and posted < {$time}"
         );
     }
 }
