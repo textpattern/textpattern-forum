@@ -127,7 +127,7 @@ class Sfs
             $_GET['action'] === 'in' && isset($_POST['req_username'])
         ) {
             $sth = Db::pdo()->prepare(
-                "SELECT id, username, email, registration_ip FROM fbb_users WHERE username = :username and ".
+                "SELECT id, username, email, registration_ip FROM flx_users WHERE username = :username and ".
                 "group_id = 0 limit 1"
             );
 
@@ -140,7 +140,7 @@ class Sfs
 
                 if ($this->isBanned() || $data = $this->getRecord()) {
                     sleep(5);
-                    Db::pdo()->exec("DELETE FROM fbb_users WHERE id = ".intval($r['id']));
+                    Db::pdo()->exec("DELETE FROM flx_users WHERE id = ".intval($r['id']));
                 }
 
                 if ($data) {
@@ -164,7 +164,7 @@ class Sfs
 
         if (strpos($_SERVER['REQUEST_URI'], 'post.php') !== false && isset($_POST['form_sent'])) {
             $id = (int) join('', array_slice(explode('|', $_COOKIE[$cookie_name]), 0, 1));
-            $sth = Db::pdo()->prepare('SELECT email FROM fbb_users WHERE id = :user and num_posts = 0');
+            $sth = Db::pdo()->prepare('SELECT email FROM flx_users WHERE id = :user and num_posts = 0');
             $sth->execute(array(':user' => $id));
 
             if ($r = $sth->fetch()) {
@@ -173,7 +173,7 @@ class Sfs
 
                 if ($this->isBanned() || $data = $this->getRecord()) {
                     sleep(5);
-                    Db::pdo()->exec("DELETE FROM fbb_users WHERE id = {$id}");
+                    Db::pdo()->exec("DELETE FROM flx_users WHERE id = {$id}");
                 }
 
                 if ($data) {
@@ -261,7 +261,7 @@ class Sfs
         }
 
         $message .= ' - https://www.stopforumspam.com/search?q=';
-        $sth = Db::pdo()->prepare("INSERT INTO fbb_bans SET $type = :value, message = :message, expire = :expires");
+        $sth = Db::pdo()->prepare("INSERT INTO flx_bans SET $type = :value, message = :message, expire = :expires");
 
         foreach ((array) $this->$type as $value) {
             $sth->bindValue(':value', $value);
@@ -282,7 +282,7 @@ class Sfs
     public function isBanned()
     {
         $sth = Db::pdo()->prepare(
-            "SELECT ip FROM fbb_bans WHERE ((ip != '' and ip = :ip) or (email != '' and email = :email)) and ".
+            "SELECT ip FROM flx_bans WHERE ((ip != '' and ip = :ip) or (email != '' and email = :email)) and ".
             "IFNULL(expire, :expires) >= :expires limit 1"
         );
 

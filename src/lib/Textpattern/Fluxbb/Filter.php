@@ -62,7 +62,7 @@ class Filter
                 return;
             }
 
-            $sth = Db::pdo()->prepare('SELECT id FROM fbb_users WHERE id = :user and group_id = 0');
+            $sth = Db::pdo()->prepare('SELECT id FROM flx_users WHERE id = :user and group_id = 0');
             $sth->execute(array(':user' => $id));
 
             if ($sth->rowCount()) {

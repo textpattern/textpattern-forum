@@ -54,7 +54,7 @@ define('TEXTPATTERN_TASKS_KEY', '');
  */
 
 $db_type = 'mysqli';
-$db_prefix = 'fbb_';
+$db_prefix = 'flx_';
 $p_connect = false;
 $cookie_name = 'textpattern-forum';
 $cookie_domain = '';
