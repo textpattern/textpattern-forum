@@ -127,7 +127,7 @@ else
 {
 	// Collect some statistics from the database
 	$stats = array();
-	
+
 	$result = $db->query('SELECT MIN(date) FROM '.$db->prefix.'test_registrations') or error('Error1', __FILE__, __LINE__, $db->error());
 	$stats['collecting_since'] = $db->result($result);
 
@@ -139,7 +139,7 @@ else
 	$stats['num_blacklist'] = $db->result($result);
 	$result = $db->query('SELECT COUNT(id) FROM '.$db->prefix.'test_registrations WHERE spam=3') or error('Error4', __FILE__, __LINE__, $db->error());
 	$stats['num_dnsbl'] = $db->result($result);
-	
+
 	$result = $db->query('SELECT COUNT(id)/7 FROM '.$db->prefix.'test_registrations WHERE spam=0 AND date > '.(time() - 7*24*60*60)) or error('Error5', __FILE__, __LINE__, $db->error());
 	$stats['avg_nospam'] = $db->result($result);
 	$result = $db->query('SELECT COUNT(id)/7 FROM '.$db->prefix.'test_registrations WHERE spam=1 AND date > '.(time() - 7*24*60*60)) or error('Error6', __FILE__, __LINE__, $db->error());
@@ -161,11 +161,11 @@ else
 	$result = $db->query('SELECT DATE(FROM_UNIXTIME(date)) AS day, COUNT(date) AS num_blocked FROM '.$db->prefix.'test_registrations WHERE spam = 1 AND date > '.(time()-14*24*60*60).' GROUP BY DATE(FROM_UNIXTIME(date))') or error('Unable to fetch honeypot 14 day log', __FILE__, __LINE__, $db->error());
 	while ($cur_date = $db->fetch_assoc($result))
 		$stats['last_14days_honeypot'][$cur_date['day']] = $cur_date['num_blocked'];
-	
+
 	$result = $db->query('SELECT DATE(FROM_UNIXTIME(date)) AS day, COUNT(date) AS num_blocked FROM '.$db->prefix.'test_registrations WHERE spam = 2 AND date > '.(time()-14*24*60*60).' GROUP BY DATE(FROM_UNIXTIME(date))') or error('Unable to fetch sfs 14 day log', __FILE__, __LINE__, $db->error());
 	while ($cur_date = $db->fetch_assoc($result))
 		$stats['last_14days_sfs'][$cur_date['day']] = $cur_date['num_blocked'];
-	
+
 	$result = $db->query('SELECT DATE(FROM_UNIXTIME(date)) AS day, COUNT(date) AS num_blocked FROM '.$db->prefix.'test_registrations WHERE spam = 3 AND date > '.(time()-14*24*60*60).' GROUP BY DATE(FROM_UNIXTIME(date))') or error('Unable to fetch dnsbl 14 day log', __FILE__, __LINE__, $db->error());
 	while ($cur_date = $db->fetch_assoc($result))
 		$stats['last_14days_dnsbl'][$cur_date['day']] = $cur_date['num_blocked'];
