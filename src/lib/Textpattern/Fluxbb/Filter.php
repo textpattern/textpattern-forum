@@ -52,7 +52,7 @@ class Filter
 
     protected function preventUnverified()
     {
-        global $cookie_name;
+        global $cookie_name, $db;
 
         if (isset($_COOKIE[$cookie_name])) {
             $id = (int) join('', array_slice(explode('|', $_COOKIE[$cookie_name]), 0, 1));
@@ -62,7 +62,7 @@ class Filter
                 return;
             }
 
-            $sth = Db::pdo()->prepare('SELECT id FROM users WHERE id = :user and group_id = 0');
+            $sth = Db::pdo()->prepare('SELECT id FROM '.$db->prefix.'users WHERE id = :user and group_id = 0');
             $sth->execute(array(':user' => $id));
 
             if ($sth->rowCount()) {
