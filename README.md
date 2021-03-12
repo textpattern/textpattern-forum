@@ -18,7 +18,6 @@ Building this repository requires:
 * [Node.js](https://nodejs.org/)
 * [Grunt](https://gruntjs.com/)
 * [Composer](https://getcomposer.org/)
-* cURL and patch CLI programs.
 
 Environment must consist of:
 
