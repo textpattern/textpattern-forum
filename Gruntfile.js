@@ -188,26 +188,6 @@ module.exports = function (grunt)
             src: ['<%= paths.src.sass %>**/*.{css,scss}']
         },
 
-        // Run forum setup and postsetup scripts.
-        shell: {
-            setup: {
-                command: [
-                    'php src/setup/setup.php'
-                ].join('&&'),
-                options: {
-                    stdout: true
-                }
-            },
-            postsetup: {
-                command: [
-                    'php src/setup/post.php'
-                ].join('&&'),
-                options: {
-                    stdout: true
-                }
-            }
-        },
-
         // Minify `app.js`.
         terser: {
             options: {
@@ -275,10 +255,8 @@ module.exports = function (grunt)
 
     // Register tasks.
     grunt.registerTask('build', ['clean', 'concurrent', 'terser']);
-    grunt.registerTask('default', ['watch']);
-    grunt.registerTask('postsetup', ['shell:postsetup']);
     grunt.registerTask('css', ['stylelint', 'sass', 'postcss']);
-    grunt.registerTask('setup', ['shell:setup', 'build']);
+    grunt.registerTask('default', ['watch']);
     grunt.registerTask('theme', ['copy:theme', 'replace']);
     grunt.registerTask('travis', ['build']);
 };
