@@ -81,7 +81,7 @@ This repository hosts sources and needs to be built before it can be used. After
 $ grunt @task@
 ```
 
-Where the `@task@` is either `build`, `setup` or `watch`.
+Where the `@task@` is either `build` or `watch`.
 
 * The `build` task builds the project.
 * The `watch` task will launch a task that watches for file changes; the project is then automatically built if a source file is modified.
