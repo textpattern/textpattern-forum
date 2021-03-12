@@ -84,7 +84,6 @@ $ grunt @task@
 Where the `@task@` is either `build`, `setup` or `watch`.
 
 * The `build` task builds the project.
-* The `setup` task installs the latest stable release of FluxBB (see details above).
 * The `watch` task will launch a task that watches for file changes; the project is then automatically built if a source file is modified.
 
 ## REST API
