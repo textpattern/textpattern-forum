@@ -34,13 +34,13 @@
             <a id="site-navigation-toggle" href="#" role="button" aria-controls="site-navigation" title="Navigation menu">Navigation menu</a>
             <nav id="site-navigation" aria-label="Site navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">
                 <ul id="site-navigation-list">
-                    <li><a itemprop="url" href="https://textpattern.com/start">Get started</a></li>
+                    <li><a itemprop="url" href="https://textpattern.com/start/">Get started</a></li>
                     <li><a itemprop="url" href="https://docs.textpattern.com/">Documentation</a></li>
                     <li><a itemprop="url" href="https://textpattern.com/themes">Themes</a></li>
                     <li><a itemprop="url" href="https://plugins.textpattern.com/">Plugins</a></li>
                     <li class="active"><a itemprop="url" href="./">Forum</a> <span class="accessibility">(current section)</span></li>
-                    <li><a itemprop="url" href="https://textpattern.com/weblog">Blog</a></li>
-                    <li><a itemprop="url" href="https://textpattern.com/about">About</a></li>
+                    <li><a itemprop="url" href="https://textpattern.com/weblog/">Blog</a></li>
+                    <li><a itemprop="url" href="https://textpattern.com/about/">About</a></li>
                 </ul>
             </nav>
         </div>
