@@ -30,7 +30,7 @@ legend {
     border: 1px solid var(--clr-brdr);
     background-color: var(--clr-bkgd-box);
     font-family: var(--font-serif);
-    font-weight: bold;
+    font-weight: 700;
     white-space: normal; /* 1 */
 }
 
@@ -364,7 +364,7 @@ select[size="1"] {
 
 optgroup {
     font-style: normal;
-    font-weight: bold;
+    font-weight: 700;
 }
 
 /**

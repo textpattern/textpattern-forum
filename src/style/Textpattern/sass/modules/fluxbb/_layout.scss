@@ -165,7 +165,7 @@ thead th {
 
             a {
                 color: var(--clr-text-promoted);
-                text-decoration-color: rgba(var(--clr-text-promoted), 0.5);  /* 4 */
+                text-decoration-color: var(--clr-text-promoted-a50);  /* 4 */
             }
         }
     }
@@ -222,7 +222,7 @@ thead th {
  */
 
 .blockmenu .isactive {
-    font-weight: bold;
+    font-weight: 700;
 }
 
 
@@ -269,7 +269,7 @@ thead th {
             display: inline-block;
             font-family: var(--font-sans-serif);
             font-size: 0.65em;
-            font-weight: normal;
+            font-weight: 400;
         }
     }
 }
@@ -278,7 +278,7 @@ thead th {
 #page-moderate .tclcon,
 #page-search .tclcon {
     a {
-        font-weight: bold;
+        font-weight: 700;
     }
 
     .pagestext,
@@ -286,7 +286,7 @@ thead th {
         display: inline-block;
 
         a {
-            font-weight: normal;
+            font-weight: 400;
         }
     }
 }
@@ -315,7 +315,7 @@ thead th {
         .conr {
             margin-right: 0.33em;
             color: var(--clr-info-text);
-            font-weight: normal;
+            font-weight: 400;
         }
     }
 }
@@ -442,7 +442,7 @@ thead th {
         border-color: var(--clr-success-brdr);
         background: var(--clr-success-bkgd);
         color: var(--clr-success-text);
-        font-weight: normal;
+        font-weight: 400;
     }
 }
 
@@ -490,7 +490,7 @@ thead th {
     margin: 0 0 2em;
     border: 1px solid var(--clr-brdr);
     border-radius: setup.$border-radius / 2;
-    background-color: hsl(48, 100%, 96%);
+    background-color: hsl(48 100% 96%);
 
     fieldset {
         margin-bottom: 0;
@@ -520,7 +520,7 @@ thead th {
 @include setup.dark-mode {
     #quickpost {
         border-color: var(--clr-brdr-lite);
-        background-color: hsl(48, 20%, 26%);
+        background-color: hsl(48 20% 26%);
     }
 }
 
