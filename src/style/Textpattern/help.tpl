@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <link rel="preload" href="https://textpattern.com/assets/fonts/pt-serif-v12-latin-ext-regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="https://textpattern.com/assets/fonts/pt-serif-v12-latin-ext-700.woff2" as="font" type="font/woff2" crossorigin>
-    <script>document.documentElement.className='js'</script>
-    <link rel="stylesheet" href="style/Textpattern/css/style.@@timestamp.css">
+    <script src="https://textpattern.com/assets/js/detect.js"></script>
+    <link rel="stylesheet" media="screen"href="/style/Textpattern/css/screen.@@timestamp.css">
+    <link rel="stylesheet" media="print" href="https://textpattern.com/assets/css/print.css">
     <link rel="icon" href="/favicon.ico">
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">

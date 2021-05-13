@@ -4,7 +4,7 @@
    Styling and layout for screen media at 2nd breakpoint
    ========================================================================== */
 
-@media screen and (min-width: setup.$breakpoint-2) {
+@media (min-width: setup.$breakpoint-2) {
 
     /**
      * Grid container.
@@ -200,7 +200,7 @@
     }
 }
 
-@media screen and (max-width: setup.$breakpoint-2) {
+@media (max-width: setup.$breakpoint-2) {
 
     /**
      * Changes in styling for search form.
@@ -434,7 +434,7 @@
    Styling and layout for screen media at 3rd (final) breakpoint
    ========================================================================== */
 
-@media screen and (min-width: setup.$breakpoint-3) {
+@media (min-width: setup.$breakpoint-3) {
 
     /**
      * Adjust baseline.
@@ -455,7 +455,7 @@
     }
 }
 
-@media screen and (max-width: setup.$breakpoint-3) {
+@media (max-width: setup.$breakpoint-3) {
 
     /**
      * User search table (admin).

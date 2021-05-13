@@ -127,34 +127,27 @@
    Styling and layout for screen media
    ========================================================================== */
 
-@media screen {
-    @import "modules/fonts";
-    @import "modules/layout";
-    @import "modules/navigation";
-    @import "modules/links";
-    @import "modules/typography";
-    @import "modules/alerts";
-    @import "modules/embedded-content";
-    @import "modules/tables";
-    @import "modules/lists";
-    @import "modules/forms";
-    @import "modules/buttons";
-    @import "modules/code-highlighting";
-    @import "modules/social";
-    @import "modules/misc";
-    @import "modules/http-errors";
-    @import "modules/icons";
-    @import "modules/fluxbb/layout";
-    @import "modules/fluxbb/layout_admin";
-    @import "modules/fluxbb/navigation";
-    @import "modules/fluxbb/indicators";
-    @import "modules/fluxbb/pagination";
-    @import "modules/fluxbb/icons";
-}
-
+@import "modules/fonts";
+@import "modules/layout";
+@import "modules/navigation";
+@import "modules/links";
+@import "modules/typography";
+@import "modules/alerts";
+@import "modules/embedded-content";
+@import "modules/tables";
+@import "modules/lists";
+@import "modules/forms";
+@import "modules/buttons";
+@import "modules/code-highlighting";
+@import "modules/social";
+@import "modules/misc";
+@import "modules/http-errors";
+@import "modules/icons";
+@import "modules/fluxbb/layout";
+@import "modules/fluxbb/layout_admin";
+@import "modules/fluxbb/navigation";
+@import "modules/fluxbb/indicators";
+@import "modules/fluxbb/pagination";
+@import "modules/fluxbb/icons";
 @import "modules/responsive";
 @import "modules/accessibility";
-
-@media print {
-    @import "modules/print";
-}
