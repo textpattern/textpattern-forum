@@ -124,7 +124,7 @@ thead th {
         margin: 0.5em 1em 0 0;
         float: left;
         font-size: setup.$base-font-size;
-        line-height: setup.$line-height-desktop;
+        line-height: setup.$base-line-height;
         text-transform: uppercase;
     }
 
@@ -429,7 +429,7 @@ thead th {
         border: 1px solid;
         border-radius: setup.$border-radius / 2;
         font-size: setup.$small-font-size;
-        line-height: setup.$line-height-mobile;
+        line-height: setup.$small-line-height;
     }
 
     span { // offline

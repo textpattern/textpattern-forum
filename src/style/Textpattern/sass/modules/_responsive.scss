@@ -429,32 +429,6 @@
     }
 }
 
-
-/* ==========================================================================
-   Styling and layout for screen media at 3rd (final) breakpoint
-   ========================================================================== */
-
-@media (min-width: setup.$breakpoint-3) {
-
-    /**
-     * Adjust baseline.
-     */
-
-    html,
-    h5,
-    h6,
-    pre,
-    code,
-    kbd,
-    samp,
-    small,
-    tfoot,
-    .footnote,
-    .footnotes {
-        line-height: setup.$line-height-desktop;
-    }
-}
-
 @media (max-width: setup.$breakpoint-3) {
 
     /**
