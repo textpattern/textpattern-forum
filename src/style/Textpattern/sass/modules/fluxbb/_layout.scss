@@ -1,4 +1,5 @@
 @use "../../setup";
+@use "sass:math";
 
 .clearer::after {
     content: "";
@@ -298,7 +299,7 @@ thead th {
 .blockpost {
     margin: 0.5em 0;
     border: 1px solid var(--clr-brdr);
-    border-radius: setup.$border-radius / 2;
+    border-radius: math.div(setup.$border-radius, 2);
     background-color: var(--clr-bkgd-box);
 
     &::after {
@@ -365,7 +366,7 @@ thead th {
         margin: 0.5rem 0.25rem 0 0;
         padding: 1px 5px;
         border: 1px solid var(--clr-brdr);
-        border-radius: setup.$border-radius / 2;
+        border-radius: math.div(setup.$border-radius, 2);
         background-color: var(--clr-bkgd-box);
 
         &:hover {
@@ -393,7 +394,7 @@ thead th {
     padding: 0 2.8%;
     float: right;
     overflow: hidden;
-    border-radius: 0 (setup.$border-radius / 2);
+    border-radius: 0 (math.div(setup.$border-radius, 2));
     background-color: var(--clr-bkgd);
     word-wrap: break-word;
 
@@ -427,7 +428,7 @@ thead th {
         display: inline-block;
         padding: 0.125em 0.33em;
         border: 1px solid;
-        border-radius: setup.$border-radius / 2;
+        border-radius: math.div(setup.$border-radius, 2);
         font-size: setup.$small-font-size;
         line-height: setup.$small-line-height;
     }
@@ -489,7 +490,7 @@ thead th {
 #quickpost {
     margin: 0 0 2em;
     border: 1px solid var(--clr-brdr);
-    border-radius: setup.$border-radius / 2;
+    border-radius: math.div(setup.$border-radius, 2);
     background-color: hsl(48 100% 96%);
 
     fieldset {
