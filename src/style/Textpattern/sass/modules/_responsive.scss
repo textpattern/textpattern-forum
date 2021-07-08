@@ -33,18 +33,22 @@
 
     .layout-1col {
         grid-column: span 12;
+        overflow: hidden; // Fix for Firefox content overflowing.
     }
 
     .layout-2col {
         grid-column: span 6;
+        overflow: hidden; // Fix for Firefox content overflowing.
     }
 
     .layout-3col {
         grid-column: span 4;
+        overflow: hidden; // Fix for Firefox content overflowing.
     }
 
     .layout-3col-2span {
         grid-column: span 8;
+        overflow: hidden; // Fix for Firefox content overflowing.
     }
 
     /**
