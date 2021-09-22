@@ -1,7 +1,5 @@
 # Textpattern support forum
 
-[![Build Status](https://travis-ci.com/textpattern/textpattern-forum.svg)](https://travis-ci.com/textpattern/textpattern-forum)
-
 This repository contains the source code for the [Textpattern support forum](https://forum.textpattern.com/).
 
 Requires an installation of our [customized clone of FluxBB](https://github.com/textpattern/fluxbb/tree/feature-textpattern-forum).
