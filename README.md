@@ -20,7 +20,7 @@ Building this repository requires:
 Environment must consist of:
 
 * Apache >=2.2
-* PHP >=5.6.4
+* PHP >=7.4
 * MySQL >=5.0.6
 * Unix-like OS, e.g. Linux or macOS
 

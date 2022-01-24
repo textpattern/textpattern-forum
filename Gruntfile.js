@@ -81,13 +81,7 @@ module.exports = function (grunt)
                         cwd: '<%= paths.src.templates %>',
                         src: ['**', '!*.tpl', '!sass/**', '!js/**'],
                         dest: '<%= paths.dest.templates %>'
-                    },
-                    {
-                        expand: true,
-                        cwd: 'src/lib/',
-                        src: '**',
-                        dest: 'public/lib/'
-                    },
+                    }
                 ]
             }
         },
