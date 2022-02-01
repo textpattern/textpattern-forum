@@ -92,7 +92,7 @@ else if (isset($_POST['search_users']))
 $result = $db->query('SELECT * FROM '.$db->prefix.'users WHERE id > 1 AND num_posts=0 AND signature IS NOT NULL ORDER BY registered DESC LIMIT 50') or error('Unable to fetch users', __FILE__, __LINE__, $db->error());
 
 // If there are users with URLs in their signatures but 0 posts
-if ($db->num_rows($result))
+if ($db->has_rows($result))
 {
 	while ($cur_user = $db->fetch_assoc($result))
 	{
@@ -324,7 +324,7 @@ $result = $db->query('SELECT DATE(FROM_UNIXTIME(date)) AS day, COUNT(date) AS nu
 ') or error($lang_ap_spambarrier['Unable_14d'], __FILE__, __LINE__, $db->error());
 
 // If there are topics in this forum.
-if ($db->num_rows($result))
+if ($db->has_rows($result))
 {
 	echo "\t\t\t\t\t\t".'<table>'."\n";
 	echo "\t\t\t\t\t\t".'<tr><td style="padding: 0; border: 0; width:20%">Date</td><td style="padding: 0; border: 0; width:20%">Total</td><td style="padding: 0; border: 0; width:20%">HoneyPot</td><td style="padding: 0; border: 0; width:20%">SFS</td><td style="padding: 0; border: 0; width:20%">DNSBL</td></tr>'."\n";
