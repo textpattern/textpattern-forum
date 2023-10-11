@@ -6,8 +6,9 @@
 
   Developer: Team Textpattern
   Site: https://textpattern.com
-  Twitter: https://twitter.com/textpattern
   GitHub: https://github.com/textpattern
+  Mastodon: https://indieweb.social/@textpattern
+  Twitter: https://twitter.com/textpattern
   Location: Everywhere
 
 # TECHNOLOGY COLOPHON
@@ -16,6 +17,7 @@
   Server: Nginx, Percona Server for MySQL, PHP
   Components:
     FluxBB: https://fluxbb.org/
+    FluxBB_by_Visman: https://github.com/MioVisman/FluxBB_by_Visman
     PHP-Textile: https://github.com/textile/php-textile
     jQuery: https://jquery.com/
     Prism: https://prismjs.com/
