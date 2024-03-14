@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <link rel="preload" href="https://forum.textpattern.com/style/Textpattern/fonts/pt-serif-v12-latin-ext-regular.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="https://forum.textpattern.com/style/Textpattern/fonts/pt-serif-v12-latin-ext-700.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://forum.textpattern.com/style/Textpattern/fonts/pt-serif-v18-latin-ext-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://forum.textpattern.com/style/Textpattern/fonts/pt-serif-v18-latin-ext-700.woff2" as="font" type="font/woff2" crossorigin>
     <script src="https://textpattern.com/assets/js/detect.js"></script>
     <link rel="stylesheet" media="screen"href="/style/Textpattern/css/screen.@@timestamp.css">
     <link rel="stylesheet" media="print" href="https://textpattern.com/assets/css/print.css">
