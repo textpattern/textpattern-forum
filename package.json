@@ -31,7 +31,7 @@
     "stylelint-order": "7.0.1"
   },
   "dependencies": {
-    "jquery": "3.7.1",
+    "jquery": "4.0.0",
     "prismjs": "1.30.0",
     "textpattern-branding": "0.3.3"
   },
