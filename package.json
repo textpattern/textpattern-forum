@@ -27,7 +27,7 @@
     "sass": "1.91.0",
     "stylelint": "16.26.1",
     "stylelint-config-standard-scss": "16.0.0",
-    "sass": "1.97.2",
+    "sass": "1.97.3",
     "stylelint-order": "7.0.1"
   },
   "dependencies": {
